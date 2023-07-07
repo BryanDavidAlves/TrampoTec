@@ -1,0 +1,63 @@
+.side-bar {
+    height: 100%;
+    width:15%;
+    position: fixed;
+    background-color: rgb(213, 207, 207);
+    
+}
+
+.imagem-logo{
+    width: 70%;
+    height: 100%;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+   
+}
+.imagem-logo img{
+    width: 100%;
+    
+
+}
+nav i{
+    color: rgb(179, 123, 231);
+}
+nav ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-left:5%;
+    flex-direction: column;
+    gap: 40px;
+}
+nav a{
+    margin-left: 5%;
+    text-decoration: none;
+    color: rgb(179, 123, 231);
+    font-size: 1.1rem;
+    font-weight: 600;
+
+}
+nav li:hover{
+    background-color: rgb(179, 123, 231);
+    color: white;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    font-weight: 600;
+    margin: 0;
+ 
+
+  
+}
+nav li{
+    transition: all 0.5s ease-in-out;
+    width: 70%;
+    
+}
