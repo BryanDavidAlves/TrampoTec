@@ -1,6 +1,4 @@
-<?php
-include('../pag-professor/components/sidebar.php');
-?>
+
 
 
 <!DOCTYPE html>
@@ -10,8 +8,44 @@ include('../pag-professor/components/sidebar.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+<?php
+include('../pag-professor/components/sidebar.php');
+?>
+    <main>
+        <span class="titulo">Indicações para alunos</span>  
+        <div class="barra-pesquisa">
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui">
+        </div>
+        
+    </main>
+
+    <section class="estrutura-card">
+        <div class="card">
+            <div class="imagem-aluno">
+                <img src="img/trampotec.png" alt="">
+            </div>
+            <h3 class="nome-aluno">Ryan Souza</h3>
+            <h3 class="email">E-mail Institucional</h3>
+            <h4> ryan.souza44@etec.sp.gov.br</h4>
+            
+            <h3 class="codigo-etec">Código Etec</h3>
+            <h4>118</h4>
+
+            <h3 class="cursos">Cursos</h3>
+            <h4>Desenvolvimento de Sistemas</h4>
+        </div>
+
+        <div class="card">
+            suah
+        </div>
+
+        <div class="card">
+            suah
+        </div>
+    </section>
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 </html>
