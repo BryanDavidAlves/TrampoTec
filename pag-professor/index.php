@@ -14,7 +14,7 @@
 <?php
 include('../pag-professor/components/sidebar.php');
 ?>
-    <main>
+    <main class="main">
         <span class="titulo">Indicações para alunos</span>  
         <div class="barra-pesquisa">
             <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui">
