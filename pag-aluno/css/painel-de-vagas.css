@@ -1,0 +1,99 @@
+h1 {
+    color: grey;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.vagas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.vagas img {
+    width: 12%;
+    border-radius: 100%;
+    border: 2px blue solid;
+    margin-left: 10px;
+    align-items: center;
+}
+
+
+.vagas .container-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vagas .container-cards .cards {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(212, 212, 212);
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+    width: 130%;
+    height: 190px;
+    justify-content: center;
+}
+
+.vagas .container-cards .cards .localidade {
+    display: flex;
+}
+
+.vagas .container-cards .cards .localidade h4 {
+    margin-right: 20px;
+    color: rgb(75, 75, 75);
+}
+
+.vagas .container-cards .cards h4 {
+    padding: 5px;
+}
+
+.vagas .container-cards .cards button {
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.vagas .filtro {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.vagas .filtro .align {
+    display: flex;
+}
+
+.vagas .filtro .align .palavra-chave {
+    width: 63px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.palavra-box,select {
+    height: 25px;
+    margin-top: 5px;
+    border: none;
+    
+}
+
+.vagas .filtro .align select,
+.palavra-box {
+    margin-left: 10px;
+}
+.titulo-filtro{
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+.vagas .filtro button{
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
