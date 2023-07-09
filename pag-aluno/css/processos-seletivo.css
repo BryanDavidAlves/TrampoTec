@@ -1,0 +1,60 @@
+h1 {
+    color: #737373;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.vagas {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+    align-items: center;
+
+}
+
+
+.vagas .container-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.vagas .container-cards .cards {
+    display: flex;
+    flex-direction: column;
+    background-color: #B4D9FF;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    height: 160px;
+    justify-content: center;
+    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437)
+}
+
+.vagas .container-cards .cards .localidade {
+    display: flex;
+}
+
+.vagas .container-cards .cards .localidade h4 {
+    margin-right: 20px;
+    color: rgb(75, 75, 75);
+}
+
+.vagas .container-cards .cards h4 {
+    padding: 5px;
+}
+
+.vagas .container-cards .cards button {
+    background-color: blue;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}

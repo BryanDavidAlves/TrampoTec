@@ -6,20 +6,16 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
+main{
+    display: block;
+}
 header img {
     width: 10%;
     padding: 10px;
 }
-
-nav {
-    display: flex;
-
-}
-
-nav,
 aside {
     display: none;
+
 }
 
 .menu {
@@ -29,4 +25,13 @@ aside {
     background-color: black;
     margin: 3px;
     margin-right: 50px;
+}
+.toogle:hover{
+    cursor: pointer;
+    
+}
+aside ul,li{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
