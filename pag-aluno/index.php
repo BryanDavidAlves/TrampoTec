@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-vagas.css">
+    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vagas.css">
     <title>Pagina de Vagas</title>
 </head>
 <body>
@@ -14,9 +14,8 @@
             include('../pag-aluno/components/header.php');
         ?>
         <main id="main">
-            <?php 
-                include('../pag-aluno/components/sidebar.php');
-            ?>
+            
+            <div>
             <h1>PAINEL DE VAGAS</h1>
             <section class="vagas">
             
@@ -72,22 +71,12 @@
                     <button>Aplicar</button>
                 </div>
             </section>
+            </div>
+            <?php 
+                include('../pag-aluno/components/sidebar.php');
+            ?>
         </main>
-        <script>
-            function clickmenu(){
-                if (itens.style.display == 'none'){
-                    itens.style.display = 'block'
-                    main.style.display ='flex'
-                } else if (itens.style.display == 'block'){
-                    itens.style.display = 'none'
-                    main.style.display ='block'
-                }else{
-                    itens.style.display = 'block'
-                    main.style.display ='flex'
-                   
-                }
-            }
-        </script>
+
         <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 </html>

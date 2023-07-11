@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
+    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
 
-    <link rel="stylesheet" href="../pag-aluno/css/processos-seletivo.css">
+    <link rel="stylesheet" href="../pag-aluno/css/processo-seletivo.css">
     <title>Processos Seletivos</title>
 </head>
 <body>
         <?php 
             include('../pag-aluno/components/header.php');
         ?>
-        <?php 
-            include('../pag-aluno/components/sidebar.php');
-        ?>
+     <main id="main">
+        <div>
         <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
         
         <section class="vagas">
@@ -44,6 +43,11 @@
                     </div>
                 </section>
         </section>
-    <a href="curriculo.php">asdasd</a>
+        </div>
+        <?php 
+                include('../pag-aluno/components/sidebar.php');
+            ?>
+        </main>
+        <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 </html>

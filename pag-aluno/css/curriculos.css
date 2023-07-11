@@ -7,9 +7,9 @@ h1 {
 
 .infos {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 80px;
     margin-top: 50px;
 }
 

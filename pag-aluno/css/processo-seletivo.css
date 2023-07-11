@@ -11,7 +11,7 @@ h1 {
     justify-content: center;
     margin-top: 50px;
     align-items: center;
-
+    gap: 10px;
 }
 
 
@@ -20,8 +20,9 @@ h1 {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    gap: 10px;
-    flex-wrap: wrap;
+
+    gap: 20px;
+
 }
 
 .vagas .container-cards .cards {
@@ -31,10 +32,10 @@ h1 {
     align-items: center;
     padding: 5px;
     border-radius: 10px;
-    width: 30%;
+    width: 350px;
     height: 160px;
     justify-content: center;
-    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437)
+    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
 }
 
 .vagas .container-cards .cards .localidade {
