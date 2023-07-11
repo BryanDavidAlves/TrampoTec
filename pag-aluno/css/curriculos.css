@@ -1,0 +1,61 @@
+h1 {
+    color: grey;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.infos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.one-bar {
+    display: flex;
+    background-color: #3C86D1;
+    padding: 5px;
+    margin: 5px 0px 5px 10px;
+    width: 100%;
+    align-items: baseline;
+    border-radius: 10px;
+}
+
+.two-bars {
+    display: flex;
+    margin-left: 9.5px;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.bar {
+    display: flex;
+    background-color: #3C86D1;
+    padding: 5px;
+    align-items: baseline;
+    border-radius: 10px;
+}
+
+.info-pessoal , .info-academica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    font-size: 1.2rem;
+    color: #fff;
+}
+h4{
+    font-size: 1rem;
+    color: #fff;
+    margin-left: 5px;
+}
+button{
+    width: 90%;
+    border-radius: 5px;
+    padding: 3px;
+}

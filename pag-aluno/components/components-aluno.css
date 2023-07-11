@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    background-color: white;
+    border-bottom: 2px #004AAD solid;
+    box-shadow: 0px 0px 80px 5px rgb(191, 191, 191);
+    justify-content: space-between;
+    align-items: center;
+}
+main{
+    display: block;
+    height: 100%;
+    
+}
+header img {
+    width: 10%;
+    padding: 10px;
+}
+aside {
+    display: none;
+    background-color:#3C86D1;
+    width: 20%;
+    color: #fff;
+    padding: 10px;
+    height: 100%;
+    margin-top: -80px;
+    position: fixed;
+    right: 0;
+}
+
+.toogle .menu {
+    display: flex;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin: 3px;
+    margin-right: 50px;
+}
+.toogle:hover{
+    cursor: pointer;
+}
+aside a{
+    color: #fff;
+    text-decoration: none;
+    padding: 25px 50px 25px 0px;
+}
+aside ul li{
+    margin-top: 10px;
+    border-bottom: #ffffff36 solid 1px;
+    
+    padding: 10px;
+}
+aside ul{
+    margin-top: 40%;
+}
+.end{
+    position: fixed;
+    bottom: 20px;
+}
+.toogle2 .menu {
+    display: flex;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    margin: 3px;
+
+}
+.toogle2{
+    float: right;
+    margin-top: 15%;
+    margin-right: 25px;
+}
+#config{
+    position: fixed;
+    right: 20px;
+}
+aside ul a:hover{
+    margin-left: 10px;
+}
