@@ -1,0 +1,152 @@
+body{
+    background-color:#F5FFFA; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.main {
+    margin-top:10px;
+    margin-left: 201px; /* Same as the width of the sidenav */
+    margin-right:201px;
+    overflow:hidden;
+}    
+
+ul {
+    background:rgb(255, 255, 255);
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 30px;
+    border-block-end: 5px solid rgb(146, 145, 145);
+    display: flex;
+    justify-content: space-around;
+}
+
+li a{
+    display: block;
+    color:black;
+    padding: 10px 8px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    border-radius: 25%;
+}
+
+li a:hover{
+    background-color: rgba(71, 71, 71, 0.308);
+    border-radius: 25%;
+}
+ul .logo{
+  height:55px;
+  right: 55px;
+}
+
+.foto-empresa{
+  border-radius:100%;
+  height:70px;
+  right: 20px;
+}
+
+.sidenav {
+height: 100%;
+width: 200px;
+position: fixed;
+z-index: 1;
+top: 1;
+left: 0;
+background-color: #ffffff;
+overflow-x: hidden;
+padding-top: 20px;
+border-right: 1px solid black;
+}
+
+.sidenav a {
+padding: 6px 6px 6px 15px;
+text-decoration: none;
+font-size: 15px;
+color: #000000;
+display: block;
+}
+
+.sidenav a:hover {
+transition: 0.2s ease-in-out;
+color: rgb(0, 0, 0);
+}
+.sidenav a{
+position: relative;
+}
+
+.sidenav a::after{
+content:" ";
+width: 0%;
+height: 100%;
+background-color: rgb(47, 0, 255);
+position: absolute;
+bottom: 0;
+left: 0;
+transition: 0.2s ease-in-out;
+}
+
+.sidenav a:hover::after{
+width: 3%;
+}
+
+
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+.rightnav {padding-top: 15px;}
+.rightnav a {font-size: 18px;}
+}
+
+
+
+.barra-pesquisa input{
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid royalblue;
+
+}
+
+.rightnav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 1;
+  right: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-left: 1px solid black;
+  }
+  
+  .rightnav a {
+  padding: 6px 6px 6px 15px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #000000;
+  display: block;
+  }
+  
+  .rightnav a:hover {
+  transition: 0.2s ease-in-out;
+  color: rgb(0, 0, 0);
+  }
+  .rightnav a{
+  position: relative;
+  }
+  
+  .rightnav a::after{
+  content:" ";
+  width: 0%;
+  height: 100%;
+  background-color: rgb(47, 0, 255);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.2s ease-in-out;
+  }
+  
+  .rightnav a:hover::after{
+  width: 3%;
+  }
