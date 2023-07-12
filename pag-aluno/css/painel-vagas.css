@@ -69,6 +69,7 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    
 }
 
 .vagas .filtro .align {
@@ -96,11 +97,12 @@ h1 {
     margin-bottom: 15px;
     margin-left: 10px;
 }
-.vagas .filtro button{
+.vagas .filtro .button{
     background-color: #5382B2;
     padding: 5px;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
 }

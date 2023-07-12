@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vagas.css">
+    <link rel="stylesheet" href="../pag-aluno/css/painel-vagas.css">
     <title>Pagina de Vagas</title>
 </head>
 <body>
@@ -41,6 +41,7 @@
                 </span>
                     <h3 class="titulo-filtro">Filtrar por</h3>
                     </div>
+                    <form action="">
                     <div class="align">
                     <h3 class="palavra-chave">Nome</h3>
                         <select name="select">
@@ -68,7 +69,8 @@
                             <option value="valor3">Valor 3</option>
                         </select>
                     </div>
-                    <button>Aplicar</button>
+                    <input value="Aplicar" class="button"type="submit"> 
+                    </form>
                 </div>
             </section>
             </div>
