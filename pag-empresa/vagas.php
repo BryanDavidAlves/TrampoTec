@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel='stylesheet' href='../pag-empresa/css/style.css'>
 <title>TrampoTec</title>
 </head>
@@ -16,9 +16,8 @@
 <main class="main">
 
       
-        <p> perfis de estudantes</p>
-
-
+        <p><a href=""><i class="fa-solid fa-plus fa-2xl"></i></a> cadastras nova vaga</p>
+        
     <section class="estrutura-card">
         <div class="card">
             <div class="imagem-aluno">

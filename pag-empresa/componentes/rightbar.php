@@ -1,5 +1,5 @@
 <div class="rightnav">
-<i class="fa-solid fa-gear fa-lg"></i>  FILTRAR POR
+<i class="fa-solid fa-sliders"></i>FILTRAR POR
 <a href="">NOME </a>
 <a href="">CURSO </a>
 <a href="">PALAVRA CHAVE </a>
