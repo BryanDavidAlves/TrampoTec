@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(86, 171, 238);
+    background: radial-gradient(circle, rgba(86, 171, 238, 1) 0%, rgba(0, 27, 173, 1) 100%);
+    letter-spacing: 1px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+}
+
+fieldset {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    padding: 10px;
+    width: 350px;
+}
+
+legend {
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    text-align: center;
+    background-color: dodgerblue;
+    border-radius: 100%;
+}
+
+.inputUser {
+    background-color: rgb(207, 207, 207);
+    border: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+button {
+    margin-top: 20px;
+    color: #fff;
+    background-color: dodgerblue;
+    border: none;
+    width: 35%;
+    height: 38px;
+    border-radius: 20px;
+    font-size: 100%;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    width: 36%;
+    transition: 0.2s;
+
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+
+}
+
+.inputBox {
+    display: flex;
+    color: #fff;
+    background-color: rgb(207, 207, 207);
+    border-radius: 100px;
+    padding: 5px;
+    align-items: baseline;
+    width: 70%;
+}
+img{
+    width: 80%;
+}
