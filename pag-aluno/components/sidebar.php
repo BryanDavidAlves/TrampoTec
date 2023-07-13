@@ -12,7 +12,7 @@
             <li><a href="processos-seletivos.php"><i class="fa-solid fa-people-group"></i> Processo Seletivo</a></li>
             <li><a href="curriculo.php"><i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i> Curriculo</a></li>
             <li><a href="perfil.php"><i class="fa-solid fa-user" style="color: #ffffff;"></i> Perfil</a></li>
-            <li><a href="notificações.php"><i class="fa-solid fa-bell" style="color: #ffffff;"></i> Notificações</a></li>
+            <li><a href="notificacoes.php"><i class="fa-solid fa-bell" style="color: #ffffff;"></i> Notificações</a></li>
             <li><a href="contato.php"><i class="fa-solid fa-headset" style="color: #ffffff;"></i> Fale Conosco</a></li>
         </ul>
         <div class="end">
