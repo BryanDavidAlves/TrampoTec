@@ -1,0 +1,112 @@
+h1 {
+    color: #737373;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+
+}
+
+.nome {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    width: 20%;
+}
+
+.about1,
+.about2,
+.about3 {
+    padding: 10px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.about1 {
+    width: 20%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    height: auto;
+}
+
+.experiencia,
+.sobre-mim {
+    border-top: 3px solid #b6b6b6;
+    border-bottom: 3px solid #b6b6b6;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about1 img {
+    width: 60%;
+    border-radius: 10%;
+    border: 2px solid blue;
+}
+
+.perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+.about2 .one-bar {
+    display: flex;
+    margin: 5px 0px 5px 10px;
+    width: 100%;
+    align-items: baseline;
+}
+
+.about2 .two-bars {
+    display: flex;
+    margin-left: 9.5px;
+    width: 100%;
+}
+
+.about2 .bar {
+    display: flex;
+    align-items: baseline;
+    margin-right: 20px;
+}
+
+.about2 h2,
+.about3 h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.linha1 {
+    width: 3px;
+    height: auto;
+    background-color: blue;
+    margin-left: -70px;
+}
+
+.linha2 {
+    width: 3px;
+    height: auto;
+    background-color: #b6b6b6;
+    margin-left: 10px;
+}
+
+.perfil h3 {
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+.perfil h4 {
+    font-weight: 700;
+}
+
+.alterar {
+    color: #7c7b7b;
+    font-size: 1rem;
+}
