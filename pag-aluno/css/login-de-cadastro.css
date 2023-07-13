@@ -84,10 +84,10 @@ img {
     width: 60%;
 }
 
-.cadastro {
+.btn-cadastro {
     background-color: #fff;
     color: rgb(38, 30, 255);
-    margin-top: 10px;
+    
     border: none;
     width: 160px;
     height: 40px;
@@ -110,4 +110,14 @@ p {
 }
 .labelInput{
     margin-left: 10px;
+}
+.icone{
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
 }
