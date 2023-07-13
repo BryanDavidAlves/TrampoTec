@@ -7,28 +7,30 @@ body {
 
 .box {
     display: flex;
-    justify-content: center;
-    
+    align-items: center;
     width: 100%;
+    flex-direction: column;
+
 }
 
 fieldset {
+    margin-top: 10px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-radius: 90px;
-    padding: 10px;
     width: 350px;
+
 }
 
 legend {
-    border: 1px solid dodgerblue;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
-    background-color: dodgerblue;
+    background-color: rgb(0, 2, 121);
     border-radius: 100%;
+    font-size: 50px;
+    padding: 12px;
 }
 
 .inputUser {
@@ -40,10 +42,9 @@ legend {
     letter-spacing: 1px;
     border-radius: 10px;
     padding: 10px;
-
 }
 
-button {
+.btn {
     margin-top: 20px;
     color: #fff;
     background-color: dodgerblue;
@@ -55,7 +56,7 @@ button {
     margin-bottom: 20px;
 }
 
-button:hover {
+.btn:hover {
     cursor: pointer;
     width: 36%;
     transition: 0.2s;
@@ -78,6 +79,35 @@ button:hover {
     align-items: baseline;
     width: 70%;
 }
-img{
-    width: 80%;
+
+img {
+    width: 60%;
+}
+
+.cadastro {
+    background-color: #fff;
+    color: rgb(38, 30, 255);
+    margin-top: 10px;
+    border: none;
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 100%;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    width: 170px;
+    transition: 0.5s;
+
+}
+
+p {
+    margin-top: 30px;
+    color: #fff;
+    font-size: 12px;
+}
+.labelInput{
+    margin-left: 10px;
 }

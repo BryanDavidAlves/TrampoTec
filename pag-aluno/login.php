@@ -9,7 +9,7 @@
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
 
-    <link rel="stylesheet" href="../pag-aluno/css/login-cadastro.css">
+    <link rel="stylesheet" href="../pag-aluno/css/login-de-cadastro.css">
     <title>Processos Seletivos</title>
 </head>
 
@@ -26,7 +26,7 @@
                 <br><br>
                 <div class="inputBox">
                 <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                    <label for="email"> email:</label>
+                    <label class="labelInput" for="email"> email:</label>
                     <input type="text" id="email" name="email" class="inputUser" required>
 
                 </div>
@@ -44,6 +44,8 @@
                 </div>
             </fieldset>
         </form>
+        <p>Ainda nao tem cadastro?</p>
+        <a href="cadastro.php"><button class="cadastro">CADASTRAR</button></a>
     </div>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
