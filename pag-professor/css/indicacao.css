@@ -1,0 +1,138 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.titulo {
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.barra-pesquisa {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid royalblue;
+
+}
+
+.barra-pesquisa input {
+    border: none;
+}
+
+
+.estrutura-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-bottom: 15%;
+    gap: 5px;
+
+}
+
+.estrutura-card .card {
+    background-color: rgba(251, 251, 251, 0.655);
+    height: 30rem;
+    width: 18rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 1px solid rgb(116, 116, 116);
+
+}
+
+.estrutura-card .card .imagem-aluno {
+    width: 50%;
+    margin-top: 5%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+}
+
+.estrutura-card .card .imagem-aluno img {
+    width: 70%;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    height: 100%;
+}
+
+.estrutura-card .card .nome-aluno {
+    border-bottom: 1px solid gray;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.estrutura-card .card .alinhar-dados {
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.estrutura-card .card h4 {
+    color: gray;
+    font-size: 0.9rem;
+
+
+}
+
+.filtro span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.filtro .alinha-filtro .botao {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s all ease-in-out;
+    font-weight: 600;
+
+}
+
+.filtro .alinha-filtro .botao:hover {
+    background-color: rgba(29, 29, 245, 0.854);
+    transition: 0.5s all ease-in-out;
+    color: white;
+
+
+}
+
+.filtro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+}
+
+.filtro select {
+    background-color: white;
+    border: none;
+
+}
+
+.filtro .alinha-filtro {
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+
+}
