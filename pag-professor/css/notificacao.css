@@ -2,17 +2,20 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 
 }
 .titulo-notificacao{
     font-size: 1.4rem;
     font-weight: 700;
+    margin-top: 5%;
 
 }
 .barra-pesquisa {
     border-radius: 20px;
     padding: 10px;
     border: 1px solid royalblue;
+    margin-top: 5%;
 }
 
 .barra-pesquisa input {

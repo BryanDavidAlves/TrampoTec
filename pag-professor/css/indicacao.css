@@ -1,19 +1,23 @@
-main {
+.main{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
+    
 }
 
 .titulo {
     font-weight: 800;
     font-size: 1.4rem;
+    margin-top: 5%;
+
 }
 
 .barra-pesquisa {
     border-radius: 20px;
     padding: 10px;
     border: 1px solid royalblue;
+    margin-top: 5%;
+
 
 }
 
@@ -25,19 +29,19 @@ main {
 .estrutura-card {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 10%;
     margin-left: 15%;
     margin-bottom: 15%;
-    gap: 5px;
+    gap: 40px;
 
 }
 
 .estrutura-card .card {
     background-color: rgba(251, 251, 251, 0.655);
     height: 30rem;
-    width: 18rem;
+    width: 350px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -47,22 +51,37 @@ main {
 }
 
 .estrutura-card .card .imagem-aluno {
-    width: 50%;
+    width: 100%;
     margin-top: 5%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   height: 15%;
+  
     border: none;
 
 }
 
 .estrutura-card .card .imagem-aluno img {
-    width: 70%;
+    width: 22%;
     border-radius: 50%;
     border: none;
     object-fit: cover;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 133px;
+
+}
+ #align-icon{
+    float: right;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+    
+    
+   
+        
 }
 
 .estrutura-card .card .nome-aluno {
@@ -120,6 +139,8 @@ main {
     flex-direction: column;
     align-items: center;
     float: right;
+    margin-right: 5%;
+    margin-top: 10%;
 }
 
 .filtro select {
