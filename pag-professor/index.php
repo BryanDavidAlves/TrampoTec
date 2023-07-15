@@ -87,6 +87,7 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
             <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
+                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -104,6 +105,7 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
         <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
+                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -121,6 +123,25 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
             <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
+                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+            </div>
+            <h4 class="nome-aluno">Ryan Souza</h4>
+            <div class="alinhar-dados">
+            <h3 class="email">E-mail Institucional</h3>
+            <h4> ryan.souza44@etec.sp.gov.br</h4>
+            
+            <h3 class="codigo-etec">Código Etec</h3>
+            <h4>118</h4>
+
+            <h3 class="cursos">Cursos</h3>
+            <h4>Desenvolvimento de Sistemas</h4>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imagem-aluno">
+                <img src="img/ryan.jpg" alt="">
+                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">

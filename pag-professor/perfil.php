@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/perfill.css">
+    <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/side.css">
     <title>Document</title>
 </head>
@@ -26,6 +26,7 @@
         <div class="imagem-perfil">
             <img src="img/ryan.jpg" alt="Foto de perfil">
         </div>
+     
             
             <h3 class="informacao-usuario">Nome</h3>
             <h4 class="nome-usuario">Ryan</h4>
