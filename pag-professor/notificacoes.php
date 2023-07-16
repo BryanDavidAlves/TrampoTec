@@ -9,6 +9,7 @@ include('../pag-professor/components/sidebar.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/side.css">
     <link rel="stylesheet" href="css/notificacao.css">
+ 
     <title>Document</title>
 </head>
 <body>
