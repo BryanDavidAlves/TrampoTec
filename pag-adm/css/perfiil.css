@@ -1,0 +1,29 @@
+.perfil {
+    width: 100%;
+    
+}
+.body-perfil{
+    width: 60%;
+    margin-left: 23%;
+ 
+    
+}
+.body-perfil img{
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    object-fit: contain;
+    border: 1px solid #1d1751;
+}
+.body-perfil h2{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.body-perfil h3{
+    font-size: 1.3rem;
+}
+.body-perfil .perfil-info{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

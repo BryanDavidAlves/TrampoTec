@@ -1,4 +1,4 @@
-.professor {
+.empresa {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,8 +23,18 @@
 .part1 {
     display: flex;
     align-items: center;
-}
+    justify-content: space-around;
 
+}
+.part1 img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
 .header-card {
     display: block;
     margin-left: auto;
@@ -37,15 +47,15 @@
 .header-card h2{
     margin-bottom: 15px;
 }
-.info-professor{
+.info-empresa{
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 15px;
 }
-.info-professor h3{
+.info-empresa h3{
     font-size: 1.1rem;
 }
-.info-professor h5{
+.info-empresa h5{
     font-size: 0.8rem;
     margin-top: 5px;
 }
@@ -92,4 +102,4 @@
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-}
+}  

@@ -8,8 +8,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="components/component-do-adm.css">
-    <link rel="stylesheet" href="css/alunos.css">
+    <link rel="stylesheet" href="components/component-adm.css">
+    <link rel="stylesheet" href="css/aluno.css">
     <title>Document</title>
 </head>
 

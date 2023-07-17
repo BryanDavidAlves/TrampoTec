@@ -1,6 +1,6 @@
  <aside id="itens">
     <nav>
-    <img src="../img/trampotec-logo.png" alt="">
+    <img class="img-sidebar" src="../img/trampotec-logo.png" alt="">
         <ul>
             <div class="first">
 

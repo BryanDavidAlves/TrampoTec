@@ -7,8 +7,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="components/component-do-adm.css">
-    <link rel="stylesheet" href="css/empresas.css">
+    <link rel="stylesheet" href="components/component-adm.css">
+    <link rel="stylesheet" href="css/empresa.css">
 
     <title>Document</title>
 </head>
@@ -29,7 +29,7 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/trampotec-logo.png" alt="">
+                            <img src="img/empresa.jpg" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> TrampoTec</h2>
@@ -68,47 +68,7 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/trampotec-logo.png" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> TrampoTec</h2>
-
-                    </section>
-                    <div class="info-empresa">
-                        <h3>Departamento</h3>
-                        <h5>Tecnologia</h5>
-                    </div>
-                    <div class="info-empresa">
-                        <h3>Descrição</h3>
-                        <h5>Multinacional no ramo da tecnologia,
-                            atuando no mercado internacional</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Ano de origem</h3>
-                        <h5>Desde 1899</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Email</h3>
-                        <h5>email@email.com</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Telefone</h3>
-                        <h5>(11) 99999-9999</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>CNPJ</h3>
-                        <h5>17736727/288282.9228</h5>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/trampotec-logo.png" alt="">
+                            <img src="img/empresa.jpg" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> TrampoTec</h2>
@@ -148,7 +108,47 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/trampotec-logo.png" alt="">
+                            <img src="img/empresa.jpg" alt="">
+                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                        </div>
+                        <h2> TrampoTec</h2>
+
+                    </section>
+                    <div class="info-empresa">
+                        <h3>Departamento</h3>
+                        <h5>Tecnologia</h5>
+                    </div>
+                    <div class="info-empresa">
+                        <h3>Descrição</h3>
+                        <h5>Multinacional no ramo da tecnologia,
+                            atuando no mercado internacional</h5>
+                    </div>
+
+                    <div class="info-empresa">
+                        <h3>Ano de origem</h3>
+                        <h5>Desde 1899</h5>
+                    </div>
+
+                    <div class="info-empresa">
+                        <h3>Email</h3>
+                        <h5>email@email.com</h5>
+                    </div>
+
+                    <div class="info-empresa">
+                        <h3>Telefone</h3>
+                        <h5>(11) 99999-9999</h5>
+                    </div>
+
+                    <div class="info-empresa">
+                        <h3>CNPJ</h3>
+                        <h5>17736727/288282.9228</h5>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <section class="header-card">
+                        <div class="part1">
+                            <img src="img/empresa.jpg" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> TrampoTec</h2>

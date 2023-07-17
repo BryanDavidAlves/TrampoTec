@@ -23,6 +23,17 @@
 .part1 {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+
+}
+.part1 img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    border-radius: 100%;
+    border: 1px solid black;
 }
 
 .header-card {

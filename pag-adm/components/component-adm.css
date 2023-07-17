@@ -3,7 +3,7 @@ body {
     font-size: 100%;
 }
 
-img {
+.img-sidebar {
     width: 70%;
     display: block;
     margin-left: auto;
