@@ -14,10 +14,9 @@
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
-<header>
-    <h1>Dashboard </h1>
-    <input type="text" placeholder= " Pesquisar">
-</header>
+    <?php
+    include('../pag-adm/components/header.php');
+    ?>
 
     <section class="dashboard">
         <div class="align-card">
