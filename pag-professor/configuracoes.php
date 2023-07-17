@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/configuracao.css">
+    <link rel="stylesheet" href="css/configuracoes.css">
     <link rel="stylesheet" href="css/side.css">
 </head>
 <body>
@@ -24,23 +24,23 @@
     <section class="notificacoes">
         <ul>
     <li>
-    <a href=""><i class="fa-solid fa-circle-user fa-2xl" style="color: #919191;"></i></a> <p> Alterar E-mail</p>
+    <a href=""><i class="fa-solid fa-circle-user fa-2xl" style="color: #919191;"></i> <p> Alterar E-mail</p> <i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
     <li>
-    <a href=""><i class="fa-solid fa-circle-user fa-2xl" style="color: #919191;"></i></a> <p> Alterar Nome</p>
+    <a href=""><i class="fa-solid fa-circle-user fa-2xl" style="color: #919191;"></i>  <p> Alterar Nome</p> <i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
     <li>
-    <a href=""><i class="fa-solid fa-phone fa-2xl" style="color: #919191;"></i></a> <p> Alterar Telefone</p>
+    <a href=""><i class="fa-solid fa-phone fa-2xl" style="color: #919191;"></i> <p> Alterar Telefone</p><i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
     <li>
-    <a href=""><i class="fa-solid fa-lock fa-2xl" style="color: #919191;"></i></a> <p> Alterar Senha</p>
+    <a href=""><i class="fa-solid fa-lock fa-2xl" style="color: #919191;"></i> <p> Alterar Senha</p><i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
     <li>
-    <a href=""><i class="fa-solid fa-book fa-2xl" style="color: #919191;"></i></a> <p> Alterar Disciplinas</p>
+    <a href=""><i class="fa-solid fa-book fa-2xl" style="color: #919191;"></i> <p> Alterar Disciplinas</p><i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
     </ul>
