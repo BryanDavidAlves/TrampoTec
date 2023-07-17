@@ -15,7 +15,7 @@
         <div class="card">
             <span>Cadastro</span>
             <span>Professor</span>
-            <h5>Já tem uma conta? Faça seu login</h5>
+            <h5>Já tem uma conta? <a href="login.php">Faça seu login</a></h5>
             <form action=" login.php" method="POST">
                 <label for="">Nome</label>
                 <input type="text" name="nome" id="nome" placeholder="Seu Nome">
