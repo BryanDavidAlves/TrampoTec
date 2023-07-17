@@ -1,0 +1,94 @@
+.empresa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.align-card {
+    width: 60%;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-left:23%;
+}
+
+.card {
+    width: 270px;
+    padding: 20px;
+    border: 1px solid #b6b6b6;
+    border-radius: 30px;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+}
+
+.header-card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border-bottom: 1px solid #b6b6b6;
+    width: 90%;
+    text-align: center;
+}
+.header-card h2{
+    margin-bottom: 15px;
+}
+.info-empresa{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+.info-empresa h3{
+    font-size: 1.1rem;
+}
+.info-empresa h5{
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+ .filtro {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    float: right;
+    margin-right: 20px;
+    
+}
+
+ .filtro .align {
+    display: flex;
+}
+
+ .filtro .align .palavra-chave {
+    width: 110px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.palavra-box,select {
+    height: 25px;
+    margin-top: 5px;
+    border: none;
+    
+}
+
+ .filtro .align select,
+.palavra-box {
+    margin-left: 10px;
+}
+.titulo-filtro{
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+ .filtro .button{
+    background-color: #4d3cd1;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
