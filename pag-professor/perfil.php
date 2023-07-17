@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/perfill.css">
-    <link rel="stylesheet" href="css/side.css">
+    <link rel="stylesheet" href="css/per.css">
+    <link rel="stylesheet" href="css/sidebar.css">
     <title>Document</title>
 </head>
 <body>
@@ -16,8 +16,9 @@
     <span class="titulo-perfil">Perfil</span>
 
     <div class="barra-pesquisa">
+    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input  type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui" >
-            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+            
         </div>
     </main>
     

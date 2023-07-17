@@ -7,8 +7,8 @@ include('../pag-professor/components/sidebar.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/side.css">
-    <link rel="stylesheet" href="css/notificacao.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/notificacacoes.css">
  
     <title>Document</title>
 </head>
@@ -16,8 +16,9 @@ include('../pag-professor/components/sidebar.php');
     <main> 
         <span class="titulo-notificacao">Notificações</span>
         <div class="barra-pesquisa">
+        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input  type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui" >
-            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+            
         </div>
     </main>
 
