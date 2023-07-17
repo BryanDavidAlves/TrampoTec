@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
-    <link rel="stylesheet" href="css/side.css">
-    <link rel="stylesheet" href="css/indicacao.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/indicacar.css">
 </head>
 <body>
 <?php
@@ -18,8 +18,9 @@ include('../pag-professor/components/sidebar.php');
     <main class="main">
         <span class="titulo">Indicações para alunos</span>  
         <div class="barra-pesquisa">
+        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input  type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui" >
-            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+           
         </div>
         
     </main>

@@ -11,17 +11,27 @@ body{
     max-width: 15%;   
     padding: 10px;
     font-size: 1.1rem;
-
+    
 }
  
 
 .side-bar ul .coluna-um {
     text-decoration: none;
     list-style: none;
-    display: flex;
+    display: block;
     justify-content: center;
     flex-direction: column;
+    top:150px;
+    position: fixed;
     
+
+
+    
+    
+}
+.side-bar ul  li a i{
+    margin-right: 15px;
+
 }
 
 
@@ -38,7 +48,7 @@ body{
 .side-bar ul a{
     text-decoration: none;
     color: #4d3cd1;
-    padding: 10px;
+    padding: 10px; 
     width: 100%;
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
@@ -46,18 +56,21 @@ body{
     
     
 }
-.side-bar ul   li  {
+.side-bar ul .coluna-um    li  {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
+   
+    
+   
+    
+
     
 
 }
 
 .side-bar ul  .coluna-dois li {
-        
     position: relative;
     display: flex;
     align-items: center;
@@ -69,6 +82,7 @@ body{
     background-color: #4d3cd1;
     color: #fff;
     width: 100%;
+    
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
 }
@@ -77,15 +91,17 @@ body{
     text-decoration: none;
     color: #4d3cd1;
     transition: all 0.5s ease-in-out;
+   
 }
 .imagem-logo{
     width: 90%;
+
 }
 
 .imagem-logo img{
     width: 100%;
     object-fit: cover;
-    margin-top: 20%;
+    margin-top: 20%
 }
 
 @keyframes animar{

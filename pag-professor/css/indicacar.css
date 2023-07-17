@@ -1,7 +1,7 @@
 .main {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
 }
 
@@ -9,6 +9,7 @@
     font-weight: 800;
     font-size: 1.4rem;
     margin-top: 5%;
+    margin-left: 4%;
 
 }
 
@@ -17,12 +18,16 @@
     padding: 10px;
     border: 1px solid royalblue;
     margin-top: 5%;
+    width: 20%;
+    
+
 
 
 }
 
 .barra-pesquisa input {
     border: none;
+
 }
 
 
@@ -126,13 +131,15 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 
 }
 
 .filtro .botao:hover {
-    background-color: rgba(29, 29, 245, 0.854);
+    background-color: #4d3cd1;
     transition: 0.5s all ease-in-out;
     color: white;
+   
 
 
 }
