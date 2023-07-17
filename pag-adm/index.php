@@ -22,7 +22,7 @@
         <div class="align-card">
             <div class="card">
                 <div class="header-card">
-                    <h3>Empresas cadastradas</h3>
+                    <h3>Empresas cadastradas </h3>
                     <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
                 </div>
                 <h2>6</h2>
