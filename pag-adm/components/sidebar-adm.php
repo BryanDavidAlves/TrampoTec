@@ -1,4 +1,4 @@
-<aside id="itens">
+ <aside id="itens">
     <nav>
     <img src="../img/trampotec-logo.png" alt="">
         <ul>
