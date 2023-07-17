@@ -1,0 +1,29 @@
+.configuracoes {
+    width: 100%;
+    margin-top: 50px;
+}
+.configuracao{
+    width: 50%;
+    display: flex;
+    gap: 30px;
+    margin-left:25%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.configuracao .part1 i{
+    background-color:#cecece ;
+    color: #616161;
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius:100%;
+    margin-right: 10px;
+}
+.configuracao h2{
+    font-size: 1.2rem;
+
+}
+.part1{
+    display: flex;
+    align-items: baseline;
+}
