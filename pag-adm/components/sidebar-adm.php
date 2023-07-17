@@ -1,9 +1,9 @@
  <aside id="itens">
     <nav>
-    <img src="../pag-aluno/img/trampotec-logo.png" alt="">
+    <img src="../img/trampotec-logo.png" alt="">
         <ul>
             <div class="first">
-                <li> <a href=""><i class="fa-solid fa-table-cells-large" style="color: #3C86D;"></i> Dashboard</a></li>
+                <li><a href=""><i class="fa-solid fa-table-cells-large" style="color: #3C86D;"></i> Dashboard</a></li>
                 <li><a href="#"><i class="fa-solid fa-building" style="color: #3C86D;"></i> Empresas</a></li>
                 <li><a href="#"><i class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i> Professores</a></li>
                 <li><a href="#"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Alunos</a></li>
