@@ -16,7 +16,7 @@
     ?>
 
     <header>
-        <h1>Empresas</h1>
+        <h1>Notificações</h1>
         <input type="text" placeholder="Pesquisar">
     </header>
     <main>

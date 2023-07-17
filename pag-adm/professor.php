@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     ?>
 
     <header>
-        <h1>Empresas</h1>
+        <h1>Professores</h1>
         <input type="text" placeholder="Pesquisar">
     </header>
     <main>
