@@ -39,7 +39,7 @@
                     <h3>Alunos cadastrados</h3>
                     <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
                 </div>
-                <h2>6</h2>
+                <h2>6</h2> 
             </div>
         </div>
     </section>
