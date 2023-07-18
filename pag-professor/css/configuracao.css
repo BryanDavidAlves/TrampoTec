@@ -12,17 +12,17 @@ main {
 }
 
 .titulo-configuracoes {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.4rem;
-    margin-top: 5%;
-    margin-left: 3%;
+    margin-top: 3%;
+    margin-left: 5%;
 }
 
 .barra-pesquisa {
     border-radius: 20px;
     padding: 10px;
     border: 1px solid royalblue;
-    margin-top: 5%;
+    margin-top: 3%;
     width: 20%;
 
 }

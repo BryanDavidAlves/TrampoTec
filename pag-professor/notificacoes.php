@@ -7,8 +7,9 @@ include('../pag-professor/components/sidebar.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/notificacacoes.css">
+    <link rel="stylesheet" href="css/side.css">
+    <link rel="stylesheet" href="css/notificaca.css">
+    <link rel="stylesheet" href="css/geral.css">
  
     <title>Document</title>
 </head>

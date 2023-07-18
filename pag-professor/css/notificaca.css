@@ -1,15 +1,17 @@
+
 main {
     display: flex;
     align-items: center;
     justify-content: space-around;
     
+        
 
 }
 .titulo-notificacao{
     font-size: 1.4rem;
     font-weight: 700;
-    margin-top: 5%;
-    margin-left: 2%;
+    margin-top: 3%;
+    margin-left: 5%;
 
 }
 .barra-pesquisa {
@@ -17,7 +19,8 @@ main {
     padding: 10px;
     width: 20%;
     border: 1px solid royalblue;
-    margin-top: 5%;
+    margin-top: 3%;
+
 }
 
 .barra-pesquisa input {
@@ -52,7 +55,7 @@ main {
 }
 
 .notificacao .alinhar-notificacao .imagem-notificacao {
-    width: 10%;
+    width: 8%;
     height: auto;
     object-fit: cover;
     display: flex;
@@ -64,9 +67,10 @@ main {
 }
 
 .notificacao .alinhar-notificacao .imagem-notificacao img {
-    width: 50%;
+    width: 65%;
     height: 70px;
     object-fit: cover;
+    overflow: hidden;
     border-radius: 50%;
 
 

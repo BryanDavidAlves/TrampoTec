@@ -7,26 +7,23 @@ body{
 .side-bar {
     height: 100%;
     position: fixed;
-    background-color:aliceblue;
-    max-width: 15%;   
+    background-color:rgba(244, 247, 254, 0.659);
+    max-width: 16%;   
     padding: 10px;
     font-size: 1.1rem;
     
 }
  
 
-.side-bar ul .coluna-um {
-    text-decoration: none;
-    list-style: none;
-    display: block;
-    justify-content: center;
+.side-bar .coluna-um {
+    display: flex;
     flex-direction: column;
-    top:150px;
+    
+    justify-content: center;
+    top:125px;
+    bottom: auto;
     position: fixed;
-    
 
-
-    
     
 }
 .side-bar ul  li a i{
@@ -50,6 +47,7 @@ body{
     color: #4d3cd1;
     padding: 10px; 
     width: 100%;
+    font-weight:500;
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
 
@@ -62,12 +60,6 @@ body{
     justify-content: center;
     margin-top: 10px;
    
-    
-   
-    
-
-    
-
 }
 
 .side-bar ul  .coluna-dois li {
@@ -94,14 +86,21 @@ body{
    
 }
 .imagem-logo{
-    width: 90%;
+    width: auto;
+    display: flex;
+    align-items:center;
+    justify-content:center ;
+    position: relative;
+    bottom: 5px;
 
 }
 
 .imagem-logo img{
-    width: 100%;
+    width: 70%;
     object-fit: cover;
-    margin-top: 20%
+    margin-top:13%;
+    
+    
 }
 
 @keyframes animar{
