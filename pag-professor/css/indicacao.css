@@ -6,10 +6,10 @@
 }
 
 .titulo {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.4rem;
-    margin-top: 5%;
-    margin-left: 4%;
+    margin-top: 3%;
+    margin-left: 10%;
 
 }
 
@@ -17,7 +17,7 @@
     border-radius: 20px;
     padding: 10px;
     border: 1px solid royalblue;
-    margin-top: 5%;
+    margin-top: 3%;
     width: 20%;
     
 
@@ -36,7 +36,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 15%;
     margin-bottom: 15%;
     gap: 40px;
@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 30px;
     border: 1px solid rgb(116, 116, 116);
 
 }
@@ -97,7 +97,7 @@
     align-items: center;
     justify-content: center;
     color: black;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.1rem;
 }
 
@@ -150,6 +150,7 @@
     float: right;
     margin-right: 5%;
     margin-top: 10%;
+    
 }
 
 .filtro select {
@@ -160,9 +161,12 @@
 
 .filtro .alinha-filtro {
 
-    
+ 
     align-items: center;
     display: flex;
     gap: 40px;
 
+}
+.filtro .alinha-filtro h3{
+    font-weight: 500;
 }
