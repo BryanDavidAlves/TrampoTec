@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>Cadastro</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -16,8 +16,8 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1>Cadastro Administrativo</h1>
-                <a class="link-login" href="login.php">Ja tem uma conta? Faça seu login</a>
+                <h1 class="title-login">Login Administrativo</h1>
+
                 <form action="">
                     <div class="item-form">
                         <label for="nome">NOME</label>
@@ -25,18 +25,7 @@
                             <input type="text" name="name" id="nome">
                         </div>
                     </div>
-                    <div class="item-form">
-                        <label for="usuario">USUÁRIO</label>
-                        <div class="div-input">
-                            <input type="text" name="usuario" id="usuario">
-                        </div>
-                    </div>
-                    <div class="item-form">
-                        <label for="telefone">TELEFONE</label>
-                        <div class="div-input">
-                            <input type="text" name="telefone" id="telefone">
-                        </div>
-                    </div>
+
                     <div class="item-form">
                         <label for="senha">SENHA</label>
                         <div class="div-input">
@@ -44,7 +33,15 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
-                    <input class="botao" type="submit" value="Cadastrar">
+                    <input class="botao" type="submit" value="Entrar">
+                    <div class="remember">
+                        <div>
+                            <input id="check" type="checkbox">
+                            <label for="check"> Lembre de mim</label>
+                        </div>
+                        <a href="relembrar-senha.php">Esqueceu a Senha?</a>
+                    </div>
+                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
                 </form>
             </div>
         </section>
