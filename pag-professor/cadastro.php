@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/cadastros.css">
-    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="css/loginn.css">
+    <title>Cadastro</title>
 </head>
+
 <body>
-    <div class=imagem-cima>
-        <img src="img/imagemfundocima.png" alt="">
-    </div>
+    <main>
+        <img class="cima" src="img/imagemfundocima.png" alt="">
+        <img class="baixo" src="img/imagemfundobaixo.png" alt="">
 
-    <section class="card-container">
-        <div class="card">
-            <span>Cadastro</span>
-            <span>Professor</span>
-            <h5>Já tem uma conta? <a href="login.php">Faça seu login</a></h5>
-            <form action=" login.php" method="POST">
-                <label for="">Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Seu Nome">
-                <br> <br>
-                <label for="">Email Institucional</label>
-                <input type="text" name="email" id="email" placeholder="Seu Email Institucional">
-                <br> <br>
-                <label for="">Telefone</label>
-                <input type="number" name="telefone" id="telefone" placeholder="Seu Telefone">
-                <br> <br>
-                <label for="">Senha</label>
-                <input type="password" name="senha-cadastro" id="senha-cadastro" placeholder="Sua Senha">
-                <br> <br>
-                <input type="submit" class="botao" value="Cadastrar">
-            </form>
-        </div>
-    </section>
-
-    <div class=imagem-baixo>
-        <img src="img/imagemfundobaixo.png" alt="">
-    </div>
-    
+        <section class="login">
+            <div class="box-formulario">
+                <h1>Cadastro Professor</h1>
+                <a class="link-login" href="login.php">Ja tem uma conta? Faça seu login</a>
+                <form action="">
+                    <div class="item-form">
+                        <label for="nome-professor">NOME</label>
+                        <div class="div-input">
+                            <input type="text" name="nome-professor" id="nome-professor">
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <label for="email-institucional">EMAIL INSTITUCIONAL</label>
+                        <div class="div-input">
+                            <input type="text" name="email-institucional" id="email-institucional">
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <label for="telefone-professor">TELEFONE</label>
+                        <div class="div-input">
+                            <input type="text" name="telefone-professor" id="telefone-professor">
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <label for="senha-professor">SENHA</label>
+                        <div class="div-input">
+                            <input type="text" name="senha-professor" id="senha-professor">
+                            <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
+                        </div>
+                    </div>
+                    <input class="botao" type="submit" value="Cadastrar">
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
