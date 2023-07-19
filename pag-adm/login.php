@@ -41,6 +41,7 @@
                         </div>
                         <a href="relembrar-senha.php">Esqueceu a Senha?</a>
                     </div>
+                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
                 </form>
             </div>
         </section>
