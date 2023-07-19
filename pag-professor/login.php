@@ -16,7 +16,7 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1 class="title-login">Login Administrativo</h1>
+                <h1 class="title-login">Login Professor</h1>
 
                 <form action="">
                     <div class="item-form">
