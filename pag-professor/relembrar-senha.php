@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="css/loginn.css">
-    <title>Login</title>
+    <title>Relembrar Senha</title>
 </head>
 
 <body>
@@ -16,32 +16,24 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1 class="title-login">Login Administrativo</h1>
+                <h1 class="title-login">Relembrar Senha</h1>
 
                 <form action="">
                     <div class="item-form">
-                        <label for="nome-professor">NOME</label>
+                        <label for="senha-professor">SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="nome-professor" id="nome-professor">
+                            <input type="text" name="senha-professor" id="nome">
                         </div>
                     </div>
 
                     <div class="item-form">
-                        <label for="senha-professor">SENHA</label>
+                        <label for="novaSenha-professor">NOVA SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="senha-professor" id="senha-professor">
+                            <input type="text" name="novaSenha-professor" id="novaSenha-professor">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
-                    <input class="botao" type="submit" value="Entrar">
-                    <div class="remember">
-                        <div>
-                            <input id="check" type="checkbox">
-                            <label for="check"> Lembre de mim</label>
-                        </div>
-                        <a href="relembrar-senha.php">Esqueceu a Senha?</a>
-                    </div>
-                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
+                    <input class="botao" type="submit" value="Redefinir" style="margin-bottom:30px;">
                 </form>
             </div>
         </section>
