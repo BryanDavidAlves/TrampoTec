@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<link rel='stylesheet' href='../pag-empresa/css/style.css'>
+<link rel="stylesheet" href="../reset.css">
+<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
+<link rel='stylesheet' href='../pag-empresa/css/fale-conoscos.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -15,29 +17,22 @@
 
 <main class="main">
 
-<a href="./configuracoes.php"><i class="fa-solid fa-arrow-left fa-2xl"></i> fale conosco</a>
+<span class="container-icon">
+     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-arrow-left"></i></a> <span> Fale-Conosco </span> 
+</span>
 
 
-<div>
-. entre em contato
+<p class="titulo-config"> * Entra em contato para esclarecimento</p> <br>
 
-<form>
+<form class="textos">
 
-<textarea name="" id="" cols="30" rows="10"></textarea>
+<textarea class="caixa-texto" name="" id="" cols="30" rows="50"></textarea>
 
-<button><i class="fa-solid fa-arrow-right"></i> </button>
+<button class="botao-fale"> <i class="icon-enviar fa-solid fa-envelope-circle-check"></i> </button>
 
-</form>
-<div>
+</form>      
 
-
-
-
-</div>
-      
-
-        
-  
+    
  </main>
 
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>

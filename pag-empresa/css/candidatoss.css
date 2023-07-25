@@ -1,0 +1,85 @@
+body{
+    background-color:#ffffff; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+main {
+    margin-top: 125px;
+    margin-left:200px; /* Same as the width of the sidenav */
+    margin-right:200px;
+    overflow:hidden;
+} 
+
+.cards-candidatos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    margin-top: 20px;
+    width:400px;
+    height: 100px;
+    border: none;
+    border-radius: 45px;
+    background-color: rgba(216, 216, 216, 0.73);
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .card-corpo{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .card-itens{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  
+  }
+  
+    
+  .card .imagens{
+    display: flex;
+    align-items: center;
+  }
+  
+  .imagem-candidato{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-right: 10px;
+  }
+  
+  .nome-empresa{
+    font-size: 15px;
+    color: rgb(117, 117, 117);
+  }
+  
+  .nome-vaga{
+    font-size: 17px;
+    text-decoration: solid;
+  }
+  
+  .informacao-vaga{
+    font-size: 14px;
+
+  }
+  
+  .tres-pontinhos{
+    display: block;
+    margin-top: 3%;
+    margin-bottom: auto;
+  
+  }
+  
+  .tres-pontinhos a{
+  color: gray;
+  
+  }
+  
+  
