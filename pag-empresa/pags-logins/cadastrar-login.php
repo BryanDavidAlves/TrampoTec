@@ -22,14 +22,15 @@
                 <div class="linha"> </div>
 
                 <div class="card-itens">
-                    <div>
-                        <p class="titulo-um"> Bem vindo!! Crie sua conta</p><br>
-                        <p class="titulo-dois"> ja tem uma conta faça ? seu login</p>
-                    </div>
-
                     <div class="itens-agendar">
+                        <form> 
                         <div>
-                        <form>
+                        <div>
+                            <p class="titulo-agendar"> SENHA </p>   
+                                <div class="barra-agendar">
+                                    <input type="text"  placeholder="">
+                                </div> 
+                        </div>
                             <p class="titulo-agendar"> NOME </p>   
                                 <div class="barra-agendar">
                                     <input type="text" placeholder=".">

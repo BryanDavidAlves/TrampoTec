@@ -22,43 +22,34 @@
                 <div class="linha"> </div>
 
                 <div class="card-itens">
-                    <div>
-                        <p class="titulo-um"> Bem vindo!! Crie sua conta</p><br>
-                        <p class="titulo-dois"> ja tem uma conta faça ? seu login</p>
-                    </div>
+                <div class="container">
 
+                    <div class="textos-cards">
+                        <p class="titulo-um"> Redefinir senha</p>
+                    </div>
+        
                     <div class="itens-agendar">
                         <div>
                         <form>
-                            <p class="titulo-agendar"> NOME </p>   
+                            <p class="titulo-agendar"> NOVA SENHA</p>   
                                 <div class="barra-agendar">
                                     <input type="text" placeholder=".">
                                 </div> 
                         </div>
+                 
                         <div>
-                            <p class="titulo-agendar"> EMAIL </p>   
-                                <div class="barra-agendar">
-                                    <input type="text"  placeholder="">
-                                </div> 
-                        </div>
-                        <div>
-                            <p class="titulo-agendar"> SENHA </p>   
+                            <p class="titulo-agendar"> CONFIRMAR SENHA </p>   
                                 <div class="barra-agendar">
                                     <input type="text"  placeholder="">
                                 </div> 
                         </div>
 
-                        <div>
-                            <p class="titulo-agendar"> CPNJ  </p>   
-                                <div class="barra-agendar">
-                                    <input type="text"  placeholder="">
-                                </div> 
-                        </div>
+
                         </div>
                         <button class="botao-agendar"><a href="./cadastrar-login.php">PROXIMO</a></button>
 
-</form>
-                    
+                    </form>
+                    </div> 
                 </div>
     </div>
 
