@@ -1,24 +1,23 @@
 .nav-fundo {
-    display: flex;
-    justify-content: center;
-    
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-controle{
   background:rgb(255, 255, 255);
-display: flex;
-justify-content: space-around;
-align-items: center;
-width: 100%;
-height: 120px;
-position: fixed;
-border-block-end: #a3a3a3 5px solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  border-block-end: #a3a3a3 5px solid;
 }
 
 .navbar-controle li{
-display: flex;
-flex-direction: row-reverse;
-justify-content: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
 
 li a{
@@ -28,9 +27,9 @@ li a{
 }
 
 li a:hover{
-    background-color: rgba(71, 71, 71, 0.308);
-    padding: 10px 15px;
-    border-radius: 25px;
+  background-color: rgba(71, 71, 71, 0.308);
+  padding: 10px 15px;
+  border-radius: 25px;
 }
 ul .logo{
   height:60px;
@@ -46,6 +45,7 @@ ul .logo{
   border-radius:100px;
   height:80px;
   width: 80px;
+  border: 1px solid gray;
 }
 
 .seta-foto{
@@ -54,37 +54,44 @@ ul .logo{
 }
 
 .sidenav {
-height: 100%;
-width: 200px;
-position: fixed;
-top: 125px;
-left: 0;
-background-color: #ffffff;
-display: flex;
-flex-direction: column;
-align-items: left;
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 125px;
+  left: 0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidenav a {
-padding: 20px 5px 5px 25px;
-text-decoration: none;
-font-size: 15px;
-color: #000000;
-display: block;
+  margin: 20px 5px 5px 25px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #000000;
+  display: block;
 }
 
-.sidenav a:last-child{
-  overflow:hidden;
-  display: block;
-  margin: auto auto 80% 10%;
-  width: 84px;
-  height: 24px;
+.sidenav .itens-side:hover{
+  transition: 150ms;
+  border-radius: 40px;
+  padding:6px;
+  background: rgba(71, 71, 71, 0.308);
+}
 
-  border: none;
-  border-radius: 50px;
-  overflow-x: hidden;
-  background-color: rgb(29, 29, 124);
-  color: white;
+.botao-off{
+  display: block;
+  margin: auto auto 80% 0%;
+}
+
+.botao-off a{
+  font-size: 13px;
+  width: auto;
+  height: auto;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  background-color: rgb(86, 86, 195);
+  color: rgb(255, 253, 253);
 }
 
 
@@ -98,7 +105,6 @@ display: block;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-
   }
 
   .itens{

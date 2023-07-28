@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../reset.css">
-    <link rel='stylesheet' href='../../pag-empresa/css/criar-logins.css'>
+    <link rel='stylesheet' href='../../pag-empresa/css/login.css'>
     <title>TrampoTec</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <div class="card-itens">
                     <div>
                         <p class="titulo-um"> Bem vindo!! Crie sua conta</p><br>
-                        <p class="titulo-dois"> ja tem uma conta faça ? seu login</p>
+                        <p class="titulo-dois"> ja tem uma conta faça ? seu login</p><br>
                     </div>
 
                     <div class="itens-agendar">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../reset.css">
-    <link rel='stylesheet' href='../../pag-empresa/css/criar-logins.css'>
+    <link rel='stylesheet' href='../../pag-empresa/css/login.css'>
     <title>TrampoTec</title>
 </head>
 <body>
@@ -46,8 +46,10 @@
 
 
                             </div>
-                            <button class="botao-agendar"><a href="./cadastrar-login.php">PROXIMO</a></button>
-
+                            <div  class="link-senha">
+                            <button class="botao-agendar"><a href="./cadastrar-login.php">LOGAR</a></button>
+                           <br><a> esqueceu a senha ? </a> </div>
+                           
                     </form>
                     </div>
                 </div>
