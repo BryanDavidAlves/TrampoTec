@@ -40,7 +40,7 @@
                             <div>
                                 <p class="titulo-agendar"> SENHA </p>   
                                     <div class="barra-agendar">
-                                        <input type="text"  placeholder="">
+                                        <input type="password"  placeholder="">
                                     </div> 
                             </div>
 

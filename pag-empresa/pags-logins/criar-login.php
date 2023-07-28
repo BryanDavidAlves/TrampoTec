@@ -15,7 +15,7 @@
         
                 <div class="imagens">
                    <div> <img class="logo" src="../../img/trampotec-logo.png" alt="foto do aluno"></div>
-                   <div> <img class="imagem-ilustra" src="../../img/bryan.jpg" alt="foto do aluno"></div>
+                   <div> <img class="imagem-ilustra" src="../../img/empresafundo.jpg" alt="foto do aluno"></div>
                     <div> </div>
                 </div>
 
@@ -44,7 +44,7 @@
                         <div>
                             <p class="titulo-agendar"> SENHA </p>   
                                 <div class="barra-agendar">
-                                    <input type="text"  placeholder="">
+                                    <input type="password"  placeholder="">
                                 </div> 
                         </div>
 
