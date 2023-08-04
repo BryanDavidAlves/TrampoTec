@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentes.css'>
-<link rel='stylesheet' href='../pag-empresa/css/editarar.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
+<link rel='stylesheet' href='../pag-empresa/css/edita.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
             <div class="card-corpo">
                 <div class="card-itens">
                     <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
+                        <p class="nome-config"> Foto de perfil</p>
                  
                 </div>
             </div>  
@@ -43,8 +43,8 @@
 <a class="card" href="">
             <div class="card-corpo">
                 <div class="card-itens">
-                <i class="icon-config fa-solid fa-moon"></i>
-                        <p class="nome-config"> Modo Escuro</p>
+                <i class="icon-config fa-solid fa-question"></i>
+                        <p class="nome-config"> Nome </p>
                  
                 </div>
             </div>  
@@ -56,8 +56,8 @@
 <a class="card" href="fale-conosco.php">
             <div class="card-corpo">
                 <div class="card-itens">
-                <i class="icon-config fa-solid fa-question"></i>
-                        <p class="nome-config"> Fale Conosco</p>
+                <i class="icon-config fa-solid fa-exclamation"></i>
+                        <p class="nome-config"> Bio</p>
                  
                 </div>
             </div>  
@@ -69,8 +69,8 @@
 <a class="card" href="privacidade.php">
             <div class="card-corpo">
                 <div class="card-itens">
-                <i class="icon-config fa-solid fa-lock"></i>
-                        <p class="nome-config"> Privacidade</p>
+                <i class="icon-config fa-solid fa-pen"></i>
+                        <p class="nome-config"> Descricao</p>
                  
                 </div>
             </div>  
@@ -82,8 +82,21 @@
 <a class="card" href="editar.php">
             <div class="card-corpo">
                 <div class="card-itens">
-                    <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
+                    <i class="icon-config fa-regular fa-file"></i>
+                        <p class="nome-config"> CPNJ</p>
+                 
+                </div>
+            </div>  
+                <div class="tres-pontinhos">
+                        > 
+                </div>
+</a>    
+
+<a class="card" href="../pag-empresa/pags-logins/redefinir-senha.php">
+            <div class="card-corpo">
+                <div class="card-itens">
+                    <i class="icon-config fa-solid fa-lock"></i>
+                        <p class="nome-config"> Senha</p>
                  
                 </div>
             </div>  
@@ -95,21 +108,8 @@
 <a class="card" href="editar.php">
             <div class="card-corpo">
                 <div class="card-itens">
-                    <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
-                 
-                </div>
-            </div>  
-                <div class="tres-pontinhos">
-                        > 
-                </div>
-</a>    
-
-<a class="card" href="editar.php">
-            <div class="card-corpo">
-                <div class="card-itens">
-                    <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
+                    <i class="icon-config fa-solid fa-location-dot"></i>
+                        <p class="nome-config"> Endereco </p>
                  
                 </div>
             </div>  
@@ -123,8 +123,8 @@
 <a class="card" href="editar.php">
             <div class="card-corpo">
                 <div class="card-itens">
-                    <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
+                    <i class="icon-config fa-solid fa-delete-left"></i>
+                        <p class="nome-config"> Exclusao de Conta</p>
                  
                 </div>
             </div>  

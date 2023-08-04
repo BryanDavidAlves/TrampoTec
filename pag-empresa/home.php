@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentes.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
 <link rel='stylesheet' href='../pag-empresa/css/home.css'>
 <title>TrampoTec</title>
 </head>
@@ -25,12 +25,12 @@
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-aluno" src="../img/bryan.jpg" alt="foto do aluno">
+                    <img class="imagem-aluno" src="../img/aluno.jpg" alt="foto do aluno">
                 </div>
                 <div class="card-itens">
-                    <p class="nome-aluno"> Braian David</p>
+                    <p class="nome-aluno"> Jooao Enzo</p>
                     <p class="curso-aluno"> Desenvolvimeto de sistemas</p>
-                    <p class="informacao-aluno"> maromba - saudades da ex</p>
+                    <p class="informacao-aluno"> 18 anos - aprendendo JS</p>
                 </div>
             </div>
             <div class="tres-pontinhos">
