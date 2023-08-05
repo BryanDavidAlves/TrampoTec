@@ -29,7 +29,7 @@
                     <div class="item-form">
                         <label for="senha-professor">SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="senha-professor" id="senha-professor">
+                            <input type="password" name="senha-professor" id="senha-professor">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
