@@ -18,7 +18,7 @@
             <div class="box-formulario">
                 <h1 class="title-login">Login Professor</h1>
 
-                <form action="">
+                <form action="index.php">
                     <div class="item-form">
                         <label for="nome-professor">NOME</label>
                         <div class="div-input">

@@ -18,7 +18,7 @@
             <div class="box-formulario">
                 <h1>Cadastro Professor</h1>
                 <a class="link-login" href="login.php">Ja tem uma conta? Faça seu login</a>
-                <form action="">
+                <form action="login.php">
                     <div class="item-form">
                         <label for="nome-professor">NOME</label>
                         <div class="div-input">

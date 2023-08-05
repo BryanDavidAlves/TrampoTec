@@ -18,7 +18,7 @@
             <div class="box-formulario">
                 <h1 class="title-login">Relembrar Senha</h1>
 
-                <form action="">
+                <form action="login.php">
                     <div class="item-form">
                         <label for="senha-professor">SENHA</label>
                         <div class="div-input">
