@@ -124,9 +124,18 @@ ul .logo{
   }
   
   
-.barra-pesquisa input{
+.barra-pesquisa{
   border-radius: 15px;
   height: 30px;
-  border: 1px solid rgb(0, 0, 0);
-  text-align: center;
+  border: 1px solid rgb(71, 71, 71);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
+.barra-pesquisa input{
+  background-color: white;
+ border: none;
+  width: 70%;
+}
+.barra-pesquisa input:focus{outline: none;}

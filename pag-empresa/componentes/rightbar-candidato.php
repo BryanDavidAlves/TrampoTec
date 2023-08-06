@@ -6,5 +6,6 @@
     <div class="itens"><a href=""> CANDIDATOS </a> <span> V </span> </div>
             <div class="barra-pesquisa">
                 <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 </div>
