@@ -40,7 +40,7 @@
                     <div class="item-form">
                         <label for="senha">SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="senha" id="senha">
+                            <input type="password" name="senha" id="senha">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>

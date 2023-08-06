@@ -22,14 +22,14 @@
                     <div class="item-form">
                         <label for="nome">SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="senha" id="nome">
+                            <input type="password" name="senha" id="nome">
                         </div>
                     </div>
 
                     <div class="item-form">
                         <label for="senha">NOVA SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="novaSenha" id="senha">
+                            <input type="password" name="novaSenha" id="senha">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
