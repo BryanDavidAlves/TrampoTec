@@ -18,7 +18,7 @@
             <div class="box-formulario">
                 <h1>Cadastro Professor</h1>
                 <a class="link-login" href="login.php">Ja tem uma conta? Faça seu login</a>
-                <form action="">
+                <form action="login.php">
                     <div class="item-form">
                         <label for="nome-professor">NOME</label>
                         <div class="div-input">
@@ -40,7 +40,7 @@
                     <div class="item-form">
                         <label for="senha-professor">SENHA</label>
                         <div class="div-input">
-                            <input type="text" name="senha-professor" id="senha-professor">
+                            <input type="password" name="senha-professor" id="senha-professor">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
