@@ -1,0 +1,30 @@
+.sobre{
+    background-color:rgb(6, 6, 55);;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    
+}
+.sobre .align-imagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.sobre .alinhar-texto{
+    text-align: start;
+    width: auto;
+    width: 100%;
+}
+
+.sobre .alinhar-texto h4{
+    width: 460px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
+    text-align: start;
+    font-weight:200;
+    margin-top: 150px;
+  
+}
