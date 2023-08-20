@@ -20,20 +20,19 @@ main {
 }
 
 .icon-add{
- color: rgb(49, 49, 236);
+  color: rgb(69, 69, 208);
  display: flex;
-
 font-size: 45px;
 }
 
 .link-add {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-   }
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+ }
 
 .link-add span {
-    font-size: 20px; 
-   }
+  font-size: 20px; 
+ }
 
    .titulo-config{
     font-size: 20px;
@@ -69,5 +68,8 @@ font-size: 45px;
   
 
   .icon-enviar{
-    font-size: 30px;
+    font-size: 25px;
+    padding: 3px;
   }
+
+ 

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
-<link rel='stylesheet' href='../pag-empresa/css/edita.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
+<link rel='stylesheet' href='../pag-empresa/css/editar.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -18,11 +18,11 @@
 <main class="main">
 
 <span class="container-icon">
-     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-arrow-left"></i> <span> Conta</span> 
+     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> <span> Conta</span> 
 </span>
 
 
-<p class="titulo-config"> * Editar</p>
+<p class="titulo-config"> • Editar</p>
 
 <section class="cards-alunos">
 
@@ -35,7 +35,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                    <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a>    
 
@@ -49,7 +49,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a> 
 
@@ -62,7 +62,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a> 
 
@@ -75,7 +75,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a> 
 
@@ -88,7 +88,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a>    
 
@@ -101,7 +101,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a>    
 
@@ -114,11 +114,11 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a>    
 
-<p class="detalhe-config"> * Exclusao</p>
+<p class="detalhe-config"> • Exclusao</p>
 
 <a class="card" href="editar.php">
             <div class="card-corpo">
@@ -129,7 +129,7 @@
                 </div>
             </div>  
                 <div class="tres-pontinhos">
-                        > 
+                          <i class="fa-solid fa-angle-right"></i>
                 </div>
 </a>    
 
