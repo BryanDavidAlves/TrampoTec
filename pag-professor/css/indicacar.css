@@ -1,0 +1,357 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.titulo {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 3%;
+    margin-left: 10%;
+
+}
+
+.barra-pesquisa {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid royalblue;
+    margin-top: 3%;
+    width: 20%;
+
+
+
+
+}
+
+.barra-pesquisa input {
+    border: none;
+
+}
+.barra-pesquisa input:focus {
+    outline: none;
+
+}
+
+
+.estrutura-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-bottom: 15%;
+    gap: 40px;
+
+}
+
+.estrutura-card .card {
+    background-color: rgba(251, 251, 251, 0.655);
+    height: 30rem;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 1px solid rgb(116, 116, 116);
+
+}
+
+.estrutura-card .card .imagem-aluno {
+    width: 100%;
+    margin-top: 5%;
+    height: 15%;
+
+    border: none;
+
+}
+
+.estrutura-card .card .imagem-aluno img {
+    width: 22%;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 133px;
+
+}
+
+#align-icon {
+    float: right;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+    text-decoration: none;
+
+
+
+
+}
+
+#align-icon select {
+    background-color: rgb(165, 100, 14);
+    overflow: hidden;
+
+}
+
+.estrutura-card .card .nome-aluno {
+    border-bottom: 1px solid gray;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.estrutura-card .card .alinhar-dados {
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.estrutura-card .card h4 {
+    color: gray;
+    font-size: 0.9rem;
+
+
+}
+
+.filtro span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.filtro .botao {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s all ease-in-out;
+    font-weight: 600;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+}
+
+.filtro .botao:hover {
+    background-color: #4d3cd1;
+    transition: 0.5s all ease-in-out;
+    color: white;
+
+
+
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right: 5%;
+    margin-top: 10%;
+
+}
+
+.filtro select {
+    background-color: white;
+    border: none;
+
+}
+
+.filtro .alinha-filtro {
+
+
+    align-items: center;
+    display: flex;
+    gap: 40px;
+
+}
+
+.filtro .alinha-filtro h3 {
+    font-weight: 500;
+}
+
+.modal {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: row;
+    margin-left: 200px;
+    width: 80%;
+    
+    z-index: 5;
+    position: relative;
+    margin-top: -70px;
+
+
+}
+.modal2 {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: row;
+    margin-left: 200px;
+    width: 80%;
+    z-index: 1;
+    position: relative;
+    margin-top: -70px;
+
+
+}
+.modal3 {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: row;
+    margin-left: 200px;
+
+    z-index: 1;
+    width: 80%;
+    position: relative;
+    margin-top: -70px;
+
+
+}
+.modal4 {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: row;
+    margin-left: 200px;
+    z-index: 1;
+    width: 80%;
+    position: relative;
+    margin-top: -70px;
+}
+
+.card-modal a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+
+
+}
+.card-modal p{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+.card-modal .linha{
+    border-top: 2px solid gray;
+}
+
+.card-modal {
+    background-color: #ffffff;
+    z-index: 5;
+    padding: 10px;
+    border: 2px solid gray;
+    margin-left: 130px;
+    border-radius: 15px;
+    display: flex;
+    gap: 5px;
+    
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-indicacao {
+    display: none;
+   
+   z-index: 5;
+  
+    position: fixed;
+    height: 100%;
+    width: 800px;
+
+    margin-top: -200px;
+    
+
+}
+.card-indicacao .title-indicacao{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-indicacao .align-card-indicacao{
+    display: flex; 
+    border: 2px solid gray;
+    border-radius: 30px;
+   
+    flex-direction: column;
+    position: relative;
+    height: 450px;
+    width: 490px;
+    background-color: white;
+    margin-left: 120px;
+    margin-top: 100px;
+}
+.card-indicacao .align-card-indicacao form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    gap: 5px;
+    
+}
+.card-indicacao .align-card-indicacao form label{
+    font-weight: 700;
+}
+.card-indicacao .align-card-indicacao form input{
+    width: 75%;
+    border-radius: 30px;
+    border:  2px solid gray;
+    padding: 13px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.card-indicacao .align-card-indicacao form input:focus{
+    outline: none;
+}
+.card-indicacao .align-card-indicacao form textarea:focus{
+    outline: none;
+}
+.card-indicacao .align-card-indicacao form textarea{
+    width: 85%;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-indicacao .align-card-indicacao  .botao-indicacao{
+    padding: 14px;
+    background-color:#555cb3;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    font-size: 0.9rem;
+    transition: 0.5s all ease-in-out;
+    border: none;
+    font-weight: 500;
+    
+    
+}
+.card-indicacao .align-card-indicacao  .botao-indicacao:hover{
+    transition: 0.5s all ease-in-out;
+    background-color: #383e93;
+}
+.card-indicacao .align-card-indicacao .align-botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}

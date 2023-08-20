@@ -9,7 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
     <link rel="stylesheet" href="css/side.css">
-    <link rel="stylesheet" href="css/indicacao.css">
+    <link rel="stylesheet" href="css/indicacar.css">
     <link rel="stylesheet" href="css/geral.css">
 </head>
 <body>
@@ -89,7 +89,29 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
             <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
-                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                <a id="align-icon" href="#" onclick="abrir()" > <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
+                    <div class="modal" id="abrir-modal">
+                        <div class="card-modal" id="card-modal">
+                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                        </div>
+                    </div>  
+                        <div  class="card-indicacao" id="abrir-indicacao">
+                            <div class="align-card-indicacao">
+                                <h5 class="title-indicacao">Carta de Indicação</h5>
+                                    <form class="" action="index.php">
+                                        <label for="destinatario">Destinatario</label>
+                                        <input type="email" name="email-professor" id="" >
+                                        <br>
+                                        <label for="mensagem">Mensagem</label>
+                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+                                        <div class="align-botao">
+                                            <input type="submit" value="Enviar" class="botao-indicacao">
+                                        </div> 
+                                    </form>
+                            </div>
+                        </div>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -107,7 +129,29 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
         <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
-                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                <a id="align-icon" href="#" onclick="abrir2()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
+                    <div class="modal2" id="abrir-modal2">
+                        <div class="card-modal" id="card-modal">
+                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                        </div>
+                    </div>  
+                        <div  class="card-indicacao" id="abrir-indicacao">
+                            <div class="align-card-indicacao">
+                                <h5 class="title-indicacao">Carta de Indicação</h5>
+                                    <form class="" action="index.php">
+                                        <label for="destinatario">Destinatario</label>
+                                        <input type="email" name="email-professor" id="" >
+                                        <br>
+                                        <label for="mensagem">Mensagem</label>
+                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+                                        <div class="align-botao">
+                                            <input type="submit" value="Enviar" class="botao-indicacao">
+                                        </div> 
+                                    </form>
+                            </div>
+                        </div>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -125,7 +169,29 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
             <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
-                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                <a id="align-icon" href="#card-modal" onclick="abrir3()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
+                    <div class="modal3" id="abrir-modal3">
+                        <div class="card-modal" id="card-modal">
+                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                        </div>
+                    </div>  
+                        <div  class="card-indicacao" id="abrir-indicacao">
+                            <div class="align-card-indicacao">
+                                <h5 class="title-indicacao">Carta de Indicação</h5>
+                                    <form class="" action="index.php">
+                                        <label for="destinatario">Destinatario</label>
+                                        <input type="email" name="email-professor" id="" >
+                                        <br>
+                                        <label for="mensagem">Mensagem</label>
+                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+                                        <div class="align-botao">
+                                            <input type="submit" value="Enviar" class="botao-indicacao">
+                                        </div> 
+                                    </form>
+                            </div>
+                        </div>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -143,7 +209,29 @@ include('../pag-professor/components/sidebar.php');
         <div class="card">
             <div class="imagem-aluno">
                 <img src="img/ryan.jpg" alt="">
-                <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                <a id="align-icon" href="#card-modal" onclick="abrir4()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
+                    <div class="modal4" id="abrir-modal4">
+                        <div class="card-modal" id="card-modal">
+                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                        </div>
+                    </div>  
+                        <div  class="card-indicacao" id="abrir-indicacao">
+                            <div class="align-card-indicacao">
+                                <h5 class="title-indicacao">Carta de Indicação</h5>
+                                    <form class="" action="index.php">
+                                        <label for="destinatario">Destinatario</label>
+                                        <input type="email" name="email-professor" id="" >
+                                        <br>
+                                        <label for="mensagem">Mensagem</label>
+                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+                                        <div class="align-botao">
+                                            <input type="submit" value="Enviar" class="botao-indicacao">
+                                        </div> 
+                                    </form>
+                            </div>
+                        </div>
             </div>
             <h4 class="nome-aluno">Ryan Souza</h4>
             <div class="alinhar-dados">
@@ -163,5 +251,48 @@ include('../pag-professor/components/sidebar.php');
 
    
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+<script>
+    function abrir(){
+            
+            var modal=  document.getElementById('abrir-modal')
+            modal.style.display="block"
+            console.log('salve')
+             
+
+         
+     }
+     function abrir2(){
+            
+            var modal2=  document.getElementById('abrir-modal2')
+            modal2.style.display="block"
+            console.log('salve')
+             
+
+         
+     }
+     function abrir3(){
+            
+            var modal3=  document.getElementById('abrir-modal3')
+            modal3.style.display="block"
+    
+            console.log('salve')
+             
+
+         
+     }
+     function abrir4(){
+            
+            var modal4=  document.getElementById('abrir-modal4')
+            modal4.style.display="block"
+            console.log('salve')
+             
+
+         
+     }
+     function abrirIndicacao(){
+            var indicar = document.getElementById('abrir-indicacao')
+            indicar.style.display="block";
+        }
+</script>
 </body>
 </html>
