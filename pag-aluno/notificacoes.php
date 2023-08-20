@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
+    <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/notificacoes.css">
     <title>Document</title>
 </head>
