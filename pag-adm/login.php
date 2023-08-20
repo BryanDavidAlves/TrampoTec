@@ -33,7 +33,7 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
-                    <input class="botao" type="submit" value="Entrar">
+                    <button class="botao"><a href="../pag-adm/index.php" style="color: white">Entrar</a></button><!--<input class="botao" type="submit" value="Entrar">-->
                     <div class="remember">
                         <div>
                             <input id="check" type="checkbox">
