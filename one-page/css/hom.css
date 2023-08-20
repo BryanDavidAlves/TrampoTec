@@ -1,6 +1,19 @@
 html{
     scroll-behavior: smooth;
+    
 }
+body::-webkit-scrollbar {
+    width: 10px;              
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);     
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 55, 0);    
+    border-radius: 30px;      
+    border: 3px solid rgb(253, 253, 253);}
 main{
     display: flex;
     align-items: center;
@@ -42,8 +55,10 @@ main  .imagem-home{
    align-items: center;
    justify-content: center;
    width: auto;
+   float: inline-end;
    height: 550px;
    width: 100%;
+   margin-top: 120px;
    
    
    object-fit: cover;
@@ -74,7 +89,9 @@ main  .imagem-home img{
     height: 520px;
     width: 100%;
     object-fit: cover;
-    margin-top: 210px;
+    margin-top: 90px;
+    position: relative;
+    
 
     
   

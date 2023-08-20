@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login-one-page.css">
+    <link rel="stylesheet" href="login-one-pagee.css">
     <title>Trampotec</title>
 </head>
 <body>
@@ -30,12 +30,12 @@
                                  <p class="titulo-agendar"> ENTRAR COMO </p>
 
                                   <div class="barra-agendar">
-                                    <a href="#"> <button type="submit" placeholder="Aluno">Aluno</button></a>
+                                    <a href="../../pag-aluno/login.php"> <button type="submit" placeholder="Aluno">Aluno</button></a>
                                 </div>
                                
           
                                 <div class="barra-agendar">
-                                    <a href="#">   <button type="submit" placeholder=".">Empresa</button></a>
+                                    <a href="../../pag-empresa/pags-logins/login.php">   <button type="submit" placeholder=".">Empresa</button></a>
                                 </div>
                         
                    
@@ -45,7 +45,7 @@
                            
                            
                                 <div class="barra-agendar">
-                                    <a href="#">   <button type="submit" placeholder="">Professor</button></a>
+                                    <a href="../../pag-professor/login.php">   <button type="submit" placeholder="">Professor</button></a>
                                 </div>
 
                             </div>

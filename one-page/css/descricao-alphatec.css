@@ -12,7 +12,9 @@
     background-color:#0c042c;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 40%;
+    height: 700px;
 }
 
 .descricao-alphatec .align-imagens .bolaazul{
@@ -20,7 +22,8 @@
     display: flex;
     align-items: center;
     width: 250px;
-    height: 200px;
+
+
 }
 
 .align-imagens .logo-alpha{
@@ -39,7 +42,7 @@
 }
 
 .textos-alphatec .alinhar-texto h4{
-    width: 700px;
+    width: 800px;
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
     font-size: 2.0rem;

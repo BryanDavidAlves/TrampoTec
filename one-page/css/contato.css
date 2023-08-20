@@ -65,6 +65,7 @@ gap: 60px;
   flex-direction: column;
   gap: 15px;
   width: 250px;
+  color: white;
 }
 
 .area-contato .inputs-contato form .alinhamento-textos-contatos .inputs-textos-contato label {
@@ -84,6 +85,7 @@ gap: 60px;
     border-left: none ;
     border-right: none ;
     border-bottom: 1px solid white;
+    color: white;
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -101,7 +103,7 @@ gap: 60px;
     border-right: none ;
     border-bottom: 1px solid white;
     text-align: left;
-   background-color: rgba(0, 0, 255, 0);
+    background-color: rgba(0, 0, 255, 0);
 }
 .area-contato .inputs-contato form .alinhamento-caixa-botao textarea:focus {
     outline: none;
