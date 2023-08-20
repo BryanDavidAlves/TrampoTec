@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
-<link rel='stylesheet' href='../pag-empresa/css/fale-conoscos.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
+<link rel='stylesheet' href='../pag-empresa/css/fale-conosco.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -18,17 +18,17 @@
 <main class="main">
 
 <span class="container-icon">
-     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-arrow-left"></i></a> <span> Fale-Conosco </span> 
+     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> <span> Fale-Conosco </span> 
 </span>
 
 
-<p class="titulo-config"> * Entra em contato para esclarecimento</p> <br>
+<p class="titulo-config"> • Entre em contato para esclarecimento</p> <br>
 
 <form class="textos">
 
 <textarea class="caixa-texto" name="" id="" cols="30" rows="50"></textarea>
 
-<button class="botao-fale"> <i class="icon-enviar fa-solid fa-envelope-circle-check"></i> </button>
+<button class="botao-fale"> <i class="icon-enviar fa-solid fa-location-arrow"></i> </button>
 
 </form>      
 

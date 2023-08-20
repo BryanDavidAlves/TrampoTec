@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../reset.css">
-    <link rel='stylesheet' href='../../pag-empresa/css/logins.css'>
+    <link rel='stylesheet' href='../../pag-empresa/css/login.css'>
     <title>TrampoTec</title>
 </head>
 <body>
@@ -51,7 +51,7 @@
 
                         </div>
                         <br>
-                        <button class="botao-agendar"><a href="./cadastrar-login.php">REDEFINIR</a></button>
+                        <button class="botao-agendar"><a href="#">REDEFINIR</a></button>
 
                     </form>
                     </div> 

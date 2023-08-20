@@ -52,7 +52,7 @@
 
                             </div>
                             <div  class="link-senha">
-                            <button class="botao-agendar"><a href="../home.php">LOGAR</a></button>
+                            <button class="botao-agendar"><a href="#">LOGAR</a></button>
                            <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a> </div>
                            
                     </form>
