@@ -89,7 +89,8 @@ main  .imagem-home img{
     height: 520px;
     width: 100%;
     object-fit: cover;
-    margin-top: 40px;
+    margin-top: 90px;
+    position: relative;
     
 
     
