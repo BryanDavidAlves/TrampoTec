@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/logins.css">
     <title>Cadastro</title>
 </head>
 
@@ -44,7 +44,14 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
+                    <div class="align-file">
+                        <label  class="label-file" for="arquivo">Selecionar uma imagem</label>
+                        <input class="input-file" type="file" name="arquvio" id="arquivo" >
+                    </div>
+                   
                     <input class="botao" type="submit" value="Cadastrar">
+
+
                 </form>
             </div>
         </section>

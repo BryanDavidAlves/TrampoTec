@@ -26,6 +26,11 @@ main {
 .barra-pesquisa input {
     border: none;
 }
+.barra-pesquisa input:focus {
+    outline: none;
+
+}
+
 
 .notificacao {
     display: flex;
