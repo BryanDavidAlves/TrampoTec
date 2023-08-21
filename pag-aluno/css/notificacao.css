@@ -45,6 +45,10 @@ p{
     margin-top: 50px;
 
 }
+.align{
+    width: 100%;
+    position: absolute;
+}
 .linha{
     background-color:#3C86D1;
     width: 90%;
