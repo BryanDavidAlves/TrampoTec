@@ -8,8 +8,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-vaga.css">
+    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
+    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vaga.css">
     <title>Pagina de Vagas</title>
 </head>
 
@@ -19,10 +19,14 @@
     ?>
     <main id="main">
 
-        <div>
-            <h1>PAINEL DE VAGAS</h1>
-            <section class="vagas">
+    
 
+            
+
+            <section class="vagas">
+            
+            <h1>PAINEL DE VAGAS</h1>
+                <div class="itens-vagas">
                 <img src="img/img-perfil.jpg" alt="">
 
                 <section class="container-cards">
@@ -75,7 +79,7 @@
                         </div>
                         <input value="Aplicar" class="button" type="submit">
                     </form>
-        </div>
+                    </div>
         </section>
         </div>
         <?php
@@ -90,7 +94,7 @@
 
                 <div class="part1">
                     <img src="img/logo-nuts-sem-slogan.png" alt="">
-                    <div >
+                    <div>
                         <h2>Nuts.</h2>
                         <h3>Empresa de Tecnologia</h3>
                         <h3>Desde 2023</h3>
