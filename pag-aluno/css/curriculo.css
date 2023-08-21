@@ -11,6 +11,18 @@ h1 {
     flex-wrap: wrap;
     gap: 80px;
     margin-top: 50px;
+    position: absolute;
+    width: 100%;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    gap: 120px;
 }
 
 .one-bar {
@@ -28,7 +40,7 @@ h1 {
     margin-left: 9.5px;
     justify-content: space-between;
     width: 100%;
-    
+
 }
 
 .bar {
@@ -39,22 +51,26 @@ h1 {
     border-radius: 10px;
 }
 
-.info-pessoal , .info-academica {
+.info-pessoal,
+.info-academica {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-h3{
+
+h3 {
     font-size: 1.2rem;
     color: #fff;
 }
-h4{
+
+h4 {
     font-size: 1rem;
     color: #fff;
     margin-left: 5px;
 }
-button{
+
+button {
     width: 90%;
     border-radius: 5px;
     padding: 3px;
