@@ -9,7 +9,7 @@
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/curriculos.css">
+    <link rel="stylesheet" href="../pag-aluno/css/contato.css">
     <title>Fale Conosco</title>
 </head>
 
@@ -18,9 +18,39 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-        <div>
 
+        <div class="container">
+            <section class="titulo">
+                <h1>CENTRAL FALE CONOSCO</h1>
+                <h2>Tire suas úvidas de forma rápida</h2>
+            </section>
+
+            <section class="formulario">
+                <form action="">
+                    <div class="align">
+                        <div class="box-input">
+                            <label for="nome">NOME:</label>
+                            <input type="text" id="nome" name="nome">
+                        </div>
+                        <select name="tipo" id="tipo">
+                            <option value="elogio">Elogio</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="reclamacao">Reclamação</option>
+                        </select>
+                    </div>
+                    <div class="box-input">
+                        <label for="email">EMAIL:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <textarea name="" id="" cols="30" rows="10" placeholder="detalhes"></textarea>
+                    <br>
+                    <input class="btn" type="submit" value="ENVIAR" name="" id="">
+                </form>
+
+            </section>
         </div>
+
         <?php
         include('../pag-aluno/components/sidebar.php');
         ?>
