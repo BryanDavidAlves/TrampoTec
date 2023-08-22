@@ -42,6 +42,8 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    margin-bottom: 80px;
+    z-index: 1;
 
 }
 

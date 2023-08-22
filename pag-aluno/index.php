@@ -95,7 +95,7 @@
                         <h4>Desenvolvedor Front End Junior</h4>
                         <h4>Presencial</h4>
                         <h4>R$2.520,00</h4>
-                        <button id="btn">Clique para mais informações</button>
+                        <button id="btn1">Clique para mais informações</button>
                     </div>
 
                     <div class="cards">
@@ -106,7 +106,7 @@
                         <h4>Desenvolvedor Front End Junior</h4>
                         <h4>Presencial</h4>
                         <h4>R$2.520,00</h4>
-                        <button id="btn">Clique para mais informações</button>
+                        <button id="btn2">Clique para mais informações</button>
                     </div>
 
                     <div class="cards">
@@ -117,7 +117,7 @@
                         <h4>Desenvolvedor Front End Junior</h4>
                         <h4>Presencial</h4>
                         <h4>R$2.520,00</h4>
-                        <button id="btn">Clique para mais informações</button>
+                        <button id="btn3">Clique para mais informações</button>
                     </div>
                 </section>
 
@@ -180,10 +180,18 @@
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script>
-        var button = document.getElementById("btn")
+        var button1 = document.getElementById("btn1")
+        var button2 = document.getElementById("btn2")
+        var button3 = document.getElementById("btn3")
         var modal = document.getElementById("modal")
 
-        button.onclick = function () {
+        button1.onclick = function () {
+            modal.showModal()
+        }
+        button2.onclick = function () {
+            modal.showModal()
+        }
+        button3.onclick = function () {
             modal.showModal()
         }
     </script>
