@@ -123,11 +123,11 @@
 
 
             </div>
-            <?php
+
+    </main>
+    <?php
             include('../pag-aluno/components/sidebar.php');
             ?>
-    </main>
-
 
     <dialog id="modal">
         <div class="card-empresa">
