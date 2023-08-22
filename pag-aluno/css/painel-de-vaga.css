@@ -1,8 +1,9 @@
 h1 {
     color: #737373;
     text-align: center;
-    margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
+
 }
 
 .vagas {
@@ -10,11 +11,21 @@ h1 {
     justify-content: space-around;
     margin-top: 50px;
     align-items: center;
-   
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+
+}
+.itens-vagas{
+    display: flex;
+    justify-content: space-between;
+    gap:150px ;
+    align-items: center;
 }
 
 .vagas img {
-    width: 12%;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     border: 2px blue solid;
     margin-left: 10px;
@@ -69,7 +80,7 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 15px;
-    
+
 }
 
 .vagas .filtro .align {
@@ -82,22 +93,25 @@ h1 {
     padding-top: 5px;
 }
 
-.palavra-box,select {
+.palavra-box,
+select {
     height: 25px;
     margin-top: 5px;
     border: none;
-    
+
 }
 
 .vagas .filtro .align select,
 .palavra-box {
     margin-left: 10px;
 }
-.titulo-filtro{
+
+.titulo-filtro {
     margin-bottom: 15px;
     margin-left: 10px;
 }
-.vagas .filtro .button{
+
+.vagas .filtro .button {
     background-color: #5382B2;
     padding: 5px;
     color: white;
@@ -105,4 +119,102 @@ h1 {
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
+}
+
+dialog {
+    border: 2px solid #bdbdbd;
+    border-radius: 10px;
+    height: 350px;
+    width: 550px;
+    justify-content: center;
+    align-items: center;
+}
+
+.conhecimentos {
+    text-align: center;
+}
+
+.conhecimentos li {
+    margin-top: 10px;
+}
+
+.conhecimentos ul {
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.conhecimentos {
+    margin-top: 40px;
+}
+
+.card-empresa .header-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-empresa {
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+.card-empresa .descricao-empresa {
+    gap: 10px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.descricao-empresa h4 {
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.descricao-empresa h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+p {
+    text-align: justify;
+    font-size: 1rem;
+    
+}
+.desc-vaga{
+    width: 260px;
+}
+
+.card-empresa img {
+    width: 30%;
+    border-radius: 100%;
+}
+
+dialog button {
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    width: 35%;
+    background-color: #5382B2;
+    color: white;
+    cursor: pointer;
+
+}
+
+dialog h2 {
+    font-size: 2rem;
+}
+
+.part2 i {
+    font-size: 2rem;
+}
+.part1{
+    display: flex;
 }
