@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
-<link rel='stylesheet' href='../pag-empresa/css/vagaSS.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
+<link rel='stylesheet' href='../pag-empresa/css/vaga.css'>
 <title>TrampoTec</title>
 </head>
 <body>
     
-<?php include ('../pag-empresa/componentes/navbar.php')?>
 <?php include ('../pag-empresa/componentes/sidebar.php')?>
 <?php include ('../pag-empresa/componentes/rightbar-vagas.php')?>
-
+<?php include ('../pag-empresa/componentes/email.php')?>
+<?php include ('../pag-empresa/componentes/notificacao.php')?>
 
 <main class="main">
 
@@ -24,7 +24,7 @@
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 <div class="card-itens">
                     <p class="nome-empresa"> Cisco system</p>
@@ -34,14 +34,25 @@
                 </div>
             </div>
             <div class="tres-pontinhos">
-                    <a href="#"> <i class="fa-solid fa-pen"></i> </a>
+                    <a onclick="modal3()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
+                          
+                    <div > 
+                
+                            <div class="modal-aluno" id="abrirvaga">
+                                <div class="card-modal-aluno">
+                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
+                                  <span></span>
+                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
+                            </div>
+                    </div>  
+                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 
                 <div class="card-itens">
@@ -61,7 +72,7 @@
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 <div class="card-itens">
                     <p class="nome-empresa"> Cisco system</p>
@@ -78,7 +89,7 @@
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 
                 <div class="card-itens">
@@ -98,7 +109,7 @@
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 <div class="card-itens">
                     <p class="nome-empresa"> Cisco system</p>
@@ -109,13 +120,14 @@
             </div>
             <div class="tres-pontinhos">
                     <a href="#"> <i class="fa-solid fa-pen"></i> </a>
+              
             </div>
         </div>
 
         <div class="card">
             <div class="card-corpo">
                 <div class="imagens">
-                    <img class="imagem-vaga" src="../img/fotodeempresa.avif" alt="foto da empresa da vaga">
+                    <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
                 </div>
                 
                 <div class="card-itens">
@@ -134,7 +146,7 @@
 
 </section>
  </main>
-
+ <script src="./js/java-empresa.js"></script>
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 </html>
