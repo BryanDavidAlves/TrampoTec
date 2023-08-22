@@ -9,6 +9,9 @@ header {
     box-shadow: 0px 0px 80px 5px rgb(191, 191, 191);
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+
 }
 
 main {
@@ -92,4 +95,7 @@ aside ul {
 
 aside ul a:hover {
     margin-left: 10px;
+}
+h1{
+    margin-top: 80px;
 }

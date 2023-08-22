@@ -1,7 +1,7 @@
 h1 {
     color: #737373;
     text-align: center;
-    margin-bottom: 50px;
+
     font-size: 2rem;
 
 }
@@ -16,28 +16,33 @@ h1 {
     flex-direction: column;
 
 }
-.itens-vagas{
+
+.itens-vagas {
     display: flex;
     justify-content: space-between;
-    gap:150px ;
+    gap: 150px;
     align-items: center;
 }
 
-.vagas img {
-    width: 150px;
-    height: 150px;
+.img-perfil {
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
-    border: 2px blue solid;
-    margin-left: 10px;
+    border: 2px rgb(0, 0, 0) solid;
     align-items: center;
     justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 10px;
 }
-
 
 .vagas .container-cards {
     display: flex;
-    flex-direction: column;
+    gap: 10%;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
 }
 
 .vagas .container-cards .cards {
@@ -46,11 +51,12 @@ h1 {
     background-color: rgb(232, 232, 232);
     align-items: center;
     padding: 5px;
-    border-radius: 10px;
-    width: 130%;
+    border-radius: 15px;
+    width: 320px;
     height: 190px;
     justify-content: center;
-    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437)
+    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
+    margin-top: 50px;
 }
 
 .vagas .container-cards .cards .localidade {
@@ -76,18 +82,19 @@ h1 {
     cursor: pointer;
 }
 
-.vagas .filtro {
+.filtro {
     display: flex;
     flex-direction: column;
     padding: 15px;
+    margin-top: 30px;
 
 }
 
-.vagas .filtro .align {
+.filtro .align {
     display: flex;
 }
 
-.vagas .filtro .align .palavra-chave {
+.filtro .align .palavra-chave {
     width: 63px;
     padding-bottom: 5px;
     padding-top: 5px;
@@ -101,7 +108,7 @@ select {
 
 }
 
-.vagas .filtro .align select,
+.filtro .align select,
 .palavra-box {
     margin-left: 10px;
 }
@@ -111,7 +118,7 @@ select {
     margin-left: 10px;
 }
 
-.vagas .filtro .button {
+.filtro .button {
     background-color: #5382B2;
     padding: 5px;
     color: white;
@@ -119,6 +126,7 @@ select {
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
+    margin-top: 15px;
 }
 
 dialog {
@@ -182,9 +190,10 @@ dialog {
 p {
     text-align: justify;
     font-size: 1rem;
-    
+
 }
-.desc-vaga{
+
+.desc-vaga {
     width: 260px;
 }
 
@@ -215,6 +224,22 @@ dialog h2 {
 .part2 i {
     font-size: 2rem;
 }
-.part1{
+
+.part1 {
     display: flex;
+}
+
+.secao-perfil {
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-top: 80px;
+}
+.secao-perfil a{
+    color: #000;
+    text-decoration: none;
+
 }
