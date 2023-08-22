@@ -4,9 +4,7 @@ body{
 }
 
 main {
-  margin-top: 115px;
-  margin-left:200px; /* Same as the width of the sidenav */
-  margin-right:0px;
+  margin-left:220px; /* Same as the width of the sidenav */
   overflow:hidden;
 } 
 
