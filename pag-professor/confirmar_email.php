@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="css/logins.css">
-    <title>Relembrar Senha</title>
+    <link rel="stylesheet" href="css/confirmaEmail.css">
+    <title>Cadastro</title>
 </head>
 
 <body>
@@ -16,24 +16,25 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1 class="title-login">Relembrar Senha</h1>
-
+                <h1>Confirmação de Email</h1>
+                <p>Valide seu email para prosseguir com o cadastro</p>
                 <form action="login.php">
                     <div class="item-form">
-                        <label for="senha-professor">SENHA</label>
+                        <label for="nome-professor">EMAIL</label>
                         <div class="div-input">
-                            <input type="password" name="senha-professor" id="nome">
+                            <input type="email" name="email-professor" placeholder="Digite seu email" id="email-professor">
                         </div>
                     </div>
-
                     <div class="item-form">
-                        <label for="novaSenha-professor">NOVA SENHA</label>
+                        <label for="email-institucional">CONFIRMAR EMAIL </label>
                         <div class="div-input">
-                            <input type="password" name="novaSenha-professor" id="novaSenha-professor">
-                            <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
+                            <input type="email" name="email-institucional" id="email-institucional" placeholder="Confirme seu email">
                         </div>
                     </div>
-                    <input class="botao" type="submit" value="Redefinir" style="margin-bottom:30px;">
+                    
+                    <input class="botao" type="submit" value="Enviar">
+
+
                 </form>
             </div>
         </section>

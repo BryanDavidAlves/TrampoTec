@@ -45,6 +45,11 @@
     <a href=""><i class="fa-solid fa-book fa-2xl" style="color: #919191;"></i> <p> Alterar Disciplinas</p><i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
     </li>
 
+    
+    <li>
+    <a href=""><i class="fa-solid fa-camera-retro fa-2x1" style="color: #919191;"></i> <p> Alterar Imagem de perfil</p><i id="align-seta" class="fa-solid fa-chevron-right fa-lg" style="color: #787878;"></i></a>
+    </li>
+
     </ul>
 
     

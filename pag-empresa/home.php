@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
-<link rel='stylesheet' href='../pag-empresa/css/home.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
+<link rel='stylesheet' href='../pag-empresa/css/HOME.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 
 
 <main>
-
+<br>
 <p class="titulo-pagina"> perfis de estudantes  </p>
 
 

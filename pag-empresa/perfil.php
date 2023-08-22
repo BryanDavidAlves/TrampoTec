@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentess.css'>
-<link rel='stylesheet' href='../pag-empresa/css/perfils.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
+<link rel='stylesheet' href='../pag-empresa/css/PERFIL.css'>
 <title>TrampoTec</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <main class="main">
 
     <div class="componentes-perfil">
-    <img class="fundo-empresa" src="../img/empresafundo.jpg">
+    <img class="fundo-empresa" src="./img/fundo-empresa.jpg">
         
         <div class="conteiner-descricao"> 
             <img class="foto-perfil" src="../img/fotodeempresa.avif"></img>
