@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
 
-    <link rel="stylesheet" href="../pag-aluno/css/processos-seletivo.css">
+    <link rel="stylesheet" href="../pag-aluno/css/processo-seletivo.css">
     <title>Processos Seletivos</title>
 </head>
 <body>
@@ -16,9 +16,10 @@
         ?>
      <main id="main">
         <div>
-        <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
+        
         
         <section class="vagas">
+        <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
                 <section class="container-cards">
                     <div class="cards">
                         <div class="localidade">

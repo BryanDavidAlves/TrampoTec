@@ -9,7 +9,7 @@
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
 
-    <link rel="stylesheet" href="../pag-aluno/css/login-de-cadastro.css">
+    <link rel="stylesheet" href="../pag-aluno/css/login-e-cadastro.css">
     <title>Processos Seletivos</title>
 </head>
 

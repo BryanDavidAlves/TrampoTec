@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/notificacoes.css">
+    <link rel="stylesheet" href="../pag-aluno/css/notificacao.css">
     <title>Document</title>
 </head>
 
@@ -15,63 +15,64 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-        <div>
-            <h1>MINHAS NOTIFICAÇÕES DE EMPRESA</h1>
 
-            <section class="empresas">
+    <div class = "align">
+        <h1>MINHAS NOTIFICAÇÕES DE EMPRESA</h1>
 
-                <div class="card-empresa">
-                    <section class="header-card">
-                        <img src="img/nuts.png" alt="">
-                        <div class="part1">
-                            <h2>Nuts.</h2>
-                            <h3>Empresa de Tecnologia</h3>
-                        </div>
-                        
-                        <div class="part2">
-                            <h3>Desde 2023</h3>
-                            
-                        </div>
-                    </section>
-                    <div class="linha"> </div>
-                    <section class="descricao-empresa">
-                        <p> Parabés Roberta, olhamos o seu
-                            curriculo e suas competências se
-                            encaixam exatamente no que
-                            estamos precisando, que tal
-                            agendar uma entrevista?
-                        </p>
-                    </section>
-                    <button>AGENDAR</button>
-                </div>
-                <div class="card-empresa">
-                    <section class="header-card">
-                        <img src="img/nuts.png" alt="">
-                        <div class="part1">
-                            <h2>Nuts.</h2>
-                            <h3>Empresa de Tecnologia</h3>
-                        </div>
-                        
-                        <div class="part2">
-                            <h3>Desde 2023</h3>
-                        </div>
-                        
-                    </section>
-                    <div class="linha"> </div>
-                    <section class="descricao-empresa">
-                        <p> Parabés Roberta, olhamos o seu
-                            curriculo e suas competências se
-                            encaixam exatamente no que
-                            estamos precisando, que tal
-                            agendar uma entrevista?
-                        </p>
-                    </section>
-                    <button>AGENDAR</button>
-                </div>
-        
-            </section>
-            
+        <section class="empresas">
+
+            <div class="card-empresa">
+                <section class="header-card">
+                    <img src="img/nuts.png" alt="">
+                    <div class="part1">
+                        <h2>Nuts.</h2>
+                        <h3>Empresa de Tecnologia</h3>
+                    </div>
+
+                    <div class="part2">
+                        <h3>Desde 2023</h3>
+
+                    </div>
+                </section>
+                <div class="linha"> </div>
+                <section class="descricao-empresa">
+                    <p> Parabés Roberta, olhamos o seu
+                        curriculo e suas competências se
+                        encaixam exatamente no que
+                        estamos precisando, que tal
+                        agendar uma entrevista?
+                    </p>
+                </section>
+                <button>AGENDAR</button>
+            </div>
+            <div class="card-empresa">
+                <section class="header-card">
+                    <img src="img/nuts.png" alt="">
+                    <div class="part1">
+                        <h2>Nuts.</h2>
+                        <h3>Empresa de Tecnologia</h3>
+                    </div>
+
+                    <div class="part2">
+                        <h3>Desde 2023</h3>
+                    </div>
+
+                </section>
+                <div class="linha"> </div>
+                <section class="descricao-empresa">
+                    <p> Parabés Roberta, olhamos o seu
+                        curriculo e suas competências se
+                        encaixam exatamente no que
+                        estamos precisando, que tal
+                        agendar uma entrevista?
+                    </p>
+                </section>
+                <button>AGENDAR</button>
+            </div>
+
+        </section>
         </div>
+
         <?php
         include('../pag-aluno/components/sidebar.php');
         ?>

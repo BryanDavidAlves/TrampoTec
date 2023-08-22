@@ -1,7 +1,7 @@
 h1 {
     color: #737373;
     text-align: center;
-    margin-top: 50px;
+    margin-bottom: 50px;
     font-size: 2rem;
 }
 
@@ -20,6 +20,7 @@ body{
     gap: 10px;
     position: absolute;
     width: 100%;
+    flex-direction: column;
 }
 
 
@@ -28,7 +29,6 @@ body{
     justify-content: space-around;
     align-items: center;
     width: 90%;
-
     gap: 20px;
 
 }
