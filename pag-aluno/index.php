@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
+    <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/painel-de-vaga.css">
     <title>Pagina de Vagas</title>
 </head>
@@ -18,10 +18,6 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-
-    
-
-            
 
             <section class="vagas">
             

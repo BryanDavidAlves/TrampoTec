@@ -1,5 +1,8 @@
 body {
-    background-color: #062863;
+    /*background-color: #062863;*/
+    background-image: url(../../img/bg-contato-aluno.PNG);
+    background-repeat: no-repeat;
+    background-size: cover ;
 }
 
 header {
@@ -100,4 +103,15 @@ select {
     border-radius: 20px;
     margin-top: 20px;
     margin-left: 25%;
+    cursor: pointer;
+}
+.icone{
+    /*
+    float: right;
+    margin-top: 22%;
+    margin-right: 40px;*/
+    position:fixed;
+    bottom:0 ;
+    right: 0;
+    z-index: 1;
 }

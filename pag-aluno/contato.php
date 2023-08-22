@@ -54,7 +54,9 @@
         <?php
         include('../pag-aluno/components/sidebar.php');
         ?>
+        <img class="icone" src="../img/icone-contato.png" alt="">
     </main>
+
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
