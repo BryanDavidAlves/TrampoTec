@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/logiN.css">
     <title>Login</title>
 </head>
 
@@ -16,32 +16,22 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1 class="title-login">Login <br>Aluno</h1>
-
+                <h1 class="title-login">Confirmação do seu email</h1>
                 <form action="index.php">
                     <div class="item-form">
-                        <label for="nome-aluno">EMAIL INSTITUCIONAL</label>
+                        <p >EMAIL</p>
                         <div class="div-input">
-                            <input type="text" name="nome-aluno" id="nome-aluno">
+                            <input type="text" placeholder="digite seu email">
                         </div>
                     </div>
 
                     <div class="item-form">
-                        <label for="senha-aluno">SENHA</label>
+                        <p >COFIRMAR EMAIL</p>
                         <div class="div-input">
-                            <input type="password" name="senha-aluno" id="senha-aluno">
-                            <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
+                            <input type="password" placeholder="confirme seu email">
                         </div>
                     </div>
                     <input class="botao" type="submit" value="Entrar">
-                    <div class="remember">
-                        <div>
-                            <input id="check" type="checkbox">
-                            <label for="check"> Lembre de mim</label>
-                        </div>
-                        <a href="relembrar-senha.php">Esqueceu a Senha?</a>
-                    </div>
-                    <a href="cadastro.php" style="margin-left:18%;color:red;">NAO TENHO CADASTRO</a>
                 </form>
             </div>
         </section>

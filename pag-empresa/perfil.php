@@ -4,22 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <link rel="stylesheet" href="../reset.css">
-<link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
-<link rel='stylesheet' href='../pag-empresa/css/PERFIL.css'>
+<link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
+<link rel='stylesheet' href='../pag-empresa/css/perfil.css'>
 <title>TrampoTec</title>
 </head>
 <body>
     
-<?php include ('../pag-empresa/componentes/navbar.php')?>
 <?php include ('../pag-empresa/componentes/sidebar.php')?>
-
+<?php include ('../pag-empresa/componentes/email.php')?>
+<?php include ('../pag-empresa/componentes/notificacao.php')?>
 <main class="main">
 
     <div class="componentes-perfil">
     <img class="fundo-empresa" src="./img/fundo-empresa.jpg">
         
         <div class="conteiner-descricao"> 
-            <img class="foto-perfil" src="../img/fotodeempresa.avif"></img>
+            <img class="foto-perfil" src="./img/fotodeempresa.avif"></img>
             <div class="descricao-conta"> 
                 <p class="nome-perfil"> Cisco system </p> 
                 <p class="tipo-perfil"> Empresa de tecnologia</p> 
@@ -116,7 +116,7 @@
  </main>
 
  
-
+ <script src="./js/java-empresa.js"></script>
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 </html>

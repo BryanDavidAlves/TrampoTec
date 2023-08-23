@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/component-aluno.css">
+    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/perfil.css">
     <title>Meu Perfil</title>
 </head>
@@ -18,105 +18,111 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-
-        <div>
+        <div class="align">
             <h1>PERFIL</h1>
-            <section class="perfil">
-
-                <section class="about1">
-                    <img src="img/img-perfil.jpg" alt="">
-                    <h2 class="nome">Paula</h2>
-
-                </section>
-                <span class="linha1"> </span>
-                <section class="about2">
-                    <h2>FORMAÇÕES ACADEMICAS</h2>
-                    <div class="align">
-                        <div class="one-bar">
-                            <h3>CURSO: </h3>
-                            <h4>Desenvolviento de Sistemas</h4>
-                        </div>
-
-                        <div class="two-bars">
-
-                            <div class="bar">
-                                <h3>Druração:</h3>
-                                <h4>18 meses </h4>
-                            </div>
-                            <div class="bar">
-                                <h3>PERÍODO:</h3>
-                                <h4>Vespertino</h4>
-                            </div>
-
-                        </div>
-
-                        <div class="one-bar">
-                            <h3>INSTITUIÇÃO: </h3>
-                            <h4>Etec de Guaianases</h4>
-                        </div>
-
-                        <div class="one-bar">
-                            <h3>CURSO: </h3>
-                            <h4>Desenvolviento de Sistemas</h4>
-                        </div>
-
-                        <div class="one-bar">
-                            <h3>CONCLUSÃO: </h3>
-                            <h4>12/2023</h4>
-                        </div>
-                        <div class="one-bar">
-                            <h3>MATRICULA: </h3>
-                            <h4>132542</h4>
-                        </div>
-                        <br>
-                        <section class="experiencia">
-                            <h2>EXPERIÊNCIAS</h2>
-                            <div class="align">
-                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                </p>
-                                <h2 class="alterar">ALTERAR</h2>
-                            </div>
-                        </section>
+            <section class="align-grid">
+                <section class="perfil">
+                    <div class="perfil-img">
+                        <img src="../img/img-perfil.jpg" alt="">
                     </div>
+                    <h3>Roberta Carla Andrade</h3>
+                    <h4> 19 anos</h4>
+                    <h4> Estudante</h4>
+                </section>
+                <section class="sobre-mim">
+                    <div class="left">
+                        <div class="top">
+                            <h2>INORMAÇAÕES PESSOAIS</h2>
 
-                </section>
-                <span class="linha2"> </span>
-                <section class="about3">
-                    <h2>Habilidades</h2>
-                    <div class="align">
-                        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                        </p>
-                        <h2 class="alterar">ALTERAR</h2>
+                            <span style="margin-top:20px;" class="info-box">
+                                <h3>NOME: </h3>
+                                <p> Roberta Carla Andrade</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>EMAIL: </h3>
+                                <p> robertacarlaandrade@gmail.com</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>CPF: </h3>
+                                <p>155.155.155-84</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>TELEFONE: </h3>
+                                <p> (11) 9 5249-9987</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>INSTITUIÇÃO: </h3>
+                                <p>Etec De Guaianases</p>
+                            </span>
+                        </div>
+                        <div class="bottom">
+                            <h2 style="margin-top:10px;">INFORMAÇAÕES ACADEMICAS</h2>
+
+                            <span style="margin-top:10px;" class="info-box">
+                                <h3>CURSO: </h3>
+                                <p>Desenvolvimento De Sistemas</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>DURAÇÃO: </h3>
+                                <p> 8 meses</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>PERIODO: </h3>
+                                <p>Vespertino</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>INSTITUIÇÃO: </h3>
+                                <p> Guaianases</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>CONCLUSÃO: </h3>
+                                <p>12/2023</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>MATRICULA: </h3>
+                                <p>252829</p>
+                            </span>
+                        </div>
                     </div>
-                    <br>
-                    <section class = "sobre-mim">
-                            <h2>SOBRE MIM</h2>
-                            <div class="align">
-                                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX <br>
-                                </p>
-                                <h2 class="alterar">ALTERAR</h2>
-                            </div>
-                        </section>
+                    <div class="right">
+                        <div class="top">
+                            <h2>CONHECIMENTOS</h2>
+
+                            <span style="margin-top:20px;" class="info-box">
+                                <h3>IDIOMA: </h3>
+                                <p> Ingles </p>
+                            </span>
+                            <span class="info-box">
+                                <h3>NIVEL: </h3>
+                                <p>Avançado</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>CONHECIMENTOS: </h3>
+                                <p>xxxxxxxxxxxxxxxxx</p>
+                            </span>
+
+                        </div>
+                        <div class="bottom">
+                            <h2  style="margin-top:10px;">DISPONIBILIDADE</h2>
+
+                            <span  style="margin-top:10px;" class="info-box">
+                                <h3>APARTIR: </h3>
+                                <p>XXXXXXXXXXXXXXXXXX</p>
+                            </span>
+                            <span class="info-box">
+                                <h3>ATÉ: </h3>
+                                <p>XXXXXXXXXXXXXXXXXX</p>
+                            </span>
+                        </div>
+                    </div>
                 </section>
+
             </section>
         </div>
-        <?php
-        include('../pag-aluno/components/sidebar.php');
-        ?>
     </main>
-
+    <?php
+    include('../pag-aluno/components/sidebar.php');
+    ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
