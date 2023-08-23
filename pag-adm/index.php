@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <title>Document</title>
 </head>
 
@@ -16,7 +16,7 @@
     ?>
     <header>
         <h1>Dashboard</h1>
-        <input type="text" placeholder="Pesquisar"> 
+        <input type="text" placeholder="Pesquisar">
     </header>
 
     <section class="dashboard">
@@ -26,21 +26,37 @@
                     <h3>Empresas cadastradas </h3>
                     <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
                 </div>
-                <h2>6</h2>
+                <h2>7</h2>
             </div>
             <div class="card">
                 <div class="header-card">
                     <h3>Professores cadastrados</h3>
                     <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
                 </div>
-                <h2>6</h2>
+                <h2>7</h2>
             </div>
             <div class="card">
                 <div class="header-card">
                     <h3>Alunos cadastrados</h3>
                     <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
                 </div>
-                <h2>6</h2> 
+                <h2>7</h2>
+            </div>
+
+            <div class="card">
+                <div class="header-card">
+                    <h3>Etecs</h3>
+                    <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
+                </div>
+                <h2>7</h2>
+            </div>
+
+            <div class="card">
+                <div class="header-card">
+                    <h3>Administradores Cadastrados</h3>
+                    <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                </div>
+                <h2>7</h2>
             </div>
         </div>
     </section>
