@@ -70,13 +70,13 @@ h4:nth-child(4) {
 }
 
 .left {
-    border-right: 5px solid #5d5d5d;
-    border-left: 5px solid #5662a2;
+    border-right: 3px solid #5d5d5d;
+    border-left: 3px solid #5662a2;
 }
 
 
 .top {
-    border-bottom: 5px solid #5d5d5d;
+    border-bottom: 3px solid #5d5d5d;
     height: 50%;
     display: flex;
 
