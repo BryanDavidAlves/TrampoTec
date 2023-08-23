@@ -21,7 +21,7 @@
     ?>
 
     <header>
-        <h1>Empresas</h1>
+        <h1>Etecs</h1>
         <input type="text" placeholder="Pesquisar">
     </header>
     <main>
