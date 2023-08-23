@@ -1,6 +1,6 @@
  <aside id="itens">
     <nav>
-    <img class="img-sidebar" src="../img/trampotec-logo.png" alt="">
+    <img class="img-sidebar" src="img/trampotec-logo.png" alt="">
         <ul>
             <div class="first">
 
@@ -8,6 +8,7 @@
                 <li><a href="empresa.php"><i class="fa-solid fa-building" style="color: #3C86D;"></i> Empresas</a></li>
                 <li><a href="professor.php"><i class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i> Professores</a></li>
                 <li><a href="aluno.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Alunos</a></li>
+                <li><a href="adm.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Adm</a></li>
             </div>
 
             <div class="second">
