@@ -1,72 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <!--link icone filtro-->
-    <link rel="stylesheet" href="../reset.css">
 
-    <link rel="stylesheet" href="../pag-aluno/css/login-e-cadastro.css">
-    <title>Processos Seletivos</title>
+    <link rel="stylesheet" href="css/registrar.css">
+    <title>Resgistrar</title>
 </head>
 
 <body>
+    <main>
+        <img class="cima" src="../img/imagemfundocima.png" alt="">
+        <img class="baixo" src="../img/imagemfundobaixo.png" alt="">
 
-    <div class="box">
-        <form action="..." method="post">
-            <fieldset>
+        <section class="login">
+            <div class="box-formulario">
+                <h1 class="title-login">Cadastro <br> Aluno</h1>
 
-                <img src="img/trampotec-logo.png" alt="">
-                <h1>Cadastro</h1>
-                <legend><i class="fa-solid fa-user" style="color: #ffffff;"></i></legend>
-                <br>
-                <br>
-                <div class="inputBox">
-                    <i class="fa-solid fa-id-card" style="color: #ffffff;"></i>
-                    <label class="labelInput" for="nome"> nome:</label>
-                    <input type="text" id="nome" name="nome" class="inputUser" required>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <i class="fa-solid fa-id-card" style="color: #ffffff;"></i>
-                    <label class="labelInput" for="cpf"> CPF:</label>
-                    <input type="text" id="cpf" name="cpf" class="inputUser" required>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                    <label class="labelInput" for="email"> email:</label>
-                    <input type="text" id="email" name="email" class="inputUser" required>
+                <form action="index.php">
+                    <div class="item-form">
+                        <label for="nome-professor">EMAIL INSTITUCIONAL</label>
+                        <div class="div-input">
+                            <input type="text" name="nome-professor" id="nome-professor">
+                        </div>
+                    </div>
 
-                </div>
-                <br>
-                <div class="inputBox">
-                    <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-                    <label class="labelInput" for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" class="inputUser" required>
+                    <div class="item-form">
+                        <label for="senha-professor">CODIGO DE LOGIN</label>
+                        <div class="div-input">
+                            <input type="text" name="senha-professor" id="senha-professor">
+                            <!--<i class="fa-solid fa-eye" style="color: #1f3251;"></i>-->
+                        </div>
+                    </div>
+                    <input style="margin-bottom:8%;" class="botao" type="submit" value="ACESSAR">
 
-                </div>
-                <br>
-                <div class="inputBox">
-                    <i class="fa-solid fa-lock" style="color: #ffffff;"></i>
-                    <label class="labelInput" for="Rsenha">Senha:</label>
-                    <input type="password" placeholder="Repita sua senha" id="Rsenha" name="Rsenha" class="inputUser" required>
 
-                </div>
-                <br>
-                <h2>Esqueceu sua senha?</h2>
-                <div class="botao">
-                    <button class="btn">Criar</button>
-                </div>
-            </fieldset>
-        </form>
-
-        <a href="login.php" class="icone"><i id="first" class="fa-solid fa-right-from-bracket"
-                style="color: #ffffff;"></i> VOLTAR</a>
-    </div>
+                </form>
+            </div>
+        </section>
+    </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
