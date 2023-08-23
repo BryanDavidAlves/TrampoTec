@@ -9,7 +9,7 @@
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/contato.css">
+    <link rel="stylesheet" href="../pag-aluno/css/fale.css">
     <title>Fale Conosco</title>
 </head>
 
