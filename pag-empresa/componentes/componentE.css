@@ -3,7 +3,6 @@
   position: fixed;
   background-color:rgb(248, 248, 248);
   width: 200px;   
-  padding: 10px;
   font-size: 1.1rem;
 }
 
@@ -11,7 +10,8 @@ nav{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
+
 }
 
 .side-bar .coluna-um {
@@ -19,13 +19,12 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;  
+  gap: 15px;  
 }
 .side-bar ul  li a i{
   margin-right: 15px;
 
 }
-
 
 .side-bar ul a{
   text-decoration: none;
@@ -95,9 +94,10 @@ nav{
   position: fixed;
   top: 100px;
   right: 0;
-  background-color: #ffffff;
+  background-color: #ffffff00;
   display: flex;
   flex-direction: column;
+  z-index: 1;
   }
 
  .rightnav .itens{
@@ -114,6 +114,7 @@ nav{
   text-decoration: none;
   font-size: 15px;
   color: #000000;
+  z-index: 1;
   }
 
  .icon-notificacao{
@@ -138,17 +139,24 @@ nav{
 }
 .barra-pesquisa input:focus{outline: none;}
 
+.itens select{
+  border: none;
+  width: 100px;
+  height: 20px;
+}
+.itens select{
+outline-color: #00000000;
+}
 
 aside {
   display: none;
-  background-color:#ffffff;
+  background-color:#f1eded;
   width: 40%;
   padding: 25px;
   height: 100%;
   position: fixed;
   right: 0;
   overflow-y: scroll;
-  transition: all 5s ease-in-out;
   z-index: 5;
 
 }
