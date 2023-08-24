@@ -8,7 +8,7 @@
 <link rel='stylesheet' href='../pag-empresa/css/config.css'>
 <title>TrampoTec</title>
 </head>
-<body>
+<body >
     
 <?php include ('../pag-empresa/componentes/sidebar.php')?>
 <?php include ('../pag-empresa/componentes/email.php')?>
@@ -39,7 +39,7 @@
 
 <br><p class="titulo-config"> Configuracoes gerais </p><br>
 
-<a class="card" href="">
+<a class="card" >
             <div class="card-corpo">
                 <div class="card-itens">
                 <i class="icon-config fa-solid fa-moon"></i>

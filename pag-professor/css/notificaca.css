@@ -3,9 +3,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
-        
-
 }
 .titulo-notificacao{
     font-size: 1.4rem;

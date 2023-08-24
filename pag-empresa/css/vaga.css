@@ -38,8 +38,9 @@ main {
 
 .card{
   margin-top: 20px;
-  width:350px;
-  height: 130px;
+  width:380px;
+  height: 280px;
+  padding: 20px;
   border: none;
   border-radius: 45px;
   background-color: rgba(231, 231, 231, 0.86);
@@ -63,7 +64,7 @@ main {
 
 .card .imagens{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .imagem-vaga{
@@ -150,3 +151,19 @@ color: gray;
   color: rgb(56, 56, 210);
   font-size: 15px;
 }
+
+.infos{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infos h4{
+ font-weight:bolder;
+  font-size: 15px;
+}
+
+.infos p{
+
+   font-size: 15px;
+ }
