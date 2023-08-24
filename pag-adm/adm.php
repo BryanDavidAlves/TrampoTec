@@ -25,7 +25,63 @@
         <input type="text" placeholder="Pesquisar">
     </header>
     <main>
-    <section class="filtro">
+
+        <section class="administradores">
+
+            <div class="align-card">
+                <section class="card">
+                    <div class="itens-card">
+                        <img class="img-adm" src="../img/img-perfil.jpg" alt="">
+                        <div class="info">
+                            <span>
+                                <h3>Nome:</h3>
+                                <p>Aline</p>
+                            </span>
+                            <span>
+                                <h3>Email:</h3>
+                                <p>aline.souza@etec.sp.gov.br</p>
+                            </span>
+                            <span>
+                                <h3>Telefone:</h3>
+                                <p>(11) 9 9979-9978</p>
+                            </span>
+                            <span>
+                                <h3>Senha:</h3>
+                                <p>Aline@123</p>
+                            </span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                </section>
+
+                <section class="card">
+                    <div class="itens-card">
+                        <img class="img-adm" src="../img/img-perfil.jpg" alt="">
+                        <div class="info">
+                            <span>
+                                <h3>Nome:</h3>
+                                <p>Aline</p>
+                            </span>
+                            <span>
+                                <h3>Email:</h3>
+                                <p>aline.souza@etec.sp.gov.br</p>
+                            </span>
+                            <span>
+                                <h3>Telefone:</h3>
+                                <p>(11) 9 9979-9978</p>
+                            </span>
+                            <span>
+                                <h3>Senha:</h3>
+                                <p>Aline@123</p>
+                            </span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                </section>
+
+                
+            </div>
+            <section class="filtro">
                 <a class="cadastrar" href="cadastro-adm.php">
                     <i id="iconeAdd" class="fa-solid fa-plus" style="color:#fff;"></i>
                     <h2>Novo Cadastro</h2>
@@ -78,82 +134,6 @@
                 </form>
                 </div>
             </section>
-        <section class="administradores">
-        
-            <section class="card">
-                <div class="align-card">
-                    <img class="img-adm" src="../img/img-perfil.jpg" alt="">
-                    <div class="info">
-                        <span>
-                            <h3>Nome:</h3>
-                            <p>Aline</p>
-                        </span>
-                        <span>
-                            <h3>Email:</h3>
-                            <p>aline.souza@etec.sp.gov.br</p>
-                        </span>
-                        <span>
-                            <h3>Telefone:</h3>
-                            <p>(11) 9 9979-9978</p>
-                        </span>
-                        <span>
-                            <h3>Senha:</h3>
-                            <p>Aline@123</p>
-                        </span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-            </section>
-            <section class="card">
-                <div class="align-card">
-                    <img class="img-adm" src="../img/img-perfil.jpg" alt="">
-                    <div class="info">
-                        <span>
-                            <h3>Nome:</h3>
-                            <p>Aline</p>
-                        </span>
-                        <span>
-                            <h3>Email:</h3>
-                            <p>aline.souza@etec.sp.gov.br</p>
-                        </span>
-                        <span>
-                            <h3>Telefone:</h3>
-                            <p>(11) 9 9979-9978</p>
-                        </span>
-                        <span>
-                            <h3>Senha:</h3>
-                            <p>Aline@123</p>
-                        </span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-            </section>
-            
-            <section class="card">
-                <div class="align-card">
-                    <img class="img-adm" src="../img/img-perfil.jpg" alt="">
-                    <div class="info">
-                        <span>
-                            <h3>Nome:</h3>
-                            <p>Aline</p>
-                        </span>
-                        <span>
-                            <h3>Email:</h3>
-                            <p>aline.souza@etec.sp.gov.br</p>
-                        </span>
-                        <span>
-                            <h3>Telefone:</h3>
-                            <p>(11) 9 9979-9978</p>
-                        </span>
-                        <span>
-                            <h3>Senha:</h3>
-                            <p>Aline@123</p>
-                        </span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-            </section>
-
 
 
         </section>
