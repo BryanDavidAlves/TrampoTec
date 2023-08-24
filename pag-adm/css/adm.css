@@ -24,6 +24,7 @@
     width: 100%;
     align-items: center;
     padding-left: 7%;
+    flex-wrap: wrap;
 }
 .info span{
     display: flex;
