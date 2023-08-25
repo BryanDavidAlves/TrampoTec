@@ -31,7 +31,7 @@
             <div class="align-card">
                 <section class="card">
                     <div class="itens-card">
-                        <img class="img-adm" src="../img/img-perfil.jpg" alt="">
+                        <img class="img-adm" src="img/img-perfil.jpg" alt="">
                         <div class="info">
                             <span>
                                 <h3>Nome:</h3>
@@ -56,7 +56,7 @@
 
                 <section class="card">
                     <div class="itens-card">
-                        <img class="img-adm" src="../img/img-perfil.jpg" alt="">
+                        <img class="img-adm" src="img/img-perfil.jpg" alt="">
                         <div class="info">
                             <span>
                                 <h3>Nome:</h3>
