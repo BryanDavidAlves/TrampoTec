@@ -28,7 +28,7 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/professor.jpg" alt="">
+                            <img src="img/aluno.png" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> Juliana</h2>
@@ -51,7 +51,7 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/professor.jpg" alt="">
+                            <img src="img/aluno.png" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> Juliana</h2>
@@ -74,7 +74,7 @@
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
-                            <img src="img/professor.jpg" alt="">
+                            <img src="img/aluno.png" alt="">
                             <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> Juliana</h2>
