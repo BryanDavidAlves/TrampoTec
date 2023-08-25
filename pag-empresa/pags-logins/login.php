@@ -35,25 +35,28 @@
 
                         <div class="itens-agendar"> 
                             <div>
-                            <form>
-                                <p class="titulo-agendar"> NOME </p>   
+                            <form action="../beck-end/login/valida_login.php" method="post">
+                                <p class="titulo-agendar"> EMAIL </p>   
                                     <div class="barra-agendar">
-                                        <input type="text" placeholder=".">
+                                        <input type="email" placeholder="." require_once name="email">
                                     </div> 
                             </div>
                     
                             <div>
                                 <p class="titulo-agendar"> SENHA </p>   
                                     <div class="barra-agendar">
-                                        <input type="password"  placeholder="">
+                                        <input type="password"  placeholder="" require_once name="senha">
                                     </div> 
                             </div>
 
 
                             </div>
-                            <div  class="link-senha">
-                            <button class="botao-agendar"><a href="#">LOGAR</a></button>
-                           <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a> </div>
+                            <div class="link-senha">
+                        <button type="submit" class="botao-agendar"></button>
+                        <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a>
+                        <br>
+                        <a class="link" href="./criar-login.php"> nao é cadastrado ? crie agora </a>
+                    </div>
                            
                     </form>
                     </div>
