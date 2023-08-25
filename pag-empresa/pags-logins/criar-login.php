@@ -1,3 +1,6 @@
+<?php
+    include('../../dao/conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,36 +39,36 @@
 
                         <div class="itens-agendar">
                             <div>
-                                <form>
+                                <form method="post" action="../beck-end/cadastro/salvarCadastro.php">
                                     <p class="titulo-agendar"> NOME </p>
                                     <div class="barra-agendar">
-                                        <input type="text" placeholder=".">
+                                        <input type="text" placeholder="." name="nome">
                                     </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> EMAIL </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="">
+                                    <input type="text" placeholder="" name="email">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> SENHA </p>
                                 <div class="barra-agendar">
-                                    <input type="password" placeholder="">
+                                    <input type="password" placeholder="" name="senha">
                                 </div>
                             </div>
 
                             <div>
-                                <p class="titulo-agendar"> CPNJ </p>
+                                <p class="titulo-agendar"> CNPJ </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="">
+                                    <input type="text" placeholder="" name="cnpj">
                                 </div>
                             </div>
 
                             <div>
                                 <p class="titulo-agendar"> CEP </p>
                                 <div class="barra-agendar">
-                                    <input type="password" placeholder="">
+                                    <input type="numeric" placeholder="" name="cep">
                                 </div>
                             </div>
                         </div>
@@ -79,26 +82,26 @@
 
                                 <p class="titulo-agendar"> LOGRADOURO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder=".">
+                                    <input type="text" placeholder="." name="logradouro">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> NUMERO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="">
+                                    <input type="numeric" placeholder="" name="numero">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> BAIRRO </p>
                                 <div class="barra-agendar">
-                                    <input type="password" placeholder="">
+                                    <input type="text" placeholder="" name="bairro">
                                 </div>
                             </div>
 
                             <div>
                                 <p class="titulo-agendar"> ESTADO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="">
+                                    <input type="text" placeholder="" name="estado">
                                 </div>
                             </div>
 
@@ -106,7 +109,7 @@
                                 <p class="titulo-agendar"><label for="arquivo"> SELECIONE UMA IMAGEM</label> </p>
                                 <div class="barra-file">
 
-                                    <input type="file" id="arquivo">
+                                    <input type="file" id="arquivo" name="foto">
                                 </div>
                             </div>
                         </div>
