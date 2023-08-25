@@ -1,3 +1,5 @@
+<?php include('../../dao/conexao.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,36 +31,36 @@
 
             <div class="card-itens">
                 <div class="itens-agendar">
-                    <form>
+                    <form method="post" action="salvarCriarLogin.php">
                         <div>
                             <div>
                                 <p class="titulo-agendar"> CEP </p>
                                 <div class="barra-agendar">
-                                    <input type="password" placeholder="">
+                                    <input type="password" placeholder="" name="cep">
                                 </div>
                             </div>
                             <p class="titulo-agendar"> LOGRADOURO </p>
                             <div class="barra-agendar">
-                                <input type="text" placeholder=".">
+                                <input type="text" placeholder="." cep="logradouro">
                             </div>
                         </div>
                         <div>
                             <p class="titulo-agendar"> NUMERO </p>
                             <div class="barra-agendar">
-                                <input type="text" placeholder="">
+                                <input type="text" placeholder="" name="numero">
                             </div>
                         </div>
                         <div>
                             <p class="titulo-agendar"> BAIRRO </p>
                             <div class="barra-agendar">
-                                <input type="password" placeholder="">
+                                <input type="password" placeholder="" name="bairro"> 
                             </div>
                         </div>
 
                         <div>
                             <p class="titulo-agendar"> ESTADO </p>
                             <div class="barra-agendar">
-                                <input type="text" placeholder="">
+                                <input type="text" placeholder="" name="estado">
                             </div>
                         </div>
 
@@ -66,11 +68,11 @@
                             <p class="titulo-agendar"><label for="arquivo"> SELECIONE UMA IMAGEM</label> </p>
                             <div class="barra-file">
 
-                                <input type="file" id="arquivo">
+                                <input type="file" id="arquivo" name="foto_usuario">
                             </div>
                         </div>
                 </div>
-                <button class="botao-agendar"><a href="./cadastrar-login.php">CADASTRAR</a></button>
+                <input type="submit" class=" btn btn-success" value="Salvar">
 
                 </form>
 

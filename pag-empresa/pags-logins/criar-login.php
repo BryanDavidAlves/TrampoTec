@@ -1,3 +1,5 @@
+<?php include('../../dao/conexao.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,33 +34,34 @@
 
                     <div class="itens-agendar">
                         <div>
-                        <form>
+                        <form method="post" action="../beck-end/cadastro/salvarCadastro.php">
                             <p class="titulo-agendar"> NOME </p>   
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder=".">
+                                    <input type="text"  placeholder="." name="nome">
                                 </div> 
                         </div>
                         <div>
                             <p class="titulo-agendar"> EMAIL </p>   
                                 <div class="barra-agendar">
-                                    <input type="text"  placeholder="">
+                                    <input type="text"  placeholder="" name="email">
                                 </div> 
                         </div>
                         <div>
                             <p class="titulo-agendar"> SENHA </p>   
                                 <div class="barra-agendar">
-                                    <input type="password"  placeholder="">
+                                    <input type="password"  placeholder="" name="senha">
                                 </div> 
                         </div>
 
                         <div>
                             <p class="titulo-agendar"> CPNJ  </p>   
                                 <div class="barra-agendar">
-                                    <input type="text"  placeholder="">
+                                    <input type="text"  placeholder="" name="cnpj">
                                 </div> 
                         </div>
                         </div>
-                        <button class="botao-agendar"><a href="./cadastrar-login.php">PROXIMO</a></button>
+                        <input type="submit" class=" btn btn-success" value="Salvar">
+                        <!--<button class="botao-agendar"><a href="./cadastrar-login.php">PROXIMO</a></button>-->
 
 </form>
                     
