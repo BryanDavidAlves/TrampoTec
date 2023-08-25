@@ -23,7 +23,7 @@
             <section class="align-grid">
                 <section class="perfil">
                     <div class="perfil-img">
-                        <img src="../img/img-perfil.jpg" alt="">
+                        <img src="img/img-perfil.jpg" alt="">
                     </div>
                     <h3>Roberta Carla Andrade</h3>
                     <h4> 19 anos</h4>

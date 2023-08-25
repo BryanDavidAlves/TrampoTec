@@ -52,7 +52,7 @@
         </div>
 
         
-        <img class="icone" src="../img/icone-contato.png" alt="">
+        <img class="icone" src="img/icone-contato.png" alt="">
     </main>
     <?php
         include('../pag-aluno/components/sidebar.php');
