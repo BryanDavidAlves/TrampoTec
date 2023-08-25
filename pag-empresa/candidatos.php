@@ -86,7 +86,7 @@
 
 
                 <div class="seta-dropdown">
-                    <i onclick="modalseta()" id="setabaixo" class="setacima icon-seta fa-solid fa-angle-down"></i>
+                    <i onclick="modalseta()" id="setabaixo" class="icon-seta fa-solid fa-angle-down"></i>
                     <div class="cards-entrevistas">
                         <div class="modal-candidato" id="abrircandidato">
                             <div class="card-candidato-modal">

@@ -7,17 +7,17 @@
     <title>Trampotec</title>
 </head>
 <body>
-    <img class="cima" src="../../img/imagemfundocima.png">
+    <img class="cima" src="../img/imagemfundocima.png">
 
-    <img class="baixo" src="../../img/imagemfundobaixo.png">
+    <img class="baixo" src="../img/imagemfundobaixo.png">
     
         <section class="cards-meio">
     
             <div class="card">
     
                 <div class="imagens">
-                    <div> <img class="logo" src="../../img/trampotec-logo.png" alt="foto do aluno"></div>
-                    <div> <img class="imagem-ilustra" src="../../img/1.png" alt="foto do aluno"></div>
+                    <div> <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno"></div>
+                    <div> <img class="imagem-ilustra" src="../img/1.png" alt="foto do aluno"></div>
                 </div>
     
                 <div class="linha"> </div>
