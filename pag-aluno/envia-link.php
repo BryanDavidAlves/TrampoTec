@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/codigo-cadastro.css">
+    <link rel="stylesheet" href="css/envia-link.css">
     <title>Resgistrar</title>
 </head>
 
@@ -13,7 +13,7 @@
     <main>
         <img class="cima" src="img/imagemfundocima.png" alt="">
         <img class="baixo" src="img/imagemfundobaixo.png" alt="">
-        
+
 
         <section class="login">
             <div class="box-formulario">
@@ -21,21 +21,19 @@
 
                 <form action="index.php">
                     <div class="item-form">
-                        <label for="nome-professor">EMAIL INSTITUCIONAL</label>
+                        <label for="email-aluno">EMAIL INSTITUCIONAL</label>
                         <div class="div-input">
-                            <input type="text" name="nome-professor" id="nome-professor">
+                            <input type="text" name="email-aluno" id="email-aluno">
                         </div>
                     </div>
 
-                    <div class="item-form">
-                        <label for="senha-professor">CODIGO DE LOGIN</label>
-                        <div class="div-input">
-                            <input type="text" name="senha-professor" id="senha-professor">
-                            <!--<i class="fa-solid fa-eye" style="color: #1f3251;"></i>-->
-                        </div>
+                    <div class="mensagem">
+                        <h2>
+                            EM BREVE, VOCÊ RECEBERÁ UMA NOTIFICAÇÃO DE CONFIRMAÇÃO EM SEU E-MAIL. POR FAVOR, ESTEJA
+                            ATENTO!
+                        </h2>
                     </div>
-                    <input style="margin-bottom:8%;" class="botao" type="submit" value="ACESSAR">
-
+                    <input class="botao" type="submit" value="ENVIAR">
 
                 </form>
             </div>
