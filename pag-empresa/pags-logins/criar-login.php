@@ -61,6 +61,7 @@
                             <div>
                                 <p class="titulo-agendar"> CNPJ </p>
                                 <div class="barra-agendar">
+                               
                                     <input type="text" placeholder="" name="cnpj">
                                 </div>
                             </div>
