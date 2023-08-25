@@ -27,23 +27,22 @@ var setabaixo=document.getElementById('setabaixo')
 if (modalseta.style.display == 'none'){
     modalcandidatoremarcar.style.display='none'            
      modalseta.style.display = 'block'
-     setabaixo.style.transform='rotate(180deg)'
-     setabaixo.style.transitionDuration='0.3s'
+     setabaixo.style.transform='rotatex(180deg)'
+     setabaixo.style.transitionDuration='0.2s'
      
 
 }else if (modalseta.style.display == 'block'){
     modalcandidatoremarcar.style.display='none'
     modalseta.style.display='none'
-    setabaixo.style.transform='rotate(0deg)'
-    setabaixo.style.transitionDuration='0.3s'
+    setabaixo.style.transform='rotatex(0deg)'
+    setabaixo.style.transitionDuration='0.2s'
     
 }
  else{
     modalseta.style.display = 'block'    
     modalcandidatoremarcar.style.display='none'    
-    setabaixo.style.transition='0.5s'
-    setabaixo.style.transform='rotate(180deg)'
-    setabaixo.style.transitionDuration='0.3s'
+    setabaixo.style.transform='rotatex(180deg)'
+    setabaixo.style.transitionDuration='0.2s'
 }
 
 }

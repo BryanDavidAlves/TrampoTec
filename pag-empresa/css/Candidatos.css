@@ -29,6 +29,7 @@ main {
   align-items: center;
   padding: 25px;
   margin: 20px;
+  z-index: 1;
 }
 
 .card-corpo{
@@ -198,7 +199,7 @@ color: gray;
   padding: 15px;
   border: 1px solid rgb(103, 102, 102);
   border-radius: 15px;
-  z-index: 5;
+  z-index: 1;
 }
 
 .icon-modal{
