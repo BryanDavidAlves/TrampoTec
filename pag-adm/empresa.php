@@ -30,7 +30,12 @@
                     <section class="header-card">
                         <div class="part1">
                             <img src="img/empresa.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+                            <i onclick='open()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;" ></i>
+                            <div id="modal-card">
+                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
+                            </div>
                         </div>
                         <h2> TrampoTec</h2>
 
@@ -232,7 +237,8 @@
             
         </section>
 
-    </main>
+    </main>]
+    <script src="modal.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
