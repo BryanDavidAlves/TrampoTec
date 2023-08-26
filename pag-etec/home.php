@@ -11,5 +11,12 @@
 <body>
 <?php include ('../pag-etec/componentes/sidebar.php')?>
 <?php include ('../pag-etec/componentes/filtro.php')?>
+
+
+
+
+
+<script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+<script src="./js/"></script>
 </body>
 </html>
