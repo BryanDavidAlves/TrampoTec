@@ -84,6 +84,13 @@
 
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <script type="text/javascript">
+        $("#tel-aluno, #celular").mask("(00) 0000-0000");
+    </script>
 </body>
 
 </html>
