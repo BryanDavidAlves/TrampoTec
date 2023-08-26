@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/adm.css">
 
-    <title>Etecs</title>
+    <title>Administradores</title>
 </head>
 
 <body>
@@ -51,36 +51,15 @@
                             </span>
                         </div>
                     </div>
-                    <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                </section>
-
-                <section class="card">
-                    <div class="itens-card">
-                        <img class="img-adm" src="img/img-perfil.jpg" alt="">
-                        <div class="info">
-                            <span>
-                                <h3>Nome:</h3>
-                                <p>Aline</p>
-                            </span>
-                            <span>
-                                <h3>Email:</h3>
-                                <p>aline.souza@etec.sp.gov.br</p>
-                            </span>
-                            <span>
-                                <h3>Telefone:</h3>
-                                <p>(11) 9 9979-9978</p>
-                            </span>
-                            <span>
-                                <h3>Senha:</h3>
-                                <p>Aline@123</p>
-                            </span>
-                        </div>
+                    <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg"
+                        style="color: #a1a1a1;"></i>
+                    <div id="modal-card">
+                        <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
+                        <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
+                        <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
                     </div>
-                    <i class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                 </section>
-                
 
-                
             </div>
             <section class="filtro">
                 <a class="cadastrar" href="cadastro-adm.php">
@@ -140,6 +119,7 @@
         </section>
 
     </main>
+    <script src="modal-adm.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
