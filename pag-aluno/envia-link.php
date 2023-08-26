@@ -19,7 +19,7 @@
             <div class="box-formulario">
                 <h1 class="title-login">Cadastro <br> Aluno</h1>
 
-                <form action="index.php">
+                <form action="index.php" >
                     <div class="item-form">
                         <label for="email-aluno">EMAIL INSTITUCIONAL</label>
                         <div class="div-input">
