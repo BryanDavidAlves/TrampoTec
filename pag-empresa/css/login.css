@@ -285,3 +285,9 @@ a{
   font-family: Arial, Helvetica, sans-serif;
   width: 250px;
 }
+.corBotao{
+  color: white;
+}
+.text-danger{
+  color: red;
+}

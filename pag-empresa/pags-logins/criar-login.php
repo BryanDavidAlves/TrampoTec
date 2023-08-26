@@ -23,7 +23,7 @@ include('../../dao/conexao.php');
 
             <div class="imagens">
                 <div> <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno"></div>
-                <div> <img class="imagem-ilustra" src="../img/1.png"></div>
+                <div> <img class="imagem-ilustra" src="../fotosEmpresa/perfil/1.png"></div>
                 <div> </div>
             </div>
 
@@ -42,19 +42,19 @@ include('../../dao/conexao.php');
                                 <form method="post" action="../beck-end/cadastro/salvarCadastro.php">
                                     <p class="titulo-agendar"> NOME </p>
                                     <div class="barra-agendar">
-                                        <input type="text" placeholder="." name="nome">
+                                        <input required type="text" placeholder="." name="nome">
                                     </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> EMAIL </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="" name="email">
+                                    <input required type="text" placeholder="" name="email">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> SENHA </p>
                                 <div class="barra-agendar">
-                                    <input type="password" placeholder="" name="senha">
+                                    <input required type="password" placeholder="" name="senha">
                                 </div>
                             </div>
 
@@ -62,21 +62,21 @@ include('../../dao/conexao.php');
                                 <p class="titulo-agendar"> CNPJ </p>
                                 <div class="barra-agendar">
 
-                                    <input type="text" placeholder="" name="cnpj">
+                                    <input required type="text" placeholder="_ _ . _ _ _ . _ _ _ / _ _ _ _ - _ _" name="cnpj">
                                 </div>
                             </div>
 
                             <div>
                                 <p class="titulo-agendar"> CEP </p>
                                 <div class="barra-agendar">
-                                    <input type="numeric" placeholder="" name="cep">
+                                    <input required type="numeric" placeholder="" name="cep">
                                 </div>
                             </div>
 
                             <div>
                                 <p class="titulo-agendar"> TELEFONE </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="" name="bairro">
+                                    <input required type="text" placeholder="( ) _ _ _ _ _ - _ _ _ _" name="telefone">
                                 </div>
                             </div>
                         </div>
@@ -90,28 +90,28 @@ include('../../dao/conexao.php');
 
                                 <p class="titulo-agendar"> LOGRADOURO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="." name="logradouro">
+                                    <input required type="text" placeholder="." name="logradouro">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> NUMERO </p>
                                 <div class="barra-agendar">
-                                    <input type="numeric" placeholder="" name="numero">
+                                    <input required type="numeric" placeholder="" name="numero">
                                 </div>
                             </div>
                             <div>
                                 <p class="titulo-agendar"> BAIRRO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="" name="bairro">
+                                    <input required type="text" placeholder="" name="bairro">
                                 </div>
                             </div>
 
-                           
+
 
                             <div>
                                 <p class="titulo-agendar"> ESTADO </p>
                                 <div class="barra-agendar">
-                                    <select id="estado" name="estado">
+                                    <select required id="estado" name="estado">
                                         <option value="AC">Acre</option>
                                         <option value="AL">Alagoas</option>
                                         <option value="AP">Amapá</option>
@@ -146,17 +146,49 @@ include('../../dao/conexao.php');
 
                             <div>
                                 <br>
-                                <p class="titulo-agendar"><label for="arquivo"> SELECIONE UMA IMAGEM</label> </p>
+                                <p class="titulo-agendar"><label for="foto"> SELECIONE UMA IMAGEM</label> </p>
                                 <div class="barra-file">
-                                    <input type="file" id="arquivo" name="foto">
-                                    <input class="input-none" type="hidden" id="arquivo" name="foto-empresa">
+                                    <input type="file" id="foto" name="foto">
+                                    <input class="input-none" type="hidden" id="foto_empresa" name="foto_empresa">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <?php
+                if (isset($_GET['login']) && $_GET['login'] == "cnpjInvalido") {
+                    ?>
+                    <div class="text-danger">
+                        CNPJ INVALIDO!!
+                    </div>
+                    <?php
+                }
+                ?>
+
+                <?php
+                if (isset($_GET['login']) && $_GET['login'] == "senhaFraca") {
+                    ?>
+                    <div class="text-danger">
+                        Senha Fraca! exemplo: Senha123@@
+                    </div>
+                    <?php
+                }
+                ?>
+
+<?php
+                if (isset($_GET['login']) && $_GET['login'] == "numeroTelInvalido") {
+                    ?>
+                    <div class="text-danger">
+                        Telefone Invalido
+                    </div>
+                    <?php
+                }
+                ?>
+
+
                 <div>
+
                     <button type="submit" class="botao-agendar">CADASTRAR</button>
                     </form>
                 </div>

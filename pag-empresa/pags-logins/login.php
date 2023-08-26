@@ -54,7 +54,16 @@
                             </div>
                                         
                             <div class="link-senha">
-                        <button type="submit" class="botao-agendar"> LOGIN </button>
+                            <?php 
+                            if(isset($_GET['login']) && $_GET['login'] == "erro"){
+                            ?>
+                            <div class="text-danger">
+                                Usuario ou senha Inválidos
+                            </div> 
+                            <?php  
+                            }
+                            ?><br>
+                        <button type="submit" class="botao-agendar"> <h6 class="corBotao">LOGIN<h6> </button>
                         <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a>
                         <br>
                         <a class="link" href="./criar-login.php"> nao é cadastrado ? crie agora </a>

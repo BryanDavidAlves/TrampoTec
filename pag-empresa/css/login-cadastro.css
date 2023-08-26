@@ -104,7 +104,7 @@ body{
   height: 30px;
   border: 1px solid rgb(3, 3, 70);  
   margin-bottom: 10px;
-  padding: 10px;
+ 
   }
 
   .barra-agendar select{
@@ -317,4 +317,8 @@ body{
   .titulo-geral-login{
     text-align: left;
   }
-
+  
+  .text-danger{
+    color: red;
+    margin-top: 5px;
+  }

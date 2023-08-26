@@ -15,13 +15,13 @@
         /*$_SESSION['idUsuario'] = $empresa[0]['idUsuario'];*/
         $_SESSION['email'] = $empresa[0]['email'];
         $_SESSION['senha'] = $empresa[0]['senha'];
-
+        
         /*$_SESSION['imgUser'] = $empresa[0]['imgUser'];*/
         $_SESSION['autenticado'] ='SIM';
         header('Location: ../../home.php');
     }
     else{
-        header('Location: login.php?login=erro');
+        header('Location: ../../pags-logins/login.php?login=erro');
         $_SESSION['autenticado'] = "NAO";
     }
         
