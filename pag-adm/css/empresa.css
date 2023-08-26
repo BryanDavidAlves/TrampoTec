@@ -46,6 +46,8 @@
 }
 .header-card h2{
     margin-bottom: 15px;
+    font-weight:700 ;
+    font-size: 1.5rem;
 }
 .info-empresa{
     margin-top: 15px;
@@ -53,11 +55,12 @@
     margin-left: 15px;
 }
 .info-empresa h3{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 .info-empresa h5{
     font-size: 0.8rem;
     margin-top: 5px;
+    line-height: 20px;
 }
  .filtro {
     display: flex;
@@ -84,14 +87,14 @@
     border: none;
     
 }
-
- .filtro .align select,
-.palavra-box {
-    margin-left: 10px;
-}
 .titulo-filtro{
-    margin-bottom: 15px;
+    margin-top: 5px;
     margin-left: 10px;
+    display: flex;
+    
+}
+form{
+    margin-top: 10px;
 }
  .filtro .button{
     background-color: #4d3cd1;
@@ -103,3 +106,33 @@
     width: 100%;
     margin-top: 10px;
 }  
+#modal-card {
+    display: none;
+    background-color: #fff;
+    border: 1px solid;
+    flex-direction: column;
+    width: 150px;
+    padding: 10px;
+    position: absolute;
+    height: 100px;
+    justify-content: center;
+    margin-left: 380px;
+    margin-top: 120px;
+    border-radius: 20px;
+}
+
+.item-modal {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 500;    
+}
+
+.item-modal:nth-child(2) {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+.item-modal i{
+    color: #4d3cd1;
+}

@@ -25,57 +25,18 @@
     <main>
         <section class="professor">
             <div class="align-card">
+               
                 <div class="card">
                     <section class="header-card">
                         <div class="part1">
                             <img src="img/professor.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> Vanessa</h2>
-
-                    </section>
-                    <div class="info-professor">
-                        <h3>E-mail institucional</h3>
-                        <h5>Vanessa123@etec.sp.gov.br</h5>
+                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg"
+                        style="color: #a1a1a1;"></i>
+                    <div id="modal-card">
+                        <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
+                        <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
+                        <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
                     </div>
-                    <div class="info-professor">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
-
-                    <div class="info-professor">
-                        <h3>Disciplinas</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/professor.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> Vanessa</h2>
-
-                    </section>
-                    <div class="info-professor">
-                        <h3>E-mail institucional</h3>
-                        <h5>Vanessa123@etec.sp.gov.br</h5>
-                    </div>
-                    <div class="info-professor">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
-
-                    <div class="info-professor">
-                        <h3>Disciplinas</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/professor.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
                         </div>
                         <h2> Vanessa</h2>
 
@@ -147,6 +108,7 @@
         </section>
 
     </main>
+    <script src="modal-professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

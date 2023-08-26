@@ -47,6 +47,8 @@
 }
 .header-card h2{
     margin-bottom: 15px;
+    font-weight:700 ;
+    font-size: 1.5rem;
 }
 .info-aluno{
     margin-top: 15px;
@@ -103,4 +105,34 @@
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-}  
+}
+#modal-card {
+    display: none;
+    background-color: #fff;
+    border: 1px solid;
+    flex-direction: column;
+    width: 150px;
+    padding: 10px;
+    position: absolute;
+    height: 100px;
+    justify-content: center;
+    margin-left: 380px;
+    margin-top: 120px;
+    border-radius: 20px;
+}
+
+.item-modal {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 500;    
+}
+
+.item-modal:nth-child(2) {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+.item-modal i{
+    color: #4d3cd1;
+}
