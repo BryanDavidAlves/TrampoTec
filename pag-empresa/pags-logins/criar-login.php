@@ -1,5 +1,5 @@
 <?php
-    include('../../dao/conexao.php');
+include('../../dao/conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
 
             <div class="imagens">
                 <div> <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno"></div>
-                <div> <img class="imagem-ilustra" src="../img/1.png" alt="foto do aluno"></div>
+                <div> <img class="imagem-ilustra" src="../img/1.png"></div>
                 <div> </div>
             </div>
 
@@ -61,7 +61,7 @@
                             <div>
                                 <p class="titulo-agendar"> CNPJ </p>
                                 <div class="barra-agendar">
-                               
+
                                     <input type="text" placeholder="" name="cnpj">
                                 </div>
                             </div>
@@ -70,6 +70,13 @@
                                 <p class="titulo-agendar"> CEP </p>
                                 <div class="barra-agendar">
                                     <input type="numeric" placeholder="" name="cep">
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="titulo-agendar"> TELEFONE </p>
+                                <div class="barra-agendar">
+                                    <input type="text" placeholder="" name="bairro">
                                 </div>
                             </div>
                         </div>
@@ -99,18 +106,50 @@
                                 </div>
                             </div>
 
+                           
+
                             <div>
                                 <p class="titulo-agendar"> ESTADO </p>
                                 <div class="barra-agendar">
-                                    <input type="text" placeholder="" name="estado">
+                                    <select id="estado" name="estado">
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                        <option value="EX">Estrangeiro</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div>
+                                <br>
                                 <p class="titulo-agendar"><label for="arquivo"> SELECIONE UMA IMAGEM</label> </p>
                                 <div class="barra-file">
-
                                     <input type="file" id="arquivo" name="foto">
+                                    <input class="input-none" type="hidden" id="arquivo" name="foto-empresa">
                                 </div>
                             </div>
                         </div>
