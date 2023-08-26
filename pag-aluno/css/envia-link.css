@@ -64,7 +64,7 @@ input:focus {
     display: flex;flex-direction: column;
 }
 .div-input{
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -72,7 +72,7 @@ input:focus {
     margin-top: 15px;
 }
 .div-input input{
-    width: 90%;
+    width: 100%;
     border: none;
     padding: 10px;
     border-radius: 20px;
