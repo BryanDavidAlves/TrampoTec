@@ -10,7 +10,7 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    margin-left: 23%;
+    margin-left:23%;
 }
 
 .card {
@@ -26,8 +26,7 @@
     justify-content: space-around;
 
 }
-
-.part1 img {
+.part1 img{
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -36,7 +35,6 @@
     border-radius: 100%;
     border: 1px solid black;
 }
-
 .header-card {
     display: block;
     margin-left: auto;
@@ -46,64 +44,59 @@
     width: 90%;
     text-align: center;
 }
-
-.header-card h2 {
+.header-card h2{
     margin-bottom: 15px;
+    font-weight:700 ;
+    font-size: 1.5rem;
 }
-
-.info-empresa {
+.info-empresa{
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 15px;
 }
-
-.info-empresa h3 {
-    font-size: 1.1rem;
+.info-empresa h3{
+    font-size: 1.3rem;
 }
-
-.info-empresa h5 {
+.info-empresa h5{
     font-size: 0.8rem;
     margin-top: 5px;
+    line-height: 20px;
 }
-
-.filtro {
+ .filtro {
     display: flex;
     flex-direction: column;
     padding: 15px;
     float: right;
     margin-right: 20px;
-
+    
 }
 
-.filtro .align {
+ .filtro .align {
     display: flex;
 }
 
-.filtro .align .palavra-chave {
+ .filtro .align .palavra-chave {
     width: 110px;
     padding-bottom: 5px;
     padding-top: 5px;
 }
 
-.palavra-box,
-select {
+.palavra-box,select {
     height: 25px;
     margin-top: 5px;
     border: none;
-
+    
 }
-
-.filtro .align select,
-.palavra-box {
+.titulo-filtro{
+    margin-top: 5px;
     margin-left: 10px;
+    display: flex;
+    
 }
-
-.titulo-filtro {
-    margin-bottom: 15px;
-    margin-left: 10px;
+form{
+    margin-top: 10px;
 }
-
-.filtro .button {
+ .filtro .button{
     background-color: #4d3cd1;
     padding: 5px;
     color: white;
@@ -112,8 +105,7 @@ select {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-}
-
+}  
 #modal-card {
     display: none;
     background-color: #fff;

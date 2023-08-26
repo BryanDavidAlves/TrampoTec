@@ -125,11 +125,6 @@
 
         </section>
 
-
-        <section class="aluno">
-
-        </section>
-
     </main>
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>

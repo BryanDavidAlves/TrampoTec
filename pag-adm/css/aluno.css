@@ -47,6 +47,8 @@
 }
 .header-card h2{
     margin-bottom: 15px;
+    font-weight:700 ;
+    font-size: 1.5rem;
 }
 .info-aluno{
     margin-top: 15px;
@@ -103,7 +105,7 @@
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-}  
+}
 #modal-card {
     display: none;
     background-color: #fff;
