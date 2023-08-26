@@ -147,6 +147,7 @@
         </section>
 
     </main>
+    <script src="modal-professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

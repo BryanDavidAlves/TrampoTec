@@ -1,4 +1,4 @@
-function open() {
+function openModal() {
     var modal = document.getElementById('modal-card')
     if (modal.style.display == 'none') {
         modal.style.display = 'block'

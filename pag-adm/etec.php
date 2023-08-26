@@ -32,7 +32,13 @@
                     <section class="header-card">
                         <div class="part1">
                             <img src="img/img-etec.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
+
+                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;" ></i>
+                            <div id="modal-card">
+                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
+                            </div>
                         </div>
                         <h2> TrampoTec</h2>
 
@@ -66,43 +72,7 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/img-etec.jpg" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> TrampoTec</h2>
 
-                    </section>
-                    <div class="info-etec">
-                        <h3>Localização</h3>
-                        <h5>Rua Feliciano Mendonça 290- Guaianases. São Paulo - SP, 08460-365</h5>
-                    </div>
-                    <div class="info-etec">
-                        <h3>Cursos</h3>
-                        <h5>Desenvolvimento de sistemas - Tarde <br>
-                            Nutrição - Tarde <br>
-                            Eletrotécnica - EMTEC <br>
-                            Administração - EMTEC <br>
-                        </h5>
-                    </div>
-
-                    <div class="info-etec">
-                        <h3>Telefone</h3>
-                        <h5>(11) 2558-2585</h5>
-                    </div>
-
-                    <div class="info-etec">
-                        <h3>Código</h3>
-                        <h5>(11) 99999-9999</h5>
-                    </div>
-
-                    <div class="info-etec">
-                        <h3>Email</h3>
-                        <h5>email@email.com</h5>
-                    </div>
-                </div>
             </div>
             <section class="filtro">
                 <div class="align">
@@ -161,6 +131,7 @@
         </section>
 
     </main>
+    <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

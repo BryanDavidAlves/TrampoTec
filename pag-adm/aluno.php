@@ -23,79 +23,7 @@
         <input type="text" placeholder="Pesquisar">
     </header>
     <main>
-        <section class="aluno">
-        <div class="align-card">
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/aluno.png" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> Juliana</h2>
-
-                    </section>
-                    <div class="info-aluno">
-                        <h3>E-mail institucional</h3>
-                        <h5>juliana123@etec.sp.gov.br</h5>
-                    </div>
-                    <div class="info-aluno">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
-
-                    <div class="info-aluno">
-                        <h3>Cursos</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/aluno.png" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> Juliana</h2>
-
-                    </section>
-                    <div class="info-aluno">
-                        <h3>E-mail institucional</h3>
-                        <h5>juliana123@etec.sp.gov.br</h5>
-                    </div>
-                    <div class="info-aluno">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
-
-                    <div class="info-aluno">
-                        <h3>Cursos</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/aluno.png" alt="">
-                            <i id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i>
-                        </div>
-                        <h2> Juliana</h2>
-
-                    </section>
-                    <div class="info-aluno">
-                        <h3>E-mail institucional</h3>
-                        <h5>juliana123@etec.sp.gov.br</h5>
-                    </div>
-                    <div class="info-aluno">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
-
-                    <div class="info-aluno">
-                        <h3>Cursos</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-            </div>
-            <section class="filtro">
+    <section class="filtro">
                 <div class="align">
                     <span class="material-symbols-outlined">
                         tune
@@ -143,8 +71,42 @@
                 </form>
                 </div>
             </section>
+        <section class="aluno">
+            
+        <div class="align-card">
+                <div class="card">
+                    <section class="header-card">
+                        <div class="part1">
+                            <img src="img/aluno.png" alt="">
+                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;" ></i>
+                            <div id="modal-card">
+                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
+                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
+                            </div>
+                        </div>
+                        <h2> Juliana</h2>
+
+                    </section>
+                    <div class="info-aluno">
+                        <h3>E-mail institucional</h3>
+                        <h5>juliana123@etec.sp.gov.br</h5>
+                    </div>
+                    <div class="info-aluno">
+                        <h3>Codigo etec</h3>
+                        <h5>118</h5>
+                    </div>
+
+                    <div class="info-aluno">
+                        <h3>Cursos</h3>
+                        <h5>PA - Programação e Algoritmos</h5>
+                    </div>
+                </div>
+                
+            
         </section>
     </main>
+    <script src="modal-aluno.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
