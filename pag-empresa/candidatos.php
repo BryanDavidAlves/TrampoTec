@@ -1,3 +1,6 @@
+<?php
+require_once "./beck-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
