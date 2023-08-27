@@ -20,11 +20,25 @@
     <main id="main">
 
         <section class="infos">
-            <div class="align">
-                <h1>CURRICULO</h1>
+            <h1>CURRICULO</h1>
+            <div class="box">
+
+                <section class="navigation">
+                    <div class="trocar-pag">
+                        <h2 onclick="pessoal()">INFORMAÇÕES PESSOAIS</h2>
+                        <h2 onclick="academica()">INFORMAÇÕES ACADEMICAS</h2>
+                        <h2 onclick="conhecimentos()" id="conhecimentos">CONHECIMENTOS</h2>
+                        <h2 onclick="disponibilidadea()" id="disponibilidade">DISPONIBILIDADE</h2>
+                    </div>
+                    <!-- <div id="line"></div>
+                        linha para se mover, fazer animaçao futuramente no js
+                    -->
+                </section>
+
                 <div class="container">
-                    <section class="info-pessoal">
-                        <h2>INFORMAÇÕES PESSOAIS</h2>
+
+                    <section id="info-pessoal" class="info-pessoal">
+
                         <div class="one-bar">
                             <h3>NOME:</h3>
                             <h4>Bryan Lindo da Silva</h4>
@@ -48,16 +62,11 @@
                             </div>
 
                         </div>
-
-                        <div class="one-bar">
-                            <h3>DATA DE NASCIMENTO:</h3>
-                            <h4>29/01/2004</h4>
-                        </div>
-                        <button>ALTERAR</button>
                     </section>
 
-                    <section class="info-academica">
-                        <h2>INFORMAÇÕES PESSOAIS</h2>
+
+                    <section id="info-academica" class="info-academica">
+
                         <div class="one-bar">
                             <h3>CURSO:</h3>
                             <h4>Desenvolviento de Sistemas</h4>
@@ -66,31 +75,34 @@
                         <div class="two-bars">
 
                             <div class="bar">
-                                <h3>Druração:</h3>
+                                <h3>SEMESTRE:</h3>
                                 <h4>18 meses</h4>
                             </div>
-
                             <div class="bar">
-                                <h3>PERÍODO:</h3>
+                                <h3>DURAÇÃO:</h3>
                                 <h4>Vespertino</h4>
                             </div>
 
                         </div>
 
+                        <div class="two-bars">
+
+                            <div class="bar">
+                                <h3>PERIODO:</h3>
+                                <h4>18 meses</h4>
+                            </div>
+
+                            <div class="bar">
+                                <h3>CONCLUSÃO:</h3>
+                                <h4>Vespertino</h4>
+                            </div>
+
+                        </div>
                         <div class="one-bar">
-                            <h3>INSTITUIÇÃO:</h3>
-                            <h4>Etec de Guaianases</h4>
+                            <h3>INSTITUIÇÃO ETEC:</h3>
+                            <h4>ETEC DE GUAIANASES</h4>
                         </div>
 
-                        <div class="one-bar">
-                            <h3>CONCLUSÃO:</h3>
-                            <h4>12/2023</h4>
-                        </div>
-                        <div class="one-bar">
-                            <h3>MATRICULA:</h3>
-                            <h4>290552</h4>
-                        </div>
-                    </section>
                 </div>
             </div>
         </section>
@@ -101,6 +113,7 @@
     include('../pag-aluno/components/sidebar.php');
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    <script src="js/troca-pag.js"></script>
 </body>
 
 </html>
