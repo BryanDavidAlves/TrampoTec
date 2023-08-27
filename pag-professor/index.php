@@ -94,7 +94,9 @@ include('../pag-professor/components/sidebar.php');
                         <div class="card-modal" id="card-modal">
                             <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
                             <div class="linha"> </div>
-                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
                         </div>
                     </div>  
                         <div  class="card-indicacao" id="abrir-indicacao">
@@ -134,7 +136,9 @@ include('../pag-professor/components/sidebar.php');
                         <div class="card-modal" id="card-modal">
                             <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
                             <div class="linha"> </div>
-                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
                         </div>
                     </div>  
                         <div  class="card-indicacao" id="abrir-indicacao">
@@ -174,7 +178,9 @@ include('../pag-professor/components/sidebar.php');
                         <div class="card-modal" id="card-modal">
                             <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
                             <div class="linha"> </div>
-                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
                         </div>
                     </div>  
                         <div  class="card-indicacao" id="abrir-indicacao">
@@ -214,7 +220,9 @@ include('../pag-professor/components/sidebar.php');
                         <div class="card-modal" id="card-modal">
                             <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
                             <div class="linha"> </div>
-                            <a href="index.php" onclick="fechar()"><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
+                            <div class="linha"> </div>
+                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
                         </div>
                     </div>  
                         <div  class="card-indicacao" id="abrir-indicacao">

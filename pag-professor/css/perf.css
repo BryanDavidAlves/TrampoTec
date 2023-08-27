@@ -1,79 +1,65 @@
-
 main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.titulo-perfil{
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-top: 3%;
-    margin-left: 3%;
+.titulo-perfil {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 3%;
+  margin-left: 3%;
 }
 .barra-pesquisa {
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 3%;
-    border: 1px solid royalblue;
-    width: 20%;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid royalblue;
+  margin-top: 3%;
+  width: 270px;
 }
 
 .barra-pesquisa input {
-    border: none;
+  border: none;
 }
 .barra-pesquisa input:focus {
-    outline: none;
-
+  outline: none;
 }
 
-.perfil{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5%;
-  
-    width: 100%;
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
 
-
-
+  width: 100%;
 }
 
-
-.perfil .alinhar-perfil  .imagem-perfil{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
+.perfil .alinhar-perfil .imagem-perfil {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-.perfil .alinhar-perfil .imagem-perfil img{
-    width: 50%;
-    height:120px ;
-    object-fit:cover ;
-    border: none;
-    border-radius: 50%;
-    
+.perfil .alinhar-perfil .imagem-perfil img {
+  width: 50%;
+  height: 120px;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
 }
-.perfil  .alinhar-perfil{
-    display: flex;
-    justify-content: center;
-    line-height: 0;
-    flex-direction: column;
-    margin-right: 30%;
-
-
-
+.perfil .alinhar-perfil {
+  display: flex;
+  justify-content: center;
+  line-height: 0;
+  flex-direction: column;
+  margin-right: 30%;
 }
 
-.perfil  .nome-usuario{
-    color: gray;
-    font-size: 1.1rem;
-
+.perfil .nome-usuario {
+  color: gray;
+  font-size: 1.1rem;
 }
-.perfil .informacao-usuario{
-    font-size: 1.2rem;
-    font-weight: 800;
-    
+.perfil .informacao-usuario {
+  font-size: 1.2rem;
+  font-weight: 800;
 }

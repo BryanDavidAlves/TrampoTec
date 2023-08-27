@@ -1,31 +1,44 @@
-.sobre{
-    background-color:rgb(6, 6, 55);;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
-    
+.sobre {
+  height: 400px;
 }
-.sobre .align-imagens{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
+.sobre .align-imagens {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.sobre .alinhar-texto{
-    text-align: start;
-    width: auto;
-    width: 100%;
+.sobre .align-imagens img {
+  height: 150px;
+  width: 100px;
+  object-fit: cover;
+  margin-top: -155px;
 }
-
-.sobre .alinhar-texto h4{
-    width: 460px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.7rem;
-    text-align: start;
-    font-weight:200;
-    margin-top: 150px;
-  
+.sobre .align-itens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  margin-top: -400px;
+}
+.sobre .align-itens img {
+  display: flex;
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
 }
 
+.sobre .align-itens p {
+  width: 400px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: 200;
+}
+
+.img-fundo-sobre {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+  z-index: 5;
+}
