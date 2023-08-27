@@ -113,3 +113,9 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.conhecimento{
+    display: none;
+}
+.disponibilidade{
+    display: none;
+}

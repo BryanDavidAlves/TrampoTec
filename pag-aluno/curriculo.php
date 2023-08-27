@@ -25,10 +25,10 @@
 
                 <section class="navigation">
                     <div class="trocar-pag">
-                        <h2 onclick="pessoal()">INFORMAÇÕES PESSOAIS</h2>
-                        <h2 onclick="academica()">INFORMAÇÕES ACADEMICAS</h2>
-                        <h2 onclick="conhecimentos()" id="conhecimentos">CONHECIMENTOS</h2>
-                        <h2 onclick="disponibilidadea()" id="disponibilidade">DISPONIBILIDADE</h2>
+                        <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>
+                        <h2 onclick="mostrarInfoAcademica()">INFORMAÇÕES ACADEMICAS</h2>
+                        <h2 onclick=" mostrarConhecimento()">CONHECIMENTOS</h2>
+                        <h2 onclick=" mostrarDisponibilidade()">DISPONIBILIDADE</h2>
                     </div>
                     <!-- <div id="line"></div>
                         linha para se mover, fazer animaçao futuramente no js
@@ -103,8 +103,16 @@
                             <h4>ETEC DE GUAIANASES</h4>
                         </div>
 
+                    </section>
+
+                    <section class="conhecimento" id="conhecimento">
+conhecimento
+                    </section>
+                    
+                    <section class="disponibilidade" id="disponibilidade">
+disponibilidade
+                    </section>
                 </div>
-            </div>
         </section>
 
 
