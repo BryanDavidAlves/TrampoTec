@@ -64,7 +64,7 @@ function formatCNPJ($cnpj)
 function isStrongPassword($password)
 {
   // Pelo menos 8 caracteres
-  if (strlen($password) < 8) {
+  if (strlen($password) > 8) {
     return false;
   }
 
@@ -91,7 +91,7 @@ function isStrongPassword($password)
   return true;
 }
 
-// Aplicando mascara de telefone
+// Aplicando validação de telefone
 function formatPhoneNumber($phoneNumber)
 {
   // Remover todos os caracteres que não são dígitos
@@ -113,7 +113,6 @@ function formatPhoneNumber($phoneNumber)
     return false;
   }
 }
-
 
 
 

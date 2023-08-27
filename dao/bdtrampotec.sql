@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Ago-2023 às 06:53
+-- Tempo de geração: 27-Ago-2023 às 22:31
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -42,16 +42,16 @@ CREATE TABLE `tb_admin` (
 
 CREATE TABLE `tb_aluno` (
   `idAluno` int(11) NOT NULL,
-  `imagem` text NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` char(8) NOT NULL,
   `nome` varchar(60) NOT NULL,
-  `cpf` char(11) NOT NULL,
+  `cpf` char(14) NOT NULL,
   `dtNasc` date NOT NULL,
+  `cep` char(10) NOT NULL,
+  `imagem` varchar(50) NOT NULL,
   `bairro` varchar(40) NOT NULL,
   `estado` varchar(20) NOT NULL,
   `cidade` varchar(40) NOT NULL,
-  `cep` char(8) NOT NULL,
   `duracaoCurso` char(8) NOT NULL,
   `periodoCurso` char(5) NOT NULL,
   `conclusaoCurso` date NOT NULL,
@@ -60,6 +60,13 @@ CREATE TABLE `tb_aluno` (
   `habilidades` varchar(200) NOT NULL,
   `sobreMim` char(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_aluno`
+--
+
+INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `cep`, `imagem`, `bairro`, `estado`, `cidade`, `duracaoCurso`, `periodoCurso`, `conclusaoCurso`, `matriculaCurso`, `experiencias`, `habilidades`, `sobreMim`) VALUES
+(3, '', 'Senha12#', 'fdfsdfs', '266.452.218-35', '2023-08-05', '08247095', '', '', '', '', '', '', '0000-00-00', 0, NULL, '', '');
 
 -- --------------------------------------------------------
 
@@ -149,6 +156,15 @@ CREATE TABLE `tb_empresa` (
   `estado` varchar(25) NOT NULL,
   `imagem` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_empresa`
+--
+
+INSERT INTO `tb_empresa` (`idEmpresa`, `email`, `senha`, `nome`, `cnpj`, `cep`, `logradouro`, `numero`, `bairro`, `estado`, `imagem`) VALUES
+(63, 'laysamelmudes@gmail.com', 'Senha12!', 'LAYSA COCA MELMUDES', '01.827.484/0001-00', '08247095', 'fsfsd', 543, 'fdsfsfs', 'SP', ''),
+(64, 'laysamelmudes@gmasdail.com', 'Senha12@', 'LAYSA COCA MELMUDdsaES', '50.932.434/0001-06', '08247095', 'dadas', 43, 'fsfsfs', 'SP', ''),
+(65, 'laysamelmudes@gmail.com75', 'Senha12@', 'LAYSA COCA MELMUDES', '95.764.875/0001-76', '08247095', 'kdsalda', 65765, 'gdgdg', 'SP', '');
 
 -- --------------------------------------------------------
 
@@ -515,7 +531,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_area`
@@ -539,7 +555,7 @@ ALTER TABLE `tb_curso`
 -- AUTO_INCREMENT de tabela `tb_empresa`
 --
 ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de tabela `tb_etec`
