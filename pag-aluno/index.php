@@ -21,8 +21,7 @@
         
         <section class="secao-perfil">
             <img class="img-perfil" src="img/img-perfil.jpg" alt="">
-            <h2><a href="perfil.php">PERFIL</a>
-                <h2>
+            <h2><a href="perfil.php">PERFIL</a></h2>
                     <section class="filtro">
                         <div class="align">
                             <span class="material-symbols-outlined">
@@ -78,7 +77,7 @@
                             </div>
                             <input value="Aplicar" class="button" type="submit">
                         </form>
-                        </div>
+                
                     </section>
         </section>
         
