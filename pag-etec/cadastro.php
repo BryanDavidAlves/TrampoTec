@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="css/logins.css">
+    <link rel="stylesheet" href="css/cadastro.css">
     <title>Cadastro</title>
 </head>
 
@@ -16,37 +16,46 @@
 
         <section class="login">
             <div class="box-formulario">
-                <h1>Cadastro Professor</h1>
+                <h1>Cadastro Etec</h1>
                 <a class="link-login" href="login.php">Ja tem uma conta? Faça seu login</a>
-                <form action="confirmar_email.php">
+                <form action="confirma-email.php">
                     <div class="item-form">
-                        <label for="nome-professor">NOME</label>
+                        <label for="nome-etec">NOME</label>
                         <div class="div-input">
-                            <input type="text" name="nome-professor" id="nome-professor">
+                            <input type="text" name="nome-etec" id="nome-etec">
                         </div>
                     </div>
                     <div class="item-form">
-                        <label for="email-institucional">EMAIL INSTITUCIONAL</label>
+                        <label for="email-etec">EMAIL </label>
                         <div class="div-input">
-                            <input type="text" name="email-institucional" id="email-institucional">
+                            <input type="email" name="email-etec" id="email-etec">
                         </div>
                     </div>
                     <div class="item-form">
-                        <label for="telefone-professor">TELEFONE</label>
+                        <label for="codigo-etec">CODIGO</label>
                         <div class="div-input">
-                            <input type="text" name="telefone-professor" id="telefone-professor">
+                            <input type="number" name="codigo-etec" id="codigo-etec">
                         </div>
                     </div>
+
                     <div class="item-form">
-                        <label for="senha-professor">SENHA</label>
+                        <label for="municipio-etec">MUNICIPIO</label>
                         <div class="div-input">
-                            <input type="password" name="senha-professor" id="senha-professor">
+                            <input type="text" name="municipio-etec" id="municipio-etec">
+                            
+                        </div>
+                    </div>
+
+                    <div class="item-form">
+                        <label for="senha-etec">SENHA</label>
+                        <div class="div-input">
+                            <input type="password" name="senha-etec" id="senha-etec">
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
                     <div class="align-file">
-                        <label  class="label-file" for="arquivo">Selecionar uma imagem</label>
-                        <input class="input-file" type="file" name="arquvio" id="arquivo" >
+                        <label  class="label-file" for="arquivo-etec">Selecionar uma imagem</label>
+                        <input class="input-file" type="file" name="arquivo-etec" id="arquivo-etec" >
                     </div>
                    
                     <input class="botao" type="submit" value="Cadastrar">
