@@ -22,7 +22,7 @@
 
         <div class="box">
             <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
-            <div class="control-line">
+            <div class="control">
 
                 <section class="filtro">
                     <div class="filtro-header">
@@ -83,6 +83,17 @@
 
                 <section class="vagas">
                         <section class="container-cards">
+                            <div class="cards">
+                                <div class="localidade">
+                                    <h4>SÃO PAULO - SP</h4>
+                                    <h4>TATUAPÉ</h4>
+                                </div>
+                                <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
+                                <h4>Presencial</h4>
+                                <h4>R$2.520,00</h4>
+
+                            </div>
+
                             <div class="cards">
                                 <div class="localidade">
                                     <h4>SÃO PAULO - SP</h4>
