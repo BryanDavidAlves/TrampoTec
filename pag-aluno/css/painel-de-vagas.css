@@ -1,19 +1,9 @@
 h1 {
     color: #737373;
     text-align: center;
-
+    padding-top: 10%;
     font-size: 2rem;
-
-}
-
-.vagas {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    flex-direction: column;
+    margin-bottom: 50px;
 
 }
 
@@ -25,26 +15,21 @@ h1 {
 }
 
 .img-perfil {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     border: 2px rgb(0, 0, 0) solid;
     align-items: center;
     justify-content: center;
-    margin-top: 20%;
-    margin-bottom: 10px;
+    
+    margin-bottom: 20px;
 }
 
-.vagas .container-cards {
+.container-cards {
     display: flex;
-    gap: 10%;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 80px;
-    z-index: 1;
-
+    gap: 50px;
+    justify-content: start;
 }
 
 .vagas .container-cards .cards {
@@ -58,7 +43,6 @@ h1 {
     height: 190px;
     justify-content: center;
     box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
-    margin-top: 50px;
 }
 
 .vagas .container-cards .cards .localidade {
@@ -88,18 +72,22 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 15px;
-    margin-top: 30px;
-
+    align-items: center;
+    margin-top: 15px;
 }
 
 .filtro .align {
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .filtro .align .palavra-chave {
-    width: 63px;
+    width:100px;
     padding-bottom: 5px;
     padding-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .palavra-box,
@@ -118,17 +106,30 @@ select {
 .titulo-filtro {
     margin-bottom: 15px;
     margin-left: 10px;
+    margin-top: 12px;
+    font-size: 1.5rem;
 }
-
+#icon-filtro{
+    font-size: 3rem;
+    color: #4037a1;
+    font-weight: 800;
+}
+.filtro-header{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+}
 .filtro .button {
     background-color: #5382B2;
-    padding: 5px;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
     margin-top: 15px;
+    font-size: 1rem;
+    padding:10px;
 }
 
 dialog {
@@ -232,16 +233,31 @@ dialog h2 {
 }
 
 .secao-perfil {
-    position: fixed;
-    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
-    margin-top: 80px;
+    margin-left: 5%;
 }
 .secao-perfil a{
-    color: #000;
+    color: #818181;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
 
+}
+.control {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 100px;
+}
+.box {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    align-items: baseline;
 }

@@ -17,7 +17,7 @@
     <main id="main">
 
     <div class = "align">
-        <h1>MINHAS NOTIFICAÇÕES DE EMPRESA</h1>
+        <h1>MINHAS NOTIFICAÇÕES</h1>
 
         <section class="empresas">
 

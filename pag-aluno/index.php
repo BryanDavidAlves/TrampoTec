@@ -18,19 +18,23 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-        <section class="secao-perfil">
-            <img class="img-perfil" src="img/img-perfil.jpg" alt="">
-            <h2><a href="perfil.php">PERFIL</a><h2>
+
+        <div class="box">
+            <h1>PAINEL DE VAGAS</h1>
+            <div class="control">
+                <section class="secao-perfil">
+                    <img class="img-perfil" src="img/img-perfil.jpg" alt="">
+                    <h2><a href="perfil.php">PERFIL</a></h2>
                     <section class="filtro">
-                        <div class="align">
-                            <span class="material-symbols-outlined">
+                        <div class="filtro-header">
+                            <span id="icon-filtro" class="material-symbols-outlined">
                                 tune
                             </span>
-                            <h3 class="titulo-filtro">Filtrar por</h3>
+                            <h3 class="titulo-filtro">Filtrar por </h3>
                         </div>
                         <form action="">
                             <div class="align">
-                                <h3 class="palavra-chave">Periodo</h3>
+                                <h3 class="palavra-chave">Periodo:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
                                     <option value="valor1">Manhã</option>
@@ -39,7 +43,7 @@
                                 </select>
                             </div>
                             <!--<div class="align">
-                        <h3 class="palavra-chave">Horario</h3>
+                        <h3 class="palavra-chave">Horario:</h3>
                         <select name="select">
                             <option value="valor1"> </option>
                             <option value="valor1">Valor 1</option>
@@ -48,7 +52,7 @@
                         </select>
                     </div>-->
                             <div class="align">
-                                <h3 class="palavra-chave">Área</h3>
+                                <h3 class="palavra-chave">Área:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
                                     <option value="valor1">Valor 1</option>
@@ -57,7 +61,7 @@
                                 </select>
                             </div>
                             <div class="align">
-                                <h3 class="palavra-chave">Curso</h3>
+                                <h3 class="palavra-chave">Curso:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
                                     <option value="valor1">Valor 1</option>
@@ -66,7 +70,7 @@
                                 </select>
                             </div>
                             <div class="align">
-                                <h3 class="palavra-chave">Salário</h3>
+                                <h3 class="palavra-chave">Salário:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
                                     <option value="valor1">Valor 1</option>
@@ -74,60 +78,58 @@
                                     <option value="valor3">Valor 3</option>
                                 </select>
                             </div>
-                            <input value="Aplicar" class="button" type="submit">
+                            <input value="APLICAR" class="button" type="submit">
                         </form>
-                        </div>
                     </section>
-        </section>
-        <section class="vagas">
 
-            <h1>PAINEL DE VAGAS</h1>
-
-            <div class="itens-vagas">
-
-
-                <section class="container-cards">
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn1">Clique para mais informações</button>
-                    </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn2">Clique para mais informações</button>
-                    </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn3">Clique para mais informações</button>
-                    </div>
                 </section>
 
+                <section class="vagas">
 
+                    <div class="itens-vagas">
+                        <section class="container-cards">
+                            <div class="cards">
+                                <div class="localidade">
+                                    <h4>SÃO PAULO - SP</h4>
+                                    <h4>TATUAPÉ</h4>
+                                </div>
+                                <h4>Desenvolvedor Front End Junior</h4>
+                                <h4>Presencial</h4>
+                                <h4>R$2.520,00</h4>
+                                <button id="btn1">Clique para mais informações</button>
+                            </div>
+
+                            <div class="cards">
+                                <div class="localidade">
+                                    <h4>SÃO PAULO - SP</h4>
+                                    <h4>TATUAPÉ</h4>
+                                </div>
+                                <h4>Desenvolvedor Front End Junior</h4>
+                                <h4>Presencial</h4>
+                                <h4>R$2.520,00</h4>
+                                <button id="btn2">Clique para mais informações</button>
+                            </div>
+
+                            <div class="cards">
+                                <div class="localidade">
+                                    <h4>SÃO PAULO - SP</h4>
+                                    <h4>TATUAPÉ</h4>
+                                </div>
+                                <h4>Desenvolvedor Front End Junior</h4>
+                                <h4>Presencial</h4>
+                                <h4>R$2.520,00</h4>
+                                <button id="btn3">Clique para mais informações</button>
+                            </div>
+                        </section>
+
+
+                    </div>
             </div>
-
+        </div>
     </main>
     <?php
-            include('../pag-aluno/components/sidebar.php');
-            ?>
+    include('../pag-aluno/components/sidebar.php');
+    ?>
 
     <dialog id="modal">
         <div class="card-empresa">

@@ -3,19 +3,13 @@ h1 {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2rem;
+    padding-top: 10%;
 }
 
-body{
-    height: 1000px;
-    position: fixed;
-    width: 100%;
-}
 
-.vagas {
-    display: flex;
+.box {
     width: 100%;
     justify-content: center;
-    margin-top: 50px;
     align-items: center;
     gap: 10px;
     position: absolute;
@@ -23,17 +17,86 @@ body{
     flex-direction: column;
 }
 
-
-.vagas .container-cards {
+.control {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 100px;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
     align-items: center;
-    width: 90%;
-    gap: 20px;
+    margin-left: 5%;
+}
+
+.filtro .align {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.filtro .align .palavra-chave {
+    width:100px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.palavra-box,
+select {
+    height: 25px;
+    margin-top: 5px;
+    border: none;
 
 }
 
-.vagas .container-cards .cards {
+.filtro .align select,
+.palavra-box {
+    margin-left: 10px;
+}
+
+.titulo-filtro {
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 12px;
+    font-size: 1.5rem;
+}
+#icon-filtro{
+    font-size: 3rem;
+    color: #4037a1;
+    font-weight: 800;
+}
+.filtro-header{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+}
+.filtro .button {
+    background-color: #5382B2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1rem;
+    padding:10px;
+}
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: start;
+}
+
+
+.container-cards .cards {
     display: flex;
     flex-direction: column;
     background-color: #B4D9FF;
@@ -58,12 +121,9 @@ body{
 .vagas .container-cards .cards h4 {
     padding: 5px;
 }
-
-.vagas .container-cards .cards button {
-    background-color: blue;
-    padding: 5px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    margin-top: 15px;
+select{
+    font-size: 1.2rem;
+}
+.nome-vaga{
+    font-weight: 600;
 }

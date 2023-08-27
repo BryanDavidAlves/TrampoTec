@@ -8,7 +8,7 @@
         <ul>
             <li><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i> Pesquisar</li>
             <li><a href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#"><i class="fa-solid fa-envelope"></i> Recomendações</a></li></a>
+            <li><a href="recomendacoes.php"><i class="fa-solid fa-envelope"></i> Recomendações</a></li></a>
             <li><a href="processos-seletivos.php"><i class="fa-solid fa-people-group"></i> Processo Seletivo</a></li>
             <li><a href="curriculo.php"><i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i> Curriculo</a></li>
             <li><a href="perfil.php"><i class="fa-solid fa-user" style="color: #ffffff;"></i> Perfil</a></li>
