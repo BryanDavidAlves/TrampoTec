@@ -18,9 +18,11 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
+        <h1>PAINEL DE VAGAS</h1>
         <section class="secao-perfil">
             <img class="img-perfil" src="img/img-perfil.jpg" alt="">
-            <h2><a href="perfil.php">PERFIL</a><h2>
+            <h2><a href="perfil.php">PERFIL</a>
+                <h2>
                     <section class="filtro">
                         <div class="align">
                             <span class="material-symbols-outlined">
@@ -79,13 +81,9 @@
                         </div>
                     </section>
         </section>
+        
         <section class="vagas">
-
-            <h1>PAINEL DE VAGAS</h1>
-
             <div class="itens-vagas">
-
-
                 <section class="container-cards">
                     <div class="cards">
                         <div class="localidade">
@@ -126,8 +124,8 @@
 
     </main>
     <?php
-            include('../pag-aluno/components/sidebar.php');
-            ?>
+    include('../pag-aluno/components/sidebar.php');
+    ?>
 
     <dialog id="modal">
         <div class="card-empresa">

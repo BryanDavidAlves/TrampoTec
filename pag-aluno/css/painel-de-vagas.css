@@ -1,15 +1,15 @@
 h1 {
     color: #737373;
     text-align: center;
-
+    padding-top: 10%;
     font-size: 2rem;
 
 }
 
+
 .vagas {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
     align-items: center;
     position: absolute;
     width: 100%;
@@ -238,7 +238,7 @@ dialog h2 {
     flex-direction: column;
     align-items: center;
     width: 20%;
-    margin-top: 80px;
+    margin-top: 8px;
 }
 .secao-perfil a{
     color: #000;
