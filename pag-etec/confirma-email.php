@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="css/confirmaEmail.css">
+    <link rel="stylesheet" href="css/confirma-email.css">
     <title>Cadastro</title>
 </head>
 
