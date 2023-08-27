@@ -18,7 +18,7 @@
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
-        <h1>PAINEL DE VAGAS</h1>
+        
         <section class="secao-perfil">
             <img class="img-perfil" src="img/img-perfil.jpg" alt="">
             <h2><a href="perfil.php">PERFIL</a>
@@ -83,6 +83,7 @@
         </section>
         
         <section class="vagas">
+        <h1>PAINEL DE VAGAS</h1>
             <div class="itens-vagas">
                 <section class="container-cards">
                     <div class="cards">
