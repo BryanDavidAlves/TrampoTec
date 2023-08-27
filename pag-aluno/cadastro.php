@@ -1,3 +1,6 @@
+<?php
+include('../dao/conexao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,27 +29,28 @@
                 <section class="right">
                     <h2>INFORMAÇÕES DE CADASTRO</h2>
 
-                    <form action="">
+                    <form action="./beck-end/cadastro/salvarCadastro.php" method="post">
                         <div class="one-item">
                             <label for="nome-aluno">NOME COMPLETO</label>
-                            <input type="text" name="nome-aluno" id="nome-aluno">
+                            <input type="text" name="nome-aluno" id="nome-aluno" required>
 
                         </div>
                         <div class="two-item">
                             <div>
                                 <label for="nome-aluno">DATA DE NASCIMENTO</label>
-                                <input type="text" name="nasc-aluno" id="nasc-aluno">
+                                <input type="date" name="nasc-aluno" id="nasc-aluno" required>
                             </div>
                             <div>
                                 <label for="cpf-aluno">CPF</label>
-                                <input type="text" name="cpf-aluno" id="cpf-aluno">
+                                <input  maxlength="18" type="text" name="cpf-aluno" id="cpf-aluno"
+                                    placeholder="_ _ _ . _ _ _ . _ _ _ - _ _" required>
                             </div>
                         </div>
 
                         <div class="one-item">
                             <label for="nome-etec">INSTITUIÇÃO ETEC QUE VOCÊ ESTUDA</label>
                             <div class="box-input">
-                                <input type="text" name="nome-etec" id="nome-etec">
+                                <input type="text" name="nome-etec" id="nome-etec" required>
                             </div>
                         </div>
 
@@ -54,28 +58,68 @@
                         <div class="two-item">
                             <div>
                                 <label for="tel-aluno">TELEFONE</label>
-                                <input type="text" name="tel-aluno" id="tel-aluno">
+                                <input  maxlength="11" type="text" name="tel-aluno" placeholder="() _ _ _ _ _ - _ _ _ _"
+                                    required>
                             </div>
-                            <div style ="margin-left:50px;">
+                            <div style="margin-left:50px;">
                                 <label for="cep-aluno">CEP</label>
-                                <input type="text" name="cep-aluno" id="cep-aluno">
+                                <input  maxlength="9" type="text" name="cep-aluno" id="cep-aluno" placeholder="_ _ . _ _ _ - _ _ _"
+                                    required>
                             </div>
                         </div>
 
                         <div class="one-item">
-                            <label for="senha-aluno">SENHA</label>
+                            <label for="senha-aluno">CRIAR SENHA</label>
                             <div class="box-input">
-                                <input type="password" name="senha-aluno" id="senha-aluno">
+                                <input maxlength="8" type="password" name="senha-aluno" id="senha-aluno" required>
                             </div>
                         </div>
                         <div class="one-item">
                             <label for="repita-senha">REPITA A SENHA</label>
                             <div class="box-input">
-                                <input type="password" name="repita-senha" id="repita-senha">
+                                <input maxlength="8" type="password" name="repita-senha" id="repita-senha" required>
                             </div>
                         </div>
+                        <?php
+                        if (isset($_GET['login']) && $_GET['login'] == "cpfInvalido") {
+                            ?>
+                            <div class="text-danger">
+                                CPF INVALIDO!!
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                        <?php
+                        if (isset($_GET['login']) && $_GET['login'] == "senhaFraca") {
+                            ?>
+                            <div class="text-danger">
+                                Senha fraca, obs: até 8 digitos, exemplo: Senha12@
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                        <?php
+                        if (isset($_GET['login']) && $_GET['login'] == "numeroInvalido") {
+                            ?>
+                            <div class="text-danger">
+                                Telefone Invalido
+                            </div>
+                            <?php
+                        }
+                        ?>
+                        <?php
+                        if (isset($_GET['login']) && $_GET['login'] == "senhasDiferentes") {
+                            ?>
+                            <div class="text-danger">
+                                Senhas Diferentes
+                            </div>
+                            <?php
+                        }
+                        ?>
                         <input class="btn" type="submit" value="CADASTRAR">
-                        
+
                     </form>
                 </section>
             </div>

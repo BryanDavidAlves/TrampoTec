@@ -148,7 +148,7 @@ include('../../dao/conexao.php');
                                 <br>
                                 <p class="titulo-agendar"><label for="foto"> SELECIONE UMA IMAGEM</label> </p>
                                 <div class="barra-file">
-                                    <input type="file" id="foto" name="foto">
+                                    <input type="file" id="foto" name="foto" accept="image/*" >
                                     <input class="input-none" type="hidden" id="foto_empresa" name="foto_empresa">
                                 </div>
                             </div>
@@ -170,7 +170,7 @@ include('../../dao/conexao.php');
                 if (isset($_GET['login']) && $_GET['login'] == "senhaFraca") {
                     ?>
                     <div class="text-danger">
-                        Senha Fraca! exemplo: Senha123@@
+                        Senha até 8 digitos, exemplo: Senha12@
                     </div>
                     <?php
                 }

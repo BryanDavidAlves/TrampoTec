@@ -29,7 +29,7 @@ if ($_POST) {
     } else if ($formattedPhoneNumber == false) {
         header('Location: ../../pags-logins/criar-login.php?login=numeroTelInvalido');
     } 
-    else if ($CnpjValido == true || $senhaForte == true) {
+    else if ($CnpjValido == true || $senhaForte == true || $formattedPhoneNumber == true ) {
         $formattedCNPJ = formatCNPJ($cnpj);
 
         $sql = "
