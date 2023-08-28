@@ -9,9 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    include('../pag-etec/componentes/sidebar.php');
-    ?>
+    <?php include('../pag-etec/componentes/sidebar.php') ?>
+    <?php include ('../pag-etec/componentes/notificacao.php')?>
     
     <section class="parte-pequisa">
     <span class="titulo-perfil">Perfil</span>
@@ -49,5 +48,6 @@
     </section>
 
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>    
+    <script src="./js/etec.js"></script>
 </body>
 </html>

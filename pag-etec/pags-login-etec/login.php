@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>Login</title>
 </head>
 
 <body>
     <main>
-        <img class="cima" src="img/imagemfundocima.png" alt="">
-        <img class="baixo" src="img/imagemfundobaixo.png" alt="">
+        <img class="cima" src="../img/imagemfundocima.png" alt="">
+        <img class="baixo" src="../img/imagemfundobaixo.png" alt="">
 
         <section class="login">
             <div class="box-formulario">
@@ -41,7 +41,7 @@
                         </div>
                         <a href="redefinir-senha.php">Esqueceu a Senha?</a>
                     </div>
-                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
+                    <a href="./cadastro.php" style="margin-left:30%;">Criar uma conta</a>
                 </form>
             </div>
         </section>

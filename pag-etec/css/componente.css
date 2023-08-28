@@ -144,3 +144,111 @@ outline-color: #00000000;
 }
 
 
+
+aside {
+  display: none;
+  background-color:#ffffff;
+  width: 40%;
+  padding: 25px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  overflow-y: scroll;
+  z-index: 5;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+}
+aside::-webkit-scrollbar {
+  width: 10px;              
+}
+
+aside::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);     
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: rgba(117, 117, 117, 0.807);    
+  border-radius: 30px;      
+  border: 3px solid rgb(253, 253,253);}
+
+.toogle .menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ 
+}
+
+.toogle .menu .menu {
+  display: flex;
+  color: rgb(44, 63, 150);
+  font-size: 35px;
+
+}
+.toogle:hover{
+  cursor: pointer;
+}
+aside a{
+  color: #010000;
+  text-decoration: none;
+  padding: 25px 50px 25px 0px;
+ 
+}
+aside ul li{
+  margin-top: 10px;
+  border-bottom: #000000 solid 1px;
+  padding: 10px;
+  list-style: none;
+
+border-radius: 10px;
+}
+
+aside ul a:hover{
+  margin-left: 10px;
+}
+
+.card-email{
+  margin-top: 20px;
+  width:400px;
+  height: 100px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.card-corpo-email{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.card-itens-email{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+  
+.card .imagens-email{
+  display: flex;
+  align-items: center;
+
+}
+
+.imagem-aluno-email{
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.email-notificacao{
+  font-size: 20px;
+}
+
+

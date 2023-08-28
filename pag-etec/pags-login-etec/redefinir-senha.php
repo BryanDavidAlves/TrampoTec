@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="css/redefinir-senha.css">
+    <link rel="stylesheet" href="../css/redefinir-senha.css">
     <title>Relembrar Senha</title>
 </head>
 
 <body>
     <main>
-        <img class="cima" src="img/imagemfundocima.png" alt="">
-        <img class="baixo" src="img/imagemfundobaixo.png" alt="">
+        <img class="cima" src="../img/imagemfundocima.png" alt="">
+        <img class="baixo" src="../img/imagemfundobaixo.png" alt="">
 
         <section class="login">
             <div class="box-formulario">
