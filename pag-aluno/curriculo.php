@@ -106,12 +106,38 @@
                     </section>
 
                     <section class="conhecimento" id="conhecimento">
-conhecimento
+                        <section class="left">
+                            <div class="input-conhecimento">
+                                <h3>IDIOMA:</h3>
+                                <h4>INGLES</h4>
+                            </div>
+
+                            <div class="input-conhecimento">
+                                <label for="nivel-idioma">NIVEL</label>
+                                <select name="nivel-idioma" id="nivel-idioma">
+                                    <option value="">Basico</option>
+                                    <option value="">Intermediário</option>
+                                    <option value="">Avançado</option>
+                                </select>
+                            </div>
+                            <button class="btn-conhecimento">adicionar idioma</button>
+                            <div class="box-text">
+                                <label for="experiencia-text">EXPERIÊNCIA:</label>
+                                <textarea  name="experiencia-text" id="experiencia-text" rows="10"placeholder="OPCIONAL"></textarea>
+                            </div>
+                        </section>
+
+                        <section class="right">
+                            <div class="box-text">
+                                <label for="conhecimento-text">CONHECIMENTOS:</label>
+                                <textarea name="coonhecimento-text" id="conhecimento-text" placeholder="OPCIONAL"></textarea>
+                            </div>
+                        </section>
                     </section>
-                    
                     <section class="disponibilidade" id="disponibilidade">
-disponibilidade
+                        disponibilidade
                     </section>
+
                 </div>
         </section>
 
