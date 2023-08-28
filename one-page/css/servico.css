@@ -1,18 +1,22 @@
-.servicos{
+#servicos{
     margin-top: 10%;
-    
+
+
 }
-.servicos .titulo-servicos{
+
+
+
+  #servicos .titulo-servicos{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.9rem;
     color: rgb(37, 37, 109);
 
 }
-.servicos .titulo-servicos .ponta{
+#servicos .titulo-servicos .ponta{
     color:  rgba(255, 0, 0, 0.807);
 }
-.servicos .fundo-roxo{
+#servicos .fundo-roxo{
    height: 100%;
    display: flex;
    align-items: center;
@@ -23,7 +27,7 @@
    
     
 }
-.servicos .fundo-roxo img{
+#servicos .fundo-roxo img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,14 +35,14 @@
     height:170px;
     z-index: -1;
 }
-.servicos .align-card{
+#servicos #align-card{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -12%;
     gap: 90px;
 }
-.servicos .align-card .card{
+#servicos #align-card #card{
     height: 340px;
     width: 250px;
     background-color: white;
@@ -53,10 +57,10 @@
     margin-top: 30px;
 
 }
-.servicos .align-card .card .texto-card {
+#servicos #align-card #card .texto-card {
     margin-top: 30px;
 }
-.servicos .align-card .card .texto-card h4{
+#servicos #align-card #card .texto-card h4{
     margin-top: 5px;
     color: rgba(240, 61, 61, 0.807);
     text-align: center;
@@ -66,7 +70,7 @@
 
 }
 
-.servicos .align-card  .card .fundo-icon{
+#servicos #align-card  #card .fundo-icon{
     width: 120px;
     height: 120px;
     display: flex;
@@ -78,7 +82,7 @@
     border-radius: 50%;
     margin-top: -10px;
 }
-.servicos .align-card .card .fundo-icon i{
+#servicos #align-card #card .fundo-icon i{
     font-size:65px;
     display: flex;
     align-items: center;
@@ -87,12 +91,12 @@
     
 }
 
-.servicos .align-card .card:hover{
+#servicos #align-card #card:hover{
     scale: 1.04;
    transition: all 0.5s ease-in-out;
 }
 
-.servicos .align-card .card .fundo-icon .icon-mao{
+#servicos #align-card #card .fundo-icon .icon-mao{
 height: 500px;
 width: 500px;
 
@@ -100,8 +104,39 @@ width: 500px;
 
 
 
-.servicos .align-card .card .fundo-icon .icon-secure{
+#servicos #align-card #card .fundo-icon .icon-secure{
     width: 500px;
     height: 450px;
     object-fit: cover;
     }
+
+
+    
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 1s ;
+  }
+  
+  .show{
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 2s ;
+  }
+
+
+  .hidden :nth-child(3){
+transition-duration: 600ms;
+
+  } 
+
+  .hidden:nth-child(2){
+    transition-duration: 300ms;
+  }
+
+  .hidden:nth-child(1){
+transition-duration: 0ms;
+
+  }
