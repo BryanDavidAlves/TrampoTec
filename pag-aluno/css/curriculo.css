@@ -3,32 +3,34 @@ h1 {
     text-align: center;
     padding-top: 10%;
     font-size: 2rem;
+    margin-bottom: 50px;
+
 }
 
 .infos {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 80px;
-    margin-top: 50px;
     position: absolute;
     width: 100%;
+    padding-bottom: 40px;
 }
 
-.align {
-    display: flex;
-    flex-direction: column;
+.box {
+    width: 100%;
+    display: block;
 }
-
-.container {
-    display: flex;
-    gap: 120px;
+.container{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 30px;
 }
-
 .one-bar {
     display: flex;
-    background-color: #3C86D1;
-    padding: 5px;
+    background-color: #acd5ff;
+    padding: 15px;
     margin: 5px 0px 5px 10px;
     width: 100%;
     align-items: baseline;
@@ -37,41 +39,216 @@ h1 {
 
 .two-bars {
     display: flex;
-    margin-left: 9.5px;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    width: 104%;
+    gap: 10px;
 
 }
+.trocar-pag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px ;
+    color: #2e2877;
+    font-size: 1.3rem;
+    width: 100%;
+    font-weight: 700;
+}
+.trocar-pag h2{
+    cursor: pointer;
+}
 
+/*#line{
+    width: 20%;
+    height: 5px;
+    background-color: #2e2877;
+    margin-left: 9.2%;
+}
+linha para se mover, fazer animaçao futuramente no js
+*/
 .bar {
     display: flex;
-    background-color: #3C86D1;
-    padding: 5px;
+    background-color: #acd5ff;
+    padding: 15px;
     align-items: baseline;
     border-radius: 10px;
+    width: 100%;
+}
+.bar:nth-child(1){
+    margin-left: 10px;
 }
 
-.info-pessoal,
-.info-academica {
+.info-pessoal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
+.info-academica{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 h3 {
     font-size: 1.2rem;
-    color: #fff;
+    color: #000000;
+    font-weight: 600;
 }
 
 h4 {
-    font-size: 1rem;
-    color: #fff;
+    font-size: 1.1rem;
+    color: #000000;
     margin-left: 5px;
 }
 
-button {
-    width: 90%;
-    border-radius: 5px;
-    padding: 3px;
+
+.one-bar, .two-bars{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+.conhecimento{
+    display: none;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+.input-conhecimento{
+    display: flex;
+    background-color: #acd5ff;
+    padding: 15px;
+    align-items: baseline;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+select{
+    border: none;
+    font-size: 1.1rem;
+    background-color: transparent;
+}
+.btn-conhecimento {
+    width: 35%;
+    border: none;
+    border-radius: 10px;
+    background-color: #d3d3d3;
+    font-size: 1rem;
+    padding: 5px;
+    cursor: pointer;
+}
+.left textarea{
+    background-color: #acd5ff;
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 1rem;
+
+}
+textarea:focus{
+    outline: none;
+}
+.left .box-text{
+    background-color: #acd5ff;
+    width: 105%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+.right textarea{
+    background-color: #acd5ff;
+    width: 90%;
+    border: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    height: 90%;
+
+}
+.right .box-text{
+    background-color: #acd5ff;
+    width: 105%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 93%;
+}
+
+
+.disponibilidade{
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+.input-disponibilidade{
+    display: flex;
+    background-color: #acd5ff;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.horas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.horas .input-disponibilidade{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+.horas .input-disponibilidade input{
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    font-size: 1rem;
+}
+.btn-salvar{
+    background-color: red;
+    width: 10%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn-salvar input{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.align-salvar{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+/*.disponibilidade img{
+    
+    width: 700px
+}*/

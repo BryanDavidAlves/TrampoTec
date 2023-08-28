@@ -20,11 +20,25 @@
     <main id="main">
 
         <section class="infos">
-            <div class="align">
-                <h1>CURRICULO</h1>
+            <h1>CURRICULO</h1>
+            <div class="box">
+
+                <section class="navigation">
+                    <div class="trocar-pag">
+                        <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>
+                        <h2 onclick="mostrarInfoAcademica()">INFORMAÇÕES ACADEMICAS</h2>
+                        <h2 onclick=" mostrarConhecimento()">CONHECIMENTOS</h2>
+                        <h2 onclick=" mostrarDisponibilidade()">DISPONIBILIDADE</h2>
+                    </div>
+                    <!-- <div id="line"></div>
+                        linha para se mover, fazer animaçao futuramente no js
+                    -->
+                </section>
+
                 <div class="container">
-                    <section class="info-pessoal">
-                        <h2>INFORMAÇÕES PESSOAIS</h2>
+
+                    <section id="info-pessoal" class="info-pessoal">
+
                         <div class="one-bar">
                             <h3>NOME:</h3>
                             <h4>Bryan Lindo da Silva</h4>
@@ -48,16 +62,11 @@
                             </div>
 
                         </div>
-
-                        <div class="one-bar">
-                            <h3>DATA DE NASCIMENTO:</h3>
-                            <h4>29/01/2004</h4>
-                        </div>
-                        <button>ALTERAR</button>
                     </section>
 
-                    <section class="info-academica">
-                        <h2>INFORMAÇÕES PESSOAIS</h2>
+
+                    <section id="info-academica" class="info-academica">
+
                         <div class="one-bar">
                             <h3>CURSO:</h3>
                             <h4>Desenvolviento de Sistemas</h4>
@@ -66,33 +75,97 @@
                         <div class="two-bars">
 
                             <div class="bar">
-                                <h3>Druração:</h3>
+                                <h3>SEMESTRE:</h3>
                                 <h4>18 meses</h4>
                             </div>
-
                             <div class="bar">
-                                <h3>PERÍODO:</h3>
+                                <h3>DURAÇÃO:</h3>
                                 <h4>Vespertino</h4>
                             </div>
 
                         </div>
 
+                        <div class="two-bars">
+
+                            <div class="bar">
+                                <h3>PERIODO:</h3>
+                                <h4>18 meses</h4>
+                            </div>
+
+                            <div class="bar">
+                                <h3>CONCLUSÃO:</h3>
+                                <h4>Vespertino</h4>
+                            </div>
+
+                        </div>
                         <div class="one-bar">
-                            <h3>INSTITUIÇÃO:</h3>
-                            <h4>Etec de Guaianases</h4>
+                            <h3>INSTITUIÇÃO ETEC:</h3>
+                            <h4>ETEC DE GUAIANASES</h4>
                         </div>
 
-                        <div class="one-bar">
-                            <h3>CONCLUSÃO:</h3>
-                            <h4>12/2023</h4>
-                        </div>
-                        <div class="one-bar">
-                            <h3>MATRICULA:</h3>
-                            <h4>290552</h4>
-                        </div>
                     </section>
+
+                    <section class="conhecimento" id="conhecimento">
+                        <section class="left">
+                            <div class="input-conhecimento">
+                                <h3>IDIOMA:</h3>
+                                <h4>INGLES</h4>
+                            </div>
+
+                            <div class="input-conhecimento">
+                                <label for="nivel-idioma">NIVEL</label>
+                                <select name="nivel-idioma" id="nivel-idioma">
+                                    <option value="">Basico</option>
+                                    <option value="">Intermediário</option>
+                                    <option value="">Avançado</option>
+                                </select>
+                            </div>
+                            <button class="btn-conhecimento">adicionar idioma</button>
+                            <div class="box-text">
+                                <label for="experiencia-text">EXPERIÊNCIA:</label>
+                                <textarea name="experiencia-text" id="experiencia-text" rows="10"
+                                    placeholder="OPCIONAL"></textarea>
+                            </div>
+                        </section>
+
+                        <section class="right">
+                            <div class="box-text">
+                                <label for="conhecimento-text">CONHECIMENTOS:</label>
+                                <textarea name="coonhecimento-text" id="conhecimento-text"
+                                    placeholder="OPCIONAL"></textarea>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="disponibilidade" id="disponibilidade">
+                        <section class="horarios">
+                            <div class="input-disponibilidade">
+                                <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
+                            </div>
+
+                            <div class="horas">
+                                <div class="input-disponibilidade">
+                                    <input class="primeiro-horario" type="time" name="" id="">
+                                </div>
+                                <h3>ATÉ</h3>
+                                <div class="input-disponibilidade">
+                                    <input class="primeiro-horario" type="time" name="" id="">
+                                </div>
+                            </div>
+
+                        </section>
+                        <!--<img src="img/3.png" alt="">-->
+                    </section>
+
                 </div>
-            </div>
+    
+                <div class="align-salvar">
+                    <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
+                    <div class="btn-salvar">
+                        <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
+                        <input type="submit" value="SALVAR" name="" id="">
+                    </div>
+                </div>
+                
         </section>
 
 
@@ -101,6 +174,7 @@
     include('../pag-aluno/components/sidebar.php');
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    <script src="js/troca-pag.js"></script>
 </body>
 
 </html>
