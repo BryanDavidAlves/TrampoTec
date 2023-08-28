@@ -1,10 +1,10 @@
-.descricao-alphatec {
+#empresa {
   display: flex;
   align-items: center;
   margin-top: 5%;
   gap: 60px;
-
   border-right: none;
+
 }
 
 .descricao-alphatec .align-imagens {
@@ -31,6 +31,9 @@
   height: 400px;
 }
 
+
+
+
 .textos-alphatec .alinhar-texto {
   display: flex;
   justify-content: center;
@@ -40,8 +43,10 @@
 .textos-alphatec .alinhar-texto h4 {
   width: 800px;
   color: rgb(0, 0, 0);
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
   font-weight: 100;
   text-align: start;
+  width:80%;
 }
+
