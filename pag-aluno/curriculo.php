@@ -123,22 +123,49 @@
                             <button class="btn-conhecimento">adicionar idioma</button>
                             <div class="box-text">
                                 <label for="experiencia-text">EXPERIÊNCIA:</label>
-                                <textarea  name="experiencia-text" id="experiencia-text" rows="10"placeholder="OPCIONAL"></textarea>
+                                <textarea name="experiencia-text" id="experiencia-text" rows="10"
+                                    placeholder="OPCIONAL"></textarea>
                             </div>
                         </section>
 
                         <section class="right">
                             <div class="box-text">
                                 <label for="conhecimento-text">CONHECIMENTOS:</label>
-                                <textarea name="coonhecimento-text" id="conhecimento-text" placeholder="OPCIONAL"></textarea>
+                                <textarea name="coonhecimento-text" id="conhecimento-text"
+                                    placeholder="OPCIONAL"></textarea>
                             </div>
                         </section>
                     </section>
                     <section class="disponibilidade" id="disponibilidade">
-                        disponibilidade
+                        <section class="horarios">
+                            <div class="input-disponibilidade">
+                                <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
+                            </div>
+
+                            <div class="horas">
+                                <div class="input-disponibilidade">
+                                    <input class="primeiro-horario" type="time" name="" id="">
+                                </div>
+                                <h3>ATÉ</h3>
+                                <div class="input-disponibilidade">
+                                    <input class="primeiro-horario" type="time" name="" id="">
+                                </div>
+                            </div>
+
+                        </section>
+                        <!--<img src="img/3.png" alt="">-->
                     </section>
 
                 </div>
+    
+                <div class="align-salvar">
+                    <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
+                    <div class="btn-salvar">
+                        <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
+                        <input type="submit" value="SALVAR" name="" id="">
+                    </div>
+                </div>
+                
         </section>
 
 

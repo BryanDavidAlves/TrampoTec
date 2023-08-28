@@ -13,6 +13,7 @@ h1 {
     flex-wrap: wrap;
     position: absolute;
     width: 100%;
+    padding-bottom: 40px;
 }
 
 .box {
@@ -126,9 +127,7 @@ h4 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.disponibilidade{
-    display: none;
-}
+
 .left{
     display: flex;
     width: 50%;
@@ -192,3 +191,64 @@ textarea:focus{
     margin-top: 10px;
     height: 93%;
 }
+
+
+.disponibilidade{
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+.input-disponibilidade{
+    display: flex;
+    background-color: #acd5ff;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.horas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.horas .input-disponibilidade{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+.horas .input-disponibilidade input{
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    font-size: 1rem;
+}
+.btn-salvar{
+    background-color: red;
+    width: 10%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn-salvar input{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.align-salvar{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+/*.disponibilidade img{
+    
+    width: 700px
+}*/
