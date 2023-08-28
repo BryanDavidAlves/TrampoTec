@@ -9,6 +9,8 @@ include('../../dao/conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../reset.css">
     <link rel='stylesheet' href='../../pag-empresa/css/login-cadastro.css'>
+    <link rel='stylesheet' href='../../../assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../../../assets/css/style.css'>
     <title>TrampoTec</title>
 </head>
 
@@ -17,191 +19,181 @@ include('../../dao/conexao.php');
 
     <img class="baixo" src="../img/imagemfundobaixo.png">
 
-    <section class="cards-meio">
-
-        <div class="card">
-
-            <div class="imagens">
-                <div> <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno"></div>
-                <div> <img class="imagem-ilustra" src="../fotosEmpresa/perfil/1.png"></div>
-                <div> </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+                <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno">
+                <img width="80%" src="../../../assets/img/woman-charts.png">
             </div>
-
-            <div class="linha"> </div>
-            <div class="alinhamento-botao">
-                <div class="titulo-geral-login">
-                    <p class="titulo-um"> Bem vindo!! Crie sua conta</p><br>
-                    <p class="titulo-dois"> ja tem uma conta faça ? seu login</p><br>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 mt-5">
+                            <p class="titulo-um"> Bem vindo! Crie sua conta</p>
+                            <p class="titulo-dois">Já tem uma conta? <a href="">Fazer login</a></p>
+                    </div>
                 </div>
-                <div class="alinha-itens">
-                    <div class="card-itens">
-
-
-                        <div class="itens-agendar">
-                            <div>
-                                <form method="post" action="../beck-end/cadastro/salvarCadastro.php">
-                                    <p class="titulo-agendar"> NOME </p>
-                                    <div class="barra-agendar">
-                                        <input required type="text" placeholder="." name="nome">
+                <div class="row">
+                    <div class="col-12">
+                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="../beck-end/cadastro/salvarCadastro.php">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>CNPJ</small></label>
+                                        <input class="form-control cnpj obrigatorio" type="text" placeholder="00.000.000/0001-00" name="cnpj">
+                                        <div class="invalid-feedback">
+                                            Digite um CNPJ válido
+                                        </div>
                                     </div>
-                            </div>
-                            <div>
-                                <p class="titulo-agendar"> EMAIL </p>
-                                <div class="barra-agendar">
-                                    <input required type="text" placeholder="" name="email">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Razão Social</small></label>
+                                        <input type="text" class="form-control obrigatorio" id="nome" name="nome" placeholder="Razão Social">
+                                        <div class="invalid-feedback">
+                                            O nome é obrigatório
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Email</small></label>
+                                        <input class="form-control obrigatorio" type="text" placeholder="exemplo@dominio.com" name="email">
+                                        <div class="invalid-feedback">
+                                            O email é obrigatório
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Senha</small></label>
+                                        <input class="form-control obrigatorio" type="password" placeholder="********" name="senha">
+                                        <div class="invalid-feedback">
+                                            A senha deve conter no mínimo 8 caracteres e conter pelo menos um número, uma letra maiúscula e um caracter especial
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Telefone</small></label>
+                                        <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" name="telefone">
+                                        <div class="invalid-feedback">
+                                            O telefone é obrigatório
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>CEP</small></label>
+                                        <input class="form-control cep obrigatorio" type="numeric" placeholder="00000-000" name="cep">
+                                        <div class="invalid-feedback">
+                                            Informe um CEP válido
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Logradouro</small></label>
+                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="logradouro" name="logradouro">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Bairro</small></label>
+                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="bairro" name="bairro">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Cidade</small></label>
+                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="cidade" name="cidade">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Estado</small></label>
+                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="estado" name="estado">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Número</small></label>
+                                        <input class="form-control obrigatorio" readonly type="text" placeholder="Número" id="numero" name="numero">
+                                        <div class="invalid-feedback">
+                                            O número é obrigatório
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*">
+                                        <div class="invalid-feedback">
+                                            Selecione uma imagem
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <p class="titulo-agendar"> SENHA </p>
-                                <div class="barra-agendar">
-                                    <input required type="password" placeholder="" name="senha">
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit-form mt-3 col-12">CADASTRAR</button>
                                 </div>
                             </div>
-
-                            <div>
-                                <p class="titulo-agendar"> CNPJ </p>
-                                <div class="barra-agendar">
-
-                                    <input required type="text" placeholder="_ _ . _ _ _ . _ _ _ / _ _ _ _ - _ _" name="cnpj">
-                                </div>
-                            </div>
-
-                            <div>
-                                <p class="titulo-agendar"> CEP </p>
-                                <div class="barra-agendar">
-                                    <input required type="numeric" placeholder="" name="cep">
-                                </div>
-                            </div>
-
-                            <div>
-                                <p class="titulo-agendar"> TELEFONE </p>
-                                <div class="barra-agendar">
-                                    <input required type="text" placeholder="( ) _ _ _ _ _ - _ _ _ _" name="telefone">
-                                </div>
-                            </div>
-                        </div>
-
+                        </form>
                     </div>
-
-                    <div class="card-itens">
-                        <div class="itens-agendar">
-
-                            <div>
-
-                                <p class="titulo-agendar"> LOGRADOURO </p>
-                                <div class="barra-agendar">
-                                    <input required type="text" placeholder="." name="logradouro">
-                                </div>
-                            </div>
-                            <div>
-                                <p class="titulo-agendar"> NUMERO </p>
-                                <div class="barra-agendar">
-                                    <input required type="numeric" placeholder="" name="numero">
-                                </div>
-                            </div>
-                            <div>
-                                <p class="titulo-agendar"> BAIRRO </p>
-                                <div class="barra-agendar">
-                                    <input required type="text" placeholder="" name="bairro">
-                                </div>
-                            </div>
-
-
-
-                            <div>
-                                <p class="titulo-agendar"> ESTADO </p>
-                                <div class="barra-agendar">
-                                    <select required id="estado" name="estado">
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantins</option>
-                                        <option value="EX">Estrangeiro</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <br>
-                                <p class="titulo-agendar"><label for="foto"> SELECIONE UMA IMAGEM</label> </p>
-                                <div class="barra-file">
-                                    <input type="file" id="foto" name="foto" accept="image/*" >
-                                    <input class="input-none" type="hidden" id="foto_empresa" name="foto_empresa">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <?php
-                if (isset($_GET['login']) && $_GET['login'] == "cnpjInvalido") {
-                    ?>
-                    <div class="text-danger">
-                        CNPJ INVALIDO!!
-                    </div>
-                    <?php
-                }
-                ?>
-
-                <?php
-                if (isset($_GET['login']) && $_GET['login'] == "senhaFraca") {
-                    ?>
-                    <div class="text-danger">
-                        Senha até 8 digitos, exemplo: Senha12@
-                    </div>
-                    <?php
-                }
-                ?>
-
-<?php
-                if (isset($_GET['login']) && $_GET['login'] == "numeroTelInvalido") {
-                    ?>
-                    <div class="text-danger">
-                        Telefone Invalido
-                    </div>
-                    <?php
-                }
-                ?>
-
-
-                <div>
-
-                    <button type="submit" class="botao-agendar">CADASTRAR</button>
-                    </form>
                 </div>
             </div>
-
-
         </div>
+    </div>
+<script src="../../../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../../../assets/js/jquery.mask.min.js"></script>
+<script src="../../../assets/js/my-mask.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/main.js"></script>
 
+<script type="text/javascript">
+    $(function(){
+        $('input').keyup(function(){
+            $(this).removeClass('is-valid is-invalid');
+        });
 
+        $('.cep').keyup(function(){
+            $(this).removeClass('is-valid is-invalid');
+            if(this.value.length == 9){
+                $.get(`https://viacep.com.br/ws/${this.value}/json/`, function(address){
+                    if(address.erro){
+                        $('.cep').removeClass('is-valid');
+                        $('.cep').addClass('is-invalid');
+                    }else{  
+                        $('.cep').removeClass('is-invalid');
+                        $('.cep').addClass('is-valid');
+                        $('#logradouro').val(address.logradouro);
+                        $('#bairro').val(address.bairro);
+                        $('#cidade').val(address.localidade);
+                        $('#estado').val(address.uf);
+                    }
+                });
+            }else{
+                $('.address-search').val('');
+            }
+        });
 
+        $('.cnpj').keyup(function(){
+            if(!validateCNPJ(this.value)){
+                $(this).addClass('is-invalid');
+                $(this).removeClass('is-valid');
+            }else{
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
 
-    </section>
-
+        $('#form-cadastro').submit(function(e){
+            if(validarForm($(this))){
+                e.preventDefault();
+            }
+        })
+    })
+</script>
 </body>
 
 </html>
