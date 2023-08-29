@@ -71,8 +71,11 @@
                         <th>ID</th>
                         <th>NOME</th>
                         <th>EMAIL INSTITUICIONAL</th>
-                        <th>TELEFONE</th>
-
+                        <th>DATA NASCIMENTO</th>
+                        <th>CPF</th>
+                        <th>INSTITUIÇÃO</th>
+                        <th>CEP</th>
+                        <th>ESTADO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,25 +83,37 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-aluno">vanessa</td>
                         <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class ="text-center">20/02/2000</td>
+                        <td class ="text-center">155.155.155-74</td>
+                        <td class ="text-center">Etec Guaianases</td>
+                        <td class ="text-center">432553535</td>
+                        <td class ="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
                     </tr>
                     <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-aluno">Cysco Systen</td>
-                        <td class="table-email-aluno">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-id">2</td>
+                        <td class="table-nome-aluno">bryan</td>
+                        <td class="table-email-aluno">bryan.alves5@etec.sp.gov.br</td>
+                        <td class ="text-center">20/02/2000</td>
+                        <td class ="text-center">155.155.155-74</td>
+                        <td class ="text-center">Etec Guaianases</td>
+                        <td class ="text-center">432553535</td>
+                        <td class ="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
                     </tr>
                     <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-aluno">Cysco Systen</td>
-                        <td class="table-email-aluno">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-id">3</td>
+                        <td class="table-nome-aluno">vanessa</td>
+                        <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
+                        <td class ="text-center">20/02/2000</td>
+                        <td class ="text-center">155.155.155-74</td>
+                        <td class ="text-center">Etec Guaianases</td>
+                        <td class ="text-center">432553535</td>
+                        <td class ="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
