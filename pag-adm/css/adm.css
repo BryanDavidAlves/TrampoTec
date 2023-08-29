@@ -194,46 +194,70 @@ thead {
     color: rgb(70, 70, 70);
     font-weight: 600;
 }
-th{
+
+th {
     text-align: center;
 }
+
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
 }
 
-.infos{
+.infos {
     border-bottom: 1px solid black;
     padding: 10px;
 
 }
-table td{
+
+table td {
     padding: 20px 10px 5px 15px;
     text-align: center;
     color: rgb(94, 94, 94);
 
 }
-.table-nome-adm{
+
+.table-nome-adm {
     width: 100px;
 }
-.table-email-adm{
-    word-break: break-all ;
+
+.table-email-adm {
+    word-break: break-all;
     width: 220px;
 }
 
-tr:nth-last-child(1){
+tr:nth-last-child(1) {
     border: none;
 }
-.icone-table{
+
+.icone-table {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.icone-table i{
+
+.icone-table i {
     margin: 3px;
 }
 
-
-
+.secao-cadastro a {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 25%;
+    font-size: 1.5rem;
+    
+}
+.secao-cadastro{
+    margin-top: 30px;
+}
+#icon-titulo {
+    background-color: #435b84;
+    border-radius: 100%;
+    padding:    11px;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }

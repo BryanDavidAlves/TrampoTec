@@ -34,7 +34,7 @@
                         <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
-                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
+                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presencial
                             </span>
                             <span>
                                 <i class="icon-vaga fa-regular fa-clock"></i> 400 Horas
@@ -63,7 +63,7 @@
                         <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
-                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
+                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presencial
                             </span>
                             <span>
                                 <i class="icon-vaga fa-regular fa-clock"></i> 400 Horas
@@ -91,7 +91,7 @@
                         <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
-                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
+                                <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presencial
                             </span>
                             <span>
                                 <i class="icon-vaga fa-regular fa-clock"></i> 400 Horas

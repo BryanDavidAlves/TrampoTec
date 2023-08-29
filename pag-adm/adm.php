@@ -23,6 +23,12 @@
     <header>
         <h1>Administradores</h1>
     </header>
+    <div class="secao-cadastro">
+        <a href="cadastro-adm.php">
+            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            <h2>Cadastrar um novo Administrador</h2>
+        </a>
+    </div>
     <main>
         <div class="secao-busca">
             <section class="sistema-busca">
