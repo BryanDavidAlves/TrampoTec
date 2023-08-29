@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Ago-2023 às 22:31
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 28-Ago-2023 às 19:57
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_admin` (
   `idAdmin` int(11) NOT NULL,
-  `login` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
   `senha` char(8) NOT NULL,
-  `imagem` text NOT NULL
+  `imagem` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -45,28 +45,21 @@ CREATE TABLE `tb_aluno` (
   `email` varchar(40) NOT NULL,
   `senha` char(8) NOT NULL,
   `nome` varchar(60) NOT NULL,
-  `cpf` char(14) NOT NULL,
+  `cpf` char(11) NOT NULL,
   `dtNasc` date NOT NULL,
-  `cep` char(10) NOT NULL,
-  `imagem` varchar(50) NOT NULL,
   `bairro` varchar(40) NOT NULL,
   `estado` varchar(20) NOT NULL,
   `cidade` varchar(40) NOT NULL,
+  `cep` char(8) NOT NULL,
   `duracaoCurso` char(8) NOT NULL,
   `periodoCurso` char(5) NOT NULL,
   `conclusaoCurso` date NOT NULL,
   `matriculaCurso` int(11) NOT NULL,
   `experiencias` varchar(300) DEFAULT NULL,
   `habilidades` varchar(200) NOT NULL,
-  `sobreMim` char(70) NOT NULL
+  `sobreMim` char(70) NOT NULL,
+  `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tb_aluno`
---
-
-INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `cep`, `imagem`, `bairro`, `estado`, `cidade`, `duracaoCurso`, `periodoCurso`, `conclusaoCurso`, `matriculaCurso`, `experiencias`, `habilidades`, `sobreMim`) VALUES
-(3, '', 'Senha12#', 'fdfsdfs', '266.452.218-35', '2023-08-05', '08247095', '', '', '', '', '', '', '0000-00-00', 0, NULL, '', '');
 
 -- --------------------------------------------------------
 
@@ -150,21 +143,12 @@ CREATE TABLE `tb_empresa` (
   `nome` varchar(30) NOT NULL,
   `cnpj` char(18) NOT NULL,
   `cep` char(8) NOT NULL,
-  `logradouro` varchar(30) NOT NULL,
+  `logradouro` varchar(50) NOT NULL,
   `numero` int(11) NOT NULL,
   `bairro` varchar(60) NOT NULL,
   `estado` varchar(25) NOT NULL,
-  `imagem` varchar(50) NOT NULL
+  `imagem` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tb_empresa`
---
-
-INSERT INTO `tb_empresa` (`idEmpresa`, `email`, `senha`, `nome`, `cnpj`, `cep`, `logradouro`, `numero`, `bairro`, `estado`, `imagem`) VALUES
-(63, 'laysamelmudes@gmail.com', 'Senha12!', 'LAYSA COCA MELMUDES', '01.827.484/0001-00', '08247095', 'fsfsd', 543, 'fdsfsfs', 'SP', ''),
-(64, 'laysamelmudes@gmasdail.com', 'Senha12@', 'LAYSA COCA MELMUDdsaES', '50.932.434/0001-06', '08247095', 'dadas', 43, 'fsfsfs', 'SP', ''),
-(65, 'laysamelmudes@gmail.com75', 'Senha12@', 'LAYSA COCA MELMUDES', '95.764.875/0001-76', '08247095', 'kdsalda', 65765, 'gdgdg', 'SP', '');
 
 -- --------------------------------------------------------
 
@@ -178,8 +162,8 @@ CREATE TABLE `tb_etec` (
   `senha` char(8) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `codigo` int(11) NOT NULL,
-  `imagem` text DEFAULT NULL,
-  `municipio` varchar(30) NOT NULL
+  `municipio` varchar(30) NOT NULL,
+  `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -194,6 +178,42 @@ CREATE TABLE `tb_fale_conosco` (
   `email` varchar(40) NOT NULL,
   `categoria` varchar(20) NOT NULL,
   `comentario` char(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_pendencia_empresa`
+--
+
+CREATE TABLE `tb_pendencia_empresa` (
+  `idPendenciaEmpresa` int(11) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `senha` char(8) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `cnpj` char(18) NOT NULL,
+  `cep` char(8) NOT NULL,
+  `logradouro` varchar(50) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `bairro` varchar(60) NOT NULL,
+  `estado` varchar(25) NOT NULL,
+  `imagem` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_pendencia_etec`
+--
+
+CREATE TABLE `tb_pendencia_etec` (
+  `idPendenciaEtec` int(11) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `senha` char(8) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `codigo` int(11) NOT NULL,
+  `municipio` varchar(30) NOT NULL,
+  `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -222,7 +242,7 @@ CREATE TABLE `tb_professor` (
   `nome` varchar(60) NOT NULL,
   `email` varchar(40) NOT NULL,
   `senha` char(8) NOT NULL,
-  `imagem` text NOT NULL
+  `imagem` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -368,7 +388,8 @@ ALTER TABLE `tb_admin`
 --
 ALTER TABLE `tb_aluno`
   ADD PRIMARY KEY (`idAluno`),
-  ADD UNIQUE KEY `cpf` (`cpf`);
+  ADD UNIQUE KEY `cpf` (`cpf`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Índices para tabela `tb_aluno_curso`
@@ -432,6 +453,20 @@ ALTER TABLE `tb_etec`
 --
 ALTER TABLE `tb_fale_conosco`
   ADD PRIMARY KEY (`idFaleConosco`);
+
+--
+-- Índices para tabela `tb_pendencia_empresa`
+--
+ALTER TABLE `tb_pendencia_empresa`
+  ADD PRIMARY KEY (`idPendenciaEmpresa`);
+
+--
+-- Índices para tabela `tb_pendencia_etec`
+--
+ALTER TABLE `tb_pendencia_etec`
+  ADD PRIMARY KEY (`idPendenciaEtec`),
+  ADD UNIQUE KEY `codigo` (`codigo`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Índices para tabela `tb_perfil_empresa`
@@ -531,7 +566,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_area`
@@ -555,7 +590,7 @@ ALTER TABLE `tb_curso`
 -- AUTO_INCREMENT de tabela `tb_empresa`
 --
 ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_etec`
@@ -568,6 +603,18 @@ ALTER TABLE `tb_etec`
 --
 ALTER TABLE `tb_fale_conosco`
   MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tb_pendencia_empresa`
+--
+ALTER TABLE `tb_pendencia_empresa`
+  MODIFY `idPendenciaEmpresa` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tb_pendencia_etec`
+--
+ALTER TABLE `tb_pendencia_etec`
+  MODIFY `idPendenciaEtec` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tb_perfil_empresa`
@@ -625,93 +672,93 @@ ALTER TABLE `tb_vaga`
 -- Limitadores para a tabela `tb_aluno_curso`
 --
 ALTER TABLE `tb_aluno_curso`
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`),
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`);
+  ADD CONSTRAINT `tb_aluno_curso_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_conhecimento_aluno`
 --
 ALTER TABLE `tb_conhecimento_aluno`
-  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`),
-  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_2` FOREIGN KEY (`fk_idConhecimento`) REFERENCES `tb_conhecimento` (`idConhecimento`);
+  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_2` FOREIGN KEY (`fk_idConhecimento`) REFERENCES `tb_conhecimento` (`idConhecimento`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
-  ADD CONSTRAINT `tb_curso_ibfk_1` FOREIGN KEY (`fk_idArea`) REFERENCES `tb_area` (`idArea`);
+  ADD CONSTRAINT `tb_curso_ibfk_1` FOREIGN KEY (`fk_idArea`) REFERENCES `tb_area` (`idArea`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_curso_etec`
 --
 ALTER TABLE `tb_curso_etec`
-  ADD CONSTRAINT `tb_curso_etec_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`),
-  ADD CONSTRAINT `tb_curso_etec_ibfk_2` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`);
+  ADD CONSTRAINT `tb_curso_etec_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_curso_etec_ibfk_2` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_perfil_empresa`
 --
 ALTER TABLE `tb_perfil_empresa`
-  ADD CONSTRAINT `tb_perfil_empresa_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`);
+  ADD CONSTRAINT `tb_perfil_empresa_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_professor_etec`
 --
 ALTER TABLE `tb_professor_etec`
-  ADD CONSTRAINT `tb_professor_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`),
-  ADD CONSTRAINT `tb_professor_etec_ibfk_2` FOREIGN KEY (`fk_idProfessor`) REFERENCES `tb_professor` (`idProfessor`);
+  ADD CONSTRAINT `tb_professor_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_professor_etec_ibfk_2` FOREIGN KEY (`fk_idProfessor`) REFERENCES `tb_professor` (`idProfessor`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_recomendacao`
 --
 ALTER TABLE `tb_recomendacao`
-  ADD CONSTRAINT `tb_recomendacao_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`),
-  ADD CONSTRAINT `tb_recomendacao_ibfk_2` FOREIGN KEY (`fk_idProfessor`) REFERENCES `tb_professor` (`idProfessor`);
+  ADD CONSTRAINT `tb_recomendacao_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_recomendacao_ibfk_2` FOREIGN KEY (`fk_idProfessor`) REFERENCES `tb_professor` (`idProfessor`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_requisito_vaga`
 --
 ALTER TABLE `tb_requisito_vaga`
-  ADD CONSTRAINT `tb_requisito_vaga_ibfk_1` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`),
-  ADD CONSTRAINT `tb_requisito_vaga_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`);
+  ADD CONSTRAINT `tb_requisito_vaga_ibfk_1` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_requisito_vaga_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  ADD CONSTRAINT `tb_telefone_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`);
+  ADD CONSTRAINT `tb_telefone_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_telefone_empresa`
 --
 ALTER TABLE `tb_telefone_empresa`
-  ADD CONSTRAINT `tb_telefone_empresa_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`);
+  ADD CONSTRAINT `tb_telefone_empresa_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_telefone_etec`
 --
 ALTER TABLE `tb_telefone_etec`
-  ADD CONSTRAINT `tb_telefone_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`);
+  ADD CONSTRAINT `tb_telefone_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_vaga`
 --
 ALTER TABLE `tb_vaga`
-  ADD CONSTRAINT `tb_vaga_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`);
+  ADD CONSTRAINT `tb_vaga_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_vaga_aluno`
 --
 ALTER TABLE `tb_vaga_aluno`
-  ADD CONSTRAINT `tb_vaga_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`),
-  ADD CONSTRAINT `tb_vaga_aluno_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`);
+  ADD CONSTRAINT `tb_vaga_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_vaga_aluno_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_vaga_curso`
 --
 ALTER TABLE `tb_vaga_curso`
-  ADD CONSTRAINT `tb_vaga_curso_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`),
-  ADD CONSTRAINT `tb_vaga_curso_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`);
+  ADD CONSTRAINT `tb_vaga_curso_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_vaga_curso_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

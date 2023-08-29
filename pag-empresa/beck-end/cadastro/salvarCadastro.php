@@ -16,21 +16,6 @@ if ($_POST) {
     $telefone = trim($_POST['telefone']);
 
 
-    //Verificar cnpj é valido ou nao
-    $CnpjValido = validar_cnpj($cnpj);
-    $senhaForte = isStrongPassword($senha);
-    $formattedPhoneNumber = formatPhoneNumber($telefone);
-
-
-    if ($CnpjValido == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=cnpjInvalido');
-    } else if ($senhaForte == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=senhaFraca');
-    } else if ($formattedPhoneNumber == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=numeroTelInvalido');
-    } 
-    else if ($CnpjValido == true || $senhaForte == true || $formattedPhoneNumber == true ) {
-        $formattedCNPJ = formatCNPJ($cnpj);
 
         $sql = "
                 INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
@@ -51,7 +36,7 @@ if ($_POST) {
         header('Location: ../../../one-page/index.html');
         exit;
     }
-} else {
+else {
     header('Location: login.php?login=erro');
     $_SESSION['autenticado'] = "NAO";
 }
