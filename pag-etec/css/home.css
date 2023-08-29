@@ -1,45 +1,61 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background-color:#ffffff; 
+  background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-  margin-left:  20%; /* Same as the width of the sidenav */
-  margin-right:200px;
-  overflow:hidden;
-
-} 
-
-.titulo-pagina{
-   width: 100%;
-   justify-content: center;
-   height: 10px;
-   display: flex;
-
-}
-.titulo-pagina p{
- font-size: 25px;
-
+  margin-left: 20%;
+  /* Same as the width of the sidenav */
+  margin-right: 200px;
+  overflow: hidden;
 
 }
 
+.titulo-pagina {
+  width: 100%;
+  justify-content: center;
+  height: 10px;
+  display: flex;
+
+}
+
+.titulo-pagina p {
+  font-size: 25px;
 
 
-.cards-vagas-home{
+}
+
+#icon-titulo {
+  background-color: #435b84;
+  border-radius: 100%;
+  padding: 11px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.secao-cadastro a {
+  display: flex;
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: 10px;
+}
+
+.cards-vagas-home {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
-  margin-top: 50px;
   width: 100%;
 }
 
-.card-home{
+.card-home {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:340px;
+  width: 340px;
   height: 200px;
   padding: 15px;
   border: none;
@@ -48,7 +64,7 @@ main {
   margin: 10px;
 }
 
-.card-corpo-home{
+.card-corpo-home {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -56,12 +72,12 @@ main {
 }
 
 
-.card-home .imagens{
+.card-home .imagens {
   display: flex;
   align-items: flex-start;
 }
 
-.imagem-vaga{
+.imagem-vaga {
   width: 70px;
   height: 70px;
   border-radius: 50px;
@@ -69,25 +85,30 @@ main {
   object-fit: cover;
 }
 
-.nome{
+.nome-empresa {
+  font-weight: 600;
+  color: rgb(80, 80, 80);
+}
+
+.nome {
   font-size: 15px;
   text-decoration: solid;
   color: rgb(117, 117, 117);
 }
 
-.nome-vaga{
+.nome-vaga {
   font-size: 15px;
   font-weight: bold;
 }
 
-.localizao-vaga{
+.localizao-vaga {
   font-size: 14px;
 
 }
 
-.mobilidade-preço{
+.mobilidade-preço {
   display: flex;
-flex-direction: row;
+  flex-direction: row;
   justify-content: left;
   gap: 5%;
   font-size: 14px;
@@ -95,16 +116,16 @@ flex-direction: row;
 
 
 
-.icon-vaga{
+.icon-vaga {
   color: rgb(40, 42, 42);
 }
 
-.infos h4{
- font-weight:bolder;
+.infos h4 {
+  font-weight: bolder;
   font-size: 15px;
 }
 
-.infos p{
+.infos p {
   color: black;
-   font-size: 15px;
- }
+  font-size: 15px;
+}
