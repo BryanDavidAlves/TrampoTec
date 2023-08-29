@@ -7,10 +7,10 @@ include('../dao/conexao.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../reset.css">
-    <link rel='stylesheet' href='../../pag-empresa/css/login-cadastro.css'>
-    <link rel='stylesheet' href='../../../assets/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='../../../assets/css/style.css'>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../assets/css/style.css'>
     <title>TrampoTec - Cadastro de Aluno </title>
 </head>
 
@@ -163,11 +163,11 @@ include('../dao/conexao.php');
             </div>
         </div>
     </div>
-<script src="../../../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="../../../assets/js/jquery.mask.min.js"></script>
-<script src="../../../assets/js/my-mask.js"></script>
-<script src="../../../assets/js/bootstrap.min.js"></script>
-<script src="../../../assets/js/main.js"></script>
+<script src="../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../assets/js/jquery.mask.min.js"></script>
+<script src="../assets/js/my-mask.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/main.js"></script>
 
 <script type="text/javascript">
     $(function(){
