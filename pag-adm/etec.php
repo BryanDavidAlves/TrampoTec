@@ -87,9 +87,9 @@
                 <tbody>
                     <tr class="infos">
                         <td class="table-id">1</td>
-                        <td class="table-nome-etec">Cysco Systen</td>
-                        <td class="table-email-etec">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
                         <td>GUAIANASES</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
@@ -98,9 +98,9 @@
 
                     <tr class="infos">
                         <td class="table-id">2</td>
-                        <td class="table-nome-etec">Cysco Systen</td>
-                        <td class="table-email-etec">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
                         <td>GUAIANASES</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
@@ -109,9 +109,9 @@
 
                     <tr class="infos">
                         <td class="table-id">3</td>
-                        <td class="table-nome-etec">Cysco Systen</td>
-                        <td class="table-email-etec">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
                         <td>GUAIANASES</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
