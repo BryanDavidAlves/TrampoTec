@@ -29,16 +29,17 @@ main {
 
 .cards-vagas-home{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   margin-top: 50px;
+  width: 100%;
 }
 
 .card-home{
   display: flex;
   justify-content: center;
   align-items: center;
-  width:380px;
+  width:340px;
   height: 200px;
   padding: 15px;
   border: none;
