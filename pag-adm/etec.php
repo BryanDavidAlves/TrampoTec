@@ -22,109 +22,106 @@
 
     <header>
         <h1>Etecs</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
+        <div class="secao-busca">
+            <section class="sistema-busca">
+                <div class="barra-pesquisa">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                </div>
+
+                <div class="align-filtro">
+                    <div class="btn-side">
+                        <p>CADASTRADAS</p>
+                    </div>
+                    <div class="btn-side">
+                        <p>PENDENTES</p>
+                    </div>
+                    <div class="filtro" onclick="abrirFiltro()">
+                        <span class="material-symbols-outlined">
+                            tune
+                        </span>
+                        <p>Filtrar</p>
+
+                    </div>
+                </div>
+
+                <div class="modal-filtro" id="abrir-filtro">
+                    <form action="">
+                        <div class="align-form-filtro">
+                            <label for="">Periodo</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Horario</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Curso</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Area</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <input type="submit" value="Aplicar" class="button-filtro">
+
+                    </form>
+                </div>
+        </div>
 
         <section class="etec">
-            <div class="align-card">
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/img-etec.jpg" alt="">
 
-                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;" ></i>
-                            <div id="modal-card">
-                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
-                            </div>
-                        </div>
-                        <h2> TrampoTec</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>EMAIL</th>
+                        <th>CÓDIGO</th>
+                        <th>MUNICIPIO</th>
+ 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="infos">
+                        <td class="table-id">1</td>
+                        <td class="table-nome-etec">Cysco Systen</td>
+                        <td class="table-email-etec">cysco@gmail.com</td>
+                        <td class="table-cnpj">832959432432</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
 
-                    </section>
-                    <div class="info-etec">
-                        <h3>Localização</h3>
-                        <h5>Rua Feliciano Mendonça 290- Guaianases. São Paulo - SP, 08460-365</h5>
-                    </div>
-                    <div class="info-etec">
-                        <h3>Cursos</h3>
-                        <h5>Desenvolvimento de sistemas - Tarde <br>
-                            Nutrição - Tarde <br>
-                            Eletrotécnica - EMTEC <br>
-                            Administração - EMTEC <br>
-                        </h5>
-                    </div>
+                    <tr class="infos">
+                        <td class="table-id">2</td>
+                        <td class="table-nome-etec">Cysco Systen</td>
+                        <td class="table-email-etec">cysco@gmail.com</td>
+                        <td class="table-cnpj">832959432432</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
 
-                    <div class="info-etec">
-                        <h3>Telefone</h3>
-                        <h5>(11) 2558-2585</h5>
-                    </div>
-
-                    <div class="info-etec">
-                        <h3>Código</h3>
-                        <h5>(11) 99999-9999</h5>
-                    </div>
-
-                    <div class="info-etec">
-                        <h3>Email</h3>
-                        <h5>email@email.com</h5>
-                    </div>
-                </div>
-
-
-            </div>
-            <section class="filtro">
-                <div class="align">
-                    <span class="material-symbols-outlined">
-                        tune
-                    </span>
-                    <h3 class="titulo-filtro">Filtrar por</h3>
-                </div>
-                <form action="">
-                    <div class="align">
-                        <h3 class="palavra-chave">Nome</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Email</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Código Etec</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Curso</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <input value="Aplicar" class="button" type="submit">
-                </form>
-                </div>
-            </section>
+                    <tr class="infos">
+                        <td class="table-id">3</td>
+                        <td class="table-nome-etec">Cysco Systen</td>
+                        <td class="table-email-etec">cysco@gmail.com</td>
+                        <td class="table-cnpj">832959432432</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
 
         </section>
-
     </main>
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
