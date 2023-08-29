@@ -29,6 +29,7 @@
 
 main {
     margin-left: 20%;
+    padding-bottom: 50px;
 }
 
 .sistema-busca .barra-pesquisa {
@@ -79,6 +80,7 @@ main .img-cima img {
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .sistema-busca {
@@ -92,25 +94,31 @@ main .img-cima img {
     margin-top: 5%;
     padding: 10px 0px 10px 0px;
 }
-.btn-side{
+
+.btn-side {
     background-color: white;
-    color:red;
+    color: red;
     margin-right: 20px;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
 }
-.btn-side:nth-child(2){
-    margin-right: 30px;
+
+.btn-side:nth-child(2) {
+    margin-right: 7%;
 }
-.btn-side p{
+
+.btn-side p {
+    font-size: 0.8rem;
     font-weight: 600;
 }
-.filtro span{
+
+.filtro span {
     color: red;
     margin-right: 10px;
     font-weight: 700;
 }
+
 .sistema-busca .align-filtro .filtro {
     padding: 7px;
     background-color: rgb(250, 246, 246);
@@ -181,3 +189,51 @@ main .img-cima img {
     padding: 10px;
     width: 90px;
 }
+
+thead {
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+}
+th{
+    text-align: center;
+}
+table {
+    background-color: rgba(247, 247, 247, 0.641);
+    border-radius: 20px;
+    
+}
+
+.infos{
+    border-bottom: 1px solid black;
+    padding: 10px;
+
+}
+table td{
+    padding: 30px 10px 40px 10px;
+    text-align: center;
+    color: rgb(94, 94, 94);
+
+}
+.table-nome-empresa{
+    width: 100px;
+}
+.table-email-empresa{
+    word-break: break-all ;
+    width: 150px;
+}
+
+tr:nth-last-child(1){
+    border: none;
+}
+.icone-table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icone-table i{
+    margin: 3px;
+}
+
+
+
