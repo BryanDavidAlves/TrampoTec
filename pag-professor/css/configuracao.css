@@ -6,6 +6,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-left: 50px;
 }
 
 .titulo-configuracoes {
@@ -34,8 +35,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+
   margin-top: 5%;
+  margin-left: 10%;
 }
 
 .notificacoes ul {

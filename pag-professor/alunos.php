@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="css/side.css">
-    <link rel="stylesheet" href="css/indicacar.css">
+    <link rel="stylesheet" href="css/alunos.css">
     <link rel="stylesheet" href="css/geral.css">
 </head>
 
@@ -16,7 +16,7 @@
     include('../pag-professor/components/sidebar.php');
     ?>
     <main class="main">
-        <span class="titulo-vagas">Indicaçoes para Alunos</span>
+        <span class="titulo-vagas"> Alunos</span>
         <img src="" alt="">
         
     </main>
@@ -71,31 +71,12 @@
             <td>ryan.souza44@etec.sp.gov.br</td>
         </table>
         <table>
-            <th> MENSAGEM</th>
-            <td>Me indica, Clodo</td>
+            <th> CURSO</th>
+            <td>Desenvolvimento de Sistemas</td>
         </table>
         </div>
 
-        <div class="icons">
-        <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
         
-        </div>
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                            
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                            
-                        </form>
-                    </div>
-                </div>
         
     </section>
 
@@ -114,32 +95,12 @@
             <td>ryan.souza44@etec.sp.gov.br</td>
         </table>
         <table>
-            <th> MENSAGEM</th>
-            <td>Me indica, Clodo</td>
+        <th> CURSO</th>
+        <td>Desenvolvimento de Sistemas</td>
         </table>
         </div>
 
-        <div class="icons">
-        <i onclick="abrirIndicacao()"  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-        
-        </div>
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                            
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                            
-                        </form>
-                    </div>
-                </div>
-        
+     
     </section>
 
     <div class="linha"></div>
@@ -156,31 +117,13 @@
             <td>ryan.souza44@etec.sp.gov.br</td>
         </table>
         <table>
-            <th> MENSAGEM</th>
-            <td>Me indica, Clodo</td>
+        <th> CURSO</th>
+        <td>Desenvolvimento de Sistemas</td>
         </table>
         </div>
 
-        <div class="icons">
-        <i onclick="abrirIndicacao()"  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+       
         
-        </div>
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                            
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                            
-                        </form>
-                    </div>
-                </div>
         
     </section>
 
@@ -202,11 +145,6 @@
         filtro.style.display="block"
     }
 }
-function abrirIndicacao() {
-            var indicar = document.getElementById('abrir-indicacao')
-           
-            indicar.style.display = "block";
-        }
 
     </script>
 </body>

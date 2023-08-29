@@ -24,13 +24,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 .titulo-vagas {
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 3%;
-  margin-left: 8%;
+  margin-left: 5%;
 }
 .sistema-busca {
   background-color: #555cb3;
@@ -120,7 +120,7 @@ main {
   gap: 80px;
   align-items: center;
   justify-content: center;
-  margin-left: 0%;
+  margin-left: -15%;
 }
 .lista-vagas table th {
   display: flex;
@@ -146,9 +146,7 @@ main {
   flex-direction: column;
   gap: 15px;
 }
-.lista-vagas .icons i {
-  font-size: 1.3rem;
-}
+
 .linha {
   border: 1px solid gray;
   width: 90%;
@@ -157,91 +155,4 @@ main {
   align-items: center;
   justify-content: center;
   margin-top: 15px;
-}
-
-.card-indicacao {
-  display: none;
-
-  z-index: 5;
-
-  position: fixed;
-  height: 100%;
-  width: 800px;
-  justify-content: center;
-
-  margin-top: -120px;
-}
-.card-indicacao .title-indicacao {
-  text-align: center;
-  font-size: 1.2rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.card-indicacao .align-card-indicacao {
-  display: flex;
-  border: 2px solid gray;
-  border-radius: 30px;
-
-  flex-direction: column;
-  position: absolute;
-  height: 450px;
-  width: 490px;
-  background-color: white;
-  margin-left: 50px;
-  margin-top: 250px;
-}
-.card-indicacao .align-card-indicacao form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 30px;
-  gap: 5px;
-}
-.card-indicacao .align-card-indicacao form label {
-  font-weight: 700;
-}
-.card-indicacao .align-card-indicacao form input {
-  width: 75%;
-  border-radius: 30px;
-  border: 2px solid gray;
-  padding: 13px;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-.card-indicacao .align-card-indicacao form input:focus {
-  outline: none;
-}
-.card-indicacao .align-card-indicacao form textarea:focus {
-  outline: none;
-}
-.card-indicacao .align-card-indicacao form textarea {
-  width: 85%;
-  border: 2px solid gray;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.card-indicacao .align-card-indicacao .botao-indicacao {
-  padding: 14px;
-  background-color: red;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 200px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  transition: 0.5s all ease-in-out;
-  border: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.card-indicacao .align-card-indicacao .botao-indicacao:hover {
-  transition: 0.5s all ease-in-out;
-  background-color: rgb(224, 5, 5);
-}
-.card-indicacao .align-card-indicacao .align-botao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8px;
 }
