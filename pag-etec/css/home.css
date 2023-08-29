@@ -23,8 +23,6 @@ main {
 
 .titulo-pagina p {
   font-size: 25px;
-
-
 }
 
 #icon-titulo {
@@ -40,10 +38,12 @@ main {
   color: black;
   text-decoration: none;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-left: 10px;
 }
-
+.secao-cadastro a h2{
+  font-weight: 600;
+}
 .cards-vagas-home {
   display: flex;
   justify-content: start;

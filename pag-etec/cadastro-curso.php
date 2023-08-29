@@ -35,7 +35,7 @@
                     </div>
                     <div class="align ">
                         <label for="carga-horaria">Carga Horária</label>
-                        <input type="time" id="carga-horaria" name="carga-horaria">
+                        <input type="number" id="carga-horaria" name="carga-horaria">
                     </div>
                     <div class="align ">
                         <label for="horario">Horário</label>
@@ -63,8 +63,12 @@
 
                     </div>
                     <div class="align">
-                        <label for="periodo">Periodo</label>
-                        <input type="text" id="periodo" name="periodo">
+                    <label for="periodo">Periodo</label>
+                        <select name="periodo" id="periodo">
+                            <option value="">Manhã</option>
+                            <option value="">Tarde</option>
+                            <option value="">Noite</option>
+                        </select>
                     </div>
 
                 </div>
