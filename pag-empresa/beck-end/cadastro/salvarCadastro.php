@@ -18,7 +18,7 @@ if ($_POST) {
 
 
         $sql = "
-                INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
+                INSERT INTO tb_pendencia_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
                 (   '$email',
                     '$senha',
                     '$nome',
