@@ -17,24 +17,16 @@
 
     <header>
         <h1>Perfil</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
         <section class="perfil">
-            <div class="body-perfil">
-                <img src="img/img-perfil.jpg" alt="">
-                <div class="perfil-info">
-                    <h2>Nome</h2>
-                    <h3>Ana</h3>
-                </div>
-                <div class="perfil-info">
-                    <h2>Email</h2>
-                    <h3>ana123@etec.sp.gov.br</h3>
-                </div>
-                <div class="perfil-info">
-                    <h2>Telefone</h2>
-                    <h3>(11) 97588-2020</h3>
-                </div>
+            <div class="perfil-info">
+                <h2>EMAIL:</h2>
+                <h3>thais@gmail.com</h3>
+            </div>
+            <div class="perfil-info">
+                <h2>SENHA:</h2>
+                <h3>12345678910</h3>
             </div>
         </section>
     </main>
