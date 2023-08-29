@@ -18,9 +18,14 @@
     <main class="main">
 
         <span class="titulo-pagina">
-            <p>Painel De cursos </p>
+            <h1>Painel De cursos </h1>
         </span>
-
+        <div class="secao-cadastro">
+            <a href="cadastro-curso.php">
+                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <h2>Cadastrar um novo curso</h2>
+            </a>
+        </div>
         <section class="cards-vagas-home">
 
             <div class="card-home">
@@ -31,7 +36,8 @@
                     <div class="card-itens-home">
                         <p class="nome-empresa"> Etec de Guianases</p>
                         <p class="nome-vaga"> Desenvolvimento de Sistemas </p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
+                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano
+                            mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
                                 <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
@@ -41,7 +47,7 @@
                             </span>
                         </p>
                         <div class="infos">
-                            <h4>periodo</h4>
+                            <h4>Periodo</h4>
                             <p>Tarde - 13:20 as 17:40</p>
 
                         </div>
@@ -60,7 +66,8 @@
                     <div class="card-itens-home">
                         <p class="nome-empresa"> Etec de Guianases</p>
                         <p class="nome-vaga"> Desenvolvimento de Sistemas </p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
+                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano
+                            mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
                                 <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
@@ -70,7 +77,7 @@
                             </span>
                         </p>
                         <div class="infos">
-                            <h4>periodo</h4>
+                            <h4>Periodo</h4>
                             <p>Tarde - 13:20 as 17:40</p>
 
                         </div>
@@ -88,7 +95,8 @@
                     <div class="card-itens-home">
                         <p class="nome-empresa"> Etec de Guianases</p>
                         <p class="nome-vaga"> Desenvolvimento de Sistemas </p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano mendonça </p>
+                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> Rua Feliciano
+                            mendonça </p>
                         <p class="mobilidade-preço">
                             <span>
                                 <i class="icon-vaga fa-solid fa-bag-shopping"></i> Presençial
@@ -98,7 +106,7 @@
                             </span>
                         </p>
                         <div class="infos">
-                            <h4>periodo</h4>
+                            <h4>Periodo</h4>
                             <p>Tarde - 13:20 as 17:40</p>
 
                         </div>
