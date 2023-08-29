@@ -22,7 +22,7 @@
         <h1>Professores</h1>
     </header>
     <main>
-    <div class="secao-busca">
+        <div class="secao-busca">
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
