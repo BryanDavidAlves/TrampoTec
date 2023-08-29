@@ -20,7 +20,7 @@
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
-
+    <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
     </header>
@@ -71,7 +71,7 @@
                     </form>
                 </div>
         </div>
-    
+
         <section class="empresa">
 
             <table>

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <img class="cima" src="img/fundo2.png" alt="">
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
@@ -80,7 +81,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">vanessa</td>
                         <td class="table-email-professor">vanessa@etec.sp.gov.br</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-cnpj">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -89,7 +90,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">Cysco Systen</td>
                         <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-cnpj">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -98,7 +99,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">Cysco Systen</td>
                         <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
+                        <td class="table-cnpj">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
