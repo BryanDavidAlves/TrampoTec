@@ -49,37 +49,32 @@
                     </div>
                     <h2>7</h2>
                 </div>
+                <div class="card">
+                    <div class="header-card">
+                        <h3>Administradores Cadastrados</h3>
+                        <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                    </div>
+                    <h2>7</h2>
+                </div>
+                <div class="card">
+                    <div class="header-card">
+                        <h3>Etecs Pendentes</h3>
+                        <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
+                    </div>
+                    <h2>7</h2>
+                </div>
 
+                <div class="card">
+                    <div class="header-card">
+                        <h3>Empresas Pendentes </h3>
+                        <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                    </div>
+                    <h2>7</h2>
+                </div>
             </div>
             <section class="dash-card">
-
-                <img src="img/dashboard.png" alt="">
-                <div class="align-card-baixo">
-
-
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Administradores Cadastrados</h3>
-                            <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>7</h2>
-                    </div>
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Etecs Pendentes</h3>
-                            <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>7</h2>
-                    </div>
-
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Empresas Pendentes </h3>
-                            <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>7</h2>
-                    </div>
-                </div>
+                <img class="grafico1" src="img/grafico1.png" alt="">
+                <img class="grafico2" src="img/grafico2.png" alt="">
             </section>
         </section>
     </main>
