@@ -71,7 +71,7 @@
                     </form>
                 </div>
         </div>
-        </section>
+    
         <section class="empresa">
 
             <table>
