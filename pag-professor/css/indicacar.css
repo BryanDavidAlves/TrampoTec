@@ -12,6 +12,31 @@
   background-color: white;
 }
 
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 100px;
+}
+.img-baixo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 15%;
+}
+.img-baixo img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+main .img-cima img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  z-index: -5;
+}
+
 .sistema-busca .barra-pesquisa input {
   border: none;
   width: 100%;
@@ -23,14 +48,13 @@
 main {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 25px;
+  justify-content: start;
+  margin-left: 24%;
 }
 .titulo-vagas {
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 3%;
-  margin-left: 8%;
 }
 .sistema-busca {
   background-color: #555cb3;
@@ -78,16 +102,15 @@ main {
 }
 .sistema-busca form .align-form-filtro {
   display: flex;
-  width: 100%;
+  width: 80%;
   margin-left: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
 }
-.sistema-busca form .align-form-filtro input {
-  width: 100%;
-  display: flex;
+.sistema-busca form .align-form-filtro select {
+  width: 20%;
 }
+
 .sistema-busca .modal-filtro {
   background-color: rgb(255, 255, 255);
   display: none;
@@ -118,8 +141,8 @@ main {
 .lista-vagas .tabela {
   display: flex;
   gap: 80px;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   margin-left: 0%;
 }
 .lista-vagas table th {
@@ -137,12 +160,37 @@ main {
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   align-items: start;
+  word-break: break-all;
   justify-content: start;
+  width: 200px;
+}
+.lista-vagas table .email-instucional {
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  color: gray;
+  width: 212px;
+  word-break: break-all;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: start;
+  justify-content: start;
+}
+.lista-vagas table .mensagem {
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  color: gray;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: start;
+  justify-content: start;
+  width: 180px;
+  word-break: break-all;
 }
 .lista-vagas .icons {
   display: flex;
   margin-top: 0px;
-
   flex-direction: column;
   gap: 15px;
 }
@@ -151,7 +199,7 @@ main {
 }
 .linha {
   border: 1px solid gray;
-  width: 90%;
+  width: auto;
   margin-left: 24%;
   display: flex;
   align-items: center;

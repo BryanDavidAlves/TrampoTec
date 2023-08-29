@@ -23,14 +23,37 @@
 main {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 10px;
+  justify-content: start;
+  margin-left: 25%;
+}
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 150px;
+}
+.img-baixo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+}
+.img-baixo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+main .img-cima img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  z-index: -5;
 }
 .titulo-vagas {
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 3%;
-  margin-left: 5%;
 }
 .sistema-busca {
   background-color: #555cb3;
@@ -78,15 +101,10 @@ main {
 }
 .sistema-busca form .align-form-filtro {
   display: flex;
-  width: 100%;
+  width: 80%;
   margin-left: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-}
-.sistema-busca form .align-form-filtro input {
-  width: 100%;
-  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .sistema-busca .modal-filtro {
   background-color: rgb(255, 255, 255);
@@ -109,18 +127,18 @@ main {
 .lista-vagas {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 24%;
+  justify-content: center;
+  margin-left: 25%;
+
   width: auto;
   background-color: white;
   margin-top: 2%;
 }
 .lista-vagas .tabela {
   display: flex;
-  gap: 80px;
-  align-items: center;
-  justify-content: center;
-  margin-left: -15%;
+  gap: 50px;
+  justify-content: start;
+  align-items: start;
 }
 .lista-vagas table th {
   display: flex;
@@ -137,7 +155,9 @@ main {
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   align-items: start;
+  word-break: break-all;
   justify-content: start;
+  width: 217px;
 }
 .lista-vagas .icons {
   display: flex;
@@ -149,7 +169,7 @@ main {
 
 .linha {
   border: 1px solid gray;
-  width: 90%;
+  width: auto;
   margin-left: 24%;
   display: flex;
   align-items: center;

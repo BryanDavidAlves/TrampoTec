@@ -1,19 +1,38 @@
-body {
-  margin: 0;
-  padding: 0;
-}
 main {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 50px;
+  margin-left: 25px;
 }
-
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 150px;
+}
+.img-baixo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+}
+.img-baixo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+main .img-cima img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  z-index: -5;
+}
 .titulo-configuracoes {
   font-weight: 700;
   font-size: 1.4rem;
   margin-top: 3%;
-  margin-left: 5%;
+  margin-left: 10%;
 }
 
 .barra-pesquisa {

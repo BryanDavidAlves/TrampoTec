@@ -1,109 +1,352 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background-color:#ffffff; 
+
   font-family: Arial, Helvetica, sans-serif;
 }
-
 main {
-  margin-left:  20%; /* Same as the width of the sidenav */
-  margin-right:200px;
-  overflow:hidden;
-
-} 
-
-.titulo-pagina{
-   width: 100%;
-   justify-content: center;
-   height: 10px;
-   display: flex;
-
+  margin-left: 20%;
+  padding-bottom: 50px;
 }
-.titulo-pagina p{
- font-size: 25px;
-
-
-}
-
-
-
-.cards-vagas-home{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-.card-home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:380px;
-  height: 200px;
-  padding: 15px;
-  border: none;
-  border-radius: 45px;
-  background-color: rgb(221, 218, 218);
-  margin: 10px;
-}
-
-.card-corpo-home{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.titulo-pagina {
   width: 100%;
-}
-
-
-.card-home .imagens{
+  justify-content: center;
+  height: 10px;
   display: flex;
-  align-items: flex-start;
+}
+.titulo-pagina p {
+  font-size: 25px;
 }
 
-.imagem-vaga{
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  margin-right: 10px;
+.sistema-busca .barra-pesquisa {
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  margin-top: 0px;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  display: flex;
+  background-color: white;
+}
+
+.sistema-busca .barra-pesquisa input {
+  border: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.sistema-busca .barra-pesquisa input:focus {
+  outline: none;
+}
+
+.sistema-busca .barra-pesquisa {
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  margin-top: 0px;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  position: absolute;
+  display: flex;
+  background-color: white;
+}
+
+.sistema-busca .barra-pesquisa input {
+  border: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.sistema-busca .barra-pesquisa input:focus {
+  outline: none;
+}
+
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100px;
+}
+
+main .img-cima img {
+  width: 100%;
+  height: 150px;
   object-fit: cover;
 }
 
-.nome{
-  font-size: 15px;
-  text-decoration: solid;
-  color: rgb(117, 117, 117);
+.titulo-vagas {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 3%;
 }
 
-.nome-vaga{
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.localizao-vaga{
-  font-size: 14px;
-
-}
-
-.mobilidade-preço{
+.secao-busca {
   display: flex;
-flex-direction: row;
-  justify-content: left;
-  gap: 5%;
-  font-size: 14px;
+  width: 100%;
+  justify-content: center;
+
+  margin-bottom: 30px;
 }
 
-
-
-.icon-vaga{
-  color: rgb(40, 42, 42);
+.sistema-busca {
+  background-color: #555cb3;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 90%;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5%;
+  padding: 10px 0px 10px 0px;
 }
-
-.infos h4{
- font-weight:bolder;
-  font-size: 15px;
+a {
+  text-decoration: none;
 }
-
-.infos p{
+.btn-side {
+  background-color: white;
   color: black;
-   font-size: 15px;
- }
+  margin-right: 20px;
+  padding: 3px;
+  width: 250px;
+  border-radius: 25px;
+  cursor: pointer;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.btn-side #icon-info {
+  background-color: red;
+  padding: 6px 8px 6px 8px;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn-side:nth-child(2) {
+  margin-right: 7%;
+}
+
+.btn-side p {
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.filtro span {
+  color: red;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.sistema-busca .align-filtro .filtro {
+  padding: 7px;
+  background-color: rgb(250, 246, 246);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 100px;
+  border: 2px solid gray;
+  cursor: pointer;
+  margin-left: 2%;
+  margin-right: -6%;
+  font-weight: 600;
+}
+
+.sistema-busca .align-filtro {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: end;
+}
+
+.sistema-busca form {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 250px;
+  width: 120px;
+  position: absolute;
+  margin-left: -65px;
+  border-radius: 10px;
+  gap: 20px;
+  border: 1px solid gray;
+  z-index: 1;
+}
+
+.sistema-busca form .align-form-filtro {
+  display: flex;
+  width: 80%;
+  margin-left: 10px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.sistema-busca .modal-filtro {
+  background-color: rgb(255, 255, 255);
+  display: none;
+}
+
+.sistema-busca form .button-filtro {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 10px;
+  background-color: #555cb3;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  padding: 10px;
+    width: 90px;
+}
+
+.lista-vagas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 24%;
+  width: auto;
+  background-color: white;
+  margin-top: 2%;
+  gap: 50px;
+}
+.lista-vagas .tabela {
+  display: flex;
+  gap: 40px;
+  align-items: start;
+  justify-content: center;
+  margin-left: 0%;
+}
+.lista-vagas table th {
+  display: flex;
+  font-weight: 500;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+.lista-vagas table td {
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  color: gray;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: start;
+  justify-content: start;
+}
+.lista-vagas .icons {
+  display: flex;
+  margin-top: 0px;
+  flex-direction: column;
+  gap: 15px;
+}
+.lista-vagas .icons i {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.linha {
+  border: 1px solid gray;
+  width: auto;
+  margin-top: 10px;
+
+  margin-left: 24%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-indicacao {
+  display: none;
+  z-index: 5;
+  position: fixed;
+  height: 100%;
+  width: 800px;
+  justify-content: center;
+
+  margin-top: -120px;
+}
+.card-indicacao .title-indicacao {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-indicacao .align-card-indicacao {
+  display: flex;
+  border: 2px solid gray;
+  border-radius: 30px;
+
+  flex-direction: column;
+  position: absolute;
+  height: 450px;
+  width: 490px;
+  background-color: white;
+  margin-left: 50px;
+  margin-top: 250px;
+}
+.card-indicacao .align-card-indicacao form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  gap: 5px;
+}
+.card-indicacao .align-card-indicacao form label {
+  font-weight: 700;
+}
+.card-indicacao .align-card-indicacao form input {
+  width: 75%;
+  border-radius: 30px;
+  border: 2px solid gray;
+  padding: 13px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.card-indicacao .align-card-indicacao form input:focus {
+  outline: none;
+}
+.card-indicacao .align-card-indicacao form textarea:focus {
+  outline: none;
+}
+.card-indicacao .align-card-indicacao form textarea {
+  width: 85%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-indicacao .align-card-indicacao .botao-indicacao {
+  padding: 14px;
+  background-color: red;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: 0.5s all ease-in-out;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-indicacao .align-card-indicacao .botao-indicacao:hover {
+  transition: 0.5s all ease-in-out;
+  background-color: rgb(224, 5, 5);
+}
+.card-indicacao .align-card-indicacao .align-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}

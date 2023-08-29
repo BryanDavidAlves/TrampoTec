@@ -13,58 +13,60 @@
 
 <body>
     <?php
-    include('../pag-professor/components/sidebar.php');
-    ?>
+include '../pag-professor/components/sidebar.php';
+?>
     <main class="main">
         <span class="titulo-vagas"> Alunos</span>
-        <img src="" alt="">
-        
+        <div class="img-cima">
+        <img src="img/fundo 2.png" alt="">
+        </div>
+
     </main>
 
     <section class="sistema-busca">
     <div class="barra-pesquisa">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input type="text" name="pesquisa" id="pesquisa" placeholder="">
-    </div>        
+    </div>
         <div class="align-filtro"  onclick="abrirFiltro()">
             <div class="filtro" >
             <span   class="material-symbols-outlined">
                     tune
             </span>
                 <p >Filtrar</p>
-           
+
             </div>
         </div>
         <div class="modal-filtro" id="abrir-filtro">
-            <form action="" > 
-                <div class="align-form-filtro">    
+            <form action="" >
+                <div class="align-form-filtro">
                     <label for="">Periodo</label>
                     <input type="checkbox" name="" id="">
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Etec</label>
                     <input type="checkbox" name="" id="">
-                    </div> 
+                    </div>
                     <div class="align-form-filtro">
                     <label for="">Curso</label>
                     <input type="checkbox" name="" id="">
-                    </div> 
+                    </div>
                     <div class="align-form-filtro">
                     <label for="">Area</label>
                     <input type="checkbox" name="" id="">
-                    </div> 
+                    </div>
                     <input type="submit" value="Aplicar" class="button-filtro">
 
             </form>
         </div>
-   
+
     </section>
 
     <section class="lista-vagas">
         <div class="tabela">
         <table>
             <th> NOME</th>
-            <td>Ryan</td>
+            <td>Ryan </td>
         </table>
         <table>
             <th> EMAIL INSTITUCIONAL  </th>
@@ -76,12 +78,12 @@
         </table>
         </div>
 
-        
-        
+
+
     </section>
 
     <div class="linha"></div>
-    
+
 
 
     <section class="lista-vagas">
@@ -100,11 +102,11 @@
         </table>
         </div>
 
-     
+
     </section>
 
     <div class="linha"></div>
-    
+
 
     <section class="lista-vagas">
         <div class="tabela">
@@ -122,13 +124,15 @@
         </table>
         </div>
 
-       
-        
-        
+
+
+
     </section>
 
     <div class="linha"></div>
-    
+    <div class="img-baixo">
+        <img src="img/fundo 1.png" alt="">
+    </div>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
     <script>
          var filtro = document.getElementById('abrir-filtro')
