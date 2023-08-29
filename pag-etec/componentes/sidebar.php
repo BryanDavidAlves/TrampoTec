@@ -7,8 +7,8 @@
         <ul>
             <div class="coluna-um">
                 <div>
-                    <li><a href="home.php"><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>Cursos</a></li>
+                    <li><a href="index.php"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="curso.php"><i class="fa-solid fa-bag-shopping"></i>Cursos</a></li>
                 </div>
                 <div>
                     <li onclick="clickmenu()"><a><i class="fa-sharp fa-solid fa-bell fa-lg"></i>Notificações</a></li>
