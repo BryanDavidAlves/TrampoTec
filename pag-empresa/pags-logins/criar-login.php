@@ -144,7 +144,7 @@ include('../../dao/conexao.php');
             </div>
         </div>
     </div>
-<script src="../../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../../assets/js/jquery-3.7.1.js"></script>
 <script src="../../assets/js/jquery.mask.min.js"></script>
 <script src="../../assets/js/my-mask.js"></script>
 <script src="../../assets/js/bootstrap.min.js"></script>
