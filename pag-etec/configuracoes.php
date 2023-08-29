@@ -11,7 +11,7 @@
     <?php include('../pag-etec/componentes/sidebar.php')?>
     <?php include ('../pag-etec/componentes/notificacao.php')?>
 
-
+<main>
 
 <section class="parte-pesquisa">
         <span class="titulo-configuracoes">Configurações</span>  
@@ -49,6 +49,8 @@
 
     
     </section>
+
+    </main>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
     <script src="./js/etec.js"></script>
 </body>
