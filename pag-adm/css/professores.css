@@ -196,6 +196,7 @@ thead {
 }
 th{
     text-align: center;
+    padding-top: 20px;
 }
 table {
     background-color: rgba(247, 247, 247, 0.641);
