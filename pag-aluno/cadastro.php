@@ -15,7 +15,7 @@ include('../dao/conexao.php');
 </head>
 
 <body>
-    <img class="cima" src="img/imagemfundocima.png">
+    <img  class="cima" src="img/imagemfundocima.png">
 
     <img class="baixo" src="img/imagemfundobaixo.png">
 
@@ -47,7 +47,7 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>CPF</small></label>
+                                        <label class="font-weight-bold border-0" for="cpf-aluno"><small>CPF</small></label>
                                         <input class="form-control obrigatorio cpf" type="text" placeholder="000.000.000-00" id="cpf-aluno" name="cdp-aluno">
                                         <div class="invalid-feedback">
                                             Digite um CPF válido
@@ -56,7 +56,7 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small> Data de Nascimento</small></label>
+                                        <label class="font-weight-bold border-0" for="nasc-aluno"><small> Data de Nascimento</small></label>
                                         <input type="date" class="form-control obrigatorio" id="nasc-aluno" name="nasc-aluno" placeholder="Data de Nascimento">
                                         <div class="invalid-feedback">
                                            Informe a data de nascimento
@@ -65,7 +65,7 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small> Qual instituição você estuda?</small></label>
+                                        <label class="font-weight-bold border-0" for="nome-etec"><small> Qual instituição você estuda?</small></label>
                                         <input type="text" class="form-control obrigatorio" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
                                         <div class="invalid-feedback">
                                            Informe a data de nascimento
@@ -74,8 +74,8 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Email</small></label>
-                                        <input class="form-control obrigatorio" type="text" placeholder="exemplo@dominio.com" name="email">
+                                        <label class="font-weight-bold border-0" for="email"><small>Email</small></label>
+                                        <input class="form-control obrigatorio" type="text" placeholder="exemplo@dominio.com" id="email" name="email">
                                         <div class="invalid-feedback">
                                             O email é obrigatório
                                         </div>
@@ -83,8 +83,8 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Telefone</small></label>
-                                        <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" name="telefone">
+                                        <label class="font-weight-bold border-0" for="telefone"><small>Telefone</small></label>
+                                        <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" id="telefone" name="telefone">
                                         <div class="invalid-feedback">
                                             O telefone é obrigatório
                                         </div>
@@ -92,7 +92,7 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Senha</small></label>
+                                        <label class="font-weight-bold border-0" for="senha"><small>Senha</small></label>
                                         <input class="form-control obrigatorio senha" type="password" placeholder="********" id="senha" name="senha">
                                         <div class="invalid-feedback">
                                             A senha deve conter no mínimo 8 caracteres e conter pelo menos um número, uma letra maiúscula e um caracter especial
@@ -101,7 +101,7 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Confirme a senha</small></label>
+                                        <label class="font-weight-bold border-0" for="confirm-password"><small>Confirme a senha</small></label>
                                         <input class="form-control obrigatorio confirm-password" type="password" placeholder="********" id="confirm-password" name="confirm-password">
                                         <div class="invalid-feedback">
                                             As senhas não são iguais
@@ -110,8 +110,8 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>CEP</small></label>
-                                        <input class="form-control cep obrigatorio" type="numeric" placeholder="00000-000" name="cep">
+                                        <label class="font-weight-bold border-0" for="cep"><small>CEP</small></label>
+                                        <input class="form-control cep obrigatorio" type="numeric" placeholder="00000-000" id="cep" name="cep">
                                         <div class="invalid-feedback">
                                             Informe um CEP válido
                                         </div>
@@ -119,13 +119,13 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Logradouro</small></label>
+                                        <label class="font-weight-bold border-0" for="logradouro"><small>Logradouro</small></label>
                                         <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="logradouro" name="logradouro">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-2">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Número</small></label>
+                                        <label class="font-weight-bold border-0" for="numero"><small>Número</small></label>
                                         <input class="form-control obrigatorio" type="text" placeholder="Número" id="numero" name="numero">
                                         <div class="invalid-feedback">
                                             O número é obrigatório
@@ -134,19 +134,19 @@ include('../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Bairro</small></label>
+                                        <label class="font-weight-bold border-0" for="bairro"><small>Bairro</small></label>
                                         <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="bairro" name="bairro">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Cidade</small></label>
+                                        <label class="font-weight-bold border-0" for="cidade"><small>Cidade</small></label>
                                         <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="cidade" name="cidade">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-2">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Estado</small></label>
+                                        <label class="font-weight-bold border-0" for="estado"><small>Estado</small></label>
                                         <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="estado" name="estado">
                                     </div>
                                 </div>
