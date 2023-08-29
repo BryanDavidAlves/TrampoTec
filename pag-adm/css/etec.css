@@ -55,6 +55,7 @@ main {
 .sistema-busca .barra-pesquisa input:focus {
     outline: none;
 }
+
 .secao-busca {
     display: flex;
     width: 100%;
@@ -173,47 +174,59 @@ thead {
     color: rgb(70, 70, 70);
     font-weight: 600;
 }
-th{
+
+th {
     text-align: center;
     padding-top: 20px;
 }
+
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
 }
 
-.infos{
+.infos {
     border-bottom: 1px solid black;
     padding: 10px;
 
 }
-table td{
+
+table td {
     padding: 30px 10px 40px 10px;
     text-align: center;
     color: rgb(94, 94, 94);
 
 }
-.table-nome-etec{
+
+.table-nome-etec {
     width: 100px;
 }
-.table-email-etec{
-    word-break: break-all ;
+
+.table-email-etec {
+    word-break: break-all;
     width: 200px;
 }
 
-tr:nth-last-child(1){
+tr:nth-last-child(1) {
     border: none;
 }
-.icone-table{
+
+.icone-table {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.icone-table i{
+
+.icone-table i {
     margin: 3px;
 }
 
-
-
+.cima {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 16%;
+}

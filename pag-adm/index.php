@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
 </head>
 
@@ -17,6 +17,10 @@
     <header>
         <h1>Dashboard</h1>
     </header>
+    <!--<img class="baixo" src="img/fundo1.png" alt="">-->
+
+    <img class="cima" src="img/fundo2.png" alt="">
+
     <main>
         <section class="dashboard">
 

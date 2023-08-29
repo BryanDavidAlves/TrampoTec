@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <img class="cima" src="img/fundo2.png" alt="">
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
@@ -83,11 +84,11 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-aluno">vanessa</td>
                         <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
-                        <td class ="text-center">20/02/2000</td>
-                        <td class ="text-center">155.155.155-74</td>
-                        <td class ="text-center">Etec Guaianases</td>
-                        <td class ="text-center">432553535</td>
-                        <td class ="text-center">SP</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -96,11 +97,11 @@
                         <td class="table-id">2</td>
                         <td class="table-nome-aluno">bryan</td>
                         <td class="table-email-aluno">bryan.alves5@etec.sp.gov.br</td>
-                        <td class ="text-center">20/02/2000</td>
-                        <td class ="text-center">155.155.155-74</td>
-                        <td class ="text-center">Etec Guaianases</td>
-                        <td class ="text-center">432553535</td>
-                        <td class ="text-center">SP</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -109,11 +110,11 @@
                         <td class="table-id">3</td>
                         <td class="table-nome-aluno">vanessa</td>
                         <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
-                        <td class ="text-center">20/02/2000</td>
-                        <td class ="text-center">155.155.155-74</td>
-                        <td class ="text-center">Etec Guaianases</td>
-                        <td class ="text-center">432553535</td>
-                        <td class ="text-center">SP</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>

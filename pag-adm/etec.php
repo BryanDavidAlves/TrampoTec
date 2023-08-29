@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <img class="cima" src="img/fundo2.png" alt="">
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
@@ -81,7 +82,7 @@
                         <th>EMAIL</th>
                         <th>CÓDIGO</th>
                         <th>MUNICIPIO</th>
- 
+
                     </tr>
                 </thead>
                 <tbody>
@@ -117,7 +118,7 @@
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
 

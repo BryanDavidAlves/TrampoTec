@@ -66,3 +66,17 @@ main{
     width: 320px;
     height: 290px;
 }
+.cima{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 16%;
+}
+/*.baixo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+
+}*/
