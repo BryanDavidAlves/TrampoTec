@@ -22,105 +22,98 @@
 
     <header>
         <h1>Administradores</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
+    <div class="secao-cadastro">
+        <a href="cadastro-adm.php">
+            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            <h2>Cadastrar um novo Administrador</h2>
+        </a>
+    </div>
     <main>
+        <div class="secao-busca">
+            <section class="sistema-busca">
+                <div class="barra-pesquisa">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                </div>
 
-        <section class="administradores">
+                <div class="align-filtro">
+                    <div class="filtro" onclick="abrirFiltro()">
+                        <span class="material-symbols-outlined">
+                            tune
+                        </span>
+                        <p>Filtrar</p>
 
-            <div class="align-card">
-                <section class="card">
-                    <div class="itens-card">
-                        <img class="img-adm" src="img/img-perfil.jpg" alt="">
-                        <div class="info">
-                            <span>
-                                <h3>Nome:</h3>
-                                <p>Aline</p>
-                            </span>
-                            <span>
-                                <h3>Email:</h3>
-                                <p>aline.souza@etec.sp.gov.br</p>
-                            </span>
-                            <span>
-                                <h3>Telefone:</h3>
-                                <p>(11) 9 9979-9978</p>
-                            </span>
-                            <span>
-                                <h3>Senha:</h3>
-                                <p>Aline@123</p>
-                            </span>
+                    </div>
+                </div>
+
+                <div class="modal-filtro" id="abrir-filtro">
+                    <form action="">
+                        <div class="align-form-filtro">
+                            <label for="">Periodo</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                    </div>
-                    <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg"
-                        style="color: #a1a1a1;"></i>
-                    <div id="modal-card">
-                        <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
-                        <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
-                        <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
-                    </div>
-                </section>
+                        <div class="align-form-filtro">
+                            <label for="">Horario</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Curso</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Area</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <input type="submit" value="Aplicar" class="button-filtro">
 
-            </div>
-            <section class="filtro">
-                <a class="cadastrar" href="cadastro-adm.php">
-                    <i id="iconeAdd" class="fa-solid fa-plus" style="color:#fff;"></i>
-                    <h2>Novo Cadastro</h2>
-                </a>
-
-                <div class="align">
-                    <span class="material-symbols-outlined">
-                        tune
-                    </span>
-                    <h3 class="titulo-filtro">Filtrar por</h3>
+                    </form>
                 </div>
-                <form action="">
-                    <div class="align">
-                        <h3 class="palavra-chave">Nome</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Email</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Código Etec</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Curso</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <input value="Aplicar" class="button" type="submit">
-                </form>
-                </div>
-            </section>
+        </div>
+        </section>
+        <section class="adm">
 
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>EMAIL INSTITUICIONAL</th>
+                        <th>SENHA</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="infos">
+                        <td class="table-id">1</td>
+                        <td class="table-nome-adm">Bryan</td>
+                        <td class="table-email-adm">bryansalvinoalves@gmail.com</td>
+                        <td class="table-cnpj">832959432432</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+
+                    <tr class="infos">
+                        <td class="table-id">1</td>
+                        <td class="table-nome-adm">Bryan</td>
+                        <td class="table-email-adm">bryansalvinoalves@gmail.com</td>
+                        <td class="table-cnpj">832959432432</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
 
         </section>
-
     </main>
     <script src="modal-adm.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+</body>
+<script src="modal-adm.js"></script>
+<script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

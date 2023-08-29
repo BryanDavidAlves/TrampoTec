@@ -1,29 +1,26 @@
 .perfil {
-    width: 100%;
-    
+    width: 70%;
+    background-color: #555cb3;
+    color: #fff; 
+    border-radius: 20px;
+    padding: 5px 0px 5px 50px;
+    margin-top: 50px;
 }
-.body-perfil{
-    width: 60%;
-    margin-left: 23%;
- 
-    
-}
-.body-perfil img{
-    width: 160px;
-    height: 160px;
-    border-radius: 100%;
-    object-fit: contain;
-    border: 1px solid #1d1751;
-}
-.body-perfil h2{
-    font-size: 2rem;
+h2{
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
-.body-perfil h3{
-    font-size: 1.3rem;
+h3{
+    font-size: 1.2rem;
 }
-.body-perfil .perfil-info{
-    margin-top: 20px;
-    margin-bottom: 40px;
+.perfil-info{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.perfil-info:nth-child(2){
+    margin-bottom: 30px;
+}
+main{
+    margin-left: 26%;
 }
