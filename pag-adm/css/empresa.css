@@ -28,7 +28,7 @@
 }
 
 main {
-    margin-left: 20%;
+    margin-left: 22%;
     padding-bottom: 50px;
 }
 
@@ -179,7 +179,7 @@ th{
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
-    
+    width: 100%;
 }
 
 .infos{
