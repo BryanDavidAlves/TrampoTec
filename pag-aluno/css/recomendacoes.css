@@ -151,3 +151,16 @@ form {
     line-height: 20px;
     letter-spacing: 0.5px;
 }
+.cima-esquerda{
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    z-index: 0;
+}
+.cima-direita{
+    width: 13%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}

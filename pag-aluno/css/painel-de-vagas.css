@@ -261,3 +261,30 @@ dialog h2 {
     flex-direction: column;
     align-items: baseline;
 }
+.cima-esquerda{
+    width: 15%;
+    position: absolute;
+    top: 9%;
+    left: 0;
+    z-index: 0;
+}
+.cima-direita{
+    width: 10%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+/*.baixo-esquerda{
+    width: 10%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+.baixo-direita{
+    width: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}*/
