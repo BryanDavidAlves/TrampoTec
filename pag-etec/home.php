@@ -15,7 +15,7 @@
     <?php include('../pag-etec/componentes/filtro.php') ?>
     <?php include('../pag-etec/componentes/notificacao.php') ?>
 
-    <main class="main">
+    <main>
 
         <span class="titulo-pagina">
             <p>Painel De cursos </p>
