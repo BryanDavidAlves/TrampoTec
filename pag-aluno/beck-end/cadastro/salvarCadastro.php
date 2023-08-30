@@ -17,20 +17,32 @@ if ($_POST) {
     $telAluno = trim($_POST['telefone']);
     $email = trim($_POST['email']);
 
-  
+   
+    
+    $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep , etecDoAluno ) VALUES
+    (   '$email',
+        '$senha',
+        '$nome',
+        '$cpf',
+        '$dtNascimento',
+        '$bairro',
+        '$estado',
+        '$cidade',
+        '$cep',
+        '$etecNome'
+    )
+    ";
+
+    $query2 = $conexao->prepare($sql2);
+    $query2->execute();
+    $id = $conexao->lastInsertId();
+
+    $sql = "INSERT INTO tb_telefone_aluno ( telefoneAluno , fk_idAluno ) VALUES
+    (   '$telAluno',
+        '$id'
+    )
+    ";
         
-        $sql = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep  ) VALUES
-        (   '$email',
-            '$senha',
-            '$nome',
-            '$cpf',
-            '$dtNascimento',
-            '$bairro',
-            '$estado',
-            '$cidade',
-            '$cep'
-        )
-        ";
     $query = $conexao->prepare($sql);
     $query->execute();
     header('Location: ../../../one-page/index.html');

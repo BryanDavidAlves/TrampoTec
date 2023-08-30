@@ -31,7 +31,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="../beck-end/cadastro/salvarCadastro.php">
+                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="./back-end/cadastro/salvarCadastro.php">
                             <div class="row">
                               
                                 <div class="col-12 col-md-6">

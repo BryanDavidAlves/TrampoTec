@@ -17,12 +17,11 @@ if ($_POST) {
 
 
 
-        $sql = "
-                INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
+    $sql2 = "INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
                 (   '$email',
                     '$senha',
                     '$nome',
-                    '$formattedCNPJ',
+                    '$cnpj',
                     '$cep',
                     '$logradouro',
                     '$numero',
@@ -30,13 +29,21 @@ if ($_POST) {
                     '$estado'
                 )
                 ";
-        $query = $conexao->prepare($sql);
-        $query->execute();
+    $query2 = $conexao->prepare($sql2);
+    $query2->execute();
+    $id = $conexao->lastInsertId();
 
-        header('Location: ../../../one-page/index.html');
-        exit;
-    }
-else {
+    $sql = "INSERT INTO tb_telefone_empresa ( numeroTelefone , fk_idEmpresa ) VALUES
+    (   '$telefone',
+        '$id'
+    )
+    ";
+
+    $query = $conexao->prepare($sql);
+    $query->execute();
+    header('Location: ../../../one-page/index.html');
+    exit;
+} else {
     header('Location: login.php?login=erro');
     $_SESSION['autenticado'] = "NAO";
 }
