@@ -1,5 +1,5 @@
 <?php
-include('../pag-professor/components/sidebar.php');
+include '../pag-professor/components/sidebar.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,16 +10,19 @@ include('../pag-professor/components/sidebar.php');
     <link rel="stylesheet" href="css/side.css">
     <link rel="stylesheet" href="css/notificaca.css">
     <link rel="stylesheet" href="css/geral.css">
- 
+
     <title>Document</title>
 </head>
 <body>
-    <main> 
+    <main>
         <span class="titulo-notificacao">Notificações</span>
         <div class="barra-pesquisa">
         <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input  type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui" >
-            
+
+        </div>
+        <div class="img-cima">
+        <img src="img/fundo 2.png" alt="">
         </div>
     </main>
 
@@ -31,7 +34,7 @@ include('../pag-professor/components/sidebar.php');
                  <p class="mensagem-notificacao">"Ryan" começou a te seguir.</p>
         </div>
         <span class="linha"> </span>
-     
+
         <div class="alinhar-notificacao">
             <div class="imagem-notificacao">
                 <img src="img/ryan.jpg" alt="Foto do aluno ">
@@ -40,10 +43,14 @@ include('../pag-professor/components/sidebar.php');
         </div>
         <span class="linha"> </span>
 
-       
+
     </section>
 
-       
+    <div class="img-baixo">
+        <img src="img/fundo 1.png" alt="">
+    </div>
+
+
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 </html>

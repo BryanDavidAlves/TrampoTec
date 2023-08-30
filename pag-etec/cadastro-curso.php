@@ -11,15 +11,14 @@
 </head>
 
 <body>
-    <?php include('../pag-etec/componentes/sidebar.php') ?>
-    <?php include('../pag-etec/componentes/notificacao.php') ?>
+
+    <?php include '../pag-etec/componentes/sidebar.php'?>
+    <?php include '../pag-etec/componentes/notificacao.php'?>
     <main>
         <section class="parte-pequisa">
             <span class="titulo-pagina">
-                <a href="index.php">
                 <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #435b84;"></i>
                 <h1>Cadastro de curso</h1>
-                </a>
             </span>
         </section>
         <section class="formulario">
@@ -35,7 +34,9 @@
                     </div>
                     <div class="align ">
                         <label for="carga-horaria">Carga Horária</label>
+
                         <input type="number" id="carga-horaria" name="carga-horaria">
+
                     </div>
                     <div class="align ">
                         <label for="horario">Horário</label>
@@ -43,9 +44,6 @@
                     </div>
                     <input class="btn" type="submit" value="ENVIAR">
                 </div>
-                
-
-
                 <div class="right">
                     <div class="align">
                         <label for="nome-curso">Nome do Curso</label>
@@ -63,17 +61,19 @@
 
                     </div>
                     <div class="align">
+                      
                     <label for="periodo">Periodo</label>
                         <select name="periodo" id="periodo">
                             <option value="">Manhã</option>
                             <option value="">Tarde</option>
                             <option value="">Noite</option>
                         </select>
+
                     </div>
 
                 </div>
                 </div>
-                
+
             </form>
         </section>
     </main>
