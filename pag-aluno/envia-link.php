@@ -33,7 +33,7 @@
         </section>
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../assets/js/jquery-3.7.1.js"></script>
     <script src="../assets/js/sweetalert2@11.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
