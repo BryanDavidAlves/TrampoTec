@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <title>Login</title>
 </head>
@@ -22,7 +22,7 @@
                     <div class="item-form">
                         <label for="nome-aluno">EMAIL INSTITUCIONAL</label>
                         <div class="div-input">
-                            <input type="text" name="nome-aluno" id="nome-aluno">
+                            <input type="email" name="nome-aluno" id="nome-aluno">
                         </div>
                     </div>
 

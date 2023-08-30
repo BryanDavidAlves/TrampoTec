@@ -2,6 +2,31 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-left: 50px;
+}
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 150px;
+}
+.img-baixo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+}
+.img-baixo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+main .img-cima img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  z-index: -5;
 }
 .titulo-notificacao {
   font-size: 1.4rem;
@@ -30,6 +55,7 @@ main {
   flex-direction: column;
   gap: 10px;
   margin-top: 5%;
+  margin-left: 5%;
 }
 
 .notificacao .linha {
@@ -48,7 +74,7 @@ main {
 }
 
 .notificacao .alinhar-notificacao .imagem-notificacao {
-  width: 8%;
+  width: auto;
   height: auto;
   object-fit: cover;
   display: flex;
@@ -57,7 +83,7 @@ main {
 }
 
 .notificacao .alinhar-notificacao .imagem-notificacao img {
-  width: 65%;
+  width: 70px;
   height: 70px;
   object-fit: cover;
   overflow: hidden;
@@ -70,4 +96,5 @@ main {
   align-items: center;
   flex-direction: row;
   margin-top: 0.5%;
+  gap: 20px;
 }

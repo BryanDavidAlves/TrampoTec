@@ -184,7 +184,7 @@ require_once "./back-end/login/validador_acesso.php";
                 </section>
             </div>
         </div>
-        <button>CANDIDATAR-SE</button>
+        <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
 
         </div>
     </dialog>
@@ -206,6 +206,7 @@ require_once "./back-end/login/validador_acesso.php";
             modal.showModal()
         }
     </script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>
