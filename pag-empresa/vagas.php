@@ -9,252 +9,128 @@ require_once "./beck-end/login/validador_acesso.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
-    <link rel='stylesheet' href='../pag-empresa/css/vaga.css'>
+    <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
     <title>TrampoTec</title>
 </head>
 
 <body>
 
     <?php include('../pag-empresa/componentes/sidebar.php') ?>
-    <?php include('../pag-empresa/componentes/rightbar-vagas.php') ?>
     <?php include('../pag-empresa/componentes/email.php') ?>
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
 
+    <img class="cima" src="./img/fundo2.png" alt="">
+    <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
 
-        <span class="titulo-pagina"> <a class="link-add" href=""><i class="icon-add fa-solid fa-plus fa-2xl"></i></a>
-            <p>Cadastras nova vaga </p>
-        </span>
+<p>Vagas</p>
 
-        <section class="cards-alunos">
+        <section class="sistema-busca">
+            <div class="secao-busca">
 
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
-                        </div>
-                        <p></p>
+                <span class="add-vaga"><a href="./cadastrar-vaga.php"><i class="fa-solid fa-circle-plus"></i></a> Cadastra Nova Vaga</span>
+                <div class="barra-pesquisa">
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                </div>
+
+                <div class="align-filtro">
+                    <div class="filtro" onclick="abrirFiltro()">
+                      <i class="fa-solid fa-filter"></i>
+                        <span>Filtrar</span>
+
                     </div>
                 </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
 
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
+                <div class="modal-filtro" id="abrir-filtro">
+                    <form action="">
+                        <div class="align-form-filtro">
+                            <label for="">Periodo</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
+                        <div class="align-form-filtro">
+                            <label for="">Horario</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
-
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
+                        <div class="align-form-filtro">
+                            <label for="">Curso</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                    </div>
+                        <div class="align-form-filtro">
+                            <label for="">Area</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <input type="submit" value="Aplicar" class="button-filtro">
+
+                    </form>
                 </div>
             </div>
+        </section>
+        <section class="professor">
+
+            <table >
+                <thead>
+                    <tr>
+                   
+                        <th>EMPRESA</th>
+                        <th>VAGA</th>
+                        <th>PERIODO</th>
+                        <th>SALARIO</th>
+                        <th>REQUISITO</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                    <tr class="infos">
+                        <td class="table-nome-professor">Cysco Systen</td>
+                        <td class="table-email-professor">Front-end</td>
+                        <td class="table-cnpj">Manha</td>
+                        <td class="table-cnpj">R$2000,00</td>
+                        <td class="table-cnpj">Saber javacript</td>
+                
+                        
+                    </tr>
+               
+                    <tr class="infos">
+                        <td class="table-nome-professor">Cysco Systen</td>
+                        <td class="table-email-professor">Front-end</td>
+                        <td class="table-cnpj">Manha</td>
+                        <td class="table-cnpj">R$2000,00</td>
+                        <td class="table-cnpj">Saber javacript</td>
+                     
+                     
+                    </tr>
+               
+
+                    <tr class="infos">
+                        <td class="table-nome-professor">Cysco Systen</td>
+                        <td class="table-email-professor">Front-end</td>
+                        <td class="table-cnpj">Manha</td>
+                        <td class="table-cnpj">R$2000,00</td>
+                        <td class="table-cnpj">Saber javacript</td>
+                      
+                  
+                    </tr>
+               
 
 
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
-                        </div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
-
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
-                        </div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
-
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
-                        </div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
-
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="imagens">
-                        <img class="imagem-vaga" src="./img/fotodeempresa.avif" alt="foto da empresa da vaga">
-                    </div>
-                    <div class="card-itens">
-                        <p class="nome-empresa"> Cisco system</p>
-                        <p class="nome-vaga"> web designer</p>
-                        <p class="localizao-vaga"> <i class="icon-vaga fa-solid fa-location-dot"></i> barra funda - sao paulo</p>
-                        <p class="mobilidade-preço"> <span> <i class="icon-vaga fa-solid fa-bag-shopping"></i> remoto </span> <span> <i class="icon-vaga fa-solid fa-money-bill"></i> R$ 5.000 </span></p>
-                        <div class="infos">
-                            <h4>periodo</h4>
-                            <P>manha - 8:00 as 22:00</P>
-                            <h4>requisitos</h4>
-                            <p> • ensimo medio : cursando ou finalizando</p>
-                            <p> • entender o basico de programacao</p>
-                            <p> • saber programar php</p>
-                        </div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="tres-pontinhos">
-                    <a onclick="modalalterar()" class="seta-dropdown"> <i class="fa-solid fa-pen"></i> </a>
-
-                    <div>
-
-                        <div class="modal-aluno" id="abrirvaga">
-                            <div class="card-modal-aluno">
-                                <a href="#" class="link-modal"><i class="icon-modal fa-regular fa-pen-to-square"></i> Alterar</a>
-                                <span></span>
-                                <a href="#" class="link-modal"><i class="icon-modal fa-solid fa-trash"></i> Excluir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <tr class="infos">
+                        <td class="table-nome-professor">Cysco Systen</td>
+                        <td class="table-email-professor">Front-end</td>
+                        <td class="table-cnpj">Manha</td>
+                        <td class="table-cnpj">R$2000,00</td>
+                        <td class="table-cnpj">Saber javacript</td>
+                      
+                      
+                    </tr>
+               
+                </tbody>
+            </table>
 
         </section>
+
+
+
     </main>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
