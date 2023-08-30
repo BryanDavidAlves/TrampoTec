@@ -33,11 +33,11 @@ body{
 
 .perfil {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 5%;
-  margin-left:2%;
+
   width: 100%;
 }
 

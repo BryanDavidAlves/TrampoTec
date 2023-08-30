@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <?php include '../pag-etec/componentes/sidebar.php'?>
 
     <?php include '../pag-etec/componentes/notificacao.php'?>
@@ -43,9 +42,7 @@
                         <p>Filtrar</p>
 
                     </div>
-
                 </div>
-
 
                 <div class="modal-filtro" id="abrir-filtro">
                     <form action="">
@@ -109,12 +106,10 @@
             <td class="table-cep">Tarde</td>
             <td class="table-log">400 Horas</td>
 
-
             <td class="icone-table">
                 <div class="icons">
                     <i  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
 
                 </div>
         </tr>
@@ -134,7 +129,10 @@
         </tr>
     </tbody>
 </table>
-                                                                        
+
+
+
+
         <div class="card-indicacao" id="abrir-indicacao">
                     <div class="align-card-indicacao">
                         <h5 class="title-indicacao">Compartilhar Vaga</h5>
