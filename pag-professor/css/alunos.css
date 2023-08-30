@@ -124,55 +124,57 @@ main .img-cima img {
   width: 90px;
 }
 
-.lista-vagas {
+.empresa {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+thead {
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+}
+th {
+  text-align: center;
+  padding-top: 20px;
+}
+table {
+  background-color: rgba(247, 247, 247, 0.641);
+  border-radius: 20px;
+  width: 90%;
   margin-left: 25%;
+}
 
-  width: auto;
-  background-color: white;
-  margin-top: 2%;
+.infos {
+  border-bottom: 1px solid black;
+  padding: 10px;
 }
-.lista-vagas .tabela {
-  display: flex;
-  gap: 50px;
-  justify-content: start;
-  align-items: start;
+table td {
+  padding: 30px 10px 40px 10px;
+  text-align: center;
+  color: rgb(94, 94, 94);
 }
-.lista-vagas table th {
-  display: flex;
-  font-weight: 500;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
+.table-nome-empresa {
+  width: 200px;
 }
-.lista-vagas table td {
-  flex-direction: column;
-  display: flex;
-  margin-top: 20px;
-  color: gray;
-  font-weight: 400;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: start;
+.infos .table-log {
   word-break: break-all;
-  justify-content: start;
-  width: 217px;
+  width: 210px;
 }
-.lista-vagas .icons {
-  display: flex;
-  margin-top: 0px;
+.table-email-empresa {
+  word-break: break-all;
+  width: 250px;
+}
 
+tr:nth-last-child(1) {
+  border: none;
+}
+.icone-table {
+  display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.linha {
-  border: 1px solid gray;
-  width: auto;
-  margin-left: 24%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
+}
+.icone-table i {
+  margin: 3px;
 }

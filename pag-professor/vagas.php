@@ -61,40 +61,58 @@ include '../pag-professor/components/sidebar.php';
 
     </section>
 
-    <section class="lista-vagas">
-        <div class="tabela">
-        <form action="">
-            <table>
-            <thead>
-   <tr>
-       <th>titulo 1</th>
-       <th>titulo 2</th>
-       <th>titulo 3</th>
-   </tr>
-   </thead>
-   <tbody>
-   <tr>
-       <td>Body1 linha1</td>
-       <td>Body2 linha1</td>
-       <td>Body3 linha1</td>
-   </tr>
-   <tr>
-       <td>Body1 linha2</td>
-       <td>Body2 linha2</td>
-       <td>Body3 linha2</td>
-   </tr>
-   </tbody>
+    <section class="empresa">
 
+<table>
+    <thead>
+        <tr>
 
-            </table>
-        </form>
-            <div class="icons">
-            <i onclick="abrirIndicacao()" class="fa-solid fa-share-nodes " style="color:  #555cb3;"></i>
+            <th>EMPRESA</th>
+            <th>VAGA</th>
+            <th>PERIODO</th>
+            <th>SALARIO</th>
+            <th>REQUISITOS</th>
 
-            </div>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="infos">
 
-        </div>
+            <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
 
+            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                    class="fa-solid fa-x" style="color: #000000;"></i>
+            </td>
+        </tr>
+
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                    class="fa-solid fa-x" style="color: #000000;"></i>
+            </td>
+        </tr>
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                    class="fa-solid fa-x" style="color: #000000;"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
         <div class="card-indicacao" id="abrir-indicacao">
                     <div class="align-card-indicacao">
@@ -111,40 +129,7 @@ include '../pag-professor/components/sidebar.php';
                     </div>
         </div>
     </section>
-    <div class="linha"></div>
 
-    <section class="lista-vagas">
-        <div class="tabela">
-            <table>
-
-            </table>
-
-            <div class="icons">
-            <i onclick="abrirIndicacao()" class="fa-solid fa-share-nodes " style="color:  #555cb3;"></i>
-            </div>
-
-
-
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Compartilhar Vaga</h5>
-                        <form class="" action="vagas.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-
-                        </form>
-                    </div>
-            </div>
-
-
-
-    </section>
-    <div class="linha"></div>
 
     <div class="img-baixo">
         <img src="img/fundo 1.png" alt="">

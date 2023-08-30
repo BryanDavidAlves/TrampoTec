@@ -68,31 +68,67 @@ include '../pag-professor/components/sidebar.php';
 
     </section>
 
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan Dias Rocha</td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td class="email-institucional">ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-            <th> MENSAGEM</th>
-            <td class="mensagem">Me indica, Clodo</td>
-        </table>
-        </div>
+    <section class="empresa">
 
-        <div class="icons">
-        <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+<table>
+    <thead>
+        <tr>
 
-        </div>
+            <th>EMPRESA</th>
+            <th>VAGA</th>
+            <th>PERIODO</th>
+            <th>SALARIO</th>
+            <th>REQUISITOS</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="infos">
+
+            <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                    class="fa-solid fa-x" style="color: #000000;"></i>
+            </td>
+        </tr>
+
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                    class="fa-solid fa-x" style="color: #000000;"></i>
+            </td>
+        </tr>
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
         <div class="card-indicacao" id="abrir-indicacao">
                     <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
+                        <h5 class="title-indicacao">Indicar Aluno</h5>
+                        <form class="" action="vagas.php">
                             <label for="destinatario">Destinatario</label>
                             <input type="email" name="email-professor" id="">
                             <br>
@@ -100,99 +136,11 @@ include '../pag-professor/components/sidebar.php';
                             <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
 
                             <input type="submit" value="Enviar" class="botao-indicacao">
-
                         </form>
                     </div>
-                </div>
-
+        </div>
     </section>
 
-    <div class="linha"></div>
-
-
-
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan Dias Rocha </td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td class="email-institucional">ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-            <th> MENSAGEM</th>
-            <td class="mensagem">Me indica, Clodo</td>
-        </table>
-        </div>
-
-        <div class="icons">
-        <i onclick="abrirIndicacao()"  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-        </div>
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-
-                        </form>
-                    </div>
-                </div>
-
-    </section>
-
-    <div class="linha"></div>
-
-
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan Dias Rocha de Souza </td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td class="email-instucional">ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-            <th> MENSAGEM</th>
-            <td class="mensagem">Me indica, Clodo </td>
-        </table>
-        </div>
-
-        <div class="icons">
-        <i onclick="abrirIndicacao()"  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-        <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-        </div>
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Carta de Indicação</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-
-                        </form>
-                    </div>
-                </div>
-
-    </section>
-
-    <div class="linha"></div>
 
     <div class="img-baixo">
         <img src="img/fundo 1.png" alt="">

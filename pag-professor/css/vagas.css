@@ -213,8 +213,8 @@ main .img-cima img {
   height: 450px;
   width: 490px;
   background-color: white;
-  margin-left: 50px;
-  margin-top: 250px;
+  margin-left: 170px;
+  margin-top: 150px;
 }
 .card-indicacao .align-card-indicacao form {
   display: flex;
@@ -271,4 +271,59 @@ main .img-cima img {
   align-items: center;
   justify-content: center;
   margin-top: 8px;
+}
+
+.empresa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+thead {
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+}
+th {
+  text-align: center;
+  padding-top: 20px;
+}
+table {
+  background-color: rgba(247, 247, 247, 0.641);
+  border-radius: 20px;
+  width: 90%;
+  margin-left: 25%;
+}
+
+.infos {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+table td {
+  padding: 30px 10px 40px 10px;
+  text-align: center;
+  color: rgb(94, 94, 94);
+}
+.table-nome-empresa {
+  width: 200px;
+}
+.infos .table-log {
+  word-break: break-all;
+  width: 210px;
+}
+.table-email-empresa {
+  word-break: break-all;
+  width: 120px;
+}
+
+tr:nth-last-child(1) {
+  border: none;
+}
+.icone-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icone-table i {
+  margin: 3px;
 }

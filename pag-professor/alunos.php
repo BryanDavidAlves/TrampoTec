@@ -62,74 +62,49 @@ include '../pag-professor/components/sidebar.php';
 
     </section>
 
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan </td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td>ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-            <th> CURSO</th>
-            <td>Desenvolvimento de Sistemas</td>
-        </table>
-        </div>
+    <section class="empresa">
+
+<table>
+    <thead>
+        <tr>
+
+            <th>NOME</th>
+            <th>EMAIL</th>
+            <th>CURSO</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="infos">
+
+            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
 
 
+        </tr>
 
-    </section>
+        <tr class="infos">
 
-    <div class="linha"></div>
-
-
-
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan</td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td>ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-        <th> CURSO</th>
-        <td>Desenvolvimento de Sistemas</td>
-        </table>
-        </div>
+            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
 
 
-    </section>
+        </tr>
+        <tr class="infos">
 
-    <div class="linha"></div>
-
-
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <th> NOME</th>
-            <td>Ryan</td>
-        </table>
-        <table>
-            <th> EMAIL INSTITUCIONAL  </th>
-            <td>ryan.souza44@etec.sp.gov.br</td>
-        </table>
-        <table>
-        <th> CURSO</th>
-        <td>Desenvolvimento de Sistemas</td>
-        </table>
-        </div>
+            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
 
 
+        </tr>
 
+    </tbody>
+</table>
+</section>
 
-    </section>
-
-    <div class="linha"></div>
     <div class="img-baixo">
         <img src="img/fundo 1.png" alt="">
     </div>
