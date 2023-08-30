@@ -35,7 +35,7 @@
                 <div class="align-filtro">
                     <a href="cadastro-curso.php">
                         <div class="btn-side">
-                            <i id="icon-info" " class=" fa-solid fa-plus" style="color: white;"></i>
+                            <i id="icon-info" class=" fa-solid fa-plus" style="color: white;"></i>
                             <p>Adicionar curso </p>
                         </div>
                     </a>
