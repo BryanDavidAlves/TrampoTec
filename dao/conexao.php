@@ -2,10 +2,10 @@
 
 <?php
 
-$servidor="db";
+$servidor="localhost";
 $banco="bdtrampotec";
 $usuario="root";
-$senha="root";
+$senha="";
     
 try{
 
