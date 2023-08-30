@@ -17,7 +17,6 @@
 
     <header>
         <h1>Notificações</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
         <section class="notificacoes">

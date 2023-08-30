@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    <img class="cima-esquerda" src="img/icon5.png" alt="">
+    <img class="cima-direita" src="img/icon2.png" alt="">
     <?php
     include('../pag-aluno/components/header.php');
     ?>
@@ -157,7 +159,7 @@
                     </section>
 
                 </div>
-    
+
                 <div class="align-salvar">
                     <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
                     <div class="btn-salvar">
@@ -165,7 +167,7 @@
                         <input type="submit" value="SALVAR" name="" id="">
                     </div>
                 </div>
-                
+
         </section>
 
 

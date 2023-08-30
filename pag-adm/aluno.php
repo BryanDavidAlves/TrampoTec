@@ -14,96 +14,114 @@
 </head>
 
 <body>
+    <img class="cima" src="img/fundo2.png" alt="">
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
 
     <header>
         <h1>Alunos</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
-        <section class="aluno">
-            <div class="align-card">
+        <div class="secao-busca">
+            <section class="sistema-busca">
+                <div class="barra-pesquisa">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                </div>
 
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/aluno.png" alt="">
-                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg"
-                                style="color: #a1a1a1;"></i>
-                            <div id="modal-card">
-                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
-                            </div>
+                <div class="align-filtro">
+                    <div class="filtro" onclick="abrirFiltro()">
+                        <span class="material-symbols-outlined">
+                            tune
+                        </span>
+                        <p>Filtrar</p>
+
+                    </div>
+                </div>
+
+                <div class="modal-filtro" id="abrir-filtro">
+                    <form action="">
+                        <div class="align-form-filtro">
+                            <label for="">Periodo</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                        <h2> Bryan</h2>
+                        <div class="align-form-filtro">
+                            <label for="">Horario</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Curso</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Area</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <input type="submit" value="Aplicar" class="button-filtro">
 
-                    </section>
-                    <div class="info-aluno">
-                        <h3>E-mail institucional</h3>
-                        <h5>Vanessa123@etec.sp.gov.br</h5>
-                    </div>
-                    <div class="info-aluno">
-                        <h3>Codigo etec</h3>
-                        <h5>118</h5>
-                    </div>
+                    </form>
+                </div>
+        </div>
+        </section>
+        <section class="aluno">
 
-                    <div class="info-aluno">
-                        <h3>Disciplinas</h3>
-                        <h5>PA - Programação e Algoritmos</h5>
-                    </div>
-                </div>
-            </div>
-            <section class="filtro">
-                <div class="align">
-                    <span class="material-symbols-outlined">
-                        tune
-                    </span>
-                    <h3 class="titulo-filtro">Filtrar por</h3>
-                </div>
-                <form action="">
-                    <div class="align">
-                        <h3 class="palavra-chave">Nome</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Email</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Código Etec</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Disciplina</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <input value="Aplicar" class="button" type="submit">
-                </form>
-                </div>
-            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>EMAIL INSTITUICIONAL</th>
+                        <th>DATA NASCIMENTO</th>
+                        <th>CPF</th>
+                        <th>INSTITUIÇÃO</th>
+                        <th>CEP</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="infos">
+                        <td class="table-id">1</td>
+                        <td class="table-nome-aluno">vanessa</td>
+                        <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+                    <tr class="infos">
+                        <td class="table-id">2</td>
+                        <td class="table-nome-aluno">bryan</td>
+                        <td class="table-email-aluno">bryan.alves5@etec.sp.gov.br</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+                    <tr class="infos">
+                        <td class="table-id">3</td>
+                        <td class="table-nome-aluno">vanessa</td>
+                        <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
+                        <td class="text-center">20/02/2000</td>
+                        <td class="text-center">155.155.155-74</td>
+                        <td class="text-center">Etec Guaianases</td>
+                        <td class="text-center">432553535</td>
+                        <td class="text-center">SP</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
 
         </section>
     </main>

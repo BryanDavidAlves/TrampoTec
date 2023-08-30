@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <img class="cima-esquerda" src="img/icon1-cortado.png" alt="">
+    <img class="cima-direita" src="img/icon5.png" alt="">
     <?php
     include('../pag-aluno/components/header.php');
     ?>

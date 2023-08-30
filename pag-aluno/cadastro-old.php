@@ -80,44 +80,7 @@ include('../dao/conexao.php');
                                 <input maxlength="8" type="password" name="repita-senha" id="repita-senha" required>
                             </div>
                         </div>
-                        <?php
-                        if (isset($_GET['login']) && $_GET['login'] == "cpfInvalido") {
-                            ?>
-                            <div class="text-danger">
-                                CPF INVALIDO!!
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-                        <?php
-                        if (isset($_GET['login']) && $_GET['login'] == "senhaFraca") {
-                            ?>
-                            <div class="text-danger">
-                                Senha fraca, obs: até 8 digitos, exemplo: Senha12@
-                            </div>
-                            <?php
-                        }
-                        ?>
-
-                        <?php
-                        if (isset($_GET['login']) && $_GET['login'] == "numeroInvalido") {
-                            ?>
-                            <div class="text-danger">
-                                Telefone Invalido
-                            </div>
-                            <?php
-                        }
-                        ?>
-                        <?php
-                        if (isset($_GET['login']) && $_GET['login'] == "senhasDiferentes") {
-                            ?>
-                            <div class="text-danger">
-                                Senhas Diferentes
-                            </div>
-                            <?php
-                        }
-                        ?>
+                      
                         <input class="btn" type="submit" value="CADASTRAR">
 
                     </form>
