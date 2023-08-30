@@ -34,7 +34,7 @@ include('../dao/conexao.php');
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="./beck-end/cadastro/salvarCadastro.php">
+                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="./back-end/cadastro/salvarCadastro.php">
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
@@ -347,7 +347,16 @@ include('../dao/conexao.php');
                                         <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="estado" name="estado">
                                     </div>
                                 </div>
-                               
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*" enctype="multipart/form-data">
+                                        <input type="hidden" id="foto_usuario" name="foto_usuario" >
+                                        <div class="invalid-feedback">
+                                            Selecione uma imagem
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">

@@ -1,3 +1,26 @@
+<?php
+include('../dao/conexao.php');
+//VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
+
+//passando todos os itens do post para as sua variaveis
+if ($_GET['aprovado'] == '1') {
+    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='1'";
+
+    $query = $conexao->query($querySelect);
+
+    $resultado = $query->fetchAll();
+} else {
+    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='0'";
+
+    $query = $conexao->query($querySelect);
+
+    $resultado = $query->fetchAll();
+} 
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,10 +57,12 @@
 
                 <div class="align-filtro">
                     <div class="btn-side">
-                        <p>CADASTRADAS</p>
+                        <a href="empresa.php?aprovado=1">
+                            <p>CADASTRADAS</p><a>
                     </div>
                     <div class="btn-side">
-                        <p>PENDENTES</p>
+                        <a href="empresa.php?aprovado=0">
+                            <p>PENDENTES</p><a>
                     </div>
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
@@ -89,48 +114,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-empresa">Cysco Systen</td>
-                        <td class="table-email-empresa">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
-                        <td class="table-cep">63833</td>
-                        <td class="table-log">kjwajvfew</td>
-                        <td class="table-numero">312</td>
-                        <td class="table-bairro">ffewrwfew</td>
-                        <td class="table-estado">São Paulo</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-empresa">Cysco Systen</td>
-                        <td class="table-email-empresa">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
-                        <td class="table-cep">63833</td>
-                        <td class="table-log">kjwajvfew</td>
-                        <td class="table-numero">312</td>
-                        <td class="table-bairro">ffewrwfew</td>
-                        <td class="table-estado">São Paulo</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-empresa">Cysco Systen</td>
-                        <td class="table-email-empresa">cysco@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
-                        <td class="table-cep">63833</td>
-                        <td class="table-log">kjwajvfew</td>
-                        <td class="table-numero">312</td>
-                        <td class="table-bairro">ffewrwfew</td>
-                        <td class="table-estado">São Paulo</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+                    <?php foreach ($resultado as $resultado) { ?>
+                        <tr class="infos">
+                            <td class="table-id">
+                                <?= $resultado[0] ?>
+                            </td>
+                            <td class="table-nome-empresa">
+                                <?= $resultado[3] ?>
+                            </td>
+                            <td class="table-email-empresa">
+                                <?= $resultado[1] ?>
+                            </td>
+                            <td class="table-cnpj">
+                                <?= $resultado[4] ?>
+                            </td>
+                            <td class="table-cep">
+                                <?= $resultado[5] ?>
+                            </td>
+                            <td class="table-log">
+                                <?= $resultado[6] ?>
+                            </td>
+                            <td class="table-numero">
+                                <?= $resultado[7] ?>
+                            </td>
+                            <td class="table-bairro">
+                                <?= $resultado[8] ?>
+                            </td>
+                            <td class="table-estado">
+                                <?= $resultado[9] ?>
+                            </td>
+                            <td class="icone-table">
+                                <?php if ($resultado[11] == 0) { ?>
+                                    <a href="./back-end/crud/empresa-aceitar.php?id=<?= $resultado[0] ?>">Aceitar</a>
+                                <?php } ?>
+                                <a href="./back-end/crud/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
 
