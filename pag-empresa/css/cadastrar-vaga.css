@@ -1,0 +1,128 @@
+body{
+    background-color:#ffffff; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  main {
+    margin-left:20%; 
+    overflow:hidden;
+    padding: 20px;
+
+  } 
+  
+ 
+  
+  .cima{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 18%;
+  }
+  
+  .baixo{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 16%;
+  }
+  
+ main a{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+ }
+  
+ main a i{
+    font-size: 25px;
+    color: red;
+    padding:10px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid red;
+    border-radius: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+ .formulario-cadastrar-vaga{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .formulario-cadastrar-vaga form{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+margin-top: 40px;
+width:70%;
+height: 400px;
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(255, 0, 0);
+border-radius: 45px;
+
+ }
+  
+
+ form .alinhaento-inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+  background-color: white;
+ }
+
+ form .alinhaento-inputs span{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+ }
+
+ .formulario-cadastrar-vaga .alinhaento-inputs input{
+    padding: 9px;
+    border-radius: 25px;
+    border: 1px solid blue;
+    width:80%;
+ }
+
+
+ input:focus{
+outline: none;
+ }
+  
+  
+form .container-caixa-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+}
+
+form .container-caixa-texto textarea{
+    padding: 10px;
+    border-radius: 25px;
+    width: 100%;
+    height: 60px;
+    border: 1px solid blue;
+}
+
+ textarea:focus{
+outline: none;
+}
+
+button{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid blue;
+    width: 200px;
+    color: white;
+    background-color: rgb(10, 10, 87);
+    font-size: 15px;
+}
