@@ -16,6 +16,11 @@ body {
     bottom: 0;
     width: 25%;
 }
+.text-danger{
+    text-align: center;
+    color: red;
+    margin-bottom: 5px;
+}
 
 .login {
     display: flex;

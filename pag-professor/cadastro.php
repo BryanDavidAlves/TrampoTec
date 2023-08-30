@@ -63,59 +63,9 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Telefone</small></label>
-                                        <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" name="telefone">
-                                        <div class="invalid-feedback">
-                                            O telefone é obrigatório
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>CEP</small></label>
-                                        <input class="form-control cep obrigatorio" type="numeric" placeholder="00000-000" name="cep">
-                                        <div class="invalid-feedback">
-                                            Informe um CEP válido
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Logradouro</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="logradouro" name="logradouro">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Bairro</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="bairro" name="bairro">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Cidade</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="cidade" name="cidade">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Estado</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="estado" name="estado">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Número</small></label>
-                                        <input class="form-control obrigatorio" type="text" placeholder="Número" id="numero" name="numero">
-                                        <div class="invalid-feedback">
-                                            O número é obrigatório
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
-                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*">
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*"  enctype="multipart/form-data">
+                                        <input type="hidden" id="foto_usuario" name="foto_usuario" >
                                         <div class="invalid-feedback">
                                             Selecione uma imagem
                                         </div>

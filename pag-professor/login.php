@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <link rel="stylesheet" href="css/logins.css">
     <title>Login</title>
 </head>
@@ -18,11 +18,11 @@
             <div class="box-formulario">
                 <h1 class="title-login">Login Professor</h1>
 
-                <form action="index.php">
+                <form action="./back-end/login/valida_login.php">
                     <div class="item-form">
-                        <label for="nome-professor">NOME</label>
+                        <label for="nome-professor">Email</label>
                         <div class="div-input">
-                            <input type="text" name="nome-professor" id="nome-professor">
+                            <input type="email" name="email-professor" id="email-professor">
                         </div>
                     </div>
 
@@ -33,6 +33,15 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
+                        ?>
+                        <div class="text-danger">
+                            Usuario ou senha Inválidos
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <input class="botao" type="submit" value="Entrar">
                     <div class="remember">
                         <div>

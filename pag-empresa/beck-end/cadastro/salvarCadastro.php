@@ -14,10 +14,26 @@ if ($_POST) {
     $bairro = trim($_POST['bairro']);
     $estado = trim($_POST['estado']);
     $telefone = trim($_POST['telefone']);
+    $novo_nome =trim($_POST['foto_usuario']);
 
+    echo empty($_FILES['foto']['size']) ;    
+        //a foto vem com a extenção $_FILES
+        if(empty($_FILES['foto']['size']) != 1){
+            //pegar as extensão do arquivo
+            $extensao = strtolower(substr($_FILES['foto']['name'],-4)) ;
+            if ($novo_nome ==""){
+                //Ciando um nome novo
+                $novo_nome = md5(time()). $extensao;
+            }
+            //definindo o diretorio
+            $diretorio = "../../fotosEmpresa/perfil/";
+            //juntando o nome com o diretorio
+            $nomeCompleto = $diretorio.$novo_nome;
+            //efetuando o upload
+            move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto );
+         } ;
 
-
-    $sql2 = "INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
+    $sql2 = "INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem ) VALUES
                 (   '$email',
                     '$senha',
                     '$nome',
@@ -26,7 +42,8 @@ if ($_POST) {
                     '$logradouro',
                     '$numero',
                     '$bairro',
-                    '$estado'
+                    '$estado',
+                    '$novo_nome'
                 )
                 ";
     $query2 = $conexao->prepare($sql2);

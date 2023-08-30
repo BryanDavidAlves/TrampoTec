@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Ago-2023 às 19:57
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Tempo de geração: 30-Ago-2023 às 16:37
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,6 +51,7 @@ CREATE TABLE `tb_aluno` (
   `estado` varchar(20) NOT NULL,
   `cidade` varchar(40) NOT NULL,
   `cep` char(8) NOT NULL,
+  `etecDoAluno` varchar(70) NOT NULL,
   `duracaoCurso` char(8) NOT NULL,
   `periodoCurso` char(5) NOT NULL,
   `conclusaoCurso` date NOT NULL,
@@ -60,6 +61,14 @@ CREATE TABLE `tb_aluno` (
   `sobreMim` char(70) NOT NULL,
   `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_aluno`
+--
+
+INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `bairro`, `estado`, `cidade`, `cep`, `etecDoAluno`, `duracaoCurso`, `periodoCurso`, `conclusaoCurso`, `matriculaCurso`, `experiencias`, `habilidades`, `sobreMim`, `imagem`) VALUES
+(3, 'lucas@gmail.com', 'Senha12!', 'dadasdsad', '475.158.398', '2023-08-04', 'Parada XV de Novembro', 'SP', 'São Paulo', '08246-08', 'ETEC ABDIAS DO NASCIMENTO', '', '', '0000-00-00', 0, NULL, '', '', NULL),
+(5, 'liza@gmail.com', 'Senha12!', 'lisa', '266.452.218', '2023-08-03', 'Parada XV de Novembro', 'SP', 'São Paulo', '08246-08', 'ETEC ANTONIO JUNQUEIRA DA VEIGA', '', '', '0000-00-00', 0, NULL, '', '', '4ddcc185b99551bd1d549f0e4adad64c.png');
 
 -- --------------------------------------------------------
 
@@ -147,8 +156,19 @@ CREATE TABLE `tb_empresa` (
   `numero` int(11) NOT NULL,
   `bairro` varchar(60) NOT NULL,
   `estado` varchar(25) NOT NULL,
-  `imagem` varchar(40) NOT NULL
+  `imagem` varchar(40) NOT NULL,
+  `aprovado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_empresa`
+--
+
+INSERT INTO `tb_empresa` (`idEmpresa`, `email`, `senha`, `nome`, `cnpj`, `cep`, `logradouro`, `numero`, `bairro`, `estado`, `imagem`, `aprovado`) VALUES
+(8, 'liza@gmail.com', 'Senha12!', 'Nanda', '16.992.102/0001-70', '08246-08', 'Rua Estevam de Araújo Almeida', 123, 'Parada XV de Novembro', 'SP', '', 1),
+(9, 'dadadad@', 'Senha12', 'dsadsadsa', '07.372.419/0001-13', '08246-08', 'Rua Estevam de Araújo Almeida', 34, 'Parada XV de Novembro', 'SP', '', 1),
+(10, 'laysamelmudes@gmail.com', 'dfsfsfds', 'lala', '83.392.838/0001-03', '08247-09', 'Rua Nossa Senhora das Candeias', 123, 'Vila Santa Teresinha', 'SP', '0dcb5d8099a5a2682a66c9b9801a452a.png', 0),
+(11, 'sdsadsdasdsa@Fsdfds', 'Senha123', 'dsadadadas', '50.314.958/0001-25', '08246-08', 'Rua Estevam de Araújo Almeida', 123, 'Parada XV de Novembro', 'SP', '45cf1d47224793d12d853d389fc9ee1f.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -165,6 +185,15 @@ CREATE TABLE `tb_etec` (
   `municipio` varchar(30) NOT NULL,
   `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_etec`
+--
+
+INSERT INTO `tb_etec` (`idEtec`, `email`, `senha`, `nome`, `codigo`, `municipio`, `imagem`) VALUES
+(1, 'etec@gmail.cm', '1234', 'ETEC AMIM JUNDI', 107, 'ETEC ALBERTO SANTOS DUMONT - G', ''),
+(2, 'dadasds@dsa', 'dsda', 'ETEC ADOLPHO BEREZIN', 224, 'ETEC ALBERTO SANTOS DUMONT - G', ''),
+(4, 'etec.@dsfs', '', 'ETEC ALBERT EINSTEIN', 23, 'ETEC ALBERTO SANTOS DUMONT - G', '');
 
 -- --------------------------------------------------------
 
@@ -245,6 +274,15 @@ CREATE TABLE `tb_professor` (
   `imagem` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_professor`
+--
+
+INSERT INTO `tb_professor` (`idProfessor`, `nome`, `email`, `senha`, `imagem`) VALUES
+(1, 'lucas', 'fdfsdfsdfs@fdsfdsf', 'Senha12', ''),
+(2, 'dadsadada', 'gdsgsgggs@fsfs', 'Senha', 'd72f76039a6c825c606dc51ceba6c31e.png'),
+(3, 'laysamelmudes@gmail.com', 'laysamelmudes@gmail.com', 'Senha123', 'afcfad0f1d2c1534cd6f6a041874fb19.png');
+
 -- --------------------------------------------------------
 
 --
@@ -304,6 +342,14 @@ CREATE TABLE `tb_telefone_aluno` (
   `fk_idAluno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_telefone_aluno`
+--
+
+INSERT INTO `tb_telefone_aluno` (`idTelefoneAluno`, `telefoneAluno`, `fk_idAluno`) VALUES
+(3, '(11) 43242-423', 3),
+(4, '(43) 24324-323', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -315,6 +361,16 @@ CREATE TABLE `tb_telefone_empresa` (
   `numeroTelefone` char(14) NOT NULL,
   `fk_idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_telefone_empresa`
+--
+
+INSERT INTO `tb_telefone_empresa` (`idTelefoneEmpresa`, `numeroTelefone`, `fk_idEmpresa`) VALUES
+(3, '(11) 94748-990', 8),
+(4, '(11) 97978-978', 9),
+(5, '(11) 23234-343', 10),
+(6, '(11) 95589-384', 11);
 
 -- --------------------------------------------------------
 
@@ -566,7 +622,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tb_area`
@@ -590,13 +646,13 @@ ALTER TABLE `tb_curso`
 -- AUTO_INCREMENT de tabela `tb_empresa`
 --
 ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tb_etec`
 --
 ALTER TABLE `tb_etec`
-  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_fale_conosco`
@@ -626,7 +682,7 @@ ALTER TABLE `tb_perfil_empresa`
 -- AUTO_INCREMENT de tabela `tb_professor`
 --
 ALTER TABLE `tb_professor`
-  MODIFY `idProfessor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProfessor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tb_recomendacao`
@@ -644,13 +700,13 @@ ALTER TABLE `tb_requisito`
 -- AUTO_INCREMENT de tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_empresa`
 --
 ALTER TABLE `tb_telefone_empresa`
-  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_etec`
