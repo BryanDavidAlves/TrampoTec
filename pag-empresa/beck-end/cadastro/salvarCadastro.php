@@ -33,7 +33,9 @@ if ($_POST) {
             move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto );
          } ;
 
-    $sql2 = "INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem ) VALUES
+
+        $sql = "
+                INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem) VALUES
                 (   '$email',
                     '$senha',
                     '$nome',
