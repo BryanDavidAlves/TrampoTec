@@ -181,7 +181,7 @@
                 </section>
             </div>
         </div>
-        <button>CANDIDATAR-SE</button>
+        <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
 
         </div>
     </dialog>
@@ -203,6 +203,7 @@
             modal.showModal()
         }
     </script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>
