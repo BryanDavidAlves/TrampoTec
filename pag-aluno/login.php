@@ -22,7 +22,7 @@
                     <div class="item-form">
                         <label for="nome-aluno">EMAIL INSTITUCIONAL</label>
                         <div class="div-input">
-                            <input type="text" name="nome-aluno" id="nome-aluno">
+                            <input type="email" name="nome-aluno" id="nome-aluno">
                         </div>
                     </div>
 
