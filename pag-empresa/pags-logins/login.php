@@ -62,6 +62,15 @@
                             </div> 
                             <?php  
                             }
+                            ?>
+                            <?php
+                            if(isset($_GET['login']) && $_GET['login'] == "aguardoConfirmacao"){
+                            ?>
+                            <div class="text-danger">
+                                Acesso em Aguardo
+                            </div> 
+                            <?php  
+                            }
                             ?><br>
                         <button type="submit" class="botao-agendar"> <h6 class="corBotao">LOGIN<h6> </button>
                         <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a>

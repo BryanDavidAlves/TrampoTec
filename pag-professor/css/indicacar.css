@@ -1,235 +1,195 @@
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.titulo {
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-top: 3%;
-  margin-left: 10%;
-}
-
-.barra-pesquisa {
+.sistema-busca .barra-pesquisa {
   border-radius: 20px;
-  padding: 10px;
-  border: 1px solid royalblue;
-  margin-top: 3%;
-  width: 270px;
+  padding: 5px;
+  border: none;
+  margin-top: 0px;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  position: absolute;
+  display: flex;
+  background-color: white;
 }
 
-.barra-pesquisa input {
-  border: none;
+main .img-cima {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 100px;
 }
-.barra-pesquisa input:focus {
+.img-baixo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: -5;
+}
+.img-baixo img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+main .img-cima img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  z-index: -5;
+}
+
+.sistema-busca .barra-pesquisa input {
+  border: none;
+  width: 100%;
+  padding: 5px;
+}
+.sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
-
-.estrutura-card {
+main {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  margin-left: 15%;
-  margin-bottom: 15%;
-  gap: 40px;
+  justify-content: start;
+  margin-left: 24%;
 }
-
-.estrutura-card .card {
-  background-color: rgba(251, 251, 251, 0.655);
-  height: 30rem;
-  width: 350px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 30px;
-  border: 1px solid rgb(116, 116, 116);
-}
-
-.estrutura-card .card .imagem-aluno {
-  width: 100%;
-  margin-top: 5%;
-  height: 15%;
-
-  border: none;
-}
-
-.estrutura-card .card .imagem-aluno img {
-  width: 22%;
-  border-radius: 50%;
-  border: none;
-  object-fit: cover;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 133px;
-}
-
-#align-icon {
-  float: right;
-  margin-right: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -40px;
-  text-decoration: none;
-}
-
-#align-icon select {
-  background-color: rgb(165, 100, 14);
-  overflow: hidden;
-}
-
-.estrutura-card .card .nome-aluno {
-  border-bottom: 1px solid gray;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
+.titulo-vagas {
+  font-size: 1.4rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  margin-top: 3%;
 }
-
-.estrutura-card .card .alinhar-dados {
-  flex-direction: column;
-  margin-right: 20%;
+.sistema-busca {
+  background-color: #555cb3;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 70%;
+  margin-left: 26%;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5%;
 }
-
-.estrutura-card .card h4 {
-  color: gray;
-  font-size: 0.9rem;
-}
-
-.filtro span {
-  display: inline-flex;
+.sistema-busca .align-filtro .filtro {
+  width: 110px;
+  height: 50px;
+  background-color: rgb(250, 246, 246);
+  display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.filtro .botao {
-  background-color: transparent;
-  border: 1px solid black;
-  padding: 10px;
   border-radius: 10px;
-  transition: 0.5s all ease-in-out;
-  font-weight: 600;
+  border: 2px solid gray;
+}
+.sistema-busca .align-filtro {
+  display: flex;
+  width: 90%;
+
+  align-items: center;
+  justify-content: end;
+}
+.sistema-busca form {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 250px;
+  width: 120px;
+  position: absolute;
+  margin-left: -115px;
+  border-radius: 10px;
+  gap: 20px;
+  border: 1px solid gray;
+  z-index: 1;
+}
+.sistema-busca form .align-form-filtro {
+  display: flex;
+  width: 80%;
+  margin-left: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.sistema-busca form .align-form-filtro select {
+  width: 20%;
+}
+
+.sistema-busca .modal-filtro {
+  background-color: rgb(255, 255, 255);
+  display: none;
+}
+.sistema-busca form .button-filtro {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-}
-
-.filtro .botao:hover {
-  background-color: #4d3cd1;
-  transition: 0.5s all ease-in-out;
-  color: white;
-}
-
-.filtro {
-  display: flex;
-  flex-direction: column;
-  float: right;
-  margin-right: 30px;
-  margin-top: 60px;
-}
-
-.filtro select {
-  background-color: white;
   border: none;
-}
-
-.filtro .alinha-filtro {
-  align-items: center;
-  display: flex;
-  gap: 40px;
-}
-
-.filtro .alinha-filtro h3 {
-  font-weight: 500;
-}
-
-.modal {
-  align-items: center;
-  justify-content: center;
-  display: none;
-  flex-direction: column;
-  margin-left: 200px;
-  width: 290px;
-
-  z-index: 5;
-  position: absolute;
-  margin-top: -50px;
-}
-.modal2 {
-  align-items: center;
-  justify-content: center;
-  display: none;
-  flex-direction: row;
-  margin-left: 200px;
-  width: 290px;
-  z-index: 1;
-  position: absolute;
-  margin-top: -50px;
-}
-.modal3 {
-  align-items: center;
-  justify-content: center;
-  display: none;
-  flex-direction: row;
-  margin-left: 200px;
-
-  z-index: 1;
-  width: 290px;
-  position: absolute;
-  margin-top: -50px;
-}
-.modal4 {
-  align-items: center;
-  justify-content: center;
-  display: none;
-  flex-direction: row;
-  margin-left: 200px;
-  z-index: 1;
-  width: 290px;
-  position: absolute;
-  margin-top: -50px;
-}
-
-.card-modal a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: #555cb3;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
-}
-.card-modal p {
-  display: inline;
-  justify-content: center;
-
-  margin-left: 5px;
-}
-.card-modal .tam-user {
-  font-size: 11px;
-}
-.card-modal .linha {
-  border-top: 2px solid gray;
-}
-
-.card-modal {
-  background-color: #ffffff;
-  z-index: 5;
   padding: 10px;
-  border: 2px solid gray;
-  margin-left: 130px;
-  border-radius: 15px;
-  display: flex;
-  gap: 5px;
+  width: 90px;
+}
 
+.empresa {
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+thead {
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+}
+th {
+  text-align: center;
+  padding-top: 20px;
+}
+table {
+  background-color: rgba(247, 247, 247, 0.641);
+  border-radius: 20px;
+  width: 90%;
+  margin-left: 25%;
+}
+.icons {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  gap: 10px;
+}
+.infos {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+table td {
+  padding: 30px 10px 40px 10px;
+  text-align: center;
+  color: rgb(94, 94, 94);
+}
+.table-nome-empresa {
+  width: 200px;
+}
+.infos .table-log {
+  word-break: break-all;
+  width: 210px;
+}
+.table-email-empresa {
+  word-break: break-all;
+  width: 120px;
+}
+
+tr:nth-last-child(1) {
+  border: none;
+}
+.icone-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icone-table i {
+  margin: 3px;
 }
 
 .card-indicacao {
@@ -240,8 +200,9 @@
   position: fixed;
   height: 100%;
   width: 800px;
+  justify-content: center;
 
-  margin-top: -200px;
+  margin-top: -120px;
 }
 .card-indicacao .title-indicacao {
   text-align: center;
@@ -254,12 +215,12 @@
   border-radius: 30px;
 
   flex-direction: column;
-  position: relative;
+  position: absolute;
   height: 450px;
   width: 490px;
   background-color: white;
-  margin-left: 120px;
-  margin-top: 100px;
+  margin-left: 190px;
+  margin-top: 110px;
 }
 .card-indicacao .align-card-indicacao form {
   display: flex;
@@ -295,18 +256,21 @@
 }
 .card-indicacao .align-card-indicacao .botao-indicacao {
   padding: 14px;
-  background-color: #555cb3;
+  background-color: red;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   width: 200px;
   font-size: 0.9rem;
+  font-weight: 800;
   transition: 0.5s all ease-in-out;
   border: none;
-  font-weight: 500;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card-indicacao .align-card-indicacao .botao-indicacao:hover {
   transition: 0.5s all ease-in-out;
-  background-color: #383e93;
+  background-color: rgb(224, 5, 5);
 }
 .card-indicacao .align-card-indicacao .align-botao {
   display: flex;

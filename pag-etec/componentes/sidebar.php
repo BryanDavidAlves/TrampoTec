@@ -7,7 +7,7 @@
         <ul>
             <div class="coluna-um">
                 <div>
-                    <li><a href="home.php"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="index.php"><i class="fa-solid fa-house"></i>Home</a></li>
                     <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>Cursos</a></li>
                 </div>
                 <div>

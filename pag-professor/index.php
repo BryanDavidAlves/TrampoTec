@@ -1,306 +1,186 @@
-
+<?php
+require_once "./back-end/login/validador_acesso.php";
+?>
 
 
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="css/side.css">
     <link rel="stylesheet" href="css/indicacar.css">
     <link rel="stylesheet" href="css/geral.css">
 </head>
+
 <body>
-<?php
-include('../pag-professor/components/sidebar.php');
+    <?php
+include '../pag-professor/components/sidebar.php';
 ?>
     <main class="main">
-        <span class="titulo">Indicações para alunos</span>  
-        <div class="barra-pesquisa">
-        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-            <input  type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui" >
-           
+        <span class="titulo-vagas">Indicaçoes para Alunos</span>
+        <img src="" alt="">
+        <div class="img-cima">
+        <img src="img/fundo 2.png" alt="">
         </div>
-        
+
     </main>
 
-    <section class="filtro">
-        <form action="" method="GET" >
-        <div class="alinha-filtro">
-            <span class="material-symbols-outlined">
-            tune
-             </span>
-            <h3>Filtrar por:</h3>
-        </div>
+    <section class="sistema-busca">
+    <div class="barra-pesquisa">
+            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+    </div>
+        <div class="align-filtro"  onclick="abrirFiltro()">
+            <div class="filtro" >
+            <span   class="material-symbols-outlined">
+                    tune
+            </span>
+                <p >Filtrar</p>
 
-        <div class="alinha-filtro">
-                <h3>Nome </h3>
-            <select name="nome" id="nome">
-                <option value="" ></option>
-                <option value="">valor 1</option>
-                <option value="">valor 2</option>
-                <option value="">valor 3</option>    
-            </select>
-        </div>
-       
-        
-      
-        <div class="alinha-filtro">
-            <h3 >E-mail </h3>
-            
-        <select name="nome" id="nome">
-            <option value=""></option>
-            <option value="">valor 1</option>
-            <option value="">valor 2</option>
-            <option value="">valor 3</option>    
-        </select>
-        </div>
-        
-        <div class="alinha-filtro">
-            <h3 >Código  </h3>
-        <select name="nome" id="nome">
-            <option value=""></option>
-            <option value="">valor 1</option>
-            <option value="">valor 2</option>
-            <option value="">valor 3</option>    
-        </select>
-        </div>
-        
-        
-        
-        <div class="alinha-filtro">
-            <h3 >Cursos </h3>
-        <select name="nome" id="nome">
-            <option value=""></option>
-            <option value="">valor 1</option>
-            <option value="">valor 2</option>
-            <option value="">valor 3</option>    
-        </select>
-        </div>
-
-     
-          <input class="botao" type="submit" value="Aplicar">
-
-        </form>
-</section>
-    <section class="estrutura-card">
-        <div class="card">
-            <div class="imagem-aluno">
-                <img src="img/ryan.jpg" alt="">
-                <a id="align-icon" href="#" onclick="abrir()" > <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
-                    <div class="modal" id="abrir-modal">
-                        <div class="card-modal" id="card-modal">
-                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
-                        </div>
-                    </div>  
-                        <div  class="card-indicacao" id="abrir-indicacao">
-                            <div class="align-card-indicacao">
-                                <h5 class="title-indicacao">Carta de Indicação</h5>
-                                    <form class="" action="index.php">
-                                        <label for="destinatario">Destinatario</label>
-                                        <input type="email" name="email-professor" id="" >
-                                        <br>
-                                        <label for="mensagem">Mensagem</label>
-                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                                        <div class="align-botao">
-                                            <input type="submit" value="Enviar" class="botao-indicacao">
-                                        </div> 
-                                    </form>
-                            </div>
-                        </div>
-            </div>
-            <h4 class="nome-aluno">Ryan Souza</h4>
-            <div class="alinhar-dados">
-            <h3 class="email">E-mail Institucional</h3>
-            <h4> ryan.souza44@etec.sp.gov.br</h4>
-            
-            <h3 class="codigo-etec">Código Etec</h3>
-            <h4>118</h4>
-
-            <h3 class="cursos">Cursos</h3>
-            <h4>Desenvolvimento de Sistemas</h4>
             </div>
         </div>
+        <div class="modal-filtro" id="abrir-filtro">
+            <form action="" >
+                <div class="align-form-filtro">
+                    <label for="">Periodo</label>
+                    <select name="" id="">
 
-        <div class="card">
-        <div class="imagem-aluno">
-                <img src="img/ryan.jpg" alt="">
-                <a id="align-icon" href="#" onclick="abrir2()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
-                    <div class="modal2" id="abrir-modal2">
-                        <div class="card-modal" id="card-modal">
-                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
-                        </div>
-                    </div>  
-                        <div  class="card-indicacao" id="abrir-indicacao">
-                            <div class="align-card-indicacao">
-                                <h5 class="title-indicacao">Carta de Indicação</h5>
-                                    <form class="" action="index.php">
-                                        <label for="destinatario">Destinatario</label>
-                                        <input type="email" name="email-professor" id="" >
-                                        <br>
-                                        <label for="mensagem">Mensagem</label>
-                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                                        <div class="align-botao">
-                                            <input type="submit" value="Enviar" class="botao-indicacao">
-                                        </div> 
-                                    </form>
-                            </div>
-                        </div>
-            </div>
-            <h4 class="nome-aluno">Ryan Souza</h4>
-            <div class="alinhar-dados">
-            <h3 class="email">E-mail Institucional</h3>
-            <h4> ryan.souza44@etec.sp.gov.br</h4>
-            
-            <h3 class="codigo-etec">Código Etec</h3>
-            <h4>118</h4>
+                        <option value="">Tarde</option>
+                        <option value="">Manhã</option>
+                        <option value="">Noite</option>
+                    </select>
+                    </div>
+                    <div class="align-form-filtro">
+                    <label for="">Etec</label>
+                    <input type="checkbox" name="" id="">
+                    </div>
+                    <div class="align-form-filtro">
+                    <label for="">Curso</label>
+                    <input type="checkbox" name="" id="">
+                    </div>
+                    <div class="align-form-filtro">
+                    <label for="">Area</label>
+                    <input type="checkbox" name="" id="">
+                    </div>
+                    <input type="submit" value="Aplicar" class="button-filtro">
 
-            <h3 class="cursos">Cursos</h3>
-            <h4>Desenvolvimento de Sistemas</h4>
-            </div>
+            </form>
         </div>
 
-        <div class="card">
-            <div class="imagem-aluno">
-                <img src="img/ryan.jpg" alt="">
-                <a id="align-icon" href="#card-modal" onclick="abrir3()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
-                    <div class="modal3" id="abrir-modal3">
-                        <div class="card-modal" id="card-modal">
-                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
-                        </div>
-                    </div>  
-                        <div  class="card-indicacao" id="abrir-indicacao">
-                            <div class="align-card-indicacao">
-                                <h5 class="title-indicacao">Carta de Indicação</h5>
-                                    <form class="" action="index.php">
-                                        <label for="destinatario">Destinatario</label>
-                                        <input type="email" name="email-professor" id="" >
-                                        <br>
-                                        <label for="mensagem">Mensagem</label>
-                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                                        <div class="align-botao">
-                                            <input type="submit" value="Enviar" class="botao-indicacao">
-                                        </div> 
-                                    </form>
-                            </div>
-                        </div>
-            </div>
-            <h4 class="nome-aluno">Ryan Souza</h4>
-            <div class="alinhar-dados">
-            <h3 class="email">E-mail Institucional</h3>
-            <h4> ryan.souza44@etec.sp.gov.br</h4>
-            
-            <h3 class="codigo-etec">Código Etec</h3>
-            <h4>118</h4>
-
-            <h3 class="cursos">Cursos</h3>
-            <h4>Desenvolvimento de Sistemas</h4>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="imagem-aluno">
-                <img src="img/ryan.jpg" alt="">
-                <a id="align-icon" href="#card-modal" onclick="abrir4()"> <i  class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;"></i> </a>
-                    <div class="modal4" id="abrir-modal4">
-                        <div class="card-modal" id="card-modal">
-                            <a href="#abrir-indicacao" onclick="abrirIndicacao()"><i class="fa-solid fa-check fa-lg" style="color: #739ee8;"></i><p>Indicar</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-user-lock tam-user"  style="color: #739ee8;"></i><p>Negar indicaçao</p></a>
-                            <div class="linha"> </div>
-                            <a href="index.php" ><i class="fa-solid fa-xmark fa-lg" style="color: #739ee8;"></i><p>Fechar indicação</p></a>
-                        </div>
-                    </div>  
-                        <div  class="card-indicacao" id="abrir-indicacao">
-                            <div class="align-card-indicacao">
-                                <h5 class="title-indicacao">Carta de Indicação</h5>
-                                    <form class="" action="index.php">
-                                        <label for="destinatario">Destinatario</label>
-                                        <input type="email" name="email-professor" id="" >
-                                        <br>
-                                        <label for="mensagem">Mensagem</label>
-                                        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-                                        <div class="align-botao">
-                                            <input type="submit" value="Enviar" class="botao-indicacao">
-                                        </div> 
-                                    </form>
-                            </div>
-                        </div>
-            </div>
-            <h4 class="nome-aluno">Ryan Souza</h4>
-            <div class="alinhar-dados">
-            <h3 class="email">E-mail Institucional</h3>
-            <h4> ryan.souza44@etec.sp.gov.br</h4>
-            
-            <h3 class="codigo-etec">Código Etec</h3>
-            <h4>118</h4>
-
-            <h3 class="cursos">Cursos</h3>
-            <h4>Desenvolvimento de Sistemas</h4>
-            </div>
-        </div>
-
-       
     </section>
 
-   
-<script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
-<script>
-    function abrir(){
-            
-            var modal=  document.getElementById('abrir-modal')
-            modal.style.display="block"
-            console.log('salve')
-             
+    <section class="empresa">
 
-         
-     }
-     function abrir2(){
-            
-            var modal2=  document.getElementById('abrir-modal2')
-            modal2.style.display="block"
-            console.log('salve')
-             
+<table>
+    <thead>
+        <tr>
 
-         
-     }
-     function abrir3(){
-            
-            var modal3=  document.getElementById('abrir-modal3')
-            modal3.style.display="block"
-    
-            console.log('salve')
-             
+            <th>EMPRESA</th>
+            <th>VAGA</th>
+            <th>PERIODO</th>
+            <th>SALARIO</th>
+            <th>REQUISITOS</th>
 
-         
-     }
-     function abrir4(){
-            
-            var modal4=  document.getElementById('abrir-modal4')
-            modal4.style.display="block"
-            console.log('salve')
-             
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="infos">
 
-         
-     }
-     function abrirIndicacao(){
-            var indicar = document.getElementById('abrir-indicacao')
-            indicar.style.display="block";
+            <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
+        </tr>
+
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
+        </tr>
+        <tr class="infos">
+        <td class="table-nome-empresa">Cysco Systen</td>
+            <td class="table-email-empresa">Front - End</td>
+            <td class="table-cnpj">Manhã</td>
+            <td class="table-cep">R$ 2000,00</td>
+            <td class="table-log">Saber programar JavaScript</td>
+
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+        <div class="card-indicacao" id="abrir-indicacao">
+                    <div class="align-card-indicacao">
+                        <h5 class="title-indicacao">Indicar Aluno</h5>
+                        <form class="" action="index.php">
+                            <label for="destinatario">Destinatario</label>
+                            <input type="email" name="email-professor" id="">
+                            <br>
+                            <label for="mensagem">Mensagem</label>
+                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+
+                            <input type="submit" value="Enviar" class="botao-indicacao">
+                        </form>
+                    </div>
+        </div>
+    </section>
+
+
+    <div class="img-baixo">
+        <img src="img/fundo 1.png" alt="">
+    </div>
+
+    <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+    <script>
+         var filtro = document.getElementById('abrir-filtro')
+        function abrirFiltro(){
+           if(filtro.style.display == "none"){
+            filtro.style.display="block"
+            filtro.style.transform="translateY(25px)"
+            filtro.style.transition="all 5s"
         }
-</script>
+        else if(filtro.style.display="block"){
+        filtro.style.display="none"
+    }
+    else{
+        filtro.style.display="block"
+    }
+}
+function abrirIndicacao() {
+            var indicar = document.getElementById('abrir-indicacao')
+
+            indicar.style.display = "block";
+        }
+
+    </script>
 </body>
-</html>

@@ -9,9 +9,9 @@ include('../../dao/conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../reset.css">
     <link rel='stylesheet' href='../../pag-empresa/css/login-cadastro.css'>
-    <link rel='stylesheet' href='../../../assets/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='../../../assets/css/style.css'>
-    <title>TrampoTec</title>
+    <link rel='stylesheet' href='../../assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../../assets/css/style.css'>
+    <title>TrampoTec - Cadastro Empresa</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@ include('../../dao/conexao.php');
         <div class="row">
             <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
                 <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno">
-                <img width="80%" src="../../../assets/img/woman-charts.png">
+                <img width="80%" src="../fotosEmpresa/perfil/empresa.png">
             </div>
             <div class="col-12 col-md-6">
                 <div class="row">
@@ -117,7 +117,7 @@ include('../../dao/conexao.php');
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Número</small></label>
-                                        <input class="form-control obrigatorio" readonly type="text" placeholder="Número" id="numero" name="numero">
+                                        <input class="form-control obrigatorio" type="text" placeholder="Número" id="numero" name="numero">
                                         <div class="invalid-feedback">
                                             O número é obrigatório
                                         </div>
@@ -126,7 +126,8 @@ include('../../dao/conexao.php');
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
-                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*">
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*" enctype="multipart/form-data">
+                                        <input type="hidden" id="foto_usuario" name="foto_usuario" >
                                         <div class="invalid-feedback">
                                             Selecione uma imagem
                                         </div>
@@ -144,11 +145,11 @@ include('../../dao/conexao.php');
             </div>
         </div>
     </div>
-<script src="../../../assets/js/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="../../../assets/js/jquery.mask.min.js"></script>
-<script src="../../../assets/js/my-mask.js"></script>
-<script src="../../../assets/js/bootstrap.min.js"></script>
-<script src="../../../assets/js/main.js"></script>
+<script src="../../assets/js/jquery-3.7.1.js"></script>
+<script src="../../assets/js/jquery.mask.min.js"></script>
+<script src="../../assets/js/my-mask.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/main.js"></script>
 
 <script type="text/javascript">
     $(function(){

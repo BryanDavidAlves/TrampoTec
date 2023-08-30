@@ -1,3 +1,6 @@
+<?php
+require_once "./back-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,6 +17,12 @@
 </head>
 
 <body>
+    <img class="cima-esquerda" src="img/icon4.png" alt="">
+    <img class="cima-direita" src="img/icon2.png" alt="">
+    <!--
+    <img class="baixo-direita" src="img/icon1.png" alt="">
+    <img class="baixo-esquerda" src="img/icon5.png" alt="">
+    -->
     <?php
     include('../pag-aluno/components/header.php');
     ?>
@@ -175,7 +184,7 @@
                 </section>
             </div>
         </div>
-        <button>CANDIDATAR-SE</button>
+        <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
 
         </div>
     </dialog>
@@ -197,6 +206,7 @@
             modal.showModal()
         }
     </script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

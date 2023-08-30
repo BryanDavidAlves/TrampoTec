@@ -1,136 +1,252 @@
 .professor {
-    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    align-items: center;
 }
 
-.align-card {
-    width: 60%;
+.sistema-busca .barra-pesquisa {
+    border-radius: 20px;
+    padding: 5px;
+    border: none;
+    margin-top: 0px;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-left:23%;
+    background-color: white;
 }
 
-.card {
-    width: 270px;
-    padding: 20px;
-    border: 1px solid #b6b6b6;
-    border-radius: 30px;
+.sistema-busca .barra-pesquisa input {
+    border: none;
+    width: 100%;
+    padding: 5px;
 }
 
-.part1 {
+.sistema-busca .barra-pesquisa input:focus {
+    outline: none;
+}
+
+main {
+    margin-left: 20%;
+    padding-bottom: 50px;
+}
+
+.sistema-busca .barra-pesquisa {
+    border-radius: 20px;
+    padding: 5px;
+    border: none;
+    margin-top: 0px;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    position: absolute;
+    display: flex;
+    background-color: white;
+}
+
+.sistema-busca .barra-pesquisa input {
+    border: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.sistema-busca .barra-pesquisa input:focus {
+    outline: none;
+}
+
+main .img-cima {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100px;
+}
+
+main .img-cima img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.titulo-vagas {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 3%;
+}
+
+.secao-busca {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.sistema-busca {
+    background-color: #555cb3;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    margin-top: 5%;
+    padding: 10px 0px 10px 0px;
+}
+
+.btn-side {
+    background-color: white;
+    color: red;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-side:nth-child(2) {
+    margin-right: 7%;
+}
+
+.btn-side p {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.filtro span {
+    color: red;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.sistema-busca .align-filtro .filtro {
+    padding: 7px;
+    background-color: rgb(250, 246, 246);
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid gray;
+    cursor: pointer;
+    margin-left: 2%;
+    margin-right: -6%;
+    font-weight: 600;
+}
+
+.sistema-busca .align-filtro {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: end;
 
 }
-.part1 img{
+
+.sistema-busca form {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 250px;
     width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    margin-left: 40px;
-    border-radius: 100%;
-    border: 1px solid black;
+    position: absolute;
+    margin-left: -115px;
+    border-radius: 10px;
+    gap: 20px;
+    border: 1px solid gray;
+    z-index: 1;
 }
 
-.header-card {
+.sistema-busca form .align-form-filtro {
+    display: flex;
+    width: 100%;
+    margin-left: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.sistema-busca form .align-form-filtro input {
+    width: 100%;
+    display: flex;
+}
+
+.sistema-busca .modal-filtro {
+    background-color: rgb(255, 255, 255);
+    display: none;
+}
+
+.sistema-busca form .button-filtro {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
-    border-bottom: 1px solid #b6b6b6;
-    width: 90%;
-    text-align: center;
-}
-.header-card h2{
-    margin-bottom: 15px;
-}
-.info-professor{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 15px;
-}
-.info-professor h3{
-    font-size: 1.1rem;
-}
-.info-professor h5{
-    font-size: 0.8rem;
-    margin-top: 5px;
-}
- .filtro {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    float: right;
-    margin-right: 20px;
-    
-}
-
- .filtro .align {
-    display: flex;
-}
-
- .filtro .align .palavra-chave {
-    width: 110px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-}
-
-.palavra-box,select {
-    height: 25px;
-    margin-top: 5px;
     border: none;
-    
-}
-
- .filtro .align select,
-.palavra-box {
-    margin-left: 10px;
-}
-.titulo-filtro{
-    margin-bottom: 15px;
-    margin-left: 10px;
-}
- .filtro .button{
-    background-color: #4d3cd1;
-    padding: 5px;
+    border-radius: 10px;
+    background-color: #555cb3;
     color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
-#modal-card {
-    display: none;
-    background-color: #fff;
-    border: 1px solid;
-    flex-direction: column;
-    width: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
     padding: 10px;
-    position: absolute;
-    height: 100px;
-    justify-content: center;
-    margin-left: 380px;
-    margin-top: 120px;
+    width: 90px;
+}
+
+thead {
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+}
+
+th {
+    text-align: center;
+    padding-top: 20px;
+}
+
+table {
+    background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
+    width: 90%;
 }
 
-.item-modal {
+.infos {
+    border-bottom: 1px solid black;
+    padding: 10px;
+
+}
+
+table td {
+    padding: 20px 10px 5px 15px;
+    text-align: center;
+    color: rgb(94, 94, 94);
+
+}
+
+.table-nome-professor {
+    width: 100px;
+}
+
+.table-email-professor {
+    word-break: break-all;
+    width: 200px;
+}
+
+tr:nth-last-child(1) {
+    border: none;
+}
+
+.icone-table {
     display: flex;
-    gap: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-weight: 500;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.item-modal:nth-child(2) {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
+.icone-table i {
+    margin: 3px;
 }
-.item-modal i{
-    color: #4d3cd1;
+
+.cima {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 16%;
 }

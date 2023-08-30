@@ -1,3 +1,26 @@
+<?php
+include('../dao/conexao.php');
+//VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
+
+//passando todos os itens do post para as sua variaveis
+if ($_GET['aprovado'] == '1') {
+    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='1'";
+
+    $query = $conexao->query($querySelect);
+
+    $resultado = $query->fetchAll();
+} else {
+    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='0'";
+
+    $query = $conexao->query($querySelect);
+
+    $resultado = $query->fetchAll();
+} 
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +28,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <!--link icone filtro-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
+
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/empresa.css">
 
@@ -17,109 +43,116 @@
     <?php
     include('../pag-adm/components/sidebar-adm.php');
     ?>
-
+    <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
+        <div class="secao-busca">
+            <section class="sistema-busca">
+                <div class="barra-pesquisa">
+                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                </div>
 
-    <section class="empresa">
-            <div class="align-card">
-                <div class="card">
-                    <section class="header-card">
-                        <div class="part1">
-                            <img src="img/empresa.jpg" alt="">
+                <div class="align-filtro">
+                    <div class="btn-side">
+                        <a href="empresa.php?aprovado=1">
+                            <p>CADASTRADAS</p><a>
+                    </div>
+                    <div class="btn-side">
+                        <a href="empresa.php?aprovado=0">
+                            <p>PENDENTES</p><a>
+                    </div>
+                    <div class="filtro" onclick="abrirFiltro()">
+                        <span class="material-symbols-outlined">
+                            tune
+                        </span>
+                        <p>Filtrar</p>
 
-                            <i onclick='openModal()' id="align-icon" class="fa-solid fa-ellipsis-vertical fa-lg" style="color: #a1a1a1;" ></i>
-                            <div id="modal-card">
-                                <span class="item-modal"><i class="fa-solid fa-check"></i>Permitir Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-ban"></i>Negar Acesso</span>
-                                <span class="item-modal"><i class="fa-solid fa-x"></i>Excluir acesso</span>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="modal-filtro" id="abrir-filtro">
+                    <form action="">
+                        <div class="align-form-filtro">
+                            <label for="">Periodo</label>
+                            <input type="checkbox" name="" id="">
                         </div>
-                        <h2> TrampoTec</h2>
+                        <div class="align-form-filtro">
+                            <label for="">Horario</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Curso</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div class="align-form-filtro">
+                            <label for="">Area</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <input type="submit" value="Aplicar" class="button-filtro">
 
-                    </section>
-                    <div class="info-empresa">
-                        <h3>Localização</h3>
-                        <h5>Rua Feliciano Mendonça 290- Guaianases. São Paulo - SP, 08460-365</h5>
-                    </div>
-                    <div class="info-empresa">
-                        <h3>Cursos</h3>
-                        <h5>Desenvolvimento de sistemas - Tarde <br>
-                            Nutrição - Tarde <br>
-                            Eletrotécnica - EMTEC <br>
-                            Administração - EMTEC <br>
-                        </h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Telefone</h3>
-                        <h5>(11) 2558-2585</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Código</h3>
-                        <h5>(11) 99999-9999</h5>
-                    </div>
-
-                    <div class="info-empresa">
-                        <h3>Email</h3>
-                        <h5>email@email.com</h5>
-                    </div>
+                    </form>
                 </div>
+        </div>
 
+        <section class="empresa">
 
-            </div>
-            <section class="filtro">
-                <div class="align">
-                    <span class="material-symbols-outlined">
-                        tune
-                    </span>
-                    <h3 class="titulo-filtro">Filtrar por</h3>
-                </div>
-                <form action="">
-                    <div class="align">
-                        <h3 class="palavra-chave">Nome</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Email</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Código Etec</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <div class="align">
-                        <h3 class="palavra-chave">Curso</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>
-                    <input value="Aplicar" class="button" type="submit">
-                </form>
-                </div>
-            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>EMAIL</th>
+                        <th>CNPJ</th>
+                        <th>CEP</th>
+                        <th>LOGRADOURO</th>
+                        <th>NÚMERO</th>
+                        <th>BAIRRO</th>
+                        <th>ESTADO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($resultado as $resultado) { ?>
+                        <tr class="infos">
+                            <td class="table-id">
+                                <?= $resultado[0] ?>
+                            </td>
+                            <td class="table-nome-empresa">
+                                <?= $resultado[3] ?>
+                            </td>
+                            <td class="table-email-empresa">
+                                <?= $resultado[1] ?>
+                            </td>
+                            <td class="table-cnpj">
+                                <?= $resultado[4] ?>
+                            </td>
+                            <td class="table-cep">
+                                <?= $resultado[5] ?>
+                            </td>
+                            <td class="table-log">
+                                <?= $resultado[6] ?>
+                            </td>
+                            <td class="table-numero">
+                                <?= $resultado[7] ?>
+                            </td>
+                            <td class="table-bairro">
+                                <?= $resultado[8] ?>
+                            </td>
+                            <td class="table-estado">
+                                <?= $resultado[9] ?>
+                            </td>
+                            <td class="icone-table">
+                                <?php if ($resultado[11] == 0) { ?>
+                                    <a href="./back-end/crud/empresa-aceitar.php?id=<?= $resultado[0] ?>">Aceitar</a>
+                                <?php } ?>
+                                <a href="./back-end/crud/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
 
         </section>
     </main>

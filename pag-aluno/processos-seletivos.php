@@ -1,3 +1,6 @@
+<?php
+require_once "./back-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +18,8 @@
 </head>
 
 <body>
+    <img class="cima-esquerda" src="img/icon1-cortado.png" alt="">
+    <img class="cima-direita" src="img/icon5.png" alt="">
     <?php
     include('../pag-aluno/components/header.php');
     ?>
@@ -82,40 +87,40 @@
                 </section>
 
                 <section class="vagas">
-                        <section class="container-cards">
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
-
+                    <section class="container-cards">
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
+                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
 
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
+                        </div>
 
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
+                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
 
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
+                        </div>
 
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
-                        </section>
+                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+
+                        </div>
+                    </section>
                 </section>
             </div>
         </div>

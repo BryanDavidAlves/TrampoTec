@@ -17,10 +17,16 @@
 
     <header>
         <h1>Configurações</h1>
-        <input type="text" placeholder="Pesquisar">
     </header>
     <main>
         <section class="configuracoes">
+            <div class="configuracao">
+                <div class="part1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <h2> Alterar nome</h2>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
             <div class="configuracao">
                 <div class="part1">
                     <i class="fa-solid fa-user"></i>
@@ -29,29 +35,6 @@
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
 
-            <div class="configuracao">
-                <div class="part1">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                   <h2> Alterar nome</h2>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
-
-            <div class="configuracao">
-                <div class="part1">
-                    <i class="fa-solid fa-phone"></i>
-                   <h2> Alterar telefone</h2>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
-
-            <div class="configuracao">
-                <div class="part1">
-                    <i class="fa-solid fa-lock"></i>
-                   <h2> Alterar senha</h2>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
 
 
         </section>

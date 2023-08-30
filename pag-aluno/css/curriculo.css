@@ -252,3 +252,17 @@ textarea:focus{
     
     width: 700px
 }*/
+
+.cima-esquerda{
+    width: 12%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+.cima-direita{
+    width: 8%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}

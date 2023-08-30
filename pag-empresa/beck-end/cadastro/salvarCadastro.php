@@ -14,43 +14,54 @@ if ($_POST) {
     $bairro = trim($_POST['bairro']);
     $estado = trim($_POST['estado']);
     $telefone = trim($_POST['telefone']);
+    $novo_nome =trim($_POST['foto_usuario']);
 
+    echo empty($_FILES['foto']['size']) ;    
+        //a foto vem com a extenção $_FILES
+        if(empty($_FILES['foto']['size']) != 1){
+            //pegar as extensão do arquivo
+            $extensao = strtolower(substr($_FILES['foto']['name'],-4)) ;
+            if ($novo_nome ==""){
+                //Ciando um nome novo
+                $novo_nome = md5(time()). $extensao;
+            }
+            //definindo o diretorio
+            $diretorio = "../../fotosEmpresa/perfil/";
+            //juntando o nome com o diretorio
+            $nomeCompleto = $diretorio.$novo_nome;
+            //efetuando o upload
+            move_uploaded_file($_FILES['foto']['tmp_name'], $nomeCompleto );
+         } ;
 
-    //Verificar cnpj é valido ou nao
-    $CnpjValido = validar_cnpj($cnpj);
-    $senhaForte = isStrongPassword($senha);
-    $formattedPhoneNumber = formatPhoneNumber($telefone);
-
-
-    if ($CnpjValido == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=cnpjInvalido');
-    } else if ($senhaForte == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=senhaFraca');
-    } else if ($formattedPhoneNumber == false) {
-        header('Location: ../../pags-logins/criar-login.php?login=numeroTelInvalido');
-    } 
-    else if ($CnpjValido == true || $senhaForte == true || $formattedPhoneNumber == true ) {
-        $formattedCNPJ = formatCNPJ($cnpj);
 
         $sql = "
-                INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado) VALUES
+                INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem) VALUES
                 (   '$email',
                     '$senha',
                     '$nome',
-                    '$formattedCNPJ',
+                    '$cnpj',
                     '$cep',
                     '$logradouro',
                     '$numero',
                     '$bairro',
-                    '$estado'
+                    '$estado',
+                    '$novo_nome'
                 )
                 ";
-        $query = $conexao->prepare($sql);
-        $query->execute();
+    $query2 = $conexao->prepare($sql2);
+    $query2->execute();
+    $id = $conexao->lastInsertId();
 
-        header('Location: ../../../one-page/index.html');
-        exit;
-    }
+    $sql = "INSERT INTO tb_telefone_empresa ( numeroTelefone , fk_idEmpresa ) VALUES
+    (   '$telefone',
+        '$id'
+    )
+    ";
+
+    $query = $conexao->prepare($sql);
+    $query->execute();
+    header('Location: ../../../one-page/index.html');
+    exit;
 } else {
     header('Location: login.php?login=erro');
     $_SESSION['autenticado'] = "NAO";
