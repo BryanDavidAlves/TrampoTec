@@ -41,7 +41,12 @@ include '../pag-professor/components/sidebar.php';
             <form action="" >
                 <div class="align-form-filtro">
                     <label for="">Periodo</label>
-                    <input type="checkbox" name="" id="">
+                    <select name="" id="">
+
+                        <option value="">Tarde</option>
+                        <option value="">Manhã</option>
+                        <option value="">Noite</option>
+                    </select>
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Etec</label>

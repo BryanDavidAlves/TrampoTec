@@ -19,6 +19,10 @@
     <?php include '../pag-etec/componentes/notificacao.php'?>
 
     <main>
+        <div class="title-cursos"><h2>Painel de Curso</h2></div>
+    <div class="img-cima">
+        <img src="img/fundo 2.png" alt="">
+        </div>
     <div class="secao-busca">
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
@@ -64,93 +68,68 @@
                 </div>
         </div>
 </main>
+<section class="empresa">
 
+<table>
+    <thead>
+        <tr>
 
-<section class="lista-vagas">
-        <div class="tabela">
-            <table>
-            <form action="">
-                <th> INSTITUIÇAO</th>
-                <td>Cysco Systens</td>
-            </table>
-            <table>
-                <th>CURSO</th>
-                <td>Front-End</td>
-            </table>
-            <table>
-                <th> LOCALIZAÇAO</th>
-                <td>Manhã</td>
-            </table>
+            <th>INSTITUIÇAO</th>
+            <th>CURSO</th>
+            <th>LOCALIZAÇAO</th>
+            <th>PERIODO</th>
+            <th>CARGA HORARIA</th>
 
-            <table>
-                <th> PERIODO</th>
-                <td>R$2,000,00</td>
-            </table>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="infos">
 
-            <table>
-                <th> CARGA HORARIA</th>
-                <td>Saber Programar em JavaScript</td>
+            <td class="table-nome-empresa">Etec de Guaianazes</td>
+            <td class="table-email-empresa">Nutrição</td>
+            <td class="table-cnpj">Guainazes</td>
+            <td class="table-cep">Tarde</td>
+            <td class="table-log">400 Horas</td>
 
-            </table>
+            <td class="icone-table">
+                <div class="icons">
+                    <i  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
-            </form>
-            <div class="icons">
-            <i onclick="abrirIndicacao()" class="fa-solid fa-share-nodes " style="color:  #555cb3;"></i>
+                </div>
+        </tr>
 
-            </div>
+        <tr class="infos">
+        <td class="table-nome-empresa">Etec de Guaianazes</td>
+            <td class="table-email-empresa">Nutrição</td>
+            <td class="table-cnpj">Guainazes</td>
+            <td class="table-cep">Tarde</td>
+            <td class="table-log">400 Horas</td>
 
-        </div>
+            <td class="icone-table">
+                <div class="icons">
+                    <i  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
+                </div>
+        </tr>
+        <tr class="infos">
+        <td class="table-nome-empresa">Etec de Guaianazes</td>
+            <td class="table-email-empresa">Nutrição</td>
+            <td class="table-cnpj">Guainazes</td>
+            <td class="table-cep">Tarde</td>
+            <td class="table-log">400 Horas</td>
 
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Compartilhar Vaga</h5>
-                        <form class="" action="vagas.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+            <td class="icone-table">
+                <div class="icons">
+                    <i  class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                        </form>
-                    </div>
-        </div>
-    </section>
-    <div class="linha"></div>
+                </div>
+        </tr>
+    </tbody>
+</table>
 
-    <section class="lista-vagas">
-        <div class="tabela">
-        <table>
-            <form action="">
-
-                <td>Cysco Systens</td>
-            </table>
-            <table>
-
-                <td>Front-End</td>
-            </table>
-            <table>
-
-                <td>Manhã</td>
-            </table>
-
-            <table>
-
-                <td>R$2,000,00</td>
-            </table>
-
-            <table>
-
-                <td>Saber Programar em JavaScript</td>
-
-            </table>
-
-            </form>
-
-            <div class="icons">
-            <i onclick="abrirIndicacao()" class="fa-solid fa-share-nodes " style="color:  #555cb3;"></i>
-            </div>
 
 
 
@@ -173,7 +152,9 @@
 
 
     </section>
-    <div class="linha"></div>
+    <<div class="img-baixo">
+        <img src="img/fundo 1.png" alt="">
+        </div>
 
 <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
     <script>

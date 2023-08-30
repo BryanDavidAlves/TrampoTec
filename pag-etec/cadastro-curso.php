@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <?php include('../pag-etec/componentes/sidebar.php') ?>
-    <?php include('../pag-etec/componentes/notificacao.php') ?>
+    <?php include '../pag-etec/componentes/sidebar.php'?>
+    <?php include '../pag-etec/componentes/notificacao.php'?>
     <main>
         <section class="parte-pequisa">
             <span class="titulo-pagina">
@@ -21,7 +21,7 @@
             </span>
         </section>
         <section class="formulario">
-            <form action="">
+            <form action="home.php">
                 <div class="left">
                     <div class="align ">
                         <label for="nome-etec">Nome da Etec</label>
@@ -41,7 +41,7 @@
                     </div>
                     <input class="btn" type="submit" value="ENVIAR">
                 </div>
-                
+
 
 
                 <div class="right">
@@ -67,7 +67,7 @@
 
                 </div>
                 </div>
-                
+
             </form>
         </section>
     </main>

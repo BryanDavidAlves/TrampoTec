@@ -40,7 +40,11 @@ include '../pag-professor/components/sidebar.php';
                 <form action="" >
                     <div class="align-form-filtro">
                         <label for="">Periodo</label>
-                        <input type="checkbox" name="" id="">
+                        <select name="" id="">
+                        <option value="">Tarde</option>
+                        <option value="">Manhã</option>
+                        <option value="">Noite</option>
+                        </select>
                         </div>
                         <div class="align-form-filtro">
                         <label for="">Horario</label>
@@ -84,9 +88,12 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-cep">R$ 2000,00</td>
             <td class="table-log">Saber programar JavaScript</td>
 
-            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                    class="fa-solid fa-x" style="color: #000000;"></i>
-            </td>
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
         </tr>
 
         <tr class="infos">
@@ -96,9 +103,12 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-cep">R$ 2000,00</td>
             <td class="table-log">Saber programar JavaScript</td>
 
-            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                    class="fa-solid fa-x" style="color: #000000;"></i>
-            </td>
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
         </tr>
         <tr class="infos">
         <td class="table-nome-empresa">Cysco Systen</td>
@@ -107,9 +117,12 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-cep">R$ 2000,00</td>
             <td class="table-log">Saber programar JavaScript</td>
 
-            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                    class="fa-solid fa-x" style="color: #000000;"></i>
-            </td>
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
         </tr>
     </tbody>
 </table>

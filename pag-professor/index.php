@@ -91,8 +91,12 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-cep">R$ 2000,00</td>
             <td class="table-log">Saber programar JavaScript</td>
 
-            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                    class="fa-solid fa-x" style="color: #000000;"></i>
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
             </td>
         </tr>
 
@@ -103,8 +107,12 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-cep">R$ 2000,00</td>
             <td class="table-log">Saber programar JavaScript</td>
 
-            <td class="icone-table"><i onclick="abrirIndicacao()" class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                    class="fa-solid fa-x" style="color: #000000;"></i>
+            <td class="icone-table">
+                <div class="icons">
+                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
             </td>
         </tr>
         <tr class="infos">
@@ -128,7 +136,7 @@ include '../pag-professor/components/sidebar.php';
         <div class="card-indicacao" id="abrir-indicacao">
                     <div class="align-card-indicacao">
                         <h5 class="title-indicacao">Indicar Aluno</h5>
-                        <form class="" action="vagas.php">
+                        <form class="" action="index.php">
                             <label for="destinatario">Destinatario</label>
                             <input type="email" name="email-professor" id="">
                             <br>

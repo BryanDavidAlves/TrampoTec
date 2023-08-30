@@ -20,6 +20,9 @@
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
+.sistema-busca form .align-form-filtro select {
+  width: 20%;
+}
 main {
   display: flex;
   align-items: center;

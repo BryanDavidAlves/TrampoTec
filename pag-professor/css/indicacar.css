@@ -20,10 +20,11 @@ main .img-cima {
   height: 100px;
 }
 .img-baixo {
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
-  width: 15%;
+  width: 20%;
+  z-index: -5;
 }
 .img-baixo img {
   width: 100%;
@@ -218,8 +219,8 @@ tr:nth-last-child(1) {
   height: 450px;
   width: 490px;
   background-color: white;
-  margin-left: 50px;
-  margin-top: 250px;
+  margin-left: 190px;
+  margin-top: 110px;
 }
 .card-indicacao .align-card-indicacao form {
   display: flex;

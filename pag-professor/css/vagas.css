@@ -20,6 +20,9 @@
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
+.sistema-busca form .align-form-filtro select {
+  width: 20%;
+}
 main {
   display: flex;
   align-items: center;
@@ -34,10 +37,11 @@ main .img-cima {
   height: 150px;
 }
 .img-baixo {
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
   width: 20%;
+  z-index: -5;
 }
 .img-baixo img {
   width: 100%;
@@ -125,69 +129,14 @@ main .img-cima img {
   width: 90px;
 }
 
-.lista-vagas {
+.icons {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  margin-left: 24%;
-  width: auto;
-  background-color: white;
-  margin-top: 2%;
-  gap: 50px;
+  font-size: 1.3rem;
+  gap: 10px;
 }
-.lista-vagas .tabela {
-  display: flex;
-  gap: 40px;
-  align-items: start;
-  justify-content: start;
-
-  margin-left: 0%;
-}
-.lista-vagas table {
-  display: flex;
-}
-.lista-vagas table thead tr {
-  display: flex;
-}
-.lista-vagas table th {
-  display: flex;
-  font-weight: 500;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-}
-.lista-vagas table td {
-  flex-direction: column;
-  display: flex;
-  margin-top: 20px;
-  color: gray;
-  font-weight: 400;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: start;
-  justify-content: start;
-}
-.lista-vagas .icons {
-  display: flex;
-  margin-top: 0px;
-  flex-direction: column;
-  gap: 15px;
-}
-.lista-vagas .icons i {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.linha {
-  border: 1px solid gray;
-  width: auto;
-  margin-top: 10px;
-
-  margin-left: 24%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .card-indicacao {
   display: none;
   z-index: 5;
