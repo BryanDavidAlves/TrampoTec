@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 <?php
 require_once "./back-end/login/validador_acesso.php";
 ?>
 
 
 <!DOCTYPE html>
-=======
 
->>>>>>> 015a1928ba94bfbb28551e372635bc1d58d0a909
 <html lang="en">
 
 <head>
