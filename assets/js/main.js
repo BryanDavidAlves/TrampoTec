@@ -140,3 +140,41 @@ function validateConfirmPassword(password, confirmPassword) {
 
     return false;
 }
+
+function validarEmail() {
+    var email = document.getElementById("email").value;
+    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    if (regex.test(email)) {
+        alert("Email válido!");
+    } else {
+        alert("Email inválido!");
+    }
+}
+
+$(function(){
+    $('.send-validation-email').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+            title: 'Aguarde...'
+        });
+        Swal.showLoading();
+
+        $.ajax({
+            url: this.action,
+            type: 'POST',
+            data: new FormData(this),
+            contentType: false,
+            processData: false,
+            success: function(retorno){
+                retorno = JSON.parse(retorno);
+                console.log(retorno.icon)
+                Swal.fire({
+                    icon: retorno.icon,
+                    title: retorno.title,
+                    text: retorno.text,
+                });
+            }
+        });
+    });
+})

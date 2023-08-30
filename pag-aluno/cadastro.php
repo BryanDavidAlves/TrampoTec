@@ -75,7 +75,7 @@ include('../dao/conexao.php');
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Email</small></label>
-                                        <input class="form-control obrigatorio" type="text" placeholder="exemplo@dominio.com" name="email">
+                                        <input class="form-control obrigatorio" <?= isset($_GET['email']) ? 'readonly' : '' ?> value="<?= $_GET['email'] ?? '' ?>" type="text" placeholder="exemplo@dominio.com" name="email">
                                         <div class="invalid-feedback">
                                             O email é obrigatório
                                         </div>
