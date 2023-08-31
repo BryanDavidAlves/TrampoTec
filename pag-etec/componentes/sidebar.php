@@ -14,7 +14,7 @@
                     <li onclick="clickmenu()"><a><i class="fa-sharp fa-solid fa-bell fa-lg"></i>Notificações</a></li>
                     <li><a href="configuracoes.php"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
                     <li> <a href="perfil.php"><i class="fa-solid fa-user"></i> Perfil</a></li>
-                    <li><a href="./pags-login-etec/login.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>
+                    <li><a href="back-end/login/logout.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>
                 </div>
             </div>
         </ul>
