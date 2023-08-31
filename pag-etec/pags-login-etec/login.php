@@ -34,14 +34,23 @@
                         </div>
                     </div>
                     <?php
-                    if(isset($_GET['login']) && $_GET['login'] == "senhaInvalida"){
-                            ?>
-                            <div class="text-danger">
-                                Usuario ou senha Inválidos
-                            </div> 
-                            <?php  
-                            }
-                            ?>
+                    if (isset($_GET['login']) && $_GET['login'] == "senhaInvalida") {
+                        ?>
+                        <div class="text-danger">
+                            Usuario ou senha Inválidos
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "naoaprovado") {
+                        ?>
+                        <div class="text-danger">
+                            Cadastro Pendente
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <input class="botao" type="submit" value="Entrar">
                     <div class="remember">
                         <div>

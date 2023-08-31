@@ -8,7 +8,7 @@ $querySelect = "SELECT * FROM tb_etec WHERE email = '$email_etec' and senha = '$
 $resultado = $conexao->query($querySelect);
 $etec = $resultado->fetchAll();
 $n = count($etec);
-$valor = $etec[11];
+
 
 if ($n == 1) {
 
@@ -19,6 +19,13 @@ if ($n == 1) {
 
        /* $_SESSION['imgUser'] = $empresa[0]['imgUser'];*/
         $_SESSION['autenticado'] = 'SIM';
+        $aprovado = $etec[0]['aprovado'];
+    if ($aprovado == 1) {
+        $_SESSION['aprovado'] = 'SIM';
+    }
+    else{
+        $_SESSION['aprovado'] = 'não';
+    }
         header('Location: ../../index.php');
     } 
 else {
