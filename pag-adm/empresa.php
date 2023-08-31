@@ -15,7 +15,7 @@ if ($_GET['aprovado'] == '1') {
     $query = $conexao->query($querySelect);
 
     $resultado = $query->fetchAll();
-} 
+}
 
 ?>
 
@@ -97,66 +97,62 @@ if ($_GET['aprovado'] == '1') {
                 </div>
         </div>
 
-        <section class="empresa">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>EMAIL</th>
-                        <th>CNPJ</th>
-                        <th>CEP</th>
-                        <th>LOGRADOURO</th>
-                        <th>NÚMERO</th>
-                        <th>BAIRRO</th>
-                        <th>ESTADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($resultado as $resultado) { ?>
-                        <tr class="infos">
-                            <td class="table-id">
-                                <?= $resultado[0] ?>
-                            </td>
-                            <td class="table-nome-empresa">
-                                <?= $resultado[3] ?>
-                            </td>
-                            <td class="table-email-empresa">
-                                <?= $resultado[1] ?>
-                            </td>
-                            <td class="table-cnpj">
-                                <?= $resultado[4] ?>
-                            </td>
-                            <td class="table-cep">
-                                <?= $resultado[5] ?>
-                            </td>
-                            <td class="table-log">
-                                <?= $resultado[6] ?>
-                            </td>
-                            <td class="table-numero">
-                                <?= $resultado[7] ?>
-                            </td>
-                            <td class="table-bairro">
-                                <?= $resultado[8] ?>
-                            </td>
-                            <td class="table-estado">
-                                <?= $resultado[9] ?>
-                            </td>
-                            <td class="icone-table">
-                                <?php if ($resultado[11] == 0) { ?>
-                                    <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?= $resultado[0] ?>">Aceitar</a>
-                                
-                                <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
-                                <?php } ?>
-                                <?php if ($resultado[11] == 1) { ?>
-                                <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                <div class="scrollable-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>EMAIL</th>
+                                <th>CNPJ</th>
+                                <th>CEP</th>
+                                <th>NÚMERO</th>
+                                <th>ESTADO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($resultado as $resultado) { ?>
+                                <tr class="infos">
+                                    <td class="table-id">
+                                        <?= $resultado[0] ?>
+                                    </td>
+                                    <td class="table-nome-empresa">
+                                        <?= $resultado[3] ?>
+                                    </td>
+                                    <td class="table-email-empresa">
+                                        <?= $resultado[1] ?>
+                                    </td>
+                                    <td class="table-cnpj">
+                                        <?= $resultado[4] ?>
+                                    </td>
+                                    <td class="table-cep">
+                                        <?= $resultado[5] ?>
+                                    </td>
+                                    <td class="table-numero">
+                                        <?= $resultado[7] ?>
+                                    </td>
+                                    <td class="table-estado">
+                                        <?= $resultado[9] ?>
+                                    </td>
+                                    <td class="icone-table">
+                                        <?php if ($resultado[11] == 0) { ?>
+                                            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?= $resultado[0] ?>"><i
+                                                    class="fa-solid fa-check" style="color: #ff0000;"></i></a>
+
+                                            <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                        <?php } ?>
+                                        <?php if ($resultado[11] == 1) { ?>
+                                            <a
+                                                href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
 
         </section>
     </main>

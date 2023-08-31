@@ -30,8 +30,8 @@
                     <input type="text" name="pesquisa" id="pesquisa" placeholder="">
                 </div>
 
-                <div class="align-filtro">
-                    <div class="filtro" onclick="abrirFiltro()">
+                <div onclick="abrirFiltro()" class="align-filtro">
+                    <div class="filtro" >
                         <span class="material-symbols-outlined">
                             tune
                         </span>
@@ -81,7 +81,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">vanessa</td>
                         <td class="table-email-professor">vanessa@etec.sp.gov.br</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
+                        <td class="table-telefone">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -90,7 +90,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">Cysco Systen</td>
                         <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
+                        <td class="table-telefone">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
@@ -99,7 +99,7 @@
                         <td class="table-id">1</td>
                         <td class="table-nome-professor">Cysco Systen</td>
                         <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
+                        <td class="table-telefone">(11) 97526-6689</td>
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
