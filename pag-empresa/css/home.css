@@ -48,7 +48,7 @@ body{
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 90%;
+    width: 100%;
     border: none;
     border-radius: 5px;
     margin-top: 5%;
@@ -99,7 +99,7 @@ body{
   
   .sistema-busca .align-filtro {
     display: flex;
-    width: 80%;
+    width: 100%;
     align-items: center;
     justify-content: end;
   }
@@ -169,7 +169,7 @@ body{
   table {
     background-color: rgb(247, 247, 247);
     border-radius: 20px;
-    width: 90%;
+    width: 100%;
     z-index: 2;
   }
   

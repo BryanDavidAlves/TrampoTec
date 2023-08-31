@@ -67,17 +67,10 @@ require_once "./beck-end/login/validador_acesso.php";
                 <div class="modal-filtro" id="abrir-filtro">
                     <form action="">
                         <div class="align-form-filtro">
-                            <label for="">Periodo</label>
+                            <label for="">Data</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                        <div class="align-form-filtro">
-                            <label for="">Horario</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <div class="align-form-filtro">
-                            <label for="">Curso</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
+                      
                         <div class="align-form-filtro">
                             <label for="">Area</label>
                             <input type="checkbox" name="" id="">
@@ -111,9 +104,11 @@ require_once "./beck-end/login/validador_acesso.php";
                         <td class="table-email-candidato">Desenvolvimento de sistemas</td>
                         <td class="table-cnpj">30/03 20:00 horas</td>
                         <td class="table-cnpj">ByranZika123@gmail.com</td>
-                        <td class="table-cnpj">
+                        <td class="icone-table">
+                        <div class="icons">
                             <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                             <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                        </div>
                         </td>
                     </tr>
 
@@ -122,9 +117,11 @@ require_once "./beck-end/login/validador_acesso.php";
                         <td class="table-email-candidato">Desenvolvimento de sistemas</td>
                         <td class="table-cnpj">30/03 20:00 horas</td>
                         <td class="table-cnpj">ByranZika123@gmail.com</td>
-                        <td class="table-cnpj">
+                        <td class="icone-table">
+                        <div class="icons">
                             <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                             <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                        </div>
                         </td>
                     </tr>
 
@@ -133,13 +130,13 @@ require_once "./beck-end/login/validador_acesso.php";
                         <td class="table-email-candidato">Desenvolvimento de sistemas</td>
                         <td class="table-cnpj">30/03 20:00 horas</td>
                         <td class="table-cnpj">ByranZika123@gmail.com</td>
-                        <td class="table-cnpj">
+                        <td class="icone-table">
+                        <div class="icons">
                             <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                             <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                        </div>
                         </td>
                     </tr>
-
-
                     
                 </tbody>
 

@@ -48,18 +48,12 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="">Periodo</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                        <div class="align-form-filtro">
-                            <label for="">Horario</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
+      
                         <div class="align-form-filtro">
                             <label for="">Curso</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                        <div class="align-form-filtro">
-                            <label for="">Area</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
+                  
                         <input type="submit" value="Aplicar" class="button-filtro">
 
                     </form>

@@ -55,18 +55,7 @@ require_once "./beck-end/login/validador_acesso.php";
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-corpo">
-                    <div class="card-itens">
-                        <p class="informacao"> Seguidores</p>
-                        <p class="numero"> 20</p>
-
-                    </div>
-                    <div class="icon-home">
-                       <i class="fa-regular fa-user"></i>
-                    </div>
-                </div>
-            </div>
+    
 
     
 

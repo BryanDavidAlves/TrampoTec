@@ -98,7 +98,6 @@ if ($_GET['aprovado'] == '1') {
         </div>
 
 
-                <div class="scrollable-table">
                     <table>
                         <thead>
                             <tr>
@@ -153,6 +152,7 @@ if ($_GET['aprovado'] == '1') {
                             <?php } ?>
                         </tbody>
                     </table>
+
 
         </section>
     </main>
