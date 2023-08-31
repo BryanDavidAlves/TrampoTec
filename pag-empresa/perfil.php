@@ -16,6 +16,7 @@ require_once "./beck-end/login/validador_acesso.php";
 <?php include ('../pag-empresa/componentes/sidebar.php')?>
 <?php include ('../pag-empresa/componentes/email.php')?>
 <?php include ('../pag-empresa/componentes/notificacao.php')?>
+<img class="baixo" src="./img/fundo1.png" alt="">
 <main class="main">
 
     <div class="componentes-perfil">

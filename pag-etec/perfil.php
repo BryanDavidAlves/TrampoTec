@@ -1,5 +1,8 @@
+<?php
+require_once "./back-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +14,7 @@
 <body>
     <?php include('../pag-etec/componentes/sidebar.php') ?>
     <?php include ('../pag-etec/componentes/notificacao.php')?>
-   <main>
+    
     <section class="parte-pequisa">
     <span class="titulo-perfil">Perfil</span>
 
@@ -46,7 +49,7 @@
             <h4 class="nome-usuario">Guaianazes - São Paulo</h4>
     </div>
     </section>
-    </main> 
+
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>    
     <script src="./js/etec.js"></script>
 </body>

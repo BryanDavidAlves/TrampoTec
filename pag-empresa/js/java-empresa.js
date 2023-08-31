@@ -1,21 +1,4 @@
-function abrirmodal(){
-            
-    var modal=  document.getElementById('abrir-aluno')
 
-    if (modal.style.display == 'none'){
-
-         modal.style.display = 'block'
-
-    }else if (modal.style.display == 'block'){
-
-        modal.style.display='none'
-        
-    }
-     else{
-        modal.style.display = 'block'           
-    }
-
-}
 
 function modalseta(){
     
@@ -48,24 +31,7 @@ if (modalseta.style.display == 'none'){
 }
 
 
-function modalalterar(){
-    
-var modalalterar=  document.getElementById('abrirvaga')
 
-if (modalalterar.style.display == 'none'){
-
- modalalterar.style.display = 'block'
-
-}else if (modalalterar.style.display == 'block'){
-
-modalalterar.style.display='none'
-
-}
-else{
-modalalterar.style.display = 'block'           
-}
-
-}
 
 function modalcandidatoremarcar(){
     
@@ -133,3 +99,27 @@ function clickmenu(){
         }
 
 
+        var filtro = document.getElementById('abrir-filtro')
+        function abrirFiltro(){
+           if(filtro.style.display == "none"){
+            filtro.style.display="block"
+            filtro.style.transform="translateY(25px)"
+            filtro.style.transitionDuration='5s'
+        }
+        else if(filtro.style.display="block"){
+        filtro.style.display="none"
+    }
+    else{
+        filtro.style.display="block"
+    }
+}
+
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
+            var indicar = document.getElementById('abrir-indicacao')
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+        

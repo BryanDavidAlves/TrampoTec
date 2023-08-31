@@ -23,7 +23,7 @@ include('../../dao/conexao.php');
         <div class="row">
             <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
                 <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno">
-                <img width="80%" src="../../assets/img/empresa.png">
+                <img width="80%" src="../fotosEmpresa/perfil/empresa.png">
             </div>
             <div class="col-12 col-md-6">
                 <div class="row">
@@ -126,7 +126,8 @@ include('../../dao/conexao.php');
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
-                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*">
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*" enctype="multipart/form-data">
+                                        <input type="hidden" id="foto_usuario" name="foto_usuario" >
                                         <div class="invalid-feedback">
                                             Selecione uma imagem
                                         </div>

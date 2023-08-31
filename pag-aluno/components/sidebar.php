@@ -16,7 +16,7 @@
             <li><a href="contato.php"><i class="fa-solid fa-headset" style="color: #ffffff;"></i> Fale Conosco</a></li>
         </ul>
         <div class="end">
-            <span><a href="login.php"><i id="first"class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>Sair</a></span>
+            <span><a href="back-end/login/logout.php"><i id="first"class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>Sair</a></span>
             <a href="#"><i id="config" class="fa-solid fa-gear" style="color: #ffffff;"></i></a>
         </div>
     </nav>

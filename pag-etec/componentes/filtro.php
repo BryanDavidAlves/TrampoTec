@@ -1,6 +1,6 @@
 <div class="rightnav">
     <div class="itens"> <span> <i class="icon-notificacao fa-solid fa-sliders"></i> FILTRAR POR </span> </div>
-    <div class="itens"><a href=""> NOME DO CURSO </a>
+    <div class="itens"><a href=""> NOM DO CURSO </a>
         <select>
             <option value=""></option>
             <option value="">valor 1</option>

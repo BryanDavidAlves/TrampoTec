@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
+
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel='stylesheet' href='../assets/css/style.css'>
+     <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
+
     <title>TrampoTec - Cadastro Professor</title>
 </head>
 
@@ -15,7 +17,7 @@
     <img class="cima" src="img/imagemfundocima.png">
 
     <img class="baixo" src="img/imagemfundobaixo.png">
-
+<div class="align-card-cadastro">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
@@ -31,9 +33,9 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="../beck-end/cadastro/salvarCadastro.php">
+                        <form id="form-cadastro" enctype="multipart/form-data" method="post" action="./back-end/cadastro/salvarCadastro.php">
                             <div class="row">
-                              
+
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Nome Completo</small></label>
@@ -63,59 +65,9 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Telefone</small></label>
-                                        <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" name="telefone">
-                                        <div class="invalid-feedback">
-                                            O telefone é obrigatório
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>CEP</small></label>
-                                        <input class="form-control cep obrigatorio" type="numeric" placeholder="00000-000" name="cep">
-                                        <div class="invalid-feedback">
-                                            Informe um CEP válido
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Logradouro</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="logradouro" name="logradouro">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Bairro</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="bairro" name="bairro">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Cidade</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="cidade" name="cidade">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Estado</small></label>
-                                        <input class="address-search form-control" readonly type="text" placeholder="Informe o CEP" id="estado" name="estado">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Número</small></label>
-                                        <input class="form-control obrigatorio" type="text" placeholder="Número" id="numero" name="numero">
-                                        <div class="invalid-feedback">
-                                            O número é obrigatório
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Selecione uma imagem</small></label>
-                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*">
+                                        <input class="form-control obrigatorio" type="file" id="foto" name="foto" accept="image/*"  enctype="multipart/form-data">
+                                        <input type="hidden" id="foto_usuario" name="foto_usuario" >
                                         <div class="invalid-feedback">
                                             Selecione uma imagem
                                         </div>
@@ -133,6 +85,7 @@
             </div>
         </div>
     </div>
+</div>
 <script src="../assets/js/jquery-3.7.1.js"></script>
 <script src="../assets/js/jquery.mask.min.js"></script>
 <script src="../assets/js/my-mask.js"></script>
@@ -152,7 +105,7 @@
                     if(address.erro){
                         $('.cep').removeClass('is-valid');
                         $('.cep').addClass('is-invalid');
-                    }else{  
+                    }else{
                         $('.cep').removeClass('is-invalid');
                         $('.cep').addClass('is-valid');
                         $('#logradouro').val(address.logradouro);

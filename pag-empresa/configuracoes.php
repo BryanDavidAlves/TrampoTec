@@ -16,7 +16,8 @@ require_once "./beck-end/login/validador_acesso.php";
 <?php include ('../pag-empresa/componentes/sidebar.php')?>
 <?php include ('../pag-empresa/componentes/email.php')?>
 <?php include ('../pag-empresa/componentes/notificacao.php')?>
-
+<img class="cima" src="./img/fundo2.png" alt="">
+    <img class="baixo" src="./img/fundo1.png" alt="">
 
 <main class="main">
 <div class="container-icon">
@@ -71,18 +72,7 @@ require_once "./beck-end/login/validador_acesso.php";
                 </div>
 </a> 
 
-<a class="card" href="privacidade.php">
-            <div class="card-corpo">
-                <div class="card-itens">
-                <i class="icon-config fa-solid fa-lock"></i>
-                        <p class="nome-config"> Privacidade</p>
-                 
-                </div>
-            </div>  
-                <div class="tres-pontinhos">
-                <i class="fa-solid fa-angle-right"></i>
-                </div>
-</a> 
+    
 
 </section>
 

@@ -18,11 +18,13 @@ require_once "./beck-end/login/validador_acesso.php";
 <?php include ('../pag-empresa/componentes/email.php')?>
 <?php include ('../pag-empresa/componentes/notificacao.php')?>
 
+<img class="cima" src="./img/fundo2.png" alt="">
+    <img class="baixo" src="./img/fundo1.png" alt="">
 
 <main class="main">
 
 <span class="container-icon">
-     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> <span> Conta</span> 
+     <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> Conta
 </span>
 
 
