@@ -21,4 +21,11 @@ body{
 .form-control:read-only{
     background: #e9e9e9!important;
 }
-
+.align-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+}
