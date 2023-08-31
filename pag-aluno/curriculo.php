@@ -43,19 +43,19 @@
 
                         <div class="one-bar">
                             <h3>NOME:</h3>
-                            <h4>Bryan Lindo da Silva</h4>
+                            <h4>Bryan David Salvino Alves</h4>
                         </div>
 
                         <div class="one-bar">
                             <h3>EMAIL:</h3>
-                            <h4>bryanlindo@gmail.com</h4>
+                            <h4>bryan.alves5@etec.sp.gov.br</h4>
                         </div>
 
                         <div class="two-bars">
 
                             <div class="bar">
                                 <h3>CEP:</h3>
-                                <h4>308900-410</h4>
+                                <h4>08470-610</h4>
                             </div>
 
                             <div class="bar">
@@ -78,7 +78,7 @@
 
                             <div class="bar">
                                 <h3>SEMESTRE:</h3>
-                                <h4>18 meses</h4>
+                                <h4>3</h4>
                             </div>
                             <div class="bar">
                                 <h3>DURAÇÃO:</h3>
@@ -91,12 +91,12 @@
 
                             <div class="bar">
                                 <h3>PERIODO:</h3>
-                                <h4>18 meses</h4>
+                                <h4>Tarde</h4>
                             </div>
 
                             <div class="bar">
                                 <h3>CONCLUSÃO:</h3>
-                                <h4>Vespertino</h4>
+                                <h4>Dezembro</h4>
                             </div>
 
                         </div>
