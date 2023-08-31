@@ -20,7 +20,7 @@
 
                 <form action="back-end/login/valida_login.php" method="post">
                     <div class="item-form">
-                        <label for="nome-professor">Email</label>
+                        <label for="nome-professor">EMAIL</label>
                         <div class="div-input">
                             <input type="email" name="email-professor" id="email-professor">
                         </div>
@@ -34,14 +34,14 @@
                         </div>
                     </div>
                     <?php
-                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
-                        ?>
+if (isset($_GET['login']) && $_GET['login'] == "erro") {
+    ?>
                         <div class="text-danger">
                             Usuario ou senha Inválidos
                         </div>
                     <?php
-                    }
-                    ?>
+}
+?>
                     <input class="botao" type="submit" value="Entrar">
                     <div class="remember">
                         <div>

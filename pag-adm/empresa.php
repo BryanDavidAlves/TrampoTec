@@ -1,5 +1,5 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 
 //passando todos os itens do post para as sua variaveis
@@ -41,8 +41,8 @@ if ($_GET['aprovado'] == '1') {
 
 <body>
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
@@ -111,45 +111,45 @@ if ($_GET['aprovado'] == '1') {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($resultado as $resultado) { ?>
+                            <?php foreach ($resultado as $resultado) {?>
                                 <tr class="infos">
                                     <td class="table-id">
-                                        <?= $resultado[0] ?>
+                                        <?=$resultado[0]?>
                                     </td>
                                     <td class="table-nome-empresa">
-                                        <?= $resultado[3] ?>
+                                        <?=$resultado[3]?>
                                     </td>
                                     <td class="table-email-empresa">
-                                        <?= $resultado[1] ?>
+                                        <?=$resultado[1]?>
                                     </td>
                                     <td class="table-cnpj">
-                                        <?= $resultado[4] ?>
+                                        <?=$resultado[4]?>
                                     </td>
                                     <td class="table-cep">
-                                        <?= $resultado[5] ?>
+                                        <?=$resultado[5]?>
                                     </td>
                                     <td class="table-numero">
-                                        <?= $resultado[7] ?>
+                                        <?=$resultado[7]?>
                                     </td>
                                     <td class="table-estado">
-                                        <?= $resultado[9] ?>
+                                        <?=$resultado[9]?>
                                     </td>
                                     <td class="icone-table">
-                                        <?php if ($resultado[11] == 0) { ?>
-                                            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?= $resultado[0] ?>"><i
+                                        <?php if ($resultado[11] == 0) {?>
+                                            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?=$resultado[0]?>"><i
                                                     class="fa-solid fa-check" style="color: #ff0000;"></i></a>
 
-                                            <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                            <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?=$resultado[0]?>"><i
                                                     class="fa-solid fa-x" style="color: #000000;"></i></a>
-                                        <?php } ?>
-                                        <?php if ($resultado[11] == 1) { ?>
+                                        <?php }?>
+                                        <?php if ($resultado[11] == 1) {?>
                                             <a
-                                                href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                                href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?=$resultado[0]?>"><i
                                                     class="fa-solid fa-x" style="color: #000000;"></i></a>
-                                        <?php } ?>
+                                        <?php }?>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php }?>
                         </tbody>
                     </table>
 
