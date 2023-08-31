@@ -50,7 +50,7 @@
                         </div>
                         <a href="relembrar-senha.php">Esqueceu a Senha?</a>
                     </div>
-                    <a href="cadastro.php" style="margin-left:18%;color:red;">NAO TENHO CADASTRO</a>
+                    <a href="envia-link.php" style="margin-left:18%;color:red;">NAO TENHO CADASTRO</a>
                 </form>
             </div>
         </section>
