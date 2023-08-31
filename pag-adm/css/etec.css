@@ -154,6 +154,7 @@ main {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -193,7 +194,7 @@ table {
 }
 
 table td {
-    padding: 30px 10px 40px 10px;
+    padding: 20px 5px 30px 5px;
     text-align: center;
     color: rgb(94, 94, 94);
 
@@ -229,4 +230,8 @@ tr:nth-last-child(1) {
     right: 0;
     z-index: 0;
     width: 16%;
+}
+.btn-side a{
+    color: red;
+    text-decoration: none;
 }
