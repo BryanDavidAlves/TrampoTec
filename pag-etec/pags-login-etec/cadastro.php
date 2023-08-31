@@ -638,14 +638,14 @@
                     <div class="item-form">
                         <label for="email-etec">EMAIL </label>
                         <div class="div-input">
-                            <input type="email" name="email-etec" id="email-etec">
+                            <input type="email" name="email-etec" id="email-etec" required>
                         </div>
                   
 
                     <div class="item-form">
                         <label for="senha-etec">SENHA</label>
                         <div class="div-input">
-                            <input type="password" name="senha-etec" id="senha-etec">
+                            <input maxlength="8" type="password" name="senha-etec" id="senha-etec" required>
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
@@ -654,7 +654,7 @@
                     <div class="item-form">
                         <label for="telefone">TELEFONE</label>
                         <div class="div-input">
-                            <input type="number" placeholder="(11) 9 5828-1911" name="telefone">
+                            <input maxlength="11" type="numeric" placeholder="(11) 9 5828-1911" name="telefone" required>
                         </div>
                     </div>
                     <input class="botao" type="submit" value="Cadastrar">
