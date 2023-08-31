@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
-    <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
+
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel='stylesheet' href='../assets/css/style.css'>
+     <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
+
     <title>TrampoTec - Cadastro Professor</title>
 </head>
 
@@ -15,7 +17,7 @@
     <img class="cima" src="img/imagemfundocima.png">
 
     <img class="baixo" src="img/imagemfundobaixo.png">
-
+<div class="align-card-cadastro">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
@@ -33,7 +35,7 @@
                     <div class="col-12">
                         <form id="form-cadastro" enctype="multipart/form-data" method="post" action="./back-end/cadastro/salvarCadastro.php">
                             <div class="row">
-                              
+
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Nome Completo</small></label>
@@ -83,6 +85,7 @@
             </div>
         </div>
     </div>
+</div>
 <script src="../assets/js/jquery-3.7.1.js"></script>
 <script src="../assets/js/jquery.mask.min.js"></script>
 <script src="../assets/js/my-mask.js"></script>
@@ -102,7 +105,7 @@
                     if(address.erro){
                         $('.cep').removeClass('is-valid');
                         $('.cep').addClass('is-invalid');
-                    }else{  
+                    }else{
                         $('.cep').removeClass('is-invalid');
                         $('.cep').addClass('is-valid');
                         $('#logradouro').val(address.logradouro);
