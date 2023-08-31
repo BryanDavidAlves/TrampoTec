@@ -174,6 +174,7 @@ main .img-cima img {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -220,12 +221,16 @@ table td {
 }
 
 .table-nome-professor {
-    width: 100px;
+    word-break: break-all ;
+    width: 150px;
 }
 
 .table-email-professor {
-    word-break: break-all;
-    width: 200px;
+    word-break: break-all ;
+    width: 300px;
+}
+.table-telefone{
+    width: 150px;
 }
 
 tr:nth-last-child(1) {

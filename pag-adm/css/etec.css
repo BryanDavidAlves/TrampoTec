@@ -154,6 +154,7 @@ main {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {

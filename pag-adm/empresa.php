@@ -15,7 +15,7 @@ if ($_GET['aprovado'] == '1') {
     $query = $conexao->query($querySelect);
 
     $resultado = $query->fetchAll();
-} 
+}
 
 ?>
 
@@ -145,12 +145,15 @@ if ($_GET['aprovado'] == '1') {
                             </td>
                             <td class="icone-table">
                                 <?php if ($resultado[11] == 0) { ?>
-                                    <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?= $resultado[0] ?>">Aceitar</a>
-                                
-                                <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
+                                    <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?= $resultado[0] ?>"><i
+                                            class="fa-solid fa-check" style="color: #ff0000;"></i></a>
+
+                                    <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
                                 <?php } ?>
                                 <?php if ($resultado[11] == 1) { ?>
-                                <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
+                                    <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?= $resultado[0] ?>"><i
+                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
                                 <?php } ?>
                             </td>
                         </tr>
