@@ -1,12 +1,30 @@
 body{
-  background-color:#ffffff; 
+
   font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-  margin-left:200px; /* Same as the width of the sidenav */
-  margin-right:0px;
+  margin-left:20%; /
+
 } 
+
+
+.cima{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -5;
+  width: 18%;
+}
+
+.baixo{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -5;
+  width: 16%;
+}
+
 
 .container-icon{
 display: flex;
@@ -15,10 +33,11 @@ align-items: center;
 justify-content: space-evenly;
 width: 200px;
 height: 80px;
+font-size: 25px;
 }
 
 .icon-add{
-color: rgb(69, 69, 208);
+color: rgb(255, 0, 0);
 display: flex;
 font-size: 45px;
 }
@@ -26,10 +45,6 @@ font-size: 45px;
 .link-add {
   text-decoration: none;
   color: rgb(0, 0, 0);
- }
-
-.link-add span {
-  font-size: 20px; 
  }
 
 

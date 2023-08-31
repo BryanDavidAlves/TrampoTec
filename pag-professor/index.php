@@ -97,7 +97,22 @@ include '../pag-professor/components/sidebar.php';
             <div class="icons">
                     <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                    <dialog id="abrir-indicacao"> 
 
+<div class="align-card-indicacao">
+    <h5 class="title-indicacao">Indicar Aluno</h5>
+    <form class="" action="vagas.php">
+        <label for="destinatario">Destinatario</label>
+        <input type="email" name="email-professor" id="">
+        <br>
+        <label for="mensagem">Mensagem</label>
+        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Enviar" class="botao-indicacao">
+    </form>
+</div>
+
+</dialog>
                 </div>
             </td>
         </tr>

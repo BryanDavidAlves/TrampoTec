@@ -4,18 +4,7 @@
         </div>
     <nav>
         <ul>
-            <li>        
-                <div class="card-email">
-                    <div class="card-corpo-email">
-                        <div class="imagens-email">
-                            <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
-                        </div>
-                        <div class="card-itens-email">
-                            <p class="email-notificacao"> bryan david comecou a te seguir</p>
-                        </div>
-                    </div>       
-                </div>
-            </li>
+ 
     
             <li>
             <div class="card-email">

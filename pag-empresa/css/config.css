@@ -4,9 +4,25 @@ body{
 }
 
 main {
-  margin-left:200px; /* Same as the width of the sidenav */
+  margin-left:20%; /* Same as the width of the sidenav */
   overflow:hidden;
 } 
+
+.cima{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -5;
+  width: 18%;
+}
+
+.baixo{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -5;
+  width: 16%;
+}
 
 .container-icon{
 display: flex;
@@ -18,7 +34,7 @@ height: 80px;
 }
 
 .icon-add{
-color: rgb(69, 69, 208);
+color: rgb(255, 0, 0);
 display: flex;
 font-size: 45px;
 }
@@ -31,7 +47,7 @@ align-items: center;
 
 .card{
 text-decoration: none;
-width:40%;
+width:45%;
 height: 80px;
 display: flex;
 justify-content:space-between;

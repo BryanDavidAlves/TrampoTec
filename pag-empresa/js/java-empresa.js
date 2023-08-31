@@ -113,3 +113,13 @@ function clickmenu(){
         filtro.style.display="block"
     }
 }
+
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
+            var indicar = document.getElementById('abrir-indicacao')
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+        
