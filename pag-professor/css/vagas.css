@@ -140,16 +140,7 @@ main .img-cima img {
   font-size: 1.3rem;
   gap: 10px;
 }
-.card-indicacao {
-  display: flex;
-  z-index: 5;
-  position: fixed;
-  height: 100%;
-  width: 800px;
-  justify-content: center;
 
-  margin-top: -120px;
-}
 .title-indicacao {
   text-align: center;
   font-size: 1.2rem;

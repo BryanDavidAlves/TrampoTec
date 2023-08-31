@@ -2,12 +2,24 @@ body {
   background-color: #1d2357;
   font-family: Arial, Helvetica, sans-serif;
 }
+.align-card-cadastro {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .cima {
   position: fixed;
   top: 0;
   right: 0;
   width: 25%;
+}
+.container {
+  position: absolute;
 }
 
 .baixo {
@@ -16,7 +28,6 @@ body {
   bottom: 0;
   width: 25%;
 }
-
 
 .cards-meio {
   display: flex;
@@ -42,7 +53,6 @@ body {
   width: 2px;
   background-color: rgb(138, 138, 138);
 }
-
 
 .card-itens {
   display: flex;
@@ -74,7 +84,6 @@ body {
   justify-content: center;
 }
 
-
 .titulo-um {
   font-size: 25px;
   font-weight: bold;
@@ -96,7 +105,6 @@ body {
   font-size: 15px;
   margin-bottom: 10px;
   text-decoration: solid;
-
 }
 
 .barra-agendar input {
@@ -105,7 +113,6 @@ body {
   height: 30px;
   border: 1px solid rgb(3, 3, 70);
   margin-bottom: 10px;
-
 }
 
 .barra-agendar select {
@@ -116,7 +123,6 @@ body {
   margin-bottom: 10px;
   padding: 2px;
 }
-
 
 select {
   width: 100px;
@@ -145,13 +151,10 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
-
 
 .textos-cards {
   margin-bottom: 10px;
-
 }
 
 .barra-file input[type="file"] {
@@ -168,8 +171,6 @@ label {
   cursor: pointer;
 }
 
-
-
 .login {
   display: flex;
   justify-content: center;
@@ -177,7 +178,6 @@ label {
   align-items: center;
   height: 100%;
   position: fixed;
-
 }
 
 .box-formulario {
@@ -189,7 +189,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 15px 15px 0px #00000091
+  box-shadow: 0px 15px 15px 0px #00000091;
 }
 
 .title-login {
@@ -207,7 +207,6 @@ h1 {
   font-weight: 800;
   color: #43337c;
 }
-
 
 .link-login {
   display: block;
@@ -286,14 +285,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .login .box-formulario .align-file .input-file {
   display: none;
-
-
 }
 
 .align-file .label-file {
@@ -305,7 +300,6 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   width: 250px;
 }
-
 
 .alinha-itens {
   display: flex;
@@ -319,7 +313,6 @@ a {
   align-items: center;
   justify-content: center;
   gap: 20px;
-
 }
 
 .titulo-geral-login {

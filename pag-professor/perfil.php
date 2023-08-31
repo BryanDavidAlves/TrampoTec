@@ -40,7 +40,7 @@ include '../pag-professor/components/sidebar.php';
 
           <form class="" action="perfil.php">
               <label for="destinatario">DISCIPLINA</label>
-              <input type="email" name="disciplina-etec" id="">
+              <input type="text" name="disciplina-etec" id="">
               <br>
               <label for="mensagem">CODIGO-ETEC</label>
               <input type="text" name="codigo-etec" id="">
