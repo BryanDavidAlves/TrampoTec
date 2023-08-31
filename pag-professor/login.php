@@ -18,7 +18,7 @@
             <div class="box-formulario">
                 <h1 class="title-login">Login Professor</h1>
 
-                <form action="./back-end/login/valida_login.php">
+                <form action="back-end/login/valida_login.php" method="post">
                     <div class="item-form">
                         <label for="nome-professor">Email</label>
                         <div class="div-input">

@@ -55,6 +55,15 @@
                                         
                             <div class="link-senha">
                             <?php 
+                            if(isset($_GET['login']) && $_GET['login'] == "naoaprovado"){
+                            ?>
+                            <div class="text-danger">
+                                Cadastro Pendente
+                            </div> 
+                            <?php  
+                            }
+                            ?>
+                            <?php 
                             if(isset($_GET['login']) && $_GET['login'] == "erro"){
                             ?>
                             <div class="text-danger">

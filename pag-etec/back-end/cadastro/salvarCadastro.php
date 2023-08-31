@@ -8,6 +8,7 @@ if ($_POST) {
     $senha = trim($_POST['senha-etec']);
     $municipio = trim($_POST['municipio']);
     $codigo = trim($_POST['codigo']);
+    $telefone = trim($_POST['telefone']);
 
 
   
@@ -24,6 +25,15 @@ if ($_POST) {
     $query2 = $conexao->prepare($sql);
     $query2->execute();
     $id = $conexao->lastInsertId();
+
+    $sql = "INSERT INTO tb_telefone_etec ( telefoneEtec , fk_idEtec ) VALUES
+    (   '$telefone',
+        '$id'
+    )
+    ";
+
+    $query = $conexao->prepare($sql);
+    $query->execute();
     header('Location: ../../../one-page/index.html');
     exit;
 } else {
