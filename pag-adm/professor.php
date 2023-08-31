@@ -11,6 +11,7 @@ $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +42,7 @@ $resultado = $query->fetchAll();
                 </div>
 
                 <div onclick="abrirFiltro()" class="align-filtro">
-                    <div class="filtro" >
+                    <div class="filtro">
                         <span class="material-symbols-outlined">
                             tune
                         </span>
@@ -86,18 +87,25 @@ $resultado = $query->fetchAll();
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($resultado as $resultado) { ?>
-                    <tr class="infos">
+                    <?php foreach ($resultado as $resultado) { ?>
+                        <tr class="infos">
 
-                        <td class="table-id"><?=$resultado[0]?></td>
-                        <td class="table-nome-professor"><?=$resultado[1]?></td>
-                        <td class="table-email-professor"><?=$resultado[2]?></td>
-   
-                        <td class="icone-table">
-                           <a  href="back-end/crudProfessor/professor-delete.php?id=<?= $resultado[0] ?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
-                        </td>
-                    </tr>
-             <?php } ?>
+                            <td class="table-id">
+                                <?= $resultado[0] ?>
+                            </td>
+                            <td class="table-nome-professor">
+                                <?= $resultado[1] ?>
+                            </td>
+                            <td class="table-email-professor">
+                                <?= $resultado[2] ?>
+                            </td>
+
+                            <td class="icone-table">
+                                <a href="back-end/crudProfessor/professor-delete.php?id=<?= $resultado[0] ?>"> <i
+                                        class="fa-solid fa-x" style="color: #000000;"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
                 </tbody>
             </table>
