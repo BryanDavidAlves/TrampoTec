@@ -73,18 +73,16 @@ require_once "./back-end/login/validador_acesso.php";
                                 <h3 class="palavra-chave">Curso:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
-                                    <option value="valor1">Valor 1</option>
-                                    <option value="valor2">Valor 2</option>
-                                    <option value="valor3">Valor 3</option>
+                                    <option value="valor1">Desenvolvimento De Sistemas</option>
                                 </select>
                             </div>
                             <div class="align">
                                 <h3 class="palavra-chave">Salário:</h3>
                                 <select name="select">
                                     <option value="valor1"> </option>
-                                    <option value="valor1">Valor 1</option>
-                                    <option value="valor2">Valor 2</option>
-                                    <option value="valor3">Valor 3</option>
+                                    <option value="valor1">R$ 500,00 até 1.000,00</option>
+                                    <option value="valor2">R$ 1.000,00 até 1.500,00</option>
+                                    <option value="valor3">R$ 1.500,00 até 2.000,00</option>
                                 </select>
                             </div>
                             <input value="APLICAR" class="button" type="submit">

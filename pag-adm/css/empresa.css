@@ -182,6 +182,7 @@ table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
+    margin-left: 5%;
 }
 
 .infos{
@@ -189,22 +190,37 @@ table {
     padding: 10px;
 
 }
+
 table td{
-    padding: 30px 10px 40px 10px;
+    padding: 20px 5px 30px 5px;
     text-align: center;
     color: rgb(94, 94, 94);
 
 }
 .table-nome-empresa{
+    word-break: break-all ;
     width: 100px;
 }
 .table-email-empresa{
     word-break: break-all ;
-    width: 150px;
+    width: 300px;
 }
-
+.table-id{
+    width: 60px;
+}
 tr:nth-last-child(1){
     border: none;
+}
+.table-cnpj{
+    width: 250px;
+    word-break: break-all ;
+}
+.table-cep{
+    width: 200px;
+    word-break: break-all;
+}
+.table-numero{
+    width: 200px;
 }
 .icone-table{
     display: flex;
@@ -221,4 +237,8 @@ tr:nth-last-child(1){
     right: 0;
     z-index: 0;
     width: 16%;
+}
+.btn-side a{
+    color: red;
+    text-decoration: none;
 }

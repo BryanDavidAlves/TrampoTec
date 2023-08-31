@@ -40,8 +40,8 @@ $resultado = $query->fetchAll();
                     <input type="text" name="pesquisa" id="pesquisa" placeholder="">
                 </div>
 
-                <div class="align-filtro">
-                    <div class="filtro" onclick="abrirFiltro()">
+                <div onclick="abrirFiltro()" class="align-filtro">
+                    <div class="filtro" >
                         <span class="material-symbols-outlined">
                             tune
                         </span>
@@ -88,9 +88,11 @@ $resultado = $query->fetchAll();
                 <tbody>
                 <?php foreach ($resultado as $resultado) { ?>
                     <tr class="infos">
+
                         <td class="table-id"><?=$resultado[0]?></td>
                         <td class="table-nome-professor"><?=$resultado[1]?></td>
                         <td class="table-email-professor"><?=$resultado[2]?></td>
+   
                         <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
                                 class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
