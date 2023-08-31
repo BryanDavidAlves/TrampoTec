@@ -1,3 +1,12 @@
+<?php
+include('../dao/conexao.php');
+
+$querySelect = "SELECT * FROM  tb_aluno";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,8 +80,7 @@
                     <tr>
                         <th>ID</th>
                         <th>NOME</th>
-                        <th>EMAIL INSTITUICIONAL</th>
-                        <th>DATA NASCIMENTO</th>
+                        <th>EMAIL INSTITUICIONAL</th>      
                         <th>CPF</th>
                         <th>INSTITUIÇÃO</th>
                         <th>CEP</th>
@@ -80,46 +88,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($resultado as $resultado) { ?>
                     <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-aluno">vanessa</td>
-                        <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
-                        <td class="text-center">20/02/2000</td>
-                        <td class="text-center">155.155.155-74</td>
-                        <td class="text-center">Etec Guaianases</td>
-                        <td class="text-center">432553535</td>
-                        <td class="text-center">SP</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        <td class="table-id"><?=$resultado[0]?></td>
+                        <td class="table-nome-aluno"><?=$resultado[3]?></td>
+                        <td class="table-email-aluno"><?=$resultado[1]?></td>
+                        <td class="text-center"><?=$resultado[4]?></td>
+                        <td class="text-center"><?=$resultado[10]?></td>
+                        <td class="text-center"><?=$resultado[9]?></td>
+                        <td class="text-center"><?=$resultado[7]?></td>
+                        <td class="icone-table">
+                            <a  href="back-end/crudAluno/aluno-delete.php?id=<?= $resultado[0] ?>"><i  class="fa-solid fa-x" style="color: #000000;"></i></a>
                         </td>
                     </tr>
-                    <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-aluno">bryan</td>
-                        <td class="table-email-aluno">bryan.alves5@etec.sp.gov.br</td>
-                        <td class="text-center">20/02/2000</td>
-                        <td class="text-center">155.155.155-74</td>
-                        <td class="text-center">Etec Guaianases</td>
-                        <td class="text-center">432553535</td>
-                        <td class="text-center">SP</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table-id">3</td>
-                        <td class="table-nome-aluno">vanessa</td>
-                        <td class="table-email-aluno">vanessa@etec.sp.gov.br</td>
-                        <td class="text-center">20/02/2000</td>
-                        <td class="text-center">155.155.155-74</td>
-                        <td class="text-center">Etec Guaianases</td>
-                        <td class="text-center">432553535</td>
-                        <td class="text-center">SP</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-
+                    <?php } ?>
                 </tbody>
             </table>
 

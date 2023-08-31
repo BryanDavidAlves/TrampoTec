@@ -17,7 +17,7 @@ if ($_POST) {
     $query = $conexao->prepare($sql);
     $query->execute();
 
-    header('Location: ../../../one-page/index.html');
+    header('Location: ../../cadastro-adm.php');
     exit;
 } else {
     header('Location: login.php?login=erro');
