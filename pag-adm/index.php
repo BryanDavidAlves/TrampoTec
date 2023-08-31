@@ -1,6 +1,6 @@
 <?php
 include('../dao/conexao.php');
-$querySelect = "SELECT * FROM tb_empresa";
+$querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '1'";
 $resultado = $conexao->query($querySelect);
 $empresa =$resultado->fetchALL();
 $n_empresa = count($empresa);
@@ -16,7 +16,7 @@ $resultado = $conexao->query($querySelect);
 $professor =$resultado->fetchALL();
 $n_professor = count($professor);
 
-$querySelect = "SELECT * FROM tb_etec";
+$querySelect = "SELECT * FROM tb_etec WHERE aprovado = '1'";
 $resultado = $conexao->query($querySelect);
 $etec =$resultado->fetchALL();
 $n_etec = count($etec);
