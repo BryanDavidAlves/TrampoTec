@@ -89,8 +89,8 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-log">Saber programar JavaScript</td>
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
                 </div>
@@ -104,8 +104,8 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-log">Saber programar JavaScript</td>
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn2" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
                 </div>
@@ -118,8 +118,8 @@ include '../pag-professor/components/sidebar.php';
             <td class="table-log">Saber programar JavaScript</td>
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn3" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
                 </div>
@@ -127,20 +127,22 @@ include '../pag-professor/components/sidebar.php';
     </tbody>
 </table>
 
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Compartilhar Vaga</h5>
-                        <form class="" action="vagas.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+<dialog id="abrir-indicacao">
 
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                        </form>
-                    </div>
-        </div>
+      <div class="align-card-indicacao">
+          <h5 class="title-indicacao">Compartilhar Vaga</h5>
+          <form class="" action="vagas.php">
+              <label for="destinatario">Destinatario</label>
+              <input type="email" name="email-professor" id="">
+              <br>
+              <label for="mensagem">Mensagem</label>
+              <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+
+              <input type="submit" value="Enviar" class="botao-indicacao">
+          </form>
+      </div>
+
+</dialog>
     </section>
 
 
@@ -165,11 +167,19 @@ include '../pag-professor/components/sidebar.php';
         filtro.style.display="block"
     }
 }
-function abrirIndicacao() {
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
             var indicar = document.getElementById('abrir-indicacao')
-
-            indicar.style.display = "block";
-        }
-
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+            button2.onclick = function (){
+                indicar.showModal()
+            }
+             button3.onclick = function (){
+                indicar.showModal()
+            }
     </script>
 </body>

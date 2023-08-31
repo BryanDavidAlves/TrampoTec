@@ -1,5 +1,5 @@
 <?php
-require_once "./back-end/login/validador_acesso.php";
+/*require_once "./back-end/login/validador_acesso.php";*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,25 +30,26 @@ include '../pag-professor/components/sidebar.php';
     </main>
 
     <section class="perfil">
-        <div class="align-button-info"><i id="icon-info" onclick="abrirInfo()" class="fa-solid fa-plus" style="color: #ffffff;">
+        <div class="align-button-info" id="btn1"><i id="icon-info"  class="fa-solid fa-plus" style="color: #ffffff;">
             </i><h2>Adicionar informaçoes</h2>
         </div>
-        <div class="align-card-info"  id="card-info">
-        <div class="card-info">
 
+<dialog id="abrir-indicacao">
 
-                <form action="perfil.php">
-                    <label for="">CODIGO ETEC</label>
-                    <input type="number" name="" id="">
+      <div class="align-card-indicacao">
 
-                    <label for="">DISCIPLINAS</label>
-                    <input type="text" name="" id="">
+          <form class="" action="perfil.php">
+              <label for="destinatario">DISCIPLINA</label>
+              <input type="email" name="disciplina-etec" id="">
+              <br>
+              <label for="mensagem">CODIGO-ETEC</label>
+              <input type="text" name="codigo-etec" id="">
 
-                    <input class="button-card-info" type="submit" value="Cadastrar">
-                </form>
+              <input type="submit" value="CADASTRAR" class="botao-indicacao">
+          </form>
+      </div>
 
-        </div>
-        </div>
+</dialog>
     <div class="alinhar-perfil">
         <div class="imagem-perfil">
             <img src="img/11.png" alt="Foto de perfil">
@@ -77,11 +78,21 @@ include '../pag-professor/components/sidebar.php';
     <script>
 
 
-        function abrirInfo (){
-            var informacao = document.getElementById('card-info')
-                informacao.style.display = "block"
 
-        }
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
+            var indicar = document.getElementById('abrir-indicacao')
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+            button2.onclick = function (){
+                indicar.showModal()
+            }
+             button3.onclick = function (){
+                indicar.showModal()
+            }
     </script>
 </body>
 </html>
