@@ -6,11 +6,11 @@ main {
   margin-left:20%; 
   overflow:hidden;
   padding: 10px;
-
+  margin-top: 3%;
 } 
 
 main p{
-    margin-top: 3%;
+  
     font-size: 25px;
 }
 
@@ -43,7 +43,7 @@ main p{
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 90%;
+  width: 100%;
   border: none;
   border-radius: 5px;
   margin-top: 5%;
@@ -94,7 +94,7 @@ margin: 0 12px 0 0 ;
 
 .sistema-busca .align-filtro {
   display: flex;
-  width: 80%;
+  width: 100%;
   align-items: center;
   justify-content: end;
 }
@@ -164,7 +164,7 @@ th {
 table {
   background-color: rgb(247, 247, 247);
   border-radius: 20px;
-  width: 90%;
+  width: 100%;
   z-index: 2;
 }
 
@@ -227,34 +227,6 @@ tr:nth-last-child(1) {
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
-
-
-.sistema-busca .barra-pesquisa {
-  border-radius: 20px;
-  padding: 5px;
-  border: none;
-  margin-top: 0px;
-  width: 30%;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background-color: white;
-}
-
-.sistema-busca .barra-pesquisa input {
-  border: none;
-  width: 100%;
-  padding: 5px;
-}
-
-.sistema-busca .barra-pesquisa input:focus {
-  outline: none;
-}
-
-
-
-
-
 
 
 
@@ -321,4 +293,23 @@ dialog {
   width: 300px;
   background-color: white;
 
+}
+
+.icone-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icone-table i {
+  margin: 3px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  gap: 10px;
 }

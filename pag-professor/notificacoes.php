@@ -1,6 +1,6 @@
 <?php
 include '../pag-professor/components/sidebar.php';
-<?php
+
 require_once "./back-end/login/validador_acesso.php";
 ?>
 

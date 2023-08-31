@@ -28,8 +28,9 @@ h1 {
 .container-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
     justify-content: start;
+    width: 750px;
 }
 
 .vagas .container-cards .cards {
@@ -83,7 +84,7 @@ h1 {
 }
 
 .filtro .align .palavra-chave {
-    width:100px;
+    width:85px;
     padding-bottom: 5px;
     padding-top: 5px;
     font-size: 1.5rem;
@@ -95,7 +96,8 @@ select {
     height: 25px;
     margin-top: 5px;
     border: none;
-
+    width: 205px;
+    font-weight: 600;
 }
 
 .filtro .align select,
@@ -269,7 +271,7 @@ dialog h2 {
     z-index: 0;
 }
 .cima-direita{
-    width: 10%;
+    width: 8%;
     position: absolute;
     top: 0;
     right: 0;

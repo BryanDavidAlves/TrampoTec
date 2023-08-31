@@ -20,8 +20,8 @@ include('../../dao/conexao.php');
     <img class="baixo" src="../img/imagemfundobaixo.png">
 
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="row ">
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-around">
                 <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno">
                 <img width="80%" src="../fotosEmpresa/perfil/empresa.png">
             </div>
@@ -63,6 +63,7 @@ include('../../dao/conexao.php');
                                         </div>
                                     </div>
                                 </div>
+                           
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Senha</small></label>

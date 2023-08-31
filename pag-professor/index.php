@@ -80,26 +80,22 @@ include '../pag-professor/components/sidebar.php';
     <thead>
         <tr>
 
-            <th>EMPRESA</th>
-            <th>VAGA</th>
-            <th>PERIODO</th>
-            <th>SALARIO</th>
-            <th>REQUISITOS</th>
+            <th>NOME</th>
+            <th>EMAIL INSTITUCIONAL</th>
+            <th>MENSAGEM</th>
 
         </tr>
     </thead>
     <tbody>
         <tr class="infos">
 
-            <td class="table-nome-empresa">Cysco Systen</td>
-            <td class="table-email-empresa">Front - End</td>
-            <td class="table-cnpj">Manhã</td>
-            <td class="table-cep">R$ 2000,00</td>
-            <td class="table-log">Saber programar JavaScript</td>
+            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
                     <dialog id="abrir-indicacao"> 
 
@@ -121,31 +117,26 @@ include '../pag-professor/components/sidebar.php';
             </td>
         </tr>
 
-        <tr class="infos">
-        <td class="table-nome-empresa">Cysco Systen</td>
-            <td class="table-email-empresa">Front - End</td>
-            <td class="table-cnpj">Manhã</td>
-            <td class="table-cep">R$ 2000,00</td>
-            <td class="table-log">Saber programar JavaScript</td>
+        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn2" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
                 </div>
             </td>
         </tr>
-        <tr class="infos">
-        <td class="table-nome-empresa">Cysco Systen</td>
-            <td class="table-email-empresa">Front - End</td>
-            <td class="table-cnpj">Manhã</td>
-            <td class="table-cep">R$ 2000,00</td>
-            <td class="table-log">Saber programar JavaScript</td>
+        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-cnpj">Oi Clodo, me indica ai </td>
+
 
             <td class="icone-table">
-                <div class="icons">
-                    <i onclick="abrirIndicacao()" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
+            <div class="icons">
+                    <i id="btn3" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
 
                 </div>
@@ -154,20 +145,23 @@ include '../pag-professor/components/sidebar.php';
     </tbody>
 </table>
 
-        <div class="card-indicacao" id="abrir-indicacao">
-                    <div class="align-card-indicacao">
-                        <h5 class="title-indicacao">Indicar Aluno</h5>
-                        <form class="" action="index.php">
-                            <label for="destinatario">Destinatario</label>
-                            <input type="email" name="email-professor" id="">
-                            <br>
-                            <label for="mensagem">Mensagem</label>
-                            <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
 
-                            <input type="submit" value="Enviar" class="botao-indicacao">
-                        </form>
-                    </div>
-        </div>
+<dialog id="abrir-indicacao">
+
+      <div class="align-card-indicacao">
+          <h5 class="title-indicacao">Indicar Aluno</h5>
+          <form class="" action="vagas.php">
+              <label for="destinatario">Destinatario</label>
+              <input type="email" name="email-professor" id="">
+              <br>
+              <label for="mensagem">Mensagem</label>
+              <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+
+              <input type="submit" value="Enviar" class="botao-indicacao">
+          </form>
+      </div>
+
+</dialog>
     </section>
 
 
@@ -191,11 +185,20 @@ include '../pag-professor/components/sidebar.php';
         filtro.style.display="block"
     }
 }
-function abrirIndicacao() {
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
             var indicar = document.getElementById('abrir-indicacao')
-
-            indicar.style.display = "block";
-        }
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+            button2.onclick = function (){
+                indicar.showModal()
+            }
+             button3.onclick = function (){
+                indicar.showModal()
+            }
 
     </script>
 </body>

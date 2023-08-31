@@ -48,18 +48,33 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="">Periodo</label>
                             <input type="checkbox" name="" id="">
                         </div>
+                  
                         <div class="align-form-filtro">
-                            <label for="">Horario</label>
+                            <label for="">Salario</label>
                             <input type="checkbox" name="" id="">
                         </div>
                         <div class="align-form-filtro">
-                            <label for="">Curso</label>
+                            <label for="">Vaga</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                        <div class="align-form-filtro">
-                            <label for="">Area</label>
-                            <input type="checkbox" name="" id="">
+                        <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "senhaInvalida") {
+                        ?>
+                        <div class="text-danger">
+                            Usuario ou senha Inválidos
                         </div>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if (isset($_GET['login']) && $_GET['login'] == "naoaprovado") {
+                        ?>
+                        <div class="text-danger">
+                            Cadastro Pendente
+                        </div>
+                    <?php
+                    }
+                    ?>
                         <input type="submit" value="Aplicar" class="button-filtro">
 
                     </form>

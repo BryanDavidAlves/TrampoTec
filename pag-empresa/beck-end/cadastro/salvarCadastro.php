@@ -34,7 +34,7 @@ if ($_POST) {
          } ;
 
 
-        $sql = "
+        $sql2 = "
                 INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem) VALUES
                 (   '$email',
                     '$senha',
