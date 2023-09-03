@@ -16,7 +16,7 @@
                 <li><a href="notificacao.php"><i class="fa-solid fa-bell" style="color: #3C86D;"></i> Notificações</a></li>
                 <li><a href="configuracao.php"><i id="config" class="fa-solid fa-gear" style="color: #3C86D;"></i> Configurações</a></li>
                 <li><a href="perfil.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Perfil</a></li>
-                <li><a href="login.php"><i id="first" class="fa-solid fa-right-from-bracket"style="color: #3C86D;"></i> Logout</a></li>
+                <li><a href="back-end/login/logout.php"><i id="first" class="fa-solid fa-right-from-bracket"style="color: #3C86D;"></i> Logout</a></li>
             </div>
         </ul>
     </nav>

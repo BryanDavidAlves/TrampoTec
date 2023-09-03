@@ -1,4 +1,7 @@
 <?php
+require_once "back-end/login/validador_acesso.php";
+?>
+<?php
 include('../dao/conexao.php');
 
 if ($_GET['aprovado'] == '1') {
