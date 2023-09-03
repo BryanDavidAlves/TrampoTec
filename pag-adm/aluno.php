@@ -1,4 +1,7 @@
 <?php
+require_once "back-end/login/validador_acesso.php";
+?>
+<?php
 include('../dao/conexao.php');
 
 $querySelect = "SELECT * FROM  tb_aluno";
