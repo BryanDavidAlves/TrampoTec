@@ -123,3 +123,45 @@ var button1 = document.getElementById("btn1")
                 indicar.showModal()
             }
         
+
+            function modalrequisito(){
+    
+                var requisitos=  document.getElementById('requisito')
+           
+        
+                if (requisitos.style.display == 'none'){
+                    requisitos.style.display = 'flex'
+                
+                }else if (requisitos.style.display == 'flex'){
+                    requisitos.style.display='none'
+                }
+                else{
+                    requisitos.style.display = 'flex'    
+                
+                }
+                
+                }
+
+
+                
+            function modalrequisitofechar(){
+    
+                var requisitos=  document.getElementById('requisito')
+           
+        
+                if (requisitos.style.display == 'flex'){
+                    requisitos.style.display = 'none'
+                
+                }else if (requisitos.style.display == 'flex'){
+                    requisitos.style.display='none'
+                }
+                else{
+                    requisitos.style.display = 'flex'    
+                
+                }
+                
+                }
+
+
+            
+                
