@@ -144,19 +144,19 @@ var button1 = document.getElementById("btn1")
 
 
                 
-            function modalrequisitofechar(){
+            function vermais(){
     
-                var requisitos=  document.getElementById('requisito')
+                var vermais=  document.getElementById('vermais')
            
         
-                if (requisitos.style.display == 'flex'){
-                    requisitos.style.display = 'none'
+                if (vermais.style.display == 'flex'){
+                    vermais.style.display = 'none'
                 
-                }else if (requisitos.style.display == 'flex'){
-                    requisitos.style.display='none'
+                }else if (vermais.style.display == 'flex'){
+                    vermais.style.display='none'
                 }
                 else{
-                    requisitos.style.display = 'flex'    
+                    vermais.style.display = 'flex'    
                 
                 }
                 
