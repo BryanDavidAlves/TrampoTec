@@ -186,7 +186,6 @@ tbody tr td{
 
 tbody tr{
    border-bottom:1px solid rgb(112, 112, 112) ;
-
    width: 300px;
 }
 
@@ -204,18 +203,19 @@ tbody tr{
    position: fixed;
    height: 100%;
    z-index: 10;
-   transform: translateY(20%)
+
 }
 
 .dialog-requisitos .form-requisitos{
    animation:500ms linear trans;
-
+   transform: translateY(20%);
 }
+
 @keyframes trans{
-   0%{opacity: 0%; transform: translateY(20%);}
-
-   100%{opacity: 100%; transform: translateY(0px);}
-
+   0%{opacity: 0%; transform: translateY(-10%);}
+ 
+   100%{opacity: 100%; transform: translateY(20%);}
+ 
    }
 
 

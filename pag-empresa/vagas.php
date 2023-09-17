@@ -19,6 +19,28 @@ require_once "./beck-end/login/validador_acesso.php";
     <?php include('../pag-empresa/componentes/email.php') ?>
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
 
+    <dialog id="vermais" class="ver-mais">
+        <div class="vermais-body">
+            <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
+
+            <div class="vermais-infos">
+                <h3>Periodo:</h3>
+                <p>noturno 19:00pm AS 23:00pm  </p>
+            </div>
+
+            <div class="vermais-infos">
+                <h3>Descricao:</h3>
+                <p>TEXTO PARA SABER COMO VAI FICAR </p>
+            </div>
+
+            <div class="vermais-infos">
+                <h3>Requisito:</h3>
+                <p>TEXTO PARA SABER COMO VAI FICAR </p>
+            </div>
+
+        </div>
+    </dialog>
+
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
@@ -93,12 +115,8 @@ require_once "./beck-end/login/validador_acesso.php";
                         <th>TIPO TABRALHO</th>
                         <th>SALARIO</th>
                         <th>CURSO</th>
-                        <th>DESCRIÇAO</th>
                         <th>AREA</th>
-                        <th>PERIODO</th>
-                        <th>INICIO</th>
-                        <th>TERMINO</th>
-                        <th>REQUISITOS</th>
+                        <th>INFORMAÇÕES</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -111,16 +129,12 @@ require_once "./beck-end/login/validador_acesso.php";
                         <td class="table">Presencial </td>
                         <td class="table">R$ 2000,00</td>
                         <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
+                        <td class="table">Back-end</td>
+                        <td class="table" style="cursor: pointer;color: blue;" onclick="vermais()">VER MAIS</td>
                         <td class="icone-table">
                             <div class="icons">
                                 <form>
-                                    <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey;"></i></a>
+                                    <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
                                     <input type="hidden" value="">
                                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
                                 </form>
@@ -129,126 +143,8 @@ require_once "./beck-end/login/validador_acesso.php";
                     </tr>
 
 
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">A</td>
-                        <td class="table">Front-end</td>
-                        <td class="table">Manha</td>
-                        <td class="table">7:00am</td>
-                        <td class="table">1:00pm</td>
-                        <td class="table">saber php</td>
-                        <td class="icone-table">
-                            <div class="icons">
-                                <i class="fa-solid fa-pen-to-square" style="color:grey;"></i>
-                                <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                            </div>
-                        </td>
-                    </tr>
+
+
 
                 </tbody>
             </table>
