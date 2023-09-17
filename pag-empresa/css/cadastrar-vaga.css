@@ -200,33 +200,37 @@ tbody tr{
 .dialog-requisitos{
    background-color: rgba(255, 255, 255, 0);
    display: none;
-   justify-content: center;
-   align-items: center;
- border: none;
-   position:fixed;
-   align-items: center;
-   justify-content: center;
-   width:100%;
+   border: none;
+   position: fixed;
    height: 100%;
    z-index: 10;
-   position: fixed;
-cursor: pointer;
+   transform: translateY(20%)
+}
+
+.dialog-requisitos .form-requisitos{
+   animation:500ms linear trans;
 
 }
+@keyframes trans{
+   0%{opacity: 0%; transform: translateY(20%);}
+
+   100%{opacity: 100%; transform: translateY(0px);}
+
+   }
 
 
 .dialog-requisitos .form-requisitos .inputs-dialog{
   background-color: rgb(255, 255, 255);
   width:300px;
   height: 400px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 30px;
-border: rgb(17, 12, 12) 1px solid;
-border-radius: 10px;
-z-index: 15;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+   border: rgb(17, 12, 12) 1px solid;
+   border-radius: 10px;
+   z-index: 15;
 }
 
 
@@ -240,6 +244,7 @@ z-index: 15;
 .dialog-requisitos .form-requisitos .inputs-dialog label i{
    font-size: 27px;
    color: red;
+   cursor: pointer;
 }
 
 .dialog-requisitos .form-requisitos .inputs-dialog textarea{

@@ -305,11 +305,12 @@ tr:nth-last-child(1) {
   align-items: center;
   justify-content: center;
 }
-.icone-table i {
+.icone-table .icons form i {
   margin: 3px;
+  cursor: pointer;
 }
 
-.icons {
+.icons form {
   display: flex;
   flex-direction: column;
   align-items: center;
