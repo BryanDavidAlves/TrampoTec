@@ -21,7 +21,7 @@ require_once "./beck-end/login/validador_acesso.php";
 
     <dialog id="requisito" class="dialog-requisitos">
     
-            <form class="form-requisitos">
+            <form class="form-requisitos" >
                 <div class="inputs-dialog">
                     <label for="requisito">REQUISITOS PARA VAGA <i onclick="modalrequisito()" class="fa-solid fa-circle-xmark"></i></label>
                     <textarea type="text" name="requisito"></textarea>
@@ -38,8 +38,9 @@ require_once "./beck-end/login/validador_acesso.php";
         
   
         <section class="formulario-cadastrar-vaga">
-            <form>
-                <h1>FORMULARIO DE CADASTRO DE VAGA</h1>
+            <form action="beck-end/cadastroVaga/salvarCadastroVaga.php" method="post">
+           
+            <h1>FORMULARIO DE CADASTRO DE VAGA</h1>
 
                 <div class="alinhaento-inputs">
 
@@ -142,6 +143,15 @@ require_once "./beck-end/login/validador_acesso.php";
                     </tbody>
 
                 </table>
+                <?php
+                            if(isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro"){
+                            ?>
+                            <div class="text-danger">
+                               Erro ao Cadastrar Vaga
+                            </div> 
+                            <?php  
+                            }
+                            ?>
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
