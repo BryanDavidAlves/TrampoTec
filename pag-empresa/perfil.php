@@ -1,5 +1,22 @@
 <?php
+include('../dao/conexao.php');
+
 require_once "./beck-end/login/validador_acesso.php";
+
+
+
+// Pega o ID do cliente logado
+$cliente_id = $_SESSION['idEmpresa'];
+
+$querySelect = "SELECT * FROM  tb_empresa WHERE idEmpresa = $cliente_id";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+    
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,9 +40,11 @@ require_once "./beck-end/login/validador_acesso.php";
     <img class="fundo-empresa" src="./img/fundo-empresa.jpg">
         
         <div class="conteiner-descricao"> 
-            <img class="foto-perfil" src="./img/fotodeempresa.avif"></img>
+        <?php foreach($resultado as $resultado ) { ?>
+            <img class="foto-perfil" src="fotosEmpresa/perfil/<?= $resultado[10] ?>"></img>
             <div class="descricao-conta"> 
-                <p class="nome-perfil"> Cisco system </p> 
+               
+                <p class="nome-perfil"><?= $resultado[3] ?></p> 
                 <p class="tipo-perfil"> Empresa de tecnologia</p> 
             </div>
         </div>
@@ -37,6 +56,13 @@ require_once "./beck-end/login/validador_acesso.php";
             <div class="card-corpo">
                     <div class="card-itens">
 
+                         <p class="titulo-descricao"> Email </p>
+                        <p class="conteudo-descricao"> <?= $resultado[1] ?></p>    
+
+                        <p class="titulo-descricao"> CPNJ</p>
+                        <p class="conteudo-descricao"> <?= $resultado[4] ?></p>    
+                        <?php }?> 
+
                         <p class="titulo-descricao"> Derpatamento</p>
                         <p class="conteudo-descricao"> Tecnologia</p>      
                         
@@ -46,16 +72,12 @@ require_once "./beck-end/login/validador_acesso.php";
                         <p class="titulo-descricao"> Ano de origem </p>
                         <p class="conteudo-descricao"> desde de 1998</p>    
 
-                        <p class="titulo-descricao"> Email </p>
-                        <p class="conteudo-descricao"> ciscosystem@gmail.com.br </p>    
+                       
 
 
                         <p class="titulo-descricao"> Telefone</p>
                         <p class="conteudo-descricao"> (11) 9582819-11</p>    
 
-
-                        <p class="titulo-descricao"> CPNJ</p>
-                        <p class="conteudo-descricao"> 19380110750170185081</p>    
 
 
        
