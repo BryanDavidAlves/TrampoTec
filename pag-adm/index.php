@@ -1,3 +1,42 @@
+<?php
+require_once "back-end/login/validador_acesso.php";
+?>
+<?php
+include('../dao/conexao.php');
+$querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '1'";
+$resultado = $conexao->query($querySelect);
+$empresa = $resultado->fetchALL();
+$n_empresa = count($empresa);
+
+
+$querySelect = "SELECT * FROM tb_aluno";
+$resultado = $conexao->query($querySelect);
+$aluno = $resultado->fetchALL();
+$n_aluno = count($aluno);
+
+$querySelect = "SELECT * FROM tb_professor";
+$resultado = $conexao->query($querySelect);
+$professor = $resultado->fetchALL();
+$n_professor = count($professor);
+
+
+
+$querySelect = "SELECT * FROM tb_admin";
+$resultado = $conexao->query($querySelect);
+$admin = $resultado->fetchALL();
+$n_admin = count($admin);
+
+
+
+$querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '0'";
+$resultado = $conexao->query($querySelect);
+$pendenteEm = $resultado->fetchALL();
+$n_pendenteEmpresa = count($pendenteEm);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,56 +64,64 @@
         <section class="dashboard">
 
             <div class="align-card">
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Empresas cadastradas </h3>
-                        <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                <a href="empresa.php?aprovado=1">
+                    <div class="card">
+                        <div class="header-card">
+                            <h3>Empresas cadastradas </h3>
+                            <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                        </div>
+                        <h2>
+                            <?= $n_empresa ?>
+                        </h2>
                     </div>
-                    <h2>7</h2>
-                </div>
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Professores cadastrados</h3>
-                        <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
+                </a>
+                <a href="professor.php">
+                    <div class="card">
+                        <div class="header-card">
+                            <h3>Professores cadastrados</h3>
+                            <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
+                        </div>
+                        <h2>
+                            <?= $n_professor ?>
+                        </h2>
                     </div>
-                    <h2>7</h2>
-                </div>
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Alunos cadastrados</h3>
-                        <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                </a>
+                <a href="aluno.php">
+                    <div class="card">
+                        <div class="header-card">
+                            <h3>Alunos cadastrados</h3>
+                            <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                        </div>
+                        <h2>
+                            <?= $n_aluno ?>
+                        </h2>
                     </div>
-                    <h2>7</h2>
-                </div>
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Etecs</h3>
-                        <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
+                </a>
+                
+                <a href="adm.php">
+                    <div class="card">
+                        <div class="header-card">
+                            <h3>Administradores Cadastrados</h3>
+                            <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                        </div>
+                        <h2>
+                            <?= $n_admin ?>
+                        </h2>
                     </div>
-                    <h2>7</h2>
-                </div>
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Administradores Cadastrados</h3>
-                        <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
-                    </div>
-                    <h2>7</h2>
-                </div>
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Etecs Pendentes</h3>
-                        <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
-                    </div>
-                    <h2>7</h2>
-                </div>
+                </a>
 
+        
+                <a href="empresa.php?aprovado=0">
                 <div class="card">
                     <div class="header-card">
                         <h3>Empresas Pendentes </h3>
                         <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
                     </div>
-                    <h2>7</h2>
+                    <h2>
+                        <?= $n_pendenteEmpresa ?>
+                    </h2>
                 </div>
+                </a>
             </div>
             <section class="dash-card">
                 <img class="grafico1" src="img/grafico1.png" alt="">

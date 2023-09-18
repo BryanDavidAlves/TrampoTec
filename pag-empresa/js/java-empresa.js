@@ -113,3 +113,55 @@ function clickmenu(){
         filtro.style.display="block"
     }
 }
+
+var button1 = document.getElementById("btn1")
+            var button2 = document.getElementById("btn2")
+            var button3 = document.getElementById("btn3")
+            var indicar = document.getElementById('abrir-indicacao')
+            var body = document.getElementsByTagName('body')
+            button1.onclick = function (){
+                indicar.showModal()
+            }
+        
+
+            function modalrequisito(){
+    
+                var requisitos=  document.getElementById('requisito')
+           
+        
+                if (requisitos.style.display == 'none'){
+                    requisitos.style.display = 'flex'
+                
+                }else if (requisitos.style.display == 'flex'){
+                    requisitos.style.display='none'
+                }
+                else{
+                    requisitos.style.display = 'flex'    
+                
+                }
+                
+                }
+
+
+                
+            function vermais(){
+    
+                var vermais=  document.getElementById('vermais')
+           
+        
+                if (vermais.style.display == 'flex'){
+                    vermais.style.display = 'none'
+                
+                }else if (vermais.style.display == 'flex'){
+                    vermais.style.display='none'
+                }
+                else{
+                    vermais.style.display = 'flex'    
+                
+                }
+                
+                }
+
+
+            
+                

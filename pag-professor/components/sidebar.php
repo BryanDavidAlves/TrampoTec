@@ -1,9 +1,9 @@
 
 <header class="side-bar">
-           
+
         <nav>
-        
-      
+
+
         <ul>
         <div class="imagem-logo">
                 <img src="img/trampotec.png" alt="">
@@ -18,16 +18,14 @@
             </div>
 
             <div class="coluna-dois">
-            <li><a href="login.php"><i class="fa-solid fa-right-from-bracket fa-lg"></i>Logout </a></li>
+            <li><a href="./back-end/login/logout.php"><i class="fa-solid fa-right-from-bracket fa-lg"></i>Logout </a></li>
             </div>
         </ul>
-      
+
 
         </nav>
-            
-                
-            
-            
-    </header>
-        
 
+
+
+
+    </header>

@@ -174,6 +174,7 @@ main .img-cima img {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -194,51 +195,60 @@ thead {
     color: rgb(70, 70, 70);
     font-weight: 600;
 }
-th{
+
+th {
     text-align: center;
     padding-top: 20px;
 }
+
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
 }
 
-.infos{
+.infos {
     border-bottom: 1px solid black;
     padding: 10px;
 
 }
-table td{
+
+table td {
     padding: 20px 10px 5px 15px;
     text-align: start;
     color: rgb(94, 94, 94);
 
 }
-.table-nome-aluno{
+
+.table-nome-aluno {
     width: 100px;
 }
-.table-email-aluno{
-    word-break: break-all ;
+
+.table-email-aluno {
+    word-break: break-all;
     width: 200px;
 }
 
-tr:nth-last-child(1){
+tr:nth-last-child(1) {
     border: none;
 }
-.icone-table{
+
+.icone-table {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.icone-table i{
+
+.icone-table i {
     margin: 3px;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
-.cima{
+
+.cima {
     position: absolute;
     top: 0;
     right: 0;
@@ -246,5 +256,7 @@ tr:nth-last-child(1){
     width: 16%;
 }
 
-
-
+.btn-side a {
+    color: red;
+    text-decoration: none;
+}

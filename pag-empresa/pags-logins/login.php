@@ -55,6 +55,15 @@
                                         
                             <div class="link-senha">
                             <?php 
+                            if(isset($_GET['login']) && $_GET['login'] == "naoaprovado"){
+                            ?>
+                            <div class="text-danger">
+                                Cadastro Pendente
+                            </div> 
+                            <?php  
+                            }
+                            ?>
+                            <?php 
                             if(isset($_GET['login']) && $_GET['login'] == "erro"){
                             ?>
                             <div class="text-danger">
@@ -75,7 +84,7 @@
                         <button type="submit" class="botao-agendar"> <h6 class="corBotao">LOGIN<h6> </button>
                         <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a>
                         <br>
-                        <a class="link" href="./criar-login.php"> nao é cadastrado ? crie agora </a>
+                        <a class="link" style="color: red;" href="./criar-login.php"> nao é cadastrado ? crie agora </a>
                     </div>
                            
                     </form>

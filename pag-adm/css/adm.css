@@ -174,6 +174,7 @@ main .img-cima img {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -220,12 +221,15 @@ table td {
 }
 
 .table-nome-adm {
-    width: 100px;
+    width: 150px;
+}
+.table-id{
+    width: 60px;
 }
 
 .table-email-adm {
-    word-break: break-all;
-    width: 220px;
+    word-break: break-all ;
+    width: 300px;
 }
 
 tr:nth-last-child(1) {
@@ -235,9 +239,11 @@ tr:nth-last-child(1) {
 .icone-table {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
+    margin-right: 5%;
     justify-content: center;
 }
+
 
 .icone-table i {
     margin: 3px;

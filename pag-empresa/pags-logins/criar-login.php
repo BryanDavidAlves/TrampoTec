@@ -1,5 +1,5 @@
 <?php
-include('../../dao/conexao.php');
+include '../../dao/conexao.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +18,10 @@ include('../../dao/conexao.php');
     <img class="cima" src="../img/imagemfundocima.png">
 
     <img class="baixo" src="../img/imagemfundobaixo.png">
-
+<div class="align-card-cadastro">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="row ">
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-around">
                 <img class="logo" src="../img/trampotec-logo.png" alt="foto do aluno">
                 <img width="80%" src="../fotosEmpresa/perfil/empresa.png">
             </div>
@@ -47,8 +47,8 @@ include('../../dao/conexao.php');
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold border-0" for="nome"><small>Razão Social</small></label>
-                                        <input type="text" class="form-control obrigatorio" id="nome" name="nome" placeholder="Razão Social">
+                                        <label class="font-weight-bold border-0" for="nome"><small>Nome Empresa</small></label>
+                                        <input type="text" class="form-control obrigatorio" id="nome" name="nome" placeholder="Nome Empresa">
                                         <div class="invalid-feedback">
                                             O nome é obrigatório
                                         </div>
@@ -63,6 +63,7 @@ include('../../dao/conexao.php');
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-12 col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold border-0" for="nome"><small>Senha</small></label>
@@ -145,6 +146,7 @@ include('../../dao/conexao.php');
             </div>
         </div>
     </div>
+</div>
 <script src="../../assets/js/jquery-3.7.1.js"></script>
 <script src="../../assets/js/jquery.mask.min.js"></script>
 <script src="../../assets/js/my-mask.js"></script>
@@ -164,7 +166,7 @@ include('../../dao/conexao.php');
                     if(address.erro){
                         $('.cep').removeClass('is-valid');
                         $('.cep').addClass('is-invalid');
-                    }else{  
+                    }else{
                         $('.cep').removeClass('is-invalid');
                         $('.cep').addClass('is-valid');
                         $('#logradouro').val(address.logradouro);

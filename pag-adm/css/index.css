@@ -8,9 +8,9 @@
 .align-card{
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
-    width: 50%;
+    width:60% ;
 
 }
 main{
@@ -21,6 +21,11 @@ main{
     padding: 20px 20px 20px 20px;
     border-radius: 10px;
     background-color: #4d3cd1;
+    transition: 200ms ease-in-out;
+}
+.card:hover{
+    scale: 1.05;
+   
 }
 .card h3{
     width: 10px;
@@ -80,3 +85,6 @@ main{
     z-index: 0;
 
 }*/
+a{
+    text-decoration: none;
+}

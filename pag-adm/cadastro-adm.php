@@ -1,3 +1,6 @@
+<?php
+require_once "back-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,7 +26,7 @@
         </div>
 
         <section class="formulario-adm">
-            <form action="">
+            <form action="back-end/cadastro/salvarCadastro.php" method="post">
                 <div class="input-box">
                     <label for="nome">NOME</label>
                     <input type="text" id="nome" name="nome">
@@ -31,11 +34,6 @@
                 <div class="input-box">
                     <label for="nome">EMAIL</label>
                     <input type="email" id="email" name="email">
-                </div>
-                <div class="input-box">
-                    <label for="telefone">TELEFONE</label>
-                    <input type="tel" id="telefone" name="telefone">
-
                 </div>
                 <div class="input-box">
                     <label for="nome">SENHA</label>

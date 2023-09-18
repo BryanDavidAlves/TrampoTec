@@ -18,11 +18,11 @@
             <div class="box-formulario">
                 <h1 class="title-login">Login Administrativo</h1>
 
-                <form action="">
+                <form action="back-end/login/valida_login.php" method="post">
                     <div class="item-form">
-                        <label for="nome">NOME</label>
+                        <label for="nome">EMAIL</label>
                         <div class="div-input">
-                            <input type="text" name="name" id="nome">
+                            <input type="text" name="email" id="nome">
                         </div>
                     </div>
 
@@ -33,6 +33,15 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
+                    <?php 
+                            if(isset($_GET['login']) && $_GET['login'] == "erro"){
+                            ?>
+                            <div class="text-danger">
+                                Usuario ou senha Inválidos
+                            </div> 
+                            <?php  
+                            }
+                            ?>
                     <button class="botao"><a href="../pag-adm/index.php" style="color: white">Entrar</a></button><!--<input class="botao" type="submit" value="Entrar">-->
                     <div class="remember">
                         <div>

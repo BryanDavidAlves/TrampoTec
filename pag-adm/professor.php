@@ -1,5 +1,19 @@
+<?php
+require_once "back-end/login/validador_acesso.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<?php
+
+include('../dao/conexao.php');
+
+$querySelect = "SELECT * FROM  tb_professor";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -30,8 +44,8 @@
                     <input type="text" name="pesquisa" id="pesquisa" placeholder="">
                 </div>
 
-                <div class="align-filtro">
-                    <div class="filtro" onclick="abrirFiltro()">
+                <div onclick="abrirFiltro()" class="align-filtro">
+                    <div class="filtro">
                         <span class="material-symbols-outlined">
                             tune
                         </span>
@@ -72,38 +86,29 @@
                         <th>ID</th>
                         <th>NOME</th>
                         <th>EMAIL INSTITUICIONAL</th>
-                        <th>TELEFONE</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-professor">vanessa</td>
-                        <td class="table-email-professor">vanessa@etec.sp.gov.br</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-professor">Cysco Systen</td>
-                        <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-professor">Cysco Systen</td>
-                        <td class="table-email-professor">cysco@gmail.com</td>
-                        <td class="table-cnpj">(11) 97526-6689</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+                    <?php foreach ($resultado as $resultado) { ?>
+                        <tr class="infos">
+
+                            <td class="table-id">
+                                <?= $resultado[0] ?>
+                            </td>
+                            <td class="table-nome-professor">
+                                <?= $resultado[1] ?>
+                            </td>
+                            <td class="table-email-professor">
+                                <?= $resultado[2] ?>
+                            </td>
+
+                            <td class="icone-table">
+                                <a href="back-end/crudProfessor/professor-delete.php?id=<?= $resultado[0] ?>"> <i
+                                        class="fa-solid fa-x" style="color: #000000;"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
                 </tbody>
             </table>

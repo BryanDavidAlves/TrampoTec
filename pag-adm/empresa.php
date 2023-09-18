@@ -1,5 +1,8 @@
 <?php
-include('../dao/conexao.php');
+require_once "back-end/login/validador_acesso.php";
+?>
+<?php
+include '../dao/conexao.php';
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 
 //passando todos os itens do post para as sua variaveis
@@ -15,7 +18,7 @@ if ($_GET['aprovado'] == '1') {
     $query = $conexao->query($querySelect);
 
     $resultado = $query->fetchAll();
-} 
+}
 
 ?>
 
@@ -41,8 +44,8 @@ if ($_GET['aprovado'] == '1') {
 
 <body>
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
@@ -97,62 +100,62 @@ if ($_GET['aprovado'] == '1') {
                 </div>
         </div>
 
-        <section class="empresa">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>EMAIL</th>
-                        <th>CNPJ</th>
-                        <th>CEP</th>
-                        <th>LOGRADOURO</th>
-                        <th>NÚMERO</th>
-                        <th>BAIRRO</th>
-                        <th>ESTADO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($resultado as $resultado) { ?>
-                        <tr class="infos">
-                            <td class="table-id">
-                                <?= $resultado[0] ?>
-                            </td>
-                            <td class="table-nome-empresa">
-                                <?= $resultado[3] ?>
-                            </td>
-                            <td class="table-email-empresa">
-                                <?= $resultado[1] ?>
-                            </td>
-                            <td class="table-cnpj">
-                                <?= $resultado[4] ?>
-                            </td>
-                            <td class="table-cep">
-                                <?= $resultado[5] ?>
-                            </td>
-                            <td class="table-log">
-                                <?= $resultado[6] ?>
-                            </td>
-                            <td class="table-numero">
-                                <?= $resultado[7] ?>
-                            </td>
-                            <td class="table-bairro">
-                                <?= $resultado[8] ?>
-                            </td>
-                            <td class="table-estado">
-                                <?= $resultado[9] ?>
-                            </td>
-                            <td class="icone-table">
-                                <?php if ($resultado[11] == 0) { ?>
-                                    <a href="./back-end/crud/empresa-aceitar.php?id=<?= $resultado[0] ?>">Aceitar</a>
-                                <?php } ?>
-                                <a href="./back-end/crud/empresa-delete.php?id=<?= $resultado[0] ?>">Deletar</a>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>EMAIL</th>
+                                <th>CNPJ</th>
+                                <th>CEP</th>
+                                <th>NÚMERO</th>
+                                <th>ESTADO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($resultado as $resultado) {?>
+                                <tr class="infos">
+                                    <td class="table-id">
+                                        <?=$resultado[0]?>
+                                    </td>
+                                    <td class="table-nome-empresa">
+                                        <?=$resultado[3]?>
+                                    </td>
+                                    <td class="table-email-empresa">
+                                        <?=$resultado[1]?>
+                                    </td>
+                                    <td class="table-cnpj">
+                                        <?=$resultado[4]?>
+                                    </td>
+                                    <td class="table-cep">
+                                        <?=$resultado[5]?>
+                                    </td>
+                                    <td class="table-numero">
+                                        <?=$resultado[7]?>
+                                    </td>
+                                    <td class="table-estado">
+                                        <?=$resultado[9]?>
+                                    </td>
+                                    <td class="icone-table">
+                                        <?php if ($resultado[11] == 0) {?>
+                                            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?=$resultado[0]?>"><i
+                                                    class="fa-solid fa-check" style="color: #ff0000;"></i></a>
+
+                                            <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?=$resultado[0]?>"><i
+                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                        <?php }?>
+                                        <?php if ($resultado[11] == 1) {?>
+                                            <a
+                                                href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?=$resultado[0]?>"><i
+                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                        <?php }?>
+                                    </td>
+                                </tr>
+                            <?php }?>
+                        </tbody>
+                    </table>
+
 
         </section>
     </main>

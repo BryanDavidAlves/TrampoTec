@@ -1,5 +1,19 @@
+<?php
+require_once "back-end/login/validador_acesso.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+
+include '../dao/conexao.php';
+
+$querySelect = "SELECT * FROM  tb_admin";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +32,8 @@
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Administradores</h1>
@@ -80,30 +94,33 @@
                         <th>ID</th>
                         <th>NOME</th>
                         <th>EMAIL INSTITUICIONAL</th>
-                        <th>SENHA</th>
+
 
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($resultado as $resultado) {?>
                     <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-adm">Bryan</td>
-                        <td class="table-email-adm">bryansalvinoalves@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        <td class="table-id">
+                        <?=$resultado[0]?>
+                        </td>
+                        <td class="table-nome-adm">
+                        <?=$resultado[1]?>
+                        </td>
+                        <td class="table-email-adm">
+                        <?=$resultado[2]?>
+                        </td>
+
+                        <td class="icone-table">  <?php if ($resultado[0]) {?>
+                                            <a
+                                                href="./back-end/crudAdm/adm-delete.php?id=<?=$resultado[0]?>"><i
+                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                        <?php }?>
                         </td>
                     </tr>
 
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-adm">Bryan</td>
-                        <td class="table-email-adm">bryansalvinoalves@gmail.com</td>
-                        <td class="table-cnpj">832959432432</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+
+                    <?php }?>
 
                 </tbody>
             </table>
