@@ -34,6 +34,20 @@ function validarForm(form) {
             if(!validateConfirmPassword($('#senha').val(), this.value)){
                 errors = true;
             }
+        }else if($(this).hasClass('email')){
+            if(!validarEmail($(this).val())){
+                errors = true;
+                $(this).addClass('is-invalid');
+            }else{
+                $(this).removeClass('is-invalid');
+            }
+        }else if($(this).hasClass('email-confirmation')){
+            if($(this).val() != $('#email').val()){
+                errors = true;
+                $(this).addClass('is-invalid');
+            }else{
+                $(this).removeClass('is-invalid');
+            }
         }else{
             if(tamanho == 0){
                 errors = true;
@@ -141,20 +155,18 @@ function validateConfirmPassword(password, confirmPassword) {
     return false;
 }
 
-function validarEmail() {
-    var email = document.getElementById("email").value;
-    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+function validarEmail(email) {
+    var regex = /^[a-zA-Z0-9._-]+@etec\.sp\.gov\.br$/;
 
-    if (regex.test(email)) {
-        alert("Email válido!");
-    } else {
-        alert("Email inválido!");
-    }
+    return regex.test(email);
 }
 
 $(function(){
     $('.send-validation-email').submit(function(e){
         e.preventDefault();
+        if(validarForm($(this))){
+            return ;
+        }
         Swal.fire({
             title: 'Aguarde...'
         });
