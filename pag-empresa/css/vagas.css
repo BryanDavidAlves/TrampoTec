@@ -7,11 +7,10 @@ main {
   margin-left:20%; 
   overflow:hidden;
   padding: 10px;
-
 } 
 
 main p{
-    margin-top: 3%;
+    margin-top: 30px;
     font-size: 25px;
 }
 
@@ -35,7 +34,7 @@ main p{
 .titulo-vagas {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-top: 3%;
+  margin-top: 30px;
 }
 
 
@@ -43,13 +42,17 @@ main p{
   font-size: 20px;
   color: rgb(255, 255, 255);
   width: 40%;
+display: flex;
+align-items: center;
+gap: 2%;
 
   }
 
 .add-vaga i{
-font-size: 35px;
+font-size: 50px;
 color: rgb(218, 30, 30);
-
+background-color: rgb(255, 255, 255);
+border-radius: 200px; 
 }
 
 
@@ -70,7 +73,7 @@ color: rgb(218, 30, 30);
   width: 100%;
   border: none;
   border-radius: 5px;
-  margin-top: 5%;
+  margin-top: 50px;
   z-index: 1;
 }
 
@@ -86,6 +89,7 @@ color: rgb(218, 30, 30);
 
 .btn-side:nth-child(2) {
   margin-right: 7%;
+
 }
 
 .btn-side p {
@@ -95,7 +99,6 @@ color: rgb(218, 30, 30);
 
 .filtro span {
   color: rgb(0, 0, 0);
-
   font-weight: 700;
 }
 
@@ -156,7 +159,7 @@ margin: 0 12px 0 0 ;
 .sistema-busca .modal-filtro {
   background-color: rgb(255, 255, 255);
   display: none;
-  z-index: 2;
+  z-index: 5;
 }
 
 .sistema-busca form .button-filtro {
@@ -171,12 +174,38 @@ margin: 0 12px 0 0 ;
   font-size: 0.9rem;
   padding: 10px;
   width: 90px;
-  z-index: 2;
+  z-index: 5;
 }
+
+.section-vagas{
+  overflow-y: scroll;
+  height:550px;
+
+}
+
+
+.section-vagas::-webkit-scrollbar {
+  width: 10px;              
+}
+
+.section-vagas::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);     
+}
+
+.section-vagas::-webkit-scrollbar-thumb {
+  background-color:  #555cb3;    
+  border-radius: 50px;      
+  border: 2px solid rgb(253, 253,253);}
+
+.section-vagas::-webkit-scrollbar-track-piece{
+  background-color:  #9a9999a1;    
+  border-radius: 50px;      
+  border: 2px solid rgb(253, 253,253);}
 
 thead {
   color: rgb(70, 70, 70);
   font-weight: 600;
+
 }
 
 th {
@@ -185,16 +214,22 @@ th {
   color: black;
 }
 
+
+
 table {
   background-color: rgb(247, 247, 247);
-  border-radius: 20px;
-  width: 100%;
+  height:550px;
+  width:100%;
 z-index: 2;
+
+
 }
 
 .infos {
   border-bottom: 2px solid rgb(80, 80, 80);
   padding: 10px;
+  width:100%;
+
 
 }
 
@@ -206,20 +241,15 @@ z-index: 2;
 padding: 25px;
 }
 
-.table-nome-professor {
+.table {
   width: 100px;
+
 }
 
-.table-email-professor {
-  word-break: break-all;
-  width: 200px;
-}
 
 tr:nth-last-child(1) {
   border: none;
 }
-
-
 
 
 .sistema-busca .barra-pesquisa {
@@ -268,3 +298,87 @@ tr:nth-last-child(1) {
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
+
+.icone-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icone-table .icons form i {
+  margin: 3px;
+  cursor: pointer;
+}
+
+.icons form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  gap: 10px;
+}
+
+.ver-mais{
+  background-color: rgba(10, 8, 8, 0);
+  display: none;
+  border: none;
+  position: fixed;
+  height: 100%;
+  z-index: 10;
+  outline: none;
+}
+
+.ver-mais  .vermais-body{
+  animation:500ms linear trans;
+  background-color: rgb(255, 255, 255);
+  width:400px;
+  height: 500px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: start;
+   gap: 30px;
+   border: rgb(0, 0, 0) 1px solid;
+   border-radius: 25px;
+   z-index: 15;
+   transform: translateY(20%);
+ 
+  }
+
+  .ver-mais  .ver-fechar{
+   position: absolute;
+   font-size: 27px;
+   color: red;
+   cursor: pointer;
+   right: 20px;
+   top: 20px;
+
+  }
+
+  .ver-mais .vermais-body .vermais-infos{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+   width: 320px;
+   margin-top: 40px;
+
+  }
+
+  @keyframes trans{
+    0%{opacity: 0%; transform: translateY(-10%);}
+  
+    100%{opacity: 100%; transform: translateY(20%);}
+  
+    }
+
+    
+  .ver-mais .vermais-body .vermais-infos h3{
+font-size: 20px;
+
+  }
+
+  .ver-mais .vermais-body .vermais-infos p{
+    font-size: 15px;
+    line-height: 20px;
+      }

@@ -1,4 +1,24 @@
 <?php
+include('../dao/conexao.php');
+
+require_once "./back-end/login/validador_acesso.php";
+
+
+
+// Pega o ID do cliente logado
+$cliente_id = $_SESSION['idProfessor'];
+
+$querySelect = "SELECT * FROM  tb_professor WHERE idProfessor = $cliente_id";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+    
+
+
+?>
+<?php
 require_once "./back-end/login/validador_acesso.php";
 ?>
 <!DOCTYPE html>
@@ -39,8 +59,8 @@ include '../pag-professor/components/sidebar.php';
       <div class="align-card-indicacao">
 
           <form class="" action="perfil.php">
-              <label for="destinatario">DISCIPLINA</label>
-              <input type="text" name="disciplina-etec" id="">
+              <label for="destinatario">Curso</label>
+              <input type="text" name="curso" id="">
               <br>
               <label for="mensagem">CODIGO-ETEC</label>
               <input type="text" name="codigo-etec" id="">
@@ -52,20 +72,18 @@ include '../pag-professor/components/sidebar.php';
 </dialog>
     <div class="alinhar-perfil">
         <div class="imagem-perfil">
-            <img src="img/11.png" alt="Foto de perfil">
+        <?php foreach($resultado as $resultado ) { ?>
+            <img src="fotosProfessor/perfil/<?=$resultado[4]?>" alt="Foto de perfil">
         </div>
 
-
+          
             <h3 class="informacao-usuario">Nome</h3>
-            <h4 class="nome-usuario" >Jose</h4>
+            <h4 class="nome-usuario" ><?=$resultado[1]?></h4>
 
             <h3 class="informacao-usuario">Email</h3>
-            <h4 class="nome-usuario">jose.souza@etec.sp.gov.br</h4>
-
-            <h3 class="informacao-usuario">Telefone</h3>
-            <h4 class="nome-usuario">11984286277</h4>
-
-            <h3 class="informacao-usuario">Disciplinas</h3>
+            <h4 class="nome-usuario"><?=$resultado[2]?></h4>
+            <?php }  ?>
+            <h3 class="informacao-usuario">Curso</h3>
             <h4 class="nome-usuario">Desenvolvimento de Sistemas</h4>
     </div>
     </section>

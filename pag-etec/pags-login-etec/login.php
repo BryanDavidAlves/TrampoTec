@@ -18,11 +18,11 @@
             <div class="box-formulario">
                 <h1 class="title-login">Login Etec</h1>
 
-                <form action="../back-end/login/valida_login.php" method="post">
+                <form action="home.php">
                     <div class="item-form">
-                        <label for="nome-etec">Email</label>
+                        <label for="nome-etec">NOME</label>
                         <div class="div-input">
-                            <input type="text" name="email-etec" id="email-etec">
+                            <input type="text" name="nome-etec" id="nome-etec">
                         </div>
                     </div>
 
@@ -33,24 +33,6 @@
                             <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
                     </div>
-                    <?php
-                    if (isset($_GET['login']) && $_GET['login'] == "senhaInvalida") {
-                        ?>
-                        <div class="text-danger">
-                            Usuario ou senha Inválidos
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <?php
-                    if (isset($_GET['login']) && $_GET['login'] == "naoaprovado") {
-                        ?>
-                        <div class="text-danger">
-                            Cadastro Pendente
-                        </div>
-                    <?php
-                    }
-                    ?>
                     <input class="botao" type="submit" value="Entrar">
                     <div class="remember">
                         <div>

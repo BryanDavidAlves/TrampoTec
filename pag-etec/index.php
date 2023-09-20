@@ -1,6 +1,3 @@
-<?php
-require_once "./back-end/login/validador_acesso.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,6 +15,7 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php include '../pag-etec/componentes/sidebar.php' ?>
+
     <?php include '../pag-etec/componentes/notificacao.php' ?>
 
     <main>

@@ -93,6 +93,7 @@ require_once "./beck-end/login/validador_acesso.php";
                         <th>VAGA</th>
                         <th>ENTREVISTA</th>
                         <th>EMAIL</th>
+                        
                     </tr>
 
                 </thead>

@@ -103,7 +103,7 @@ aside {
   position: fixed;
   right: 0;
   overflow-y: scroll;
-  z-index: 5;
+  z-index: 100;
   top: 0;
 }
 aside::-webkit-scrollbar {

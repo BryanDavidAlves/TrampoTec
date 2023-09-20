@@ -32,7 +32,7 @@ require_once "./beck-end/login/validador_acesso.php";
             <div class="card-corpo">
                 <div class="card-itens">
                     <i class="icon-config fa-regular fa-user"></i>
-                        <p class="nome-config"> Conta</p>
+                        <p class="nome-config"> Editar conta</p>
                  
                 </div>
             </div>  

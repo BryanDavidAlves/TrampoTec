@@ -1,4 +1,7 @@
 <?php
+require_once "back-end/login/validador_acesso.php";
+?>
+<?php
 include('../dao/conexao.php');
 $querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '1'";
 $resultado = $conexao->query($querySelect);
@@ -16,20 +19,13 @@ $resultado = $conexao->query($querySelect);
 $professor = $resultado->fetchALL();
 $n_professor = count($professor);
 
-$querySelect = "SELECT * FROM tb_etec WHERE aprovado = '1'";
-$resultado = $conexao->query($querySelect);
-$etec = $resultado->fetchALL();
-$n_etec = count($etec);
+
 
 $querySelect = "SELECT * FROM tb_admin";
 $resultado = $conexao->query($querySelect);
 $admin = $resultado->fetchALL();
 $n_admin = count($admin);
 
-$querySelect = "SELECT * FROM tb_etec WHERE aprovado = '0'";
-$resultado = $conexao->query($querySelect);
-$pendenteEt = $resultado->fetchALL();
-$n_pendenteEtec = count($pendenteEt);
 
 
 $querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '0'";
@@ -101,17 +97,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                         </h2>
                     </div>
                 </a>
-                <a href="etec.php?aprovado=1">
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Etecs</h3>
-                            <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>
-                            <?= $n_etec ?>
-                        </h2>
-                    </div>
-                </a>
+                
                 <a href="adm.php">
                     <div class="card">
                         <div class="header-card">
@@ -124,17 +110,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     </div>
                 </a>
 
-                <a href="etec.php?aprovado=0">
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Etecs Pendentes</h3>
-                            <i id="etec" class="fa-solid fa-school" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>
-                            <?= $n_pendenteEtec ?>
-                        </h2>
-                    </div>
-                </a>
+        
                 <a href="empresa.php?aprovado=0">
                 <div class="card">
                     <div class="header-card">

@@ -1,3 +1,16 @@
+<?php
+include('../dao/conexao.php');
+
+require_once "back-end/login/validador_acesso.php";
+
+$cliente_id = $_SESSION['idAdmin'];
+$querySelect = "SELECT * FROM  tb_admin WHERE idAdmin = $cliente_id";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,13 +34,15 @@
     <main>
         <section class="perfil">
             <div class="perfil-info">
+                <?php foreach($resultado as $resultado) { ?>
                 <h2>EMAIL:</h2>
-                <h3>thais@gmail.com</h3>
+                <h3><?=$resultado[2]?></h3>
             </div>
             <div class="perfil-info">
                 <h2>SENHA:</h2>
-                <h3>12345678910</h3>
-            </div>
+                <h3><?=$resultado[3]?></h3>
+            </div> 
+            <?php }?>
         </section>
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>

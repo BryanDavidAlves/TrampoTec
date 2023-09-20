@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,6 +37,25 @@
                     <label for="nome">SENHA</label>
                     <input type="password" id="senha" name="senha">
                 </div>
+                <?php 
+                            if(isset($_GET['cadastro']) && $_GET['cadastro'] == "feito"){
+                            ?>
+                            <div class="text-green">
+                               Cadastro Realizado
+                            </div> 
+                            <?php  
+                            }
+                            ?>
+                             <?php 
+                            if(isset($_GET['cadastro']) && $_GET['cadastro'] == "erro"){
+                            ?>
+                            <div class="text-danger">
+                               Cadastro com erro
+                            </div> 
+                            <?php  
+                            }
+                            ?>
+                
                 <input type="submit" class="btn" value="CADASTRAR">
             </form>
         </section>
