@@ -1,23 +1,3 @@
-<?php
-include('../dao/conexao.php');
-
-if ($_GET['aprovado'] == '1') {
-    $querySelect = "SELECT * FROM  tb_etec WHERE aprovado='1'";
-
-    $query = $conexao->query($querySelect);
-
-    $etec = $query->fetchAll();
-} else {
-    $querySelect = "SELECT * FROM  tb_etec WHERE aprovado='0'";
-
-    $query = $conexao->query($querySelect);
-
-    $etec = $query->fetchAll();
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -54,14 +34,10 @@ if ($_GET['aprovado'] == '1') {
 
                 <div class="align-filtro">
                     <div class="btn-side">
-                        <a href="etec.php?aprovado=1">
-                            <p>CADASTRADAS</p>
-                        </a>
+                        <p>CADASTRADAS</p>
                     </div>
                     <div class="btn-side">
-                        <a href="etec.php?aprovado=0">
-                            <p>PENDENTES</p>
-                        </a>
+                        <p>PENDENTES</p>
                     </div>
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
@@ -110,40 +86,39 @@ if ($_GET['aprovado'] == '1') {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($etec as $etec) { ?>
-                        <tr class="infos">
-                            <td class="table-id">
-                                <?= $etec[0] ?>
-                            </td>
-                            <td class="table-nome-etec">
-                                <?= $etec[3] ?>
-                            </td>
-                            <td class="table-email-etec">
-                                <?= $etec[1] ?>
-                            </td>
-                            <td class="codigo-etec">
-                                <?= $etec[4] ?>
-                            </td>
-                            <td class="table-email-etec">
-                                <?= $etec[5] ?>
-                            </td>
-                            <td class="icone-table">
-                                <?php if ($etec[7] == 0) { ?>
-                                    <a href="./back-end/crudEtec/etec-aceitar.php?id=<?= $etec[0] ?>"><i
-                                            class="fa-solid fa-check" style="color: #ff0000;"></i></a>
+                    <tr class="infos">
+                        <td class="table-id">1</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
 
-                                    <a href="./back-end/crudEtec/etec-delete.php?id=<?= $etec[0] ?>"> <i class="fa-solid fa-x"
-                                            style="color: #000000;"></i></a>
-                                <?php } ?>
-                                <?php if ($etec[7] == 1) { ?>
-                                    <a href="./back-end/crudEtec/etec-delete.php?id=<?= $etec[0] ?>"> <i class="fa-solid fa-x"
-                                            style="color: #000000;"></i></a>
-                                <?php } ?>
+                    <tr class="infos">
+                        <td class="table-id">2</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
 
+                    <tr class="infos">
+                        <td class="table-id">3</td>
+                        <td class="table-nome-etec">ETEC GUAIANASES</td>
+                        <td class="table-email-etec">etecguaianases@gmail.com</td>
+                        <td class="">118</td>
+                        <td>GUAIANASES</td>
+                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
+                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        </td>
+                    </tr>
 
-                            </td>
-                        </tr>
-                    <?php } ?>
                 </tbody>
             </table>
 
