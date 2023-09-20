@@ -31,8 +31,6 @@ if (modalseta.style.display == 'none'){
 }
 
 
-
-
 function modalcandidatoremarcar(){
     
 var modalcandidatoremarcar=  document.getElementById('candidato')
