@@ -22,7 +22,8 @@ main{
 .text-green{
     color: green;
     text-align: center;
-    margin-bottom: 5px;
+    
+    margin-top: 10px;
 }
 .text-danger{
     color: red;

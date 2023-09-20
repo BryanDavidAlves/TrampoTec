@@ -2,8 +2,8 @@
 include('../../../dao/conexao.php');
 $id = trim($_GET['id']);
 
-$queryDelete ="DELETE FROM tb_etec WHERE idEtec = $id";
+$queryDelete ="DELETE FROM tb_curso WHERE idCurso = $id";
 
 $remover = $conexao->query($queryDelete);
-header('Location: ../../etec.php?aprovado=1');
+header('Location: ../../curso.php?etec=apagada');
 ?>

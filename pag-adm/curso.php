@@ -1,3 +1,14 @@
+<?php 
+    include('../dao/conexao.php');
+
+$querySelect = "SELECT * FROM  tb_curso";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+?>
+
+
 <?php
 require_once "back-end/login/validador_acesso.php";
 ?>
@@ -25,7 +36,7 @@ require_once "back-end/login/validador_acesso.php";
     ?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
-        <h1>Etecs</h1>
+        <h1>Cursos</h1>
         <div class="secao-cadastro">
         <a href="cadastro-curso.php">
             <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
@@ -92,33 +103,22 @@ require_once "back-end/login/validador_acesso.php";
                     </tr>
                 </thead>
                 <tbody>
-
+                    <?php foreach($resultado as $resultado) {?>
                     <tr class="infos">
                         <td class="table-id">
-                            1
+                            <?=$resultado[0]?>
                         </td>
                         <td style="text-align:start" class="table-nome-curso">
-                            Desenvolvimento de sistemas
+                        <?=$resultado[1]?>
                         </td>
 
                         <td class="icone-table">
 
-                            <i class="fa-solid fa-x" style="color: #000000;"></i>
+                        <a href="./back-end/crudCurso/delete-curso.php?id=<?=$resultado[0]?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
                         </td>
                     </tr>
-                    <tr class="infos">
-                        <td class="table-id">
-                            2
-                        </td>
-                        <td style="text-align:start" class="table-nome-curso">
-                            Nutrição e Dietética
-                        </td>
-
-                        <td class="icone-table">
-
-                            <i class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+                    <?php }  ?>
+                    
                 </tbody>
             </table>
 
