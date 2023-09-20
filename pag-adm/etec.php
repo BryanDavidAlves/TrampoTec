@@ -23,6 +23,12 @@
 
     <header>
         <h1>Etecs</h1>
+        <div class="secao-cadastro">
+        <a href="cadastro-etec.php">
+            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            <h2>Cadastrar uma nova ETEC</h2>
+        </a>
+    </div>
     </header>
     <main>
         <div class="secao-busca">
@@ -33,12 +39,12 @@
                 </div>
 
                 <div class="align-filtro">
-                    <div class="btn-side">
+                    <!--<div class="btn-side">
                         <p>CADASTRADAS</p>
                     </div>
                     <div class="btn-side">
                         <p>PENDENTES</p>
-                    </div>
+                    </div>-->
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
                             tune
