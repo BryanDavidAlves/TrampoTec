@@ -50,7 +50,7 @@ if (isset($_GET['login']) && $_GET['login'] == "erro") {
                         </div>
                         <a href="relembrar-senha.php">Esqueceu a Senha?</a>
                     </div>
-                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
+                    <a href="confirmar_email.php" style="margin-left:30%;">Criar uma conta</a>
                 </form>
             </div>
         </section>

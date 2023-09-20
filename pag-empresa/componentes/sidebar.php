@@ -1,12 +1,31 @@
+<?php
+include('../dao/conexao.php');
 
+require_once "./beck-end/login/validador_acesso.php";
+
+
+
+// Pega o ID do cliente logado
+$cliente_id = $_SESSION['idEmpresa'];
+
+$querySelect = "SELECT * FROM  tb_empresa WHERE idEmpresa = $cliente_id";
+
+$query = $conexao->query($querySelect);
+
+$resultados = $query->fetchAll();
+
+    
+
+
+?>
 <header class="side-bar">
         <nav>
             <div class="imagem-logo">
                     <img src="img/trampotec.png" alt="">
             </div>
             <div class="imagem-empresa">
-               <a href="../pag-empresa/perfil.php"> <img src="img/nuts.png">
-                <i class="icon-foto fa-solid fa-caret-right"></i>
+               <a href="../pag-empresa/perfil.php"><?php foreach($resultados as $resultados)  { ?> <img src="fotosEmpresa/perfil/<?=$resultados[10]?>"> <?php } ?>
+                <i class="icon-foto fa-solid fa-caret-right"></i> 
                 </a>
             </div>
             <ul>
