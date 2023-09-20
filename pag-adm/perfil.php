@@ -4,7 +4,6 @@ include('../dao/conexao.php');
 require_once "back-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idAdmin'];
-
 $querySelect = "SELECT * FROM  tb_admin WHERE idAdmin = $cliente_id";
 
 $query = $conexao->query($querySelect);
