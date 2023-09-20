@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2023 às 19:53
+-- Tempo de geração: 20-Set-2023 às 22:22
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bdtrampotec`
+-- Banco de dados: `bdtrambotec`
 --
 
 -- --------------------------------------------------------
@@ -123,10 +123,7 @@ CREATE TABLE `tb_conhecimento_aluno` (
 
 CREATE TABLE `tb_curso` (
   `idCurso` int(11) NOT NULL,
-  `nome` varchar(60) NOT NULL,
-  `cargaHoraria` int(4) NOT NULL,
-  `semestre` char(11) NOT NULL,
-  `modalidade` varchar(14) NOT NULL
+  `nome` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
