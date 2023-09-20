@@ -20,9 +20,8 @@ if ($_POST) {
     $query->execute();
     $id = $conexao->lastInsertId();
 
-    header('Location:../../adm.php');
+    header('Location:../../cadastro-adm.php?cadastro=feito');
     exit;
 } else {
-    header('Location: login.php?login=erro');
-    $_SESSION['autenticado'] = "NAO";
+    header('Location: ../../cadastro-adm.php?cadastro=erro');
 }
