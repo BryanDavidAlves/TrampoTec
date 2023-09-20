@@ -22,7 +22,13 @@
     ?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
-        <h1>Cursos</h1>
+        <h1>Etecs</h1>
+        <div class="secao-cadastro">
+        <a href="cadastro-curso.php">
+            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            <h2>Cadastrar um novo curso</h2>
+        </a>
+    </div>
     </header>
     <main>
         <div class="secao-busca">

@@ -31,7 +31,7 @@
     </header>
     <main>
         <section class="formulario-etec">
-            <form action="back-end/cadastro/salvarCadastro.php" method="post">
+            <form action=" " method="post">
                 <div class="input-box">
                     <label for="nome">EMAIL</label>
                     <input type="text" id="email" name="email">
