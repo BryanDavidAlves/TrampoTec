@@ -1,4 +1,4 @@
-.etec {
+.empresa {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,8 +28,12 @@
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     margin-left: 20%;
     padding-bottom: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
 .sistema-busca .barra-pesquisa {
@@ -61,6 +65,7 @@ main {
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
+    z-index: 2;
 }
 
 .sistema-busca {
@@ -154,7 +159,6 @@ main {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
-    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -184,7 +188,8 @@ th {
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
-    width: 90%;
+    width: 100%;
+    margin-left: 5%;
 }
 
 .infos {
@@ -200,13 +205,13 @@ table td {
 
 }
 
-.table-nome-etec {
-    width: 100px;
+.table-nome-curso {
+    word-break: break-all;
+    width: 600px;
 }
 
-.table-email-etec {
-    word-break: break-all;
-    width: 200px;
+.table-id {
+    width: 100px;
 }
 
 tr:nth-last-child(1) {
@@ -222,6 +227,7 @@ tr:nth-last-child(1) {
 
 .icone-table i {
     margin: 3px;
+    margin-right: 10px;
 }
 
 .cima {
@@ -231,10 +237,12 @@ tr:nth-last-child(1) {
     z-index: 0;
     width: 16%;
 }
-.btn-side a{
+
+.btn-side a {
     color: red;
     text-decoration: none;
 }
+
 #icon-titulo {
     background-color: #555cb3;
     border-radius: 100%;
@@ -242,6 +250,7 @@ tr:nth-last-child(1) {
     font-size: 1.5rem;
     margin-right: 10px;
 }
+
 .secao-cadastro a {
     display: flex;
     color: black;

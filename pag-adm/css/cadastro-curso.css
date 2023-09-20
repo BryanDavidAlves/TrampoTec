@@ -1,22 +1,22 @@
-.formulario-adm {
+.formulario-etec {
     width: 100%;
     display: flex;
     align-items: center;
-    
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
-.formulario-adm form {
+.formulario-etec form {
     display: flex;
     flex-direction: column;
     width: 50%;
     border: 2px solid rgb(161, 161, 161);
     border-radius: 20px;
-    padding: 40px;
+    padding: 40px 150px;
     align-items: center;
+    text-align: center;
 }
 main{
-    width: 100%;
+
     margin-left: 30%;
 }
 .text-green{
@@ -71,6 +71,7 @@ label {
 }
 .secao-cadastro{
     margin-bottom: 30px;
+    margin-left: 6%;
 }
 #icon-titulo {
     background-color: #555cb3;
@@ -78,5 +79,63 @@ label {
     padding: 10px 11px 6px 11px;
     font-size: 1.5rem;
     margin-right: 10px;
-  }
-  
+}
+.secao-adicionar{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+
+}
+#icon-adicionar {
+    background-color: #555cb3;
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+h3{
+    font-size:1.2rem ;
+
+}
+dialog {
+    background: transparent;
+    border: none;
+}
+dialog form{
+    border: 2px solid #000000;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+
+}
+.align-list{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-between;
+    
+}
+.align-list ul{
+    width: 150px;
+    height: 80px;
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column;
+
+}
+.align-list ul li{
+    border-bottom: 1px solid black;
+    height: 60px;
+    margin: auto;
+    width: 100%;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    text-align: center;
+}
+.align-list ul li:nth-last-child(1){
+    border: none;
+}
+
+
+

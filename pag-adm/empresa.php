@@ -25,7 +25,7 @@ if ($_GET['aprovado'] == '1') {
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@ if ($_GET['aprovado'] == '1') {
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/empresa.css">
 
-    <title>Document</title>
+    <title>Empresas</title>
 </head>
 
 <body>

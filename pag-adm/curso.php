@@ -9,24 +9,24 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="components/component-adm.css">
-    <link rel="stylesheet" href="css/etec.css">
 
-    <title>Etecs</title>
+    <link rel="stylesheet" href="components/component-adm.css">
+    <link rel="stylesheet" href="css/curso.css">
+
+    <title>Cursos</title>
 </head>
 
 <body>
-    <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
+    include '../pag-adm/components/sidebar-adm.php';
     ?>
-
+    <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Etecs</h1>
         <div class="secao-cadastro">
-        <a href="cadastro-etec.php">
+        <a href="cadastro-curso.php">
             <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
-            <h2>Cadastrar uma nova ETEC</h2>
+            <h2>Cadastrar um novo curso</h2>
         </a>
     </div>
     </header>
@@ -40,10 +40,12 @@
 
                 <div class="align-filtro">
                     <!--<div class="btn-side">
-                        <p>CADASTRADAS</p>
+                        <a href="empresa.php?aprovado=1">
+                            <p>CADASTRADAS</p><a>
                     </div>
                     <div class="btn-side">
-                        <p>PENDENTES</p>
+                        <a href="empresa.php?aprovado=0">
+                            <p>PENDENTES</p><a>
                     </div>-->
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
@@ -78,59 +80,49 @@
                 </div>
         </div>
 
-        <section class="etec">
-
+        <section>
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NOME</th>
-                        <th>EMAIL</th>
-                        <th>CÓDIGO</th>
-                        <th>MUNICIPIO</th>
-
+                        <th style="text-align:start">NOME</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
 
                     <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        <td class="table-id">
+                            1
+                        </td>
+                        <td style="text-align:start" class="table-nome-curso">
+                            Desenvolvimento de sistemas
+                        </td>
+
+                        <td class="icone-table">
+
+                            <i class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
                     </tr>
-
                     <tr class="infos">
-                        <td class="table-id">3</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        <td class="table-id">
+                            2
+                        </td>
+                        <td style="text-align:start" class="table-nome-curso">
+                            Nutrição e Dietética
+                        </td>
+
+                        <td class="icone-table">
+
+                            <i class="fa-solid fa-x" style="color: #000000;"></i>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
 
+
         </section>
     </main>
-    <script src="modal-etec.js"></script>
+    <script src="modal-empresa.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

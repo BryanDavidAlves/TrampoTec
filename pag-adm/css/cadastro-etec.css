@@ -1,4 +1,4 @@
-.formulario-adm {
+.formulario-etec {
     width: 100%;
     display: flex;
     align-items: center;
@@ -6,7 +6,7 @@
     padding-bottom: 10px;
 }
 
-.formulario-adm form {
+.formulario-etec form {
     display: flex;
     flex-direction: column;
     width: 50%;
