@@ -20,6 +20,16 @@ main{
     margin-left: 20%;
 
 }
+.text-green{
+    color: green;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.text-danger{
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
+}
 .btn {
     background-color: red;
     border: none;
