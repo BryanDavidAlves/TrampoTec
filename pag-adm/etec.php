@@ -1,3 +1,16 @@
+<?php include('../dao/conexao.php');
+
+require_once "back-end/login/validador_acesso.php";
+
+$querySelect = "SELECT * FROM  tb_etec";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -92,38 +105,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($resultado as $resultado)  { ?>
                     <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
+                        <td class="table-id"><?=$resultado[0]?></td>
+                        <td class="table-nome-etec"><?=$resultado[2]?></td>
+                        <td class="table-email-etec"><?=$resultado[1]?></td>
+                        <td class=""><?=$resultado[3]?></td>
+                        <td><?=$resultado[4]?></td>
+                        <td class="icone-table"> <a href="./back-end/crudEtec/etec-delete.php?id=<?=$resultado[0]?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
+                               
                         </td>
                     </tr>
+                    <?php } ?>
 
-                    <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="infos">
-                        <td class="table-id">3</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+                  
+                    
 
                 </tbody>
             </table>
