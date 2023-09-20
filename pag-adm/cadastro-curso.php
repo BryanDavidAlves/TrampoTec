@@ -10,9 +10,9 @@
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
-    <link rel="stylesheet" href="css/cadastro-etec.css">
+    <link rel="stylesheet" href="css/cadastro-curso.css">
 
-    <title>cadastrar etecs</title>
+    <title>cadastrar Cursos</title>
 </head>
 
 <body>
