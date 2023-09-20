@@ -20,7 +20,6 @@ require_once "./beck-end/login/validador_acesso.php";
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
 
     <dialog id="requisito" class="dialog-requisitos">
-    
             <form class="form-requisitos" >
                 <div class="inputs-dialog">
                     <label for="requisito">REQUISITOS PARA VAGA <i onclick="modalrequisito()" class="fa-solid fa-circle-xmark"></i></label>
