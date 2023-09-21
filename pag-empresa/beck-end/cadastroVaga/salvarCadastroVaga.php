@@ -21,6 +21,7 @@ if ($_POST) {
     $inicio = trim($_POST['inicio']);
     $termino = trim($_POST['termino']);
     $tipoTrabalho = trim($_POST['tipo']);
+    $semana = trim($_POST['semana']);
 
     foreach($resultado as $resultado){
     $id1 =  $resultado[0];
@@ -28,7 +29,7 @@ if ($_POST) {
     
 
 
-    $sql2 = "INSERT INTO tb_vaga (nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , curso , area , fk_idEmpresa ) VALUES
+    $sql2 = "INSERT INTO tb_vaga (nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , curso , area , semana , fk_idEmpresa ) VALUES
                 (   '$nome',
                     '$cidade',
                     '$bairro',
@@ -40,6 +41,7 @@ if ($_POST) {
                     '$periodo',
                     '$curso',
                     '$area',
+                    '$semana',
                     '$id1'
                     
                 )
