@@ -1,6 +1,17 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
 ?>
+<?php
+include('../dao/conexao.php');
+
+$querySelect = "SELECT * FROM  tb_curso  ORDER BY nome ASC";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,26 +31,27 @@ require_once "./beck-end/login/validador_acesso.php";
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
 
     <dialog id="requisito" class="dialog-requisitos">
-            <form class="form-requisitos" >
-                <div class="inputs-dialog">
-                    <label for="requisito">REQUISITOS PARA VAGA <i onclick="modalrequisito()" class="fa-solid fa-circle-xmark"></i></label>
-                    <textarea type="text" name="requisito"></textarea>
-                    <button class="botao-dialog"  type="submit">ADICIONAR</button>
-                </div>
-            </form>
-        </dialog>
+        <form class="form-requisitos">
+            <div class="inputs-dialog">
+                <label for="requisito">REQUISITOS PARA VAGA <i onclick="modalrequisito()"
+                        class="fa-solid fa-circle-xmark"></i></label>
+                <textarea type="text" name="requisito"></textarea>
+                <button class="botao-dialog" type="submit">ADICIONAR</button>
+            </div>
+        </form>
+    </dialog>
 
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
- 
+
         <a href="./vagas.php"><i class="fa-solid fa-chevron-left"></i> Cadastro de Vagas</a>
-        
-  
+
+
         <section class="formulario-cadastrar-vaga">
             <form action="beck-end/cadastroVaga/salvarCadastroVaga.php" method="post">
-           
-            <h1>FORMULARIO DE CADASTRO DE VAGA</h1>
+
+                <h1>FORMULARIO DE CADASTRO DE VAGA</h1>
 
                 <div class="alinhaento-inputs">
 
@@ -67,6 +79,10 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="tipo">TIPO TRABALHO</label>
                             <input name="tipo" type="text">
                         </span>
+                        <span>
+                            <label for="tipo">Semana</label>
+                            <input name="semana" type="text" placeholder="Seg-Sex" maxlength="7">
+                        </span>
                     </div>
 
                     <div>
@@ -74,12 +90,16 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="salario">SALARIO</label>
                             <input name="salario" type="number">
                         </span>
-
                         <span>
-                            <label for="curso">CURSO</label>
-                            <input name="curso" type="text">
-
-                        </span>
+                            <label>Curso</label>
+                        <select name="curso" id="curso" required>
+                            <option>Selecione um curso</option>
+                            <?php foreach($resultado as $resultado) { ?>
+                            <option value="<?=$resultado[0]?>"><?=$resultado[1]?></option>[]
+                            <?php } ?>
+                        </select>
+                        <span>
+                       
 
                     </div>
 
@@ -94,12 +114,19 @@ require_once "./beck-end/login/validador_acesso.php";
                     <div>
                         <span>
                             <label for="area">AREA</label>
-                            <input name="area" type="text">
+                           <select name="area" id="area"required>
+                            <option>Selecionar Area</option>
+                           </select>
                         </span>
 
                         <span>
                             <label for="periodo">PERIODO</label>
-                            <input name="periodo" type="text">
+                            <select>
+                                <option value="noturno">Noturno</option>
+                                <option value="diurno">Diurno</option>
+                                <option value="matinal">Matinal</option>
+                                <option value="integral">integral</option>
+                            </select>
                         </span>
                     </div>
 
@@ -125,7 +152,8 @@ require_once "./beck-end/login/validador_acesso.php";
                     <thead>
                         <tr>
                             <th>
-                                <i onclick="modalrequisito()"  class="add-requisito fa-solid fa-circle-plus"></i> ADICIONAR REQUISITO
+                                <i onclick="modalrequisito()" class="add-requisito fa-solid fa-circle-plus"></i>
+                                ADICIONAR REQUISITO
                             </th>
 
                         </tr>
@@ -143,14 +171,14 @@ require_once "./beck-end/login/validador_acesso.php";
 
                 </table>
                 <?php
-                            if(isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro"){
-                            ?>
-                            <div class="text-danger">
-                               Erro ao Cadastrar Vaga
-                            </div> 
-                            <?php  
-                            }
-                            ?>
+                if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
+                    ?>
+                    <div class="text-danger">
+                        Erro ao Cadastrar Vaga
+                    </div>
+                    <?php
+                }
+                ?>
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
@@ -161,6 +189,7 @@ require_once "./beck-end/login/validador_acesso.php";
 
 
     </main>
+    <script src="./js/funcoes.js"></script>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
