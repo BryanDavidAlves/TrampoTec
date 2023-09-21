@@ -2,25 +2,24 @@
 
 <?php
 
-$servidor="localhost";
-$banco="bdtrampotec";
-$usuario="root";
-$senha="";
-    
-try{
+$servidor = "localhost";
+$banco = "bdtrambotec";
+$usuario = "root";
+$senha = "";
 
-$conexao = new PDO("mysql:host=$servidor;
+try {
+
+    $conexao = new PDO("mysql:host=$servidor;
 dbname=$banco",
-$usuario,
-$senha);
+        $usuario,
+        $senha);
 
-return $conexao;
+    return $conexao;
 
- }catch(PDOException $e){
+} catch (PDOException $e) {
 
- echo '<p>' . $e->getMessage(). '</p>';
+    echo '<p>' . $e->getMessage() . '</p>';
 
- }
-
+}
 
 ?>
