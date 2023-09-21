@@ -1,5 +1,3 @@
-
-
 <?php
 require_once "back-end/login/validador_acesso.php";
 
@@ -62,16 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <label for="nome">NOME DO CURSO</label>
                     <input type="text" id="nomeCuso" name="nomeCuso">
                 </div>
-
-             
-                <div id="campos">
-                    <!-- Campos adicionados dinamicamente aparecerão aqui -->
+                <div>
+                    <button type="button" id="adicionarCampo"> <i id="icon-btn" class="fa-solid fa-plus"
+                            style="color: #ffffff;"></i>Adicionar Requisitos</button>
+                    <div id="campos">
+                        <!-- Campos adicionados dinamicamente aparecerão aqui -->
+                    </div>
+                    <button type="button" id="adicionarArea"><i id="icon-btn" class="fa-solid fa-plus"
+                            style="color: #ffffff;"></i>Adicionar Area</button>
+                    <div id="area">
+                        <!-- Campos adicionados dinamicamente aparecerão aqui -->
+                    </div>
                 </div>
-                <button type="button" id="adicionarCampo">Adicionar Requisitos</button>
-                <div id="area">
-                    <!-- Campos adicionados dinamicamente aparecerão aqui -->
-                </div>
-                <button type="button" id="adicionarArea">Adicionar Area</button>
 
 
                 <?php
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
                 <?php
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
                 <input type="submit" class="btn" value="CADASTRAR">
@@ -112,12 +112,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 const novoCampo = document.createElement("input");
                 novoCampo.type = "text";
                 novoCampo.name = `campo${contadorCampos}`;
-                novoCampo.placeholder = `Campo ${contadorCampos}`;
+                novoCampo.placeholder = `Requisito ${contadorCampos}`;
                 camposContainer.appendChild(novoCampo);
             });
         });
     </script>
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("area");
@@ -136,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             });
         });
     </script>
+    <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

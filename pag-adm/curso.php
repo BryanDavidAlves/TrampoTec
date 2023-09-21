@@ -113,7 +113,7 @@ require_once "back-end/login/validador_acesso.php";
                         <?=$resultado[1]?>
                         </td>
                         <td class="ver-mais" id="btn1">
-                            Ver Mais
+                            <span class="btn-modal">Ver Mais</span>
                         </td>
                         <td class="icone-table">
 

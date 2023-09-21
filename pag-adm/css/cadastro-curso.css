@@ -126,6 +126,45 @@ h3{
 .align-list ul li:nth-last-child(1){
     border: none;
 }
+#icon-btn {
+    background-color: red;
+    border-radius: 100%;
+    padding: 5px 5px 6px 6px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+#campos, #area{
+    display: flex;
+    flex-direction: column;
+}
+
+#campos input{
+    padding: 4px;
+    font-size: 1rem;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+}
+#area, #area{
+    display: flex;
+    flex-direction: column;
+}
+
+#area input{
+    padding: 4px;
+    font-size: 1rem;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+}
+
 
 
 
