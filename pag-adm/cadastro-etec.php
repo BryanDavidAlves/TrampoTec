@@ -50,8 +50,8 @@ require_once "back-end/login/validador_acesso.php";
                     <input maxlength="text" type="numeric" id="codigo" name="codigo" required>
                 </div>
                 <div class="input-box">
-                    <label for="nome">MUNICIPIO</label>
-                    <select name="municipio">
+                    <label for="municipio">MUNICIPIO</label>
+                    <select id="municipio" name="municipio">
                         <option value="Adamantina">Adamantina</option>
                         <option value="Aguaí">Aguaí</option>
                         <option value="Americana">Americana</option>
