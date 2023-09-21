@@ -1,4 +1,4 @@
-.empresa {
+.aluno {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,12 +28,8 @@
 }
 
 main {
-    display: flex;
-    flex-direction: column;
     margin-left: 20%;
     padding-bottom: 50px;
-    align-items: center;
-    justify-content: center;
 }
 
 .sistema-busca .barra-pesquisa {
@@ -60,12 +56,31 @@ main {
     outline: none;
 }
 
+main .img-cima {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100px;
+}
+
+main .img-cima img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.titulo-vagas {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 3%;
+}
+
 .secao-busca {
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
-    z-index: 2;
 }
 
 .sistema-busca {
@@ -159,6 +174,7 @@ main {
 .sistema-busca .modal-filtro {
     background-color: rgb(255, 255, 255);
     display: none;
+    margin-left: 6%;
 }
 
 .sistema-busca form .button-filtro {
@@ -188,7 +204,7 @@ th {
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
-    width: 100%;
+    width: 90%;
     margin-left: 5%;
 }
 
@@ -199,19 +215,10 @@ table {
 }
 
 table td {
-    padding: 20px 5px 30px 5px;
-    text-align: center;
+    padding: 20px 10px 5px 15px;
+    text-align: start;
     color: rgb(94, 94, 94);
-
-}
-
-.table-nome-curso {
-    word-break: break-all;
-    width: 600px;
-}
-
-.table-id {
-    width: 100px;
+    text-align: center;
 }
 
 tr:nth-last-child(1) {
@@ -227,7 +234,6 @@ tr:nth-last-child(1) {
 
 .icone-table i {
     margin: 3px;
-    margin-right: 10px;
 }
 
 .cima {
@@ -262,4 +268,23 @@ tr:nth-last-child(1) {
 
 .secao-cadastro {
     margin-top: 30px;
+}
+
+.modal-infos {
+    padding: 50px;
+
+}
+
+#modal {
+    border-radius: 10px;
+}
+
+.table-dialog {
+    margin: auto;
+}
+.table-dialog th{
+    padding: 10px 100px;
+}
+.table-dialog td{
+    padding: 15px 0px;
 }

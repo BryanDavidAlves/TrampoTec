@@ -108,10 +108,13 @@ require_once "back-end/login/validador_acesso.php";
                         <td class="table-id">
                             <?=$resultado[0]?>
                         </td>
+
                         <td style="text-align:start" class="table-nome-curso">
                         <?=$resultado[1]?>
                         </td>
-
+                        <td class="ver-mais" id="btn1">
+                            Ver Mais
+                        </td>
                         <td class="icone-table">
 
                         <a href="./back-end/crudCurso/delete-curso.php?id=<?=$resultado[0]?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
@@ -125,7 +128,29 @@ require_once "back-end/login/validador_acesso.php";
 
         </section>
     </main>
-    <script src="modal-empresa.js"></script>
+    
+    <dialog id="modal">
+        <section class="modal-infos">
+            <table class="table-dialog">
+                <thead>
+                    <th>Areas</th>
+                    <th>Requisitos</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Areas 1</td> 
+                        <td>Requisitos 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>Areas 2</td> 
+                        <td>Requisitos 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </dialog>
+    <script src="modal-curso.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

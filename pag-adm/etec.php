@@ -37,11 +37,11 @@ $resultado = $query->fetchAll();
     <header>
         <h1>Etecs</h1>
         <div class="secao-cadastro">
-        <a href="cadastro-etec.php">
-            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
-            <h2>Cadastrar uma nova ETEC</h2>
-        </a>
-    </div>
+            <a href="cadastro-etec.php">
+                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <h2>Cadastrar uma nova ETEC</h2>
+            </a>
+        </div>
     </header>
     <main>
         <div class="secao-busca">
@@ -105,27 +105,39 @@ $resultado = $query->fetchAll();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($resultado as $resultado)  { ?>
-                    <tr class="infos">
-                        <td class="table-id"><?=$resultado[0]?></td>
-                        <td class="table-nome-etec"><?=$resultado[2]?></td>
-                        <td class="table-email-etec"><?=$resultado[1]?></td>
-                        <td class=""><?=$resultado[3]?></td>
-                        <td><?=$resultado[4]?></td>
-                        <td class="icone-table"> <a href="./back-end/crudEtec/etec-delete.php?id=<?=$resultado[0]?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
-                               
-                        </td>
-                    </tr>
+                    <?php foreach ($resultado as $resultado) { ?>
+                        <tr class="infos">
+                            <td class="table-id">
+                                <?= $resultado[0] ?>
+                            </td>
+                            <td class="table-nome-etec">
+                                <?= $resultado[2] ?>
+                            </td>
+                            <td class="table-email-etec">
+                                <?= $resultado[1] ?>
+                            </td>
+                            <td class="">
+                                <?= $resultado[3] ?>
+                            </td>
+                            <td>
+                                <?= $resultado[4] ?>
+                            </td>
+                            <td class="icone-table"> <a href="./back-end/crudEtec/etec-delete.php?id=<?= $resultado[0] ?>"><i
+                                        class="fa-solid fa-x" style="color: #000000;"></i></a>
+
+                            </td>
+                        </tr>
                     <?php } ?>
 
-                  
-                    
+
+
 
                 </tbody>
             </table>
 
         </section>
     </main>
+
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
