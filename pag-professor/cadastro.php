@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="align-input-login">
-                            <i class="fa-solid fa-lock fa-lg" style="color: #75777a;"></i><input  class="form-control-login obrigatorio"  placeholder="Sua Senha" type="password" name="senha-professor" id="senha-professor">
+                            <i class="fa-solid fa-lock fa-lg" style="color: #75777a;"></i><input  class="form-control-login obrigatorio"  placeholder="Sua Senha" type="password" name="senha-professor" id="senha-professor"><i class="fa-solid fa-eye" style="color: #1f3251;"></i>
                         </div>
 
                                         <?php

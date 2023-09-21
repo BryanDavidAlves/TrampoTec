@@ -1,5 +1,5 @@
 <?php
-include('../../../dao/conexao.php');
+include '../../../dao/conexao.php';
 
 $email_pro = $_POST['email-professor'];
 $senha_pro = $_POST['senha-professor'];
@@ -20,8 +20,6 @@ if ($n == 1) {
     header('Location: ../../index.php');
 
 } else {
-    header('Location: ../../login.php?login=erro');
+    header('Location: ../../cadastro.php?login=erro');
     $_SESSION['autenticado'] = "não";
 }
-
-?>

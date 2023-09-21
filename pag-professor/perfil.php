@@ -56,16 +56,16 @@ include '../pag-professor/components/sidebar.php';
 
           <form class="" action="perfil.php">
               <label for="destinatario">NOME</label>
-              <input type="text" name="curso" id="" placeholder="<?=$resultado[1]?>">
+              <input type="text" name="nome" id="" placeholder="<?=$resultado[1]?>">
 
               <label for="mensagem">EMAIL</label>
-              <input type="text" name="codigo-etec" id="" placeholder="<?=$resultado[2]?>">
+              <input type="text" name="email" id="" placeholder="<?=$resultado[2]?>">
 
               <label for="mensagem">SENHA</label>
-              <input type="text" name="codigo-etec" id="" placeholder="<?=$resultado[3]?>">
+              <input type="text" name="nova-senha" id="" placeholder="<?=$resultado[3]?>">
 
               <label for="mensagem">CONFIRMAR NOVA SENHA</label>
-              <input type="text" name="codigo-etec" id="" placeholder="Repetir Nova  Senha">
+              <input type="text" name="nova-senha" id="" placeholder="Repetir Nova  Senha">
 
               <input type="submit" value="EDITAR" class="botao-indicacao">
           </form>

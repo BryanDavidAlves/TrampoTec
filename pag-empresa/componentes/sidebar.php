@@ -18,8 +18,8 @@
                     <li onclick="clickmenu2()"><a><i class="fa-sharp fa-solid fa-bell fa-lg"></i>Notificações</a></li>
                     <li onclick="clickmenu()"><a><i class="fa-solid fa-envelope"></i>Email</a></li>
                     <li><a href="../pag-empresa/configuracoes.php"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
-                    <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>           
+                    <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>
                 </div>
             </ul>
-        </nav>                 
-</header>  
+        </nav>
+</header>

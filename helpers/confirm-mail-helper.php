@@ -1,3 +1,4 @@
+
 <?php
 require 'phpmailer-helper.php';
 
@@ -10,3 +11,4 @@ if(sendMail('Confirme seu email', str_replace('@user_mail', $to, file_get_conten
     echo json_encode(array('icon' => 'error', 'title' => 'Ops...', 'text' => 'Não foi possível enviar o email. Tente novamente em breve.'));
 }
 exit;
+
