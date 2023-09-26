@@ -123,6 +123,17 @@ font-size: 17px;
 input:focus{
 outline: none;
 }
+
+.selects:focus{
+   outline: none;
+}
+.selects{
+   padding: 10px;
+   border-radius: 25px;
+   border: 1px solid blue;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 15px;
+}
  
 .botao-vaga{
    padding: 10px;
@@ -135,79 +146,62 @@ outline: none;
    cursor: pointer;
 }
 
-.requisitos-caixa{
-  border-radius: 20px;
-  padding: 20px;
-  width:100% ;
-   display: flex;
-   justify-content: center;
-   flex-direction: row;
-   gap: 20px;
+.caixa-add-requisito{
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+gap: 20px;
 }
 
-thead tr th{
+.caixa-add-requisito span {
    display: flex;
-   justify-content: center;
    align-items: center;
-   gap: 5px;
-}
+   gap: 10px;
+   }
 
-
-.requisitos-caixa tbody{
-padding-bottom:10px;
-max-height: 200px;  
-overflow-y: scroll;
-border-radius: 15px;
-background-color: rgba(216, 212, 212, 0.349);
-width: 300px;
-}
-
-.requisitos-caixa tbody::-webkit-scrollbar {
-   width: 10px;              
- }
- 
- .requisitos-caixa tbody::-webkit-scrollbar-track {
-   background: rgb(255, 255, 255);     
- }
- 
- .requisitos-caixa tbody::-webkit-scrollbar-thumb {
-   background-color:  #6f6f6f;    
-   border-radius: 50px;      
-   border: 2px solid rgb(253, 253,253);}
-
-
-tbody tr td{
-      padding:25px;
-   word-break: break-all;
-   line-height: 25px;
-   width: 300px;
-}
-
-
-tbody tr{
-   border-bottom:1px solid rgb(112, 112, 112) ;
-   width: 300px;
-}
-
-.requisitos-caixa .add-requisito {
+.add-requisito {
   font-size: 30px;
   color: red;
   cursor: pointer;
 }
 
-
-.dialog-requisitos{
-   background-color: rgba(255, 255, 255, 0);
-   display: none;
-   border: none;
-   position: fixed;
-   height: 100%;
-   z-index: 10;
-
+.caixa-add-requisito .body-inputs{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   max-height: 200px;
+   width: 300px;
+   height:auto;
+   padding: 10px;
 }
 
-.dialog-requisitos .form-requisitos{
-   animation:500ms linear trans;
+.body-inputs::-webkit-scrollbar {
+   width: 10px;              
+ }
+ 
+ .body-inputs::-webkit-scrollbar-track {
+   background: rgb(255, 255, 255);    
+ }
+ 
+ .body-inputs::-webkit-scrollbar-thumb {
+   background-color:  #555cb3;    
+   border-radius: 50px;      
+   border: 2px solid rgb(253, 253,253);}
+ 
+ .body-inputs::-webkit-scrollbar-track-piece{
+   background-color:  #9a9999a1;    
+   border-radius: 50px;      
+   border: 2px solid rgb(253, 253,253);}
+
+.caixa-add-requisito .body-inputs input{
+   padding: 9px;
+   border-radius: 25px;
+   border: 1px solid blue;
+   width:90%;
+   animation:400ms linear trans;
    transform: translateY(20%);
 }
 
@@ -219,57 +213,3 @@ tbody tr{
    }
 
 
-.dialog-requisitos .form-requisitos .inputs-dialog{
-  background-color: rgb(255, 255, 255);
-  width:300px;
-  height: 400px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   gap: 30px;
-   border: rgb(17, 12, 12) 1px solid;
-   border-radius: 10px;
-   z-index: 15;
-}
-
-
-.dialog-requisitos .form-requisitos .inputs-dialog label{
-   font-size: 17px;
-   display: flex;
-   align-items: center;
-   gap: 20px;
-}
-
-.dialog-requisitos .form-requisitos .inputs-dialog label i{
-   font-size: 27px;
-   color: red;
-   cursor: pointer;
-}
-
-.dialog-requisitos .form-requisitos .inputs-dialog textarea{
-   padding: 10px;
-   border-radius: 5px;
-   border: 1px solid rgb(89, 89, 91);
-   width:300px;
-   height: 250px;
-   padding-bottom: 130px;
-   min-height:50px;
-   min-width: 200px;
-   max-width: 250px;
-   max-height: 90px;
-   word-break: break-all;
-   font-family: Arial, Helvetica, sans-serif;
-   outline: none;
-}
-
-.dialog-requisitos .form-requisitos .inputs-dialog .botao-dialog{
-   padding: 9px;
-   border-radius: 20px;
-   border: none;
-   width: 130px;
-   color: white;
-   background-color: rgb(10, 10, 87);
-   font-size: 15px;
-   cursor: pointer
-}

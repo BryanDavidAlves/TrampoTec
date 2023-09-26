@@ -189,7 +189,7 @@ margin: 0 12px 0 0 ;
 }
 
 .section-vagas::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);     
+  background: rgb(255, 255, 255);    
 }
 
 .section-vagas::-webkit-scrollbar-thumb {
@@ -218,7 +218,7 @@ th {
 
 table {
   background-color: rgb(247, 247, 247);
-  height:550px;
+  height:auto;
   width:100%;
 z-index: 2;
 
@@ -320,11 +320,14 @@ tr:nth-last-child(1) {
 }
 
 .ver-mais{
-  background-color: rgba(10, 8, 8, 0);
+  background-color: rgba(10, 8, 8, 0.221);
   display: none;
   border: none;
   position: fixed;
   height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
   outline: none;
 }
@@ -338,39 +341,53 @@ tr:nth-last-child(1) {
    flex-direction: column;
    align-items: center;
    justify-content: start;
-   gap: 30px;
+   gap: 30px ;
    border: rgb(0, 0, 0) 1px solid;
    border-radius: 25px;
    z-index: 15;
-   transform: translateY(20%);
- 
+   transform: translateY(1%);
   }
 
   .ver-mais  .ver-fechar{
-   position: absolute;
+   padding: 9px;
    font-size: 27px;
    color: red;
    cursor: pointer;
-   right: 20px;
-   top: 20px;
+   display: flex;
+   align-items:self-start;
+   width: 90%;
 
   }
 
+  .vermais-align{
+    width:90%;
+    height: 80%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 40px ;
+  }
   .ver-mais .vermais-body .vermais-infos{
     gap: 15px;
     display: flex;
     flex-direction: column;
    width: 320px;
-   margin-top: 40px;
+   border: 1px solid black;
+   padding: 20px;
+   border-radius: 20px;
+background-color: white;
 
   }
+
+
 
   @keyframes trans{
     0%{opacity: 0%; transform: translateY(-10%);}
   
-    100%{opacity: 100%; transform: translateY(20%);}
+    100%{opacity: 100%; transform: translateY(1%);}
   
     }
+
 
     
   .ver-mais .vermais-body .vermais-infos h3{
