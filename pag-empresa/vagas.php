@@ -22,21 +22,23 @@ require_once "./beck-end/login/validador_acesso.php";
     <dialog id="vermais" class="ver-mais">
         <div class="vermais-body">
             <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
+            <div class="vermais-align">
+                <div class="vermais-infos">
+                    <h3>Periodo:</h3>
+                    <p>noturno 19:00pm AS 23:00pm </p>
+                </div>
 
-            <div class="vermais-infos">
-                <h3>Periodo:</h3>
-                <p>noturno 19:00pm AS 23:00pm  </p>
+                <div class="vermais-infos">
+                    <h3>Descricao:</h3>
+                    <p>TEXTO PARA SABER COMO VAI FICAR </p>
+                </div>
+
+                <div class="vermais-infos">
+                    <h3>Requisito:</h3>
+                    <p>TEXTO PARA SABER COMO VAI FICAR </p>
+                </div>
             </div>
 
-            <div class="vermais-infos">
-                <h3>Descricao:</h3>
-                <p>TEXTO PARA SABER COMO VAI FICAR </p>
-            </div>
-
-            <div class="vermais-infos">
-                <h3>Requisito:</h3>
-                <p>TEXTO PARA SABER COMO VAI FICAR </p>
-            </div>
 
         </div>
     </dialog>
@@ -79,7 +81,7 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="">Vaga</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                   
+
                         <input type="submit" value="Aplicar" class="button-filtro">
 
                     </form>

@@ -10,6 +10,24 @@ $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
 
+// Loop para coletar todos os campos do formulário
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $dados = [];
+
+    // Loop para coletar todos os campos do formulário
+    $contadorCampos = 1;
+    while (isset($_POST["campo{$contadorCampos}"])) {
+        $campo = $_POST["campo{$contadorCampos}"];
+        $dados[] = $campo;
+        $contadorCampos++;
+    }
+
+    // Agora, você pode fazer o que quiser com os dados (por exemplo, armazená-los no banco de dados ou exibi-los)
+    foreach ($dados as $campo) {
+        echo "Campo: " . htmlspecialchars($campo) . "<br>";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -30,16 +48,6 @@ $resultado = $query->fetchAll();
     <?php include('../pag-empresa/componentes/email.php') ?>
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
 
-    <dialog id="requisito" class="dialog-requisitos">
-        <form class="form-requisitos">
-            <div class="inputs-dialog">
-                <label for="requisito">REQUISITOS PARA VAGA <i onclick="modalrequisito()"
-                        class="fa-solid fa-circle-xmark"></i></label>
-                <textarea type="text" name="requisito"></textarea>
-                <button class="botao-dialog" type="submit">ADICIONAR</button>
-            </div>
-        </form>
-    </dialog>
 
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
@@ -92,14 +100,14 @@ $resultado = $query->fetchAll();
                         </span>
                         <span>
                             <label>Curso</label>
-                        <select name="curso" id="curso" required>
-                            <option>Selecione um curso</option>
-                            <?php foreach($resultado as $resultado) { ?>
-                            <option value="<?=$resultado[0]?>"><?=$resultado[1]?></option>[]
-                            <?php } ?>
-                        </select>
-                        <span>
-                       
+                            <select class="selects" name="curso" id="curso" required>
+                                <option>Selecione um curso</option>
+                                <?php foreach ($resultado as $resultado) { ?>
+                                    <option value="<?= $resultado[0] ?>"><?= $resultado[1] ?></option>[]
+                                <?php } ?>
+                            </select>
+                            <span>
+
 
                     </div>
 
@@ -114,14 +122,14 @@ $resultado = $query->fetchAll();
                     <div>
                         <span>
                             <label for="area">AREA</label>
-                           <select name="area" id="area"required>
-                            <option>Selecionar Area</option>
-                           </select>
+                            <select class="selects" name="area" id="area" required>
+                                <option>Selecionar Area</option>
+                            </select>
                         </span>
 
                         <span>
                             <label for="periodo">PERIODO</label>
-                            <select>
+                            <select class="selects">
                                 <option value="noturno">Noturno</option>
                                 <option value="diurno">Diurno</option>
                                 <option value="matinal">Matinal</option>
@@ -147,48 +155,52 @@ $resultado = $query->fetchAll();
                 </div>
 
 
+                <div class="caixa-add-requisito">
+                    <span>
+                        <i id="adicionarCampo" class="add-requisito fa-solid fa-circle-plus"></i>
+                        ADICIONAR REQUISITO
+                    </span>
+                    <div id="campos" class="body-inputs">
+                    
+                    </div>
+                </div>
 
-                <table class="requisitos-caixa">
-                    <thead>
-                        <tr>
-                            <th>
-                                <i onclick="modalrequisito()" class="add-requisito fa-solid fa-circle-plus"></i>
-                                ADICIONAR REQUISITO
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>JavaScript </td>
-
-                        </tr>
-
-
-                    </tbody>
-
-                </table>
                 <?php
                 if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
-                    ?>
+                ?>
                     <div class="text-danger">
                         Erro ao Cadastrar Vaga
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
-
-
         </section>
 
-
-
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const formulario = document.getElementById("meuFormulario");
+            const camposContainer = document.getElementById("campos");
+            const adicionarCampoButton = document.getElementById("adicionarCampo");
+
+            let contadorCampos = 0;
+
+            adicionarCampoButton.addEventListener("click", function() {
+                contadorCampos++;
+
+                const novoCampo = document.createElement("input");
+                novoCampo.type = "text";
+                novoCampo.name = `campo${contadorCampos}`;
+                novoCampo.placeholder = `Requisito ${contadorCampos}`;
+                camposContainer.appendChild(novoCampo);
+            });
+        });
+    </script>
+
     <script src="./js/funcoes.js"></script>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
