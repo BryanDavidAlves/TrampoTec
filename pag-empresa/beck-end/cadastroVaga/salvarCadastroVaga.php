@@ -1,5 +1,6 @@
 <?php
 include '../../../dao/conexao.php';
+require_once "../login/validador_acesso.php";
 
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
@@ -22,14 +23,12 @@ if ($_POST) {
     $termino = trim($_POST['termino']);
     $tipoTrabalho = trim($_POST['tipo']);
     $semana = trim($_POST['semana']);
-
-    foreach($resultado as $resultado){
-    $id1 =  $resultado[0];
-    }
+    $cliente_id = $_SESSION['idEmpresa'];
+   
     
 
 
-    $sql2 = "INSERT INTO tb_vaga (nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , curso , area , semana , fk_idEmpresa ) VALUES
+    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , curso , area , semana , fk_idEmpresa ) VALUES
                 (   '$nome',
                     '$cidade',
                     '$bairro',
@@ -42,7 +41,7 @@ if ($_POST) {
                     '$curso',
                     '$area',
                     '$semana',
-                    '$id1'
+                    '$cliente_id'
                     
                 )
                 ";
@@ -50,6 +49,31 @@ if ($_POST) {
     $query2->execute();
     $id = $conexao->lastInsertId();
 
+
+    $contadorCampos = 1;
+    while (isset($_POST["campo{$contadorCampos}"])) {
+        $campo = $_POST["campo{$contadorCampos}"];
+
+        $sql2 = "INSERT INTO tb_requisito ( requisito ) VALUES
+        (   '$campo'
+           
+        )
+        ";
+    $query = $conexao->prepare($sql2);
+    $query->execute();
+    $idrequisito = $conexao->lastInsertId();
+
+    $sql2 = "INSERT INTO tb_requisito_vaga ( fk_idVaga , fk_idRequisito ) VALUES
+        (   '$id',
+            '$idrequisito'
+           
+        )
+        ";
+    $query = $conexao->prepare($sql2);
+    $query->execute();
+    $contadorCampos++;
+    
+     }
   /*   $sql = "INSERT INTO tb_telefone_empresa ( numeroTelefone , fk_idEmpresa ) VALUES
     (   '$telefone',
         '$id'

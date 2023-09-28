@@ -1,5 +1,12 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
+include "../dao/conexao.php";
+
+
+$querySelect = "SELECT * FROM  tb_vaga ";
+$query = $conexao->query($querySelect);
+$resultado = $query->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,6 +30,7 @@ require_once "./beck-end/login/validador_acesso.php";
         <div class="vermais-body">
             <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
             <div class="vermais-align">
+                
                 <div class="vermais-infos">
                     <h3>Periodo:</h3>
                     <p>noturno 19:00pm AS 23:00pm </p>
@@ -94,7 +102,7 @@ require_once "./beck-end/login/validador_acesso.php";
                 <thead>
                     <tr>
 
-                        <th>EMPRESA</th>
+                        <th>NOME VAGA</th>
                         <th>CIDADE</th>
                         <th>BAIRRO</th>
                         <th>TIPO TABRALHO</th>
@@ -106,15 +114,15 @@ require_once "./beck-end/login/validador_acesso.php";
                     </tr>
                 </thead>
                 <tbody>
-
+                    <?php  foreach($resultado as $resultado) { ?>
                     <tr class="infos">
-                        <td class="table">Cysco Systen</td>
-                        <td class="table">Sao paulo</td>
-                        <td class="table">Itaquera</td>
-                        <td class="table">Presencial </td>
-                        <td class="table">R$ 2000,00</td>
-                        <td class="table">DESENVOLVIMENTO DE SISTEMAS</td>
-                        <td class="table">Back-end</td>
+                        <td class="table"><?=$resultado[1]?></td>
+                        <td class="table"><?=$resultado[2]?></td>
+                        <td class="table"><?=$resultado[3] ?></td>
+                        <td class="table"><?=$resultado[4] ?></td>
+                        <td class="table"><?=$resultado[5] ?></td>
+                        <td class="table"><?=$resultado[10] ?></td>
+                        <td class="table"><?=$resultado[11] ?></td>
                         <td class="table" style="cursor: pointer;color: blue;" onclick="vermais()">VER MAIS</td>
                         <td class="icone-table">
                             <div class="icons">
@@ -126,6 +134,7 @@ require_once "./beck-end/login/validador_acesso.php";
                             </div>
                         </td>
                     </tr>
+                    <?php  } ?>
 
                 </tbody>
             </table>

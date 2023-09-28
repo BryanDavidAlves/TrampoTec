@@ -122,14 +122,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span>
                             <label for="area">AREA</label>
-                            <select class="selects" name="area" id="area" required>
-                                <option>Selecionar Area</option>
-                            </select>
+                            <input name="area" type="text">
                         </span>
 
                         <span>
                             <label for="periodo">PERIODO</label>
-                            <select class="selects">
+                            <select class="selects" name="periodo">
                                 <option value="noturno">Noturno</option>
                                 <option value="diurno">Diurno</option>
                                 <option value="matinal">Matinal</option>
