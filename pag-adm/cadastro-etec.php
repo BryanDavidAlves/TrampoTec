@@ -10,8 +10,7 @@ require_once "back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -38,12 +37,21 @@ require_once "back-end/login/validador_acesso.php";
         <section class="formulario-etec">
             <form action="back-end/cadastro/salvarCadastroEtec.php" method="post">
                 <div class="input-box">
+                    <label for="nome">NOME</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="input-box">
                     <label for="nome">EMAIL</label>
                     <input type="text" id="email" name="email" required>
                 </div>
                 <div class="input-box">
-                    <label for="nome">NOME</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <label for="curso">CURSO</label>
+                    <select type="text" id="curso" name="curso" required>
+                        <option>desenvolvimento de sistemas</option>
+                        <option>nutrição</option>
+                        <option>eletrotecnica</option>
+                        <option>eletrotecnica</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <label for="nome">CODIGO</label>
@@ -198,7 +206,7 @@ require_once "back-end/login/validador_acesso.php";
                 </div>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                    ?>
+                ?>
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
@@ -207,7 +215,7 @@ require_once "back-end/login/validador_acesso.php";
                 ?>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                    ?>
+                ?>
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
