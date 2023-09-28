@@ -26,14 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/cadastro-curso.css">
-
     <title>cadastrar Cursos</title>
 </head>
 
@@ -60,36 +57,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <label for="nome">NOME DO CURSO</label>
                     <input type="text" id="nomeCuso" name="nomeCuso">
                 </div>
-                <div>
-                    <button type="button" id="adicionarCampo"> <i id="icon-btn" class="fa-solid fa-plus"
-                            style="color: #ffffff;"></i>Adicionar Requisitos</button>
-                    <div id="campos">
-                        <!-- Campos adicionados dinamicamente aparecerão aqui -->
-                    </div>
-                    <button type="button" id="adicionarArea"><i id="icon-btn" class="fa-solid fa-plus"
-                            style="color: #ffffff;"></i>Adicionar Area</button>
-                    <div id="area">
-                        <!-- Campos adicionados dinamicamente aparecerão aqui -->
-                    </div>
+
+                <div class="input-box">
+                    <label for="eixo">EIXO</label>
+                    <input type="text" id="eixo" name="eixo">
+                </div>
+                <div class="input-select">
+                    <select type="text" id="cargaHoraria" name="nome" required>
+                        <option>500 horas</option>
+                        <option>2400 horas</option>
+                        <option>1200 horas</option>
+                        <option>5200 horas</option>
+                    </select>
+                    <select type="text" id="semestre" name="nome" required>
+                        <option>1º semestre</option>
+
+                        <option>2º semestre</option>
+
+                        <option>3º semestre</option>
+                    </select>
+                    <select type="text" id="modalidade" name="nome" required>
+                        <option>ensino modular</option>
+                        
+                        <option>ensino medio integrado</option>
+
+                    </select>
                 </div>
 
 
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                    ?>
+                ?>
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                    ?>
+                ?>
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <input type="submit" class="btn" value="CADASTRAR">
@@ -99,14 +110,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("campos");
             const adicionarCampoButton = document.getElementById("adicionarCampo");
 
             let contadorCampos = 0;
 
-            adicionarCampoButton.addEventListener("click", function () {
+            adicionarCampoButton.addEventListener("click", function() {
                 contadorCampos++;
 
                 const novoCampo = document.createElement("input");
@@ -118,14 +129,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("area");
             const adicionarCampoButton = document.getElementById("adicionarArea");
 
             let contadorArea = 0;
 
-            adicionarCampoButton.addEventListener("click", function () {
+            adicionarCampoButton.addEventListener("click", function() {
                 contadorArea++;
 
                 const novoArea = document.createElement("input");
