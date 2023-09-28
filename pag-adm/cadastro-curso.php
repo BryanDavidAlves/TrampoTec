@@ -63,23 +63,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="text" id="eixo" name="eixo">
                 </div>
                 <div class="input-select">
-                    <select type="text" id="cargaHoraria" name="nome" required>
-                        <option>500 horas</option>
-                        <option>2400 horas</option>
+                    <select type="text" id="cargaHoraria" name="cargaHoraria" required>
+                       
                         <option>1200 horas</option>
-                        <option>5200 horas</option>
+                     
                     </select>
-                    <select type="text" id="semestre" name="nome" required>
+                    <select type="text" id="semestre" name="semestre" required>
                         <option>1º semestre</option>
 
                         <option>2º semestre</option>
 
                         <option>3º semestre</option>
                     </select>
-                    <select type="text" id="modalidade" name="nome" required>
-                        <option>ensino modular</option>
+                    <select type="text" id="modalidade" name="modalidade" required>
+                        <option>Modalidade</option>
                         
-                        <option>ensino medio integrado</option>
+                        <option>Presencial</option>
+                        <option>Online</option>
+
+
+                    </select>
+                    <select type="text" id="modalidade" name="ensino" required>
+                        <option>Ensino</option>
+                        <option>Curso Tecnico</option>
+                        <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
+                        <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
+                        <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
+                        <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>        
+                        <option>Especialização Técnica</option>
+
 
                     </select>
                 </div>

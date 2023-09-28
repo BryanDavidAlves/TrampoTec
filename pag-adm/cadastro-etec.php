@@ -2,6 +2,38 @@
 
 require_once "back-end/login/validador_acesso.php";
 
+$querySelect = "SELECT * FROM  tb_curso";
+
+$query = $conexao->query($querySelect);
+
+$curso = $query->fetchAll();
+
+
+
+    if($_POST) {
+      $id_etec = $_POST['id_etec'];
+      $querySelect = "SELECT * FROM tb_etec  WHERE idEtec = $id_etec";
+      $resultado = $conexao->query($querySelect);
+      $etec = $resultado->fetch();
+      $id_etec = $etec["idEtec"];
+      $nome = $etec["nome"];
+      $email = $etec["email"];
+      $codigo = $etec["codigo"];
+      $municipio = $etec["municipio"];
+
+      
+      
+
+    }else{
+      $id_etec = "";
+      $nome = "";
+      $email = "";
+      $codigo = "";
+      $municipio = "";
+      $cursoEtec = "";
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,178 +70,182 @@ require_once "back-end/login/validador_acesso.php";
             <form action="back-end/cadastro/salvarCadastroEtec.php" method="post">
                 <div class="input-box">
                     <label for="nome">NOME</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome"  value="<?=$nome?>" required>
                 </div>
                 <div class="input-box">
                     <label for="nome">EMAIL</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="email" name="email" placeholder="@cps.sp.gov.br"  value="<?=$email?>" required>
                 </div>
                 <div class="input-box">
                     <label for="curso">CURSO</label>
                     <select type="text" id="curso" name="curso" required>
-                        <option>desenvolvimento de sistemas</option>
-                        <option>nutrição</option>
-                        <option>eletrotecnica</option>
-                        <option>eletrotecnica</option>
+                        <option>Selecione o Curso</option>
+                        
+                       <?php foreach($curso as $curso) { ?>
+                        
+                        <option value="<?= $curso[0] ?>"><?= $curso[1] ?>-<?= $curso[4]?>-<?= $curso[5]?></option>
+                       <?php }?>
                     </select>
                 </div>
                 <div class="input-box">
                     <label for="nome">CODIGO</label>
-                    <input maxlength="text" type="numeric" id="codigo" name="codigo" required>
+                    <input maxlength="text" type="numeric" id="codigo" name="codigo"  value="<?=$codigo?>" required>
                 </div>
                 <div class="input-box">
                     <label for="municipio">MUNICIPIO</label>
                     <select id="municipio" name="municipio">
-                        <option value="Adamantina">Adamantina</option>
-                        <option value="Aguaí">Aguaí</option>
-                        <option value="Americana">Americana</option>
-                        <option value="Amparo">Amparo</option>
-                        <option value="Andradina">Andradina</option>
-                        <option value="Araçatuba">Araçatuba</option>
-                        <option value="Araraquara">Araraquara</option>
-                        <option value="Araras">Araras</option>
-                        <option value="Assis">Assis</option>
-                        <option value="Atibaia">Atibaia</option>
-                        <option value="Avaré">Avaré</option>
-                        <option value="Barra Bonita">Barra Bonita</option>
-                        <option value="Barretos">Barretos</option>
-                        <option value="Bauru">Bauru</option>
-                        <option value="Bebedouro">Bebedouro</option>
-                        <option value="Birigui">Birigui</option>
-                        <option value="Botucatu">Botucatu</option>
-                        <option value="Bragança Paulista">Bragança Paulista</option>
-                        <option value="Caçapava">Caçapava</option>
-                        <option value="Cachoeira Paulista">Cachoeira Paulista</option>
-                        <option value="Cafêlandia">Cafêlandia</option>
-                        <option value="Campinas">Campinas</option>
-                        <option value="Campo Limpo Paulista">Campo Limpo Paulista</option>
-                        <option value="Casa Branca">Casa Branca</option>
-                        <option value="Caraguatatuba">Caraguatatuba</option>
-                        <option value="Carapicuíba">Carapicuíba</option>
-                        <option value="Catanduva">Catanduva</option>
-                        <option value="Cerqueira César">Cerqueira César</option>
-                        <option value="Cerquilho">Cerquilho</option>
-                        <option value="Cotia">Cotia</option>
-                        <option value="Cravinhos">Cravinhos</option>
-                        <option value="Cruzeiro">Cruzeiro</option>
-                        <option value="Cubatão">Cubatão</option>
-                        <option value="Diadema">Diadema</option>
-                        <option value="Dracena">Dracena</option>
-                        <option value="Embu das Artes">Embu das Artes</option>
-                        <option value="Espirito Santo do Pinhal">Espirito Santo do Pinhal</option>
-                        <option value="Ferraz de Vasconcelos">Ferraz de Vasconcelos</option>
-                        <option value="Franca">Franca</option>
-                        <option value="Francisco Morato">Francisco Morato</option>
-                        <option value="Franco da Rocha">Franco da Rocha</option>
-                        <option value="Garça">Garça</option>
-                        <option value="Guaíra">Guaíra</option>
-                        <option value="Guaratinguetá">Guaratinguetá</option>
-                        <option value="Guariba">Guariba</option>
-                        <option value="Guarujá">Guarujá</option>
-                        <option value="Guarulhos">Guarulhos</option>
-                        <option value="Ibaté">Ibaté</option>
-                        <option value="Ibitinga">Ibitinga</option>
-                        <option value="Igarapava">Igarapava</option>
-                        <option value="Iguapé">Iguapé</option>
-                        <option value="Ilha Solteira">Ilha Solteira</option>
-                        <option value="Ipiaí">Ipiaí</option>
-                        <option value="Itanhaém">Itanhaém</option>
-                        <option value="Itapeva">Itapeva</option>
-                        <option value="Itapetininga">Itapetininga</option>
-                        <option value="Itatiba">Itatiba</option>
-                        <option value="Itu">Itu</option>
-                        <option value="Ituverava">Ituverava</option>
-                        <option value="Jacareí">Jacareí</option>
-                        <option value="Jales">Jales</option>
-                        <option value="Jandira">Jandira</option>
-                        <option value="Jaú">Jaú</option>
-                        <option value="Leme">Leme</option>
-                        <option value="Lençóis Paulista">Lençóis Paulista</option>
-                        <option value="Limeira">Limeira</option>
-                        <option value="Lins">Lins</option>
-                        <option value="Lorena">Lorena</option>
-                        <option value="Mairinque">Mairinque</option>
-                        <option value="Mariporã">Mariporã</option>
-                        <option value="Marília">Marília</option>
-                        <option value="Miguelópolis">Miguelópolis</option>
-                        <option value="Mirassol">Mirassol</option>
-                        <option value="Mococa">Mococa</option>
-                        <option value="Mogi das Cruzes">Mogi das Cruzes</option>
-                        <option value="Mogi Guaçu">Mogi Guaçu</option>
-                        <option value="Mogi Mirim">Mogi Mirim</option>
-                        <option value="Monte Alto">Monte Alto</option>
-                        <option value="Monte Aprazível">Monte Aprazível</option>
-                        <option value="Monte Mor">Monte Mor</option>
-                        <option value="Nova Odessa">Nova Odessa</option>
-                        <option value="Novo Horizonte">Novo Horizonte</option>
-                        <option value="Olímpia">Olímpia</option>
-                        <option value="Orlândia">Orlândia</option>
-                        <option value="Osasco">Osasco</option>
-                        <option value="Osvaldo Cruz">Osvaldo Cruz</option>
-                        <option value="Palmital">Palmital</option>
-                        <option value="Paraguaçu Paulista">Paraguaçu Paulista</option>
-                        <option value="Penápolis">Penápolis</option>
-                        <option value="Piedade">Piedade</option>
-                        <option value="Pindamonhangaba">Pindamonhangaba</option>
-                        <option value="Piracicaba">Piracicaba</option>
-                        <option value="Piraju">Piraju</option>
-                        <option value="Pirassununga">Pirassununga</option>
-                        <option value="Poá">Poá</option>
-                        <option value="Porto Feliz">Porto Feliz</option>
-                        <option value="Porto Ferreira">Porto Ferreira</option>
-                        <option value="Presidente Prudente">Presidente Prudente</option>
-                        <option value="Presidente Venceslau">Presidente Venceslau</option>
-                        <option value="Quatá">Quatá</option>
-                        <option value="Rancharia">Rancharia</option>
-                        <option value="Registro">Registro</option>
-                        <option value="Ribeirão Pires">Ribeirão Pires</option>
-                        <option value="Ribeirão Preto">Ribeirão Preto</option>
-                        <option value="Rio Claro">Rio Claro</option>
-                        <option value="Rio das Pedras">Rio das Pedras</option>
-                        <option value="Rio Grande da Serra">Rio Grande da Serra</option>
-                        <option value="Santa Bárbara D'Oeste">Santa Bárbara D'Oeste</option>
-                        <option value="Santa Cruz das Palmeira">Santa Cruz das Palmeira</option>
-                        <option value="Santa Cruz do Rio Pardo">Santa Cruz do Rio Pardo</option>
-                        <option value="Santa Fé do Sul">Santa Fé do Sul</option>
-                        <option value="Santa Isabel">Santa Isabel</option>
-                        <option value="Santana de Parnaíba">Santana de Parnaíba</option>
-                        <option value="Santo André">Santo André</option>
-                        <option value="Santos">Santos</option>
-                        <option value="São Bernado do Campo">São Bernado do Campo</option>
-                        <option value="São Caetano do Sul">São Caetano do Sul</option>
-                        <option value="São Carlos">São Carlos</option>
-                        <option value="São Joaquim da Barra">São Joaquim da Barra</option>
-                        <option value="São José do Rio Pardo">São José do Rio Pardo</option>
-                        <option value="São José dos Campos">São José dos Campos</option>
-                        <option value="São Manuel">São Manuel</option>
-                        <option value="São Paulo">São Paulo</option>
-                        <option value="São Pedro">São Pedro</option>
-                        <option value="São Roque">São Roque</option>
-                        <option value="São Sebastião">São Sebastião</option>
-                        <option value="São Simão">São Simão</option>
-                        <option value="Serrana">Serrana</option>
-                        <option value="Sorocaba">Sorocaba</option>
-                        <option value="Sumaré">Sumaré</option>
-                        <option value="Suzano">Suzano</option>
-                        <option value="Taboão da Serra">Taboão da Serra</option>
-                        <option value="Taquaritinga">Taquaritinga</option>
-                        <option value="Taquarituba">Taquarituba</option>
-                        <option value="Tatuí">Tatuí</option>
-                        <option value="Teodoro Sampaio">Teodoro Sampaio</option>
-                        <option value="Tietê">Tietê</option>
-                        <option value="Tupã">Tupã</option>
-                        <option value="Vargem Grande do Sul">Vargem Grande do Sul</option>
-                        <option value="Vera Cruz">Vera Cruz</option>
-                        <option value="Votorantim">Votorantim</option>
+                        <option value="Adamantina" <?=$municipio=='Adamantina'?'selected':''?>>Adamantina</option>
+                        <option value="Aguaí" <?=$municipio=='Aguaí'?'selected':''?>>Aguaí</option>
+                        <option value="Americana" <?=$municipio=='Americana'?'selected':''?>>Americana</option>
+                        <option value="Amparo" <?=$municipio=='Amparo'?'selected':''?>>Amparo</option>
+                        <option value="Andradina" <?=$municipio=='Andradina'?'selected':''?>>Andradina</option>
+                        <option value="Araçatuba" <?=$municipio=='Araçatuba'?'selected':''?>>Araçatuba</option>
+                        <option value="Araraquara" <?=$municipio=='Araraquara'?'selected':''?>>Araraquara</option>
+                        <option value="Araras" <?=$municipio=='Araras'?'selected':''?>>Araras</option>
+                        <option value="Assis" <?=$municipio=='Assis'?'selected':''?>>Assis</option>
+                        <option value="Atibaia" <?=$municipio=='Atibaia'?'selected':''?>>Atibaia</option>
+                        <option value="Avaré" <?=$municipio=='Avaré'?'selected':''?>>Avaré</option>
+                        <option value="Barra Bonita" <?=$municipio=='Barra Bonita'?'selected':''?>>Barra Bonita</option>
+                        <option value="Barretos" <?=$municipio=='Barretos'?'selected':''?>>Barretos</option>
+                        <option value="Bauru" <?=$municipio=='Bauru'?'selected':''?>>Bauru</option>
+                        <option value="Bebedouro" <?=$municipio=='Bebedouro'?'selected':''?>>Bebedouro</option>
+                        <option value="Birigui" <?=$municipio=='Birigui'?'selected':''?>>Birigui</option>
+                        <option value="Botucatu" <?=$municipio=='Botucatu'?'selected':''?>>Botucatu</option>
+                        <option value="Bragança Paulista" <?=$municipio=='Bragança Paulista'?'selected':''?>>Bragança Paulista</option>
+                        <option value="Caçapava" <?=$municipio=='Caçapava'?'selected':''?>>Caçapava</option>
+                        <option value="Cachoeira Paulista" <?=$municipio=='Cachoeira Paulista'?'selected':''?>>Cachoeira Paulista</option>
+                        <option value="Cafêlandia" <?=$municipio=='Cafêlandia'?'selected':''?>>Cafêlandia</option>
+                        <option value="Campinas" <?=$municipio=='Campinas'?'selected':''?>>Campinas</option>
+                        <option value="Campo Limpo Paulista" <?=$municipio=='Campo Limpo Paulista'?'selected':''?>>Campo Limpo Paulista</option>
+                        <option value="Casa Branca" <?=$municipio=='Casa Branca'?'selected':''?>>Casa Branca</option>
+                        <option value="Caraguatatuba" <?=$municipio=='Caraguatatuba'?'selected':''?>>Caraguatatuba</option>
+                        <option value="Carapicuíba" <?=$municipio=='Carapicuíba'?'selected':''?>>Carapicuíba</option>
+                        <option value="Catanduva" <?=$municipio=='Catanduva'?'selected':''?>>Catanduva</option>
+                        <option value="Cerqueira César" <?=$municipio=='Cerqueira César'?'selected':''?>>Cerqueira César</option>
+                        <option value="Cerquilho" <?=$municipio=='Cerquilho'?'selected':''?>>Cerquilho</option>
+                        <option value="Cotia" <?=$municipio=='Cotia'?'selected':''?>>Cotia</option>
+                        <option value="Cravinhos" <?=$municipio=='Cravinhos'?'selected':''?>>Cravinhos</option>
+                        <option value="Cruzeiro" <?=$municipio=='Cruzeiro'?'selected':''?>>Cruzeiro</option>
+                        <option value="Cubatão" <?=$municipio=='Cubatão'?'selected':''?>>Cubatão</option>
+                        <option value="Diadema" <?=$municipio=='Diadema'?'selected':''?>>Diadema</option>
+                        <option value="Dracena" <?=$municipio=='Dracena'?'selected':''?>>Dracena</option>
+                        <option value="Embu das Artes" <?=$municipio=='Embu das Artes'?'selected':''?>>Embu das Artes</option>
+                        <option value="Espirito Santo do Pinhal" <?=$municipio=='Espirito Santo do Pinhal'?'selected':''?>>Espirito Santo do Pinhal</option>
+                        <option value="Ferraz de Vasconcelos" <?=$municipio=='Ferraz de Vasconcelos'?'selected':''?>>Ferraz de Vasconcelos</option>
+                        <option value="Franca" <?=$municipio=='Franca'?'selected':''?>>Franca</option>
+                        <option value="Francisco Morato" <?=$municipio=='Francisco Morato'?'selected':''?>>Francisco Morato</option>
+                        <option value="Franco da Rocha" <?=$municipio=='Franco da Rocha'?'selected':''?>>Franco da Rocha</option>
+                        <option value="Garça" <?=$municipio=='Garça'?'selected':''?>>Garça</option>
+                        <option value="Guaíra" <?=$municipio=='Guaíra'?'selected':''?>>Guaíra</option>
+                        <option value="Guaratinguetá" <?=$municipio=='Guaratinguetá'?'selected':''?>>Guaratinguetá</option>
+                        <option value="Guariba" <?=$municipio=='Guariba'?'selected':''?>>Guariba</option>
+                        <option value="Guarujá" <?=$municipio=='Guarujá'?'selected':''?>>Guarujá</option>
+                        <option value="Guarulhos" <?=$municipio=='Guarulhos'?'selected':''?>>Guarulhos</option>
+                        <option value="Ibaté" <?=$municipio=='Ibaté'?'selected':''?>>Ibaté</option>
+                        <option value="Ibitinga" <?=$municipio=='Ibitinga'?'selected':''?>>Ibitinga</option>
+                        <option value="Igarapava" <?=$municipio=='Igarapava'?'selected':''?>>Igarapava</option>
+                        <option value="Iguapé" <?=$municipio=='Iguapé'?'selected':''?>>Iguapé</option>
+                        <option value="Ilha Solteira" <?=$municipio=='Ilha Solteira'?'selected':''?>>Ilha Solteira</option>
+                        <option value="Ipiaí" <?=$municipio=='Ipiaí'?'selected':''?>>Ipiaí</option>
+                        <option value="Itanhaém" <?=$municipio=='Itanhaém'?'selected':''?>>Itanhaém</option>
+                        <option value="Itapeva" <?=$municipio=='Itapeva'?'selected':''?>>Itapeva</option>
+                        <option value="Itapetininga" <?=$municipio=='Itapetininga'?'selected':''?>>Itapetininga</option>
+                        <option value="Itatiba" <?=$municipio=='Itatiba'?'selected':''?>>Itatiba</option>
+                        <option value="Itu" <?=$municipio=='Itu'?'selected':''?>>Itu</option>
+                        <option value="Ituverava" <?=$municipio=='Ituverava'?'selected':''?>>Ituverava</option>
+                        <option value="Jacareí" <?=$municipio=='Jacareí'?'selected':''?>>Jacareí</option>
+                        <option value="Jales" <?=$municipio=='Jales'?'selected':''?>>Jales</option>
+                        <option value="Jandira" <?=$municipio=='Jandira'?'selected':''?>>Jandira</option>
+                        <option value="Jaú" <?=$municipio=='Jaú'?'selected':''?>>Jaú</option>
+                        <option value="Leme" <?=$municipio=='Leme'?'selected':''?>>Leme</option>
+                        <option value="Lençóis Paulista" <?=$municipio=='Lençóis Paulista'?'selected':''?>>Lençóis Paulista</option>
+                        <option value="Limeira" <?=$municipio=='Limeira'?'selected':''?>>Limeira</option>
+                        <option value="Lins" <?=$municipio=='Lins'?'selected':''?>>Lins</option>
+                        <option value="Lorena" <?=$municipio=='Lorena'?'selected':''?>>Lorena</option>
+                        <option value="Mairinque" <?=$municipio=='Mairinque'?'selected':''?>>Mairinque</option>
+                        <option value="Mariporã" <?=$municipio=='Mariporã'?'selected':''?>>Mariporã</option>
+                        <option value="Marília" <?=$municipio=='Marília'?'selected':''?>>Marília</option>
+                        <option value="Miguelópolis" <?=$municipio=='Miguelópolis'?'selected':''?>>Miguelópolis</option>
+                        <option value="Mirassol" <?=$municipio=='Mirassol'?'selected':''?>>Mirassol</option>
+                        <option value="Mococa" <?=$municipio=='Mococa'?'selected':''?>>Mococa</option>
+                        <option value="Mogi das Cruzes" <?=$municipio=='Mogi das Cruzes'?'selected':''?>>Mogi das Cruzes</option>
+                        <option value="Mogi Guaçu" <?=$municipio=='Mogi Guaçu'?'selected':''?>>Mogi Guaçu</option>
+                        <option value="Mogi Mirim" <?=$municipio=='Mogi Mirim'?'selected':''?>>Mogi Mirim</option>
+                        <option value="Monte Alto" <?=$municipio=='Monte Alto'?'selected':''?>>Monte Alto</option>
+                        <option value="Monte Aprazível" <?=$municipio=='Monte Aprazível'?'selected':''?>>Monte Aprazível</option>
+                        <option value="Monte Mor" <?=$municipio=='Monte Mor'?'selected':''?>>Monte Mor</option>
+                        <option value="Nova Odessa" <?=$municipio=='Nova Odessa'?'selected':''?>>Nova Odessa</option>
+                        <option value="Novo Horizonte" <?=$municipio=='Novo Horizonte'?'selected':''?>>Novo Horizonte</option>
+                        <option value="Olímpia" <?=$municipio=='Olímpia'?'selected':''?>>Olímpia</option>
+                        <option value="Orlândia" <?=$municipio=='Orlândia'?'selected':''?>>Orlândia</option>
+                        <option value="Osasco" <?=$municipio=='Osasco'?'selected':''?>>Osasco</option>
+                        <option value="Osvaldo Cruz" <?=$municipio=='Osvaldo Cruz'?'selected':''?>>Osvaldo Cruz</option>
+                        <option value="Palmital" <?=$municipio=='Palmital'?'selected':''?>>Palmital</option>
+                        <option value="Paraguaçu Paulista" <?=$municipio=='Paraguaçu Paulista'?'selected':''?>>Paraguaçu Paulista</option>
+                        <option value="Penápolis" <?=$municipio=='Penápolis'?'selected':''?>>Penápolis</option>
+                        <option value="Piedade" <?=$municipio=='Piedade'?'selected':''?>>Piedade</option>
+                        <option value="Pindamonhangaba" <?=$municipio=='Pindamonhangaba'?'selected':''?>>Pindamonhangaba</option>
+                        <option value="Piracicaba" <?=$municipio=='Piracicaba'?'selected':''?>>Piracicaba</option>
+                        <option value="Piraju" <?=$municipio=='Piraju'?'selected':''?>>Piraju</option>
+                        <option value="Pirassununga" <?=$municipio=='Pirassununga'?'selected':''?>>Pirassununga</option>
+                        <option value="Poá" <?=$municipio=='Poá'?'selected':''?>>Poá</option>
+                        <option value="Porto Feliz" <?=$municipio=='Porto Feliz'?'selected':''?>>Porto Feliz</option>
+                        <option value="Porto Ferreira" <?=$municipio=='Porto Ferreira'?'selected':''?>>Porto Ferreira</option>
+                        <option value="Presidente Prudente" <?=$municipio=='Presidente Prudente'?'selected':''?>>Presidente Prudente</option>
+                        <option value="Presidente Venceslau" <?=$municipio=='Presidente Venceslau'?'selected':''?>>Presidente Venceslau</option>
+                        <option value="Quatá" <?=$municipio=='Quatá'?'selected':''?>>Quatá</option>
+                        <option value="Rancharia" <?=$municipio=='Rancharia'?'selected':''?>>Rancharia</option>
+                        <option value="Registro" <?=$municipio=='Registro'?'selected':''?>>Registro</option>
+                        <option value="Ribeirão Pires" <?=$municipio=='Ribeirão Pires'?'selected':''?>>Ribeirão Pires</option>
+                        <option value="Ribeirão Preto" <?=$municipio=='Ribeirão Preto'?'selected':''?>>Ribeirão Preto</option>
+                        <option value="Rio Claro" <?=$municipio=='Rio Claro'?'selected':''?>>Rio Claro</option>
+                        <option value="Rio das Pedras" <?=$municipio=='Rio das Pedras'?'selected':''?>>Rio das Pedras</option>
+                        <option value="Rio Grande da Serra" <?=$municipio=='Rio Grande da Serra'?'selected':''?>>Rio Grande da Serra</option>
+                        <option value="Santa Bárbara D'Oeste" <?=$municipio=='Santa Bárbara DOeste'?'selected':''?>>Santa Bárbara D'Oeste</option>
+                        <option value="Santa Cruz das Palmeira" <?=$municipio=='Santa Cruz das Palmeira'?'selected':''?>>Santa Cruz das Palmeira</option>
+                        <option value="Santa Cruz do Rio Pardo" <?=$municipio=='Santa Cruz do Rio Pardo'?'selected':''?>>Santa Cruz do Rio Pardo</option>
+                        <option value="Santa Fé do Sul" <?=$municipio=='Santa Fé do Sul'?'selected':''?>>Santa Fé do Sul</option>
+                        <option value="Santa Isabel" <?=$municipio=='Santa Isabel'?'selected':''?>>Santa Isabel</option>
+                        <option value="Santana de Parnaíba" <?=$municipio=='Santana de Parnaíba'?'selected':''?>>Santana de Parnaíba</option>
+                        <option value="Santo André" <?=$municipio=='Santo André'?'selected':''?>>Santo André</option>
+                        <option value="Santos" <?=$municipio=='Santos'?'selected':''?>>Santos</option>
+                        <option value="São Bernado do Campo" <?=$municipio=='São Bernado do Campo'?'selected':''?>>São Bernado do Campo</option>
+                        <option value="São Caetano do Sul" <?=$municipio=='São Caetano do Sul'?'selected':''?>>São Caetano do Sul</option>
+                        <option value="São Carlos" <?=$municipio=='São Carlos'?'selected':''?>>São Carlos</option>
+                        <option value="São Joaquim da Barra" <?=$municipio=='São Joaquim da Barra'?'selected':''?>>São Joaquim da Barra</option>
+                        <option value="São José do Rio Pardo" <?=$municipio=='São José do Rio Pardo'?'selected':''?>>São José do Rio Pardo</option>
+                        <option value="São José dos Campos" <?=$municipio=='São José dos Campos'?'selected':''?>>São José dos Campos</option>
+                        <option value="São Manuel" <?=$municipio=='São Manuel'?'selected':''?>>São Manuel</option>
+                        <option value="São Paulo" <?=$municipio=='São Paulo'?'selected':''?>>São Paulo</option>
+                        <option value="São Pedro" <?=$municipio=='São Pedro'?'selected':''?>>São Pedro</option>
+                        <option value="São Roque" <?=$municipio=='São Roque'?'selected':''?>>São Roque</option>
+                        <option value="São Sebastião" <?=$municipio=='São Sebastião'?'selected':''?>>São Sebastião</option>
+                        <option value="São Simão" <?=$municipio=='São Simão'?'selected':''?>>São Simão</option>
+                        <option value="Serrana" <?=$municipio=='Serrana'?'selected':''?>>Serrana</option>
+                        <option value="Sorocaba" <?=$municipio=='Sorocaba'?'selected':''?>>Sorocaba</option>
+                        <option value="Sumaré" <?=$municipio=='Sumaré'?'selected':''?>>Sumaré</option>
+                        <option value="Suzano" <?=$municipio=='Suzano'?'selected':''?>>Suzano</option>
+                        <option value="Taboão da Serra" <?=$municipio=='Taboão da Serra'?'selected':''?>>Taboão da Serra</option>
+                        <option value="Taquaritinga" <?=$municipio=='Taquaritinga'?'selected':''?>>Taquaritinga</option>
+                        <option value="Taquarituba" <?=$municipio=='Taquarituba'?'selected':''?>>Taquarituba</option>
+                        <option value="Tatuí" <?=$municipio=='Tatuí'?'selected':''?>>Tatuí</option>
+                        <option value="Teodoro Sampaio" <?=$municipio=='Teodoro Sampaio'?'selected':''?>>Teodoro Sampaio</option>
+                        <option value="Tietê" <?=$municipio=='Tietê'?'selected':''?>>Tietê</option>
+                        <option value="Tupã" <?=$municipio=='Tupã'?'selected':''?>>Tupã</option>
+                        <option value="Vargem Grande do Sul" <?=$municipio=='Vargem Grande do Sul'?'selected':''?>>Vargem Grande do Sul</option>
+                        <option value="Vera Cruz" <?=$municipio=='Vera Cruz'?'selected':''?>>Vera Cruz</option>
+                        <option value="Votorantim" <?=$municipio=='Votorantim'?'selected':''?>>Votorantim</option>
 
                     </select>
                 </div>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
                 ?>
+                   
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
+                    
                 <?php
                 }
                 ?>
@@ -219,10 +255,11 @@ require_once "back-end/login/validador_acesso.php";
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
+                    
                 <?php
                 }
                 ?>
-
+                <input type="hidden" id="id_etec" name="id_etec" value="<?=$id_etec?>">
                 <input type="submit" class="btn" value="CADASTRAR">
             </form>
         </section>
