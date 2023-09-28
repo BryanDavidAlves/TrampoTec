@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2023 às 22:22
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 21-Set-2023 às 22:29
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bdtrambotec`
+-- Banco de dados: `bdtrampotec`
 --
 
 -- --------------------------------------------------------
@@ -70,6 +70,13 @@ CREATE TABLE `tb_aluno` (
   `imagem` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_aluno`
+--
+
+INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `bairro`, `estado`, `cidade`, `cep`, `etecDoAluno`, `duracaoCurso`, `periodoCurso`, `conclusaoCurso`, `matriculaCurso`, `experiencias`, `habilidades`, `sobreMim`, `imagem`) VALUES
+(7, 'laysamelmudes@gmail.com', '900p900P900p*', 'LAYSA COCA MELMUDES', '475.158.398', '2023-09-01', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ETEC ABDIAS DO NASCIMENTO', '', '', '0000-00-00', 0, NULL, '', '', 'ec71fadf9084fd41f62aaaeeca933bcd.png');
+
 -- --------------------------------------------------------
 
 --
@@ -78,18 +85,6 @@ CREATE TABLE `tb_aluno` (
 
 CREATE TABLE `tb_aluno_curso` (
   `fk_idAluno` int(11) NOT NULL,
-  `fk_idCurso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_area`
---
-
-CREATE TABLE `tb_area` (
-  `idArea` int(11) NOT NULL,
-  `area` varchar(60) NOT NULL,
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -123,8 +118,23 @@ CREATE TABLE `tb_conhecimento_aluno` (
 
 CREATE TABLE `tb_curso` (
   `idCurso` int(11) NOT NULL,
-  `nome` varchar(60) NOT NULL
+  `nome` varchar(60) NOT NULL,
+  `cargaHoraria` int(4) NOT NULL,
+  `semestre` int(1) NOT NULL,
+  `modalidade` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_curso`
+--
+
+INSERT INTO `tb_curso` (`idCurso`, `nome`, `cargaHoraria`, `semestre`, `modalidade`) VALUES
+(1, 'desenvolvimento', 0, 0, '0'),
+(2, 'nutri', 0, 0, '0'),
+(3, 'adm', 0, 0, '0'),
+(4, 'eletro', 0, 0, '0'),
+(5, 'Administração', 1200, 3, 'Modular'),
+(6, 'Agente Comunitário de Saúde', 1200, 3, 'Integrado');
 
 -- --------------------------------------------------------
 
@@ -136,6 +146,32 @@ CREATE TABLE `tb_curso_etec` (
   `fk_idCurso` int(11) NOT NULL,
   `fk_idEtec` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_eixo`
+--
+
+CREATE TABLE `tb_eixo` (
+  `idEixo` int(11) NOT NULL,
+  `eixo` varchar(60) NOT NULL,
+  `fk_idCurso` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_eixo`
+--
+
+INSERT INTO `tb_eixo` (`idEixo`, `eixo`, `fk_idCurso`) VALUES
+(1, 'front-end', 1),
+(2, 'panela', 2),
+(3, 'preguiçoso', 3),
+(4, 'rede', 4),
+(5, 'fio', 4),
+(6, 'assu', 4),
+(7, 'Gestão e Negócios', 5),
+(8, 'Ambiente e Saúde', 6);
 
 -- --------------------------------------------------------
 
@@ -158,6 +194,13 @@ CREATE TABLE `tb_empresa` (
   `aprovado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_empresa`
+--
+
+INSERT INTO `tb_empresa` (`idEmpresa`, `email`, `senha`, `nome`, `cnpj`, `cep`, `logradouro`, `numero`, `bairro`, `estado`, `imagem`, `aprovado`) VALUES
+(14, 'laysamelmudes@gmail.com', '123', 'laysamelmudes@gmail.com', '85.656.164/0001-24', '08247-09', 'Rua Nossa Senhora das Candeias', 123, 'Vila Santa Teresinha', 'SP', 'ab5cd8aa072b4848b8b257bf73157bde.png', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -166,7 +209,7 @@ CREATE TABLE `tb_empresa` (
 
 CREATE TABLE `tb_etec` (
   `idEtec` int(11) NOT NULL,
-  `nome` varchar(40) NOT NULL,
+  `nome` varchar(60) NOT NULL,
   `email` char(22) NOT NULL,
   `codigo` int(11) NOT NULL,
   `municipio` varchar(30) NOT NULL
@@ -177,7 +220,7 @@ CREATE TABLE `tb_etec` (
 --
 
 INSERT INTO `tb_etec` (`idEtec`, `nome`, `email`, `codigo`, `municipio`) VALUES
-(1, 'Etec Abdias do Nascime', 'e224dir@cps.sp.gov.br', 224, 'São Paulo'),
+(1, 'Etec Abdias do Nascimento - Paraisópolis', 'e224dir@cps.sp.gov.br', 224, 'São Paulo'),
 (2, 'Etec Adolpho Berezin', 'e107dir@cps.sp.gov.br', 107, 'Mongaguá'),
 (3, 'Etec Albert Einstein - Casa Verde', 'e152dir@cps.sp.gov.br', 152, 'Guarujá'),
 (4, 'Etec Alcides Cestari', 'e255dir@cps.sp.gov.br', 255, 'Monte Alto'),
@@ -190,12 +233,12 @@ INSERT INTO `tb_etec` (`idEtec`, `nome`, `email`, `codigo`, `municipio`) VALUES
 (11, 'Etec Arnaldo Pereira Cheregatti', 'e215dir@cps.sp.gov.br', 215, 'Aguaí'),
 (12, 'Etec Astor de Mattos Carvalho', 'e038dir@cps.sp.gov.br', 38, 'Cabrália Paulista'),
 (13, 'Etec Augusto Tortolero Araújo', 'e039dir@cps.sp.gov.br', 39, 'Paraguaçu Paulista'),
-(14, 'Etec Bartolomeu Bueno da Silva - Anhangu', 'e262dir@cps.sp.gov.br', 262, 'Santana de Parnaíba'),
+(14, 'Etec Bartolomeu Bueno da Silva - Anhanguera', 'e262dir@cps.sp.gov.br', 262, 'Santana de Parnaíba'),
 (15, 'Etec Benedito Storani', 'e042dir@cps.sp.gov.br', 42, 'Jundiaí'),
 (16, 'Etec Bento Carlos Botelho do Amaral', 'e256dir@cps.sp.gov.br', 256, 'Guariba'),
 (17, 'Etec Bento Quirino', 'e043dir@cps.sp.gov.br', 43, 'Campinas'),
 (18, 'Etec Carlos de Campos - Brás', 'e045dir@cps.sp.gov.br', 45, 'São Paulo'),
-(19, 'Etec Carolina Carinhato Sampaio - Jardim', 'e134dir@cps.sp.gov.br', 134, 'São Paulo');
+(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo');
 
 -- --------------------------------------------------------
 
@@ -274,8 +317,30 @@ CREATE TABLE `tb_recomendacao` (
 
 CREATE TABLE `tb_requisito` (
   `idRequisito` int(11) NOT NULL,
-  `requisito` varchar(60) NOT NULL,
-  `fk_idCurso` int(11) NOT NULL
+  `requisito` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_requisito`
+--
+
+INSERT INTO `tb_requisito` (`idRequisito`, `requisito`) VALUES
+(1, 'php'),
+(2, 'cozinha'),
+(3, 'fazer nada'),
+(4, 'rede'),
+(5, 'fio'),
+(6, 'assu');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_requisito_vaga`
+--
+
+CREATE TABLE `tb_requisito_vaga` (
+  `fk_idVaga` int(11) NOT NULL,
+  `fk_idRequisito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -290,6 +355,13 @@ CREATE TABLE `tb_telefone_aluno` (
   `fk_idAluno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_telefone_aluno`
+--
+
+INSERT INTO `tb_telefone_aluno` (`idTelefoneAluno`, `telefoneAluno`, `fk_idAluno`) VALUES
+(6, '(11) 94489-032', 7);
+
 -- --------------------------------------------------------
 
 --
@@ -301,6 +373,13 @@ CREATE TABLE `tb_telefone_empresa` (
   `numeroTelefone` char(14) NOT NULL,
   `fk_idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_telefone_empresa`
+--
+
+INSERT INTO `tb_telefone_empresa` (`idTelefoneEmpresa`, `numeroTelefone`, `fk_idEmpresa`) VALUES
+(9, '(11) 94489-032', 14);
 
 -- --------------------------------------------------------
 
@@ -314,6 +393,45 @@ CREATE TABLE `tb_telefone_etec` (
   `fk_idEtec` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_telefone_etec`
+--
+
+INSERT INTO `tb_telefone_etec` (`idTelefoneEtec`, `telefoneEtec`, `fk_idEtec`) VALUES
+(1, '(11) 3507-7491', 1),
+(2, '(13) 3448-3800', 2),
+(3, '(13) 3448-3818', 2),
+(4, '(11) 3966-0503', 3),
+(5, '(11) 3858-7529', 3),
+(6, '(16) 3241-0834', 4),
+(7, '(16) 3241-0835', 4),
+(8, '(18) 3528-3982', 5),
+(9, '(18) 3528-4760', 5),
+(10, '(16) 3987-4964', 6),
+(11, '(16) 3987-5500', 6),
+(12, '(16) 3987-5501', 6),
+(13, '(16) 3761-2428', 7),
+(14, '(16) 3761-3023', 7),
+(15, '(14) 3433-5467', 8),
+(16, '(14) 3433-5274', 8),
+(17, '(16) 3172-1814', 9),
+(18, '(13) 3236-9973', 10),
+(19, '(19) 3625-6204', 11),
+(20, '(14) 3285-1210', 12),
+(21, '(14) 99616-436', 12),
+(22, '(18) 3361-1130', 13),
+(23, '(18) 3361-7719', 13),
+(24, '(11) 4156-1435', 14),
+(25, '(11) 4582-1881', 15),
+(26, '(16) 3251-4154', 16),
+(27, '(16) 3251-4063', 16),
+(28, '(16) 3251-1277', 16),
+(29, '(19) 3252-3596', 17),
+(30, '(19) 3251-8934', 17),
+(31, '(11) 3227-0286', 18),
+(32, '(11) 3311-7098', 18),
+(33, ' (11) 5851-931', 19);
+
 -- --------------------------------------------------------
 
 --
@@ -325,14 +443,15 @@ CREATE TABLE `tb_vaga` (
   `nome` varchar(40) NOT NULL,
   `cidade` varchar(40) NOT NULL,
   `bairro` varchar(40) NOT NULL,
-  `tipoTrabalho` varchar(10) NOT NULL,
+  `tipoTrabalho` varchar(30) NOT NULL,
   `salario` double NOT NULL,
   `descricao` char(80) NOT NULL,
   `inicio` time NOT NULL,
   `termino` time NOT NULL,
   `periodo` varchar(10) NOT NULL,
+  `curso` varchar(50) NOT NULL,
+  `area` varchar(50) NOT NULL,
   `semana` char(9) NOT NULL,
-  `fk_idRequisito` int(11) NOT NULL,
   `fk_idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -373,13 +492,6 @@ ALTER TABLE `tb_aluno_curso`
   ADD KEY `fk_idCurso` (`fk_idCurso`);
 
 --
--- Índices para tabela `tb_area`
---
-ALTER TABLE `tb_area`
-  ADD PRIMARY KEY (`idArea`),
-  ADD KEY `fk_idCurso` (`fk_idCurso`);
-
---
 -- Índices para tabela `tb_conhecimento`
 --
 ALTER TABLE `tb_conhecimento`
@@ -404,6 +516,13 @@ ALTER TABLE `tb_curso`
 ALTER TABLE `tb_curso_etec`
   ADD KEY `fk_idCurso` (`fk_idCurso`),
   ADD KEY `fk_idEtec` (`fk_idEtec`);
+
+--
+-- Índices para tabela `tb_eixo`
+--
+ALTER TABLE `tb_eixo`
+  ADD PRIMARY KEY (`idEixo`),
+  ADD KEY `fk_idCurso` (`fk_idCurso`);
 
 --
 -- Índices para tabela `tb_empresa`
@@ -461,8 +580,14 @@ ALTER TABLE `tb_recomendacao`
 -- Índices para tabela `tb_requisito`
 --
 ALTER TABLE `tb_requisito`
-  ADD PRIMARY KEY (`idRequisito`),
-  ADD KEY `fk_idCurso` (`fk_idCurso`);
+  ADD PRIMARY KEY (`idRequisito`);
+
+--
+-- Índices para tabela `tb_requisito_vaga`
+--
+ALTER TABLE `tb_requisito_vaga`
+  ADD KEY `fk_idRequisito` (`fk_idRequisito`),
+  ADD KEY `fk_idVaga` (`fk_idVaga`);
 
 --
 -- Índices para tabela `tb_telefone_aluno`
@@ -493,8 +618,7 @@ ALTER TABLE `tb_telefone_etec`
 --
 ALTER TABLE `tb_vaga`
   ADD PRIMARY KEY (`idVaga`),
-  ADD KEY `fk_idEmpresa` (`fk_idEmpresa`),
-  ADD KEY `fk_idRequisito` (`fk_idRequisito`);
+  ADD KEY `fk_idEmpresa` (`fk_idEmpresa`);
 
 --
 -- Índices para tabela `tb_vaga_aluno`
@@ -517,13 +641,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tb_area`
---
-ALTER TABLE `tb_area`
-  MODIFY `idArea` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tb_conhecimento`
@@ -535,13 +653,19 @@ ALTER TABLE `tb_conhecimento`
 -- AUTO_INCREMENT de tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `tb_eixo`
+--
+ALTER TABLE `tb_eixo`
+  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tb_empresa`
 --
 ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tb_etec`
@@ -577,25 +701,25 @@ ALTER TABLE `tb_recomendacao`
 -- AUTO_INCREMENT de tabela `tb_requisito`
 --
 ALTER TABLE `tb_requisito`
-  MODIFY `idRequisito` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRequisito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_empresa`
 --
 ALTER TABLE `tb_telefone_empresa`
-  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_etec`
 --
 ALTER TABLE `tb_telefone_etec`
-  MODIFY `idTelefoneEtec` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTelefoneEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `tb_vaga`
@@ -615,12 +739,6 @@ ALTER TABLE `tb_aluno_curso`
   ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `tb_area`
---
-ALTER TABLE `tb_area`
-  ADD CONSTRAINT `tb_area_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
 -- Limitadores para a tabela `tb_conhecimento_aluno`
 --
 ALTER TABLE `tb_conhecimento_aluno`
@@ -633,6 +751,12 @@ ALTER TABLE `tb_conhecimento_aluno`
 ALTER TABLE `tb_curso_etec`
   ADD CONSTRAINT `tb_curso_etec_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `tb_curso_etec_ibfk_2` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `tb_eixo`
+--
+ALTER TABLE `tb_eixo`
+  ADD CONSTRAINT `tb_eixo_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_perfil_empresa`
@@ -661,10 +785,11 @@ ALTER TABLE `tb_recomendacao`
   ADD CONSTRAINT `tb_recomendacao_ibfk_2` FOREIGN KEY (`fk_idProfessor`) REFERENCES `tb_professor` (`idProfessor`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `tb_requisito`
+-- Limitadores para a tabela `tb_requisito_vaga`
 --
-ALTER TABLE `tb_requisito`
-  ADD CONSTRAINT `tb_requisito_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
+ALTER TABLE `tb_requisito_vaga`
+  ADD CONSTRAINT `tb_requisito_vaga_ibfk_1` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_requisito_vaga_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_telefone_aluno`
@@ -688,8 +813,7 @@ ALTER TABLE `tb_telefone_etec`
 -- Limitadores para a tabela `tb_vaga`
 --
 ALTER TABLE `tb_vaga`
-  ADD CONSTRAINT `tb_vaga_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_vaga_ibfk_2` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `tb_vaga_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_vaga_aluno`

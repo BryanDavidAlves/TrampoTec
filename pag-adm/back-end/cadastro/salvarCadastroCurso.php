@@ -6,11 +6,21 @@ include '../../../dao/conexao.php';
 if ($_POST) {
     //passando todos os itens do post para as sua variaveis
     $nome = trim($_POST['nomeCuso']);
+    $eixo = trim($_POST['eixo']);
+    $cargaHoraria = trim($_POST['cargaHoraria']);
+    $semestre = trim($_POST['semestre']);
+    $modalidade = trim($_POST['modalidade']);
+    $ensino = trim($_POST['ensino']);
 
 
 
-    $sql = " INSERT INTO tb_curso ( nome ) VALUES
-    (   '$nome'
+
+    $sql = " INSERT INTO tb_curso ( nome , cargaHoraria , semestre , modalidade , ensino) VALUES
+    (   '$nome',
+        '$cargaHoraria',
+        '$semestre',
+        '$modalidade',
+        '$ensino'
     )
     ";
 $query = $conexao->prepare($sql);
@@ -18,8 +28,15 @@ $query->execute();
 $id = $conexao->lastInsertId();
 
 
+$sql = " INSERT INTO tb_eixo ( eixo , fk_idCurso) VALUES
+    (   '$eixo',
+        '$id'
+    )
+    ";
+$query = $conexao->prepare($sql);
+$query->execute();
 
-$contadorCampos = 1;
+/* $contadorCampos = 1;
     while (isset($_POST["campo{$contadorCampos}"])) {
         $campo = $_POST["campo{$contadorCampos}"];
 
@@ -50,7 +67,7 @@ $contadorCampos = 1;
     
     $contadorArea++;
     
-     }
+     } */
      header('Location: ../../cadastro-curso.php?cadastro=feito');
      exit;
 }

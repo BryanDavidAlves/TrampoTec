@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <select class="selects" name="curso" id="curso" required>
                                 <option>Selecione um curso</option>
                                 <?php foreach ($resultado as $resultado) { ?>
-                                    <option value="<?= $resultado[0] ?>"><?= $resultado[1] ?></option>[]
+                                    <option value="<?= $resultado[0] ?>"><?= $resultado[1] ?></option>
                                 <?php } ?>
                             </select>
                             <span>

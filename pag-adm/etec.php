@@ -8,6 +8,8 @@ $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
 
+
+
 ?>
 
 
@@ -122,7 +124,17 @@ $resultado = $query->fetchAll();
                             <td>
                                 <?= $resultado[4] ?>
                             </td>
-                            <td class="icone-table"> <a href="./back-end/crudEtec/etec-delete.php?id=<?= $resultado[0] ?>"><i
+                            <td class="text-center">
+                                <form action="cadastro-etec.php" method="POST">
+                                    <input type="hidden" class="form-control" id="id_etec" name="id_etec"
+                                        value="<?= $resultado[0] ?>">
+                                    <button type="submit" class="dropdown-item"><i
+                                            class="fas fa-edit fa-lg text-secondary"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td class="icone-table"> <a
+                                    href="./back-end/crudEtec/etec-delete.php?id=<?= $resultado[0] ?>"><i
                                         class="fa-solid fa-x" style="color: #000000;"></i></a>
 
                             </td>
