@@ -1,9 +1,7 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 require_once "./back-end/login/validador_acesso.php";
-
-
 
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idProfessor'];
@@ -13,9 +11,6 @@ $querySelect = "SELECT * FROM  tb_professor WHERE idProfessor = $cliente_id";
 $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
-
-    
-
 
 ?>
 <?php
@@ -50,39 +45,47 @@ include '../pag-professor/components/sidebar.php';
     </main>
 
     <section class="perfil">
+    <?php foreach ($resultado as $resultado) {?>
         <div class="align-button-info" id="btn1"><i id="icon-info"  class="fa-solid fa-plus" style="color: #ffffff;">
-            </i><h2>Adicionar informaçoes</h2>
+            </i><h2>Editar Perfil</h2>
         </div>
-
+<div class="fundo-dialog">
 <dialog id="abrir-indicacao">
 
-      <div class="align-card-indicacao">
+      <div class="align-card-indicacao" id="dialog">
 
           <form class="" action="perfil.php">
-              <label for="destinatario">Curso</label>
-              <input type="text" name="curso" id="">
-              <br>
-              <label for="mensagem">CODIGO-ETEC</label>
-              <input type="text" name="codigo-etec" id="">
+              <label for="destinatario">NOME</label>
+              <input type="text" name="nome" id="" placeholder="<?=$resultado[1]?>">
 
-              <input type="submit" value="CADASTRAR" class="botao-indicacao">
+              <label for="mensagem">EMAIL</label>
+              <input type="text" name="email" id="" placeholder="<?=$resultado[2]?>">
+
+              <label for="mensagem">SENHA</label>
+              <input type="text" name="nova-senha" id="" placeholder="<?=$resultado[3]?>">
+
+              <label for="mensagem">CONFIRMAR NOVA SENHA</label>
+              <input type="text" name="nova-senha" id="" placeholder="Repetir Nova  Senha">
+
+              <input type="submit" value="EDITAR" class="botao-indicacao">
           </form>
       </div>
 
 </dialog>
+</div>
     <div class="alinhar-perfil">
         <div class="imagem-perfil">
-        <?php foreach($resultado as $resultado ) { ?>
+
             <img src="fotosProfessor/perfil/<?=$resultado[4]?>" alt="Foto de perfil">
         </div>
 
-          
+
             <h3 class="informacao-usuario">Nome</h3>
             <h4 class="nome-usuario" ><?=$resultado[1]?></h4>
 
             <h3 class="informacao-usuario">Email</h3>
             <h4 class="nome-usuario"><?=$resultado[2]?></h4>
-            <?php }  ?>
+            <?php }?>
             <h3 class="informacao-usuario">Curso</h3>
             <h4 class="nome-usuario">Desenvolvimento de Sistemas</h4>
     </div>
@@ -111,6 +114,8 @@ var button1 = document.getElementById("btn1")
              button3.onclick = function (){
                 indicar.showModal()
             }
+
+
     </script>
 </body>
 </html>
