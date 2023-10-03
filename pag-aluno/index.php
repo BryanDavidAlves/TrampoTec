@@ -188,23 +188,8 @@ require_once "./back-end/login/validador_acesso.php";
     </dialog>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    <script>
-        var button1 = document.getElementById("btn1")
-        var button2 = document.getElementById("btn2")
-        var button3 = document.getElementById("btn3")
-        var modal = document.getElementById("modal")
-
-        button1.onclick = function () {
-            modal.showModal()
-        }
-        button2.onclick = function () {
-            modal.showModal()
-        }
-        button3.onclick = function () {
-            modal.showModal()
-        }
-    </script>
-    <script src="js/modal.js"></script>
+    <script src ="js/modal.js"></script>
+    <script src="js/modal-vagas.js"></script>
 </body>
 
 </html>

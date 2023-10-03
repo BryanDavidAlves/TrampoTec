@@ -30,7 +30,7 @@ require_once "./back-end/login/validador_acesso.php";
 
                 <section class="navigation">
                     <div class="trocar-pag">
-                        <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>
+                        <!-- <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>-->
                         <h2 onclick="mostrarInfoAcademica()">INFORMAÇÕES ACADEMICAS</h2>
                         <h2 onclick=" mostrarConhecimento()">CONHECIMENTOS</h2>
                         <h2 onclick=" mostrarDisponibilidade()">DISPONIBILIDADE</h2>
@@ -41,7 +41,7 @@ require_once "./back-end/login/validador_acesso.php";
                 </section>
 
                 <div class="container">
-
+                    <!--
                     <section id="info-pessoal" class="info-pessoal">
 
                         <div class="one-bar">
@@ -68,7 +68,7 @@ require_once "./back-end/login/validador_acesso.php";
 
                         </div>
                     </section>
-
+-->
 
                     <section id="info-academica" class="info-academica">
 
@@ -76,6 +76,7 @@ require_once "./back-end/login/validador_acesso.php";
                             <h3>CURSO:</h3>
                             <h4>Desenvolviento de Sistemas</h4>
                         </div>
+
 
                         <div class="two-bars">
 
@@ -107,35 +108,59 @@ require_once "./back-end/login/validador_acesso.php";
                             <h3>INSTITUIÇÃO ETEC:</h3>
                             <h4>ETEC DE GUAIANASES</h4>
                         </div>
-
+                        <button class="btn-curso" id="abrirCurso">Adicionar curso</button>
                     </section>
 
                     <section class="conhecimento" id="conhecimento">
                         <section class="left">
+                            <!--usar essa div para fazer o laço paro o select no banco (input-conhecimento)-->
                             <div class="input-conhecimento">
-                                <h3>IDIOMA:</h3>
-                                <h4>INGLES</h4>
+                                <span>
+                                    <h3>IDIOMA: </h3>
+                                    <p>Ingles</p>
+                                </span>
+                                <span>
+                                    <h3>NIVEL: </h3>
+                                    <p>Intermediario</p>
+                                </span>
                             </div>
 
-                            <div class="input-conhecimento">
+                            <!--<div class="input-conhecimento">
                                 <label for="nivel-idioma">NIVEL</label>
                                 <select name="nivel-idioma" id="nivel-idioma">
                                     <option value="">Basico</option>
                                     <option value="">Intermediário</option>
                                     <option value="">Avançado</option>
                                 </select>
-                            </div>
-                            <button class="btn-conhecimento">adicionar idioma</button>
-                            <div class="box-text">
-                                <label for="experiencia-text">EXPERIÊNCIA:</label>
-                                <textarea name="experiencia-text" id="experiencia-text" rows="10"
-                                    placeholder="OPCIONAL"></textarea>
+                            </div>-->
+                            <button class="btn-conhecimento" id="abrirIdioma">Adicionar idioma</button>
+
+                            <div class="input-hab">
+                                <span class="align-hab" onclick="abrirHab()">
+                                    <h3>HABILIDADE TECNOLÓGICAS </h3>
+                                    <i class="fa-solid fa-caret-down" style="color: #000;"></i>
+                                </span>
+                                <section class="drop-itens" id="habilidades">
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <button class="adc-hab">Adicionar habilidade</button>
+                                </section>
                             </div>
                         </section>
 
                         <section class="right">
                             <div class="box-text">
-                                <label for="conhecimento-text">CONHECIMENTOS:</label>
+                                <label for="conhecimento-text">SOBRE MIM:</label>
                                 <textarea name="coonhecimento-text" id="conhecimento-text"
                                     placeholder="OPCIONAL"></textarea>
                             </div>
@@ -175,11 +200,58 @@ require_once "./back-end/login/validador_acesso.php";
 
 
     </main>
+    <dialog id="modalIdioma">
+        <form action="">
+            <label for="">IDIOMA:</label>
+            <input type="text" name="" id=""><br><br><br>
+            <label for="">NIVEL:</label>
+            <select name="" id="">
+                <option value="">BÁSICO</option>
+                <option value="">INTERMEDIÁRIO</option>
+                <option value="">AVANÇADO</option>
+            </select><br><br><br>
+            <input type="submit">
+        </form>
+    </dialog>
+
+    <dialog id="modalCurso">
+        <form action="">
+            <label for="">NOME DO CURSO:</label>
+            <select name="" id="">
+                <option value="">Desenvolviento de Sistemas</option>
+                <option value="">Nutrição</option>
+                <option value="">Administração</option>
+            </select><br><br><br>
+            <label for="">SEMESTRE QUE VOCÊ ESTA CURSANDO:</label>
+            <input type="number" name="" id=""><br><br><br>
+            <label for="">PERÍODO:</label>
+            <select name="" id="">
+                <option value="">Vespertino</option>
+                <option value="">Noturno</option>
+                <option value="">Matutino</option>
+                <option value="">Integral</option>
+            </select><br><br><br>
+            <label for="">DURAÇÃO (MESES):</label>
+            <input type="number"><br><br><br>
+            <label for="">CONCLUSÃO:</label>
+            <input type="date"><br><br><br>
+            <label for="">INSTITUIÇÃO</label>
+            <select name="" id="">
+                <option value="">etec Guaianazes</option>
+                <option value="">etec Poa</option>
+                <option value="">etec Itaquera</option>
+                <option value="">etec Cidade Tiradentes</option>
+            </select><br><br><br>
+            <input type="submit">
+        </form>
+    </dialog>
     <?php
     include('../pag-aluno/components/sidebar.php');
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/troca-pag.js"></script>
+    <script src="js/abrir-hab.js"></script>
+    <script src="js/modal-curriculo.js"></script>
 </body>
 
 </html>
