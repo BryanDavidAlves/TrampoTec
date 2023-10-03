@@ -5,30 +5,28 @@ let disponibilidade = document.getElementById("disponibilidade")
 
 
 
-function mostrarInfoPessoal(){
+/*function mostrarInfoPessoal(){
     infoAcademica.style.display = "none";
     infoPessoal.style.display = "flex";
     conhecimento.style.display = "none"
     disponibilidade.style.display = "none"
 }
-
+*/
 function mostrarInfoAcademica(){
-    conhecimento.style.display = "none"
-    infoPessoal.style.display = "none";
+    conhecimento.style.display = "none";
     infoAcademica.style.display = "flex";
     disponibilidade.style.display = "none"
+    
 }
 
 function mostrarConhecimento(){
     conhecimento.style.display = "flex"
     infoAcademica.style.display = "none"
-    infoPessoal.style.display = "none"
     disponibilidade.style.display = "none"
 
 }
 function mostrarDisponibilidade(){
     disponibilidade.style.display = "flex"
     infoAcademica.style.display = "none"
-    infoPessoal.style.display = "none"
     conhecimento.style.display = "none"
 }

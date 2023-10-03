@@ -30,7 +30,7 @@ require_once "./back-end/login/validador_acesso.php";
 
                 <section class="navigation">
                     <div class="trocar-pag">
-                        <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>
+                        <!-- <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>-->
                         <h2 onclick="mostrarInfoAcademica()">INFORMAÇÕES ACADEMICAS</h2>
                         <h2 onclick=" mostrarConhecimento()">CONHECIMENTOS</h2>
                         <h2 onclick=" mostrarDisponibilidade()">DISPONIBILIDADE</h2>
@@ -41,7 +41,7 @@ require_once "./back-end/login/validador_acesso.php";
                 </section>
 
                 <div class="container">
-
+                    <!--
                     <section id="info-pessoal" class="info-pessoal">
 
                         <div class="one-bar">
@@ -68,7 +68,7 @@ require_once "./back-end/login/validador_acesso.php";
 
                         </div>
                     </section>
-
+-->
 
                     <section id="info-academica" class="info-academica">
 
@@ -76,6 +76,7 @@ require_once "./back-end/login/validador_acesso.php";
                             <h3>CURSO:</h3>
                             <h4>Desenvolviento de Sistemas</h4>
                         </div>
+                        <button class="btn-curso">Adicionar curso</button>
 
                         <div class="two-bars">
 
@@ -126,16 +127,30 @@ require_once "./back-end/login/validador_acesso.php";
                                 </select>
                             </div>
                             <button class="btn-conhecimento">adicionar idioma</button>
-                            <div class="box-text">
-                                <label for="experiencia-text">EXPERIÊNCIA:</label>
-                                <textarea name="experiencia-text" id="experiencia-text" rows="10"
-                                    placeholder="OPCIONAL"></textarea>
+
+                            <div class="input-hab">
+                                <span class="align-hab" onclick="abrirHab()">
+                                    <h3>HABILIDADE TECNOLÓGICAS </h3>
+                                    <i class="fa-solid fa-caret-down" style="color: #000;"></i>
+                                </span>
+                                <section class="drop-itens" id="habilidades">
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <span class="tipo-hab">
+                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                    </span>
+                                    <button class="adc-hab">Adicionar habilidade</button>
+                                </section>
                             </div>
                         </section>
 
                         <section class="right">
                             <div class="box-text">
-                                <label for="conhecimento-text">CONHECIMENTOS:</label>
+                                <label for="conhecimento-text">SOBRE MIM:</label>
                                 <textarea name="coonhecimento-text" id="conhecimento-text"
                                     placeholder="OPCIONAL"></textarea>
                             </div>
@@ -180,6 +195,7 @@ require_once "./back-end/login/validador_acesso.php";
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/troca-pag.js"></script>
+    <script src="js/abrir-hab.js"></script>
 </body>
 
 </html>
