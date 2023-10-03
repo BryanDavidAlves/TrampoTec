@@ -78,6 +78,7 @@ linha para se mover, fazer animaçao futuramente no js
     margin-left: 10px;
 }
 
+
 .info-pessoal {
     display: none;
     flex-direction: column;
@@ -126,6 +127,16 @@ h4 {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    justify-content: space-around;
+}
+.input-conhecimento span{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.input-conhecimento span p{
+    font-size: 1rem;
+    margin-left: 3px;
 }
 
 .left{
@@ -302,6 +313,10 @@ textarea:focus{
     justify-content: space-between;
     align-items: baseline;
     font-weight: 600;
+}
+
+.tipo-hab:nth-last-child(2){
+    border: none;
 }
 .tipo-hab i{
     font-size: 1.8rem;

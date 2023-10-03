@@ -189,7 +189,7 @@ require_once "./back-end/login/validador_acesso.php";
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src ="js/modal.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="js/modal-vagas.js"></script>
 </body>
 
 </html>
