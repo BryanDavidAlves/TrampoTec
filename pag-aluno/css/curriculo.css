@@ -163,15 +163,6 @@ select{
     padding: 5px;
     cursor: pointer;
 }
-.left textarea{
-    background-color: #acd5ff;
-    width: 90%;
-    border-radius: 10px;
-    border: none;
-    margin-top: 10px;
-    font-size: 1rem;
-
-}
 textarea:focus{
     outline: none;
 }
@@ -182,7 +173,7 @@ textarea:focus{
     border: none;
     margin-top: 10px;
     font-size: 1rem;
-    height: 90%;
+    height: 80%;
 
 }
 .right .box-text{

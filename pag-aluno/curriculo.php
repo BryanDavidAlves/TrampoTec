@@ -216,6 +216,23 @@ require_once "./back-end/login/validador_acesso.php";
 
     <dialog id="modalCurso">
         <form action="">
+            <label for="">INSTITUIÇÃO</label>
+            <select name="" id="">
+                <option value="">etec Guaianazes</option>
+                <option value="">etec Poa</option>
+                <option value="">etec Itaquera</option>
+                <option value="">etec Cidade Tiradentes</option>
+            </select><br><br><br>
+            <label for="">TIPO DE CURSO</label>
+            <select name="" id="">
+                <option>Ensino</option>
+                <option>Curso Tecnico</option>
+                <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
+                <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
+                <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
+                <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
+                <option>Especialização Técnica</option>
+            </select><br><br><br>
             <label for="">NOME DO CURSO:</label>
             <select name="" id="">
                 <option value="">Desenvolviento de Sistemas</option>
@@ -235,13 +252,8 @@ require_once "./back-end/login/validador_acesso.php";
             <input type="number"><br><br><br>
             <label for="">CONCLUSÃO:</label>
             <input type="date"><br><br><br>
-            <label for="">INSTITUIÇÃO</label>
-            <select name="" id="">
-                <option value="">etec Guaianazes</option>
-                <option value="">etec Poa</option>
-                <option value="">etec Itaquera</option>
-                <option value="">etec Cidade Tiradentes</option>
-            </select><br><br><br>
+
+
             <input type="submit">
         </form>
     </dialog>
