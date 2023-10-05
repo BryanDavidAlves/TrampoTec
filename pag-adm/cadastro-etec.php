@@ -78,15 +78,16 @@ $curso = $query->fetchAll();
                 </div>
                 <div class="input-box">
                     <label for="curso">CURSO</label>
-                    <select type="text" id="curso" name="curso" required>
-                        <option>Selecione o Curso</option>
-                        
-                       <?php foreach($curso as $curso) { ?>
-                        
-                        <option value="<?= $curso[0] ?>"><?= $curso[1] ?>-<?= $curso[4]?>-<?= $curso[5]?></option>
-                       <?php }?>
-                    </select>
-                </div>
+
+ 
+  
+
+
+
+                   <button onclick="adicionarSelect()">Gerar Campo Select</button>
+    <button onclick="apagarUltimoSelect()">Apagar Campo Select</button>
+    <div id="campoSelect"></div> 
+    </div>
                 <div class="input-box">
                     <label for="nome">CODIGO</label>
                     <input maxlength="text" type="numeric" id="codigo" name="codigo"  value="<?=$codigo?>" required>
@@ -266,6 +267,44 @@ $curso = $query->fetchAll();
     </main>
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+   <script>
+        function adicionarSelect() {
+            // Crie um elemento select
+            var select = document.createElement("select");
+
+            
+            // Defina os atributos desejados para o select
+            select.name = "selectName"; // Nome do select
+            select.id = "selectId";     // ID do select (opcional)
+
+            <?php foreach($curso as $curso ) { ?>
+            // Crie opções para o select
+            var option1 = document.createElement("option");
+            option1.value = "<?=$curso[0] ?>";
+            option1.text = "<?=$curso[1]?>";
+           
+            
+
+            // Adicione as opções ao select
+            select.appendChild(option1);
+            
+
+            // Adicione o select à página
+            document.getElementById("campoSelect").appendChild(select);
+            <?php } ?>
+        }
+
+        function apagarUltimoSelect() {
+            var campoSelect = document.getElementById("campoSelect");
+            var selects = campoSelect.getElementsByTagName("select");
+
+            if (selects.length > 0) {
+                // Remove o último select da lista
+                campoSelect.removeChild(selects[selects.length - 1]);
+            }
+        }
+    </script> 
+    
 </body>
 
 </html>
