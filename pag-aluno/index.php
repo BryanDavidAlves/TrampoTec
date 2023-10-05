@@ -31,165 +31,158 @@ require_once "./back-end/login/validador_acesso.php";
         <div class="box">
             <h1>PAINEL DE VAGAS</h1>
             <div class="control">
-                <section class="secao-perfil">
-                    <img class="img-perfil" src="img/img-perfil.jpg" alt="">
-                    <h2><a href="perfil.php">PERFIL</a></h2>
-                    <section class="filtro">
-                        <div class="filtro-header">
-                            <span id="icon-filtro" class="material-symbols-outlined">
-                                tune
-                            </span>
-                            <h3 class="titulo-filtro">Filtrar por </h3>
-                        </div>
-                        <form action="">
-                            <div class="align">
-                                <h3 class="palavra-chave">Periodo:</h3>
-                                <select name="select">
-                                    <option value="valor1"> </option>
-                                    <option value="valor1">Manhã</option>
-                                    <option value="valor2">Tarde</option>
-                                    <option value="valor3">Noite</option>
-                                </select>
-                            </div>
-                            <!--<div class="align">
-                        <h3 class="palavra-chave">Horario:</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>-->
-                            <div class="align">
-                                <h3 class="palavra-chave">Área:</h3>
-                                <select name="select">
-                                    <option value="valor1"> </option>
-                                    <option value="valor1">Valor 1</option>
-                                    <option value="valor2">Valor 2</option>
-                                    <option value="valor3">Valor 3</option>
-                                </select>
-                            </div>
-                            <div class="align">
-                                <h3 class="palavra-chave">Curso:</h3>
-                                <select name="select">
-                                    <option value="valor1"> </option>
-                                    <option value="valor1">Desenvolvimento De Sistemas</option>
-                                </select>
-                            </div>
-                            <div class="align">
-                                <h3 class="palavra-chave">Salário:</h3>
-                                <select name="select">
-                                    <option value="valor1"> </option>
-                                    <option value="valor1">R$ 500,00 até 1.000,00</option>
-                                    <option value="valor2">R$ 1.000,00 até 1.500,00</option>
-                                    <option value="valor3">R$ 1.500,00 até 2.000,00</option>
-                                </select>
-                            </div>
-                            <input value="APLICAR" class="button" type="submit">
-                        </form>
-                    </section>
 
+                <section class="filtro">
+                    <form action="">
+                        <span class="icone-filtro">
+                            <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
+                            <h4>Filtrar por</h4>
+                        </span>
+
+                        <span class="option-filter">
+                            <label for="periodo">Período:</label>
+                            <select name="periodo" id="periodo">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Manhã</option>
+                                <option value="">Tarde</option>
+                                <option value="">Noite</option>
+                            </select>
+                        </span>
+                        <!--<span class="option-filter">
+                            <label>Horário</label>
+                            <select name="periodo" id="periodo">
+                                <option selected value="">Manhã</option>
+                                <option value="">Tarde</option>
+                                <option value="">Noite</option>
+                            </select>
+                        </span>-->
+                        <span class="option-filter">
+                            <label>Curso:</label>
+                            <select class="option-curso" name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Desenvolvimento de Sistemas</option>
+                                <option value="">Administração</option>
+                                <option value="">Nutrição</option>
+                            </select>
+                        </span>
+                        <span class="option-filter">
+                            <label>Área:</label>
+                            <select name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Area 1</option>
+                                <option value="">Area 2</option>
+                                <option value="">Area 3</option>
+                            </select>
+                        </span>
+                        <span class="option-filter">
+                            <label>Salário:</label>
+                            <select name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">500,00 R$ - 1000,00 R$</option>
+                                <option value="">1000,00 R$ - 1500,00 R$</option>
+                                <option value="">1500,00 R$ - 2000,00 R$</option>
+                            </select>
+                        </span>
+                        <input class="btn-filtro" type="submit" name="" id="">
+                    </form>
+                </section>
+
+                <section class="perfil">
+                    <div class="div-img">
+                        <img src="img/aluno-form.png" alt="">
+                    </div>
+                    <a href="perfil.php">PERFIL</a>
                 </section>
 
                 <section class="vagas">
-
-                    <div class="itens-vagas">
-                        <section class="container-cards">
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4>Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
-                                <button id="btn1">Clique para mais informações</button>
+                    <div class="align-cards">
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn1">Clique para mais informações</button>
 
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4>Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
-                                <button id="btn2">Clique para mais informações</button>
+                        </div>
+
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn2">Clique para mais informações</button>
 
-                            <div class="cards">
-                                <div class="localidade">
-                                    <h4>SÃO PAULO - SP</h4>
-                                    <h4>TATUAPÉ</h4>
-                                </div>
-                                <h4>Desenvolvedor Front End Junior</h4>
-                                <h4>Presencial</h4>
-                                <h4>R$2.520,00</h4>
-                                <button id="btn3">Clique para mais informações</button>
+                        </div>
+
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
                             </div>
-                        </section>
-
-
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn3">Clique para mais informações</button>
+                        </div>
                     </div>
-            </div>
-        </div>
+                </section>
     </main>
     <?php
     include('../pag-aluno/components/sidebar.php');
     ?>
 
     <dialog id="modal">
-        <div class="card-empresa">
-            <section class="header-card">
-
-                <div class="part1">
-                    <img src="img/logo-nuts-sem-slogan.png" alt="">
-                    <div>
-                        <h2>Nuts.</h2>
-                        <h3>Empresa de Tecnologia</h3>
-                        <h3>Desde 2023</h3>
-                    </div>
+        <section class="container-modal">
+            <div class="header-modal">
+                <button id="closeModal">
+                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                </button>
+            </div>
+            <section class="info-empresa">
+                <div class="div-img-modal">
+                    <img class="img-modal" src="img/nuts.png" alt="">
                 </div>
-
-                <div class="part2">
-                    <i class="fa-solid fa-map-location-dot"></i>
+                <div class="sobre-empresa">
+                    <h2>Nuts</h2>
+                    <h3>EmpresaTecnologica</h3>
+                    <h4>Desde 2023</h4>
                 </div>
             </section>
-
-            <div class="main-modal">
-
-                <section class="descricao-empresa">
-                    <div class="conhecimentos">
-                        <h4>CONHECIMENTOS</h4>
-                        <ul>
-                            <li>JAVA</li>
-                            <li>PHP</li>
-                            <li>HTML</li>
-                        </ul>
-
-                    </div>
+            <div class="sobre-vaga">
+                <section class="conhecimento">
+                    <h2>CONHECIMENTOS</h2>
+                    <ul>
+                        <li>JAVA</li>
+                        <li>PHP</li>
+                        <li>HTML</li>
+                    </ul>
+                </section>
+                <section class="desc-vaga">
+                    <h2>ESTÁGIO BACK END</h2>
                     <div>
-                        <h3>ESTAGIO BACK-END</h3>
-                        <section class="desc-vaga">
-                            <p> Faça parte da nossa equipe e desenvolva habilidades
-                                em programação e desenvolvimento back-end! Seja
-                                responsavel por criar sistemas e soluções robustas,
-                                utilizando tecnologias de ponta e colaborando com profissionais
-                                experientes.
-                            </p>
-                        </section>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni reiciendis, reprehenderit assumenda aliquid aut alias eligendi delectus harum quisquam maxime voluptates nulla illum. Iste deleniti libero nulla quidem? Ut?</p>
                     </div>
                 </section>
             </div>
-        </div>
-        <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
-
-        </div>
+            <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
+        </section>
     </dialog>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    <script src ="js/modal.js"></script>
+
     <script src="js/modal-vagas.js"></script>
+    <script>
+        var closeModal = document.getElementById("closeModal")
+        closeModal.onclick = function () {
+            modal.close()
+        }
+    </script>
 </body>
 
 </html>
