@@ -97,9 +97,14 @@ require_once "back-end/login/validador_acesso.php";
         <section>
             <table>
                 <thead>
-                    <tr>
+                <tr>
                         <th>ID</th>
-                        <th style="text-align:start">NOME</th>
+                        <th>NOME</th>
+                        <th>Carga Horaria</th>
+                        <th>Semestre</th>
+                        <th>Modalidade</th>
+                        <th>Ensino</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -109,12 +114,32 @@ require_once "back-end/login/validador_acesso.php";
                             <?=$resultado[0]?>
                         </td>
 
-                        <td style="text-align:start" class="table-nome-curso">
+                        <td class="table-nome-curso">
                         <?=$resultado[1]?>
                         </td>
-                        <td class="ver-mais" id="btn1">
-                            <span class="btn-modal">Ver Mais</span>
+                        <td class="table-nome-curso">
+                        <?=$resultado[2]?>
                         </td>
+                        <td  class="table-nome-curso">
+                        <?=$resultado[3]?>
+                        </td>
+                        <td class="table-nome-curso">
+                        <?=$resultado[4]?>
+                        </td>
+                        <td class="table-nome-curso">
+                        <?=$resultado[5]?>
+                        </td>
+                       
+                      
+                        <td class="text-center">
+                                <form action="cadastro-curso.php" method="POST">
+                                    <input type="hidden" class="form-control" id="id_curso" name="id_curso"
+                                        value="<?= $resultado[0] ?>">
+                                    <button type="submit" class="dropdown-item"><i
+                                            class="fas fa-edit fa-lg text-secondary"></i>
+                                    </button>
+                                </form>
+                            </td>
                         <td class="icone-table">
 
                         <a href="./back-end/crudCurso/delete-curso.php?id=<?=$resultado[0]?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
@@ -152,6 +177,7 @@ require_once "back-end/login/validador_acesso.php";
     </dialog>
     <script src="modal-curso.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
