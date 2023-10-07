@@ -20,7 +20,7 @@ $curso = $query->fetchAll();
       $email = $etec["email"];
       $codigo = $etec["codigo"];
       $municipio = $etec["municipio"];
-
+        
       
       
 

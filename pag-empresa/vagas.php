@@ -7,6 +7,7 @@ $querySelect = "SELECT * FROM  tb_vaga ";
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -118,19 +119,23 @@ $resultado = $query->fetchAll();
                     <tr class="infos">
                         <td class="table"><?=$resultado[1]?></td>
                         <td class="table"><?=$resultado[2]?></td>
-                        <td class="table"><?=$resultado[3] ?></td>
-                        <td class="table"><?=$resultado[4] ?></td>
-                        <td class="table"><?=$resultado[5] ?></td>
-                        <td class="table"><?=$resultado[10] ?></td>
-                        <td class="table"><?=$resultado[11] ?></td>
+                        <td class="table"><?=$resultado[3]?></td>
+                        <td class="table"><?=$resultado[4]?></td>
+                        <td class="table"><?=$resultado[5]?></td>
+                        <td class="table"><?=$resultado[10]?></td>
+                        <td class="table"><?=$resultado[10]?></td>
                         <td class="table" style="cursor: pointer;color: blue;" onclick="vermais()">VER MAIS</td>
                         <td class="icone-table">
                             <div class="icons">
                                 <form>
                                     <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
                                     <input type="hidden" value="">
-                                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                                    
                                 </form>
+                                <td class="icone-table">
+
+                        <a href="./beck-end/crudVaga/vaga-delete.php?id=<?=$resultado[0]?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+                            </td>
                             </div>
                         </td>
                     </tr>
