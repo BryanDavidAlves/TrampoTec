@@ -8,14 +8,17 @@ h1 {
 }
 
 dialog {
-    border: 2px solid #bdbdbd;
+    border: none;
     border-radius: 10px;
-    min-height: 70vh;
+    /* min-height: 70vh; tamanho original e fixo do modal*/
     width: 47vw;
     justify-content: center;
     align-items: center;
-    background-color: #1c82c6;
+    background-color: #0382ac;
     color: #fff;
+    padding: 5%;
+    /*caso usar o tamanho original, aretire o padding ou diminua */
+
 }
 
 .filtro {
@@ -201,12 +204,13 @@ select:focus {
     margin-left: auto;
     cursor: pointer;
     transition: ease-in-out 0.2s;
-    border-radius:10px ;
+    border-radius: 10px;
 }
-#closeModal:hover{
+
+#closeModal:hover {
     scale: 1.1;
     background-color: white;
-    
+
 }
 
 #closeModal i {
@@ -268,7 +272,8 @@ select:focus {
     flex-direction: column;
     align-items: center;
 }
-.conhecimento h2{
+
+.conhecimento h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -277,9 +282,10 @@ select:focus {
 .conhecimento ul {
     list-style: disc;
     font-size: 1.1rem;
-    
+
 }
-.conhecimento ul li{
+
+.conhecimento ul li {
     line-height: 24px;
 }
 
@@ -290,7 +296,8 @@ select:focus {
     align-items: center;
 
 }
-.desc-vaga h2{
+
+.desc-vaga h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -322,9 +329,11 @@ select:focus {
     margin-top: 25px;
     cursor: pointer;
 }
-#btn:hover{
+
+#btn:hover {
     scale: 1.05;
 }
+
 .cima-esquerda {
     width: 15%;
     position: absolute;

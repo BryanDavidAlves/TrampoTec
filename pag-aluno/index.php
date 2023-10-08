@@ -166,7 +166,9 @@ require_once "./back-end/login/validador_acesso.php";
                 <section class="desc-vaga">
                     <h2>ESTÁGIO BACK END</h2>
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni reiciendis, reprehenderit assumenda aliquid aut alias eligendi delectus harum quisquam maxime voluptates nulla illum. Iste deleniti libero nulla quidem? Ut?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni reiciendis, reprehenderit
+                            assumenda aliquid aut alias eligendi delectus harum quisquam maxime voluptates nulla illum.
+                            Iste deleniti libero nulla quidem? Ut?</p>
                     </div>
                 </section>
             </div>
