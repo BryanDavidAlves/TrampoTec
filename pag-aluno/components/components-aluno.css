@@ -28,7 +28,7 @@ header img {
 
 aside {
     display: none;
-    background-color: #3C86D1;
+    background-color: #0a3580;
     width: 20%;
     color: #fff;
     padding: 10px;
@@ -37,6 +37,54 @@ aside {
     right: 0;
     z-index: 5;
     font-size: 1.1rem;
+    overflow-y: auto;
+}
+
+aside::-webkit-scrollbar {
+    width: 20px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 30px;
+    border: 8px solid #0a3580;
+}
+
+.show {
+    animation: 200ms ease-in-out trans;
+}
+
+@keyframes trans {
+    0% {
+        opacity: 0%;
+        transform: translateX(20%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes trans2 {
+    0% {
+
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+
+}
+
+.hidden {
+    animation: 200ms ease-in-out trans2;
 }
 
 .toogle .menu {
@@ -55,25 +103,16 @@ aside {
 aside a {
     color: #fff;
     text-decoration: none;
-    padding: 25px 50px 25px 0px;
-   
-
 }
 
 aside ul li {
     margin-top: 10px;
-    border-bottom: #ffffff36 solid 1px;
-
     padding: 10px;
 }
 
 aside ul {
-    margin-top: 40%;
-}
-
-.end {
-    position: fixed;
-    bottom: 20px;
+    margin-top: 20%;
+    padding-bottom: 10%;
 }
 
 .toogle2 .menu {
@@ -88,14 +127,29 @@ aside ul {
 .toogle2 {
     float: right;
     margin-top: 6%;
-    margin-right: 14.5%;
+    margin-right: 8.5%;
 }
-
-#config {
-    position: fixed;
-    right: 20px;
-}
-
 aside ul a:hover {
     margin-left: 10px;
+}
+
+.indice-side {
+    font-size: 0.9rem;
+    color: #e3e3e3;
+}
+
+.border {
+    border-top: 1px solid white;
+    width: 85%;
+}
+
+.nome-do-aluno {
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    line-height: 24px;
+}
+
+.border-nome {
+    border-bottom: 1px solid white;
+    
 }
