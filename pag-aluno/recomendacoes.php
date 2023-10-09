@@ -58,7 +58,7 @@ require_once "./back-end/login/validador_acesso.php";
                         </section>
                         <h3 class="titulo-recomendacao">CARTA DE RECOMENDAÇÃO</h3>
                         <section class="conteudo-card">
-                            
+
                             <p>
                                 É com grande satisfação que escrevo esta carta de
                                 recomendação em nome de Thayna Oliveira Souza,
@@ -83,7 +83,7 @@ require_once "./back-end/login/validador_acesso.php";
                         </section>
                         <h3 class="titulo-recomendacao">CARTA DE RECOMENDAÇÃO</h3>
                         <section class="conteudo-card">
-                            
+
                             <p>
                                 É com grande satisfação que escrevo esta carta de
                                 recomendação em nome de Thayna Oliveira Souza,
@@ -108,7 +108,7 @@ require_once "./back-end/login/validador_acesso.php";
                         </section>
                         <h3 class="titulo-recomendacao">CARTA DE RECOMENDAÇÃO</h3>
                         <section class="conteudo-card">
-                            
+
                             <p>
                                 É com grande satisfação que escrevo esta carta de
                                 recomendação em nome de Thayna Oliveira Souza,
