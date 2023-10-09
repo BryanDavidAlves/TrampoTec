@@ -91,15 +91,13 @@ select:focus {
     flex-direction: column;
     align-items: center;
     margin-top: 2%;
-
     width: 20%;
-
 }
 
 .perfil a {
     text-decoration: none;
     color: #000;
-    margin-top: 20%;
+    margin-top: 50px;
 }
 
 .div-img {

@@ -131,9 +131,11 @@ require_once "./back-end/login/validador_acesso.php";
                             <button id="btn3">Clique para mais informações</button>
                         </div>
 
-                        
+
                     </div>
                 </section>
+            </div>
+        </div>
     </main>
     <?php
     include('../pag-aluno/components/sidebar.php');
