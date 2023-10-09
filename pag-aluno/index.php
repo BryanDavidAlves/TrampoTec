@@ -12,7 +12,8 @@ require_once "./back-end/login/validador_acesso.php";
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vagas.css">
+    <link rel="stylesheet" href="../pag-aluno/css/home.css">
+
     <title>Pagina de Vagas</title>
 </head>
 
@@ -29,166 +30,34 @@ require_once "./back-end/login/validador_acesso.php";
     <main id="main">
 
         <div class="box">
-            <h1>PAINEL DE VAGAS</h1>
-            <!-- <div class="control">-->
+            <h1> </h1>
 
-            <section class="filtro">
-                <form action="">
-                    <span class="icone-filtro">
-                        <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
-                        <h4>Filtrar por</h4>
+            <section class="inicio">
+                <div class="left">
+                    <h2>VAGAS DE ESTÁGIO, <br>
+                        INGRESSE NO MERCADO <br>
+                        DE TRABALHO!
+                    </h2>
+                    <span>
+                        <a href="curriculo.php">CURRÍCULO</a>
+                        <a href="curriculo.php">VAGAS</a>
                     </span>
-
-                    <span class="option-filter">
-                        <label for="periodo">Período:</label>
-                        <select name="periodo" id="periodo">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Manhã</option>
-                            <option value="">Tarde</option>
-                            <option value="">Noite</option>
-                        </select>
-                    </span>
-                    <!--<span class="option-filter">
-                            <label>Horário</label>
-                            <select name="periodo" id="periodo">
-                                <option selected value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </span>-->
-                    <span class="option-filter">
-                        <label>Curso:</label>
-                        <select class="option-curso" name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Desenvolvimento de Sistemas</option>
-                            <option value="">Administração</option>
-                            <option value="">Nutrição</option>
-                        </select>
-                    </span>
-                    <span class="option-filter">
-                        <label>Área:</label>
-                        <select name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Area 1</option>
-                            <option value="">Area 2</option>
-                            <option value="">Area 3</option>
-                        </select>
-                    </span>
-                    <span class="option-filter">
-                        <label>Salário:</label>
-                        <select name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">500,00 R$ - 1000,00 R$</option>
-                            <option value="">1000,00 R$ - 1500,00 R$</option>
-                            <option value="">1500,00 R$ - 2000,00 R$</option>
-                        </select>
-                    </span>
-                    <input class="btn-filtro" type="submit" name="" id="">
-                </form>
-            </section>
-
-            <section class="perfil">
-                <div class="div-img">
-                    <img src="img/aluno-form.png" alt="">
                 </div>
-                <a href="perfil.php">PERFIL</a>
-            </section>
-
-            <section class="vagas">
-                <div class="align-cards">
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn1">Clique para mais informações</button>
-
-                    </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn2">Clique para mais informações</button>
-
-                    </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn3">Clique para mais informações</button>
-                    </div>
-
-
+                <div class="right">
+                    <img src="img/img-home.png" alt="">
                 </div>
             </section>
-            <!--</div>-->
+
         </div>
+
     </main>
     <?php
     include('../pag-aluno/components/sidebar.php');
     ?>
 
-    <dialog id="modal">
-        <section class="container-modal">
-            <div class="header-modal">
-                <button id="closeModal">
-                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                </button>
-            </div>
-            <section class="info-empresa">
-                <div class="div-img-modal">
-                    <img class="img-modal" src="img/nuts.png" alt="">
-                </div>
-                <div class="sobre-empresa">
-                    <h2>Nuts</h2>
-                    <h3>EmpresaTecnologica</h3>
-                    <h4>Desde 2023</h4>
-                </div>
-            </section>
-            <div class="sobre-vaga">
-                <section class="conhecimento">
-                    <h2>CONHECIMENTOS</h2>
-                    <ul>
-                        <li>JAVA</li>
-                        <li>PHP</li>
-                        <li>HTML</li>
-                    </ul>
-                </section>
-                <section class="desc-vaga">
-                    <h2>ESTÁGIO BACK END</h2>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni reiciendis, reprehenderit
-                            assumenda aliquid aut alias eligendi delectus harum quisquam maxime voluptates nulla illum.
-                            Iste deleniti libero nulla quidem? Ut?</p>
-                    </div>
-                </section>
-            </div>
-            <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
-        </section>
-    </dialog>
-
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-
     <script src="js/modal-vagas.js"></script>
-    <script>
-        var closeModal = document.getElementById("closeModal")
-        closeModal.onclick = function () {
-            modal.close()
-        }
-    </script>
+
 </body>
 
 </html>

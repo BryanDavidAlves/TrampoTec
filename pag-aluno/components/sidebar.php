@@ -8,8 +8,8 @@
         <ul>
             <h2 class="nome-do-aluno border-nome">Johny David Marques Gomes</h2>
             <li class="indice-side">Menu</li>
-            <li><a href="home.php"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="index.php"><i class="fa-solid fa-briefcase" style="color: #ffffff;"></i> Painel de vagas</a></li>
+            <li><a href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="painel-de-vagas.php"><i class="fa-solid fa-briefcase" style="color: #ffffff;"></i> Painel de vagas</a></li>
             <li><a href="processos-seletivos.php"><i class="fa-solid fa-people-group"></i> Processo Seletivo</a></li>
             <li><a href="notificacoes.php"><i class="fa-solid fa-bell" style="color: #ffffff;"></i> Notificações</a></li>
             <li><a href="recomendacoes.php"><i class="fa-solid fa-envelope"></i> Recomendações</a></li></a>
