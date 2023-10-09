@@ -44,12 +44,36 @@ h1 {
     color: rgb(53, 53, 53);
 }
 .inicio img{
-    width: 80%;
+    width: 90%;
 }
 .right, .left{
-    
     display: flex;
     justify-content: center;
+}
+.left{
+    flex-direction: column;
+}
+.left a{
+    background-color: #0a3580;
+    color: #fff;
+    text-decoration: none;
+    width: 40%;
+    border-radius: 40px;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+}
+.left a:nth-child(2){
+    background-color: #fff;
+    color: #0a3580;
+    border: 3px solid #0a3580;
+}
+.left span{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 

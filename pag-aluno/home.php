@@ -38,6 +38,10 @@ require_once "./back-end/login/validador_acesso.php";
                         INGRESSE NO MERCADO <br>
                         DE TRABALHO!
                     </h2>
+                    <span>
+                        <a href="curriculo.php">CURRÍCULO</a>
+                        <a href="curriculo.php">VAGAS</a>
+                    </span>
                 </div>
                 <div class="right">
                     <img src="img/img-home.png" alt="">
