@@ -22,7 +22,7 @@
                     <div class="item-form">
                         <label for="email">EMAIL INSTITUCIONAL</label>
                         <div class="div-input">
-                            <input type="email" name="email" id="email" >
+                            <input class="email" type="email" name="email" id="email">
                         </div>
                     </div>
                     <input class="botao" type="submit" value="ENVIAR">
