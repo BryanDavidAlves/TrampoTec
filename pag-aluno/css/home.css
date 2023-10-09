@@ -1,0 +1,79 @@
+h1 {
+    color: #737373;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10%;
+    margin-bottom: 10px;
+}
+.box {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+}
+
+.cima-esquerda {
+    width: 15%;
+    position: absolute;
+    top: 9%;
+    left: 0;
+    z-index: -1;
+}
+
+.cima-direita {
+    width: 8%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.inicio{
+    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.left h2{
+    font-size: 2.8rem;
+    text-shadow: 5px 5px 10px rgb(172, 172, 172);
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+}
+.inicio img{
+    width: 90%;
+}
+.right, .left{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    flex-direction: column;
+}
+.left a{
+    background-color: #0a3580;
+    color: #fff;
+    text-decoration: none;
+    width: 40%;
+    border-radius: 40px;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+}
+.left a:nth-child(2){
+    background-color: #fff;
+    color: #0a3580;
+    border: 3px solid #0a3580;
+}
+.left span{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
