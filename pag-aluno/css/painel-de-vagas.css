@@ -10,13 +10,11 @@ h1 {
 dialog {
     border: none;
     border-radius: 10px;
-    /* min-height: 70vh; tamanho original e fixo do modal, caso usar o tamanho original, retire o padding ou diminua*/
-    width: 47vw;
     justify-content: center;
     align-items: center;
     background-color: #0382ac;
     color: #fff;
-    padding: 5%;
+    padding: 2%;
 }
 
 .filtro {
@@ -186,6 +184,9 @@ select:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 70vh; 
+    width: 47vw;
 }
 
 .header-modal {

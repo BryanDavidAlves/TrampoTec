@@ -20,16 +20,18 @@ h1 {
     width: 100%;
     display: block;
 }
-.container{
+
+.container {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
     margin-top: 30px;
 }
+
 .one-bar {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     margin: 5px 0px 5px 10px;
     width: 100%;
@@ -44,17 +46,19 @@ h1 {
     gap: 10px;
 
 }
-.trocar-pag{
+
+.trocar-pag {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:40px ;
-    color: #2e2877;
+    gap: 40px;
+    color: #0a3580;
     font-size: 1.3rem;
     width: 100%;
     font-weight: 700;
 }
-.trocar-pag h2{
+
+.trocar-pag h2 {
     cursor: pointer;
 }
 
@@ -68,13 +72,14 @@ linha para se mover, fazer animaçao futuramente no js
 */
 .bar {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: baseline;
     border-radius: 10px;
     width: 100%;
 }
-.bar:nth-child(1){
+
+.bar:nth-child(1) {
     margin-left: 10px;
 }
 
@@ -87,40 +92,44 @@ linha para se mover, fazer animaçao futuramente no js
 
 }
 
-.info-academica{
+.info-academica {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
+
 h3 {
     font-size: 1.2rem;
-    color: #000000;
+    color: #fff;
     font-weight: 600;
 }
 
 h4 {
     font-size: 1.1rem;
-    color: #000000;
+    color: #fff;
     margin-left: 5px;
 }
 
 
-.one-bar, .two-bars{
+.one-bar,
+.two-bars {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.conhecimento{
+
+.conhecimento {
     display: none;
     width: 100%;
     justify-content: space-evenly;
     gap: 30px;
     padding-bottom: 20px;
 }
-.input-conhecimento{
+
+.input-conhecimento {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: baseline;
     border-radius: 10px;
@@ -128,32 +137,29 @@ h4 {
     margin-top: 10px;
     margin-bottom: 10px;
     justify-content: space-around;
+    color: #fff;
 }
-.input-conhecimento span{
+
+.input-conhecimento span {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
 }
-.input-conhecimento span p{
+
+.input-conhecimento span p {
     font-size: 1rem;
     margin-left: 3px;
 }
 
-.left{
+.left {
     display: flex;
     width: 50%;
     flex-direction: column;
     align-items: center;
 }
-label{
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-select{
-    border: none;
-    font-size: 1.1rem;
-    background-color: transparent;
-}
+
+
+
 .btn-conhecimento {
     width: 35%;
     border: none;
@@ -163,39 +169,48 @@ select{
     padding: 5px;
     cursor: pointer;
 }
-textarea:focus{
+
+textarea:focus {
     outline: none;
 }
 
-.right textarea{
-    background-color: #acd5ff;
+.right textarea {
+    background-color: #0a3580;
     width: 90%;
     border: none;
     margin-top: 10px;
     font-size: 1rem;
     height: 80%;
-
+    color: #fff;
 }
-.right .box-text{
-    background-color: #acd5ff;
+
+.right textarea::placeholder {
+    color: #ffffff59;
+}
+
+.right .box-text {
+    background-color: #0a3580;
     width: 105%;
     padding: 10px;
     border-radius: 10px;
     margin-top: 10px;
     height: 150px;
 }
+.box-text label{
+    color: #fff;
+} 
 
-
-.disponibilidade{
+.disponibilidade {
     display: none;
     width: 100%;
     justify-content: space-around;
     gap: 30px;
     padding-bottom: 20px;
 }
-.input-disponibilidade{
+
+.input-disponibilidade {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: center;
     border-radius: 10px;
@@ -203,24 +218,28 @@ textarea:focus{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.horas{
+
+.horas {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
 }
-.horas .input-disponibilidade{
+
+.horas .input-disponibilidade {
     width: 90%;
     align-items: center;
     justify-content: center;
 }
-.horas .input-disponibilidade input{
+
+.horas .input-disponibilidade input {
     background-color: transparent;
     padding: 5px;
     border: none;
     font-size: 1rem;
 }
-.btn-salvar{
+
+.btn-salvar {
     background-color: red;
     width: 10%;
     padding: 10px;
@@ -230,46 +249,52 @@ textarea:focus{
     border-radius: 10px;
     cursor: pointer;
 }
-.btn-salvar input{
+
+.btn-salvar input {
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
 }
-.align-salvar{
+
+.align-salvar {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
+
 /*.disponibilidade img{
     
     width: 700px
 }*/
 
-.cima-esquerda{
+.cima-esquerda {
     width: 12%;
     position: absolute;
     top: 0;
     z-index: 0;
 }
-.cima-direita{
+
+.cima-direita {
     width: 8%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
 }
-.btn-curso{
+
+.btn-curso {
     border: none;
     width: 40%;
     height: 40px;
-    border-radius:10px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
 }
-.input-hab{
+
+.input-hab {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     flex-direction: column;
     padding: 15px;
     align-items: baseline;
@@ -278,17 +303,20 @@ textarea:focus{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.align-hab{
+
+.align-hab {
     display: flex;
     justify-content: space-between;
     width: 97%;
     align-items: baseline;
     cursor: pointer;
 }
-.input-hab i{
+
+.input-hab i {
     font-size: 1.5rem;
 }
-.drop-itens{
+
+.drop-itens {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -296,6 +324,7 @@ textarea:focus{
     width: 100%;
     display: none;
 }
+
 .tipo-hab {
     border-bottom: white 1px solid;
     padding: 10px;
@@ -304,19 +333,22 @@ textarea:focus{
     justify-content: space-between;
     align-items: baseline;
     font-weight: 600;
+    color: #fff;
 }
 
-.tipo-hab:nth-last-child(2){
+.tipo-hab:nth-last-child(2) {
     border: none;
 }
-.tipo-hab i{
+
+.tipo-hab i {
     font-size: 1.8rem;
     cursor: pointer;
 }
-.adc-hab{
-    background-color: #2e2877;
+
+.adc-hab {
+    background-color: red;
     border: none;
-    color: white;
+    color: #fff;
     font-weight: 700;
     width: 50%;
     margin: auto;
@@ -324,4 +356,110 @@ textarea:focus{
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.primeiro-horario {
+    color: #fff;
+}
+
+dialog input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    border-bottom:1px solid #fff ;
+    padding: 5px 0px;
+}
+dialog input:focus {
+    outline: none;
+}
+dialog select {
+    color: #fff;
+    background-color: #0382ac;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 1.1rem;
+    padding: 5px 0px;
+}
+
+dialog select:focus{
+    outline: none;
+
+}
+
+dialog label {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #fff;
+}
+dialog {
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #0382ac;
+    color: #fff;
+    padding: 2%;
+}
+
+.header-modal {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#closeModalCurso,
+#closeModalIdioma {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+    border-radius: 10px;
+}
+
+#closeModalCurso:hover {
+    scale: 1.1;
+    background-color: white;
+
+}
+
+#closeModalIdioma:hover {
+    scale: 1.1;
+    background-color: white;
+
+}
+
+#closeModalCurso,
+#closeModalIdioma i {
+    font-size: 2rem;
+}
+
+.container-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    width: 60vw;
+}
+
+.btn-modal {
+    background-color: #fff;
+    color: #1c82c6;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-top: 25px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.btn-modal:hover {
+    scale: 1.05;
 }

@@ -86,7 +86,7 @@ require_once "./back-end/login/validador_acesso.php";
                             </div>
                             <div class="bar">
                                 <h3>DURAÇÃO:</h3>
-                                <h4>Vespertino</h4>
+                                <h4>3 SEMESTRES</h4>
                             </div>
 
                         </div>
@@ -95,7 +95,7 @@ require_once "./back-end/login/validador_acesso.php";
 
                             <div class="bar">
                                 <h3>PERIODO:</h3>
-                                <h4>Tarde</h4>
+                                <h4>MATUTINO</h4>
                             </div>
 
                             <div class="bar">
@@ -138,7 +138,7 @@ require_once "./back-end/login/validador_acesso.php";
                             <div class="input-hab">
                                 <span class="align-hab" onclick="abrirHab()">
                                     <h3>HABILIDADE TECNOLÓGICAS </h3>
-                                    <i class="fa-solid fa-caret-down" style="color: #000;"></i>
+                                    <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
                                 </span>
                                 <section class="drop-itens" id="habilidades">
                                     <span class="tipo-hab">
@@ -201,62 +201,76 @@ require_once "./back-end/login/validador_acesso.php";
 
     </main>
     <dialog id="modalIdioma">
-        <form action="">
-            <label for="">IDIOMA:</label>
-            <input type="text" name="" id=""><br><br><br>
-            <label for="">NIVEL:</label>
-            <select name="" id="">
-                <option value="">BÁSICO</option>
-                <option value="">INTERMEDIÁRIO</option>
-                <option value="">AVANÇADO</option>
-            </select><br><br><br>
-            <input type="submit">
-        </form>
+        <section class="container-modal">
+            <div class="header-modal">
+                <button id="closeModalIdioma">
+                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                </button>
+            </div>
+            <form action="">
+                <label for="">IDIOMA:</label>
+                <input type="text" name="" id=""><br><br><br>
+                <label for="">NIVEL:</label>
+                <select name="" id="">
+                    <option value="">BÁSICO</option>
+                    <option value="">INTERMEDIÁRIO</option>
+                    <option value="">AVANÇADO</option>
+                </select><br><br><br>
+                <input class="btn-modal" id="btn-idioma" type="submit" value="ADICIONAR IDIOMA">
+            </form>
     </dialog>
 
     <dialog id="modalCurso">
-        <form action="">
-            <label for="">INSTITUIÇÃO</label>
-            <select name="" id="">
-                <option value="">etec Guaianazes</option>
-                <option value="">etec Poa</option>
-                <option value="">etec Itaquera</option>
-                <option value="">etec Cidade Tiradentes</option>
-            </select><br><br><br>
-            <label for="">TIPO DE CURSO</label>
-            <select name="" id="">
-                <option>Ensino</option>
-                <option>Curso Tecnico</option>
-                <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
-                <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
-                <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
-                <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
-                <option>Especialização Técnica</option>
-            </select><br><br><br>
-            <label for="">NOME DO CURSO:</label>
-            <select name="" id="">
-                <option value="">Desenvolviento de Sistemas</option>
-                <option value="">Nutrição</option>
-                <option value="">Administração</option>
-            </select><br><br><br>
-            <label for="">SEMESTRE QUE VOCÊ ESTA CURSANDO:</label>
-            <input type="number" name="" id=""><br><br><br>
-            <label for="">PERÍODO:</label>
-            <select name="" id="">
-                <option value="">Vespertino</option>
-                <option value="">Noturno</option>
-                <option value="">Matutino</option>
-                <option value="">Integral</option>
-            </select><br><br><br>
-            <label for="">DURAÇÃO (MESES):</label>
-            <input type="number"><br><br><br>
-            <label for="">CONCLUSÃO:</label>
-            <input type="date"><br><br><br>
+        <section class="container-modal">
+            <div class="header-modal">
+                <button id="closeModalCurso">
+                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                </button>
+            </div>
+            <form action="">
+                <label for="">INSTITUIÇÃO</label>
+                <select name="" id="">
+                    <option value="">etec Guaianazes</option>
+                    <option value="">etec Poa</option>
+                    <option value="">etec Itaquera</option>
+                    <option value="">etec Cidade Tiradentes</option>
+                </select><br><br><br>
+                <label for="">TIPO DE CURSO</label>
+                <select name="" id="">
+                    <option>Ensino</option>
+                    <option>Curso Tecnico</option>
+                    <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
+                    <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
+                    <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
+                    <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
+                    <option>Especialização Técnica</option>
+                </select><br><br><br>
+                <label for="">NOME DO CURSO:</label>
+                <select name="" id="">
+                    <option value="">Desenvolviento de Sistemas</option>
+                    <option value="">Nutrição</option>
+                    <option value="">Administração</option>
+                </select><br><br><br>
+                <label for="">SEMESTRE QUE VOCÊ ESTA CURSANDO:</label>
+                <input type="number" name="" id=""><br><br><br>
+                <label for="">PERÍODO:</label>
+                <select name="" id="">
+                    <option value="">Vespertino</option>
+                    <option value="">Noturno</option>
+                    <option value="">Matutino</option>
+                    <option value="">Integral</option>
+                </select><br><br><br>
+                <label for="">DURAÇÃO (MESES):</label>
+                <input type="number"><br><br><br>
+                <label for="">CONCLUSÃO:</label>
+                <input type="date"><br><br><br>
 
 
-            <input type="submit">
-        </form>
+                <input class="btn-modal" id="btn" type="submit" value="ADICIONAR CURSO">
+            </form>
+        </section>
     </dialog>
+
     <?php
     include('../pag-aluno/components/sidebar.php');
     ?>
@@ -264,6 +278,16 @@ require_once "./back-end/login/validador_acesso.php";
     <script src="js/troca-pag.js"></script>
     <script src="js/abrir-hab.js"></script>
     <script src="js/modal-curriculo.js"></script>
+    <script>
+        var closeModalCurso = document.getElementById("closeModalCurso")
+        var closeModalIdioma = document.getElementById("closeModalIdioma")
+        closeModalCurso.onclick = function () {
+            modalCurso.close()
+        }
+        closeModalIdioma.onclick = function () {
+            modalIdioma.close()
+        }
+    </script>
 </body>
 
 </html>
