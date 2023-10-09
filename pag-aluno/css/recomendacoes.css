@@ -20,7 +20,7 @@ h1 {
 
 .pedido-carta {
     width: 30%;
-    background-color: #3880c7;
+    background-color: #333d80;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@ textarea {
 }
 
 .btn {
-    background-color: #333d80;
+    background-color: red;
     display: block;
     margin-left: auto;
     margin-right: auto;
