@@ -27,62 +27,60 @@ require_once "./back-end/login/validador_acesso.php";
 
         <div class="box">
             <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
-            <div class="control">
+            
 
                 <section class="filtro">
-                    <div class="filtro-header">
-                        <span id="icon-filtro" class="material-symbols-outlined">
-                            tune
-                        </span>
-                        <h3 class="titulo-filtro">Filtrar por </h3>
-                    </div>
                     <form action="">
-                        <div class="align">
-                            <h3 class="palavra-chave">Periodo:</h3>
-                            <select name="select">
-                                <option value="valor1"> </option>
-                                <option value="valor1">Manhã</option>
-                                <option value="valor2">Tarde</option>
-                                <option value="valor3">Noite</option>
+                        <span class="icone-filtro">
+                            <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
+                            <h4>Filtrar por</h4>
+                        </span>
+
+                        <span class="option-filter">
+                            <label for="periodo">Período:</label>
+                            <select name="periodo" id="periodo">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Manhã</option>
+                                <option value="">Tarde</option>
+                                <option value="">Noite</option>
                             </select>
-                        </div>
-                        <!--<div class="align">
-                        <h3 class="palavra-chave">Horario:</h3>
-                        <select name="select">
-                            <option value="valor1"> </option>
-                            <option value="valor1">Valor 1</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                    </div>-->
-                        <div class="align">
-                            <h3 class="palavra-chave">Área:</h3>
-                            <select name="select">
-                                <option value="valor1"> </option>
-                                <option value="valor1">Valor 1</option>
-                                <option value="valor2">Valor 2</option>
-                                <option value="valor3">Valor 3</option>
+                        </span>
+                        <!--<span class="option-filter">
+                            <label>Horário</label>
+                            <select name="periodo" id="periodo">
+                                <option selected value="">Manhã</option>
+                                <option value="">Tarde</option>
+                                <option value="">Noite</option>
                             </select>
-                        </div>
-                        <div class="align">
-                            <h3 class="palavra-chave">Curso:</h3>
-                            <select name="select">
-                                <option value="valor1"> </option>
-                                <option value="valor1">Valor 1</option>
-                                <option value="valor2">Valor 2</option>
-                                <option value="valor3">Valor 3</option>
+                        </span>-->
+                        <span class="option-filter">
+                            <label>Curso:</label>
+                            <select class="option-curso" name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Desenvolvimento de Sistemas</option>
+                                <option value="">Administração</option>
+                                <option value="">Nutrição</option>
                             </select>
-                        </div>
-                        <div class="align">
-                            <h3 class="palavra-chave">Salário:</h3>
-                            <select name="select">
-                                <option value="valor1"> </option>
-                                <option value="valor1">Valor 1</option>
-                                <option value="valor2">Valor 2</option>
-                                <option value="valor3">Valor 3</option>
+                        </span>
+                        <span class="option-filter">
+                            <label>Área:</label>
+                            <select name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">Area 1</option>
+                                <option value="">Area 2</option>
+                                <option value="">Area 3</option>
                             </select>
-                        </div>
-                        <input value="APLICAR" class="button" type="submit">
+                        </span>
+                        <span class="option-filter">
+                            <label>Salário:</label>
+                            <select name="" id="">
+                                <option selected value="">Qualquer</option>
+                                <option value="">500,00 R$ - 1000,00 R$</option>
+                                <option value="">1000,00 R$ - 1500,00 R$</option>
+                                <option value="">1500,00 R$ - 2000,00 R$</option>
+                            </select>
+                        </span>
+                        <input class="btn-filtro" type="submit" name="" id="">
                     </form>
                 </section>
 
@@ -122,7 +120,7 @@ require_once "./back-end/login/validador_acesso.php";
                         </div>
                     </section>
                 </section>
-            </div>
+   
         </div>
 
 

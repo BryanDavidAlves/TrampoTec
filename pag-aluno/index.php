@@ -130,6 +130,8 @@ require_once "./back-end/login/validador_acesso.php";
                             <h4>R$2.520,00</h4>
                             <button id="btn3">Clique para mais informações</button>
                         </div>
+
+                        
                     </div>
                 </section>
     </main>

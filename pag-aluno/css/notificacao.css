@@ -14,11 +14,14 @@ h1 {
 
 .card-empresa {
     background-color: #CDCDCD;
-    width: 380px;    
-    height: 230px;
-    padding: 10px;
+    width: 400px;    
+    height: 270px;
+    padding: 15px;
     justify-content: center;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .card-empresa .descricao-empresa{
     width: 70%;
@@ -32,25 +35,30 @@ p{
     text-align: justify;
 }
 .card-empresa img {
-    width: 20%;
-    background-color: aliceblue;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border: #0a3580 3px solid;
+    
 }
-
-.empresas {
-    padding: 0px 30px 0px 30px;
+.container-cards{
     display: flex;
+    width: 960px;
     flex-wrap: wrap;
+    gap: 100px;
+}
+.empresas {
+    width: 100%;
+    display: flex;
     justify-content: center;
-    gap: 120px;
-    margin-top: 50px;
-
+    margin-top: 2%;
 }
 .align{
     width: 100%;
     position: absolute;
 }
 .linha{
-    background-color:#3C86D1;
+    background-color:#0a3580;
     width: 90%;
     height: 2px;
     margin-left: auto;
@@ -65,6 +73,6 @@ button{
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     width: 35%;
-    background-color: #004AAD;
+    background-color: #0a3580;
     color: white;
 }
