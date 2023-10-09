@@ -40,7 +40,7 @@ require_once "./back-end/login/validador_acesso.php";
                     </h2>
                     <span>
                         <a href="curriculo.php">CURRÍCULO</a>
-                        <a href="curriculo.php">VAGAS</a>
+                        <a href="painel-de-vagas.php">VAGAS</a>
                     </span>
                 </div>
                 <div class="right">
