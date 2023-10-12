@@ -1,3 +1,6 @@
+*{
+    
+}
 h1 {
     color: #737373;
     text-align: center;
@@ -38,10 +41,12 @@ h1 {
 
 }
 .left h2{
-    font-size: 2.8rem;
-    text-shadow: 5px 5px 10px rgb(172, 172, 172);
+    font-size: 3rem;
+    text-shadow: 1px 4px 5px rgb(154, 154, 154);
     font-weight: bold;
-    color: rgb(53, 53, 53);
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
 }
 .inicio img{
     width: 90%;

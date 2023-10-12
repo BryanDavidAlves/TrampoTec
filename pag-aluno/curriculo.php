@@ -7,8 +7,7 @@ require_once "./back-end/login/validador_acesso.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
@@ -161,8 +160,7 @@ require_once "./back-end/login/validador_acesso.php";
                         <section class="right">
                             <div class="box-text">
                                 <label for="conhecimento-text">SOBRE MIM:</label>
-                                <textarea name="coonhecimento-text" id="conhecimento-text"
-                                    placeholder="OPCIONAL"></textarea>
+                                <textarea name="coonhecimento-text" id="conhecimento-text" placeholder="OPCIONAL"></textarea>
                             </div>
                         </section>
                     </section>
@@ -201,12 +199,13 @@ require_once "./back-end/login/validador_acesso.php";
 
     </main>
     <dialog id="modalIdioma">
-        <section class="container-modal">
+        <section id="container-modal" class="container-modal">
             <div class="header-modal">
                 <button id="closeModalIdioma">
                     <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
                 </button>
             </div>
+            <h3 id="titulo-modal" class="titulo-modal">ADICIONAR UM NOVO IDIOMA</h3>
             <form action="">
                 <label for="">IDIOMA:</label>
                 <input type="text" name="" id=""><br><br><br>
@@ -216,7 +215,7 @@ require_once "./back-end/login/validador_acesso.php";
                     <option value="">INTERMEDIÁRIO</option>
                     <option value="">AVANÇADO</option>
                 </select><br><br><br>
-                <input class="btn-modal" id="btn-idioma" type="submit" value="ADICIONAR IDIOMA">
+                <input class="btn-modal" id="btnIdioma" type="submit" value="ADICIONAR IDIOMA">
             </form>
     </dialog>
 
@@ -227,6 +226,7 @@ require_once "./back-end/login/validador_acesso.php";
                     <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
                 </button>
             </div>
+            <h3 class="titulo-modal">ADICIONAR UM NOVO CURSO</h3>
             <form action="">
                 <label for="">INSTITUIÇÃO</label>
                 <select name="" id="">
@@ -281,10 +281,10 @@ require_once "./back-end/login/validador_acesso.php";
     <script>
         var closeModalCurso = document.getElementById("closeModalCurso")
         var closeModalIdioma = document.getElementById("closeModalIdioma")
-        closeModalCurso.onclick = function () {
+        closeModalCurso.onclick = function() {
             modalCurso.close()
         }
-        closeModalIdioma.onclick = function () {
+        closeModalIdioma.onclick = function() {
             modalIdioma.close()
         }
     </script>
