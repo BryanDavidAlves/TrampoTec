@@ -39,7 +39,7 @@ $resultado = $query->fetchAll();
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por aluno">
                 </div>
 
                 <div class="align-filtro">
@@ -90,26 +90,38 @@ $resultado = $query->fetchAll();
                         <th>ESTADO</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php foreach ($resultado as $resultado) { ?>
-                    <tr class="infos">
-                        <td class="table-id"><?=$resultado[0]?></td>
-                        <td class="table-nome-aluno"><?=$resultado[3]?></td>
-                        <td class="table-email-aluno"><?=$resultado[1]?></td>
-                        <td class="text-center"><?=$resultado[4]?></td>
-                        <td class="text-center"><?=$resultado[10]?></td>
-                        <td class="text-center"><?=$resultado[9]?></td>
-                        <td class="text-center"><?=$resultado[7]?></td>
-                        <td class="icone-table">
-                            <a  href="back-end/crudAluno/aluno-delete.php?id=<?= $resultado[0] ?>"><i  class="fa-solid fa-x" style="color: #000000;"></i></a>
-                        </td>
-                    </tr>
-                    <?php } ?>
+                <tbody class="infos" id="result">
+       
                 </tbody>
             </table>
 
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./back-end/buscas/buscaAluno.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaAluno.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
     <script src="modal-aluno.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>

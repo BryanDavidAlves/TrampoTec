@@ -55,7 +55,7 @@ include '../pag-adm/components/sidebar-adm.php';
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por empresa">
                 </div>
 
                 <div class="align-filtro">
@@ -113,7 +113,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                 <th>ESTADO</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="infos" id="result">
                             <?php foreach ($resultado as $resultado) {?>
                                 <tr class="infos">
                                     <td class="table-id">
@@ -159,6 +159,24 @@ include '../pag-adm/components/sidebar-adm.php';
 
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaEmpresa.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+   
+    </script>
     <script src="modal-empresa.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
