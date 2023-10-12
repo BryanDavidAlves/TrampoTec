@@ -21,6 +21,16 @@ return $conexao;
  echo '<p>' . $e->getMessage(). '</p>';
 
  }
+ $query = "SELECT idCurso, nome FROM tb_curso";
 
+ $result = $connection->query($query);
+ 
+ $data = array();
+ 
+ if ($result->num_rows > 0) {
+     while ($row = $result->fetch_assoc()) {
+         $data[] = $row;
+     }
+ }
 
 ?>

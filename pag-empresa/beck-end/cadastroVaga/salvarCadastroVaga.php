@@ -26,7 +26,7 @@ if ($_POST) {
     $cliente_id = $_SESSION['idEmpresa'];
    
     
-
+echo $curso;
 
     $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , area , semana , fk_idEmpresa ) VALUES
                 (   '$nome',

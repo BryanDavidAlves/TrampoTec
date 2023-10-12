@@ -282,6 +282,9 @@ $curso = $query->fetchAll();
             var option1 = document.createElement("option");
             option1.value = "<?=$curso[0] ?>";
             option1.text = "<?=$curso[1]?>";
+
+            
+            
            
             
 
