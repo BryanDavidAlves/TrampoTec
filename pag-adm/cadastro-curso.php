@@ -96,6 +96,8 @@ if($_POST) {
                     <select type="text" id="cargaHoraria" name="cargaHoraria"  value="<?=$cargaHoraria?>" required>
                        
                         <option>1200 horas</option>
+                        <option>1600 horas</option>
+                        <option>800 horas</option>
                      
                     </select>
                     <select type="text" id="semestre" name="semestre"  value="<?=$semestre?>" required>
@@ -104,6 +106,9 @@ if($_POST) {
                         <option>2º semestre</option>
 
                         <option>3º semestre</option>
+                        <option>4º semestre</option>
+                        <option>5º semestre</option>
+                        <option>6º semestre</option>
                     </select>
                     <select type="text" id="modalidade" name="modalidade"  required>
                         <option>Modalidade</option>         

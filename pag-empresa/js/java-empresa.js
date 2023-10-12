@@ -142,10 +142,10 @@ var button1 = document.getElementById("btn1")
 
 
                 
-            function vermais(){
+            function vermais(id){
     
                 var vermais=  document.getElementById('vermais')
-           
+             
         
                 if (vermais.style.display == 'flex'){
                     vermais.style.display = 'none'
