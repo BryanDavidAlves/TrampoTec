@@ -29,4 +29,6 @@ function mostrarDisponibilidade(){
     disponibilidade.style.display = "flex"
     infoAcademica.style.display = "none"
     conhecimento.style.display = "none"
+    
 }
+
