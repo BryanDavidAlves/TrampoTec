@@ -86,53 +86,54 @@ require_once "./back-end/login/validador_acesso.php";
                     <input class="btn-filtro" type="submit" name="" id="">
                 </form>
             </section>
+            <section class="container">
+                <section class="perfil">
+                    <div class="div-img">
+                        <img src="img/aluno-form.png" alt="">
+                    </div>
+                    <a href="perfil.php">PERFIL</a>
+                </section>
 
-            <section class="perfil">
-                <div class="div-img">
-                    <img src="img/aluno-form.png" alt="">
-                </div>
-                <a href="perfil.php">PERFIL</a>
-            </section>
+                <section class="vagas">
+                    <div class="align-cards">
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
+                            </div>
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn1">Clique para mais informações</button>
 
-            <section class="vagas">
-                <div class="align-cards">
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
                         </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn1">Clique para mais informações</button>
+
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
+                            </div>
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn2">Clique para mais informações</button>
+
+                        </div>
+
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4>SÃO PAULO - SP</h4>
+                                <h4>TATUAPÉ</h4>
+                            </div>
+                            <h4>Desenvolvedor Front End Junior</h4>
+                            <h4>Presencial</h4>
+                            <h4>R$2.520,00</h4>
+                            <button id="btn3">Clique para mais informações</button>
+                        </div>
+
 
                     </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn2">Clique para mais informações</button>
-
-                    </div>
-
-                    <div class="cards">
-                        <div class="localidade">
-                            <h4>SÃO PAULO - SP</h4>
-                            <h4>TATUAPÉ</h4>
-                        </div>
-                        <h4>Desenvolvedor Front End Junior</h4>
-                        <h4>Presencial</h4>
-                        <h4>R$2.520,00</h4>
-                        <button id="btn3">Clique para mais informações</button>
-                    </div>
-
-
-                </div>
+                </section>
             </section>
             <!--</div>-->
         </div>
