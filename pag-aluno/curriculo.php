@@ -13,6 +13,8 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/curriculo.css">
+
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <title>Meu Curriculo</title>
 </head>
 
@@ -31,171 +33,187 @@ require_once "./back-end/login/validador_acesso.php";
                 <section class="navigation">
                     <div class="trocar-pag">
                         <!-- <h2 onclick="mostrarInfoPessoal()">INFORMAÇÕES PESSOAIS</h2>-->
-                        <h2 onclick="mostrarInfoAcademica()">INFORMAÇÕES ACADEMICAS</h2>
-                        <h2 onclick=" mostrarConhecimento()">CONHECIMENTOS</h2>
-                        <h2 onclick=" mostrarDisponibilidade()">DISPONIBILIDADE</h2>
+
+                        <h2>DISPONIBILIDADE</h2>
                     </div>
                     <!-- <div id="line"></div>
                         linha para se mover, fazer animaçao futuramente no js
                     -->
                 </section>
 
-                <div class="container">
-                    <!--
-                    <section id="info-pessoal" class="info-pessoal">
 
-                        <div class="one-bar">
-                            <h3>NOME:</h3>
-                            <h4>Bryan David Salvino Alves</h4>
-                        </div>
-
-                        <div class="one-bar">
-                            <h3>EMAIL:</h3>
-                            <h4>bryan.alves5@etec.sp.gov.br</h4>
-                        </div>
-
-                        <div class="two-bars">
-
-                            <div class="bar">
-                                <h3>CEP:</h3>
-                                <h4>08470-610</h4>
-                            </div>
-
-                            <div class="bar">
-                                <h3>TELEFONE:</h3>
-                                <h4>(11) 94002-8922</h4>
-                            </div>
-
-                        </div>
-                    </section>
--->
-
-                    <section id="info-academica" class="info-academica">
-
-                        <div class="one-bar">
-                            <h3>CURSO:</h3>
-                            <h4>Desenvolviento de Sistemas</h4>
-                        </div>
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
 
 
-                        <div class="two-bars">
+                            <div class="container">
+                                <section id="info-academica" class="info-academica">
 
-                            <div class="bar">
-                                <h3>SEMESTRE:</h3>
-                                <h4>3</h4>
-                            </div>
-                            <div class="bar">
-                                <h3>DURAÇÃO:</h3>
-                                <h4>3 SEMESTRES</h4>
-                            </div>
+                                    <div class="one-bar">
+                                        <h3>CURSO:</h3>
+                                        <h4>Desenvolviento de Sistemas</h4>
+                                    </div>
 
-                        </div>
 
-                        <div class="two-bars">
+                                    <div class="two-bars">
 
-                            <div class="bar">
-                                <h3>PERIODO:</h3>
-                                <h4>MATUTINO</h4>
-                            </div>
+                                        <div class="bar">
+                                            <h3>SEMESTRE:</h3>
+                                            <h4>3</h4>
+                                        </div>
+                                        <div class="bar">
+                                            <h3>DURAÇÃO:</h3>
+                                            <h4>3 SEMESTRES</h4>
+                                        </div>
 
-                            <div class="bar">
-                                <h3>CONCLUSÃO:</h3>
-                                <h4>Dezembro</h4>
-                            </div>
+                                    </div>
 
-                        </div>
-                        <div class="one-bar">
-                            <h3>INSTITUIÇÃO ETEC:</h3>
-                            <h4>ETEC DE GUAIANASES</h4>
-                        </div>
-                        <button class="btn-curso" id="abrirCurso">Adicionar curso</button>
-                    </section>
+                                    <div class="two-bars">
 
-                    <section class="conhecimento" id="conhecimento">
-                        <section class="left">
-                            <!--usar essa div para fazer o laço paro o select no banco (input-conhecimento)-->
-                            <div class="input-conhecimento">
-                                <span>
-                                    <h3>IDIOMA: </h3>
-                                    <p>Ingles</p>
-                                </span>
-                                <span>
-                                    <h3>NIVEL: </h3>
-                                    <p>Intermediario</p>
-                                </span>
-                            </div>
+                                        <div class="bar">
+                                            <h3>PERIODO:</h3>
+                                            <h4>MATUTINO</h4>
+                                        </div>
 
-                            <!--<div class="input-conhecimento">
-                                <label for="nivel-idioma">NIVEL</label>
-                                <select name="nivel-idioma" id="nivel-idioma">
-                                    <option value="">Basico</option>
-                                    <option value="">Intermediário</option>
-                                    <option value="">Avançado</option>
-                                </select>
-                            </div>-->
-                            <button class="btn-conhecimento" id="abrirIdioma">Adicionar idioma</button>
+                                        <div class="bar">
+                                            <h3>CONCLUSÃO:</h3>
+                                            <h4>Dezembro</h4>
+                                        </div>
 
-                            <div class="input-hab">
-                                <span class="align-hab" onclick="abrirHab()">
-                                    <h3>HABILIDADE TECNOLÓGICAS </h3>
-                                    <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
-                                </span>
-                                <section class="drop-itens" id="habilidades">
-                                    <span class="tipo-hab">
-                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                    </span>
-                                    <span class="tipo-hab">
-                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                    </span>
-                                    <span class="tipo-hab">
-                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                    </span>
-                                    <span class="tipo-hab">
-                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                    </span>
-                                    <button class="adc-hab">Adicionar habilidade</button>
+                                    </div>
+                                    <div class="one-bar">
+                                        <h3>INSTITUIÇÃO ETEC:</h3>
+                                        <h4>ETEC DE GUAIANASES</h4>
+                                    </div>
+                                    <button class="btn-curso" id="abrirCurso">Adicionar curso</button>
                                 </section>
                             </div>
-                        </section>
 
-                        <section class="right">
-                            <div class="box-text">
-                                <label for="conhecimento-text">SOBRE MIM:</label>
-                                <textarea name="coonhecimento-text" id="conhecimento-text"
-                                    placeholder="OPCIONAL"></textarea>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>INFORMAÇÕES ACADEMICAS</h5>
                             </div>
-                        </section>
-                    </section>
-                    <section class="disponibilidade" id="disponibilidade">
-                        <section class="horarios">
-                            <div class="input-disponibilidade">
-                                <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+
+
+                                <section class="conhecimento" id="conhecimento">
+                                    <section class="left">
+                                        <!--usar essa div para fazer o laço paro o select no banco (input-conhecimento)-->
+                                        <div class="input-conhecimento">
+                                            <span>
+                                                <h3>IDIOMA: </h3>
+                                                <p>Ingles</p>
+                                            </span>
+                                            <span>
+                                                <h3>NIVEL: </h3>
+                                                <p>Intermediario</p>
+                                            </span>
+                                        </div>
+
+                                        <button class="btn-conhecimento" id="abrirIdioma">Adicionar idioma</button>
+
+                                        <div class="input-hab">
+                                            <span class="align-hab" onclick="abrirHab()">
+                                                <h3>HABILIDADE TECNOLÓGICAS </h3>
+                                                <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
+                                            </span>
+                                            <section class="drop-itens" id="habilidades">
+                                                <span class="tipo-hab">
+                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                                </span>
+                                                <span class="tipo-hab">
+                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                                </span>
+                                                <span class="tipo-hab">
+                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                                </span>
+                                                <span class="tipo-hab">
+                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
+                                                </span>
+                                                <button class="adc-hab">Adicionar habilidade</button>
+                                            </section>
+                                        </div>
+                                    </section>
+
+                                    <section class="right">
+                                        <div class="box-text">
+                                            <label for="conhecimento-text">SOBRE MIM:</label>
+                                            <textarea name="coonhecimento-text" id="conhecimento-text"
+                                                placeholder="OPCIONAL"></textarea>
+                                        </div>
+                                    </section>
+                                </section>
                             </div>
-
-                            <div class="horas">
-                                <div class="input-disponibilidade">
-                                    <input class="primeiro-horario" type="time" name="" id="">
-                                </div>
-                                <h3>ATÉ</h3>
-                                <div class="input-disponibilidade">
-                                    <input class="primeiro-horario" type="time" name="" id="">
-                                </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>CONHECIMENTOS</h5>
                             </div>
+                        </div>
+                        <div class="carousel-item">
 
-                        </section>
-                        <!--<img src="img/3.png" alt="">-->
-                    </section>
+                            <div class="container">
 
-                </div>
+                                <section class="disponibilidade" id="disponibilidade">
+                                    <section class="horarios">
+                                        <div class="input-disponibilidade">
+                                            <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
+                                        </div>
 
-                <div class="align-salvar">
-                    <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                    <div class="btn-salvar">
-                        <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
-                        <input type="submit" value="SALVAR" name="" id="">
+                                        <div class="horas">
+                                            <div class="input-disponibilidade">
+                                                <input class="primeiro-horario" type="time" name="" id="">
+                                            </div>
+                                            <h3>ATÉ</h3>
+                                            <div class="input-disponibilidade">
+                                                <input class="primeiro-horario" type="time" name="" id="">
+                                            </div>
+                                        </div>
+
+                                    </section>
+                                    <!--<img src="img/3.png" alt="">-->
+                                </section>
+
+                            </div>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>DISPONIBILIDADE</h5>
+
+                            </div>
+                        </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
 
+
+
+                <div class="rodapé">
+                    <i id="seta-direita" class="fa-solid fa-left-long seta"></i>
+                    <div class="align-salvar">
+                        <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
+                        <div class="btn-salvar">
+                            <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
+                            <input type="submit" value="SALVAR" name="" id="">
+                        </div>
+                    </div>
+                    <i id="seta-esquerda" class="fa-solid fa-right-long seta"></i>
+                </div>
         </section>
 
 
@@ -278,6 +296,7 @@ require_once "./back-end/login/validador_acesso.php";
     <script src="js/troca-pag.js"></script>
     <script src="js/abrir-hab.js"></script>
     <script src="js/modal-curriculo.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     <script>
         var closeModalCurso = document.getElementById("closeModalCurso")
         var closeModalIdioma = document.getElementById("closeModalIdioma")
