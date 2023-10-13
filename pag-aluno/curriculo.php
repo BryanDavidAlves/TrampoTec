@@ -10,11 +10,12 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/curriculo.css">
 
-    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
+
     <title>Meu Curriculo</title>
 </head>
 
@@ -30,7 +31,7 @@ require_once "./back-end/login/validador_acesso.php";
             <h1>CURRICULO</h1>
             <div class="box">
 
-                <div id="carouselExampleCaptions" class="carousel slide">
+                <div id="carouselExampleDark" class="carousel slide">
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -129,13 +130,15 @@ require_once "./back-end/login/validador_acesso.php";
                                     <section class="right">
                                         <div class="box-text">
                                             <label for="conhecimento-text">SOBRE MIM:</label>
-                                            <textarea name="coonhecimento-text" id="conhecimento-text"
+                                            <textarea rows="6" name="coonhecimento-text" id="conhecimento-text"
                                                 placeholder="OPCIONAL"></textarea>
                                         </div>
                                     </section>
                                 </section>
                             </div>
                         </div>
+
+
                         <div class="carousel-item">
                             <h5>DISPONIBILIDADE</h5>
                             <div class="container">
@@ -160,14 +163,15 @@ require_once "./back-end/login/validador_acesso.php";
                                 </section>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-left"></i>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-right"></i>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>

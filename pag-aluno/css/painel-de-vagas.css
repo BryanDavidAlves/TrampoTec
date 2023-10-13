@@ -82,14 +82,16 @@ select:focus {
 .option-filter select {
     cursor: pointer;
 }
-
+.container{
+    display: flex;
+}
 .perfil {
-    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 3%;
     width: 20%;
+    padding-left: 20px;
 }
 
 .perfil a {

@@ -131,6 +131,7 @@ aside ul {
 }
 aside ul a:hover {
     margin-left: 10px;
+    color: #fff;
 }
 
 .indice-side {
@@ -138,7 +139,7 @@ aside ul a:hover {
     color: #e3e3e3;
 }
 
-.border {
+.borda {
     border-top: 1px solid white;
     width: 85%;
 }
