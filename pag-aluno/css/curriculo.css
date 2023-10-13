@@ -22,11 +22,14 @@ h1 {
 }
 
 .container {
-    display: block;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    margin-top: 30px;
+    
 }
 
 .one-bar {
@@ -42,9 +45,13 @@ h1 {
 .two-bars {
     display: flex;
     justify-content: center;
-    width: 104%;
+    width: 101%;
     gap: 10px;
 
+}
+.carousel-caption h5{
+    color: #0a3580;
+    font-weight: 800;
 }
 
 .trocar-pag {
@@ -60,6 +67,11 @@ h1 {
 
 .trocar-pag h2 {
     cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.carousel-item {
+    min-height: 90vh;
 }
 
 /*#line{
@@ -85,7 +97,7 @@ linha para se mover, fazer animaçao futuramente no js
 
 
 .info-pessoal {
-    display: none;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -97,21 +109,32 @@ linha para se mover, fazer animaçao futuramente no js
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    width: 80%;
 }
 
-h3 {
+.one-bar h3 {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 600;
 }
 
-h4 {
+.two-bars h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.one-bar h4 {
     font-size: 1.1rem;
     color: #fff;
     margin-left: 5px;
 }
 
+.two-bars h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-left: 5px;
+}
 
 .one-bar,
 .two-bars {
@@ -120,8 +143,8 @@ h4 {
 }
 
 .conhecimento {
-    display: none;
-    width: 100%;
+    display: flex;
+    width: 90%;
     justify-content: space-evenly;
     gap: 30px;
     padding-bottom: 20px;
@@ -196,12 +219,13 @@ textarea:focus {
     margin-top: 10px;
     height: 150px;
 }
-.box-text label{
+
+.box-text label {
     color: #fff;
-} 
+}
 
 .disponibilidade {
-    display: none;
+
     width: 100%;
     justify-content: space-around;
     gap: 30px;
@@ -239,9 +263,22 @@ textarea:focus {
     font-size: 1rem;
 }
 
+.rodapé {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-evenly;
+    gap: 200px;
+}
+
+.seta {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .btn-salvar {
     background-color: red;
-    width: 10%;
+    width: 100px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -367,12 +404,14 @@ dialog input {
     background-color: transparent;
     border: none;
     font-size: 1rem;
-    border-bottom:1px solid #fff ;
+    border-bottom: 1px solid #fff;
     padding: 5px 0px;
 }
+
 dialog input:focus {
     outline: none;
 }
+
 dialog select {
     color: #fff;
     background-color: #0382ac;
@@ -382,7 +421,7 @@ dialog select {
     padding: 5px 0px;
 }
 
-dialog select:focus{
+dialog select:focus {
     outline: none;
 
 }
@@ -392,6 +431,7 @@ dialog label {
     font-size: 1.3rem;
     color: #fff;
 }
+
 dialog {
     color: #fff;
     border: none;
