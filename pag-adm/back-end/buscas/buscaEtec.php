@@ -1,8 +1,6 @@
 <?php
 include '../../../dao/conexao.php';
 
-
-
 if (isset($_POST['busca'])) {
     $busca = $_POST['busca'];
     $querySelect = "SELECT * FROM  tb_etec WHERE nome LIKE '%$busca%' OR email LIKE '%$busca%'
