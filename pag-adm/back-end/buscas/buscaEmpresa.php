@@ -2,19 +2,19 @@
 include '../../../dao/conexao.php';
 
 
-
 if (isset($_POST['busca'])) {
     $busca = $_POST['busca'];
-    $querySelect = "SELECT * FROM  tb_empresa WHERE email LIKE '%$busca%' OR cnpj LIKE '%$busca%'
-    OR cep LIKE '%$busca%' OR numero LIKE '%$busca%' OR estado LIKE '%$busca%'";
+    $campo = 0;
+    $querySelect = "SELECT * FROM  tb_empresa WHERE  ( email LIKE '%$busca%' OR cnpj LIKE '%$busca%'
+        OR cep LIKE '%$busca%' OR numero LIKE '%$busca%' OR estado LIKE '%$busca%' ) AND aprovado = $campo";
 } else {
-    $querySelect = "SELECT * FROM  tb_empresa";
+    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado = 0";
 }
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
-if ($resultado > 0) {
+if ($resultado > 0  ) {
     foreach ($resultado as $resultado) {
         echo
         '<tr class="infos">
@@ -26,18 +26,14 @@ if ($resultado > 0) {
         '<td class="table-nome-curso">' . $resultado[5] . '</td>',
         '<td class="table-numero">' . $resultado[7] . '</td>',
         '<td class="table-estado">' . $resultado[9] . '</td>',
-        '<td class="text-center">
-                <form action="cadastro-curso.php" method="POST">
-                    <input type="hidden" class="form-control" id="id_curso" name="id_curso"
-                        value="'. $resultado[0] .'">
-                    <button type="submit" class="dropdown-item"><i
-                            class="fas fa-edit fa-lg text-secondary"></i>
-                    </button>
-                </form>
-            </td>
-        <td class="icone-table">
+        '<td class="icone-table">
+            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=' . $resultado[0] . '"><i
+                    class="fa-solid fa-check" style="color: #ff0000;"></i></a>
 
-        <a href="./back-end/crudCurso/delete-curso.php?id='.$resultado[0].'"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+            <a href="./back-end/crudEmpresa/empresa-delete.php?id=' . $resultado[0] . '"><i
+                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+    </td>
+</tr>
         </td>
     </tr>';
     }
