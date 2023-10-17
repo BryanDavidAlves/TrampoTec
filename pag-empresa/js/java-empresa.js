@@ -141,24 +141,6 @@ var button1 = document.getElementById("btn1")
                 }
 
 
-                
-            function vermais(id){
-    
-                var vermais=  document.getElementById('vermais')
-             
-        
-                if (vermais.style.display == 'flex'){
-                    vermais.style.display = 'none'
-                
-                }else if (vermais.style.display == 'flex'){
-                    vermais.style.display='none'
-                }
-                else{
-                    vermais.style.display = 'flex'    
-                
-                }
-                
-                }
 
 
             
