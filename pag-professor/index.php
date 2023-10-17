@@ -1,8 +1,7 @@
+
 <?php
 require_once "./back-end/login/validador_acesso.php";
 ?>
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -79,7 +78,7 @@ include '../pag-professor/components/sidebar.php';
 <table>
     <thead>
         <tr>
-
+            <th>ID</th>
             <th>NOME</th>
             <th>EMAIL INSTITUCIONAL</th>
             <th>MENSAGEM</th>
@@ -88,7 +87,7 @@ include '../pag-professor/components/sidebar.php';
     </thead>
     <tbody>
         <tr class="infos">
-
+            <td class="table-nome-empresa">1</td>
             <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
@@ -117,7 +116,9 @@ include '../pag-professor/components/sidebar.php';
             </td>
         </tr>
 
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+        <tr class="infos">
+            <td class="table-nome-empresa">2</td>
+            <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
@@ -129,7 +130,9 @@ include '../pag-professor/components/sidebar.php';
                 </div>
             </td>
         </tr>
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+        <tr class="infos">
+            <td class="table-nome-empresa">3</td>
+            <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
 

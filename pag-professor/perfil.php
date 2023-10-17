@@ -1,8 +1,6 @@
 <?php
 include '../dao/conexao.php';
 
-require_once "./back-end/login/validador_acesso.php";
-
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idProfessor'];
 
