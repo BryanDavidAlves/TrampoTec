@@ -26,23 +26,21 @@ if ($_POST) {
     $id = $conexao->lastInsertId();
     
    
-    $foreach = [$_POST['selectName']]; 
+    $select = $_POST['selectName']; 
     
-    foreach ($foreach as $valor) {
+    foreach ($select as $option ) {
 
-        $select = $_POST["selectName"];
-        
         
         // Inserir o valor no banco de dados
-        $sql = "INSERT INTO tb_curso_etec ( fk_idCurso , fk_idEtec) VALUES ('$select', $id)"; 
+        $sql = "INSERT INTO tb_curso_etec ( fk_idCurso , fk_idEtec) VALUES ('$option', $id)"; 
         $query = $conexao->prepare($sql);
-        $query->execute();
+        $query->execute(); 
         
         // Substitua 'tabela' e 'coluna' com os nomes apropriados
      } 
 
 
-    header('Location:../../cadastro-etec.php?cadastro=feito'); 
+    header('Location:../../cadastro-etec.php?cadastro=feito');  
     exit;
 } else {
     header('Location: ../../cadastro-etec.php?cadastro=erro');
