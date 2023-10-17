@@ -166,13 +166,14 @@ table {
   border-bottom: 1px solid black;
   padding: 10px;
 }
+
 table td {
   padding: 30px 10px 40px 10px;
   text-align: center;
   color: rgb(94, 94, 94);
 }
 .table-nome-empresa {
-  width: 200px;
+  width: 150px;
 }
 .infos .table-log {
   word-break: break-all;

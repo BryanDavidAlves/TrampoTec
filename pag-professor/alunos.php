@@ -18,7 +18,7 @@ require_once "./back-end/login/validador_acesso.php";
 include '../pag-professor/components/sidebar.php';
 ?>
     <main class="main">
-        <span class="titulo-vagas"> Alunos</span>
+        <span class="titulo-vagas"> Pendentes</span>
         <div class="img-cima">
         <img src="img/fundo 2.png" alt="">
         </div>
@@ -74,36 +74,60 @@ include '../pag-professor/components/sidebar.php';
 <table>
     <thead>
         <tr>
-
+            <th>ID</th>
             <th>NOME</th>
             <th>EMAIL</th>
-            <th>CURSO</th>
+            <th>PERFIL</th>
 
         </tr>
     </thead>
     <tbody>
         <tr class="infos">
-
+            <td class="table-nome-empresa">1</td>
             <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
+            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
+
+            <td class="icone-table">
+            <div class="icons">
+
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
 
 
         </tr>
 
         <tr class="infos">
-
+            <td class="table-nome-empresa">2</td>
             <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
+            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
+
+            <td class="icone-table">
+            <div class="icons">
+
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
 
 
         </tr>
         <tr class="infos">
-
+            <td class="table-nome-empresa">3</td>
             <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj">Desenvolvimento de Sistemas</td>
+            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
+
+            <td class="icone-table">
+            <div class="icons">
+
+                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+
+                </div>
+            </td>
 
 
         </tr>

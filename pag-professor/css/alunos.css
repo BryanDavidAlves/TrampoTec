@@ -137,6 +137,15 @@ main .img-cima img {
   justify-content: center;
   align-items: center;
 }
+.icone-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icone-table i {
+  margin: 3px;
+}
 
 thead {
   color: rgb(70, 70, 70);
@@ -163,7 +172,29 @@ table td {
   color: rgb(94, 94, 94);
 }
 .table-nome-empresa {
-  width: 200px;
+  width: 150px;
+}
+.table-cnpj .btn-perfil {
+  border: none;
+}
+.table-cnpj {
+  width: 150px;
+}
+.table-cnpj .btn-perfil button {
+  padding: 12px 10px 12px 10px;
+  color: white;
+  background-color: #4d3cd1;
+  border: 1px solid #4d3cd1;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: 0.2s ease-in-out all;
+}
+.table-cnpj .btn-perfil button:hover {
+  border: 1px solid #4d3cd1;
+  background-color: white;
+  color: #4d3cd1;
+  transition: 0.2s ease-in-out all;
 }
 .infos .table-log {
   word-break: break-all;
