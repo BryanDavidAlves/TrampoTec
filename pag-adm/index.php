@@ -68,7 +68,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Empresas cadastradas </h3>
-                            <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                            <i id="empresas" class="fa-solid fa-building" ></i>
                         </div>
                         <h2>
                             <?= $n_empresa ?>
@@ -79,7 +79,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Professores cadastrados</h3>
-                            <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
+                            <i id="prof" class="fa-solid fa-chalkboard-user" ></i>
                         </div>
                         <h2>
                             <?= $n_professor ?>
@@ -89,45 +89,67 @@ $n_pendenteEmpresa = count($pendenteEm);
                 <a href="aluno.php">
                     <div class="card">
                         <div class="header-card">
-                            <h3>Alunos cadastrados</h3>
-                            <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                            <h3>Usuários Cadastrados</h3>
+                            <i id="aluno" class="fa-solid fa-user" ></i>
                         </div>
                         <h2>
                             <?= $n_aluno ?>
                         </h2>
                     </div>
                 </a>
+                <a href="relatorio.php"><button type="submit" class="btn-relatorio">Ver Relatório </button></a>
+                </div>
                 
-                <a href="adm.php">
+                <div class="coluna-dois">
+                    <div class="align-card2">
+                    <a href="adm.php">
+                        <div class="card">
+                            <div class="header-card">
+                                <h3>Administradores Cadastrados</h3>
+                                <i id="adm" class="fa-solid fa-user" ></i>
+                            </div>
+                            <h2>
+                                <?= $n_admin ?>
+                            </h2>
+                        </div>
+                    </a>
+
+            
+                    <a href="empresa.php?aprovado=0">
                     <div class="card">
                         <div class="header-card">
-                            <h3>Administradores Cadastrados</h3>
-                            <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                            <h3>Alunos Cadastrados</h3>
+                            <i id="empresas" class="fa-solid fa-building" ></i>
                         </div>
                         <h2>
-                            <?= $n_admin ?>
+                            <?= $n_pendenteEmpresa ?>
                         </h2>
                     </div>
-                </a>
+                    </a>
 
-        
-                <a href="empresa.php?aprovado=0">
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Empresas Pendentes </h3>
-                        <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                    <a href="empresa.php?aprovado=0">
+                    <div class="card">
+                        <div class="header-card">
+                            <h3>Empresas Pendentes </h3>
+                            <i id="empresas" class="fa-solid fa-building" ></i>
+                        </div>
+                        <h2>
+                            <?= $n_pendenteEmpresa ?>
+                        </h2>
                     </div>
-                    <h2>
-                        <?= $n_pendenteEmpresa ?>
-                    </h2>
+                    </a>
+
+                    
+                    </div>
+                    <div class="dash-card">
+                        <img class="grafico1" src="img/grafico1.png" alt="">
+                        <img class="grafico2" src="img/grafico2.png" alt="">
+                     </div>
                 </div>
-                </a>
-            </div>
-            <section class="dash-card">
-                <img class="grafico1" src="img/grafico1.png" alt="">
-                <img class="grafico2" src="img/grafico2.png" alt="">
-            </section>
+
+            
         </section>
+       
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>

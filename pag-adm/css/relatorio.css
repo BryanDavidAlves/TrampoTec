@@ -1,0 +1,107 @@
+main{
+    margin-left: 23%;
+}
+.align-busca{
+    display: flex;
+    width: auto;
+
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.align-busca .barra-pesquisa {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid royalblue;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    
+    width: 270px;
+  }
+  
+  .align-busca .barra-pesquisa input {
+    border: none;
+  }
+  .align-busca .barra-pesquisa input:focus {
+    outline: none;
+  }
+  .align-busca a{
+    padding: 10px 12px 10px 12px ;
+    background-color: red;
+    border: none;
+    border-radius: 100%;
+  }
+  .align-busca a i{
+    color: white;
+    font-size: 1.2em;
+  }
+  .coluna-um{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+
+  }
+.align-card{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 80px;
+
+}
+  .align-card .card{
+    width: 200px;
+    height: 150px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+    border:2px solid  #6ba9fa;
+
+    background-color: #182052;
+    transition: 200ms ease-in-out;
+    
+}
+.align-card .card a{
+    color: #182052;
+}
+.card:hover{
+    scale: 1.05;
+   
+}
+.card h3{
+    width: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.card h2{
+    font-size: 3rem;
+    color: #fff;
+    margin-top: 25px;
+}
+.header-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-card i{
+    color:#fff;
+    font-size: 1.6rem;
+    border: 4px solid #fff;
+    padding: 10px;
+    border-radius: 100%;
+    
+}
+.align-dados{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin-left: 20px;
+    gap: 30px;
+    
+}
+.coluna-um .dados-empresa{
+    display: flex;
+    flex-direction: column;
+    
+}
