@@ -66,37 +66,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span>
                             <label for="nome">NOME</label>
-                            <input name="nome" type="text">
+                            <input name="nome" type="text" required>
 
                         </span>
 
                         <span>
                             <label for="cidade">CIDADE</label>
-                            <input name="cidade" type="text">
+                            <input name="cidade" type="text" required>
                         </span>
                     </div>
 
                     <div>
                         <span>
                             <label for="bairro">BAIRRO</label>
-                            <input name="bairro" type="text">
+                            <input name="bairro" type="text" required>
                         </span>
 
 
                         <span>
                             <label for="tipo">TIPO TRABALHO</label>
-                            <input name="tipo" type="text">
+                            <input name="tipo" type="text" required>
                         </span>
                         <span>
                             <label for="tipo">Semana</label>
-                            <input name="semana" type="text" placeholder="Seg-Sex" maxlength="7">
+                            <input name="semana" type="text" placeholder="Seg-Sex" maxlength="7" required>
                         </span>
                     </div>
 
                     <div>
                         <span>
                             <label for="salario">SALARIO</label>
-                            <input name="salario" type="number">
+                            <input name="salario" type="number" required>
                         </span>
                         <span>
                             <label>Curso</label>
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span>
                             <label for="descricao">DESCRIÇÃO</label>
-                            <input class="descricao" name="descricao" type="text">
+                            <input class="descricao" name="descricao" type="text" required>
                         </span>
 
                     </div>
@@ -122,12 +122,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span>
                             <label for="area">AREA</label>
-                            <input name="area" type="text">
+                            <input name="area" type="text" required>
                         </span>
 
                         <span>
                             <label for="periodo">PERIODO</label>
-                            <select class="selects" name="periodo">
+                            <select class="selects" name="periodo" required>
                                 <option value="noturno">Noturno</option>
                                 <option value="diurno">Diurno</option>
                                 <option value="matinal">Matinal</option>
@@ -141,12 +141,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span>
                             <label for="inicio">INICIO</label>
-                            <input name="inicio" type="time">
+                            <input name="inicio" type="time" required>
                         </span>
 
                         <span>
                             <label for="termino">TERMINO</label>
-                            <input name="termino" type="time">
+                            <input name="termino" type="time" required>
                         </span>
                     </div>
 

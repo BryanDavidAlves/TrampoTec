@@ -68,7 +68,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Empresas cadastradas </h3>
-                            <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                            <i id="empresas" class="fa-solid fa-building"></i>
                         </div>
                         <h2>
                             <?= $n_empresa ?>
@@ -79,7 +79,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Professores cadastrados</h3>
-                            <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
+                            <i id="prof" class="fa-solid fa-chalkboard-user"></i>
                         </div>
                         <h2>
                             <?= $n_professor ?>
@@ -90,7 +90,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Alunos cadastrados</h3>
-                            <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                            <i id="aluno" class="fa-solid fa-user" ></i>
                         </div>
                         <h2>
                             <?= $n_aluno ?>
@@ -102,7 +102,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Administradores Cadastrados</h3>
-                            <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                            <i id="adm" class="fa-solid fa-user"></i>
                         </div>
                         <h2>
                             <?= $n_admin ?>
@@ -115,7 +115,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                 <div class="card">
                     <div class="header-card">
                         <h3>Empresas Pendentes </h3>
-                        <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                        <i id="empresas" class="fa-solid fa-building"></i>
                     </div>
                     <h2>
                         <?= $n_pendenteEmpresa ?>
