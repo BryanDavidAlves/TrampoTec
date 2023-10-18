@@ -1,3 +1,10 @@
+.align-tudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 23%;
+}
 .sistema-busca .barra-pesquisa {
   border-radius: 20px;
   padding: 5px;
@@ -66,8 +73,8 @@ main .img-cima img {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 70%;
-  margin-left: 26%;
+  width: 100%;
+
   border: none;
   border-radius: 15px;
   margin-top: 5%;
@@ -158,10 +165,8 @@ th {
 table {
   background-color: rgba(247, 247, 247, 0.641);
   border-radius: 20px;
-  width: 90%;
-  margin-left: 25%;
+  width: 75vw;
 }
-
 .infos {
   border-bottom: 1px solid black;
   padding: 10px;
@@ -172,14 +177,15 @@ table td {
   color: rgb(94, 94, 94);
 }
 .table-nome-empresa {
-  width: 150px;
+  width: 250px;
 }
 .table-cnpj .btn-perfil {
   border: none;
 }
 .table-cnpj {
-  width: 150px;
+  width: 200px;
 }
+
 .table-cnpj .btn-perfil button {
   padding: 12px 10px 12px 10px;
   color: white;
@@ -202,7 +208,7 @@ table td {
 }
 .table-email-empresa {
   word-break: break-all;
-  width: 250px;
+  width: 290px;
 }
 
 tr:nth-last-child(1) {
@@ -213,6 +219,7 @@ tr:nth-last-child(1) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 150px;
 }
 .icone-table i {
   margin: 3px;

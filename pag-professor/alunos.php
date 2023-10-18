@@ -1,6 +1,4 @@
-<?php
-require_once "./back-end/login/validador_acesso.php";
-?>
+
 <html lang="en">
 
 <head>
@@ -24,7 +22,7 @@ include '../pag-professor/components/sidebar.php';
         </div>
 
     </main>
-
+<div class="align-tudo">
     <section class="sistema-busca">
     <div class="barra-pesquisa">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
@@ -73,7 +71,7 @@ include '../pag-professor/components/sidebar.php';
 
 <table>
     <thead>
-        <tr>
+        <tr class=infos>
             <th>ID</th>
             <th>NOME</th>
             <th>EMAIL</th>
@@ -135,6 +133,7 @@ include '../pag-professor/components/sidebar.php';
     </tbody>
 </table>
 </section>
+</div>
 
     <div class="img-baixo">
         <img src="img/fundo 1.png" alt="">
