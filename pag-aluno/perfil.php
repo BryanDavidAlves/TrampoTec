@@ -14,7 +14,7 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/perfil.css">
     <title>Meu Perfil</title>
-</head>
+</head>   
 
 <body>
     <?php
