@@ -1,6 +1,6 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
-
+include ('../dao/conexao.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dados = [];
 
@@ -17,6 +17,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Campo: " . htmlspecialchars($campo) . "<br>";
     }
 }
+
+
+
+if($_POST) {
+    $id_curso = $_POST['id_curso'];
+    $querySelect = "SELECT * FROM tb_curso  WHERE idCurso = $id_curso";
+    $resultado = $conexao->query($querySelect);
+    $curso = $resultado->fetch();
+    $id_curso = $curso["idCurso"];
+    $nome = $curso["nome"];
+    $cargaHoraria = $curso["cargaHoraria"];
+    $semestre = $curso["semestre"];
+    $modalidade = $curso["modalidade"];
+    $ensino = $curso["ensino"];
+    $querySelect = "SELECT * FROM tb_eixo  WHERE fk_idCurso = $id_curso";
+    $resultado = $conexao->query($querySelect);
+    $eixo = $resultado->fetch();
+    $eixo1 = $eixo["eixo"];
+    
+
+  }else{
+    $id_curso = "";
+    $nome = "";
+    $cargaHoraria = "";
+    $semestre = "";
+    $modalidade = "";
+    $ensino = "";
+    $eixo1 = "";
+  }
+
 ?>
 
 
@@ -55,42 +85,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <div class="input-box">
                     <label for="nome">NOME DO CURSO</label>
-                    <input type="text" id="nomeCuso" name="nomeCuso">
+                    <input type="text" id="nomeCuso" name="nomeCuso"  value="<?=$nome?>" required>
                 </div>
 
                 <div class="input-box">
                     <label for="eixo">EIXO</label>
-                    <input type="text" id="eixo" name="eixo">
+                    <input type="text" id="eixo" name="eixo"  value="<?=$eixo1?>" required>
                 </div>
                 <div class="input-select">
-                    <select type="text" id="cargaHoraria" name="cargaHoraria" required>
+                    <select type="text" id="cargaHoraria" name="cargaHoraria"  value="<?=$cargaHoraria?>" required>
                        
                         <option>1200 horas</option>
+                        <option>1600 horas</option>
+                        <option>800 horas</option>
                      
                     </select>
-                    <select type="text" id="semestre" name="semestre" required>
+                    <select type="text" id="semestre" name="semestre"  value="<?=$semestre?>" required>
                         <option>1º semestre</option>
 
                         <option>2º semestre</option>
 
                         <option>3º semestre</option>
+                        <option>4º semestre</option>
+                        <option>5º semestre</option>
+                        <option>6º semestre</option>
                     </select>
-                    <select type="text" id="modalidade" name="modalidade" required>
-                        <option>Modalidade</option>
-                        
-                        <option>Presencial</option>
-                        <option>Online</option>
+                    <select type="text" id="modalidade" name="modalidade"  required>
+                        <option>Modalidade</option>         
+                        <option  <?=$modalidade=='Presencial'?'selected':''?>>Presencial</option>
+                        <option  <?=$modalidade=='Online'?'selected':''?>>Online</option>
 
 
                     </select>
                     <select type="text" id="modalidade" name="ensino" required>
-                        <option>Ensino</option>
-                        <option>Curso Tecnico</option>
-                        <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
-                        <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
-                        <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
-                        <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>        
-                        <option>Especialização Técnica</option>
+                        <option >Ensino</option>
+                        <option  <?=$ensino=='Curso Tecnico'?'selected':''?>>Curso Tecnico</option>
+                        <option  <?=$ensino=='Ensino Medio Integrado ao Tecnico(M-TEC)'?'selected':''?>>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
+                        <option <?=$ensino=='Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'?'selected':''?>>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
+                        <option  <?=$ensino=='Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)'?'selected':''?>>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
+                        <option <?=$ensino=='Articulação dos Ensino Medio - Técnico e Superior (AMS)'?'selected':''?>>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>        
+                        <option <?=$ensino=='Especialização Técnica'?'selected':''?>>Especialização Técnica</option>
 
 
                     </select>
@@ -115,6 +149,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php
                 }
                 ?>
+                 <?php
+                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "atualizado") {
+                ?>
+                    <div class="text-green">
+                        Cadastro Atualizado
+                    </div>
+                <?php
+                }
+                ?>
+                <input type="hidden" id="id_curso" name="id_curso" value="<?=$id_curso?>">
                 <input type="submit" class="btn" value="CADASTRAR">
             </form>
         </section>

@@ -1,6 +1,3 @@
-<?php
-require_once "./back-end/login/validador_acesso.php";
-?>
 
 
 <!DOCTYPE html>
@@ -29,7 +26,7 @@ include '../pag-professor/components/sidebar.php';
         </div>
 
     </main>
-
+<div class="align-tudo">
     <section class="sistema-busca">
     <div class="barra-pesquisa">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
@@ -78,8 +75,8 @@ include '../pag-professor/components/sidebar.php';
 
 <table>
     <thead>
-        <tr>
-
+        <tr class="infos">
+            <th >ID</th>
             <th>NOME</th>
             <th>EMAIL INSTITUCIONAL</th>
             <th>MENSAGEM</th>
@@ -88,7 +85,7 @@ include '../pag-professor/components/sidebar.php';
     </thead>
     <tbody>
         <tr class="infos">
-
+            <td class="table-nome-empresa">1</td>
             <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
@@ -117,7 +114,9 @@ include '../pag-professor/components/sidebar.php';
             </td>
         </tr>
 
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+        <tr class="infos">
+            <td class="table-nome-empresa">2</td>
+            <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
@@ -129,7 +128,9 @@ include '../pag-professor/components/sidebar.php';
                 </div>
             </td>
         </tr>
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
+        <tr class="infos">
+            <td class="table-nome-empresa">3</td>
+            <td class="table-nome-empresa">Ryan</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
@@ -163,6 +164,7 @@ include '../pag-professor/components/sidebar.php';
 
 </dialog>
     </section>
+    </div>
 
 
     <div class="img-baixo">

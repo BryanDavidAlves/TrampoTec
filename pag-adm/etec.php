@@ -2,12 +2,6 @@
 
 require_once "back-end/login/validador_acesso.php";
 
-$querySelect = "SELECT * FROM  tb_etec";
-
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
-
 
 
 ?>
@@ -50,7 +44,7 @@ $resultado = $query->fetchAll();
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por etec">
                 </div>
 
                 <div class="align-filtro">
@@ -106,50 +100,39 @@ $resultado = $query->fetchAll();
 
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($resultado as $resultado) { ?>
-                        <tr class="infos">
-                            <td class="table-id">
-                                <?= $resultado[0] ?>
-                            </td>
-                            <td class="table-nome-etec">
-                                <?= $resultado[2] ?>
-                            </td>
-                            <td class="table-email-etec">
-                                <?= $resultado[1] ?>
-                            </td>
-                            <td class="">
-                                <?= $resultado[3] ?>
-                            </td>
-                            <td>
-                                <?= $resultado[4] ?>
-                            </td>
-                            <td class="text-center">
-                                <form action="cadastro-etec.php" method="POST">
-                                    <input type="hidden" class="form-control" id="id_etec" name="id_etec"
-                                        value="<?= $resultado[0] ?>">
-                                    <button type="submit" class="dropdown-item"><i
-                                            class="fas fa-edit fa-lg text-secondary"></i>
-                                    </button>
-                                </form>
-                            </td>
-                            <td class="icone-table"> <a
-                                    href="./back-end/crudEtec/etec-delete.php?id=<?= $resultado[0] ?>"><i
-                                        class="fa-solid fa-x" style="color: #000000;"></i></a>
-
-                            </td>
-                        </tr>
-                    <?php } ?>
-
-
-
+                <tbody class="infos" id="result">
+             
 
                 </tbody>
             </table>
 
         </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
+            var busca = ("");
+            $.post('./back-end/buscas/buscaEtec.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaEtec.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>

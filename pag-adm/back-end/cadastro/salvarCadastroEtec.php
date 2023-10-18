@@ -9,16 +9,11 @@ if ($_POST) {
     $email = trim($_POST['email']);
     $codigo = trim($_POST['codigo']);
     $municipio = trim($_POST['municipio']);
-    $curso = trim($_POST['curso']);
+   
+   
+     
 
-
-
-
-
-
-
-    $sql1 = "
-                INSERT INTO tb_etec ( nome , email , codigo , municipio ) VALUES
+    $sql = " INSERT INTO tb_etec ( nome , email , codigo , municipio ) VALUES
                 (   '$nome',
                     '$email',       
                     '$codigo',
@@ -26,22 +21,26 @@ if ($_POST) {
 
                 )
                 ";
-    $query = $conexao->prepare($sql1);
+    $query = $conexao->prepare($sql);
     $query->execute();
     $id = $conexao->lastInsertId();
-
-  
-        $sql1 = " INSERT INTO tb_curso_etec ( fk_idCurso , fk_idEtec ) VALUES
-        (   '$curso',
-            '$id'
-        )
-        ";
     
-$query = $conexao->prepare($sql1);
-$query->execute();
+   
+    $select = $_POST['selectName']; 
     
+    foreach ($select as $option ) {
 
-    header('Location:../../cadastro-etec.php?cadastro=feito');
+        
+        // Inserir o valor no banco de dados
+        $sql = "INSERT INTO tb_curso_etec ( fk_idCurso , fk_idEtec) VALUES ('$option', $id)"; 
+        $query = $conexao->prepare($sql);
+        $query->execute(); 
+        
+        // Substitua 'tabela' e 'coluna' com os nomes apropriados
+     } 
+
+
+    header('Location:../../cadastro-etec.php?cadastro=feito');  
     exit;
 } else {
     header('Location: ../../cadastro-etec.php?cadastro=erro');

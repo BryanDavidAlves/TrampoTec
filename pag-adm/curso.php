@@ -1,11 +1,8 @@
-<?php 
-    include('../dao/conexao.php');
+<?php
+include('../dao/conexao.php');
 
-$querySelect = "SELECT * FROM  tb_curso";
+require_once "back-end/login/validador_acesso.php";
 
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
 ?>
 
 
@@ -19,8 +16,7 @@ require_once "back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
 
@@ -38,18 +34,18 @@ require_once "back-end/login/validador_acesso.php";
     <header>
         <h1>Cursos</h1>
         <div class="secao-cadastro">
-        <a href="cadastro-curso.php">
-            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
-            <h2>Cadastrar um novo curso</h2>
-        </a>
-    </div>
+            <a href="cadastro-curso.php">
+                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <h2>Cadastrar um novo curso</h2>
+            </a>
+        </div>
     </header>
     <main>
         <div class="secao-busca">
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por curso">
                 </div>
 
                 <div class="align-filtro">
@@ -99,36 +95,23 @@ require_once "back-end/login/validador_acesso.php";
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th style="text-align:start">NOME</th>
+                        <th>NOME</th>
+                        <th>Carga Horaria</th>
+                        <th>Semestre</th>
+                        <th>Modalidade</th>
+                        <th>Ensino</th>
+
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach($resultado as $resultado) {?>
-                    <tr class="infos">
-                        <td class="table-id">
-                            <?=$resultado[0]?>
-                        </td>
-
-                        <td style="text-align:start" class="table-nome-curso">
-                        <?=$resultado[1]?>
-                        </td>
-                        <td class="ver-mais" id="btn1">
-                            <span class="btn-modal">Ver Mais</span>
-                        </td>
-                        <td class="icone-table">
-
-                        <a href="./back-end/crudCurso/delete-curso.php?id=<?=$resultado[0]?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
-                        </td>
-                    </tr>
-                    <?php }  ?>
-                    
+                <tbody class="infos" id="result">
+               
                 </tbody>
             </table>
 
 
         </section>
     </main>
-    
+
     <dialog id="modal">
         <section class="modal-infos">
             <table class="table-dialog">
@@ -138,20 +121,47 @@ require_once "back-end/login/validador_acesso.php";
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Areas 1</td> 
+                        <td>Areas 1</td>
                         <td>Requisitos 1</td>
                     </tr>
 
                     <tr>
-                        <td>Areas 2</td> 
+                        <td>Areas 2</td>
                         <td>Requisitos 2</td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </dialog>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./back-end/buscas/buscaCurso.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaCurso.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
     <script src="modal-curso.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
