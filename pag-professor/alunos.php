@@ -72,19 +72,29 @@ include '../pag-professor/components/sidebar.php';
 <table>
     <thead>
         <tr class=infos>
-            <th>ID</th>
+       
+            <th class="text-id">ID</th>
+            <th>USUARIO</th>
             <th>NOME</th>
             <th>EMAIL</th>
             <th>PERFIL</th>
+          
+            
+
 
         </tr>
     </thead>
     <tbody>
         <tr class="infos">
-            <td class="table-nome-empresa">1</td>
-            <td class="table-nome-empresa">Ryan</td>
+      
+            <td class="table-id-empresa">1</td>
+            <td class="foto-user">
+                <img src="img/bryan.jpg" alt="">
+            </td>
+            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
+           
 
             <td class="icone-table">
             <div class="icons">
@@ -98,10 +108,13 @@ include '../pag-professor/components/sidebar.php';
         </tr>
 
         <tr class="infos">
-            <td class="table-nome-empresa">2</td>
-            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-id-empresa">2</td>
+            <td class="foto-user">
+                <img src="img/bryan.jpg" alt="">
+            </td>
+            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
+            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button type="submit">VER MAIS</button></a></td>
 
             <td class="icone-table">
             <div class="icons">
@@ -114,8 +127,11 @@ include '../pag-professor/components/sidebar.php';
 
         </tr>
         <tr class="infos">
-            <td class="table-nome-empresa">3</td>
-            <td class="table-nome-empresa">Ryan</td>
+            <td class="table-id-empresa">3</td>
+            <td class="foto-user">
+                <img src="img/bryan.jpg" alt="">
+            </td>
+            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
             <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
             <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
 

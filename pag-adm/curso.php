@@ -1,5 +1,5 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 require_once "back-end/login/validador_acesso.php";
 
@@ -28,8 +28,8 @@ require_once "back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Cursos</h1>
@@ -104,7 +104,7 @@ require_once "back-end/login/validador_acesso.php";
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">
-               
+
                 </tbody>
             </table>
 
@@ -133,7 +133,7 @@ require_once "back-end/login/validador_acesso.php";
             </table>
         </section>
     </dialog>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -159,7 +159,7 @@ require_once "back-end/login/validador_acesso.php";
             });
         });
     </script>
-    <script src="modal-curso.js"></script>
+    <script src="js/modal-curso.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 
 </body>
