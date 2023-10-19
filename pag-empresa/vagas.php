@@ -7,6 +7,7 @@ $querySelect ="SELECT tb_vaga.idVaga, tb_vaga.nome, tb_vaga.cidade, tb_vaga.bair
 FROM tb_vaga
 INNER JOIN tb_curso
 ON tb_vaga.fk_idCurso = tb_curso.idCurso";
+
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
@@ -157,10 +158,10 @@ $resultado = $query->fetchAll();
                             <?= $resultado[6] ?>
                             </td>
                             <td class="table">
-                                <?= $resultado[9] ?>
+                                <?= $resultado[8] ?>
                             </td>
                             <td class="table">
-                                <?= $resultado[10] ?>
+                                <?= $resultado[7] ?>
                             </td>
                             
 
