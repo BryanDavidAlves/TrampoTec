@@ -58,7 +58,7 @@ include '../pag-adm/components/sidebar-adm.php';
             </div>
         </div>
 
-        <section id="conteudo" class="coluna-um">
+            <section id="conteudo" class="coluna-um">
            <div class="align-geral">
                 <div class="align-card">
                 <a href="professor.php">

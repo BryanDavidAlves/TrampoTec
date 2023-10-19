@@ -94,7 +94,8 @@ include '../pag-adm/components/sidebar-adm.php';
                 </a>
                 <a href="relatorio.php"><button type="submit" class="btn-relatorio">Ver Relatório </button></a>
                 </div>
-
+                <div class="align-graficos">
+            <div class="align-card2">
                 <a href="adm.php">
                     <div class="card">
                         <div class="header-card">
@@ -119,12 +120,31 @@ include '../pag-adm/components/sidebar-adm.php';
                     </h2>
                 </div>
                 </a>
+                <a href="empresa.php?aprovado=0">
+                <div class="card">
+                    <div class="header-card">
+                        <h3>Empresas Pendentes </h3>
+                        <i id="empresas" class="fa-solid fa-building" ></i>
+                    </div>
+                    <h2>
+                        <?=$n_pendenteEmpresa?>
+                    </h2>
+                </div>
+                </a>
             </div>
-            <section class="dash-card">
-                <img class="grafico1" src="img/grafico1.png" alt="">
-                <img class="grafico2" src="img/grafico2.png" alt="">
-            </section>
+
+
+
+
+                <div class="dash-card">
+                    <img class="grafico1" src="img/grafico1.png" alt="">
+                    <img class="grafico2" src="img/grafico2.png" alt="">
+
+                </div>
+            </div>
         </section>
+
+
 
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>

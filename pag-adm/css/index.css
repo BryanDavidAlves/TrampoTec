@@ -3,6 +3,9 @@ header h1 {
   font-size: 2.1rem;
   margin-top: -40px;
 }
+.align-geral {
+  display: flex;
+}
 .dashboard {
   width: 100%;
   display: flex;
@@ -27,8 +30,11 @@ header h1 {
 }
 .align-card2 {
   display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 40px;
-  width: 100%;
+  width: auto;
   margin-left: 20px;
 }
 .btn-relatorio {
@@ -65,13 +71,15 @@ main {
 }
 .card h3 {
   width: 10px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #fff;
+  font-weight: 600;
 }
 .card h2 {
   font-size: 3rem;
   color: #fff;
   margin-top: 25px;
+  font-weight: 600;
 }
 .header-card {
   display: flex;
@@ -101,6 +109,9 @@ main {
   display: flex;
   margin-top: 100px;
   align-items: center;
+
+  width: 100%;
+
   gap: 60px;
   justify-content: center;
 }
@@ -125,6 +136,13 @@ main {
   right: 0;
   z-index: -5;
   width: 16%;
+}
+.align-graficos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: auto;
 }
 /*.baixo{
     position: absolute;
