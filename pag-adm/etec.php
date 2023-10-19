@@ -1,8 +1,6 @@
-<?php include('../dao/conexao.php');
+<?php include '../dao/conexao.php';
 
 require_once "back-end/login/validador_acesso.php";
-
-
 
 ?>
 
@@ -27,8 +25,8 @@ require_once "back-end/login/validador_acesso.php";
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Etecs</h1>
@@ -101,7 +99,7 @@ require_once "back-end/login/validador_acesso.php";
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">
-             
+
 
                 </tbody>
             </table>
@@ -133,7 +131,7 @@ require_once "back-end/login/validador_acesso.php";
             });
         });
     </script>
-    <script src="modal-etec.js"></script>
+    <script src="js/modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

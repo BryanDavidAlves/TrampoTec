@@ -23,8 +23,8 @@ include '../dao/conexao.php';
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
@@ -103,11 +103,11 @@ include '../dao/conexao.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
 
-            
+
         $(document).ready(function() {
 
            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") {?>
-                
+
                 var busca = ("");
                 $.post('./back-end/buscas/buscaEmpresa1.php', {
                     busca
@@ -127,9 +127,9 @@ include '../dao/conexao.php';
 
 
                 });
-      <?php      } ?>
+      <?php }?>
       <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") {?>
-                
+
                 var busca = ("0");
                 $.post('./back-end/buscas/buscaEmpresa.php', {
                     busca
@@ -149,10 +149,10 @@ include '../dao/conexao.php';
 
 
                 });
-      <?php      } ?>
+      <?php }?>
         });
     </script>
-    <script src="modal-empresa.js"></script>
+    <script src="js/modal-empresa.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
