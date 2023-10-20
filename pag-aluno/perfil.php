@@ -18,8 +18,8 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
-    ?>
+include '../pag-aluno/components/header.php';
+?>
     <main id="main">
         <div class="align">
             <h1>PERFIL</h1>
@@ -124,8 +124,8 @@ require_once "./back-end/login/validador_acesso.php";
         </div>
     </main>
     <?php
-    include('../pag-aluno/components/sidebar.php');
-    ?>
+include '../pag-aluno/components/sidebar.php';
+?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
