@@ -21,11 +21,6 @@ main {
 
 }
 
-header img {
-    width: 10%;
-    padding: 10px;
-}
-
 aside {
     display: none;
     background-color: #0a3580;
