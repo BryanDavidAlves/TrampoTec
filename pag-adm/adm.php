@@ -127,10 +127,10 @@ include '../pag-adm/components/sidebar-adm.php';
 
         </section>
     </main>
-    <script src="modal-adm.js"></script>
+    <script src="js/modal-adm.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
-<script src="modal-adm.js"></script>
+<script src="js/modal-adm.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

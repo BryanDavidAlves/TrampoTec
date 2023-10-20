@@ -3,13 +3,15 @@ require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 
 
-$querySelect = "SELECT * FROM  tb_vaga ";
+$querySelect ="SELECT tb_vaga.idVaga, tb_vaga.nome, tb_vaga.cidade, tb_vaga.bairro, tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome,   tb_vaga.periodo, tb_vaga.area,  tb_vaga.descricao, tb_vaga.inicio, tb_vaga.termino  
+FROM tb_vaga
+INNER JOIN tb_curso
+ON tb_vaga.fk_idCurso = tb_curso.idCurso";
+
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
-$querySelect = "SELECT * FROM  tb_vaga ";
-$query = $conexao->query($querySelect);
-$resultados = $query->fetchAll();
+
 
 
 
@@ -151,25 +153,29 @@ $resultados = $query->fetchAll();
                             <td class="table">
                                 <?= $resultado[5] ?>
                             </td>
+                
                             <td class="table">
-                                <?= $resultado[10] ?>
+                            <?= $resultado[6] ?>
                             </td>
                             <td class="table">
-                                <?= $resultado[10] ?>
+                                <?= $resultado[8] ?>
                             </td>
                             <td class="table">
-                                <?= $resultado[9] ?>
+                                <?= $resultado[7] ?>
                             </td>
                             
 
 
-                            <td class="table" style="cursor: pointer;color: blue;" onclick="vermais(<?=$resultado[0]?>)">VER MAIS</td>
+                            <td class="table" style="cursor: pointer;color: blue;" onclick="vermais()">VER MAIS</td>
 
                             <td class="icone-table">
                                 <div class="icons">
                                     <form>
-                                        <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square"
-                                                style="color:grey; "></i></a>
+                                    <input type="hidden" class="form-control" id="id_curso" name="id_curso"
+                        value=<?= $resultado[0]?>>
+                    <button type="submit" class="dropdown-item"><i
+                            class="fas fa-edit fa-lg text-secondary"></i>
+                    </button>
                                         <input type="hidden" value="">
 
                                     </form>

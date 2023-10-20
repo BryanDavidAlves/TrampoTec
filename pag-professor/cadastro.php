@@ -1,3 +1,7 @@
+<?php
+include '../dao/conexao.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,8 +84,9 @@
 
                             <div class="form-group">
                                 <div class="align-input">
-                                <i class="fa-solid fa-layer-group fa-lg" style="color: #75777a;"></i><select name="curso" id="">Escolha o seu curso
-                                    <option value="Desenvolvimento de Sistemas ">Desenvolvimento de Sistemas</option>
+                                <i class="fa-solid fa-layer-group fa-lg" style="color: #75777a;"></i>
+                                <select name="curso" id="">Escolha o seu curso
+                                    <option  >Desenvolvimento de Sistemas</option>
                                 </select>
                                 </div>
 
