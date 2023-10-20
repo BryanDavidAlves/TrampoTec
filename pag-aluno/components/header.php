@@ -1,101 +1,63 @@
-    <header>
-        <style>
-            *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="components-aluno.css">
 
-a{
-    text-decoration: none;
-}
-
-ul{
-    list-style: none;
-}
-
-.header{
-    width: 100%;
-    height: 30%;
-    background-color: #fff;
-    position: relative;    
-}
-
-.header .navbar{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-
-}
-
-.logo img{
-    margin-top: 2%;
-    width: 280px;
-    height: 100px;
-    margin-left: 27%;
-
-}
-
-.menu ul li{
-    display: inline-block;
-    padding: 0 50px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 80px;
-    align-items: center;
-    color: black;
-}
-
-.menu{
-    margin-left: 4%;
-    margin-top: 2%;
-}
-
-.login-btn{
-    font-size: 19px;
-    font-weight: 700;
-    border-radius: 30px;
-    background-color: #f3ef51;
-    padding: 8px 40px;
-    margin-right: 13%;
-    color: black;
-}
-
-        </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    <style>
+    img {
+    width: 50%;
+    height: 17%;
+    margin-right: 15%;
+    }
+    .topicos{
+        margin-left: 30%;
+    }
+    ul {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+    }
+    .nav-item{
+        gap: 3px;
+    }
+    </style>
+</head>
+<body>
     
-
-<div class="header">
-     <div class="navbar">
-         <div class="logo">
-             <a href="#"><img src="../pag-aluno/img/trampotec-logo.png"></a>
-         </div>
-         <div class="menu">
-             <ul>
-         <a href="index.php"><li>Home</li></a>
-         <a href="processos-seletivos.php"><li>Pocesso seletivo</li>
-         <a href="curriculo.php"> <li>Vagas</li>
-         <a href="curriculo.php"> <li>Recomendações</li>
-         <li class="nav-item dropdown">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="img">
+      <img src="img/trampotec-logo.png" alt="Bootstrap" width="30" height="24">
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="painel-de-vagas.php">Painel de vagas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="processos-seletivos.php">Processo seletivo</a>
+        </li>
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Meu Perfil
+            Meu perfil
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="perfil.php">Meus dados</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="curriculo.php">Currículo</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="recomendacoes.php">Cartas de recomendação</a></li>
           </ul>
         </li>
-         </div>
-         <!-- <div class="login-btn">Notificações</div>
-     </div>    -->
-    </header>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+</body>
+</html>
