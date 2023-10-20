@@ -76,12 +76,14 @@ main .img-cima img {
 .perfil #icon-info:hover {
   transition: 0.2s all ease-in-out;
   background-color: rgba(255, 0, 0, 0.634);
+  cursor: pointer;
 }
 .perfil .alinhar-perfil .imagem-perfil {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 .perfil .alinhar-perfil .imagem-perfil img {
   width: 120px;
@@ -90,6 +92,21 @@ main .img-cima img {
   border: none;
   border-radius: 50%;
 }
+form .imagem-perfil-update {
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+form .imagem-perfil-update img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .perfil .alinhar-perfil {
   display: flex;
 
@@ -110,6 +127,18 @@ main .img-cima img {
   position: absolute;
   z-index: 1;
 }
+#label-file {
+  width: 100%;
+  padding: 5px;
+  border-radius: 0;
+  border: none;
+  text-align: start;
+  border-bottom: 1px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#foto {
+  display: none;
+}
 .align-card-indicacao {
   display: flex;
   border: 2px solid gray;
@@ -117,7 +146,7 @@ main .img-cima img {
 
   flex-direction: column;
   justify-content: center;
-  height: 500px;
+  height: 600px;
   width: 520px;
   background-color: white;
   animation: 0.5s linear trans;
@@ -145,9 +174,8 @@ dialog {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   padding-left: 20px;
-  margin-top: 10px;
 }
 .align-card-indicacao form label {
   font-weight: 700;
@@ -179,8 +207,33 @@ dialog {
   font-size: 0.9rem;
   font-family: Arial, Helvetica, sans-serif;
 }
+.align-card-indicacao .fechar-indicacao {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.align-card-indicacao .fechar-indicacao i {
+  font-size: 1.2rem;
+  color: red;
+  padding: 10px 12px 10px 12px;
+  transition: 0.2s all ease-in-out;
+  border: none;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.align-card-indicacao .fechar-indicacao i:hover {
+  background-color: red;
+  color: white;
+  padding: 10px 12px 10px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: 0.2s all ease-in-out;
+}
+
 .align-card-indicacao .botao-indicacao {
-  padding: 15px;
+  padding: 12px;
   background-color: red;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -188,11 +241,12 @@ dialog {
   font-size: 0.9rem;
   font-weight: 800;
   transition: 0.5s all ease-in-out;
-  border: none;
+  border-radius: 10px;
+
+  border: 1px solid red;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
 }
 .botao-indicacao:hover {
   transition: 0.5s all ease-in-out;
