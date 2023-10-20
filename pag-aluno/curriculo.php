@@ -15,255 +15,197 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/curriculo.css">
 
-
     <title>Meu Curriculo</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection{
+  color: #fff;
+  background: #00cc00;
+}
+.container{
+  width: 330px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #00cc00;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+.container .progress-bar{
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active{
+  border-color: #00cc00;
+  background: #00cc00;
+}
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after{
+  background: #00cc00;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+.progress-bar .step p.active{
+  color: #00cc00;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}
+</style>
 </head>
 
 <body>
-    <img class="cima-esquerda" src="img/icon5.png" alt="">
-    <img class="cima-direita" src="img/icon2.png" alt="">
     <?php
     include('../pag-aluno/components/header.php');
     ?>
-    <main id="main">
-
-        <section class="infos">
-            <h1>CURRICULO</h1>
-            <div class="box">
-
-                <div id="carouselExampleDark" class="carousel slide">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <h5>INFORMAÇÕES ACADEMICAS</h5>
-
-                            <div class="container">
-                                <section id="info-academica" class="info-academica">
-
-                                    <div class="one-bar">
-                                        <h3>CURSO:</h3>
-                                        <h4>Desenvolviento de Sistemas</h4>
-                                    </div>
-
-
-                                    <div class="two-bars">
-
-                                        <div class="bar">
-                                            <h3>SEMESTRE:</h3>
-                                            <h4>3</h4>
-                                        </div>
-                                        <div class="bar">
-                                            <h3>DURAÇÃO:</h3>
-                                            <h4>3 SEMESTRES</h4>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="two-bars">
-
-                                        <div class="bar">
-                                            <h3>PERIODO:</h3>
-                                            <h4>MATUTINO</h4>
-                                        </div>
-
-                                        <div class="bar">
-                                            <h3>CONCLUSÃO:</h3>
-                                            <h4>Dezembro</h4>
-                                        </div>
-
-                                    </div>
-                                    <div class="one-bar">
-                                        <h3>INSTITUIÇÃO ETEC:</h3>
-                                        <h4>ETEC DE GUAIANASES</h4>
-                                    </div>
-                                    <button class="btn-curso" id="abrirCurso">Adicionar curso</button>
-                                </section>
-                            </div>
-
-
-
-
-                        </div>
-
-                        <div class="carousel-item">
-                            <h5>CONHECIMENTOS</h5>
-                            <div class="container">
-                                <section class="conhecimento" id="conhecimento">
-                                    <section class="left">
-                                        <!--usar essa div para fazer o laço paro o select no banco (input-conhecimento)-->
-                                        <div class="input-conhecimento">
-                                            <span>
-                                                <h3>IDIOMA: </h3>
-                                                <p>Ingles</p>
-                                            </span>
-                                            <span>
-                                                <h3>NIVEL: </h3>
-                                                <p>Intermediario</p>
-                                            </span>
-                                        </div>
-
-                                        <button class="btn-conhecimento" id="abrirIdioma">Adicionar idioma</button>
-
-                                        <div class="input-hab">
-                                            <span class="align-hab" onclick="abrirHab()">
-                                                <h3>HABILIDADE TECNOLÓGICAS </h3>
-                                                <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
-                                            </span>
-                                            <section class="drop-itens" id="habilidades">
-                                                <span class="tipo-hab">
-                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                </span>
-                                                <span class="tipo-hab">
-                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                </span>
-                                                <span class="tipo-hab">
-                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                </span>
-                                                <span class="tipo-hab">
-                                                    <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                </span>
-                                                <button class="adc-hab">Adicionar habilidade</button>
-                                            </section>
-                                        </div>
-                                    </section>
-
-                                    <section class="right">
-                                        <div class="box-text">
-                                            <label for="conhecimento-text">SOBRE MIM:</label>
-                                            <textarea rows="6" name="coonhecimento-text" id="conhecimento-text"
-                                                placeholder="OPCIONAL"></textarea>
-                                        </div>
-                                    </section>
-                                </section>
-                            </div>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <h5>DISPONIBILIDADE</h5>
-                            <div class="container">
-
-                                <section class="disponibilidade" id="disponibilidade">
-                                    <section class="horarios">
-                                        <div class="input-disponibilidade">
-                                            <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
-                                        </div>
-
-                                        <div class="horas">
-                                            <div class="input-disponibilidade">
-                                                <input class="primeiro-horario" type="time" name="" id="">
-                                            </div>
-                                            <h3>ATÉ</h3>
-                                            <div class="input-disponibilidade">
-                                                <input class="primeiro-horario" type="time" name="" id="">
-                                            </div>
-                                        </div>
-
-                                    </section>
-                                </section>
-                            </div>
-                        </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
-                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-left"></i>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
-                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-right"></i>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="align-salvar">
-                        <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                        <div class="btn-salvar">
-                            <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
-                            <input type="submit" value="SALVAR" name="" id="">
-                        </div>
-                    </div>
-
-        </section>
-
-
-    </main>
-    <dialog id="modalIdioma">
-        <section id="container-modal" class="container-modal">
-            <div class="header-modal">
-                <button id="closeModalIdioma">
-                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                </button>
-            </div>
-            <h3 id="titulo-modal" class="titulo-modal">ADICIONAR UM NOVO IDIOMA</h3>
-            <form action="">
-                <label for="">IDIOMA:</label>
-                <input type="text" name="" id=""><br><br><br>
-                <label for="">NIVEL:</label>
-                <select name="" id="">
-                    <option value="">BÁSICO</option>
-                    <option value="">INTERMEDIÁRIO</option>
-                    <option value="">AVANÇADO</option>
-                </select><br><br><br>
-                <input class="btn-modal" id="btnIdioma" type="submit" value="ADICIONAR IDIOMA">
-            </form>
-    </dialog>
-
-    <dialog id="modalCurso">
-        <section class="container-modal">
-            <div class="header-modal">
-                <button id="closeModalCurso">
-                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                </button>
-            </div>
-            <h3 class="titulo-modal">ADICIONAR UM NOVO CURSO</h3>
-            <form action="">
-                <label for="">INSTITUIÇÃO</label>
-                <select name="" id="">
-                    <option value="">etec Guaianazes</option>
-                    <option value="">etec Poa</option>
-                    <option value="">etec Itaquera</option>
-                    <option value="">etec Cidade Tiradentes</option>
-                </select><br><br><br>
-                <label for="">TIPO DE CURSO</label>
-                <select name="" id="">
-                    <option>Ensino</option>
-                    <option>Curso Tecnico</option>
-                    <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
-                    <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
-                    <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
-                    <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
-                    <option>Especialização Técnica</option>
-                </select><br><br><br>
-                <label for="">NOME DO CURSO:</label>
-                <select name="" id="">
-                    <option value="">Desenvolviento de Sistemas</option>
-                    <option value="">Nutrição</option>
-                    <option value="">Administração</option>
-                </select><br><br><br>
-                <label for="">SEMESTRE QUE VOCÊ ESTA CURSANDO:</label>
-                <input type="number" name="" id=""><br><br><br>
-                <label for="">PERÍODO:</label>
-                <select name="" id="">
-                    <option value="">Vespertino</option>
-                    <option value="">Noturno</option>
-                    <option value="">Matutino</option>
-                    <option value="">Integral</option>
-                </select><br><br><br>
-                <label for="">DURAÇÃO (MESES):</label>
-                <input type="number"><br><br><br>
-                <label for="">CONCLUSÃO:</label>
-                <input type="date"><br><br><br>
-
-
-                <input class="btn-modal" id="btn" type="submit" value="ADICIONAR CURSO">
-            </form>
-        </section>
-    </dialog>
 
     <?php
     include('../pag-aluno/components/sidebar.php');
     ?>
-    <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/troca-pag.js"></script>
     <script src="js/abrir-hab.js"></script>
     <script src="js/modal-curriculo.js"></script>
@@ -277,7 +219,111 @@ require_once "./back-end/login/validador_acesso.php";
         closeModalIdioma.onclick = function () {
             modalIdioma.close()
         }
-    </script>
+    </script> -->
+    <div class="container">
+      <div class="progress-bar">
+        <div class="step">
+          <p>Nome</p>
+          <div class="bullet">
+            <span>1</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Contato</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Data</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <div class="step">
+          <p>Enviar</p>
+          <div class="bullet">
+            <span>4</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+      </div>
+      <div class="form-outer">
+        <form action="#">
+          <div class="page slide-page">
+            <div class="title">Informação básica:</div>
+            <div class="field">
+              <div class="label">Primeiro nome</div>
+              <input type="text">
+            </div>
+            <div class="field">
+              <div class="label">Sobrenome</div>
+              <input type="text">
+            </div>
+            <div class="field">
+              <button class="firstNext next">Próximo</button>
+            </div>
+          </div>
+
+          <div class="page">
+            <div class="title">Informações de contato</div>
+            <div class="field">
+              <div class="label">Endereço de e-mail</div>
+              <input type="text">
+            </div>
+            <div class="field">
+              <div class="label">Número de telefone</div>
+              <input type="Number">
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev">Anterior</button>
+              <button class="next-1 next">Próximo</button>
+            </div>
+          </div>
+
+          <div class="page">
+            <div class="title">Nascimento:</div>
+            <div class="field">
+              <div class="label">Data</div>
+              <input type="text">
+            </div>
+            <div class="field">
+              <div class="label">Gênero</div>
+              <select>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="field btns">
+              <button class="prev-2 prev">Anterior</button>
+              <button class="next-2 next">Próximo</button>
+            </div>
+          </div>
+
+          <div class="page">
+            <div class="title">Detalhes de login:</div>
+            <div class="field">
+              <div class="label">Nome do usuário</div>
+              <input type="text">
+            </div>
+            <div class="field">
+              <div class="label">Senha</div>
+              <input type="password">
+            </div>
+            <div class="field btns">
+              <button class="prev-3 prev">Anterior</button>
+              <button class="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    
 </body>
 
 </html>
