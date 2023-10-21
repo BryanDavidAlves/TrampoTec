@@ -73,6 +73,7 @@ ul{
     position: absolute;
     top: 18%;
     left: 150px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
 }
 
@@ -119,26 +120,13 @@ ul{
 .btn-group .signup-btn{
     cursor: pointer;
     display: block;
-    color: #000;
+    color: white;
     text-align: center;
     font-size: 15px;
     font-weight: 700;
     border-radius: 32px;
-    background-color: #ffa037;
+    background-color: red;
     padding: 15px 50px;
-}
-
-.btn-group .play-btn{
-    margin-left: 40px;
-    display: inline-flex;
-}
-
-.btn-group span{
-    color: #000;
-    font-size: 15px;
-    font-weight: 700;
-    margin: auto 20px;
-    cursor: pointer;
 }
 
 .play-btn-inner{
@@ -153,42 +141,6 @@ ul{
     padding: 15px 19px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.about-services{
-    position: absolute;
-    top: 125%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-    padding: 0 300px;
-}
-
-.about-services ul{
-    display: inline-flex;
-    margin: 30px auto;
-    text-align: center;
-}
-
-.about-services ul li{
-    margin: 0 50px;
-    cursor: pointer;
-}
-
-.about-services ul li img{
-    width: 120px;
-    height: auto;
-}
-
-.about-services ul li h1{
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.about-services ul li p{
-    font-size: 15px;
-    margin-top: 20px;
-    font-weight: 700;
 }
 
 .social-icons{
@@ -237,9 +189,6 @@ ul{
     <?php
     include('../pag-aluno/components/header.php');
     ?>
-    <?php
-    include('../pag-aluno/components/sidebar.php');
-    ?>
 
  
 
@@ -250,13 +199,13 @@ ul{
              <p>Coloque em prática seu aprendizado, dentro do ambiente de trabalho.</p>
 
              <div class="btn-group">
-                 <div class="signup-btn">Sign up now</div>
-                 <div class="play-btn">
+                 <div class="signup-btn">Crie seu currículo</div>
+                 <!-- <div class="play-btn">
                      <div class="play-btn-inner">
                          <i class="fa fa-play"></i>
                      </div>
                      <span>How it works</span>
-                 </div>
+                 </div> -->
              </div>
          </div>
          <div class="app-picture">
@@ -264,25 +213,6 @@ ul{
          </div>
      </div>
 
-     <div class="about-services">
-         <ul>
-             <li>
-                 <img src="images/1.png">
-                 <h1>SEO Consultancy</h1>
-                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-             </li>
-             <li>
-                 <img src="images/2.png">
-                 <h1>Competitor Analysis</h1>
-                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-             </li>
-             <li>
-                 <img src="images/3.png">
-                 <h1>Social Media Marketing</h1>
-                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-             </li>
-         </ul>
-     </div>
 
      <div class="social-icons">
          <ul>

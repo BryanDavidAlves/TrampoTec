@@ -15,10 +15,7 @@ require_once "./back-end/login/validador_acesso.php";
     <title>Meu Perfil</title>
 
     <style>
-        body{
-    color: #6F8BA4;
-    margin-top:20px;
-}
+
 .section {
     padding: 100px 0;
     position: relative;
@@ -141,12 +138,9 @@ mark {
 </head>   
 
 <body>
+  
     <?php
     include('../pag-aluno/components/header.php');
-    ?>
-
-    <?php
-    include('../pag-aluno/components/sidebar.php');
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 
@@ -158,7 +152,6 @@ mark {
                         <div class="about-text go-to">
                             <h3 class="dark-color">Giullia</h3>
                             <h6 class="theme-color lead">Estudante do Centro Paula Souza</h6>
-                            <p>I <mark>design and develop</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
                             <div class="row about-list">
                                 <div class="col-md-6">
                                     <div class="media">

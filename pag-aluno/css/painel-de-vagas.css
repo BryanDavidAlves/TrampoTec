@@ -126,6 +126,7 @@ select:focus {
     flex-wrap: wrap;
     gap: 60px;
     justify-content: start;
+    flex-direction: row;
 }
 
 .align-cards .cards {
