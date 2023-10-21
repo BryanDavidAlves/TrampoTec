@@ -26,9 +26,12 @@ if ($_POST) {
     $cliente_id = $_SESSION['idEmpresa'];
    
     
-echo $curso;
+     
 
-    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , area , semana , fk_idEmpresa ) VALUES
+    
+  
+
+    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , area , semana , fk_idEmpresa , fk_idCurso) VALUES
                 (   '$nome',
                     '$cidade',
                     '$bairro',
@@ -40,7 +43,8 @@ echo $curso;
                     '$periodo',
                     '$area',
                     '$semana',
-                    '$cliente_id'
+                    '$cliente_id',
+                    '$curso'
                     
                 )
                 ";
@@ -48,14 +52,14 @@ echo $curso;
     $query2->execute();
     $id = $conexao->lastInsertId();
 
-    $sql2 = "INSERT INTO tb_vaga_curso ( fk_idCurso , fk_idVaga ) VALUES
+/*     $sql2 = "INSERT INTO tb_vaga_curso ( fk_idCurso , fk_idVaga ) VALUES
     (   '$curso',
         '$id'
         
     )
     ";
 $query2 = $conexao->prepare($sql2);
-$query2->execute();
+$query2->execute(); */
 
 
     $contadorCampos = 1;
