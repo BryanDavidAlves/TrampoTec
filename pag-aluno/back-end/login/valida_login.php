@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../../../dao/conexao.php');
 
 $email_aluno = $_POST['nome-aluno'];
@@ -9,10 +10,8 @@ $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
 $n = count($aluno);
 
-
 if ($n == 1) {
 
-        session_start();
         $_SESSION['idAluno'] = $aluno[0]['idAluno'];
         $_SESSION['email'] = $aluno[0]['email'];
         $_SESSION['senha'] = $aluno[0]['senha'];
@@ -22,8 +21,8 @@ if ($n == 1) {
         header('Location: ../../index.php');
     } 
 else {
-    header('Location: ../../login.php?login=erro');
     $_SESSION['autenticado'] = "NAO";
+    header('Location: ../../login.php?login=erro');
 }
 
 ?>

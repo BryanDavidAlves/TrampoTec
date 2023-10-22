@@ -1,6 +1,5 @@
-<!-- Classe para poder concetar com o banco de dados -->
-
 <?php
+// Classe para poder concetar com o banco de dados
 
 $servidor="localhost";
 $banco="bdtrampotec";
