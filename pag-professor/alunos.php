@@ -31,12 +31,12 @@ include '../pag-professor/components/sidebar.php';
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input type="text" name="pesquisa" id="pesquisa" placeholder="">
     </div>
-        <div class="align-filtro"  onclick="abrirFiltro()">
-            <div class="filtro" >
+        <div class="align-filtro"  >
+            <div class="filtro" onclick="abrirFiltro()">
             <span   class="material-symbols-outlined">
                     tune
             </span>
-                <p >Filtrar</p>
+
 
             </div>
         </div>
