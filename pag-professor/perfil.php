@@ -4,9 +4,10 @@ require_once "./back-end/login/validador_acesso.php";
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idProfessor'];
 
-$querySelect = "SELECT pro.imagem, pro.nome, pro.email, cur.nome, pro.senha FROM  tb_professor pro
-LEFT JOIN tb_curso AS cur ON cur.idCurso=pro.fk_idCurso
-WHERE idProfessor = '$cliente_id'
+$querySelect = "SELECT tb_professor.* , tb_curso.*
+FROM tb_curso
+INNER JOIN tb_professor ON tb_professor.fk_idCurso= tb_curso.idCurso
+    WHERE tb_professor.idProfessor= '$cliente_id'
 ";
 
 $querySelect2 = "SELECT nome FROM tb_curso";
@@ -79,8 +80,8 @@ include '../pag-professor/components/sidebar.php';
 
 
             <label class="font-weight-bold"  for="foto" id="label-file"> TROQUE SUA IMAGEM CLICANDO AQUI
-            <input type="hidden" id="foto_usuario" name="foto" accept="image/*"   enctype="multipart/form-data"  value="<?=$resultado[0]?>">
-            <input class="form-control obrigatorio" type="file"  id="foto"  value="<?=$resultado[0]?>"
+            <input type="hidden" id="foto_usuario" name="foto" accept="image/*"   enctype="multipart/form-data"  value="<?=$resultado[4]?>">
+            <input class="form-control obrigatorio" type="file"  id="foto"  value="<?=$resultado[4]?>"
              name="foto_usuario" >
         </div>
 
@@ -91,14 +92,15 @@ include '../pag-professor/components/sidebar.php';
               <input type="text" name="email" id="" value="<?=$resultado[2]?>" placeholder="<?=$resultado[2]?>">
 
               <label for="mensagem">SENHA</label>
-              <input type="text" name="senha" id="" value="<?=$resultado[4]?>" placeholder="<?=$resultado[4]?>">
+              <input type="text" name="senha" id="" value="<?=$resultado[3]?>" placeholder="<?=$resultado[3]?>">
 
               <label for="mensagem">CURSO</label>
 
               <select  id="" value="">
               <?php foreach ($resultado2 as $resultado2) {?>
 
-              <option name="" value="<?=$resultado2[0]?>"><?=$resultado2[0]?></option>
+              <option name="" value="<?=$resultado[8]?>"><?=$resultado2[0]?></option>
+
               <?php }?>
 
               </select>
@@ -112,7 +114,7 @@ include '../pag-professor/components/sidebar.php';
     <div class="alinhar-perfil">
         <div class="imagem-perfil">
 
-            <img src="fotosProfessor/perfil/<?=$resultado[0] != "" ? $resultado[0] : '';?>"" alt="Foto de perfil" >
+            <img src="fotosProfessor/perfil/<?=$resultado[4] != "" ? $resultado[4] : '';?>"" alt="Foto de perfil" >
         </div>
 
 
@@ -123,8 +125,7 @@ include '../pag-professor/components/sidebar.php';
             <h4 class="nome-usuario"><?=$resultado[2]?></h4>
 
             <h3 class="informacao-usuario">Curso</h3>
-
-            <h4 class="nome-usuario"  > <?=$resultado[3]?></h4>
+            <h4 class="nome-usuario"  > <?=$resultado[7]?></h4>
             <?php }?>
     </div>
     </section>

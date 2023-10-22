@@ -9,6 +9,12 @@ $querySelect = "SELECT * FROM  tb_professor WHERE idProfessor = $cliente_id";
 $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
+
+$querySelect2 = "SELECT nome FROM  tb_etec  ORDER BY nome DESC ";
+
+$query2 = $conexao->query($querySelect2);
+
+$resultado2 = $query2->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +49,12 @@ include '../pag-professor/components/sidebar.php';
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input type="text" name="pesquisa" id="pesquisa" placeholder="">
     </div>
-        <div class="align-filtro"  onclick="abrirFiltro()">
-            <div class="filtro" >
+        <div class="align-filtro" >
+            <div class="filtro"  onclick="abrirFiltro()" >
             <span   class="material-symbols-outlined">
                     tune
             </span>
-                <p >Filtrar</p>
+
 
             </div>
         </div>
@@ -65,7 +71,12 @@ include '../pag-professor/components/sidebar.php';
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Etec</label>
-                    <input type="checkbox" name="" id="">
+
+                    <select name="" id="">
+                    <?php foreach ($resultado2 as $resultado2) {?>
+                        <option value="<?=$resultado2[0]?>"><?=$resultado2[0]?></option>
+                    <?php }?>
+                    </select>
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Curso</label>
