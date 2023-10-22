@@ -1,0 +1,106 @@
+main .titulo-perfil {
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+main .img-cima {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 15%;
+  height: 200px;
+}
+main .img-cima img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  z-index: -5;
+}
+main .img-baixo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  z-index: -5;
+  height: 0;
+}
+main .img-baixo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+main .align-btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+main .align-btn i {
+  font-size: 1.3rem;
+  color: white;
+}
+main .align-btn a {
+  padding: 10px 14px 10px 14px;
+  background-color: #4d3cd1;
+  border-radius: 100%;
+  transition: 0.2s ease-in-out all;
+}
+main .align-btn a:hover {
+  background-color: #4d3cd18a;
+  transition: 0.2s ease-in-out all;
+}
+main {
+  display: flex;
+  width: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 25%;
+  gap: 80px;
+  flex-direction: column;
+}
+.container-perfil .img-perfil {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.container-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.container-perfil .sobre-perfil {
+  display: flex;
+  margin-left: 15px;
+  width: auto;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 0;
+  gap: 3px;
+}
+.container-perfil .sobre-perfil .padrao-perfil {
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container-perfil .sobre-perfil .nome-perfil {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: gray;
+  font-family: Arial;
+}
+
+.container-perfil .img-perfil img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
+}

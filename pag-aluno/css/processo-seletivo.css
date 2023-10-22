@@ -25,70 +25,84 @@ h1 {
 }
 
 .filtro {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    padding: 15px;
+}
+
+.filtro form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.icone-filtro {
+    display: flex;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
     align-items: center;
-    margin-left: 5%;
 }
 
-.filtro .align {
+.icone-filtro i {
+    font-size: 2rem;
+}
+
+.option-filter {
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.filtro .align .palavra-chave {
-    width:100px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    font-size: 1.5rem;
+    gap: 10px;
+    color: black;
     font-weight: 600;
-}
-
-.palavra-box,
-select {
-    height: 25px;
-    margin-top: 5px;
-    border: none;
-
-}
-
-.filtro .align select,
-.palavra-box {
-    margin-left: 10px;
-}
-
-.titulo-filtro {
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-top: 12px;
-    font-size: 1.5rem;
-}
-#icon-filtro{
-    font-size: 3rem;
-    color: #4037a1;
-    font-weight: 800;
-}
-.filtro-header{
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    align-items: center;
-}
-.filtro .button {
-    background-color: #5382B2;
-    color: white;
-    border: none;
-    border-radius: 8px;
+    align-items: baseline;
     cursor: pointer;
-    width: 100%;
-    margin-top: 15px;
-    font-size: 1rem;
-    padding:10px;
+    font-size: 1.2rem;
+    width: 200px;
 }
 
+.btn-filtro {
+    background-color: #0a3580;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.option-filter label {
+    cursor: pointer;
+
+}
+
+.option-filter select {
+    width: 100%;
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+}
+
+select:focus {
+    outline: none;
+}
+.vagas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+.option-filter select {
+    cursor: pointer;
+}
+.vagas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .container-cards {
+    width: 1180px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
