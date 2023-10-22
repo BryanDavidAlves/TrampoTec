@@ -27,7 +27,7 @@
     </nav>
 </aside>
 <script>
-    
+
     function clickmenu() {
         if (itens.style.display == 'none') {
             itens.style.display = 'block'
@@ -40,6 +40,6 @@
             itens.classList.add('show')
             itens.style.display = 'block'
             console.log('nao sei')
-        }   
+        }
     }
 </script>
