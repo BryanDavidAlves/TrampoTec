@@ -38,7 +38,7 @@ h1 {
     width: 100%;
     align-items: baseline;
     border-bottom: #0a3580 solid 3px;
-    justify-content: space-between;
+    
 }
 
 .two-bars {
@@ -82,7 +82,7 @@ h1 {
     align-items: baseline;
     width: 45%;
     border-bottom: #0a3580 solid 3px;
-    justify-content: space-between;
+
 
 }
 
@@ -196,7 +196,7 @@ h1 {
     font-size: 1rem;
 }
 
-.btn-salvar {
+.btn-salvar, .btn-editar {
     background-color: red;
     width: 100px;
     padding: 10px;
@@ -205,18 +205,27 @@ h1 {
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
+    color: white;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.btn-salvar{
+    display: none;
 }
 
-.btn-salvar input {
-    background-color: transparent;
+.btn-editar{
+    background-color: red;
     color: white;
     border: none;
     cursor: pointer;
 }
-
 .align-salvar {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /*.disponibilidade img{
@@ -279,7 +288,7 @@ h1 {
 }
 
 .titulo-nasc {
-    width: 180px;
+    width: 155px;
 }
 
 .one-bar,

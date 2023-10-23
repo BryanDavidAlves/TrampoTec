@@ -38,12 +38,13 @@ require_once "./back-end/login/validador_acesso.php";
                                         <section id="info-pessoal" class="info-pessoal">
 
                                             <div class="one-bar">
-                                                <span>
+                                                
                                                     <h3>NOME COMPLETO: </h3>
-                                                    <input type="text" disabled="disabled"
+                                                    <input id="inputNome" type="text" disabled
                                                         value="BRYAN DAVID SALVINO ALVES">
-                                                </span>
-                                                <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                
+                                                
+                                                    
                                             </div>
 
 
@@ -51,15 +52,16 @@ require_once "./back-end/login/validador_acesso.php";
 
                                                 <div class="bar">
                                                     <h3 class="titulo-nasc">DATA DE NASC:</h3>
-                                                    <input type="text" disabled="disabled" value="29/01/2004">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputNasc" type="text" disabled value="29/01/2004">
+                                                    
                                                 </div>
                                                 <div class="bar">
-                                                    <span>
+                                                    
                                                         <h3>CPF:</h3>
-                                                        <input type="text" disabled="disabled" value="123.123.123-74">
-                                                    </span>
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                        <input id="inputCpf" type="text" disabled
+                                                            value="123.123.123-74">
+                                                    
+                                                    
                                                 </div>
 
                                             </div>
@@ -68,24 +70,22 @@ require_once "./back-end/login/validador_acesso.php";
 
                                                 <div class="bar">
                                                     <h3>CELULAR:</h3>
-                                                    <input type="text" disabled="disabled" value="(11) 97526-0498">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputCelular" type="text" disabled
+                                                        value="(11) 97526-0498">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>TELEFONE: </h3>
-                                                    <input type="text" disabled="disabled" value="(11) 2559-9090">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputTelefone" type="text" disabled
+                                                        value="(11) 2559-9090">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
                                         </section>
                                     </div>
-
-
-
-
                                 </div>
 
                                 <div class="carousel-item">
@@ -96,24 +96,25 @@ require_once "./back-end/login/validador_acesso.php";
                                             <div class="one-bar">
                                                 <span>
                                                     <h3>LOGRADOURO:</h3>
-                                                    <input type="text" disabled="disabled"
+                                                    <input id="inputLogradouro" type="text" disabled
                                                         value="Rua da cachoeira azul">
                                                 </span>
-                                                <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                
                                             </div>
                                             <div class="two-bars">
 
                                                 <div class="bar">
-                                                    <h3>CELULAR:</h3>
-                                                    <input type="text" disabled="disabled" value="(11) 97526-0498">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <h3>BAIRRO:</h3>
+                                                    <input id="inputBairro" type="text" disabled
+                                                        value="(11) 97526-0498">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
-                                                    <h3>TELEFONE: </h3>
-                                                    <input type="text" disabled="disabled" value="(11) 2559-9090">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <h3>ESTADO: </h3>
+                                                    <input id="inputEstado" type="text" disabled value="(11) 2559-9090">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -121,22 +122,22 @@ require_once "./back-end/login/validador_acesso.php";
 
                                                 <div class="bar">
                                                     <h3>CEP:</h3>
-                                                    <input type="text" disabled="disabled" value="08470-610">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputCep" type="text" disabled value="08470-610">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>NUMERO: </h3>
-                                                    <input type="text" disabled="disabled" value="2320">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputNumero" type="text" disabled value="2320">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>COMPLEMENTO: </h3>
-                                                    <input type="text" disabled="disabled" value="21-A">
-                                                    <i class="fa-solid fa-pencil" style="color: #0a3580;"></i>
+                                                    <input id="inputComplemento" type="text" disabled value="21-A">
+                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -186,17 +187,22 @@ require_once "./back-end/login/validador_acesso.php";
                             </div>
                             <div class="align-salvar">
                                 <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                                <div class="btn-salvar">
-                                    <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
-                                    <input type="submit" value="SALVAR" name="" id="">
-                                </div>
+                                <button type="submit" class="btn-salvar">
+                                    <i class="fa-solid fa-check" style="color: #ffffff;"></i>
+                                    <h3>Salvar</h3>
+                                </button>
+                                <span onclick="habInput()" class="btn-editar">
+                                    <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
+                                    <h3>Editar</h3>
+                                </span>
                             </div>
-                        </form>
-
-
                     </div>
+                    </form>
+
+
                 </div>
-            </section>
+        </div>
+        </section>
         </div>
     </main>
     <?php
@@ -204,6 +210,7 @@ require_once "./back-end/login/validador_acesso.php";
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="js/hab-input.js"></script>
 </body>
 
 </html>
