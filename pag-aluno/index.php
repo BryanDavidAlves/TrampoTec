@@ -10,13 +10,6 @@ require_once "./back-end/login/validador_acesso.php";
 
     <style>
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
-
 a{
     text-decoration: none;
 }
@@ -25,47 +18,12 @@ ul{
     list-style: none;
 }
 
-.header{
-    width: 100%;
-    height: 60vh;
-    background-color: #fff;
-    position: relative;
-}
-
-.header .navbar{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    margin-top: 30px;
-}
 
 .logo img{
     margin-left: 100px;
 }
 
-.menu ul li{
-    display: inline-block;
-    padding: 0 25px;
-    cursor: pointer;
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 80px;
-    align-items: center;
-}
 
-.login-btn{
-    display: block;
-    font-size: 19px;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 30px;
-    background-color: #f3ef51;
-    padding: 8px 40px;
-    margin-right: 100px;
-}
 
 .banner{
     width: 80%;
@@ -129,42 +87,7 @@ ul{
     padding: 15px 50px;
 }
 
-.play-btn-inner{
-    height: 50px;
-    width: 50px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    background-color: #000;
-}
 
-.play-btn-inner i{
-    padding: 15px 19px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.social-icons{
-    position: fixed;
-    right: 30px;
-    top: 30%;
-}
-
-.social-icons ul li{
-    margin-top: 5px;
-    text-align: center;
-}
-
-.social-icons ul li a{
-    color: #000;
-    padding: 10px;
-    display: block;
-    font-size: 29px;
-}
-
-.social-icons ul li a:hover{
-    background-color: #220efb;
-    color: #fff;
-}
 .app-picture{
     margin-left: 60%;
     width: 90%;
@@ -211,16 +134,6 @@ ul{
          <div class="app-picture">
              <img src="img/img-home.png">
          </div>
-     </div>
-
-
-     <div class="social-icons">
-         <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-         </ul>
      </div>
     </div>
 </body>
