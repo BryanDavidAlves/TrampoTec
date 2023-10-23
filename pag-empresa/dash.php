@@ -1,5 +1,17 @@
 <?php
+include '../dao/conexao.php';
+
 require_once "./beck-end/login/validador_acesso.php";
+
+$querySelect = "SELECT * FROM tb_vaga";
+$resultado = $conexao->query($querySelect);
+$vaga = $resultado->fetchALL();
+$n_vagas = count($vaga);
+
+$querySelect = "SELECT * FROM tb_aluno";
+$resultado = $conexao->query($querySelect);
+$aluno = $resultado->fetchALL();
+$n_aluno = count($aluno);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,7 +36,7 @@ require_once "./beck-end/login/validador_acesso.php";
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main>
 
-      
+
 
 
         <section class="cards-alunos">
@@ -37,7 +49,7 @@ require_once "./beck-end/login/validador_acesso.php";
 
                     </div>
                     <div class="icon-home">
-                       <i class="fa-regular fa-user"></i>
+                        <i class="fa-regular fa-user"></i>
                     </div>
                 </div>
             </div>
@@ -50,27 +62,47 @@ require_once "./beck-end/login/validador_acesso.php";
 
                     </div>
                     <div class="icon-home">
-                       <i class="fa-regular fa-user"></i>
+                        <i class="fa-regular fa-user"></i>
                     </div>
                 </div>
             </div>
 
-    
 
-    
+
+
 
         </section>
 
 
         <section class="container-imagens">
-            <img class="dash-fundo" src="./img/grafico1.png">
-            <img class="dash-fundo" src="./img/grafico2.png">
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
         </section>
 
 
 
     </main>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Vagas',<?= $n_vagas ?>],
+          ['Candidatos',<?= $n_aluno ?>]
+        ]);
+
+        var options = {
+          title: 'Grafico geral'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
     <script src="./js/java-empresa.js"></script>
 </body>
