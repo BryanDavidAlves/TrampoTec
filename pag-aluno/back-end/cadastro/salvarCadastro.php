@@ -6,7 +6,7 @@ if ($_POST) {
     $nome = trim($_POST['nome']);
     $cpf = trim($_POST['cdp-aluno']);
     $dtNascimento = trim($_POST['nasc-aluno']);
-    $etecNome = trim($_POST['nome-etec']);
+
     $senha = trim($_POST['senha']);
     $cep = trim($_POST['cep']);
     $logradouro = trim($_POST['logradouro']);
@@ -36,7 +36,7 @@ if ($_POST) {
          } ;
    
     
-    $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep , etecDoAluno , imagem) VALUES
+    $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep ,  imagem) VALUES
     (   '$email',
         '$senha',
         '$nome',
@@ -46,7 +46,6 @@ if ($_POST) {
         '$estado',
         '$cidade',
         '$cep',
-        '$etecNome',
         '$novo_nome'
     )
     ";
