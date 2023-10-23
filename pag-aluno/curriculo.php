@@ -183,13 +183,6 @@ require_once "./back-end/login/validador_acesso.php";
                     </div>
         </section>
 
-        </section>
-
-
-
-
-
-
     </main>
     <dialog id="modalIdioma">
         <section id="container-modal" class="container-modal">

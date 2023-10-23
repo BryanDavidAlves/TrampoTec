@@ -38,6 +38,7 @@ h1 {
     width: 100%;
     align-items: baseline;
     border-bottom: #0a3580 solid 3px;
+    justify-content: space-between;
 }
 
 .two-bars {
@@ -46,7 +47,7 @@ h1 {
     width: 101%;
     gap: 10px;
     margin-right: 1%;
-    
+
 }
 
 .endereco .three-bars {
@@ -56,7 +57,8 @@ h1 {
     gap: 10px;
 
 }
-.three-bars .bar{
+
+.three-bars .bar {
     width: 30%;
     text-align: start;
 }
@@ -80,15 +82,14 @@ h1 {
     align-items: baseline;
     width: 45%;
     border-bottom: #0a3580 solid 3px;
-    
+    justify-content: space-between;
+
 }
 
-.bar:nth-child(1) {
-    margin-left: 10px;
-}
+
 
 .info-pessoal {
-
+    width: 80%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -105,24 +106,27 @@ h1 {
 
 .one-bar h3 {
     font-size: 1.2rem;
-    color: #000;
-    font-weight: 600;
+    color: #6a6a6a;
+
     margin-right: 5px;
 }
 
-.two-bars, .three-bars h3 {
+.two-bars,
+.three-bars h3 {
     font-size: 1.2rem;
-    color: #000;
-    font-weight: 600;
+    color: #6a6a6a;
+
 }
 
-.one-bar, .three-bars h4 {
+.one-bar,
+.three-bars h4 {
     font-size: 1.1rem;
-    color: #000;
+    color: #6a6a6a;
     margin-left: 5px;
 }
 
-.two-bars, .three-bars h4 {
+.two-bars,
+.three-bars h4 {
     font-size: 1.1rem;
     color: #000;
     margin-left: 5px;
@@ -131,6 +135,7 @@ h1 {
 .one-bar,
 .two-bars,
 .three-bars {
+    color: #6a6a6a;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -250,8 +255,21 @@ h1 {
     border: none;
     font-weight: 700;
     color: #000;
-    width: 60%;
+    width: 75%;
 }
+
+.one-bar span {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+.info-pessoal .two-bars span {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
 .one-bar input {
     background-color: transparent;
     border: none;
@@ -259,6 +277,30 @@ h1 {
     width: 75%;
     color: #000;
 }
+
+.titulo-nasc {
+    width: 180px;
+}
+
+.one-bar,
+.two-bars,
+.three-bars i {
+    cursor: pointer;
+}
+
+.one-bar i:hover {
+    scale: 1.2;
+}
+
+.two-bars i:hover {
+    scale: 1.2;
+}
+
+.three-bars i:hover {
+    scale: 1.2;
+}
+
+
 /*-------*/
 
 
