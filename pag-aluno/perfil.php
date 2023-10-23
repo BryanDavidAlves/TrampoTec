@@ -38,41 +38,30 @@ require_once "./back-end/login/validador_acesso.php";
                                         <section id="info-pessoal" class="info-pessoal">
 
                                             <div class="one-bar">
-                                                
-                                                    <h3>NOME COMPLETO: </h3>
-                                                    <input id="inputNome" type="text" disabled
-                                                        value="BRYAN DAVID SALVINO ALVES">
-                                                
-                                                
-                                                    
-                                            </div>
 
+                                                <h3>NOME COMPLETO: </h3>
+                                                <input id="inputNome" type="text" disabled
+                                                    value="BRYAN DAVID SALVINO ALVES">
+                                            </div>
 
                                             <div class="two-bars">
 
                                                 <div class="bar">
                                                     <h3 class="titulo-nasc">DATA DE NASC:</h3>
                                                     <input id="inputNasc" type="text" disabled value="29/01/2004">
-                                                    
+
                                                 </div>
                                                 <div class="bar">
-                                                    
-                                                        <h3>CPF:</h3>
-                                                        <input id="inputCpf" type="text" disabled
-                                                            value="123.123.123-74">
-                                                    
-                                                    
+                                                    <h3>CPF:</h3>
+                                                    <input id="inputCpf" type="text" disabled value="123.123.123-74">
                                                 </div>
-
                                             </div>
 
                                             <div class="two-bars">
-
                                                 <div class="bar">
                                                     <h3>CELULAR:</h3>
                                                     <input id="inputCelular" type="text" disabled
                                                         value="(11) 97526-0498">
-                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
@@ -80,7 +69,6 @@ require_once "./back-end/login/validador_acesso.php";
                                                     <h3>TELEFONE: </h3>
                                                     <input id="inputTelefone" type="text" disabled
                                                         value="(11) 2559-9090">
-                                                    
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -99,7 +87,7 @@ require_once "./back-end/login/validador_acesso.php";
                                                     <input id="inputLogradouro" type="text" disabled
                                                         value="Rua da cachoeira azul">
                                                 </span>
-                                                
+
                                             </div>
                                             <div class="two-bars">
 
@@ -107,14 +95,14 @@ require_once "./back-end/login/validador_acesso.php";
                                                     <h3>BAIRRO:</h3>
                                                     <input id="inputBairro" type="text" disabled
                                                         value="(11) 97526-0498">
-                                                    
+
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>ESTADO: </h3>
                                                     <input id="inputEstado" type="text" disabled value="(11) 2559-9090">
-                                                    
+
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -123,21 +111,21 @@ require_once "./back-end/login/validador_acesso.php";
                                                 <div class="bar">
                                                     <h3>CEP:</h3>
                                                     <input id="inputCep" type="text" disabled value="08470-610">
-                                                    
+
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>NUMERO: </h3>
                                                     <input id="inputNumero" type="text" disabled value="2320">
-                                                    
+
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>COMPLEMENTO: </h3>
                                                     <input id="inputComplemento" type="text" disabled value="21-A">
-                                                    
+
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -198,8 +186,6 @@ require_once "./back-end/login/validador_acesso.php";
                             </div>
                     </div>
                     </form>
-
-
                 </div>
         </div>
         </section>

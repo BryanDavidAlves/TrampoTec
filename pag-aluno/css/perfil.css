@@ -291,11 +291,7 @@ h1 {
     width: 155px;
 }
 
-.one-bar,
-.two-bars,
-.three-bars i {
-    cursor: pointer;
-}
+
 
 .one-bar i:hover {
     scale: 1.2;
