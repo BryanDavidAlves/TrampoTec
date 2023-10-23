@@ -1,0 +1,187 @@
+.formulario-etec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.formulario-etec form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 2px solid rgb(161, 161, 161);
+    border-radius: 20px;
+    padding: 40px 150px;
+    align-items: center;
+    text-align: center;
+}
+main{
+
+    margin-left: 30%;
+}
+.text-green{
+    color: green;
+    text-align: center;
+    
+    margin-top: 10px;
+}
+.text-danger{
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.btn {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    width: 70%;
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 250px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.input-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap:30px;
+}
+
+.input-select select {
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 250px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+label {
+    margin-bottom: 20px;
+}
+.secao-cadastro a {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 25%;
+    font-size: 1.5rem;
+    margin-left: 0;
+    
+}
+.secao-cadastro{
+    margin-bottom: 30px;
+    margin-left: 6%;
+}
+#icon-titulo {
+    background-color: #555cb3;
+    border-radius: 100%;
+    padding: 10px 10px 10px 12px;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.secao-adicionar{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+
+}
+#icon-adicionar {
+    background-color: #555cb3;
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+h3{
+    font-size:1.2rem ;
+
+}
+.align-list{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-between;
+    
+}
+.align-list ul{
+    width: 150px;
+    height: 80px;
+    overflow-y:scroll;
+    display: flex;
+    flex-direction: column;
+
+}
+.align-list ul li{
+    border-bottom: 1px solid black;
+    height: 60px;
+    margin: auto;
+    width: 100%;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    text-align: center;
+}
+.align-list ul li:nth-last-child(1){
+    border: none;
+}
+#icon-btn {
+    background-color: red;
+    border-radius: 100%;
+    padding: 5px 5px 6px 6px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+#campos, #area{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+#campos input{
+    padding: 4px;
+    font-size: 1rem;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+}
+#area, #area{
+    display: flex;
+    flex-direction: column;
+}
+
+#area input{
+    padding: 4px;
+    font-size: 1rem;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+}
+
+
+
+
+

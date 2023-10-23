@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
     padding-bottom: 10px;
 }
 
@@ -17,8 +17,17 @@
 }
 main{
     width: 100%;
-    margin-left: 20%;
-
+    margin-left: 30%;
+}
+.text-green{
+    color: green;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.text-danger{
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
 }
 .btn {
     background-color: red;
@@ -66,7 +75,7 @@ label {
 #icon-titulo {
     background-color: #555cb3;
     border-radius: 100%;
-    padding: 6px 11px 6px 11px;
+    padding: 10px 11px 6px 11px;
     font-size: 1.5rem;
     margin-right: 10px;
   }

@@ -46,7 +46,7 @@
 
 
                                 <div class="barra-agendar">
-                                    <a href="../../pag-professor/login.php">   <button type="submit" placeholder="">Professor</button></a>
+                                    <a href="../../pag-professor/cadastro.php">   <button type="submit" placeholder="">Professor</button></a>
                                 </div>
 
                             </div>

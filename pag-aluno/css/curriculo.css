@@ -20,16 +20,21 @@ h1 {
     width: 100%;
     display: block;
 }
-.container{
-    display: block;
+
+.container {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    margin-top: 30px;
+
 }
+
 .one-bar {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     margin: 5px 0px 5px 10px;
     width: 100%;
@@ -40,22 +45,30 @@ h1 {
 .two-bars {
     display: flex;
     justify-content: center;
-    width: 104%;
+    width: 101%;
     gap: 10px;
 
 }
-.trocar-pag{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:40px ;
-    color: #2e2877;
-    font-size: 1.3rem;
-    width: 100%;
-    font-weight: 700;
+
+.carousel-item h5 {
+    margin-top: 10px;
+    text-align: center;
+    color: #000;
+    font-weight: 800;
+    font-size: 2rem;
 }
-.trocar-pag h2{
-    cursor: pointer;
+
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-item:nth-child(1) {
+    height: 420px;
+}
+
+.carousel-item:nth-child(2) {
+    height: auto;
+    padding-bottom: 40px;
 }
 
 /*#line{
@@ -68,168 +81,202 @@ linha para se mover, fazer animaçao futuramente no js
 */
 .bar {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: baseline;
     border-radius: 10px;
     width: 100%;
 }
-.bar:nth-child(1){
+
+.bar:nth-child(1) {
     margin-left: 10px;
 }
 
+
 .info-pessoal {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info-academica {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    width: 80%;
 }
 
-.info-academica{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-h3 {
+.one-bar h3 {
     font-size: 1.2rem;
-    color: #000000;
+    color: #fff;
     font-weight: 600;
 }
 
-h4 {
+.two-bars h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.one-bar h4 {
     font-size: 1.1rem;
-    color: #000000;
+    color: #fff;
     margin-left: 5px;
 }
 
+.two-bars h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-left: 5px;
+}
 
-.one-bar, .two-bars{
+.one-bar,
+.two-bars {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.conhecimento{
-    display: none;
-    width: 100%;
+
+.conhecimento {
+    display: flex;
+    width: 90%;
     justify-content: space-evenly;
     gap: 30px;
     padding-bottom: 20px;
 }
-.input-conhecimento{
+
+.input-conhecimento h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.input-conhecimento {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: baseline;
     border-radius: 10px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    justify-content: space-around;
+    color: #fff;
 }
 
-.left{
+.input-conhecimento span {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.input-conhecimento span p {
+    font-size: 1.2rem;
+    margin-left: 3px;
+}
+
+.left {
     display: flex;
     width: 50%;
     flex-direction: column;
     align-items: center;
 }
-label{
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-select{
-    border: none;
-    font-size: 1.1rem;
-    background-color: transparent;
-}
+
+
+
 .btn-conhecimento {
-    width: 35%;
+    width: 40%;
     border: none;
     border-radius: 10px;
-    background-color: #d3d3d3;
     font-size: 1rem;
     padding: 5px;
     cursor: pointer;
+    font-weight: 600;
+    cursor: pointer;
 }
-.left textarea{
-    background-color: #acd5ff;
-    width: 90%;
-    border-radius: 10px;
-    border: none;
-    margin-top: 10px;
-    font-size: 1rem;
 
-}
-textarea:focus{
+textarea:focus {
     outline: none;
 }
-.left .box-text{
-    background-color: #acd5ff;
-    width: 105%;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
 
-
-
-.right textarea{
-    background-color: #acd5ff;
+.right textarea {
+    background-color: #0a3580;
     width: 90%;
     border: none;
     margin-top: 10px;
     font-size: 1rem;
-    height: 90%;
-
+    height: 80%;
+    color: #fff;
 }
-.right .box-text{
-    background-color: #acd5ff;
+
+.right textarea::placeholder {
+    color: #ffffff59;
+}
+
+.right .box-text {
+    background-color: #0a3580;
     width: 105%;
     padding: 10px;
     border-radius: 10px;
     margin-top: 10px;
-    height: 93%;
+    height: auto;
 }
 
+.box-text label {
+    color: #fff;
+}
 
-.disponibilidade{
-    display: none;
+.disponibilidade {
+
     width: 100%;
     justify-content: space-around;
     gap: 30px;
     padding-bottom: 20px;
 }
-.input-disponibilidade{
+
+.input-disponibilidade {
     display: flex;
-    background-color: #acd5ff;
+    background-color: #0a3580;
     padding: 15px;
     align-items: center;
     border-radius: 10px;
-
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #fff;
 }
-.horas{
+
+.input-disponibilidade h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.horas {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
 }
-.horas .input-disponibilidade{
-    width: 90%;
+
+.horas .input-disponibilidade {
+    width: 175px;
     align-items: center;
     justify-content: center;
 }
-.horas .input-disponibilidade input{
+
+.horas .input-disponibilidade input {
     background-color: transparent;
     padding: 5px;
     border: none;
     font-size: 1rem;
 }
-.btn-salvar{
+
+.btn-salvar {
     background-color: red;
-    width: 10%;
+    width: 100px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -237,32 +284,264 @@ textarea:focus{
     border-radius: 10px;
     cursor: pointer;
 }
-.btn-salvar input{
+
+.btn-salvar input {
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
 }
-.align-salvar{
+
+.align-salvar {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
 }
+
 /*.disponibilidade img{
     
     width: 700px
 }*/
 
-.cima-esquerda{
+.cima-esquerda {
     width: 12%;
     position: absolute;
     top: 0;
     z-index: 0;
 }
-.cima-direita{
+
+.cima-direita {
     width: 8%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
+}
+
+.btn-curso {
+    border: none;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.input-hab {
+    display: flex;
+    background-color: #0a3580;
+    flex-direction: column;
+    padding: 15px;
+    align-items: baseline;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.align-hab {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.align-hab h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.input-hab i {
+    font-size: 1.5rem;
+}
+
+.drop-itens {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    display: none;
+}
+
+.tipo-hab {
+    border-bottom: white 1px solid;
+    padding: 10px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tipo-hab:nth-last-child(2) {
+    border: none;
+}
+
+.tipo-hab i {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.adc-hab {
+    background-color: red;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.primeiro-horario {
+    color: #fff;
+}
+
+.horarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+dialog input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    border-bottom: 1px solid #fff;
+    padding: 5px 0px;
+}
+
+dialog input:focus {
+    outline: none;
+}
+
+dialog select {
+    color: #fff;
+    background-color: #0a3580;
+    /*background-color: #0382ac;*/
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 1.1rem;
+    padding: 5px 0px;
+}
+
+dialog select:focus {
+    outline: none;
+
+}
+
+dialog label {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+dialog {
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a3580;
+    color: #fff;
+    padding: 2%;
+}
+
+.header-modal {
+    width: 100%;
+    display: flex;
+
+}
+
+.titulo-modal {
+    text-align: center;
+}
+
+#titulo-modal {
+    margin-bottom: 50px;
+}
+
+#closeModalCurso,
+#closeModalIdioma {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+    border-radius: 10px;
+}
+
+#closeModalCurso:hover {
+    scale: 1.1;
+    background-color: white;
+
+}
+
+#closeModalIdioma:hover {
+    scale: 1.1;
+    background-color: white;
+
+}
+
+#closeModalCurso,
+#closeModalIdioma i {
+    font-size: 2rem;
+}
+
+.container-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    width: 60vw;
+}
+
+#container-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    width: 50vw;
+}
+
+.btn-modal {
+    background-color: #fff;
+    color: #1c82c6;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-top: 25px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.btn-modal:hover {
+    scale: 1.05;
+}
+
+.carousel-control-prev:hover{
+    color: #0a3580;
+    font-size: 3rem;
+    opacity: 100%;
+    scale: 1.1;
+}
+.carousel-control-next:hover{
+    color: #0a3580;
+    font-size: 3rem;
+    opacity: 100%;
+    scale: 1.1;
 }

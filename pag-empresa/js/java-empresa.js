@@ -31,8 +31,6 @@ if (modalseta.style.display == 'none'){
 }
 
 
-
-
 function modalcandidatoremarcar(){
     
 var modalcandidatoremarcar=  document.getElementById('candidato')
@@ -143,24 +141,6 @@ var button1 = document.getElementById("btn1")
                 }
 
 
-                
-            function vermais(){
-    
-                var vermais=  document.getElementById('vermais')
-           
-        
-                if (vermais.style.display == 'flex'){
-                    vermais.style.display = 'none'
-                
-                }else if (vermais.style.display == 'flex'){
-                    vermais.style.display='none'
-                }
-                else{
-                    vermais.style.display = 'flex'    
-                
-                }
-                
-                }
 
 
             

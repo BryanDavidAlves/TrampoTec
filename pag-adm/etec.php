@@ -1,3 +1,10 @@
+<?php include '../dao/conexao.php';
+
+require_once "back-end/login/validador_acesso.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,27 +25,33 @@
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Etecs</h1>
+        <div class="secao-cadastro">
+            <a href="cadastro-etec.php">
+                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <h2>Cadastrar uma nova ETEC</h2>
+            </a>
+        </div>
     </header>
     <main>
         <div class="secao-busca">
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por etec">
                 </div>
 
                 <div class="align-filtro">
-                    <div class="btn-side">
+                    <!--<div class="btn-side">
                         <p>CADASTRADAS</p>
                     </div>
                     <div class="btn-side">
                         <p>PENDENTES</p>
-                    </div>
+                    </div>-->
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
                             tune
@@ -85,46 +98,40 @@
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="infos">
-                        <td class="table-id">1</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
+                <tbody class="infos" id="result">
 
-                    <tr class="infos">
-                        <td class="table-id">2</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="infos">
-                        <td class="table-id">3</td>
-                        <td class="table-nome-etec">ETEC GUAIANASES</td>
-                        <td class="table-email-etec">etecguaianases@gmail.com</td>
-                        <td class="">118</td>
-                        <td>GUAIANASES</td>
-                        <td class="icone-table"><i class="fa-solid fa-check" style="color: #ff0000;"></i> <i
-                                class="fa-solid fa-x" style="color: #000000;"></i>
-                        </td>
-                    </tr>
 
                 </tbody>
             </table>
 
         </section>
     </main>
-    <script src="modal-etec.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./back-end/buscas/buscaEtec.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaEtec.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
+    <script src="js/modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

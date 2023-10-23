@@ -12,6 +12,7 @@ $n = count($empresas);
 if ($n == 1) {
     session_start();
     $_SESSION['idEmpresa'] = $empresas[0]['idEmpresa'];
+    $_SESSION['imagem'] = $empresas[0]['imagem'];
     $_SESSION['email'] = $empresas[0]['email'];
     $_SESSION['senha'] = $empresas[0]['senha'];
 

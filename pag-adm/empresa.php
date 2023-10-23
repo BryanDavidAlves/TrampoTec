@@ -1,45 +1,24 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
-?>
-<?php
+
 include '../dao/conexao.php';
-//VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
-
-//passando todos os itens do post para as sua variaveis
-if ($_GET['aprovado'] == '1') {
-    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='1'";
-
-    $query = $conexao->query($querySelect);
-
-    $resultado = $query->fetchAll();
-} else {
-    $querySelect = "SELECT * FROM  tb_empresa WHERE aprovado='0'";
-
-    $query = $conexao->query($querySelect);
-
-    $resultado = $query->fetchAll();
-}
 
 ?>
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
 
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/empresa.css">
 
-    <title>Document</title>
+    <title>Empresas</title>
 </head>
 
 <body>
@@ -55,7 +34,7 @@ include '../pag-adm/components/sidebar-adm.php';
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por empresa">
                 </div>
 
                 <div class="align-filtro">
@@ -101,65 +80,79 @@ include '../pag-adm/components/sidebar-adm.php';
         </div>
 
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>NOME</th>
-                                <th>EMAIL</th>
-                                <th>CNPJ</th>
-                                <th>CEP</th>
-                                <th>NÚMERO</th>
-                                <th>ESTADO</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($resultado as $resultado) {?>
-                                <tr class="infos">
-                                    <td class="table-id">
-                                        <?=$resultado[0]?>
-                                    </td>
-                                    <td class="table-nome-empresa">
-                                        <?=$resultado[3]?>
-                                    </td>
-                                    <td class="table-email-empresa">
-                                        <?=$resultado[1]?>
-                                    </td>
-                                    <td class="table-cnpj">
-                                        <?=$resultado[4]?>
-                                    </td>
-                                    <td class="table-cep">
-                                        <?=$resultado[5]?>
-                                    </td>
-                                    <td class="table-numero">
-                                        <?=$resultado[7]?>
-                                    </td>
-                                    <td class="table-estado">
-                                        <?=$resultado[9]?>
-                                    </td>
-                                    <td class="icone-table">
-                                        <?php if ($resultado[11] == 0) {?>
-                                            <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=<?=$resultado[0]?>"><i
-                                                    class="fa-solid fa-check" style="color: #ff0000;"></i></a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>EMAIL</th>
+                    <th>CNPJ</th>
+                    <th>CEP</th>
+                    <th>NÚMERO</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody class="infos" id="result">
 
-                                            <a href="./back-end/crudEmpresa/empresa-delete.php?id=<?=$resultado[0]?>"><i
-                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
-                                        <?php }?>
-                                        <?php if ($resultado[11] == 1) {?>
-                                            <a
-                                                href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=<?=$resultado[0]?>"><i
-                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
-                                        <?php }?>
-                                    </td>
-                                </tr>
-                            <?php }?>
-                        </tbody>
-                    </table>
+            </tbody>
+        </table>
 
 
         </section>
     </main>
-    <script src="modal-empresa.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+
+        $(document).ready(function() {
+
+           <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") {?>
+
+                var busca = ("");
+                $.post('./back-end/buscas/buscaEmpresa1.php', {
+                    busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+                $("#busca").keyup(function() {
+
+                    busca = $("#busca").val();
+                    $.post('./back-end/buscas/buscaEmpresa1.php', {
+                        busca: busca
+                    }, function(data) {
+                        $("#result").html(data);
+                    });
+
+
+                });
+      <?php }?>
+      <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") {?>
+
+                var busca = ("0");
+                $.post('./back-end/buscas/buscaEmpresa.php', {
+                    busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+                $("#busca").keyup(function() {
+
+                    busca = $("#busca").val();
+                    $.post('./back-end/buscas/buscaEmpresa.php', {
+                        busca: busca
+                    }, function(data) {
+                        $("#result").html(data);
+                    });
+
+
+                });
+      <?php }?>
+        });
+    </script>
+    <script src="js/modal-empresa.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

@@ -1,5 +1,6 @@
 <?php
 include '../../../dao/conexao.php';
+require_once "../login/validador_acesso.php";
 
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
@@ -21,14 +22,16 @@ if ($_POST) {
     $inicio = trim($_POST['inicio']);
     $termino = trim($_POST['termino']);
     $tipoTrabalho = trim($_POST['tipo']);
-
-    foreach($resultado as $resultado){
-    $id1 =  $resultado[0];
-    }
+    $semana = trim($_POST['semana']);
+    $cliente_id = $_SESSION['idEmpresa'];
+   
     
+     
 
+    
+  
 
-    $sql2 = "INSERT INTO tb_vaga (nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , curso , area , fk_idEmpresa ) VALUES
+    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , tipoTrabalho , salario , descricao , inicio , termino , periodo , area , semana , fk_idEmpresa , fk_idCurso) VALUES
                 (   '$nome',
                     '$cidade',
                     '$bairro',
@@ -38,9 +41,10 @@ if ($_POST) {
                     '$inicio',
                     '$termino',
                     '$periodo',
-                    '$curso',
                     '$area',
-                    '$id1'
+                    '$semana',
+                    '$cliente_id',
+                    '$curso'
                     
                 )
                 ";
@@ -48,6 +52,40 @@ if ($_POST) {
     $query2->execute();
     $id = $conexao->lastInsertId();
 
+/*     $sql2 = "INSERT INTO tb_vaga_curso ( fk_idCurso , fk_idVaga ) VALUES
+    (   '$curso',
+        '$id'
+        
+    )
+    ";
+$query2 = $conexao->prepare($sql2);
+$query2->execute(); */
+
+
+    $contadorCampos = 1;
+    while (isset($_POST["campo{$contadorCampos}"])) {
+        $campo = $_POST["campo{$contadorCampos}"];
+
+        $sql2 = "INSERT INTO tb_requisito ( requisito ) VALUES
+        (   '$campo'
+           
+        )
+        ";
+    $query = $conexao->prepare($sql2);
+    $query->execute();
+    $idrequisito = $conexao->lastInsertId();
+
+    $sql2 = "INSERT INTO tb_requisito_vaga ( fk_idVaga , fk_idRequisito ) VALUES
+        (   '$id',
+            '$idrequisito'
+           
+        )
+        ";
+    $query = $conexao->prepare($sql2);
+    $query->execute();
+    $contadorCampos++;
+    
+     }
   /*   $sql = "INSERT INTO tb_telefone_empresa ( numeroTelefone , fk_idEmpresa ) VALUES
     (   '$telefone',
         '$id'

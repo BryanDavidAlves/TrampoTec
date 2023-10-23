@@ -1,7 +1,21 @@
 <?php
+include '../dao/conexao.php';
 require_once "./back-end/login/validador_acesso.php";
-?>
 
+$cliente_id = $_SESSION['idProfessor'];
+
+$querySelect = "SELECT * FROM  tb_professor WHERE idProfessor = $cliente_id";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+$querySelect2 = "SELECT nome FROM  tb_etec  ORDER BY nome DESC ";
+
+$query2 = $conexao->query($querySelect2);
+
+$resultado2 = $query2->fetchAll();
+?>
 
 <!DOCTYPE html>
 
@@ -29,18 +43,18 @@ include '../pag-professor/components/sidebar.php';
         </div>
 
     </main>
-
+<div class="align-tudo">
     <section class="sistema-busca">
     <div class="barra-pesquisa">
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input type="text" name="pesquisa" id="pesquisa" placeholder="">
     </div>
-        <div class="align-filtro"  onclick="abrirFiltro()">
-            <div class="filtro" >
+        <div class="align-filtro" >
+            <div class="filtro"  onclick="abrirFiltro()" >
             <span   class="material-symbols-outlined">
                     tune
             </span>
-                <p >Filtrar</p>
+
 
             </div>
         </div>
@@ -57,7 +71,12 @@ include '../pag-professor/components/sidebar.php';
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Etec</label>
-                    <input type="checkbox" name="" id="">
+
+                    <select name="" id="">
+                    <?php foreach ($resultado2 as $resultado2) {?>
+                        <option value="<?=$resultado2[0]?>"><?=$resultado2[0]?></option>
+                    <?php }?>
+                    </select>
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Curso</label>
@@ -78,8 +97,9 @@ include '../pag-professor/components/sidebar.php';
 
 <table>
     <thead>
-        <tr>
-
+        <tr class="infos">
+            <th class="text-id" >ID</th>
+            <th>USUARIO</th>
             <th>NOME</th>
             <th>EMAIL INSTITUCIONAL</th>
             <th>MENSAGEM</th>
@@ -88,10 +108,16 @@ include '../pag-professor/components/sidebar.php';
     </thead>
     <tbody>
         <tr class="infos">
+           <?php foreach ($resultado as $resultado) {?>
 
-            <td class="table-nome-empresa">Ryan</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-id-empresa"><?=$resultado[0]?></td>
+            <td class="foto-user">
+                <img src="fotosProfessor/perfil/<?=$resultado[4]?>" alt="">
+            </td>
+            <td class="table-nome-empresa"><?=$resultado[1]?></td>
+            <td class="table-email-empresa"><?=$resultado[2]?></td>
             <td class="table-cnpj">Oi Clodo, me indica ai </td>
+            <?php }?>
 
             <td class="icone-table">
             <div class="icons">
@@ -117,31 +143,7 @@ include '../pag-professor/components/sidebar.php';
             </td>
         </tr>
 
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj">Oi Clodo, me indica ai </td>
 
-            <td class="icone-table">
-            <div class="icons">
-                    <i id="btn2" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-                </div>
-            </td>
-        </tr>
-        <tr class="infos"> <td class="table-nome-empresa">Ryan</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj">Oi Clodo, me indica ai </td>
-
-
-            <td class="icone-table">
-            <div class="icons">
-                    <i id="btn3" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-                </div>
-            </td>
-        </tr>
     </tbody>
 </table>
 
@@ -163,6 +165,7 @@ include '../pag-professor/components/sidebar.php';
 
 </dialog>
     </section>
+    </div>
 
 
     <div class="img-baixo">

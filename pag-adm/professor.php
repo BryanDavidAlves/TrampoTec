@@ -1,25 +1,16 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
+
+include '../dao/conexao.php';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<?php
-
-include('../dao/conexao.php');
-
-$querySelect = "SELECT * FROM  tb_professor";
-
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -30,8 +21,8 @@ $resultado = $query->fetchAll();
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Professores</h1>
@@ -41,7 +32,7 @@ $resultado = $query->fetchAll();
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por professor">
                 </div>
 
                 <div onclick="abrirFiltro()" class="align-filtro">
@@ -89,33 +80,39 @@ $resultado = $query->fetchAll();
 
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($resultado as $resultado) { ?>
-                        <tr class="infos">
-
-                            <td class="table-id">
-                                <?= $resultado[0] ?>
-                            </td>
-                            <td class="table-nome-professor">
-                                <?= $resultado[1] ?>
-                            </td>
-                            <td class="table-email-professor">
-                                <?= $resultado[2] ?>
-                            </td>
-
-                            <td class="icone-table">
-                                <a href="back-end/crudProfessor/professor-delete.php?id=<?= $resultado[0] ?>"> <i
-                                        class="fa-solid fa-x" style="color: #000000;"></i></a>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                <tbody class="infos" id="result">
 
                 </tbody>
             </table>
 
         </section>
     </main>
-    <script src="modal-professor.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./back-end/buscas/buscaProfessor.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaProfessor.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
+    <script src="js/modal-professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
