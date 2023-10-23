@@ -80,9 +80,6 @@ require_once "./back-end/login/validador_acesso.php";
                                 </section>
                             </div>
 
-
-
-
                         </div>
 
                         <div class="carousel-item">
@@ -166,12 +163,14 @@ require_once "./back-end/login/validador_acesso.php";
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="prev">
-                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-left"></i>
+                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;"
+                                class="fa-solid fa-chevron-left"></i>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="next">
-                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-right"></i>
+                            <i style="color: #0a3580;font-size: 3rem;opacity: 100%;"
+                                class="fa-solid fa-chevron-right"></i>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -182,9 +181,7 @@ require_once "./back-end/login/validador_acesso.php";
                             <input type="submit" value="SALVAR" name="" id="">
                         </div>
                     </div>
-
         </section>
-
 
     </main>
     <dialog id="modalIdioma">
