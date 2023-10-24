@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Set-2023 às 22:29
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Tempo de geração: 17-Out-2023 às 02:33
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -284,6 +284,13 @@ CREATE TABLE `tb_professor` (
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_professor`
+--
+
+INSERT INTO `tb_professor` (`idProfessor`, `nome`, `email`, `senha`, `imagem`, `fk_idCurso`) VALUES
+(1, 'Aline', 'AlineDS@gmail.com', 'Aline123', 'ec71fadf9084fd41f62aaaeeca933bcd.png', 1),(2,'ruan','ruan@gmail.com','ruan123','ec71fadf9084fd41f62aaaeeca933bcd.png','2');
+
 -- --------------------------------------------------------
 
 --
@@ -302,11 +309,11 @@ CREATE TABLE `tb_professor_etec` (
 --
 
 CREATE TABLE `tb_recomendacao` (
-  `idAvaliacao` int(11) NOT NULL,
-  `recomendacao` varchar(10) NOT NULL,
-  `data` date NOT NULL,
+  `idRecomendacao` int(11) NOT NULL,
+  `recomendacao` varchar(500) NOT NULL,
   `fk_idProfessor` int(11) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
+  `fk_idAluno` int(11) NOT NULL,
+  `fk_idEtec` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
