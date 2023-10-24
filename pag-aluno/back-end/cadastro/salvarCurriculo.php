@@ -9,8 +9,6 @@ if ($_POST) {
     $duracao = trim($_POST['duracao']);
     $periodo = trim($_POST['periodo']);
     $conclusao = trim($_POST['conclusao']);
-    $inicio = trim($_POST['inicio']);
-    $termino = trim($_POST['termino']); 
    
     $aluno_id = $_SESSION['idAluno'];
 

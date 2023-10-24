@@ -7,15 +7,15 @@ require_once "./back-end/login/validador_acesso.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-=======
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
->>>>>>> 5d71d3e4bfe5e55714c6f446074747e236064069
+
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/perfil.css">
@@ -149,7 +149,7 @@ mark {
     <?php
     include('../pag-aluno/components/header.php');
     ?>
-<<<<<<< HEAD
+
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 
     <section class="section about-section gray-bg" id="about">
@@ -207,7 +207,7 @@ mark {
                     </div>
                 </div>
         </section>
-=======
+
     <main id="main">
         <div class="align">
             <section class="infos">
@@ -404,12 +404,12 @@ mark {
         </div>
     </main>
     <?php
-    include('../pag-aluno/components/sidebar.php');
+
     ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="js/hab-input.js"></script>
->>>>>>> 5d71d3e4bfe5e55714c6f446074747e236064069
+
 </body>
 
 </html>

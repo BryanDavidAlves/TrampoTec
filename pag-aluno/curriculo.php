@@ -102,9 +102,18 @@ require_once "./back-end/login/validador_acesso.php";
                               <option value="">Matutino</option>
                               <option value="">Integral</option>
                       </select>
+                      <select class="input" placeholder="semestre" name="semestre">
+                              <option value="1">1 SEMESTRE</option>
+                              <option value="2">2 SEMESTRE</option>
+                              <option value="3">3 SEMESTRE</option>
+                              <option value="4">4 SEMESTRE</option>
+                              <option value="5">5 SEMESTRE</option>
+                              <option value="6">6 SEMESTRE</option>
+                            
+                      </select>
 
             <label for="carga_horaria">Carga Horária:</label>
-            <input type="number" id="carga_horaria" name="carga_horaria" required>
+            <input type="number" id="carga_horaria" name="duracao" required>
 
             <label for="conclusao">Conclusão:</label>
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
