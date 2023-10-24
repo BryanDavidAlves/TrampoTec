@@ -16,7 +16,7 @@ if ($_POST) {
 
 
     //Salvando etec
-    $sql2 = " INSERT INTO tb_aluno_etec ( fk_idEtec , fk_idAluno ) VALUES
+    $sql2 = "INSERT INTO tb_aluno_etec ( fk_idEtec , fk_idAluno ) VALUES
     (   '$nome',
         '$aluno_id'   
     )";
