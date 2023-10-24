@@ -12,19 +12,39 @@ if ($_POST) {
     $novo_nome = trim($_POST['foto_usuario']);
     $curso = trim($_POST['curso']);
 
-    $sql = " UPDATE tb_professor SET
-
+    if (!empty($novo_nome)) {
+        $sql = " UPDATE tb_professor SET
                   nome = '$nome' ,
                   email =  '$email' ,
                   senha = '$senha',
-                  imagem = '$novo_nome',
-                  fk_idCurso= '$curso'
+                  imagem = '$novo_nome'
+
              WHERE idProfessor='$id'
                 ";
+    } else {
+        $sql = " UPDATE tb_professor SET
+                  nome = '$nome' ,
+                  email =  '$email' ,
+                  senha = '$senha'
+             WHERE idProfessor='$id'
+                ";
+    }
+
+    $sql2 = " UPDATE tb_curso SET
+            nome='$curso'
+
+            WHERE fk_idProfessor='$id'
+";
+
+    $query2 = $conexao->prepare($sql2);
+    $query2->execute();
 
     $query = $conexao->prepare($sql);
     $query->execute();
+    header('Location: ../../perfil.php');
+    exit;
 
 } else {
-    header('Location: perfil.php?alterar=erro');
+    header('Location: ../../perfil.php?alterar=erro');
+
 }

@@ -1,5 +1,18 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
+include '../dao/conexao.php';
+
+
+$querySelect ="SELECT tb_vaga.idVaga, tb_vaga.nome, tb_vaga.cidade, tb_vaga.bairro, tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome,   tb_vaga.periodo, tb_vaga.area,  tb_vaga.descricao, tb_vaga.inicio, tb_vaga.termino  
+FROM tb_vaga
+INNER JOIN tb_curso
+ON tb_vaga.fk_idCurso = tb_curso.idCurso";
+
+$query = $conexao->query($querySelect);
+$resultado = $query->fetchAll();
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -85,42 +98,19 @@ require_once "./back-end/login/validador_acesso.php";
 
                 <section class="vagas">
                     <div class="align-cards">
+                        <?php foreach($resultado as $resultado) { ?> 
                         <div class="cards">
                             <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
+                                <h4><?=$resultado[2]?></h4>
+                                <h4><?=$resultado[3]?></h4>
                             </div>
-                            <h4>Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
+                            <h4><?=$resultado[6]?></h4>
+                            <h4><?=$resultado[4]?></h4>
+                            <h4>R$<?=$resultado[5]?></h4>
                             <button id="btn1">Clique para mais informações</button>
 
                         </div>
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4>Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-                            <button id="btn2">Clique para mais informações</button>
-
-                        </div>
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4>Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-                            <button id="btn3">Clique para mais informações</button>
-                        </div>
-
-
+                        <?php  } ?>
                     </div>
                 </section>
             </section>

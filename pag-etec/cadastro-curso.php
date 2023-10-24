@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body>    
     <?php include '../pag-etec/componentes/sidebar.php'?>
     <?php include '../pag-etec/componentes/notificacao.php'?>
     <main>

@@ -27,7 +27,7 @@ require_once "./back-end/login/validador_acesso.php";
             <section class="recomendacoes">
                 <section class="pedido-carta">
                     <h2>SOLCITAR UMA CARTA DE RECOMENDAÇÃO</h2>
-                    <form action="">
+                    <form action="EnviarRecomendacao.php" method="POST">
 
                         <div class="box-input">
                             <label for="cod-etec">CÓDIGO ETEC:</label>
@@ -36,10 +36,10 @@ require_once "./back-end/login/validador_acesso.php";
 
                         <div class="box-input">
                             <label for="professor">PROFESSOR:</label>
-                            <input type="text" id="professor" name="professor">
+                            <input type="text" id="professorNome" name="professorNome">
                         </div>
 
-                        <textarea name="" id="" rows="10"></textarea>
+                        <textarea name="recomendacao" id="recomendacao" rows="10"></textarea>
                         <input class="btn" type="submit" value="ENVIAR">
                     </form>
                 </section>

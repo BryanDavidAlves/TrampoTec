@@ -46,6 +46,7 @@ main{
 .input-box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -86,4 +87,74 @@ label {
     width: 275px;
     padding: 10px;
     font-size: 1rem;
+    animation:400ms linear trans;
+  }
+
+  .addCampo{
+    border: 1px solid blue;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    transition: all 0.4s;
+  }
+  .addCampo:hover{
+    color: white;
+    background-color: blue;
+  }
+
+  .removeCampo{
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    transition: all 0.4s;
+  }  .removeCampo:hover{
+    color: white;
+    background-color: red;
+  }
+
+  .campos-selects{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+    
+  }
+
+  .campos-selects::-webkit-scrollbar {
+    width: 10px;              
+  }
+  
+  .campos-selects::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);    
+  }
+  
+  .campos-selects::-webkit-scrollbar-thumb {
+    background-color:  #555cb3;    
+    border-radius: 50px;      
+    border: 2px solid rgb(253, 253,253);}
+  
+  .campos-selects::-webkit-scrollbar-track-piece{
+    background-color:  #9a9999a1;    
+    border-radius: 50px;      
+    border: 2px solid rgb(253, 253,253);}
+
+    @keyframes trans{
+        0%{opacity: 0%; transform: translateY(-10%);}
+      
+        100%{opacity: 100%; transform: translateY(1%);}
+      
+        }
+
+  select:focus{
+    outline: none;
+  }
+
+  input:focus{
+    outline: none;
   }

@@ -1,26 +1,15 @@
 <?php
-require_once "back-end/login/validador_acesso.php";
-?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<?php
-
 include '../dao/conexao.php';
 
-$querySelect = "SELECT * FROM  tb_admin";
-
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
+require_once "back-end/login/validador_acesso.php";
 ?>
-
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -32,8 +21,8 @@ $resultado = $query->fetchAll();
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-include '../pag-adm/components/sidebar-adm.php';
-?>
+    include '../pag-adm/components/sidebar-adm.php';
+    ?>
 
     <header>
         <h1>Administradores</h1>
@@ -49,7 +38,7 @@ include '../pag-adm/components/sidebar-adm.php';
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" id="busca" placeholder="buscar por administradores ">
                 </div>
 
                 <div class="align-filtro">
@@ -98,39 +87,43 @@ include '../pag-adm/components/sidebar-adm.php';
 
                     </tr>
                 </thead>
-                <tbody>
-                <?php foreach ($resultado as $resultado) {?>
-                    <tr class="infos">
-                        <td class="table-id">
-                        <?=$resultado[0]?>
-                        </td>
-                        <td class="table-nome-adm">
-                        <?=$resultado[1]?>
-                        </td>
-                        <td class="table-email-adm">
-                        <?=$resultado[2]?>
-                        </td>
-
-                        <td class="icone-table">  <?php if ($resultado[0]) {?>
-                                            <a
-                                                href="./back-end/crudAdm/adm-delete.php?id=<?=$resultado[0]?>"><i
-                                                    class="fa-solid fa-x" style="color: #000000;"></i></a>
-                                        <?php }?>
-                        </td>
-                    </tr>
-
-
-                    <?php }?>
+                <tbody class="infos" id="result">
+            
 
                 </tbody>
             </table>
 
         </section>
     </main>
-    <script src="modal-adm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./back-end/buscas/buscaAdm.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./back-end/buscas/buscaAdm.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+    </script>
+    <script src="js/modal-adm.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
-<script src="modal-adm.js"></script>
+<script src="js/modal-adm.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

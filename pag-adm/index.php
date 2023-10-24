@@ -1,13 +1,11 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
-?>
-<?php
-include('../dao/conexao.php');
+
+include '../dao/conexao.php';
 $querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '1'";
 $resultado = $conexao->query($querySelect);
 $empresa = $resultado->fetchALL();
-$n_empresa = count($empresa);
-
+$n_empresa = count($empresa);   
 
 $querySelect = "SELECT * FROM tb_aluno";
 $resultado = $conexao->query($querySelect);
@@ -19,14 +17,10 @@ $resultado = $conexao->query($querySelect);
 $professor = $resultado->fetchALL();
 $n_professor = count($professor);
 
-
-
 $querySelect = "SELECT * FROM tb_admin";
 $resultado = $conexao->query($querySelect);
 $admin = $resultado->fetchALL();
 $n_admin = count($admin);
-
-
 
 $querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '0'";
 $resultado = $conexao->query($querySelect);
@@ -51,7 +45,7 @@ $n_pendenteEmpresa = count($pendenteEm);
 
 <body>
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
+    include '../pag-adm/components/sidebar-adm.php';
     ?>
     <header>
         <h1>Dashboard</h1>
@@ -68,67 +62,146 @@ $n_pendenteEmpresa = count($pendenteEm);
                     <div class="card">
                         <div class="header-card">
                             <h3>Empresas cadastradas </h3>
-                            <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
+                            <i id="empresas" class="fa-solid fa-building" "></i>
                         </div>
                         <h2>
                             <?= $n_empresa ?>
                         </h2>
                     </div>
                 </a>
-                <a href="professor.php">
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Professores cadastrados</h3>
-                            <i id="prof" class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>
-                            <?= $n_professor ?>
-                        </h2>
-                    </div>
+                <a href=" professor.php">
+                                <div class="card">
+                                    <div class="header-card">
+                                        <h3>Professores cadastrados</h3>
+                                        <i id="prof" class="fa-solid fa-chalkboard-user"></i>
+                                    </div>
+                                    <h2>
+                                        <?= $n_professor ?>
+                                    </h2>
+                                </div>
                 </a>
                 <a href="aluno.php">
                     <div class="card">
                         <div class="header-card">
                             <h3>Alunos cadastrados</h3>
-                            <i id="aluno" class="fa-solid fa-user" style="color: #3C86D;"></i>
+                            <i id="aluno" class="fa-solid fa-user" "></i>
                         </div>
                         <h2>
                             <?= $n_aluno ?>
                         </h2>
                     </div>
                 </a>
-                
-                <a href="adm.php">
-                    <div class="card">
-                        <div class="header-card">
-                            <h3>Administradores Cadastrados</h3>
-                            <i id="adm" class="fa-solid fa-user" style="color: #3C86D;"></i>
-                        </div>
-                        <h2>
-                            <?= $n_admin ?>
-                        </h2>
-                    </div>
-                </a>
-
-        
-                <a href="empresa.php?aprovado=0">
-                <div class="card">
-                    <div class="header-card">
-                        <h3>Empresas Pendentes </h3>
-                        <i id="empresas" class="fa-solid fa-building" style="color: #3C86D;"></i>
-                    </div>
-                    <h2>
-                        <?= $n_pendenteEmpresa ?>
-                    </h2>
-                </div>
+                <a href=" relatorio.php"><button type="submit" class="btn-relatorio">Ver Relatório </button>
                 </a>
             </div>
-            <section class="dash-card">
-                <img class="grafico1" src="img/grafico1.png" alt="">
-                <img class="grafico2" src="img/grafico2.png" alt="">
-            </section>
+            <div class="align-graficos">
+                <div class="align-card2">
+                    <a href="adm.php">
+                        <div class="card">
+                            <div class="header-card">
+                                <h3>Administradores Cadastrados</h3>
+                                <i id="adm" class="fa-solid fa-user"></i>
+                            </div>
+                            <h2>
+                                <?= $n_admin ?>
+                            </h2>
+                        </div>
+                    </a>
+
+
+                    <a href="empresa.php?aprovado=0">
+                        <div class="card">
+                            <div class="header-card">
+                                <h3>Empresas Pendentes </h3>
+                                <i id="empresas" class="fa-solid fa-building"></i>
+                            </div>
+                            <h2>
+                                <?= $n_pendenteEmpresa ?>
+                            </h2>
+                        </div>
+                    </a>
+                    <a href="empresa.php?aprovado=0">
+                        <div class="card">
+                            <div class="header-card">
+                                <h3>Empresas Pendentes </h3>
+                                <i id="empresas" class="fa-solid fa-building"></i>
+                            </div>
+                            <h2>
+                                <?= $n_pendenteEmpresa ?>
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+                <div class="dash-card">
+                    <div id="donutchart"></div>
+                 <!--   <div id="chart_div"></div> -->
+                </div>
+            </div>
         </section>
+
+
+
     </main>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['empresas', <?= $n_empresa ?>],
+                ['alunos', <?= $n_aluno ?>],
+                ['professores', <?= $n_professor ?>]
+            ]);
+
+            var options = {
+                title: 'usuarios totais cadastrados',
+                pieHole: 0.2,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
+    </script>
+   <!-- <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2013', 1000, 400],
+                ['2014', 1170, 460],
+                ['2015', 660, 1120],
+                ['2016', 1030, 540]
+            ]);
+
+            var options = {
+                title: 'Company Performance',
+                hAxis: {
+                    title: 'Year',
+                    titleTextStyle: {
+                        color: '#333'
+                    }
+                },
+                vAxis: {
+                    minValue: 0
+                }
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script> -->
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

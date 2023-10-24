@@ -1,7 +1,7 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
 
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 ?>
 
@@ -21,8 +21,8 @@ include('../dao/conexao.php');
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Professores</h1>
@@ -81,7 +81,7 @@ include('../dao/conexao.php');
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">
-         
+
                 </tbody>
             </table>
 
@@ -112,7 +112,7 @@ include('../dao/conexao.php');
             });
         });
     </script>
-    <script src="modal-professor.js"></script>
+    <script src="js/modal-professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
