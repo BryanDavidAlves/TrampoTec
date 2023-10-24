@@ -6,7 +6,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == 'não'){
     
     header ('Location: ../../../one-page/index.php?login=erro');
     
-}else{
+}/* else{
     include('../dao/conexao.php');
     
     $querySelect = "SELECT tb_aluno.*, tb_telefone_aluno.telefoneAluno FROM tb_aluno 
@@ -15,7 +15,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == 'não'){
     $resultado = $conexao->query($querySelect);
     $aluno = $resultado->fetchAll();
     return $aluno;    
-}
+} */
 
 
 ?>

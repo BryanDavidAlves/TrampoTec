@@ -15,7 +15,7 @@ if ($_POST) {
 
 
 
-    $sql = " INSERT INTO tb_curso ( nome , cargaHoraria , semestre , modalidade , ensino) VALUES
+    $sql =  " INSERT INTO tb_curso ( nome , cargaHoraria , semestre , modalidade , ensino) VALUES
     (   '$nome',
         '$cargaHoraria',
         '$semestre',

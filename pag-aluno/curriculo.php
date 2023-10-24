@@ -1,10 +1,13 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
+include ('../dao/conexao.php');
 $querySelect = "SELECT * FROM  tb_etec ";
 
 $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,28 +46,42 @@ $etec = $query->fetchAll();
 
                                 <div class="container">
                                     <section id="info-academica" class="info-academica">
-
+                                    <div class="one-bar">
+                                            <h3>INSTITUIÇÃO:</h3>
+                                            <select class="form-control obrigatorio" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
+                                            <option>Selecione uma Instituição</option>
+                                            <?php foreach ($etec as $etec) { ?>
+                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
+                                            <?php } ?>
+                                            </select>
+                                        </div>
+                                       
                                         <div class="one-bar">
                                             <h3>CURSO:</h3>
-                                           <select name="curso" required>
-                                                    <option value="1">fdsfdsfs</option>
-                                                    <option value="2">2</option>
+                                           <select name="curso" id="curso" class="form-control obrigatorio" required>
+                                                   <option>Selecione seu curso</option>
                                            </select>
                                         </div>
-
 
                                         <div class="two-bars">
 
                                             <div class="bar" required>
                                                 <h3>SEMESTRE:</h3>
-                                                <select name="semestre">
-                                                <option value="2SEM">FECHA</option>
+                                                <select name="semestre" class="form-control obrigatorio" >
+                                                <option value="1">1 SEMESTRE</option>
+                                                <option value="2">2 SEMESTRE</option>
+                                                <option value="3">3 SEMESTRE</option>
+                                                <option value="4">4 SEMESTRE</option>
+                                                <option value="5">5 SEMESTRE</option>
+                                                <option value="6">6 SEMESTRE</option>
                                                 </select>
                                             </div>
                                             <div class="bar" required>
                                                 <h3>DURAÇÃO:</h3>
-                                                <select name="duracao">
-                                                    <option value="OI">ABRE</option>
+                                                <select name="duracao" class="form-control obrigatorio">
+                                                <option>1200 horas</option>
+                                                <option>1600 horas</option>
+                                                <option>800 horas</option>
                                                 </select>
                                             </div>
 
@@ -74,28 +91,22 @@ $etec = $query->fetchAll();
 
                                             <div class="bar">
                                                 <h3>PERIODO:</h3>
-                                                <select name="periodo" id="" required>
-                                                    <option value="matutino">Matutino</option>
-                                                    <option value="">Vespertino</option>
-                                                    <option value="noturno">Noturno</option>
+                                                <select name="periodo" id="" class="form-control obrigatorio" required>
+                                                    <option value="Manhã">Manhã</option>
+                                                    <option value="Tarde">Tarde</option>
+                                                    <option value="Noturno">Noturno</option>
+                                                    <option value="Periodo">Periodo</option>
                                                 </select>
                                             </div>
 
                                             <div class="bar" required>
                                                 <h3>CONCLUSÃO:</h3>
-                                                <input name="conclusao" type="date">
+                                                <input name="conclusao" type="date" class="form-control obrigatorio">
                                             </div>
 
                                         </div>
-                                        <div class="one-bar">
-                                            <h3>INSTITUIÇÃO:</h3>
-                                            <select class="form-control obrigatorio" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
-                                            <option>Selecione um curso</option>
-                                            <?php foreach ($etec as $etec) { ?>
-                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
-                                            <?php } ?>
-                                            </select>
-                                        </div>
+                                      
+
                                         <button  type="submit" class="btn-curso" id="abrirCurso">Adicionar curso</button>
                                     </section>
                                 </div>
@@ -294,6 +305,7 @@ $etec = $query->fetchAll();
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/troca-pag.js"></script>
     <script src="js/abrir-hab.js"></script>
+    <script src="js/funcoes.js"></script>
     <script src="js/modal-curriculo.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script>
