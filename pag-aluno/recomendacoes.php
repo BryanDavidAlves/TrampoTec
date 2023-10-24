@@ -17,8 +17,8 @@ require_once "./back-end/login/validador_acesso.php";
     <img class="cima-esquerda" src="img/icon1-cortado.png" alt="">
     <img class="cima-direita" src="img/icon5.png" alt="">
     <?php
-include '../pag-aluno/components/header.php';
-?>
+    include('../pag-aluno/components/header.php');
+    ?>
     <main id="main">
 
         <div class="align">
@@ -27,7 +27,7 @@ include '../pag-aluno/components/header.php';
             <section class="recomendacoes">
                 <section class="pedido-carta">
                     <h2>SOLCITAR UMA CARTA DE RECOMENDAÇÃO</h2>
-                    <form action="" method="post">
+                    <form action="EnviarRecomendacao.php" method="POST">
 
                         <div class="box-input">
                             <label for="cod-etec">CÓDIGO ETEC:</label>
@@ -36,10 +36,10 @@ include '../pag-aluno/components/header.php';
 
                         <div class="box-input">
                             <label for="professor">PROFESSOR:</label>
-                            <input type="text" id="professor" name="professor">
+                            <input type="text" id="professorNome" name="professorNome">
                         </div>
 
-                        <textarea id="" rows="10" name="mensagem"></textarea>
+                        <textarea name="recomendacao" id="recomendacao" rows="10"></textarea>
                         <input class="btn" type="submit" value="ENVIAR">
                     </form>
                 </section>
@@ -126,8 +126,8 @@ include '../pag-aluno/components/header.php';
 
     </main>
     <?php
-include '../pag-aluno/components/sidebar.php';
-?>
+    include('../pag-aluno/components/sidebar.php');
+    ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

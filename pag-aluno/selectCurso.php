@@ -5,6 +5,7 @@ $etec = $_GET['nome-etec'];
 
 
 
+
 $querySelect = "SELECT * FROM  tb_curso_etec WHERE fk_idEtec = $etec";
 
 $query = $conexao->prepare($querySelect);

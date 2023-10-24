@@ -1,20 +1,9 @@
 <?php
-include '../dao/conexao.php';
-require_once "./back-end/login/validador_acesso.php";
+include('../Dao/conexao.php');
+$querySelect = "SELECT * FROM tb_recomendacao";
+$resultado = $conexao->query($querySelect);
+$recomendacao = $resultado->fetchAll();
 
-$cliente_id = $_SESSION['idProfessor'];
-
-$querySelect = "SELECT * FROM  tb_professor WHERE idProfessor = $cliente_id";
-
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
-
-$querySelect2 = "SELECT nome FROM  tb_etec  ORDER BY nome DESC ";
-
-$query2 = $conexao->query($querySelect2);
-
-$resultado2 = $query2->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -49,12 +38,12 @@ include '../pag-professor/components/sidebar.php';
             <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
             <input type="text" name="pesquisa" id="pesquisa" placeholder="">
     </div>
-        <div class="align-filtro" >
-            <div class="filtro"  onclick="abrirFiltro()" >
+        <div class="align-filtro"  onclick="abrirFiltro()">
+            <div class="filtro" >
             <span   class="material-symbols-outlined">
                     tune
             </span>
-
+                <p >Filtrar</p>
 
             </div>
         </div>
@@ -71,12 +60,7 @@ include '../pag-professor/components/sidebar.php';
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Etec</label>
-
-                    <select name="" id="">
-                    <?php foreach ($resultado2 as $resultado2) {?>
-                        <option value="<?=$resultado2[0]?>"><?=$resultado2[0]?></option>
-                    <?php }?>
-                    </select>
+                    <input type="checkbox" name="" id="">
                     </div>
                     <div class="align-form-filtro">
                     <label for="">Curso</label>
@@ -98,61 +82,52 @@ include '../pag-professor/components/sidebar.php';
 <table>
     <thead>
         <tr class="infos">
-            <th class="text-id" >ID</th>
-            <th>USUARIO</th>
-            <th>NOME</th>
-            <th>EMAIL INSTITUCIONAL</th>
+    
             <th>MENSAGEM</th>
+            <th>NOME</th>
+            <th>ETEC</th>
 
         </tr>
     </thead>
     <tbody>
         <tr class="infos">
-           <?php foreach ($resultado as $resultado) {?>
+        <?php foreach($recomendacao as $recomendacao) {
 
-            <td class="table-id-empresa"><?=$resultado[0]?></td>
-            <td class="foto-user">
-                <img src="fotosProfessor/perfil/<?=$resultado[4]?>" alt="">
-            </td>
-            <td class="table-nome-empresa"><?=$resultado[1]?></td>
-            <td class="table-email-empresa"><?=$resultado[2]?></td>
-            <td class="table-cnpj">Oi Clodo, me indica ai </td>
-            <?php }?>
+    $idAluno = $recomendacao[3];
 
+    $querySelect2 ="SELECT * FROM tb_aluno WHERE idAluno LIKE $idAluno" ;
+    $resultado2 = $conexao->query($querySelect2);
+    $id = $resultado2->fetchAll();
+
+    foreach($id as $id){
+    $nomeAluno = $id[3];
+}
+
+    $idEtec = $recomendacao[4];
+
+    $querySelect3 = "SELECT * FROM  tb_etec WHERE idEtec LIKE $idEtec";
+    $resultado3 = $conexao->query($querySelect3);
+    $id2 = $resultado3->fetchAll();
+
+foreach($id2 as $id2){
+$nomeEtec = $id2[1];
+}
+    ?>
+          <tr>
+            <td><?=$recomendacao[1]?></td>
+            <td><?=$nomeAluno?></td>
+            <td><?=$nomeEtec?></td>
+            <td class="text-center">
             <td class="icone-table">
             <div class="icons">
                     <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
                     <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                    <dialog id="abrir-indicacao">
-
-<div class="align-card-indicacao">
-    <h5 class="title-indicacao">Indicar Aluno</h5>
-    <form class="" action="index.php">
-        <label for="destinatario">Destinatario</label>
-        <input type="email" name="email-professor" id="">
-        <br>
-        <label for="mensagem">Mensagem</label>
-        <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
-
-        <input type="submit" value="Enviar" class="botao-indicacao">
-    </form>
-</div>
-
-</dialog>
-                </div>
-            </td>
-        </tr>
-
-
-    </tbody>
-</table>
-
-
+                   
 <dialog id="abrir-indicacao">
 
       <div class="align-card-indicacao">
           <h5 class="title-indicacao">Indicar Aluno</h5>
-          <form class="" action="vagas.php">
+          <form class="" action="index.php">
               <label for="destinatario">Destinatario</label>
               <input type="email" name="email-professor" id="">
               <br>
@@ -164,6 +139,16 @@ include '../pag-professor/components/sidebar.php';
       </div>
 
 </dialog>
+                    
+                </div>
+            </td>
+            </tr>
+            <?php } ?>
+
+       
+    </tbody>
+
+
     </section>
     </div>
 
@@ -204,4 +189,4 @@ var button1 = document.getElementById("btn1")
             }
 
     </script>
-</body>
+</body> 

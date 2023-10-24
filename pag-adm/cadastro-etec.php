@@ -1,4 +1,5 @@
-<?php include('../dao/conexao.php');
+<?php
+include('../dao/conexao.php');
 
 require_once "back-end/login/validador_acesso.php";
 
@@ -20,10 +21,6 @@ if ($_POST) {
     $email = $etec["email"];
     $codigo = $etec["codigo"];
     $municipio = $etec["municipio"];
-
-
-
-
 } else {
     $id_etec = "";
     $nome = "";
@@ -42,8 +39,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -75,20 +71,21 @@ if ($_POST) {
                 </div>
                 <div class="input-box">
                     <label for="nome">EMAIL</label>
-                    <input type="text" id="email" name="email" placeholder="@cps.sp.gov.br" value="<?= $email ?>"
-                        required>
+                    <input type="text" id="email" name="email" placeholder="@cps.sp.gov.br" value="<?= $email ?>" required>
                 </div>
                 <div class="input-box">
                     <label for="curso">CURSO</label>
 
+                    <div>
+                        <button class="addCampo" onclick="adicionarSelect()">Gerar Campo Select</button>
+                        <button class="removeCampo" onclick="apagarUltimoSelect()">Apagar Campo Select</button>
+                    </div>
 
 
+         
+                        <div  class="campos-selects" id="campoSelect"></div>
+              
 
-
-
-                    <button onclick="adicionarSelect()">Gerar Campo Select</button>
-                    <button onclick="apagarUltimoSelect()">Apagar Campo Select</button>
-                    <div id="campoSelect"></div>
                 </div>
                 <div class="input-box">
                     <label for="nome">CODIGO</label>
@@ -279,23 +276,23 @@ if ($_POST) {
                 </div>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                    ?>
+                ?>
 
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
 
-                    <?php
+                <?php
                 }
                 ?>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                    ?>
+                ?>
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
 
-                    <?php
+                <?php
                 }
                 ?>
                 <input type="hidden" id="id_etec" name="id_etec" value="<?= $id_etec ?>">
@@ -307,6 +304,7 @@ if ($_POST) {
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script>
         var count = 0;
+
         function adicionarSelect() {
             count++;
             // Crie um elemento select
@@ -315,7 +313,7 @@ if ($_POST) {
 
             // Defina os atributos desejados para o select
             select.name = "selectName[]"; // Nome do select
-            select.id = ("selectId" + count);     // ID do select (opcional)
+            select.id = ("selectId" + count); // ID do select (opcional)
 
             <?php foreach ($curso as $curso) { ?>
                 // Crie opções para o select
