@@ -1,6 +1,22 @@
 <?php
+include '../dao/conexao.php';
 require_once "./back-end/login/validador_acesso.php";
+
+$id_aluno = $_SESSION["idAluno"];
+
+$querySelect = "SELECT tb_aluno.* , tb_telefone_aluno.* /*tb_aluno_curso.*/
+FROM tb_aluno
+INNER JOIN tb_telefone_aluno ON tb_telefone_aluno.fk_idAluno = tb_aluno.idAluno
+/*INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno= tb_aluno.idAluno*/
+    WHERE tb_aluno.idAluno= '$id_aluno'
+";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,8 +35,8 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
-    ?>
+include '../pag-aluno/components/header.php';
+?>
     <main id="main">
         <div class="align">
             <section class="infos">
@@ -29,11 +45,11 @@ require_once "./back-end/login/validador_acesso.php";
                     <div id="carouselExampleDark" class="carousel slide">
 
 
-                        <form action="">
+                        <form action="./back-end/update/update.php" method="post">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <h5>INFORMAÇÕES PESSOAIS</h5>
-
+                                    <?php foreach ($resultado as $resultado) {?><?php }?>
                                     <div class="container">
                                         <section id="info-pessoal" class="info-pessoal">
 
@@ -41,19 +57,19 @@ require_once "./back-end/login/validador_acesso.php";
 
                                                 <h3>NOME COMPLETO: </h3>
                                                 <input id="inputNome" type="text" disabled
-                                                    value="BRYAN DAVID SALVINO ALVES">
+                                                    name="nome" value="<?=$resultado[3]?>">
                                             </div>
 
                                             <div class="two-bars">
 
                                                 <div class="bar">
                                                     <h3 class="titulo-nasc">DATA DE NASC:</h3>
-                                                    <input id="inputNasc" type="text" disabled value="29/01/2004">
+                                                    <input id="inputNasc" name="nasc-aluno" type="text" disabled value="<?=$resultado[5]?>">
 
                                                 </div>
                                                 <div class="bar">
                                                     <h3>CPF:</h3>
-                                                    <input id="inputCpf" type="text" disabled value="123.123.123-74">
+                                                    <input id="inputCpf" name="cdp-aluno" type="text" disabled value="<?=$resultado[4]?>">
                                                 </div>
                                             </div>
 
@@ -61,14 +77,14 @@ require_once "./back-end/login/validador_acesso.php";
                                                 <div class="bar">
                                                     <h3>CELULAR:</h3>
                                                     <input id="inputCelular" type="text" disabled
-                                                        value="(11) 97526-0498">
+                                                        value="<?=$resultado[15]?>" name="telefone">
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>TELEFONE: </h3>
                                                     <input id="inputTelefone" type="text" disabled
-                                                        value="(11) 2559-9090">
+                                                        value="(11)2552-3735" name="celular">
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
                                             </div>
@@ -85,7 +101,7 @@ require_once "./back-end/login/validador_acesso.php";
                                                 <span>
                                                     <h3>LOGRADOURO:</h3>
                                                     <input id="inputLogradouro" type="text" disabled
-                                                        value="Rua da cachoeira azul">
+                                                        value="<?=$resultado[6]?>" name="logradouro">
                                                 </span>
 
                                             </div>
@@ -94,14 +110,14 @@ require_once "./back-end/login/validador_acesso.php";
                                                 <div class="bar">
                                                     <h3>BAIRRO:</h3>
                                                     <input id="inputBairro" type="text" disabled
-                                                        value="(11) 97526-0498">
+                                                        value="<?=$resultado[9]?>" name="bairro">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>ESTADO: </h3>
-                                                    <input id="inputEstado" type="text" disabled value="(11) 2559-9090">
+                                                    <input id="inputEstado" type="text" disabled value="<?=$resultado[10]?>" name="estado">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
@@ -110,21 +126,21 @@ require_once "./back-end/login/validador_acesso.php";
 
                                                 <div class="bar">
                                                     <h3>CEP:</h3>
-                                                    <input id="inputCep" type="text" disabled value="08470-610">
+                                                    <input id="inputCep" type="text" disabled value="<?=$resultado[12]?>" name="cep">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>NUMERO: </h3>
-                                                    <input id="inputNumero" type="text" disabled value="2320">
+                                                    <input id="inputNumero" type="text"  disabled value="<?=$resultado[7]?>" name="numero">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3>COMPLEMENTO: </h3>
-                                                    <input id="inputComplemento" type="text" disabled value="21-A">
+                                                    <input id="inputComplemento" type="text" disabled value="<?=$resultado[8]?>" name="complemento">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
@@ -133,6 +149,7 @@ require_once "./back-end/login/validador_acesso.php";
                                         </section>
                                     </div>
                                 </div>
+
 
 
                                 <div class="carousel-item">
@@ -144,41 +161,22 @@ require_once "./back-end/login/validador_acesso.php";
                                             <div class="one-bar">
 
                                                 <h3>Email: </h3>
-                                                <h4>bryan@etec.sp.gov.br</h4>
+                                                <h4><?=$resultado[1]?></h4>
                                             </div>
 
 
-                                            <div class="two-bars">
 
-                                                <div class="bar">
-                                                    <h3 class="senha">SENHA ANTIGA:</h3>
-                                                    <input type="password" name = "senhaAntiga" placeholder="Digite sua senha atual">
 
-                                                    <!--fazer o js para possibilitar o edit-->
-                                                </div>
-
-                                                <div class="bar">
-                                                    <h3>REPITA: </h3>
-                                                    <input type="password" value="" placeholder="Repita sua senha atual">
-
-                                                    <!--fazer o js para possibilitar o edit-->
-                                                </div>
-                                            </div>
                                             <div class="two-bars">
 
                                                 <div class="bar">
                                                     <h3 class="senha">SENHA ATUAL:</h3>
-                                                    <input type="password" value="" placeholder="Digite sua nova senha ">
+                                                    <input type="password" disabled value="<?=$resultado[2]?>" name="senha" placeholder="Digite sua nova senha ">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
-                                                    <h3>REPITA: </h3>
-                                                    <input type="password" placeholder="Repita sua nova senha">
 
-                                                    <!--fazer o js para possibilitar o edit-->
-                                                </div>
                                             </div>
 
                                         </section>
@@ -200,11 +198,11 @@ require_once "./back-end/login/validador_acesso.php";
                             </div>
                             <div class="align-salvar">
                                 <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                                <button type="submit" class="btn-salvar">
+                            <button type="submit" class="btn-salvar"  value="<?=$id_aluno?>" name="id">
                                     <i class="fa-solid fa-check" style="color: #ffffff;"></i>
                                     <h3>Salvar</h3>
                                 </button>
-                                <span onclick="habInput()" class="btn-editar">
+                                <span onclick="habInput()" class="btn-editar " >
                                     <i class="fa-solid fa-pencil" style="color: #ffffff;"></i>
                                     <h3>Editar</h3>
                                 </span>
@@ -217,8 +215,8 @@ require_once "./back-end/login/validador_acesso.php";
         </div>
     </main>
     <?php
-    include('../pag-aluno/components/sidebar.php');
-    ?>
+include '../pag-aluno/components/sidebar.php';
+?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="js/hab-input.js"></script>

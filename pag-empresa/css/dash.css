@@ -1,107 +1,97 @@
-body{
-  background-color:#ffffff; 
+body {
+  background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-  margin-left:20%; 
-  overflow:hidden;
+  margin-left: 20%;
+  overflow: hidden;
 }
 
-
-.cima{
-  position:absolute;
+.cima {
+  position: fixed;
   top: 0;
   right: 0;
   z-index: -5;
   width: 18%;
 }
 
-.baixo{
-  position: absolute;
+.baixo {
+  position: fixed;
   bottom: 0;
-  right: 0;
+  right: 0%;
+
+  left: 20%;
   z-index: -5;
   width: 16%;
-  
+  transform: rotateY(180deg);
 }
 
-
-.cards-alunos{
+.cards-alunos {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top:5%;
+  margin-top: 5%;
 }
 
-.card{
- z-index: 1;
-width:250px;
-height: 170px;
-border-radius: 25px;
-background-color: rgb(81, 63, 185);
-display: flex;
-justify-content: center;
-justify-content: space-between;
-padding: 15px;
-margin: 20px;
-color: white;
-transition: all 0.5s;
+.card {
+  z-index: 1;
+  width: 250px;
+  height: 170px;
+  border-radius: 25px;
+  background-color: rgb(81, 63, 185);
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 20px;
+  color: white;
+  transition: all 0.5s;
 }
-.card:hover{
+.card:hover {
   transform: scale(1.1);
 }
-.card-corpo{
-display: flex;
-flex-direction: row;
-padding: 20px;
-gap: 20px;
-}
-
-.card-itens{
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-}
-
-.icon-home{
+.card-corpo {
   display: flex;
-align-items: start;
-justify-content: right;
-
+  flex-direction: row;
+  padding: 20px;
+  gap: 20px;
 }
 
-.icon-home .fa-regular{
+.card-itens {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.icon-home {
+  display: flex;
+  align-items: start;
+  justify-content: right;
+}
+
+.icon-home .fa-regular {
   font-size: 50px;
 }
 
-.informacao{
-font-size: 25px;
-text-decoration: solid;
+.informacao {
+  font-size: 25px;
+  text-decoration: solid;
 }
 
-.numero{
-font-size: 55px;
-text-decoration: solid;
+.numero {
+  font-size: 55px;
+  text-decoration: solid;
 }
 
-
-.container-imagens{
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-margin: 10px;
+.container-imagens {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
 }
 
-.container-imagens .dash-fundo{
-height: 330px;
+.container-imagens .dash-fundo {
+  height: 330px;
   object-fit: cover;
-
 }
-
-
-
-
-
-
-

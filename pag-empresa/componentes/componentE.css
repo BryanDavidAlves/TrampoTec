@@ -1,21 +1,23 @@
 .side-bar {
   height: 100%;
   position: fixed;
-  background-color:rgb(248, 248, 248);
-  width: 20%;   
+  background-color: rgb(248, 248, 248);
+  width: 20%;
   font-size: 1.1rem;
   overflow-y: scroll;
   top: 0;
 }
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-nav{
+nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   gap: 15px;
-
 }
 
 .side-bar .coluna-um {
@@ -23,33 +25,31 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;  
+  gap: 15px;
   width: 200px;
 }
-.side-bar ul  li a i{
+.side-bar ul li a i {
   margin-right: 15px;
-
 }
 
-.side-bar ul a{
+.side-bar ul a {
   text-decoration: none;
   color: #4d3cd1;
-  padding: 10px; 
+  padding: 10px;
   width: 100%;
-  font-weight:500;
+  font-weight: 500;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
-.side-bar ul .coluna-um  li  {
+.side-bar ul .coluna-um li {
   display: flex;
   justify-content: center;
   text-align: left;
-  width:89%;
+  width: 89%;
   height: 40px;
-
 }
 
-.side-bar nav  ul a:hover{
+.side-bar nav ul a:hover {
   background-color: #4d3cd1;
   color: #fff;
   width: 100%;
@@ -57,46 +57,44 @@ nav{
   transition: all 0.2s ease-in-out;
 }
 
-
-.imagem-logo{
+.imagem-logo {
   width: auto;
   display: flex;
-  align-items:center;
-  justify-content:center ;
- width: 200px;
- height: 100px;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
 }
-.imagem-logo img{
+.imagem-logo img {
   width: 200px;
   object-fit: cover;
-
-  
 }
-.imagem-empresa a{
-   width: auto;
+.imagem-empresa a {
+  width: auto;
   display: flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   text-decoration: none;
 }
-.imagem-empresa img{
+.imagem-empresa img {
   width: 100px;
   height: 100px;
-  object-fit:cover;
+  object-fit: cover;
   border-radius: 100%;
-  border: 1px solid rgb(100, 100, 100);
+  background-color: white;
+
+  border: none;
 }
 
-.imagem-empresa .icon-foto{
+.imagem-empresa .icon-foto {
   font-size: 30px;
   color: rgb(118, 114, 114);
 }
 
-
 aside {
   display: none;
-  background-color:#f1eded;
+  background-color: #f1eded;
   width: 40%;
   padding: 25px;
   height: 100%;
@@ -107,54 +105,51 @@ aside {
   top: 0;
 }
 aside::-webkit-scrollbar {
-  width: 10px;              
+  width: 10px;
 }
 
 aside::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255);     
+  background: rgb(255, 255, 255);
 }
 
 aside::-webkit-scrollbar-thumb {
-  background-color: rgba(117, 117, 117, 0.807);    
-  border-radius: 30px;      
-  border: 3px solid rgb(253, 253,253);}
+  background-color: rgba(117, 117, 117, 0.807);
+  border-radius: 30px;
+  border: 3px solid rgb(253, 253, 253);
+}
 
 .toogle .menu {
   display: flex;
   align-items: center;
   gap: 10px;
- 
 }
 
 .toogle .menu .menu {
   display: flex;
   color: rgb(198, 8, 8);
   font-size: 35px;
-
 }
-.toogle:hover{
+.toogle:hover {
   cursor: pointer;
 }
-aside a{
+aside a {
   color: #010000;
   text-decoration: none;
   padding: 25px 50px 25px 0px;
- 
 }
-aside ul li{
+aside ul li {
   margin-top: 10px;
   border-bottom: #000000 solid 1px;
   padding: 10px;
-  
 }
 
-aside ul a:hover{
+aside ul a:hover {
   margin-left: 10px;
 }
 
-.card-email{
+.card-email {
   margin-top: 20px;
-  width:500px;
+  width: 500px;
   height: 100px;
   border: none;
   border-radius: 25px;
@@ -165,32 +160,34 @@ aside ul a:hover{
   padding: 15px;
 }
 
-.card-corpo-email{
+.card-corpo-email {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.card-itens-email{
+.card-itens-email {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-  
-.card .imagens-email{
+.card .imagens-email {
   display: flex;
   align-items: center;
-
-}
-
-.imagem-aluno-email{
   width: 80px;
   height: 80px;
-  border-radius: 50px;
-  margin-right: 10px;
+  border: 1px solid black;
 }
 
-.email-notificacao{
+.imagem-aluno-email {
+  width: 80px;
+  border-radius: 50px;
+  margin-right: 10px;
+
+  object-fit: cover;
+}
+
+.email-notificacao {
   font-size: 20px;
 }
