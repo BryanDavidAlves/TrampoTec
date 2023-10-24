@@ -136,26 +136,51 @@ require_once "./back-end/login/validador_acesso.php";
 
 
                                 <div class="carousel-item">
-                                    <h5>CONFIGURAÇÕES DE SENHA</h5>
+                                    <h5>CONFIGURAÇÕES DE ACESSO</h5>
                                     <div class="container">
 
-                                        <section class="disponibilidade" id="disponibilidade">
-                                            <section class="horarios">
-                                                <div class="input-disponibilidade">
-                                                    <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
+                                        <section class="configuracoes" id="configuracoes">
+
+                                            <div class="one-bar">
+
+                                                <h3>Email: </h3>
+                                                <h4>bryan@etec.sp.gov.br</h4>
+                                            </div>
+
+
+                                            <div class="two-bars">
+
+                                                <div class="bar">
+                                                    <h3 class="senha">SENHA ANTIGA:</h3>
+                                                    <input type="password" name = "senhaAntiga" placeholder="Digite sua senha atual">
+
+                                                    <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="horas">
-                                                    <div class="input-disponibilidade">
-                                                        <input class="primeiro-horario" type="time" name="" id="">
-                                                    </div>
-                                                    <h3>ATÉ</h3>
-                                                    <div class="input-disponibilidade">
-                                                        <input class="primeiro-horario" type="time" name="" id="">
-                                                    </div>
+                                                <div class="bar">
+                                                    <h3>REPITA: </h3>
+                                                    <input type="password" value="" placeholder="Repita sua senha atual">
+
+                                                    <!--fazer o js para possibilitar o edit-->
+                                                </div>
+                                            </div>
+                                            <div class="two-bars">
+
+                                                <div class="bar">
+                                                    <h3 class="senha">SENHA ATUAL:</h3>
+                                                    <input type="password" value="" placeholder="Digite sua nova senha ">
+
+                                                    <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                            </section>
+                                                <div class="bar">
+                                                    <h3>REPITA: </h3>
+                                                    <input type="password" placeholder="Repita sua nova senha">
+
+                                                    <!--fazer o js para possibilitar o edit-->
+                                                </div>
+                                            </div>
+
                                         </section>
                                     </div>
                                 </div>
