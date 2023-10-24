@@ -1,5 +1,6 @@
 <?php include('../../../dao/conexao.php');
 require_once "../login/validador_acesso.php";
+require_once "../login/valida_login.php";
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
     //passando todos os itens do post para as sua variaveis

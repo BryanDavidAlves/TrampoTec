@@ -114,6 +114,7 @@ require_once "./back-end/login/validador_acesso.php";
     <div class="container">
         <form id="language-form" action="back-end/cadastro/salvarCurriculoIdioma.php" method="post">
             <div class="language-container">
+                
                 <label for="idioma">Idioma:</label>
                 <select name="idioma">
                     <option value="ingles">Inglês</option>
