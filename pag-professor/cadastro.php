@@ -1,6 +1,12 @@
 <?php
 include '../dao/conexao.php';
 
+$querySelect = "SELECT * FROM  tb_curso  ORDER BY nome ASC";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +92,9 @@ include '../dao/conexao.php';
                                 <div class="align-input">
                                 <i class="fa-solid fa-layer-group fa-lg" style="color: #75777a;"></i>
                                 <select name="curso" id="">Escolha o seu curso
-                                    <option  >Desenvolvimento de Sistemas</option>
+                                <?php foreach ($resultado as $resultado) {?>
+                                    <option value="<?=$resultado[0]?>"><?=$resultado[1]?></option>
+                                <?php }?>
                                 </select>
                                 </div>
 

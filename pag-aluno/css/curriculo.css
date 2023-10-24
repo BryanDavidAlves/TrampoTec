@@ -63,7 +63,7 @@ h1 {
 }
 
 .carousel-item:nth-child(1) {
-    height: 420px;
+    height: auto;
 }
 
 .carousel-item:nth-child(2) {
@@ -125,6 +125,9 @@ linha para se mover, fazer animaçao futuramente no js
     font-size: 1.1rem;
     color: #fff;
     margin-left: 5px;
+}
+.one-bar:nth-child(5){
+    margin-top: 80px;
 }
 
 .two-bars h4 {

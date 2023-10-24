@@ -122,9 +122,6 @@ $resultado = $query->fetchAll();
 
                         </div>
                         <?php  } ?>
-
-                     
-
                     </div>
                 </section>
             </section>

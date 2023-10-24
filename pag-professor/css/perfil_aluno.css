@@ -82,6 +82,8 @@ main {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  line-height: 0;
+  gap: 3px;
 }
 .container-perfil .sobre-perfil .padrao-perfil {
   font-size: 1.3rem;
