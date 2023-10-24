@@ -1,84 +1,160 @@
-*{
-    
-}
-h1 {
-    color: #737373;
-    text-align: center;
-    font-size: 2rem;
-    padding-top: 10%;
-    margin-bottom: 10px;
-}
-.box {
+/* 
+.home{
+    margin-top: 4%;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    width: 100%;
-    flex-direction: column;
-}
-
-.cima-esquerda {
-    width: 15%;
-    position: absolute;
-    top: 9%;
-    left: 0;
-    z-index: -1;
-}
-
-.cima-direita {
-    width: 8%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-}
-.inicio{
-    justify-content: space-evenly;
-    width: 100%;
+    height: 80vh;
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
+    padding: 100px;
 }
-.left h2{
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
     font-size: 3rem;
-    text-shadow: 1px 4px 5px rgb(154, 154, 154);
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 2px;
+    line-height: 5rem;
 }
-.inicio img{
-    width: 90%;
+.home-text .text-h1{
+    font-size: 2.1rem;
+    line-height: 4rem;
 }
-.right, .left{
-    display: flex;
-    justify-content: center;
+.logo{
+    width: 500%;
+    height: 100%;
+    margin-right: 20%;
 }
-.left{
-    flex-direction: column;
-}
-.left a{
-    background-color: #0a3580;
-    color: #fff;
-    text-decoration: none;
-    width: 40%;
-    border-radius: 40px;
-    padding: 10px;
-    font-size: 1.5rem;
+
+
+      .btn{
+       
+        margin-left: 340%;
+        background-color: #d6c396;      
+          
+      }
+      body{
+    background-color:white;
+      }
+      .botao{
+    width: 110px;
+    height: 50px;
+    font-size: 18px;
+    position: absolute;
+    border-radius: 15px;
+    border: none;
+    top: 70%;
+    background-color:#1027ce;
     text-align: center;
-    margin-top: 50px;
-}
-.left a:nth-child(2){
-    background-color: #fff;
-    color: #0a3580;
-    border: 3px solid #0a3580;
-}
-.left span{
+    padding-top: 13px;
+    color: white;
+    font-weight: bold;
+      }
+      .curriculo{
+        width: 180px;
+        height: 50px;
+        font-size: 18px;
+        position: absolute;
+        border-radius: 15px;
+        border: none;
+        top: 70%;
+        background-color:#1027ce;
+        text-align: center;
+        padding-top: 13px;
+        color: white;
+        margin-left: 8%;
+        font-weight: bold;
+        } */
 
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
+      
+      .banner{
+          width: 80%;
+          height: 70%;
+          position: absolute;
+          top: 25%;
+          left: 150px;
+          color: #fff;
+      }
+      
+      .app-text{
+          width: 50%;
+          float: left;
+          padding-left: 50px;
+      }
+      
+      .app-text h3{
+          margin-top: 100px;
+          font-size: 17px;
+          color: #000;
+          font-weight: 400;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+      }
+      
+      .app-text h1{
+          font-size: 51px;
+          position: relative;
+          color: #000;
+          margin-top: 30px;
+          font-weight: 700;
+          line-height: 1;
+      }
+      
+      .app-text p{
+          font-size: 19px;
+          margin: 30px 30px 30px 0;
+          letter-spacing: 1px;
+          color: #000;
+          padding-right: 250px;
+      }
+      
+      .btn-group{
+          display: flex;
+          width: 100%;
+          position: relative;
+      }
+      
+      .btn-group .signup-btn{
+          cursor: pointer;
+          display: block;
+          color: #000;
+          text-align: center;
+          font-size: 15px;
+          font-weight: 700;
+          border-radius: 32px;
+          background-color: #ffa037;
+          padding: 15px 50px;
+      }
+      
+      .btn-group .play-btn{
+          margin-left: 40px;
+          display: inline-flex;
+      }
+      
+      .btn-group span{
+          color: #000;
+          font-size: 15px;
+          font-weight: 700;
+          margin: auto 20px;
+          cursor: pointer;
+      }
+      
+      .play-btn-inner{
+          height: 50px;
+          width: 50px;
+          border: 2px solid transparent;
+          border-radius: 50%;
+          background-color: #000;
+      }
+      
+      .play-btn-inner i{
+          padding: 15px 19px;
+          font-size: 16px;
+          cursor: pointer;
+      }
+      
+
+      
 
 
+      
+      

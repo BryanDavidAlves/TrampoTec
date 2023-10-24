@@ -47,7 +47,7 @@ if ($_POST) {
 
 
     $id = $conexao->lastInsertId();
-    header('Location: ../../index.php');
+    header('Location: ../../formulario2.php?primeiro=1');
 exit;
     }
 else{

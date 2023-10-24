@@ -68,6 +68,27 @@ require_once "./back-end/login/validador_acesso.php";
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        thead {
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    }
+
+    th {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    table {
+        background-color: rgba(247, 247, 247, 0.641);
+        border-radius: 20px;
+        width: 52%;
+    }
+    table td {
+    padding: 20px 5px 30px 5px;
+    text-align: center;
+    color: rgb(94, 94, 94);
+
+}
     </style>
 
 </head>
@@ -77,44 +98,61 @@ require_once "./back-end/login/validador_acesso.php";
     include('../pag-aluno/components/header.php');
     ?>
 <div class="container">
-        <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
-            <label for="nome">Nome:</label>
-            <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
-                      placeholder="Nome da Instituição">
-                      <option>Selecione uma Instituição</option>
-                                            <?php foreach ($etec as $etec) { ?>
-                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
-                                            <?php } ?>
-                                            </select></p>
+        <form id="language-form">
+            <div class="language-container">
+                <label for="idioma">Idioma:</label>
+                <select name="idioma">
+                    <option value="ingles">Inglês</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="frances">Francês</option>
+                    <option value="outro">Outro</option>
+                </select>
 
-
-            <label for="curso">Curso:</label>
-            <select class="input" placeholder="curso" name="curso" id="curso">
-                            <option value="">Selecione seu curso</option>
-                           
-                      </select>
-
-            <label for="periodo">Período:</label>
-            <select class="input" placeholder="periodo" name="periodo">
-                              <option value="">Selecione um período</option>
-                              <option value="">Vespertino</option>
-                              <option value="">Noturno</option>
-                              <option value="">Matutino</option>
-                              <option value="">Integral</option>
-                      </select>
-
-            <label for="carga_horaria">Carga Horária:</label>
-            <input type="number" id="carga_horaria" name="carga_horaria" required>
-
-            <label for="conclusao">Conclusão:</label>
-            <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
-
-            <input type="submit" value="Avançar">
+                <label for="nivel">Nível de Proficiência:</label>
+                <select name="nivel">
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="avancado">Avançado</option>
+                </select>
+            </div>
+            <button type="button" class="button" onclick="addLanguage()">Adicionar Novo Idioma</button>
+            <input type="submit" value="Avançar" class="button">
         </form>
     </div>
 
+<section class="etec">
+            <tbody class="infos" id="result">
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">IDIOMA</th>
+      <th scope="col">NÍVEL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td class="icone-table"> X <a
+            href=""><i
+                class="fa-solid fa-x" style="color: #000000;"></i></a>
+
+    </td>
+    </tr>
+    
+   
+  </tbody>
+</table>
+
+            </tbody>
+
+</section>
 
 </body>
 
 </html>
 <script src="js/funcoes.js"></script>
+
