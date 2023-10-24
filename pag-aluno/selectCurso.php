@@ -6,20 +6,6 @@ $etec = $_GET['nome-etec'];
 
 
 
-
-
-/* $query =$conexao->prepare("SELECT tb_curso_etec.fk_idEtec, tb_curso_etec.fk_idCurso , tb_curso.nome , tb_curso.idCurso
-FROM tb_curso_etec
-INNER JOIN tb_curso
-ON tb_vaga.fk_idCurso = tb_curso.idCurso WHERE fk_idEtec =: idEtecfk ORDER BY tb_curso.nome ASC " );
-
-$data = ['idEtecfk' => $etec];
-
-
-
-$query->execute($data); */
-
-
 $querySelect = "SELECT * FROM  tb_curso_etec WHERE fk_idEtec = $etec";
 
 $query = $conexao->prepare($querySelect);
