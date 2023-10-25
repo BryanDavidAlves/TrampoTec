@@ -46,7 +46,7 @@ $resultado = $query->fetchAll();
             <div class="secao-busca">
 
                 <sp an class="add-vaga"><a href="./cadastrar-vaga.php"><i class="fa-solid fa-circle-plus"></i></a>
-                    Cadastra Nova Vaga</sp>
+                    Cadastrar Nova Vaga</sp>
                 <div class="barra-pesquisa">
                     <input type="text" name="pesquisa" id="pesquisa" placeholder="">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>

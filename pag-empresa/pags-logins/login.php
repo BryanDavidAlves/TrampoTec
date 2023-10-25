@@ -82,9 +82,9 @@
                             }
                             ?><br>
                         <button type="submit" class="botao-agendar"> <h6 class="corBotao">LOGIN<h6> </button>
-                        <br><a class="link" href="./redefinir-senha.php"> esqueceu a senha ? </a>
+                        <br><a class="link" href="./redefinir-senha.php"> Esqueceu sua senha? </a>
                         <br>
-                        <a class="link" style="color: red;" href="./criar-login.php"> nao é cadastrado ? crie agora </a>
+                        <a class="link" style="color: red; height: 10px;" href="./criar-login.php"> Não tem cadastro? Cadastre-se agora! </a>
                     </div>
                            
                     </form>
