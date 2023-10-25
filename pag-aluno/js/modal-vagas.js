@@ -1,4 +1,4 @@
-/*var btn = document.getElementById ('btn')
+var btn = document.getElementById ('btn')
 function openModal(){
     alert ('Você se cadastrou na vaga')
     console.log (1)
@@ -18,4 +18,3 @@ button2.onclick = function () {
 button3.onclick = function () {
     modal.showModal()
 }
-*/

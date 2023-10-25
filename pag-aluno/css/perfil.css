@@ -6,113 +6,344 @@ h1 {
     margin-bottom: 50px;
 }
 
-.align {
+.infos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     position: absolute;
     width: 100%;
+    padding-bottom: 40px;
 }
 
-.align-grid {
-    display: grid;
-    grid-template-columns: 25% 75%;
-}
-
-.sobre-mim {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    height: 500px;
-}
-
-.perfil-img {
-    width: 150px;
-    border-radius: 8px;
-    border: #5662a2 solid 5px;
-    height: 150px;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
+.box {
+    width: 100%;
     display: block;
 }
 
-.perfil-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.perfil {
+.container {
+    margin-top: 30px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.one-bar {
+    display: flex;
+    padding: 15px;
+    margin: 5px 0px 5px 10px;
     width: 100%;
-    flex-direction: column;
-
+    align-items: baseline;
+    border-bottom: #0a3580 solid 3px;
+    
 }
-
-.perfil h3 {
-    text-align: center;
-    margin-top: 20px;
-    line-height: 20px;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-
-.perfil h4 {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
+.one-bar h4{
+    color: #000;
     font-weight: 600;
+}
+
+.two-bars {
+    display: flex;
+    justify-content: space-between;
+    width: 101%;
+    gap: 10px;
+    margin-right: 1%;
 
 }
 
-h4:nth-child(4) {
-    font-weight: 500;
-    color: #737373;
+.endereco .three-bars {
+    display: flex;
+    justify-content: space-between;
+    width: 101%;
+    gap: 10px;
+
+}
+.senha{
+    width: 160px;
+}
+.configuracoes input::placeholder{
+    font-weight: 400;
+    color: #000;
+}
+.three-bars .bar {
+    width: 30%;
+    text-align: start;
+}
+
+.carousel-item h5 {
+    margin-top: 10px;
+    text-align: center;
+    color: #000;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.carousel-item {
+    height: 350px;
+}
+
+
+.bar {
+    display: flex;
+    padding: 15px;
+    align-items: baseline;
+    width: 45%;
+    border-bottom: #0a3580 solid 3px;
+
+
+}
+
+
+
+.info-pessoal {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info-academica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.one-bar h3 {
+    font-size: 1.2rem;
+    color: #6a6a6a;
+
+    margin-right: 5px;
+}
+
+.two-bars,
+.three-bars h3 {
+    font-size: 1.2rem;
+    color: #6a6a6a;
+
+}
+
+.one-bar,
+.three-bars h3 {
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    margin-left: 5px;
+}
+.two-bars h3{
+    color: #6a6a6a;
+}
+.two-bars,
+.three-bars input {
+    font-size: 1.1rem;
+    color: #000;
+    margin-left: 5px;
+}
+
+.one-bar,
+.two-bars,
+.three-bars {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.endereco {
+    width: 77%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.configuracoes {
+    width: 80%;
+    justify-content: space-around;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.input-disponibilidade {
+    display: flex;
+    background-color: #0a3580;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+    width: 480px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.input-disponibilidade h3 {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.horas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.horas .input-disponibilidade {
+    width: 175px;
+    align-items: center;
+    justify-content: center;
+}
+
+.horas .input-disponibilidade input {
+    background-color: transparent;
+    padding: 5px;
+    border: none;
     font-size: 1rem;
 }
 
-.left {
-    border-right: 3px solid #5d5d5d;
-    border-left: 3px solid #5662a2;
-}
-
-
-.top {
-    border-bottom: 3px solid #5d5d5d;
-    height: 50%;
-    display: flex;
-
-    flex-direction: column;
-}
-
-.bottom {
-    height: 50%;
-    display: flex;
-   
-    flex-direction: column;
-}
-
-.top h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.bottom h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-    
-}
-
-.info-box {
+.btn-salvar, .btn-editar {
+    background-color: red;
+    width: 100px;
     padding: 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.btn-salvar{
+    display: none;
 }
 
-.info-box h3 {
-    margin-left: 10px;
+.btn-editar{
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.align-salvar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*.disponibilidade img{
+    
+    width: 700px
+}*/
+
+.cima-esquerda {
+    width: 12%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.cima-direita {
+    width: 8%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.btn-curso {
+    border: none;
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/*INPUT TELEFONE */
+.bar input {
+    background-color: transparent;
+    border: none;
     font-weight: 700;
+    color: #000;
+    width: 75%;
 }
 
-.info-box p {
-    margin-left: 5px;
+.one-bar span {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+.info-pessoal .two-bars span {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+.one-bar input {
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    width: 75%;
+    color: #000;
+}
+
+.titulo-nasc {
+    width: 155px;
+}
+
+
+
+.one-bar i:hover {
+    scale: 1.2;
+}
+
+.two-bars i:hover {
+    scale: 1.2;
+}
+
+.three-bars i:hover {
+    scale: 1.2;
+}
+
+
+/*-------*/
+
+
+.tipo-hab i {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.adc-hab {
+    background-color: red;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.primeiro-horario {
+    color: #fff;
+}
+
+.horarios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
