@@ -55,7 +55,6 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label for="periodo">Período:</label>
                         <select name="periodo" id="periodo">
-                            <option selected value="">Qualquer</option>
                             <option value="">Manhã</option>
                             <option value="">Tarde</option>
                             <option value="">Noite</option>
@@ -72,7 +71,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Curso:</label>
                         <select class="option-curso" name="" id="">
-                            <option selected value="">Qualquer</option>
+                            
                             <option value="">Desenvolvimento de Sistemas</option>
                             <option value="">Administração</option>
                             <option value="">Nutrição</option>
@@ -81,7 +80,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Área:</label>
                         <select name="" id="">
-                            <option selected value="">Qualquer</option>
+                            
                             <option value="">Area 1</option>
                             <option value="">Area 2</option>
                             <option value="">Area 3</option>
@@ -90,7 +89,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Salário:</label>
                         <select name="" id="">
-                            <option selected value="">Qualquer</option>
+                            
                             <option value="">500,00 R$ - 1000,00 R$</option>
                             <option value="">1000,00 R$ - 1500,00 R$</option>
                             <option value="">1500,00 R$ - 2000,00 R$</option>
