@@ -1,6 +1,14 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
+include '../dao/conexao.php';
 
+$querySelect ="SELECT tb_vaga.idVaga, tb_vaga.nome, tb_vaga.cidade, tb_vaga.bairro, tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome,   tb_vaga.periodo, tb_vaga.area,  tb_vaga.descricao, tb_vaga.inicio, tb_vaga.termino  
+FROM tb_vaga
+INNER JOIN tb_curso
+ON tb_vaga.fk_idCurso = tb_curso.idCurso";
+
+$query = $conexao->query($querySelect);
+$resultado = $query->fetchAll();
 
 
 

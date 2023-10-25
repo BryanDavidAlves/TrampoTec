@@ -1,11 +1,7 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
 include ('../dao/conexao.php');
-$querySelect = "SELECT * FROM  tb_etec ";
-
-$query = $conexao->query($querySelect);
-
-$etec = $query->fetchAll();
+$aluno_id = $_SESSION['idAluno'];
 
 
 ?>
@@ -103,7 +99,7 @@ require_once "./back-end/login/validador_acesso.php";
     ?>
 <div class="container">
     <div class="formulario">
-        <form action="processar_formulario.php" id="knowledge-form" method="POST">
+        <form action="back-end/cadastro/salvarCurriculoConhecimento.php" id="knowledge-form" method="POST">
             
         <label for="conhecimentos">Conhecimentos:</label>
                 <input type="text" id="conhecimentos" name="conhecimentos" placeholder="Digite um conhecimento">
@@ -111,14 +107,14 @@ require_once "./back-end/login/validador_acesso.php";
                 <br>
                 <label for="habilidades">Habilidades:</label>
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+                
                 <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
                 <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
 
-                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btncheck2">Organização</label>
 
-                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btncheck3">Empatia</label>
+           
                 </div>
                 <br>
         <input type="submit" value="Finalizar">
@@ -133,10 +129,37 @@ require_once "./back-end/login/validador_acesso.php";
     </tr>
   </thead>
   <tbody>
+    <?php
+   
+    $querySelect = "SELECT * FROM  tb_conhecimento_aluno WHERE fk_idAluno = $aluno_id ";
+
+    $query = $conexao->query($querySelect);
+    
+    $conhecimentoId = $query->fetchAll();
+
+        
+    
+    foreach( $conhecimentoId as  $conhecimentoId) {
+      
+       $idCon = $conhecimentoId[0];
+      
+        $querySelect = "SELECT * FROM  tb_conhecimento WHERE idConhecimento = $idCon  ";
+
+        $query = $conexao->query($querySelect);
+        
+        $nome = $query->fetchAll();
+    
+        foreach($nome as $nome ) {
+        ?>
     <tr>
-      <td>Mark</td>
+      <td><?=$nome[1]?></td>
+      <td class="icone-table"> <a href="back-end/crudConhecimento/conhecimento-delete.php?id=<?=$nome[0]?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                    
+                            </td>
+
 
     </tr>
+    <?php  } }  ?>
   </tbody>
 </table>
         </div>
