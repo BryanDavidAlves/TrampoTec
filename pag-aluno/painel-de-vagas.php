@@ -1,15 +1,6 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
-include '../dao/conexao.php';
 
-
-$querySelect ="SELECT tb_vaga.idVaga, tb_vaga.nome, tb_vaga.cidade, tb_vaga.bairro, tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome,   tb_vaga.periodo, tb_vaga.area,  tb_vaga.descricao, tb_vaga.inicio, tb_vaga.termino  
-FROM tb_vaga
-INNER JOIN tb_curso
-ON tb_vaga.fk_idCurso = tb_curso.idCurso";
-
-$query = $conexao->query($querySelect);
-$resultado = $query->fetchAll();
 
 
 
@@ -22,12 +13,16 @@ $resultado = $query->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vagas.css">
+
     <title>Pagina de Vagas</title>
     
     <style>
+        .box{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+
+        }
     .align-cards {
     display: flex;
     width: 720px;
@@ -51,42 +46,29 @@ $resultado = $query->fetchAll();
   margin-left: 8%;
   margin-top: 8%;
 }
-
-.profileImage {
-  background: linear-gradient(to right,rgb(54, 54, 54),rgb(32, 32, 32));
-  margin-top: 20px;
-  width: 170px;
-  height: 170px;
+.circle {
+    margin-left: 20%;
+    margin-top: 20%;
+  background-color: #aaa;
   border-radius: 50%;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.329);
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
 }
 
-.textContainer {
+.circle img {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  text-align: left;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  height: 100%;
+}
+a{
+    margin-top: 3%;
+    margin-left: 26%;
 }
 
-.name {
-  font-size: 0.9em;
-  font-weight: 600;
-  color: white;
-  letter-spacing: 0.5px;
-}
 
-.profile {
-  font-size: 0.84em;
-  color: rgb(194, 194, 194);
-  letter-spacing: 0.2px;
-}
-
-.card:hover {
-  background-color: rgb(43, 43, 43);
-  transition-duration: .5s;
-}
     </style>
 </head>
 
@@ -96,13 +78,11 @@ $resultado = $query->fetchAll();
     include('../pag-aluno/components/header.php');
     ?>
  
-    <main id="main">
 
         <div class="box">
-            <h1>PAINEL DE VAGAS</h1>
-            <!-- <div class="control">-->
 
-            <section class="filtro">
+
+            <!-- <section class="filtro">
                 <form action="">
                     <span class="icone-filtro">
                         <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
@@ -116,7 +96,7 @@ $resultado = $query->fetchAll();
                             <option value="">Tarde</option>
                             <option value="">Noite</option>
                         </select>
-                    </span>
+                    </span> -->
                     <!--<span class="option-filter">
                             <label>Horário</label>
                             <select name="periodo" id="periodo">
@@ -125,7 +105,7 @@ $resultado = $query->fetchAll();
                                 <option value="">Noite</option>
                             </select>
                         </span>-->
-                    <span class="option-filter">
+                    <!-- <span class="option-filter">
                         <label>Curso:</label>
                         <select class="option-curso" name="" id="">
                             
@@ -151,19 +131,17 @@ $resultado = $query->fetchAll();
                             <option value="">1000,00 R$ - 1500,00 R$</option>
                             <option value="">1500,00 R$ - 2000,00 R$</option>
                         </select>
-                    </span>
-                    <input class="btn-filtro" type="submit" name="" id="">
+                    </span> -->
+                    <!-- <input class="btn-filtro" type="submit" name="" id="">
                 </form>
-            </section>
+            </section> -->
             <section class="container">
                 <section class="perfil">
-                    <div class="div-img">
-                        <img src="img/aluno-form.png" alt="">
-                    </div>
+                <div class="circle">
+                <img src="./img/img-perfil.jpg">
+                </div>
                     <a href="perfil.php">PERFIL</a>
                 </section>
-
-                <section class="vagas">
                     <div class="align-cards">
                         <?php foreach($resultado as $resultado) { ?> 
                         <div class="cards">
@@ -179,9 +157,9 @@ $resultado = $query->fetchAll();
                         </div>
                         <?php  } ?>
                     </div>
-                </section>
+
             </section>
-            <!--</div>-->
+            </div>
         </div>
 
 
