@@ -77,48 +77,17 @@ require_once "./back-end/login/validador_acesso.php";
     include('../pag-aluno/components/header.php');
     ?>
 <div class="container">
-        <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
-            <label for="nome">Nome:</label>
-            <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
-                      placeholder="Nome da Instituição">
-                      <option>Selecione uma Instituição</option>
-                                            <?php foreach ($etec as $etec) { ?>
-                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
-                                            <?php } ?>
-                                            </select></p>
+        <form action="processar_formulario.php" method="POST">
+            
+        <label for="habilidades">Habilidades:</label>
+        <input type="text" id="habilidades" name="habilidades" placeholder="Informe suas habilidades separadas por vírgulas">
+        <label for="conhecimentos">Conhecimentos Adicionais:</label>
+        <input type="text" id="conhecimentos" name="conhecimentos" placeholder="Informe seus conhecimentos adicionais..." required>
 
+        <label for="disponibilidade">Horário de Disponibilidade:</label>
+        <input class="input" placeholder="horario"  name="uname" type="time">
 
-            <label for="curso">Curso:</label>
-            <select class="input" placeholder="curso" name="curso" id="curso">
-                            <option value="">Selecione seu curso</option>
-                           
-                      </select>
-
-            <label for="periodo">Período:</label>
-            <select class="input" placeholder="periodo" name="periodo">
-                              <option value="">Selecione um período</option>
-                              <option value="">Vespertino</option>
-                              <option value="">Noturno</option>
-                              <option value="">Matutino</option>
-                              <option value="">Integral</option>
-                      </select>
-                      <select class="input" placeholder="semestre" name="semestre">
-                              <option value="1">1 SEMESTRE</option>
-                              <option value="2">2 SEMESTRE</option>
-                              <option value="3">3 SEMESTRE</option>
-                              <option value="4">4 SEMESTRE</option>
-                              <option value="5">5 SEMESTRE</option>
-                              <option value="6">6 SEMESTRE</option>
-                            
-                      </select>
-
-            <label for="carga_horaria">Carga Horária:</label>
-            <input type="number" id="carga_horaria" name="duracao" required>
-
-            <label for="conclusao">Conclusão:</label>
-            <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
-
-            <input type="submit" value="Avançar">
+        <input type="submit" value="Finalizar">
         </form>
     </div>
 

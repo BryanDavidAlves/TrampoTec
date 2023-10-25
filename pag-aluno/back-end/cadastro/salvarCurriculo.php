@@ -9,8 +9,6 @@ if ($_POST) {
     $duracao = trim($_POST['duracao']);
     $periodo = trim($_POST['periodo']);
     $conclusao = trim($_POST['conclusao']);
-    $inicio = trim($_POST['inicio']);
-    $termino = trim($_POST['termino']); 
    
     $aluno_id = $_SESSION['idAluno'];
 
@@ -47,7 +45,7 @@ if ($_POST) {
 
 
     $id = $conexao->lastInsertId();
-    header('Location: ../../index.php');
+    header('Location: ../../formulario2.php?primeiro=1');
 exit;
     }
 else{

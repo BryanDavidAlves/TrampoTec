@@ -15,7 +15,7 @@ h1 {
     /*justify-content: end; para deixar o pedido de cartas fixo*/
     justify-content: center;
     gap: 200px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .pedido-carta {
