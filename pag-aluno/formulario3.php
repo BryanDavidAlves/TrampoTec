@@ -33,14 +33,25 @@ require_once "./back-end/login/validador_acesso.php";
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
         }
+
+        .form-container {
+            width: 40%;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
 
         label {
             display: block;
@@ -68,6 +79,20 @@ require_once "./back-end/login/validador_acesso.php";
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        .tela{
+            border-radius: 30px;
+            height: 290px;
+            width: 250px;
+        }
+        th{
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        td{
+            text-align: center;
+            font-size: 15px;
+        }
     </style>
 
 </head>
@@ -77,18 +102,45 @@ require_once "./back-end/login/validador_acesso.php";
     include('../pag-aluno/components/header.php');
     ?>
 <div class="container">
-        <form action="processar_formulario.php" method="POST">
+    <div class="formulario">
+        <form action="processar_formulario.php" id="knowledge-form" method="POST">
             
-        <label for="habilidades">Habilidades:</label>
-        <input type="text" id="habilidades" name="habilidades" placeholder="Informe suas habilidades separadas por vírgulas">
-        <label for="conhecimentos">Conhecimentos Adicionais:</label>
-        <input type="text" id="conhecimentos" name="conhecimentos" placeholder="Informe seus conhecimentos adicionais..." required>
+        <label for="conhecimentos">Conhecimentos:</label>
+                <input type="text" id="conhecimentos" name="conhecimentos" placeholder="Digite um conhecimento">
+                <button type="submit" class="button">Adicionar Novo Conhecimento</button>
+                <br>
+                <label for="habilidades">Habilidades:</label>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
 
-        <label for="disponibilidade">Horário de Disponibilidade:</label>
-        <input class="input" placeholder="horario"  name="uname" type="time">
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck2">Organização</label>
 
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck3">Empatia</label>
+                </div>
+                <br>
         <input type="submit" value="Finalizar">
         </form>
+    </div>
+
+        <div class="tela">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Conhecimentos selecionados:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+
+    </tr>
+  </tbody>
+</table>
+        </div>
+
     </div>
 
 
@@ -96,3 +148,4 @@ require_once "./back-end/login/validador_acesso.php";
 
 </html>
 <script src="js/funcoes.js"></script>
+<script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
