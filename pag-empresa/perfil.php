@@ -182,7 +182,9 @@ $resultado = $query->fetchAll();
     </main>
 
 
-    <script src="./js/java-empresa.js"></script>
+    <script src="./js/java-empresa.js">
+        
+    </script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 

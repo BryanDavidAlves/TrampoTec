@@ -1,4 +1,5 @@
 <?php
+require_once "./back-end/login/validador_acesso.php";
 include('../Dao/conexao.php');
 $querySelect = "SELECT * FROM tb_recomendacao";
 $resultado = $conexao->query($querySelect);
