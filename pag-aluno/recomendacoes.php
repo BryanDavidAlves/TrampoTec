@@ -20,6 +20,7 @@ require_once "./back-end/login/validador_acesso.php";
     include('../pag-aluno/components/header.php');
     include('../pag-aluno/components/sidebar.php');
     ?>
+
     <main id="main">
 
         <div class="align">
@@ -44,7 +45,7 @@ require_once "./back-end/login/validador_acesso.php";
                         <input class="btn" type="submit" value="ENVIAR">
                     </form>
                 </section>
-                
+
                 <section class="cartas">
                     <div class="card-carta">
                         <section class="header-card">

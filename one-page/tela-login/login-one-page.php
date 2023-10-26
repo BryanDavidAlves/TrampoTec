@@ -41,7 +41,7 @@
 
 
                                 <div class="barra-agendar">
-                                    <a href="../../pag-etec/pags-login-etec/login.php">    <button type="submit" placeholder="">Etec</button></a>
+                                    <a href="../../pag-adm/login.php">    <button type="submit" placeholder="">Administrador</button></a>
                                 </div>
 
 
