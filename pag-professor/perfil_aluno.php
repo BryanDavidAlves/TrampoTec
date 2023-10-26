@@ -1,27 +1,29 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 require_once "./back-end/login/validador_acesso.php";
 
-$cliente_id =  $_SESSION['idProfessor'];
-
+$cliente_id = $_SESSION['idProfessor'];
+$id = ['idAluno'];
 $querySelect = "SELECT * FROM tb_indicacao WHERE fk_idProfessor ";
 $resultado = $conexao->query($querySelect);
 $indicacao = $resultado->fetchAll();
-
-
 
 $querySelect = "SELECT tb_professor.* , tb_professor_etec.* , tb_etec.*, tb_indicacao.*
 FROM tb_professor
 INNER JOIN tb_professor_etec ON tb_professor_etec.fk_idProfessor = tb_professor.idProfessor
 INNER JOIN tb_etec ON tb_etec.idEtec = tb_professor_etec.fk_idEtec
 INNER JOIN tb_indicacao ON tb_indicacao.fk_idProfessor = tb_professor.idProfessor
-    WHERE tb_professor.idProfessor = '$cliente_id'   
+    WHERE tb_professor.idProfessor = '$cliente_id'
 ";
-    $resultado1 = $conexao->query($querySelect);
-    $ResuInner = $resultado1->fetchAll();
+$resultado1 = $conexao->query($querySelect);
+$ResuInner = $resultado1->fetchAll();
 
+$querySelect = "SELECT * FROM tb_aluno
 
+    ";
+$resultado2 = $conexao->query($querySelect);
+$ResuInner2 = $resultado2->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -41,8 +43,8 @@ INNER JOIN tb_indicacao ON tb_indicacao.fk_idProfessor = tb_professor.idProfesso
 <body>
     <?php
 include '../pag-professor/components/sidebar.php'
-    
-    ?>
+
+?>
 
     <main>
         <div>
@@ -54,21 +56,20 @@ include '../pag-professor/components/sidebar.php'
             <div class="img-cima">
                 <img src="img/fundo 2.png" alt="">
             </div>
-
+            <?php foreach ($ResuInner2 as $ResuInner2) {?>
             <div class="container-perfil">
                 <div class="img-perfil">
-                    <img src="img/bryan.jpg" alt="">
+                    <img src="../pag-aluno/fotosAluno/perfil/<?=$ResuInner2[13] != "" ? $ResuInner2[13] : '';?>" alt="">
                 </div>
 
                 <div class="sobre-perfil">
                     <p class="padrao-perfil">Nome</p>
-                    <p class="nome-perfil">Bryan</p>
+                    <p class="nome-perfil"><?=$ResuInner2[3]?></p>
 
                     <p class="padrao-perfil">Email</p>
-                    <p class="nome-perfil">bryan.alves44@etec.sp.gov.br</p>
+                    <p class="nome-perfil"><?=$ResuInner2[1]?></p>
 
-                    <p class="padrao-perfil">Cursos</p>
-                    <p class="nome-perfil">Desenvolvimento de Sistemas</p>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -77,9 +78,9 @@ include '../pag-professor/components/sidebar.php'
 
 
         <section class="cartas">
-            <?php foreach ($ResuInner as $ResuInner) { ?>
+            <?php foreach ($ResuInner as $ResuInner) {?>
 
-                
+
 
                 <div class="card-carta">
                     <section class="header-card">
@@ -94,7 +95,7 @@ include '../pag-professor/components/sidebar.php'
                         </span>
                     </section>
                     <h3 class="titulo-recomendacao">CARTA DE RECOMENDAÇÃO</h3>
-                    <section class="conteudo-card">            
+                    <section class="conteudo-card">
 
                         <p>
                         <?=$ResuInner[14]?>
@@ -103,7 +104,7 @@ include '../pag-professor/components/sidebar.php'
                 </div>
 
                 </div>
-            <?php } ?>
+            <?php }?>
         </section>
 
 
