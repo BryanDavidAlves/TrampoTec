@@ -351,7 +351,18 @@ a {
 
   display: flex;
   align-items: center;
+
   justify-content: start;
+}
+.select-curso {
+  height: 40px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+}
+.invalid-feedback {
+  width: 300px;
+  word-break: break-all;
+  font-size: 0.7rem;
 }
 .form-group-login {
   flex-direction: column;
