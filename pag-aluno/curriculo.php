@@ -43,7 +43,7 @@ require_once "./back-end/login/validador_acesso.php";
     include '../pag-aluno/components/sidebar.php';
     ?>
 
-<div class="align">
+<div class="align-tudo">
     <div class="align-tabela">
         <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
             <label for="nome">Instituição:</label>
@@ -87,10 +87,12 @@ require_once "./back-end/login/validador_acesso.php";
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
             <input type="submit" value="Avançar">
+            <button class="button">
             <a href="formulario2.php" >Proximo</a>
+            </button>
         </form>
 
-        <section class="cartas">
+        <!--<section class="cartas">
                     <div class="card-carta">
                         <section class="header-card">
                             <h4>Curso Cadastrado</h4>
@@ -127,7 +129,7 @@ require_once "./back-end/login/validador_acesso.php";
                         
                     </div>
                     
-                </section>
+                </section>-->
         </div>
     </div>
 

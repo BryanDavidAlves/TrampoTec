@@ -1,11 +1,12 @@
 body {
   font-family: Arial, sans-serif;
+
 }
 
 form {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px;
-  height: 580px;
+  height: 620px;
   border-radius: 10px;
   padding: 20px;
 }
@@ -19,14 +20,16 @@ form {
 .align-tabela {
   display: flex;
   gap: 200px;
-  
-  
+
+
 }
-h4{
+
+h4 {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 label {
   display: block;
   margin-top: 10px;
@@ -54,6 +57,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
 .card-carta {
   background-color: rgb(232, 232, 232);
   width: 420px;
@@ -61,12 +65,14 @@ input[type="submit"]:hover {
   border-radius: 32px;
   box-shadow: 0px 20px 18px -10px #9b9b9b;
 }
-.cartas{
+
+.cartas {
   display: flex;
   flex-direction: column;
   gap: 50px;
   margin-bottom: 50px;
 }
+
 .header-card {
   display: flex;
   flex-direction: column;
@@ -92,7 +98,8 @@ input[type="submit"]:hover {
 .prof {
   letter-spacing: 0.5px;
 }
-.titulo-recomendacao{
+
+.titulo-recomendacao {
   text-align: center;
   font-weight: 800;
   font-size: 0.8rem;
@@ -108,16 +115,62 @@ input[type="submit"]:hover {
   line-height: 20px;
   letter-spacing: 0.5px;
 }
-.cima-esquerda{
+
+.cima-esquerda {
   width: 20%;
   position: absolute;
   top: 10%;
   z-index: 0;
 }
-.cima-direita{
+
+.cima-direita {
   width: 13%;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
+}
+
+.align-tudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  overflow: scroll;
+  padding: 200px 0px 100px 0px;
+}
+
+button {
+  padding: 11px;
+  border-radius: 15px;
+  border: 1px solid #0a3580;
+  background-color: #0a3580;
+  width: 200px;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s all ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: white;
+  color: #0a3580;
+  transition: 0.2s all ease-in-out;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover a {
+  color: #0a3580;
+  transition: 0.2s all ease-in-out;
 }
