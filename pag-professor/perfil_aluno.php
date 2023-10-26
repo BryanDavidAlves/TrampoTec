@@ -19,10 +19,10 @@ INNER JOIN tb_indicacao ON tb_indicacao.fk_idProfessor = tb_professor.idProfesso
 $resultado1 = $conexao->query($querySelect);
 $ResuInner = $resultado1->fetchAll();
 
-$querySelect = "SELECT * FROM tb_aluno
+$querySelect1 = "SELECT * FROM tb_aluno
 
     ";
-$resultado2 = $conexao->query($querySelect);
+$resultado2 = $conexao->query($querySelect1);
 $ResuInner2 = $resultado2->fetchAll();
 
 ?>
@@ -104,8 +104,9 @@ include '../pag-professor/components/sidebar.php'
                 </div>
 
                 </div>
-            <?php }?>
+
         </section>
+        <?php }?>
 
 
 
