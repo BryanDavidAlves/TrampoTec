@@ -91,7 +91,7 @@ $resultado = $query->fetchAll();
                             <div class="form-group">
                                 <div class="align-input">
                                 <i class="fa-solid fa-layer-group fa-lg" style="color: #75777a;"></i>
-                                <select name="curso" id="">Escolha o seu curso
+                                <select name="curso" class="select-curso" id="">Escolha o seu curso
                                 <?php foreach ($resultado as $resultado) {?>
                                     <option value="<?=$resultado[0]?>"><?=$resultado[1]?></option>
                                 <?php }?>

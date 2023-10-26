@@ -1,4 +1,4 @@
-<?php
+    <?php
 include '../../../dao/conexao.php';
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 if ($_POST) {
@@ -7,7 +7,6 @@ if ($_POST) {
     $email = trim($_POST['email']);
     $senha = trim($_POST['senha']);
     $curso = trim($_POST['curso']);
-
     $novo_nome = trim($_POST['foto_usuario']);
 
     echo empty($_FILES['foto']['size']);
