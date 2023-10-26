@@ -1,6 +1,3 @@
-*{
-    
-}
 h1 {
     color: #737373;
     text-align: center;
@@ -81,4 +78,84 @@ h1 {
     justify-content: space-evenly;
 }
 
+.text-danger{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+dialog{
+    background-color: #0a3580;
+    box-shadow: 0px 0px 20px 150000px  rgba(0, 0, 0, 0.307);
+    height: 70vh;
+    width: 50vw;
+    border-radius: 10px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#closeModal:hover {
+    scale: 1.1;
+    background-color: white;
 
+}
+
+#closeModal i {
+    font-size: 2rem;
+}
+#closeModal {
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+    border-radius: 10px;
+}
+.header-modal {
+    display: flex;
+    width: 100%;
+    
+}
+.container-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+.container-modal h3{
+    color: #fff;
+    text-shadow: 2px 3px 2px black;
+    letter-spacing: 1px;
+    font-size: 4.5rem;
+    font-weight: 800px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 30px;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.349);
+}
+.container-modal p{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 2px 3px 2px black;
+
+}
+h4{
+    text-align: end;
+    width: 45vw;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 2px 3px 2px black;
+}
+.btn-modal{
+    width: 80%;
+    height: 80px;
+    border-radius: 10px;
+    border: black;
+}

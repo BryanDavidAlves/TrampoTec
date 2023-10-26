@@ -17,9 +17,10 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-include '../pag-aluno/components/header.php';
-include '../pag-aluno/components/sidebar.php';
-?>
+    include('../pag-aluno/components/header.php');
+    include('../pag-aluno/components/sidebar.php');
+    ?>
+
     <main id="main">
 
         <div class="align">

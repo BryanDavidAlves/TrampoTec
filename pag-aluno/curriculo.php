@@ -7,6 +7,11 @@ $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
+$aluno_id = $_SESSION['idAluno'];
+
+
+
+
 ?>
 <?php
 require_once "./back-end/login/validador_acesso.php";
@@ -34,11 +39,11 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-include '../pag-aluno/components/header.php';
-include '../pag-aluno/components/sidebar.php';
-?>
+    include '../pag-aluno/components/header.php';
+    include '../pag-aluno/components/sidebar.php';
+    ?>
 
-<div class="align">
+<div class="align-tudo">
     <div class="align-tabela">
         <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
             <label for="nome">Instituição:</label>
@@ -82,10 +87,12 @@ include '../pag-aluno/components/sidebar.php';
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
             <input type="submit" value="Avançar">
-            <a class="poximo" href="formulario2.php">Proximo</a>
+            <button class="button">
+            <a href="formulario2.php" >Proximo</a>
+            </button>
         </form>
 
-       <!--  <section class="cartas">
+        <!--<section class="cartas">
                     <div class="card-carta">
                         <section class="header-card">
                             <h4>Curso Cadastrado</h4>
@@ -119,10 +126,10 @@ include '../pag-aluno/components/sidebar.php';
                                 <h3>Conclusão:</h3>
                                 <p>Dezembro</p>
                             </span>
-
+                        
                     </div>
-
-                </section> -->
+                    
+                </section>-->
         </div>
     </div>
 
