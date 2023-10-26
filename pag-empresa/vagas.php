@@ -2,13 +2,6 @@
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 
-$querySelect = "SELECT * FROM  tb_vaga ";
-$query = $conexao->query($querySelect);
-$resultado = $query->fetchAll();
-
-$querySelect = "SELECT * FROM  tb_vaga ";
-$query = $conexao->query($querySelect);
-$resultados = $query->fetchAll();
 
 $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga, tb_vaga.nome, tb_vaga.descricao , tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem, tb_perfil_empresa.departamento, tb_perfil_empresa.anoFundacao, tb_requisito.requisito
 FROM tb_vaga
@@ -53,15 +46,12 @@ foreach ($result as $vaga) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
-
-    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>TrampoTec</title>
@@ -69,9 +59,9 @@ foreach ($result as $vaga) {
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php'?>
-    <?php include '../pag-empresa/componentes/email.php'?>
-    <?php include '../pag-empresa/componentes/notificacao.php'?>
+    <?php include '../pag-empresa/componentes/sidebar.php' ?>
+    <?php include '../pag-empresa/componentes/email.php' ?>
+    <?php include '../pag-empresa/componentes/notificacao.php' ?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -136,149 +126,125 @@ foreach ($result as $vaga) {
                         <th>AREA</th>
                         <th>PERIODO</th>
                         <th>INFORMAÇÕES</th>
-                        <th></th>
+                        <th> </th>
                     </tr>
                 </thead>
-                <?php foreach ($vagas as $vaga) {?>
-
-                    <dialog id="vermais" class="ver-mais">
-
-                        <div class="vermais-body">
-                            <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
-                            <div class="vermais-align">
-
-                                <div class="vermais-infos">
-                                    <h3>Descricao:</h3>
-                                    <p id="descricao">
-
-                                    </p>
-                                </div>
-
-                                <div class="vermais-infos">
-                                    <h3>Requisito:</h3>
-
-                                    <p>
-
-                                    </p>
-                                </div>
-
-
-
-                            </div>
-
-
-                        </div>
-                    </dialog>
-
-                    <tbody>
-
+                <tbody>
+                    <?php foreach ($vagas as $vaga) { ?>
                         <tr class="infos">
-                            <td class="table">
-                                <?=$vaga['idVaga']?>
+                            <td>
+                                <?= $vaga['idVaga'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['nome']?>
+                            <td>
+                                <?= $vaga['nome'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['cidade']?>
+                            <td>
+                                <?= $vaga['cidade'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['bairro']?>
+                            <td>
+                                <?= $vaga['bairro'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['tipoTrabalho']?>
+                            <td>
+                                <?= $vaga['tipoTrabalho'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['salario']?>
+                            <td>
+                                <?= $vaga['salario'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['curso']?>
+                            <td>
+                                <?= $vaga['curso'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['area']?>
+                            <td>
+                                <?= $vaga['area'] ?>
                             </td>
-                            <td class="table">
-                                <?=$vaga['periodo']?>
+                            <td>
+                                <?= $vaga['periodo'] ?>
                             </td>
 
-
-
-                            <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-<?=$vaga['idVaga']?>">
-                                VER INFORMAÇÕES
-                                </button></td>
+                            <td>
+                                <a style="color: blue; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-<?= $vaga['idVaga'] ?>"> VER MAIS </a>
+                            </td>
 
                             <td class="icone-table">
-                                <div class="icons">
-                                    <form>
-                                        <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
-                                        <input type="hidden" value="">
 
-                                    </form>
-                            <td class="icone-table">
+                                <form>
+                                    <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
+                                </form>
 
-                                <a href="./beck-end/crudVaga/vaga-delete.php?id=<?=$vaga['idVaga']?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
-                            </td>
-                            </div>
+
+                                <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+
+
                             </td>
                         </tr>
 
-                    <?php }?>
+                    <?php } ?>
 
-                    </tbody>
+                </tbody>
             </table>
 
         </section>
 
-                    <?php
+        <?php foreach ($vagas as $vaga) { ?>
 
-foreach ($vagas as $vaga) {
-
-    ?>
-
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="modal-<?=$vaga['idVaga']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">INFORMAÇÕES</h1>
-
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <?php
-echo '<p>' . $vaga['nome'] . '</p>';
-
-    echo '<p>' . $vaga['descricao'] . '</p>';
-    echo '<p>' . $vaga['curso'] . '</p>';
-    echo '<p>' . $vaga['tipoTrabalho'] . '</p>';
-    echo '<p>' . $vaga['salario'] . '</p>';
-    echo '<p>' . $vaga['empresa'] . '</p>';
-
-    echo '<p>' . $vaga['departamento'] . '</p>';
-    echo '<p>' . $vaga['anoFundacao'] . '</p>';
-    echo '<p>' . $vaga['requisito'] . '</p>';
-    ?>
-
+            <div class="modal fade" id="modal-<?= $vaga['idVaga'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">INFORMAÇÕES DA VAGA</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <span> <h5>Nome da empresa:</h5><?= $vaga['empresa'] ?></span>
+                            <span> <h5>Departamento :</h5> <?= $vaga['departamento'] ?></span>
+                            <span> <h5>Requisitos:</h5> <?= $vaga['requisito'] ?></span>
+                            <span><h5>Nome da vaga:</h5><?= $vaga['nome'] ?></span>
+                            <span> <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?></span>
+                            <span> <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?></span>
+                            <span> <h5>Tipo de trabalho:</h5><?= $vaga['tipoTrabalho'] ?></span>
+                            <span> <h5>Salario:</h5><?= $vaga['salario'] ?></span>
+                 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <?php
+        <?php } ?>
 
-}
-?>
+        <!--   
+                <dialog id="vermais" class="ver-mais">
+
+            <div class="vermais-body">
+                <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
+                <div class="vermais-align">
+
+                    <div class="vermais-infos">
+                        <h3>Descricao:</h3>
+                        <p id="descricao">
+
+                        </p>
+                    </div>
+
+                    <div class="vermais-infos">
+                        <h3>Requisito:</h3>
+
+                        <p>
+
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </dialog>
+    -->
 
 
 
     </main>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
-
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 
 </html>

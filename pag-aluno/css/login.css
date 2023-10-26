@@ -227,7 +227,7 @@ input:focus {
 }
 
 .div-input {
-  border: 1px solid black;
+  border: none;
   width: 100%;
   margin-top: 18px;
   margin-bottom: 28px;
@@ -377,8 +377,27 @@ a {
   border-bottom: 1px solid black;
   font-family: "Oswald", sans-serif;
   color: black;
-  width: 100%;
+  width: 250px;
 }
+
+.div-input .is-invalid {
+  border: 2px solid red;
+  display: flex !important;
+}
+.div-input + small {
+  color: red;
+  margin-top: 10px;
+  font-size: 12px;
+  width: 100%;
+  display: none;
+}
+.div-input .is-invalid + small {
+  display: flex !important;
+}
+.is-invalid {
+  display: flex !important;
+}
+
 .form-group-login .align-input-login {
   display: flex;
   align-items: center;
@@ -397,6 +416,7 @@ a {
   border-bottom: 1px solid black;
   font-family: "Oswald", sans-serif;
   letter-spacing: 2px;
+  width: 250px;
 }
 .form-group .align-input {
   display: flex;
