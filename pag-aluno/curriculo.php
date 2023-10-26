@@ -30,65 +30,17 @@ require_once "./back-end/login/validador_acesso.php";
 
     <title>Meu Curriculo</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .align {
-            display:"flex";
-            justify-content:"center";
-            align-items:"center";
-            width:"100%";
-            height:"100%";
-            position: fixed;
-        }
-        .container .align-tabelas{
-
-            display:"flex";
-            justify-content:"center";
-            align-items:"center";
-            width:"100%";
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-
 </head>
 
 <body>
     <?php
-include '../pag-aluno/components/header.php';
-?>
+    include '../pag-aluno/components/header.php';
+    ?>
+
 <div class="align">
-    <div class="align-tabelas">
+    <div class="align-tabela">
         <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
-            <label for="nome">Nome:</label>
+            <label for="nome">Instituição:</label>
             <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
                       placeholder="Nome da Instituição">
                       <option>Selecione uma Instituição</option>
@@ -130,6 +82,45 @@ include '../pag-aluno/components/header.php';
 
             <input type="submit" value="Avançar">
         </form>
+
+        <section class="cartas">
+                    <div class="card-carta">
+                        <section class="header-card">
+                            <h4>Curso Cadastrado</h4>
+                        </section>
+                        <span class="prof">
+                                <h3>ETEC:</h3>
+                                <p>Etec de Guaianases</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Curso:</h3>
+                                <p>Desenvolvimento De Sistemas</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Periodo:</h3>
+                                <p>Vespertino</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Semestre:</h3>
+                                <p>1 Semestre</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Carga Horária:</h3>
+                                <p>1 Semestre</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Conclusão:</h3>
+                                <p>Dezembro</p>
+                            </span>
+                        
+                    </div>
+                    
+                </section>
         </div>
     </div>
 
