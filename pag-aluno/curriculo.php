@@ -88,7 +88,7 @@ require_once "./back-end/login/validador_acesso.php";
 
             <input type="submit" value="Adicionar Curso">
             
-            <a href="formulario2.php" class="button">Proximo</a>
+            <a href="formulario2.php" class="button">Proximo</a> 
 
         </form>
 
