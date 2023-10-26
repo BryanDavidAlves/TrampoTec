@@ -34,9 +34,9 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include '../pag-aluno/components/header.php';
-    include '../pag-aluno/components/sidebar.php';
-    ?>
+include '../pag-aluno/components/header.php';
+include '../pag-aluno/components/sidebar.php';
+?>
 
 <div class="align">
     <div class="align-tabela">
@@ -119,9 +119,9 @@ require_once "./back-end/login/validador_acesso.php";
                                 <h3>Conclusão:</h3>
                                 <p>Dezembro</p>
                             </span>
-                        
+
                     </div>
-                    
+
                 </section> -->
         </div>
     </div>
