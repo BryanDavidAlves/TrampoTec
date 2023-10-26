@@ -7,8 +7,6 @@ $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
-$aluno_id = $_SESSION['idAluno'];
-
 ?>
 <?php
 require_once "./back-end/login/validador_acesso.php";
@@ -84,10 +82,10 @@ include '../pag-aluno/components/sidebar.php';
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
             <input type="submit" value="Avançar">
-            <a href="formulario2.php" >Proximo</a>
+            <a class="poximo" href="formulario2.php">Proximo</a>
         </form>
 
-        <section class="cartas">
+       <!--  <section class="cartas">
                     <div class="card-carta">
                         <section class="header-card">
                             <h4>Curso Cadastrado</h4>
@@ -124,7 +122,7 @@ include '../pag-aluno/components/sidebar.php';
 
                     </div>
 
-                </section>
+                </section> -->
         </div>
     </div>
 
