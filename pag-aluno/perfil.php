@@ -101,7 +101,7 @@ include '../pag-aluno/components/header.php';
                                                 <span>
                                                     <h3>LOGRADOURO:</h3>
                                                     <input id="inputLogradouro" type="text" disabled
-                                                        value="<?=$resultado[13]?>" name="logradouro">
+                                                        value="<?=$resultado[6]?>" name="logradouro">
                                                 </span>
 
                                             </div>
@@ -110,7 +110,7 @@ include '../pag-aluno/components/header.php';
                                                 <div class="bar">
                                                     <h3>BAIRRO:</h3>
                                                     <input id="inputBairro" type="text" disabled
-                                                        value="<?=$resultado[6]?>" name="bairro">
+                                                        value="<?=$resultado[9]?>" name="bairro">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
