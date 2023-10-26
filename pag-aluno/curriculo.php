@@ -7,6 +7,9 @@ $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
+$aluno_id = $_SESSION['idAluno'];
+
+
 
 
 ?>
