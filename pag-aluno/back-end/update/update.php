@@ -8,7 +8,7 @@ if ($_POST) {
     $id = trim($_POST['id']);
     $senha = trim($_POST['senha']);
     $nome = trim($_POST['nome']);
-    $data_nasc = trim($_POST['data-nasc']);
+    $data_nasc = trim($_POST['nasc-aluno']);
     $cpf = trim($_POST['cdp-aluno']);
     $telefone = trim($_POST['telefone']);
     $logradouro = trim($_POST['logradouro']);

@@ -57,6 +57,16 @@ require_once "./back-end/login/validador_acesso.php";
     </main>
     <?php
     include('../pag-aluno/components/sidebar.php');
+
+    
+    if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
+        ?>
+        <div class="text-danger">
+           
+        </div>
+        <?php
+    }
+    
     ?>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
