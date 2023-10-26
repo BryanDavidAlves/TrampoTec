@@ -14,18 +14,18 @@ if (isset($_POST['busca'])) {
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
-if ($resultado > 0  ) {
+if ($resultado > 0) {
     foreach ($resultado as $resultado) {
         echo
         '<tr class="infos">
          <td class="table-id">' . $resultado[0] . '</td>',
-        '<td class="table-nome-empresa">' . $resultado[1] . '</td>',
-        '<td class="table-email-empresa">' . $resultado[3] . '</td>',
-        '<td class="table-cnpj">' . $resultado[1] . '</td>',
-        '<td class="table-cep">' . $resultado[4] . '</td>',
-        '<td class="table-nome-curso">' . $resultado[5] . '</td>',
-        '<td class="table-numero">' . $resultado[7] . '</td>',
-        '<td class="table-estado">' . $resultado[9] . '</td>',
+        '<td class="table-nome-empresa">' . $resultado[3] . '</td>',
+        '<td class="table-email-empresa">' . $resultado[1] . '</td>',
+        '<td class="table-cnpj">' . $resultado[4] . '</td>',
+        '<td class="table-cep">' . $resultado[5] . '</td>',
+        '<td class="table-nome-curso">' . $resultado[7] . '</td>',
+        '<td class="table-numero">' . $resultado[9] . '</td>',
+        '<td class="table-estado">' . $resultado[8] . '</td>',
         '<td class="icone-table">
             <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=' . $resultado[0] . '"><i
                     class="fa-solid fa-check" style="color: #ff0000;"></i></a>

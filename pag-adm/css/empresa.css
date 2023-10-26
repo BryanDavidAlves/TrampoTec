@@ -222,6 +222,10 @@ tr:nth-last-child(1){
 .table-numero{
     width: 200px;
 }
+
+.table-estado{
+    width: 200px;
+}
 .icone-table{
     display: flex;
     flex-direction: column;

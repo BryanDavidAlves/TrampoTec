@@ -90,6 +90,8 @@ include '../pag-adm/components/sidebar-adm.php';
                     <th>CEP</th>
                     <th>NÚMERO</th>
                     <th>ESTADO</th>
+                    <th>BAIRRO</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody class="infos" id="result">

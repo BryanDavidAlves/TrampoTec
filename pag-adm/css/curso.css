@@ -215,7 +215,7 @@ table {
 }
 
 table td {
-    padding: 20px 10px 5px 15px;
+    padding: 30px 10px 30px 15px;
     text-align: start;
     color: rgb(94, 94, 94);
     text-align: center;
@@ -234,6 +234,9 @@ tr:nth-last-child(1) {
 
 .icone-table i {
     margin: 3px;
+    color: red;
+    font-size: 15px;
+  
 }
 
 .cima {
@@ -297,3 +300,12 @@ tr:nth-last-child(1) {
     font-weight: 600;
     
 }
+
+.text-center form button {
+    border: none;
+    }
+    
+    .text-center form button i{
+    font-size: 25px;
+    color: rgb(70, 68, 68);
+    }

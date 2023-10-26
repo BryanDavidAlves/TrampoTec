@@ -35,7 +35,7 @@ if ($resultado > 0) {
             </td>
         <td class="icone-table">
 
-        <a href="./back-end/crudCurso/delete-curso.php?id='.$resultado[0].'"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+        <a href="./back-end/crudCurso/delete-curso.php?id='.$resultado[0].'"> <i class="fa-solid fa-x"></i></a>
         </td>
     </tr>';
     }
