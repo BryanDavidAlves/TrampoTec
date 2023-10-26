@@ -8,11 +8,21 @@ require_once "./back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
@@ -21,7 +31,7 @@ require_once "./back-end/login/validador_acesso.php";
     <title>Pagina de Vagas</title>
 </head>
 
-<body>
+<body onload="alert()">
     <img class="cima-esquerda" src="img/icon4.png" alt="">
     <img class="cima-direita" src="img/icon2.png" alt="">
     <!--
@@ -58,20 +68,33 @@ require_once "./back-end/login/validador_acesso.php";
     <?php
     include('../pag-aluno/components/sidebar.php');
 
-    
+
     if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
         ?>
-        <div class="text-danger">
-           
-        </div>
+
         <?php
     }
-    
+
     ?>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/modal-vagas.js"></script>
+    <script src="../assets/js/sweetalert2@11.js"></script>
+    <script>
+        var closeModal = document.getElementById("closeModal")
+        closeModal.onclick = function () {
+            modal.close()
+        }
+        function alert() {
+            Swal.fire(
+                'Parabéns!',
+                'seja bem Vindo ao TrampoTec!',
+                'success'
+            )
+        }
+    </script>
 
+    <script src="../assets/js/sweetalert2@11.js"></script>
 </body>
 
 </html>
