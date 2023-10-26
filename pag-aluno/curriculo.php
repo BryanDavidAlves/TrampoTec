@@ -26,7 +26,7 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/formulario2.css">
+    <link rel="stylesheet" href="../pag-aluno/css/curriculo.css">
 
     <title>Meu Curriculo</title>
 
