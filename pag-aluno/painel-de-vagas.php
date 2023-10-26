@@ -17,12 +17,6 @@ $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
 
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
