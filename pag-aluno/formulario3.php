@@ -26,7 +26,7 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    
+
 
     <title>Meu Curriculo</title>
 
@@ -43,7 +43,7 @@ require_once "./back-end/login/validador_acesso.php";
             align-items: center;
             justify-content: center;
             margin-top: 2%;
-            
+
 
         }
 
@@ -133,6 +133,7 @@ require_once "./back-end/login/validador_acesso.php";
 </head>
 
 <body>
+
     <?php
     include('../pag-aluno/components/header.php');
     ?>
@@ -144,29 +145,58 @@ require_once "./back-end/login/validador_acesso.php";
                     <label for="conhecimentos">Conhecimentos:</label>
                     <input type="text" id="conhecimentos" name="conhecimentos" placeholder="Digite um conhecimento">
                     <button type="submit" class="button">Adicionar Novo Conhecimento</button>
-                    <br>
+                </form>
+                <br>
+                <form action="back-end/cadastro/salvarCurriculoHabilidade.php" method="post">
                     <label for="habilidades">Habilidades:</label>
                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
 
 
                         <div class="align-habilidade">
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off"  name="habilidades[]" value="4">
                             <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
+                            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" name="habilidades[]" value="1">
+                            <label class="btn btn-outline-primary" for="btncheck2">Comunicação</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
+                            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" name="habilidades[]" value="2">
+                            <label class="btn btn-outline-primary" for="btncheck3">Inteligência Emocional</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
+                            <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" name="habilidades[]" value="3">
+                            <label class="btn btn-outline-primary" for="btncheck4">Empatia</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
+                            <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" name="habilidades[]" value="5">
+                            <label class="btn btn-outline-primary" for="btncheck5">Pensamento Critico</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btncheck1">Trabalho em equipe</label>
+                            <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" name="habilidades[]" value="6">
+                            <label class="btn btn-outline-primary" for="btncheck6">Resolução de Conflitos</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" name="habilidades[]" value="7">
+                            <label class="btn btn-outline-primary" for="btncheck7">Adaptabilidade</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off" name="habilidades[]" value="8">
+                            <label class="btn btn-outline-primary" for="btncheck8">Criatividade</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off" name="habilidades[]" value="9">
+                            <label class="btn btn-outline-primary" for="btncheck9">Resiliência</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off" name="habilidades[]" value="10">
+                            <label class="btn btn-outline-primary" for="btncheck10">Autoconfiança</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off" name="habilidades[]" value="11">
+                            <label class="btn btn-outline-primary" for="btncheck11">Gerenciamento do Tempo</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off" name="habilidades[]" value="12">
+                            <label class="btn btn-outline-primary" for="btncheck12">Pensamento Analítico</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off" name="habilidades[]" value="13">
+                            <label class="btn btn-outline-primary" for="btncheck13">Autocontrole</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off" name="habilidades[]" value="14">
+                            <label class="btn btn-outline-primary" for="btncheck14">Tolêrancia</label>
+                        
+                            <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off" name="habilidades[]" value="15">
+                            <label class="btn btn-outline-primary" for="btncheck15">Organização</label>
                         </div>
 
 
