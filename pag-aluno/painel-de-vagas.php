@@ -24,7 +24,8 @@ $resultado = $query->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
@@ -118,10 +119,19 @@ $resultado = $query->fetchAll();
                                 <div class="localidade">
 
                                 </div>
-                                <h4><?= $resultado[23] ?> - <?= $resultado[9] ?></h4>
-                                <h4><?= $resultado[24] ?></h4>
-                                <h4><?= $resultado[25] ?></h4>
-                                <h4>R$ <?= $resultado[26] ?></h4>
+                                <h4>
+                                    <?= $resultado[23] ?> -
+                                    <?= $resultado[9] ?>
+                                </h4>
+                                <h4>
+                                    <?= $resultado[24] ?>
+                                </h4>
+                                <h4>
+                                    <?= $resultado[25] ?>
+                                </h4>
+                                <h4>R$
+                                    <?= $resultado[26] ?>
+                                </h4>
 
 
                                 <button id="btn1">Clique para mais informações</button>
@@ -139,14 +149,21 @@ $resultado = $query->fetchAll();
                                         <div class="div-img-modal">
 
 
-                                            <a><img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[10] ?>"></a>
+                                            <a><img class="img-modal"
+                                                    src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[10] ?>"></a>
 
 
                                         </div>
                                         <div class="sobre-empresa">
-                                            <h2><?= $resultado[3] ?></h2>
-                                            <h3><?= $resultado[13] ?></h3>
-                                            <h4>Desde <?= $resultado[15] ?></h4>
+                                            <h2>
+                                                <?= $resultado[3] ?>
+                                            </h2>
+                                            <h3>
+                                                <?= $resultado[13] ?>
+                                            </h3>
+                                            <h4>Desde
+                                                <?= $resultado[15] ?>
+                                            </h4>
                                         </div>
                                     </section>
                                     <div class="sobre-vaga">
@@ -159,9 +176,13 @@ $resultado = $query->fetchAll();
                                             </ul>
                                         </section>
                                         <section class="desc-vaga">
-                                            <h2><?= $resultado[31] ?></h2>
+                                            <h2>
+                                                <?= $resultado[31] ?>
+                                            </h2>
                                             <div>
-                                                <p><?= $resultado[27] ?></p>
+                                                <p>
+                                                    <?= $resultado[27] ?>
+                                                </p>
                                             </div>
                                         </section>
                                     </div>
@@ -171,7 +192,7 @@ $resultado = $query->fetchAll();
 
 
 
-                        <?php  } ?>
+                        <?php } ?>
 
                     </div>
                 </section>
@@ -203,19 +224,19 @@ $resultado = $query->fetchAll();
         var button3 = document.getElementById("btn3")
         var modal = document.getElementById("modal")
 
-        button1.onclick = function() {
+        button1.onclick = function () {
             modal.showModal()
         }
-        button2.onclick = function() {
+        button2.onclick = function () {
             modal.showModal()
         }
-        button3.onclick = function() {
+        button3.onclick = function () {
             modal.showModal()
         }
     </script>
     <script>
         var closeModal = document.getElementById("closeModal")
-        closeModal.onclick = function() {
+        closeModal.onclick = function () {
             modal.close()
         }
     </script>

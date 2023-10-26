@@ -1,7 +1,6 @@
 <?php
-require_once "./back-end/login/validador_acesso.php";
 include('../Dao/conexao.php');
-$querySelect = "SELECT * FROM tb_recomendacao";
+$querySelect = "SELECT * FROM tb_recomendacao WHERE Aprovado = 0 ";
 $resultado = $conexao->query($querySelect);
 $recomendacao = $resultado->fetchAll();
 
@@ -26,7 +25,7 @@ $recomendacao = $resultado->fetchAll();
 include '../pag-professor/components/sidebar.php';
 ?>
     <main class="main">
-        <span class="titulo-vagas">Indicaçoes para Alunos</span>
+        <span class="titulo-vagas">Indicaçoes Pendentes</span>
         <img src="" alt="">
         <div class="img-cima">
         <img src="img/fundo 2.png" alt="">
@@ -128,12 +127,12 @@ $nomeEtec = $id2[1];
 
       <div class="align-card-indicacao">
           <h5 class="title-indicacao">Indicar Aluno</h5>
-          <form class="" action="index.php">
+          <form method="POST" action="indicacao.php">
               <label for="destinatario">Destinatario</label>
-              <input type="email" name="email-professor" id="">
+              <input type="text" name="nomeAluno" id="nomeAluno">
               <br>
               <label for="mensagem">Mensagem</label>
-              <textarea name="texto-indicacao" id="" cols="30" rows="10"></textarea>
+              <textarea name="texto-indicacao" id="texto-indicacao" cols="30" rows="10"></textarea>
 
               <input type="submit" value="Enviar" class="botao-indicacao">
           </form>

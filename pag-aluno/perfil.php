@@ -77,7 +77,7 @@ include '../pag-aluno/components/header.php';
                                                 <div class="bar">
                                                     <h3>CELULAR:</h3>
                                                     <input id="inputCelular" type="text" disabled
-                                                        value="<?=$resultado[15]?>" name="telefone">
+                                                        value="<?=$resultado[16]?>" name="telefone">
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
@@ -117,7 +117,7 @@ include '../pag-aluno/components/header.php';
 
                                                 <div class="bar">
                                                     <h3>ESTADO: </h3>
-                                                    <input id="inputEstado" type="text" disabled value="<?=$resultado[10]?>" name="estado">
+                                                    <input id="inputEstado" type="text" disabled value="<?=$resultado[7]?>" name="estado">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
@@ -126,7 +126,7 @@ include '../pag-aluno/components/header.php';
 
                                                 <div class="bar">
                                                     <h3>CEP:</h3>
-                                                    <input id="inputCep" type="text" disabled value="<?=$resultado[12]?>" name="cep">
+                                                    <input id="inputCep" type="text" disabled value="<?=$resultado[9]?>" name="cep">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>

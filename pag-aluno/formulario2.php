@@ -41,76 +41,75 @@ require_once "./back-end/login/validador_acesso.php";
 </head>
 
 <body>
-    <?php
-include '../pag-aluno/components/header.php';
-include '../pag-aluno/components/sidebar.php';
-?>
 
-<div class="align-tudo">
+    <?php
+    include '../pag-aluno/components/header.php';
+    include '../pag-aluno/components/sidebar.php';
+    ?>
+
+    <div class="align-tudo">
         <form id="language-form" action="back-end/cadastro/salvarCurriculoIdioma.php" method="post">
 
 
-                <label for="idioma">Idioma:</label>
-                <select name="idioma">
-                    <option value="ingles">Inglês</option>
-                    <option value="espanhol">Espanhol</option>
-                    <option value="frances">Francês</option>
-                    <option value="outro">Outro</option>
+            <label for="idioma">Idioma:</label>
+            <select name="idioma">
+                <option value="ingles">Inglês</option>
+                <option value="espanhol">Espanhol</option>
+                <option value="frances">Francês</option>
+                <option value="outro">Outro</option>
 
-                </select>
+            </select>
 
-                <label for="nivel">Nível de Proficiência:</label>
-                <select name="nivel">
-                    <option value="iniciante">Iniciante</option>
-                    <option value="intermediario">Intermediário</option>
-                    <option value="avancado">Avançado</option>
-                    <option value="outro">outro</option>
-                </select>
+            <label for="nivel">Nível de Proficiência:</label>
+            <select name="nivel">
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="avancado">Avançado</option>
+                <option value="outro">outro</option>
+            </select>
 
             <div class="align-button">
-            <button type="submit" class="button">Adicionar Novo Idioma</button>
-            <a href="formulario3.php" class="link">Avançar<a>
+                <button type="submit" class="button">Adicionar Novo Idioma</button>
+                <a href="formulario3.php" class="link">Avançar<a>
             </div>
 
-            </form>
-    <section class="etec">
-        <tbody class="infos" id="result">
-            <table class="table">
-                <thead>
-                    <tr>
-
-                        <th scope="col">IDIOMA</th>
-                        <th scope="col">NÍVEL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($idioma as $idioma) {?>
+        </form>
+        <section class="etec">
+            <tbody class="infos" id="result">
+                <table class="table">
+                    <thead>
                         <tr>
 
-
-                            <td>
-                                <?=$idioma[1]?>
-                            </td>
-                            <td>
-                                <?=$idioma[2]?>
-                            </td>
-                            <td class="icone-table"> <a href="back-end/crudIdioma/idioma-delete.php?id=<?=$idioma[0]?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
-
-                            </td>
-
+                            <th scope="col">IDIOMA</th>
+                            <th scope="col">NÍVEL</th>
                         </tr>
-                    <?php }?>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($idioma as $idioma) { ?>
+                            <tr>
 
 
-                </tbody>
-            </table>
+                                <td>
+                                    <?= $idioma[1] ?>
+                                </td>
+                                <td>
+                                    <?= $idioma[2] ?>
+                                </td>
+                                <td class="icone-table"> <a
+                                        href="back-end/crudIdioma/idioma-delete.php?id=<?= $idioma[0] ?>"><i
+                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
 
-        </tbody>
+                                </td>
 
-    </section>
+                            </tr>
+                        <?php } ?>
 
 
- </div>
+                    </tbody>
+                </table>
+            </tbody>
+        </section>
+    </div>
 
 
 
