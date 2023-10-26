@@ -31,7 +31,7 @@ require_once "./back-end/login/validador_acesso.php";
     <title>Pagina de Vagas</title>
 </head>
 
-<body onload="alert()">
+<body >
     <img class="cima-esquerda" src="img/icon4.png" alt="">
     <img class="cima-direita" src="img/icon2.png" alt="">
     <!--
@@ -71,7 +71,9 @@ require_once "./back-end/login/validador_acesso.php";
 
     if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
         ?>
+            <div >
 
+            </div>
         <?php
     }
 
