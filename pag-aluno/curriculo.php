@@ -86,10 +86,10 @@ require_once "./back-end/login/validador_acesso.php";
             <label for="conclusao">Conclusão:</label>
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
-            <input type="submit" value="Avançar">
-            <button class="button">
-            <a href="formulario2.php" >Proximo</a>
-            </button>
+            <input type="submit" value="Adicionar Curso">
+            
+            <a href="formulario2.php" class="button">Proximo</a>
+
         </form>
 
         <!--<section class="cartas">
