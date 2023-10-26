@@ -1,7 +1,6 @@
 <?php
 include '../../../dao/conexao.php';
 
-
 if (isset($_POST['busca'])) {
     $busca = $_POST['busca'];
     $campo = 0;
@@ -14,7 +13,7 @@ if (isset($_POST['busca'])) {
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
-if ($resultado > 0  ) {
+if ($resultado > 0) {
     foreach ($resultado as $resultado) {
         echo
         '<tr class="infos">
@@ -26,7 +25,7 @@ if ($resultado > 0  ) {
         '<td class="table-nome-curso">' . $resultado[5] . '</td>',
         '<td class="table-numero">' . $resultado[7] . '</td>',
         '<td class="table-estado">' . $resultado[9] . '</td>',
-        '<td class="icone-table">
+            '<td class="icone-table">
             <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=' . $resultado[0] . '"><i
                     class="fa-solid fa-check" style="color: #ff0000;"></i></a>
 
