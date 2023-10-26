@@ -7,6 +7,8 @@ $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
+
+
 ?>
 <?php
 require_once "./back-end/login/validador_acesso.php";
@@ -81,6 +83,7 @@ require_once "./back-end/login/validador_acesso.php";
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
             <input type="submit" value="Avançar">
+            <a href="formulario2.php" >Proximo</a>
         </form>
 
         <section class="cartas">
