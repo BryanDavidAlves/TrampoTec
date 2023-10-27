@@ -10,9 +10,7 @@ body{
     border-radius: 10px;
     width: 80%;
     position: relative;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    padding: 50px;
 }
 #nome-etec{
     height: 40px;

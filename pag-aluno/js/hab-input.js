@@ -65,6 +65,7 @@ function habInput() {
         }
         btnSalvar.style.display = 'flex';
         btnEditar.style.display = 'none';
+
         console.log("habilitar");
     } else {
         btnEditar.style.display = 'block';

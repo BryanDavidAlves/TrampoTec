@@ -23,41 +23,62 @@ if ($_POST) {
     $novo_nome = trim($_POST['imagem-perfil']);
     $novo_nome2 = trim($_POST['imagem-fundo']);
 
-    
-
-    $sql1 = " UPDATE tb_empresa SET
-                  email =  '$email' , 
-                  nome = '$nome' , 
+    if (!empty($novo_nome)) {
+        $sql1 = " UPDATE tb_empresa SET
+                  email =  '$email' ,
+                  nome = '$nome' ,
                   cnpj = '$cnpj',
-                  cep = '$cep', 
+                  cep = '$cep',
                   logradouro = '$logradouro' ,
                   numero = '$numero' ,
-                  bairro =  '$bairro' , 
+                  bairro =  '$bairro' ,
                   estado = '$estado' ,
                   imagem = '$novo_nome'
              WHERE idEmpresa='$id'
                 ";
+    } else {
+        $sql1 = " UPDATE tb_empresa SET
+        email =  '$email' ,
+        nome = '$nome' ,
+        cnpj = '$cnpj',
+        cep = '$cep',
+        logradouro = '$logradouro' ,
+        numero = '$numero' ,
+        bairro =  '$bairro' ,
+        estado = '$estado'
+
+   WHERE idEmpresa='$id'
+      ";
+    }
 
     $query1 = $conexao->prepare($sql1);
     $query1->execute();
 
     $sql2 = " UPDATE tb_telefone_empresa SET
-    
-                numeroTelefone = '$telefone'  
+
+                numeroTelefone = '$telefone'
 
             WHERE fk_idEmpresa='$id'
   ";
 
     $query2 = $conexao->prepare($sql2);
     $query2->execute();
-
-    $sql3 = " UPDATE tb_perfil_empresa SET
-                departamento =  '$departamento' , 
-                descricao = '$descricao' ,  
-                anoFundacao = '$ano' , 
+    if (!empty($novo_nome2)) {
+        $sql3 = " UPDATE tb_perfil_empresa SET
+                departamento =  '$departamento' ,
+                descricao = '$descricao' ,
+                anoFundacao = '$ano' ,
                 imagem = '$novo_nome2'
         WHERE fk_idEmpresa='$id'
 ";
+    } else {
+        $sql3 = " UPDATE tb_perfil_empresa SET
+    departamento =  '$departamento' ,
+    descricao = '$descricao' ,
+    anoFundacao = '$ano'
+WHERE fk_idEmpresa='$id'
+";
+    }
 
     $query3 = $conexao->prepare($sql3);
     $query3->execute();

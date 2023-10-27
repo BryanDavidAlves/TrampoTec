@@ -5,7 +5,7 @@ include '../dao/conexao.php';
 $querySelect = "SELECT * FROM tb_empresa WHERE aprovado = '1'";
 $resultado = $conexao->query($querySelect);
 $empresa = $resultado->fetchALL();
-$n_empresa = count($empresa);   
+$n_empresa = count($empresa);
 
 $querySelect = "SELECT * FROM tb_aluno";
 $resultado = $conexao->query($querySelect);
@@ -27,6 +27,8 @@ $resultado = $conexao->query($querySelect);
 $pendenteEm = $resultado->fetchALL();
 $n_pendenteEmpresa = count($pendenteEm);
 
+$total = $n_admin + $n_professor + $n_empresa + $n_aluno;
+
 ?>
 
 
@@ -45,8 +47,8 @@ $n_pendenteEmpresa = count($pendenteEm);
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <header>
         <h1>Dashboard</h1>
     </header>
@@ -65,7 +67,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                             <i id="empresas" class="fa-solid fa-building" "></i>
                         </div>
                         <h2>
-                            <?= $n_empresa ?>
+                            <?=$n_empresa?>
                         </h2>
                     </div>
                 </a>
@@ -76,7 +78,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                                         <i id="prof" class="fa-solid fa-chalkboard-user"></i>
                                     </div>
                                     <h2>
-                                        <?= $n_professor ?>
+                                        <?=$n_professor?>
                                     </h2>
                                 </div>
                 </a>
@@ -87,7 +89,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                             <i id="aluno" class="fa-solid fa-user" "></i>
                         </div>
                         <h2>
-                            <?= $n_aluno ?>
+                            <?=$n_aluno?>
                         </h2>
                     </div>
                 </a>
@@ -103,7 +105,7 @@ $n_pendenteEmpresa = count($pendenteEm);
                                 <i id="adm" class="fa-solid fa-user"></i>
                             </div>
                             <h2>
-                                <?= $n_admin ?>
+                                <?=$n_admin?>
                             </h2>
                         </div>
                     </a>
@@ -116,18 +118,18 @@ $n_pendenteEmpresa = count($pendenteEm);
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?= $n_pendenteEmpresa ?>
+                                <?=$n_pendenteEmpresa?>
                             </h2>
                         </div>
                     </a>
                     <a href="empresa.php?aprovado=0">
                         <div class="card">
                             <div class="header-card">
-                                <h3>Empresas Pendentes </h3>
+                                <h3>Total de Usúarios </h3>
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?= $n_pendenteEmpresa ?>
+                                <?=$total?>
                             </h2>
                         </div>
                     </a>
@@ -156,13 +158,14 @@ $n_pendenteEmpresa = count($pendenteEm);
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['empresas', <?= $n_empresa ?>],
-                ['alunos', <?= $n_aluno ?>],
-                ['professores', <?= $n_professor ?>]
+                ['Empresas', <?=$n_empresa?>],
+                ['Alunos', <?=$n_aluno?>],
+                ['Professores', <?=$n_professor?>],
+                ['Administradores', <?=$n_admin?>]
             ]);
 
             var options = {
-                title: 'usuarios totais cadastrados',
+                title: 'Usuarios Totais Cadastrados (<?=$total?>)',
                 pieHole: 0.2,
             };
 

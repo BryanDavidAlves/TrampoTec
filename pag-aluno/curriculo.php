@@ -1,13 +1,20 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
-include ('../dao/conexao.php');
+include '../dao/conexao.php';
 $querySelect = "SELECT * FROM  tb_etec ";
 
 $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
+$aluno_id = $_SESSION['idAluno'];
 
+
+
+
+?>
+<?php
+require_once "./back-end/login/validador_acesso.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,309 +22,119 @@ $etec = $query->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--link icone filtro-->
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/curriculo.css">
 
-
     <title>Meu Curriculo</title>
+
 </head>
 
 <body>
-    <img class="cima-esquerda" src="img/icon5.png" alt="">
-    <img class="cima-direita" src="img/icon2.png" alt="">
     <?php
-    include('../pag-aluno/components/header.php');
+    include '../pag-aluno/components/header.php';
+    include '../pag-aluno/components/sidebar.php';
     ?>
-    <main id="main">
 
-        <section class="infos">
-            <h1>CURRICULO</h1>
-            <div class="box">
-                <form action="back-end/cadastro/salvarCurriculo.php" method="post">
-                    <div id="carouselExampleDark" class="carousel slide">
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <h5>INFORMAÇÕES ACADEMICAS</h5>
-
-                                <div class="container">
-                                    <section id="info-academica" class="info-academica">
-                                    <div class="one-bar">
-                                            <h3>INSTITUIÇÃO:</h3>
-                                            <select class="form-control obrigatorio" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
-                                            <option>Selecione uma Instituição</option>
-                                            <?php foreach ($etec as $etec) { ?>
-                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
-                                            <?php } ?>
-                                            </select>
-                                        </div>
-                                       
-                                        <div class="one-bar">
-                                            <h3>CURSO:</h3>
-                                           <select name="curso" id="curso" class="form-control obrigatorio" required>
-                                                   <option>Selecione seu curso</option>
-                                           </select>
-                                        </div>
-
-                                        <div class="two-bars">
-
-                                            <div class="bar" required>
-                                                <h3>SEMESTRE:</h3>
-                                                <select name="semestre" class="form-control obrigatorio" >
-                                                <option value="1">1 SEMESTRE</option>
-                                                <option value="2">2 SEMESTRE</option>
-                                                <option value="3">3 SEMESTRE</option>
-                                                <option value="4">4 SEMESTRE</option>
-                                                <option value="5">5 SEMESTRE</option>
-                                                <option value="6">6 SEMESTRE</option>
-                                                </select>
-                                            </div>
-                                            <div class="bar" required>
-                                                <h3>DURAÇÃO:</h3>
-                                                <select name="duracao" class="form-control obrigatorio">
-                                                <option>1200 horas</option>
-                                                <option>1600 horas</option>
-                                                <option>800 horas</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="two-bars">
-
-                                            <div class="bar">
-                                                <h3>PERIODO:</h3>
-                                                <select name="periodo" id="" class="form-control obrigatorio" required>
-                                                    <option value="Manhã">Manhã</option>
-                                                    <option value="Tarde">Tarde</option>
-                                                    <option value="Noturno">Noturno</option>
-                                                    <option value="Periodo">Periodo</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="bar" required>
-                                                <h3>CONCLUSÃO:</h3>
-                                                <input name="conclusao" type="date" class="form-control obrigatorio">
-                                            </div>
-
-                                        </div>
-                                      
-
-                                        <button  type="submit" class="btn-curso" id="abrirCurso">Adicionar curso</button>
-                                    </section>
-                                </div>
+<div class="align-tudo">
+    <div class="align-tabela">
+        <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
+            <label for="nome">Instituição:</label>
+            <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
+                      placeholder="Nome da Instituição">
+                      <option>Selecione uma Instituição</option>
+                                            <?php foreach ($etec as $etec) {?>
+                                                <option value="<?=$etec[0]?>"><?=$etec[1]?></option>
+                                            <?php }?>
+                                            </select></p>
 
 
+            <label for="curso">Curso:</label>
+            <select class="input" placeholder="curso" name="curso" id="curso">
+                            <option value="">Selecione seu curso</option>
 
+                      </select>
 
-                            </div>
+            <label for="periodo">Período:</label>
+            <select class="input" placeholder="periodo" name="periodo">
+                              <option value="">Selecione um período</option>
+                              <option value="">Vespertino</option>
+                              <option value="">Noturno</option>
+                              <option value="">Matutino</option>
+                              <option value="">Integral</option>
+                      </select>
+                      <select class="input" placeholder="semestre" name="semestre">
+                              <option value="1">1 SEMESTRE</option>
+                              <option value="2">2 SEMESTRE</option>
+                              <option value="3">3 SEMESTRE</option>
+                              <option value="4">4 SEMESTRE</option>
+                              <option value="5">5 SEMESTRE</option>
+                              <option value="6">6 SEMESTRE</option>
 
-                            <div class="carousel-item">
-                                <h5>CONHECIMENTOS</h5>
-                                <div class="container">
-                                    <section class="conhecimento" id="conhecimento">
-                                        <section class="left">
-                                            <!--usar essa div para fazer o laço paro o select no banco (input-conhecimento)-->
-                                            <div class="input-conhecimento">
-                                                <span>
-                                                    <h3>IDIOMA: </h3>
-                                                    <select class="form-control obrigatorio" id="nome-etec" name="idioma" placeholder="Idioma">
-                                                        <option>Inglês</option>
-                                                        <option>Frncês</option>
-                                                        <option>Espanhol</option>
-                                                        <option>Alemão</option>
-                                                    </select>
-                                                </span>
-                                                <span>
-                                                    <h3>NIVEL: </h3>
-                                                    <select class="form-control obrigatorio" id="nome-etec" name="nivel" placeholder="Idioma">
-                                                        <option>BÁSICO</option>
-                                                        <option>INTERMEDIÁRIO</option>
-                                                        <option>AVANÇADO</option>
-                                                    </select>
-                                                </span>
-                                            </div>
+                      </select>
 
-                                            <button class="btn-conhecimento" id="abrirIdioma">Adicionar idioma</button>
+            <label for="carga_horaria">Carga Horária:</label>
+            <input type="number" id="carga_horaria" name="duracao" required>
 
-                                            <div class="input-hab">
-                                                <span class="align-hab" onclick="abrirHab()">
-                                                    <h3>HABILIDADE TECNOLÓGICAS </h3>
-                                                    <i class="fa-solid fa-caret-down" style="color: #fff;"></i>
-                                                </span>
-                                                <section class="drop-itens" id="habilidades">
-                                                    <span class="tipo-hab">
-                                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                    </span>
-                                                    <span class="tipo-hab">
-                                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                    </span>
-                                                    <span class="tipo-hab">
-                                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                    </span>
-                                                    <span class="tipo-hab">
-                                                        <p>Pacote Office</p><i class="fa-solid fa-xmark"></i></i>
-                                                    </span>
-                                                    <button class="adc-hab">Adicionar habilidade</button>
-                                                </section>
-                                            </div>
-                                        </section>
+            <label for="conclusao">Conclusão:</label>
+            <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
-                                        <section class="right">
-                                            <div class="box-text">
-                                                <label for="conhecimento-text">SOBRE MIM:</label>
-                                                <textarea rows="6" name="coonhecimento-text" id="conhecimento-text" placeholder="OPCIONAL"></textarea>
-                                            </div>
-                                        </section>
-                                    </section>
-                                </div>
-                            </div>
+            <input type="submit" value="Adicionar Curso">
+            
+            <a href="formulario2.php" class="button">Proximo</a> 
 
+        </form>
 
-                            <div class="carousel-item">
-                                <h5>DISPONIBILIDADE</h5>
-                                <div class="container">
+        <!--<section class="cartas">
+                    <div class="card-carta">
+                        <section class="header-card">
+                            <h4>Curso Cadastrado</h4>
+                        </section>
+                        <span class="prof">
+                                <h3>ETEC:</h3>
+                                <p>Etec de Guaianases</p>
+                            </span>
 
-                                    <section class="disponibilidade" id="disponibilidade">
-                                        <section class="horarios">
-                                            <div class="input-disponibilidade">
-                                                <h3>DISPONIBILIDADE DE HORÁRIO A PARTIR DAS:</h3>
-                                            </div>
+                            <span class="prof">
+                                <h3>Curso:</h3>
+                                <p>Desenvolvimento De Sistemas</p>
+                            </span>
 
-                                            <div class="horas">
-                                                <div class="input-disponibilidade">
-                                                    <input class="primeiro-horario" type="time" name="inicio" id="">
-                                                </div>
-                                                <h3>ATÉ</h3>
-                                                <div class="input-disponibilidade">
-                                                    <input class="primeiro-horario" type="time" name="termino" id="">
-                                                </div>
-                                            </div>
+                            <span class="prof">
+                                <h3>Periodo:</h3>
+                                <p>Vespertino</p>
+                            </span>
 
-                                        </section>
-                                    </section>
-                                </div>
-                            </div>
+                            <span class="prof">
+                                <h3>Semestre:</h3>
+                                <p>1 Semestre</p>
+                            </span>
 
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                                <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-left"></i>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                                <i style="color: #0a3580;font-size: 3rem;opacity: 100%;" class="fa-solid fa-chevron-right"></i>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                            <span class="prof">
+                                <h3>Carga Horária:</h3>
+                                <p>1 Semestre</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Conclusão:</h3>
+                                <p>Dezembro</p>
+                            </span>
+                        
                     </div>
-                </form>
-                <div class="align-salvar">
-                    <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                    <div class="btn-salvar">
-                        <i class="fa-solid fa-file-invoice" style="color: #ffffff;"></i>
-                        <input type="submit" value="SALVAR" name="" id="">
-                    </div>
-                </div>
-
-        </section>
+                    
+                </section>-->
+        </div>
+    </div>
 
 
-    </main>
-    <dialog id="modalIdioma">
-        <section id="container-modal" class="container-modal">
-            <div class="header-modal">
-                <button id="closeModalIdioma">
-                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                </button>
-            </div>
-            <h3 id="titulo-modal" class="titulo-modal">ADICIONAR UM NOVO IDIOMA</h3>
-            <form action="">
-                <label for="">IDIOMA:</label>
-                <input type="text" name="" id=""><br><br><br>
-                <label for="">NIVEL:</label>
-                <select name="" id="">
-                    <option value="">BÁSICO</option>
-                    <option value="">INTERMEDIÁRIO</option>
-                    <option value="">AVANÇADO</option>
-                </select><br><br><br>
-                <input class="btn-modal" id="btnIdioma" type="submit" value="ADICIONAR IDIOMA">
-            </form>
-    </dialog>
-
-    <dialog id="modalCurso">
-        <section class="container-modal">
-            <div class="header-modal">
-                <button id="closeModalCurso">
-                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                </button>
-            </div>
-            <h3 class="titulo-modal">ADICIONAR UM NOVO CURSO</h3>
-            <form action="">
-                <label for="">INSTITUIÇÃO</label>
-                <select name="" id="">
-                    <option value="">etec Guaianazes</option>
-                    <option value="">etec Poa</option>
-                    <option value="">etec Itaquera</option>
-                    <option value="">etec Cidade Tiradentes</option>
-                </select><br><br><br>
-                <label for="">TIPO DE CURSO</label>
-                <select name="" id="">
-                    <option>Ensino</option>
-                    <option>Curso Tecnico</option>
-                    <option>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
-                    <option>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
-                    <option>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
-                    <option>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
-                    <option>Especialização Técnica</option>
-                </select><br><br><br>
-                <label for="">NOME DO CURSO:</label>
-                <select name="" id="">
-                    <option value="">Desenvolviento de Sistemas</option>
-                    <option value="">Nutrição</option>
-                    <option value="">Administração</option>
-                </select><br><br><br>
-                <label for="">SEMESTRE QUE VOCÊ ESTA CURSANDO:</label>
-                <input type="number" name="" id=""><br><br><br>
-                <label for="">PERÍODO:</label>
-                <select name="" id="">
-                    <option value="">Vespertino</option>
-                    <option value="">Noturno</option>
-                    <option value="">Matutino</option>
-                    <option value="">Integral</option>
-                </select><br><br><br>
-                <label for="">DURAÇÃO (MESES):</label>
-                <input type="number"><br><br><br>
-                <label for="">CONCLUSÃO:</label>
-                <input type="date"><br><br><br>
-
-
-                <input class="btn-modal" id="btn" type="submit" value="ADICIONAR CURSO">
-            </form>
-        </section>
-    </dialog>
-
-    <?php
-    include('../pag-aluno/components/sidebar.php');
-    ?>
-    <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    <script src="js/troca-pag.js"></script>
-    <script src="js/abrir-hab.js"></script>
-    <script src="js/funcoes.js"></script>
-    <script src="js/modal-curriculo.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script>
-        var closeModalCurso = document.getElementById("closeModalCurso")
-        var closeModalIdioma = document.getElementById("closeModalIdioma")
-        closeModalCurso.onclick = function() {
-            modalCurso.close()
-        }
-        closeModalIdioma.onclick = function() {
-            modalIdioma.close()
-        }
-    </script>
 </body>
 
 </html>
+<script src="js/funcoes.js"></script>

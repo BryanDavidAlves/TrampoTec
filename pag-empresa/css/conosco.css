@@ -10,7 +10,7 @@ main {
 
 
 .cima{
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: -5;
@@ -18,7 +18,7 @@ main {
 }
 
 .baixo{
-  position:absolute;
+  position:fixed;
   bottom: 0;
   right: 0;
   z-index: -5;
