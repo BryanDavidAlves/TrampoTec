@@ -68,7 +68,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <h3>Total de Alunos</h3>
 
                             <h2>
-                                <?=$n_professor?>
+                                <?=$n_aluno?>
                             </h2>
                         </div>
                     </div>
@@ -101,15 +101,15 @@ include '../pag-adm/components/sidebar-adm.php';
             <div class="align-dados">
                 <div class="dados-empresa">
                 <p class="empresa-cadastrada">
-                    Total de Empresa Cadastradas
+                    Total de Empresas Cadastradas
                 </p>
-                <p class="dados">137</p>
+                <p class="dados"><?=$n_empresa?></p>
                 </div>
                 <div class="dados-empresa">
                 <p class="empresa-cadastrada">
                     Total de Professores Cadastrados
                 </p>
-                <p class="dados">30</p>
+                <p class="dados"><?=$n_professor?></p>
                 </div>
             </div>
         </div>

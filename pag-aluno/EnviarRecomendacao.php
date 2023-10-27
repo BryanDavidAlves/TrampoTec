@@ -40,9 +40,10 @@ $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
 
+$aprovado = 0;
 //inserindo todos os dados coletado no banco no campo recomendacao
-$sql3 = "INSERT INTO tb_recomendacao (recomendacao , fk_idProfessor , fk_idAluno ,fk_idEtec) VALUES
-( '$recomendacao','$professorNome','$cliente_id','$etecNome')";
+$sql3 = "INSERT INTO tb_recomendacao (recomendacao , fk_idProfessor , fk_idAluno ,fk_idEtec,Aprovado) VALUES
+( '$recomendacao','$professorNome','$cliente_id','$etecNome','$aprovado')";
 
 $query3 = $conexao->prepare($sql3);
 $query3->execute();

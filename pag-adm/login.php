@@ -29,19 +29,19 @@
                     <div class="item-form">
                         <label for="senha">SENHA</label>
                         <div class="div-input">
-                            <input type="password" name="senha" id="senha">
-                            <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
+                            <input type="password" name="senha" id="password">
+                            <i class="fa-solid fa-eye" id="icon" onclick="mostrarSenha()" style="color: #1f3251;"></i>
                         </div>
                     </div>
-                    <?php 
-                            if(isset($_GET['login']) && $_GET['login'] == "erro"){
-                            ?>
+                    <?php
+if (isset($_GET['login']) && $_GET['login'] == "erro") {
+    ?>
                             <div class="text-danger">
                                 Usuario ou senha Inválidos
-                            </div> 
-                            <?php  
-                            }
-                            ?>
+                            </div>
+                            <?php
+}
+?>
                     <button class="botao"><a href="../pag-adm/index.php" style="color: white">Entrar</a></button><!--<input class="botao" type="submit" value="Entrar">-->
                     <div class="remember">
                         <div>
@@ -55,6 +55,7 @@
             </div>
         </section>
     </main>
+    <script src="js/professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

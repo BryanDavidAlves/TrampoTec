@@ -10,11 +10,7 @@ INNER JOIN tb_professor ON tb_professor.fk_idCurso= tb_curso.idCurso
     WHERE tb_professor.idProfessor= '$cliente_id'
 ";
 
-$querySelect2 = "SELECT nome FROM tb_curso";
 
-$query2 = $conexao->query($querySelect2);
-
-$resultado2 = $query2->fetchAll();
 /*
 $querySelect = "SELECT tb_professor.* , tb_curso.*
 FROM tb_professor
@@ -94,16 +90,7 @@ include '../pag-professor/components/sidebar.php';
               <label for="mensagem">SENHA</label>
               <input type="text" name="senha" id="" value="<?=$resultado[3]?>" placeholder="<?=$resultado[3]?>">
 
-              <label for="mensagem">CURSO</label>
-
-              <select  id="" value="">
-              <?php foreach ($resultado2 as $resultado2) {?>
-
-              <option name="" value="<?=$resultado[8]?>"><?=$resultado2[0]?></option>
-
-              <?php }?>
-
-              </select>
+             
 
             <button type="submit"  class="botao-indicacao"   value="<?=$cliente_id?>" name="id">EDITAR</button>
           </form>
@@ -114,7 +101,7 @@ include '../pag-professor/components/sidebar.php';
     <div class="alinhar-perfil">
         <div class="imagem-perfil">
 
-            <img src="fotosProfessor/perfil/<?=$resultado[4] != "" ? $resultado[4] : '';?>"" alt="Foto de perfil" >
+            <img src="fotosProfessor/perfil/<?=$resultado[4] != "" ? $resultado[4] : '';?>" alt="Foto de perfil" >
         </div>
 
 

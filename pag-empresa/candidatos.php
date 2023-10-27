@@ -1,5 +1,15 @@
 <?php
+include '../dao/conexao.php';
 require_once "./beck-end/login/validador_acesso.php";
+
+$cliente_id = $_SESSION['idEmpresa'];
+
+$querySelect = "SELECT * FROM tb_aluno
+
+";
+
+$query = $conexao->query($querySelect);
+$resultado = $query->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,9 +25,9 @@ require_once "./beck-end/login/validador_acesso.php";
 
 <body>
 
-    <?php include('../pag-empresa/componentes/sidebar.php') ?>
-    <?php include('../pag-empresa/componentes/email.php') ?>
-    <?php include('../pag-empresa/componentes/notificacao.php') ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -70,7 +80,7 @@ require_once "./beck-end/login/validador_acesso.php";
                             <label for="">Data</label>
                             <input type="checkbox" name="" id="">
                         </div>
-                      
+
                         <div class="align-form-filtro">
                             <label for="">Area</label>
                             <input type="checkbox" name="" id="">
@@ -91,20 +101,20 @@ require_once "./beck-end/login/validador_acesso.php";
 
                         <th>NOME</th>
                         <th>VAGA</th>
-                        <th>ENTREVISTA</th>
+
                         <th>EMAIL</th>
-                        
+
                     </tr>
 
                 </thead>
 
                 <tbody>
-
+                <?php foreach ($resultado as $resultado) {?>
                     <tr class="infos">
-                        <td class="table-nome-candidato">Bryan David</td>
+                        <td class="table-nome-candidato"><?=$resultado[3]?></td>
                         <td class="table-email-candidato">Desenvolvimento de sistemas</td>
-                        <td class="table-cnpj">30/03 20:00 horas</td>
-                        <td class="table-cnpj">ByranZika123@gmail.com</td>
+
+                        <td class="table-cnpj"><?=$resultado[1]?></td>
                         <td class="icone-table">
                         <div class="icons">
                             <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
@@ -112,33 +122,8 @@ require_once "./beck-end/login/validador_acesso.php";
                         </div>
                         </td>
                     </tr>
+                    <?php }?>
 
-                    <tr class="infos">
-                        <td class="table-nome-candidato">Bryan David</td>
-                        <td class="table-email-candidato">Desenvolvimento de sistemas</td>
-                        <td class="table-cnpj">30/03 20:00 horas</td>
-                        <td class="table-cnpj">ByranZika123@gmail.com</td>
-                        <td class="icone-table">
-                        <div class="icons">
-                            <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-                            <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                        </div>
-                        </td>
-                    </tr>
-
-                    <tr class="infos">
-                        <td class="table-nome-candidato">Bryan David</td>
-                        <td class="table-email-candidato">Desenvolvimento de sistemas</td>
-                        <td class="table-cnpj">30/03 20:00 horas</td>
-                        <td class="table-cnpj">ByranZika123@gmail.com</td>
-                        <td class="icone-table">
-                        <div class="icons">
-                            <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-                            <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                        </div>
-                        </td>
-                    </tr>
-                    
                 </tbody>
 
 
