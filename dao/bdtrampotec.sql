@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Out-2023 às 02:33
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 26/10/2023 às 05:56
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,6 +55,9 @@ CREATE TABLE `tb_aluno` (
   `nome` varchar(60) NOT NULL,
   `cpf` char(11) NOT NULL,
   `dtNasc` date NOT NULL,
+  `logradouro` varchar(80) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `complemento` varchar(10) NOT NULL,
   `bairro` varchar(40) NOT NULL,
   `estado` varchar(20) NOT NULL,
   `cidade` varchar(40) NOT NULL,
@@ -66,8 +69,8 @@ CREATE TABLE `tb_aluno` (
 -- Despejando dados para a tabela `tb_aluno`
 --
 
-INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `bairro`, `estado`, `cidade`, `cep`, `etecDoAluno`, `duracaoCurso`, `periodoCurso`, `conclusaoCurso`, `matriculaCurso`, `experiencias`, `habilidades`, `sobreMim`, `imagem`) VALUES
-(7, 'laysamelmudes@gmail.com', '900p900P900p*', 'LAYSA COCA MELMUDES', '475.158.398', '2023-09-01', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ETEC ABDIAS DO NASCIMENTO', '', '', '0000-00-00', 0, NULL, '', '', 'ec71fadf9084fd41f62aaaeeca933bcd.png');
+INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `logradouro`, `numero`, `complemento`, `bairro`, `estado`, `cidade`, `cep`, `imagem`) VALUES
+(7, 'laysamelmudes@gmail.com', '900p900P900p*', 'LAYSA COCA MELMUDES', '475.158.398', '0000-00-00', 'Rua Antonio Soares Pais', 271, 'A-31', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ec71fadf9084fd41f62aaaeeca933bcd.png');
 
 -- --------------------------------------------------------
 
@@ -79,6 +82,18 @@ CREATE TABLE `tb_aluno_curso` (
   `fk_idAluno` int(11) NOT NULL,
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_aluno_curso`
+--
+
+INSERT INTO `tb_aluno_curso` (`fk_idAluno`, `fk_idCurso`) VALUES
+(7, 2),
+(7, 2),
+(7, 2),
+(7, 3),
+(7, 1),
+(7, 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +268,9 @@ INSERT INTO `tb_etec` (`idEtec`, `nome`, `email`, `codigo`, `municipio`) VALUES
 (16, 'Etec Bento Carlos Botelho do Amaral', 'e256dir@cps.sp.gov.br', 256, 'Guariba'),
 (17, 'Etec Bento Quirino', 'e043dir@cps.sp.gov.br', 43, 'Campinas'),
 (18, 'Etec Carlos de Campos - Brás', 'e045dir@cps.sp.gov.br', 45, 'São Paulo'),
-(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo');
+(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo'),
+(20, 'laysamelmudes@gmail.com', 'laysamelmudes@gmail.co', 53543, 'Caçapava'),
+(21, 'lucas', 'daffs@sdasda', 5646546, 'Birigui');
 
 -- --------------------------------------------------------
 
@@ -279,58 +296,6 @@ CREATE TABLE `tb_fale_conosco` (
   `email` varchar(40) NOT NULL,
   `categoria` varchar(20) NOT NULL,
   `comentario` char(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_habilidade_aluno`
---
-
-CREATE TABLE `tb_habilidade_aluno` (
-  `idHabilidadeAluno` int(11) NOT NULL,
-  `nome` varchar(300) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_horario_aluno`
---
-
-CREATE TABLE `tb_horario_aluno` (
-  `idHorarioAluno` int(11) NOT NULL,
-  `inicio` varchar(10) NOT NULL,
-  `termino` varchar(10) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_idioma_aluno`
---
-
-CREATE TABLE `tb_idioma_aluno` (
-  `idIdiomaAluno` int(11) NOT NULL,
-  `nome` varchar(200) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_perfil_aluno`
---
-
-CREATE TABLE `tb_perfil_aluno` (
-  `idPerfilAluno` int(11) NOT NULL,
-  `semestre` int(11) NOT NULL,
-  `periodo` char(10) NOT NULL,
-  `duracaoCurso` varchar(30) NOT NULL,
-  `conclusao` varchar(50) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -475,6 +440,13 @@ CREATE TABLE `tb_perfil_empresa` (
   `fk_idEmpresa` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_perfil_empresa`
+--
+
+INSERT INTO `tb_perfil_empresa` (`idPerfilEmpresa`, `departamento`, `descricao`, `anoFundacao`, `imagem`, `fk_idEmpresa`) VALUES
+(4, 'Tecnologia', 'Somos uma empresa', 1950, '', 14);
+
 -- --------------------------------------------------------
 
 --
@@ -554,6 +526,20 @@ CREATE TABLE `tb_requisito_vaga` (
   `fk_idVaga` int(11) NOT NULL,
   `fk_idRequisito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_requisito_vaga`
+--
+
+INSERT INTO `tb_requisito_vaga` (`fk_idVaga`, `fk_idRequisito`) VALUES
+(4, 7),
+(4, 8),
+(6, 11),
+(6, 12),
+(4, 7),
+(4, 8),
+(6, 11),
+(6, 12);
 
 -- --------------------------------------------------------
 
@@ -663,6 +649,14 @@ CREATE TABLE `tb_vaga` (
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tb_vaga`
+--
+
+INSERT INTO `tb_vaga` (`idVaga`, `nome`, `cidade`, `bairro`, `tipoTrabalho`, `salario`, `descricao`, `inicio`, `termino`, `periodo`, `area`, `semana`, `fk_idEmpresa`, `fk_idCurso`) VALUES
+(4, 'Teste', 'São Paulo', 'Guainases', 'Presencial', 2000.00, 'Bom diaaa', '10:00:00', '18:00:00', 'matinal', 'Tecnologia', 'Seg-Sex', 14, 1),
+(6, 'vaga2', 'sdasd', 'asdasda', 'asdasd', 3000.00, 'NUM AGUENTO MAIS', '10:00:00', '20:00:00', 'matinal', 'dfsdfs', 'asd-asd', 14, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -698,13 +692,6 @@ ALTER TABLE `tb_aluno`
 ALTER TABLE `tb_aluno_curso`
   ADD KEY `fk_idAluno` (`fk_idAluno`),
   ADD KEY `fk_idCurso` (`fk_idCurso`);
-
---
--- Índices para tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD KEY `fk_idEtec` (`fk_idEtec`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
 
 --
 -- Índices de tabela `tb_aluno_etec`
@@ -763,13 +750,6 @@ ALTER TABLE `tb_etec`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `tb_experiencia_aluno`
---
-ALTER TABLE `tb_experiencia_aluno`
-  ADD PRIMARY KEY (`idExperiaciaAluno`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
-
---
 -- Índices de tabela `tb_experiencia_aluno`
 --
 ALTER TABLE `tb_experiencia_aluno`
@@ -781,34 +761,6 @@ ALTER TABLE `tb_experiencia_aluno`
 --
 ALTER TABLE `tb_fale_conosco`
   ADD PRIMARY KEY (`idFaleConosco`);
-
---
--- Índices para tabela `tb_habilidade_aluno`
---
-ALTER TABLE `tb_habilidade_aluno`
-  ADD PRIMARY KEY (`idHabilidadeAluno`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
-
---
--- Índices para tabela `tb_horario_aluno`
---
-ALTER TABLE `tb_horario_aluno`
-  ADD PRIMARY KEY (`idHorarioAluno`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
-
---
--- Índices para tabela `tb_idioma_aluno`
---
-ALTER TABLE `tb_idioma_aluno`
-  ADD PRIMARY KEY (`idIdiomaAluno`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
-
---
--- Índices para tabela `tb_perfil_aluno`
---
-ALTER TABLE `tb_perfil_aluno`
-  ADD PRIMARY KEY (`idPerfilAluno`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
 
 --
 -- Índices de tabela `tb_habilidade`
@@ -893,13 +845,6 @@ ALTER TABLE `tb_requisito`
 ALTER TABLE `tb_requisito_vaga`
   ADD KEY `fk_idRequisito` (`fk_idRequisito`),
   ADD KEY `fk_idVaga` (`fk_idVaga`);
-
---
--- Índices para tabela `tb_sobre_mim`
---
-ALTER TABLE `tb_sobre_mim`
-  ADD PRIMARY KEY (`idSobreMim`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
 
 --
 -- Índices de tabela `tb_sobre_mim`
@@ -1000,16 +945,40 @@ ALTER TABLE `tb_experiencia_aluno`
   MODIFY `idExperiaciaAluno` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_experiencia_aluno`
---
-ALTER TABLE `tb_experiencia_aluno`
-  MODIFY `idExperiaciaAluno` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_fale_conosco`
 --
 ALTER TABLE `tb_fale_conosco`
   MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tb_habilidade`
+--
+ALTER TABLE `tb_habilidade`
+  MODIFY `idHabilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de tabela `tb_horario_aluno`
+--
+ALTER TABLE `tb_horario_aluno`
+  MODIFY `idHorarioAluno` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tb_idioma_aluno`
+--
+ALTER TABLE `tb_idioma_aluno`
+  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de tabela `tb_indicacao`
+--
+ALTER TABLE `tb_indicacao`
+  MODIFY `idIndicacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `tb_perfil_aluno`
+--
+ALTER TABLE `tb_perfil_aluno`
+  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_perfil_empresa`
@@ -1077,13 +1046,6 @@ ALTER TABLE `tb_aluno_curso`
   ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_2` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`);
-
---
 -- Restrições para tabelas `tb_aluno_etec`
 --
 ALTER TABLE `tb_aluno_etec`
@@ -1109,36 +1071,6 @@ ALTER TABLE `tb_curso_etec`
 --
 ALTER TABLE `tb_eixo`
   ADD CONSTRAINT `tb_eixo_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_experiencia_aluno`
---
-ALTER TABLE `tb_experiencia_aluno`
-  ADD CONSTRAINT `tb_experiencia_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_habilidade_aluno`
---
-ALTER TABLE `tb_habilidade_aluno`
-  ADD CONSTRAINT `tb_habilidade_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_horario_aluno`
---
-ALTER TABLE `tb_horario_aluno`
-  ADD CONSTRAINT `tb_horario_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_idioma_aluno`
---
-ALTER TABLE `tb_idioma_aluno`
-  ADD CONSTRAINT `tb_idioma_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_perfil_aluno`
---
-ALTER TABLE `tb_perfil_aluno`
-  ADD CONSTRAINT `tb_perfil_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `tb_experiencia_aluno`
@@ -1204,12 +1136,6 @@ ALTER TABLE `tb_recomendacao`
 ALTER TABLE `tb_requisito_vaga`
   ADD CONSTRAINT `tb_requisito_vaga_ibfk_1` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `tb_requisito_vaga_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_sobre_mim`
---
-ALTER TABLE `tb_sobre_mim`
-  ADD CONSTRAINT `tb_sobre_mim_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `tb_sobre_mim`

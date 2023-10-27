@@ -1,0 +1,156 @@
+h1 {
+    color: #737373;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    padding-top: 10%;
+}
+
+
+.box {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+}
+
+.control {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 100px;
+}
+
+.filtro {
+    width: 100%;
+    display: flex;
+}
+
+.filtro form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.icone-filtro {
+    display: flex;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
+    align-items: center;
+}
+
+.icone-filtro i {
+    font-size: 2rem;
+}
+
+.option-filter {
+    display: flex;
+    gap: 10px;
+    color: black;
+    font-weight: 600;
+    align-items: baseline;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 200px;
+}
+
+.btn-filtro {
+    background-color: #0a3580;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.option-filter label {
+    cursor: pointer;
+
+}
+
+.option-filter select {
+    width: 100%;
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+}
+
+select:focus {
+    outline: none;
+}
+.vagas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+.option-filter select {
+    cursor: pointer;
+}
+.vagas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-cards {
+    width: 1180px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: start;
+}
+
+
+.container-cards .cards {
+    display: flex;
+    flex-direction: column;
+    background-color: #B4D9FF;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    width: 350px;
+    height: 160px;
+    justify-content: center;
+    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
+}
+
+.vagas .container-cards .cards .localidade {
+    display: flex;
+}
+
+.vagas .container-cards .cards .localidade h4 {
+    margin-right: 20px;
+    color: rgb(75, 75, 75);
+}
+
+.vagas .container-cards .cards h4 {
+    padding: 5px;
+}
+select{
+    font-size: 1.2rem;
+}
+.nome-vaga{
+    font-weight: 600;
+}
+.cima-esquerda{
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    z-index: 0;
+}
+.cima-direita{
+    width: 13%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
