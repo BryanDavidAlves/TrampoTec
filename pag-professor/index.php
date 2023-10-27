@@ -1,9 +1,11 @@
+
 <?php
+/*
 include('../Dao/conexao.php');
 $querySelect = "SELECT * FROM tb_recomendacao WHERE Aprovado = 0 ";
 $resultado = $conexao->query($querySelect);
 $recomendacao = $resultado->fetchAll();
-
+*/
 ?>
 
 <!DOCTYPE html>
