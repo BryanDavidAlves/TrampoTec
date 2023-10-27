@@ -21,8 +21,6 @@ if ($_POST) {
 
      //Salvando curso
 
-
-
     $id = $conexao->lastInsertId();
     header('Location: ../../formulario2.php?primeiro=1');
 exit;
