@@ -25,6 +25,29 @@
     .nav{
       width: 100%;
     }
+    /* Efeito de desvanecimento no ícone do menu hambúrguer */
+    .navbar-toggler-icon {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Animação de cor suave ao passar o mouse sobre os links */
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: red; /* Cor de destaque ao passar o mouse sobre os links */
+    }
+
+    /* Animação de fundo suave ao passar o mouse sobre os links */
+    .navbar-nav .nav-link {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: #f8f9fa; /* Cor de fundo de destaque ao passar o mouse sobre os links */
+    }
+
     </style>
 </head>
 <body>
@@ -60,8 +83,18 @@
           </ul>
         </li>
     </div>
+    <div class="img">
+      <a href="notificacoes.php">
+      <img src="img/icone-notif.png" alt="Bootstrap" width="30" height="24">
+      </a>
+  </div>
+  <div class="img">
+    <a href="">
+      <img src="img/icone-config.png" alt="Bootstrap" width="30" height="24">
+    </a>
+  </div>
   </div>
 </nav>
 
 </body>
-</html>
+</html> 
