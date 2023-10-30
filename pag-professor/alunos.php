@@ -1,7 +1,16 @@
 
 <html lang="en">
 <?php
+include '../dao/conexao.php';
 require_once "./back-end/login/validador_acesso.php";
+
+$cliente_id = $_SESSION['idProfessor'];
+
+$querySelect = "SELECT * FROM tb_aluno
+
+    ";
+$resultado = $conexao->query($querySelect);
+$ResuInner = $resultado->fetchAll();
 ?>
 
 <head>
@@ -88,35 +97,16 @@ include '../pag-professor/components/sidebar.php';
         </tr>
     </thead>
     <tbody>
+
+
+        <?php foreach ($ResuInner as $ResuInner) {?>
         <tr class="infos">
-
-            <td class="table-id-empresa">1</td>
+            <td class="table-id-empresa"><?=$ResuInner[0]?></td>
             <td class="foto-user">
-                <img src="img/bryan.jpg" alt="">
+                <img src="../pag-aluno/fotosAluno/perfil/<?=$ResuInner[13] != "" ? $ResuInner[13] : '';?>"" alt="">
             </td>
-            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
-
-
-            <td class="icone-table">
-            <div class="icons">
-
-                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-                </div>
-            </td>
-
-
-        </tr>
-
-        <tr class="infos">
-            <td class="table-id-empresa">2</td>
-            <td class="foto-user">
-                <img src="img/bryan.jpg" alt="">
-            </td>
-            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
+            <td class="table-nome-empresa"><?=$ResuInner[3]?></td>
+            <td class="table-email-empresa"><?=$ResuInner[1]?></td>
             <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button type="submit">VER MAIS</button></a></td>
 
             <td class="icone-table">
@@ -129,25 +119,7 @@ include '../pag-professor/components/sidebar.php';
 
 
         </tr>
-        <tr class="infos">
-            <td class="table-id-empresa">3</td>
-            <td class="foto-user">
-                <img src="img/bryan.jpg" alt="">
-            </td>
-            <td class="table-nome-empresa">Ryan Dias Rocha de Souza</td>
-            <td class="table-email-empresa">ryan.souza44@etec.sp.gov.br</td>
-            <td class="table-cnpj"><a href="perfil_aluno.php" class="btn-perfil"><button>VER MAIS</button></a></td>
-
-            <td class="icone-table">
-            <div class="icons">
-
-                    <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-
-                </div>
-            </td>
-
-
-        </tr>
+        <?php }?>
 
     </tbody>
 </table>

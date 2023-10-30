@@ -11,77 +11,16 @@
                             <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
                         </div>
                         <div class="card-itens-email">
-                            <p class="email-notificacao"> 
-                                voce enviou uma convocacao de interesse para "bryan david"
+                            <p class="email-notificacao">
+                                Você enviou uma convocação de interesse para "Bryan David".
                             </p>
                         </div>
-                    </div>       
+                    </div>
                 </div>
             </li>
 
-            <li>
-            <div class="card-email">
-                    <div class="card-corpo-email">
-                        <div class="imagens-email">
-                            <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
-                        </div>
-                        <div class="card-itens-email">
-                            <p class="email-notificacao"> 
-                                voce enviou uma convocacao de interesse para "bryan david"
-                            </p>
-                        </div>
-                    </div>       
-                </div>
-            </li>
-      
-            <li>
-            <div class="card-email">
-                    <div class="card-corpo-email">
-                        <div class="imagens-email">
-                            <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
-                        </div>
-                        <div class="card-itens-email">
-                            <p class="email-notificacao"> 
-                                voce enviou uma convocacao de interesse para "bryan david"
-                            </p>
-                        </div>
-                    </div>       
-                </div>
-            </li>
 
-            <li>
-            <div class="card-email">
-                    <div class="card-corpo-email">
-                        <div class="imagens-email">
-                            <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
-                        </div>
-                        <div class="card-itens-email">
-                            <p class="email-notificacao"> 
-                                voce enviou uma convocacao de interesse para "bryan david"
-                            </p>
-                        </div>
-                    </div>       
-                </div>
-            </li>
 
-            <li>
-            <div class="card-email">
-                    <div class="card-corpo-email">
-                        <div class="imagens-email">
-                            <img class="imagem-aluno-email" src="./img/bryan.jpg" alt="foto do aluno">
-                        </div>
-                        <div class="card-itens-email">
-                            <p class="email-notificacao"> 
-                                voce enviou uma convocacao de interesse para "bryan david"
-                            </p>
-                        </div>
-                    </div>       
-                </div>
-            </li>
-
-            
         </ul>
     </nav>
 </aside>
-
-

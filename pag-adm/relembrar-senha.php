@@ -23,15 +23,16 @@
                     <div class="item-form">
                         <label for="nome">SENHA</label>
                         <div class="div-input">
-                            <input type="password" name="senha" id="nome">
+                            <input type="password" name="senha" id="password2">
+                            <i class="fa-solid fa-eye" id="icon2" onclick="mostrarSenha2()" style="color: #1f3251;"></i>
                         </div>
                     </div>
 
                     <div class="item-form">
                         <label for="senha">NOVA SENHA</label>
                         <div class="div-input">
-                            <input type="password" name="novaSenha" id="senha">
-                            <i class="fa-solid fa-eye" style="color: #1f3251;"></i>
+                        <input type="password" name="nova-senha" id="password">
+                            <i class="fa-solid fa-eye" id="icon" onclick="mostrarSenha()" style="color: #1f3251;"></i>
                         </div>
                     </div>
                     <input class="botao" type="submit" value="Redefinir" style="margin-bottom:30px;">
@@ -39,6 +40,7 @@
             </div>
         </section>
     </main>
+    <script src="js/professor.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 

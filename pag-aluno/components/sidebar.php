@@ -1,3 +1,18 @@
+<?php
+include '../dao/conexao.php';
+require_once "./back-end/login/validador_acesso.php";
+
+$id_aluno = $_SESSION["idAluno"];
+
+$querySelect = "SELECT nome FROM tb_aluno
+    WHERE tb_aluno.idAluno= '$id_aluno'
+";
+
+$query = $conexao->query($querySelect);
+
+$resultado = $query->fetchAll();
+
+?>
 <aside id="itens">
     <div id="burguer" onclick="clickmenu()" class="toogle2">
         <span class="menu"></span>
@@ -6,7 +21,9 @@
     </div>
     <nav>
         <ul>
-            <h2 class="nome-do-aluno border-nome">Johny David Marques Gomes</h2>
+        <?php foreach ($resultado as $resultado) {?>
+            <h2 class="nome-do-aluno border-nome"><?=$resultado[0]?></h2>
+            <?php }?>
             <li class="indice-side">Menu</li>
             <li><a href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
             <li><a href="painel-de-vagas.php"><i class="fa-solid fa-briefcase" style="color: #ffffff;"></i> Painel de vagas</a></li>

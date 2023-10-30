@@ -1,11 +1,15 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
-include ('../dao/conexao.php');
+include '../dao/conexao.php';
 $querySelect = "SELECT * FROM  tb_etec ";
 
 $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
+
+$aluno_id = $_SESSION['idAluno'];
+
+
 
 
 ?>
@@ -18,7 +22,7 @@ require_once "./back-end/login/validador_acesso.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -31,67 +35,30 @@ require_once "./back-end/login/validador_acesso.php";
 
     <title>Meu Curriculo</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-
 </head>
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
+    include '../pag-aluno/components/header.php';
     ?>
-<div class="container">
+
+<div class="align-tudo">
+    <div class="align-tabela">
         <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
-            <label for="nome">Nome:</label>
+            <label for="nome">Instituição:</label>
             <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
                       placeholder="Nome da Instituição">
                       <option>Selecione uma Instituição</option>
-                                            <?php foreach ($etec as $etec) { ?>
-                                                <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
-                                            <?php } ?>
+                                            <?php foreach ($etec as $etec) {?>
+                                                <option value="<?=$etec[0]?>"><?=$etec[1]?></option>
+                                            <?php }?>
                                             </select></p>
 
 
             <label for="curso">Curso:</label>
             <select class="input" placeholder="curso" name="curso" id="curso">
                             <option value="">Selecione seu curso</option>
-                           
+
                       </select>
 
             <label for="periodo">Período:</label>
@@ -109,7 +76,7 @@ require_once "./back-end/login/validador_acesso.php";
                               <option value="4">4 SEMESTRE</option>
                               <option value="5">5 SEMESTRE</option>
                               <option value="6">6 SEMESTRE</option>
-                            
+
                       </select>
 
             <label for="carga_horaria">Carga Horária:</label>
@@ -118,8 +85,51 @@ require_once "./back-end/login/validador_acesso.php";
             <label for="conclusao">Conclusão:</label>
             <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
 
-            <input type="submit" value="Avançar">
+            <input type="submit" value="Adicionar Curso">
+            
+            <a href="formulario2.php" class="button">Proximo</a> 
+
         </form>
+
+        <!--<section class="cartas">
+                    <div class="card-carta">
+                        <section class="header-card">
+                            <h4>Curso Cadastrado</h4>
+                        </section>
+                        <span class="prof">
+                                <h3>ETEC:</h3>
+                                <p>Etec de Guaianases</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Curso:</h3>
+                                <p>Desenvolvimento De Sistemas</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Periodo:</h3>
+                                <p>Vespertino</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Semestre:</h3>
+                                <p>1 Semestre</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Carga Horária:</h3>
+                                <p>1 Semestre</p>
+                            </span>
+
+                            <span class="prof">
+                                <h3>Conclusão:</h3>
+                                <p>Dezembro</p>
+                            </span>
+                        
+                    </div>
+                    
+                </section>-->
+        </div>
     </div>
 
 
