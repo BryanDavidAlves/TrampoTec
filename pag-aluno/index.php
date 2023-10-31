@@ -29,46 +29,74 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../pag-aluno/css/home.css">
 
     <title>Pagina de Vagas</title>
+    <style>
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Modern Business v5.0.7 (https://startbootstrap.com/template-overviews/modern-business)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-modern-business/blob/master/LICENSE)
+*/
+/*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+ h1{
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+ p{
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+ a{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+ header{
+    height: 100%;
+    margin-top: 5%;
+ }
+.home{
+    margin-left: 50%;
+    height: 200%;
+    width: 300px;
+}
+    </style>
 </head>
 
 <body >
-    <img class="cima-esquerda" src="img/icon4.png" alt="">
-    <img class="cima-direita" src="img/icon2.png" alt="">
-    <!--
-    <img class="baixo-direita" src="img/icon1.png" alt="">
-    <img class="baixo-esquerda" src="img/icon5.png" alt="">
-    -->
+
     <?php
     include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
 
         <div class="box">
-            <h1> </h1>
 
-            <section class="inicio">
-                <div class="left">
-                    <h2>VAGAS DE ESTÁGIO, <br>
-                        INGRESSE NO MERCADO <br>
-                        DE TRABALHO!
-                    </h2>
-                    <span>
-                        <a href="curriculo.php">CURRÍCULO</a>
-                        <a href="painel-de-vagas.php">VAGAS</a>
-                    </span>
+        <header class="py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <p>Bem vindo (a) ao TrampoTec</p>
+                                <br>
+                                <h1 class="display-5 fw-bolder mb-2">Ingresse no mercado de trabalho com mais facilidade </h1>
+                                <br>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="./curriculo.php">Currículo</a>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="./painel-de-vagas.php">Vagas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="home" src="img/img-home.png" alt="..." /></div>
+                    </div>
                 </div>
-                <div class="right">
-                    <img src="img/img-home.png" alt="">
-                </div>
-            </section>
-
+            </header>
         </div>
 
     </main>
     <?php
-    include('../pag-aluno/components/sidebar.php');
-
-
     if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
         ?>
             <div >
@@ -96,7 +124,7 @@ require_once "./back-end/login/validador_acesso.php";
         }
     </script>
 
-    <script src="../assets/js/sweetalert2@11.js"></script>
+    <!-- /* <script src="../assets/js/sweetalert2@11.js"></script> */ -->
 </body>
 
 </html>
