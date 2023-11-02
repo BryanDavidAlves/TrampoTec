@@ -52,9 +52,7 @@ $resultado = $query->fetchAll();
        margin-top: 5%;
      
     }
-    /*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
+
 .services .icon-box {
     margin-top: 17%;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
@@ -97,14 +95,31 @@ $resultado = $query->fetchAll();
 .services .icon-box:hover h4 a {
   color: #47b2e4;
 }
-row {
-    display: flex;
-    width: 720px;
-    flex-wrap: wrap;
-    gap: 60px;
-    justify-content: start;
+.div-img-modal {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    border: 3px solid #0a3580;
+    margin-left: 5%;
+    margin-top: 3%;
 
 }
+
+.img-modal {
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.info-empresa{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+p{
+  font-size: 20px;
+}
+
 
   </style>
 </head>
@@ -188,69 +203,63 @@ row {
                             <p><?= $resultado[24] ?></p>
                             <p><?= $resultado[25] ?></p>
                             <p>R$<?= $resultado[26] ?></p>
-                            <button type="button" class="btn btn-primary btn-sm" id="btn1" style="margin-top: 2%;">Clique para mais informações</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top: 10%;">
+                            Clique para mais informações
+                            </button>
                             </div>
                         </div>
                     </div>
                     </section>
 
-                            <dialog id="modal">
-
-                                <section class="container-modal">
-                                    <div class="header-modal">
-                                        <button id="closeModal">
-                                            <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                                        </button>
-                                    </div>
-                                    <section class="info-empresa">
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Descrição de vaga</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                              <section class="info-empresa">
                                         <div class="div-img-modal">
-
-
                                             <a><img class="img-modal"
                                                     src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[10] ?>"></a>
-
-
                                         </div>
                                         <div class="sobre-empresa">
-                                            <h2>
+                                            <p> <div style="font-weight: bold; font-size:20px ;"> Empresa: </div>
                                                 <?= $resultado[3] ?>
-                                            </h2>
-                                            <h3>
+                            </p>
+                                            <p> <div style="font-weight: bold; font-size:20px ;">Departamento: </div>
                                                 <?= $resultado[13] ?>
-                                            </h3>
-                                            <h4>Desde
+                            </p>
+                                            <p> <div style="font-weight: bold; font-size:20px ;">Desde: </div>
                                                 <?= $resultado[15] ?>
-                                            </h4>
-                                        </div>
-                                    </section>
-                                    <div class="sobre-vaga">
-                                        <section class="conhecimento">
-                                            <h2>CONHECIMENTOS</h2>
-                                            <ul>
+                            </p>
+                                            <p><div style="font-weight: bold; font-size:20px ;">Conhecimentos: </div>
+
                                                 <li>JAVA</li>
                                                 <li>PHP</li>
                                                 <li>HTML</li>
-                                            </ul>
-                                        </section>
-                                        <section class="desc-vaga">
-                                            <h2>
+                            </p>
+
+                                            <p>
                                                 <?= $resultado[31] ?>
-                                            </h2>
-                                            <div>
+                                            </p>
+
                                                 <p>
                                                     <?= $resultado[27] ?>
                                                 </p>
-                                            </div>
+
                                         </section>
                                     </div>
-                                    <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
-                                </section>
-                            </dialog>
-
-
-
+     
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" style="align-items: center;" id="btn" onclick="openModal()">Candidatar-se</button>
+                              </div>                         
+                            </div>
+                            </div>
+                          </div>
                         <?php } ?>
-
                     </div>
                 </section>
 

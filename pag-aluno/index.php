@@ -28,7 +28,7 @@ require_once "./back-end/login/validador_acesso.php";
 #hero {
   width: 100%;
   height: 90vh;
-  background: #314285;
+  background: white;
 }
 
 #hero .container {
@@ -40,11 +40,11 @@ require_once "./back-end/login/validador_acesso.php";
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: #fff;
+  color: #37517e;
 }
 
 #hero h2 {
-  color: rgba(255, 255, 255, 0.6);
+  color: black;
   margin-bottom: 50px;
   font-size: 24px;
 }
@@ -67,23 +67,6 @@ require_once "./back-end/login/validador_acesso.php";
   background: #209dd8;
 }
 
-#hero .btn-watch-video {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  transition: 0.5s;
-  margin: 10px 0 0 25px;
-  color: #fff;
-  line-height: 1;
-}
-
-#hero .btn-watch-video i {
-  line-height: 0;
-  color: #fff;
-  font-size: 32px;
-  transition: 0.3s;
-  margin-right: 8px;
-}
 
 #hero .btn-watch-video:hover i {
   color: #47b2e4;

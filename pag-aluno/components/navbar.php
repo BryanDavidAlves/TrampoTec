@@ -13,7 +13,7 @@
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background-color: #37517e;
+  background-color: white;
 }
 
 
@@ -32,7 +32,7 @@
 */
 .navbar {
   padding: 0;
-  background-color: #37517e;
+  background-color: white;
 }
 
 .navbar ul {
@@ -57,7 +57,7 @@
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-weight: 500;
-  color: white;
+  color: #37517e;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -268,7 +268,7 @@
     </style>
 </head>
 <body>
-<nav id="navbar" class="navbar" style="  background-color: #314285;">
+<nav id="navbar" class="navbar" style="  background-color: white;">
 <div class="img">
       <img src="img/trampotec-logo.png" alt="Bootstrap" width="50%" height="17%" margin-left="20%">
   </div>
@@ -276,7 +276,7 @@
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="painel-de-vagas.php">Painel de vagas</a></li>
           <li><a class="nav-link scrollto" href="processos-seletivos.php">Processo seletivo</a></li>
-          <li><a class="nav-link   scrollto" href="meu-curriculo.php">Meu currículo</a></li>
+          <li><a class="nav-link scrollto" href="meu-curriculo.php">Meu currículo</a></li>
           <li class="dropdown"><a class="nav-link scrollto"><span>Meu Perfil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="perfil.php">Meus dados</a></li>
