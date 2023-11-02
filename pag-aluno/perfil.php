@@ -37,12 +37,11 @@ $resultado = $query->fetchAll();
 
 <body>
     <?php
-include '../pag-aluno/components/header.php';
+include '../pag-aluno/components/navbar.php';
 ?>
     <main id="main">
         <div class="align">
             <section class="infos">
-                <h1>PERFIL</h1>
                 <div class="box">
                     <div id="carouselExampleDark" class="carousel slide">
 

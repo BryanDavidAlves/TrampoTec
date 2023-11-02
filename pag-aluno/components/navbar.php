@@ -36,6 +36,7 @@
 }
 
 .navbar ul {
+  font-size: 30px;
     margin-top: 1%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-right: 10%;
@@ -68,12 +69,6 @@
   margin-left: 5px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
-  color: blue;
-}
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
@@ -278,7 +273,7 @@
       <img src="img/trampotec-logo.png" alt="Bootstrap" width="50%" height="17%" margin-left="20%">
   </div>
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="painel-de-vagas.php">Painel de vagas</a></li>
           <li><a class="nav-link scrollto" href="processos-seletivos.php">Processo seletivo</a></li>
           <li><a class="nav-link   scrollto" href="meu-curriculo.php">Meu currículo</a></li>
@@ -286,6 +281,8 @@
             <ul>
               <li><a href="perfil.php">Meus dados</a></li>
               <li class="dropdown"><a href="curriculo.php"><span>Currículo</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="notificacoes.php"><span>Notificações</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="curriculo.php"><span>Configurações</span> <i class="bi bi-chevron-right"></i></a>
               </li>
             </ul>
           </li>

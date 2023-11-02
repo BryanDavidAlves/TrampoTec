@@ -32,108 +32,168 @@ $resultado = $query->fetchAll();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
-    <link rel="stylesheet" href="../pag-aluno/css/painel-de-vagas.css">
     <title>Pagina de Vagas</title>
+    <style>
+    .container {
+      margin-top: 30px;
+    }
+
+    .table {
+      margin-top: 20px;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    h5 {
+        text-align: center;
+       font-weight: bold;
+       margin-top: 5%;
+     
+    }
+    /*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+    margin-top: 17%;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  transition: all ease-in-out 0.4s;
+  background: #fff;
+}
+
+.services .icon-box .icon {
+  margin-bottom: 10px;
+}
+
+.services .icon-box .icon i {
+  color: #47b2e4;
+  font-size: 36px;
+  transition: 0.3s;
+}
+
+.services .icon-box h4 {
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.services .icon-box h4 a {
+  color: #37517e;
+  transition: ease-in-out 0.3s;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.services .icon-box:hover {
+  transform: translateY(-10px);
+}
+
+.services .icon-box:hover h4 a {
+  color: #47b2e4;
+}
+row {
+    display: flex;
+    width: 720px;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: start;
+
+}
+
+  </style>
 </head>
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
+    include('../pag-aluno/components/navbar.php');
     ?>
     <main id="main">
 
         <div class="box">
-            <h1>PAINEL DE VAGAS</h1>
+
             <!-- <div class="control">-->
 
             <section class="filtro">
-                <form action="">
-                    <span class="icone-filtro">
-                        <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
-                        <h4>Filtrar por</h4>
-                    </span>
+            <div class="container mt-4">
+  <h5>Filtre por:</h5>
 
-                    <span class="option-filter">
-                        <label for="periodo">Período:</label>
-                        <select name="periodo" id="periodo">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Manhã</option>
-                            <option value="">Tarde</option>
-                            <option value="">Noite</option>
-                        </select>
-                    </span>
-                    <!--<span class="option-filter">
-                            <label>Horário</label>
-                            <select name="periodo" id="periodo">
-                                <option selected value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </span>-->
-                    <span class="option-filter">
-                        <label>Curso:</label>
-                        <select class="option-curso" name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Desenvolvimento de Sistemas</option>
-                            <option value="">Administração</option>
-                            <option value="">Nutrição</option>
-                        </select>
-                    </span>
-                    <span class="option-filter">
-                        <label>Área:</label>
-                        <select name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">Area 1</option>
-                            <option value="">Area 2</option>
-                            <option value="">Area 3</option>
-                        </select>
-                    </span>
-                    <span class="option-filter">
-                        <label>Salário:</label>
-                        <select name="" id="">
-                            <option selected value="">Qualquer</option>
-                            <option value="">500,00 R$ - 1000,00 R$</option>
-                            <option value="">1000,00 R$ - 1500,00 R$</option>
-                            <option value="">1500,00 R$ - 2000,00 R$</option>
-                        </select>
-                    </span>
-                    <input class="btn-filtro" type="submit" name="" id="">
-                </form>
-            </section>
-            <section class="container">
+  <div class="row" style="margin-top: 2%;">
+    <div class="col-md-3">
+      <select id="periodo" class="form-control">
+        <option value="">Período</option>
+        <option value="manha">Manhã</option>
+        <option value="tarde">Tarde</option>
+        <option value="noite">Noite</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="curso" class="form-control">
+        <option value="">Curso</option>
+        <option value="engenharia">Engenharia</option>
+        <option value="medicina">Medicina</option>
+        <option value="direito">Direito</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="area" class="form-control">
+        <option value="">Área</option>
+        <option value="ti">TI</option>
+        <option value="saude">Saúde</option>
+        <option value="juridico">Jurídico</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select id="salario" class="form-control">
+        <option value="">Salário</option>
+        <option value="menos-de-2000">Menos de R$ 2.000</option>
+        <option value="2000-4000">R$ 2.000 - R$ 4.000</option>
+        <option value="mais-de-4000">Mais de R$ 4.000</option>
+      </select>
+    </div>
+  </div>
+</div>
+ </section>
+            <!-- <section class="container">
                 <section class="perfil">
                     <div class="div-img">
                         <img src="img/aluno-form.png" alt="">
                     </div>
                     <a href="perfil.php">PERFIL</a>
-                </section>
+                </section> -->
 
 
-                <section class="vagas">
-                    <div class="align-cards">
-                        <?php foreach ($resultado as $resultado) { ?>
-                            <div class="cards">
-                                <div class="localidade">
+                    <section id="services" class="services section-bg">
+                    <div class="container" data-aos="fade-up">
 
-                                </div>
-                                <h4>
-                                    <?= $resultado[23] ?> -
-                                    <?= $resultado[9] ?>
-                                </h4>
-                                <h4>
-                                    <?= $resultado[24] ?>
-                                </h4>
-                                <h4>
-                                    <?= $resultado[25] ?>
-                                </h4>
-                                <h4>R$
-                                    <?= $resultado[26] ?>
-                                </h4>
+                        <div class="section-title">
+                        <h2>Painel de vagas</h2>
+
+                        </div>
 
 
-                                <button id="btn1">Clique para mais informações</button>
+                        <div class="row">
 
+                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">                        
+                            <div class="icon-box">                            
+                            <?php foreach ($resultado as $resultado) { ?>
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4><a href=""><?= $resultado[23] ?> -
+                                <?= $resultado[9] ?></a></h4>
+                            <p><?= $resultado[24] ?></p>
+                            <p><?= $resultado[25] ?></p>
+                            <p>R$<?= $resultado[26] ?></p>
+                            <button type="button" class="btn btn-primary btn-sm" id="btn1" style="margin-top: 2%;">Clique para mais informações</button>
                             </div>
+                        </div>
+                    </div>
+                    </section>
+
                             <dialog id="modal">
 
                                 <section class="container-modal">
@@ -232,6 +292,8 @@ $resultado = $query->fetchAll();
             modal.close()
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

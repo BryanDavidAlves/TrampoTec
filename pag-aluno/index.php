@@ -36,7 +36,7 @@ require_once "./back-end/login/validador_acesso.php";
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
+  margin-top: 1px;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
@@ -127,6 +127,9 @@ require_once "./back-end/login/validador_acesso.php";
   #hero .hero-img img {
     width: 70%;
   }
+}
+img {
+  margin-left: 19%;
 }
 
 @media (max-width: 575px) {

@@ -17,120 +17,76 @@ require_once "./back-end/login/validador_acesso.php";
 
     <link rel="stylesheet" href="../pag-aluno/css/processo-seletivo.css">
     <title>Processos Seletivos</title>
+    <style>
+        .container {
+      margin-top: 30px;
+    }
+
+    .table {
+      margin-top: 20px;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    h5 {
+        text-align: center;
+       font-weight: bold;
+       margin-top: 5%;
+     
+    }
+    </style>
 </head>
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
+    include('../pag-aluno/components/navbar.php');
     ?>
     <main id="main">
 
         <div class="box">
-            <h1>PROCESSOS SELETIVOS <br> INSCRITO</h1>
-            
-
                 <section class="filtro">
-                    <form action="">
-                        <span class="icone-filtro">
-                            <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
-                            <h4>Filtrar por</h4>
-                        </span>
+                    <div class="container mt-4">
+        <h5>Filtre por:</h5>
 
-                        <span class="option-filter">
-                            <label for="periodo">Período:</label>
-                            <select name="periodo" id="periodo">
-                                <option selected value="">Qualquer</option>
-                                <option value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </span>
-                        <!--<span class="option-filter">
-                            <label>Horário</label>
-                            <select name="periodo" id="periodo">
-                                <option selected value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </span>-->
-                        <span class="option-filter">
-                            <label>Curso:</label>
-                            <select class="option-curso" name="" id="">
-                                <option selected value="">Qualquer</option>
-                                <option value="">Desenvolvimento de Sistemas</option>
-                                <option value="">Administração</option>
-                                <option value="">Nutrição</option>
-                            </select>
-                        </span>
-                        <span class="option-filter">
-                            <label>Área:</label>
-                            <select name="" id="">
-                                <option selected value="">Qualquer</option>
-                                <option value="">Area 1</option>
-                                <option value="">Area 2</option>
-                                <option value="">Area 3</option>
-                            </select>
-                        </span>
-                        <span class="option-filter">
-                            <label>Salário:</label>
-                            <select name="" id="">
-                                <option selected value="">Qualquer</option>
-                                <option value="">500,00 R$ - 1000,00 R$</option>
-                                <option value="">1000,00 R$ - 1500,00 R$</option>
-                                <option value="">1500,00 R$ - 2000,00 R$</option>
-                            </select>
-                        </span>
-                        <input class="btn-filtro" type="submit" name="" id="">
-                    </form>
-                </section>
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-3">
+            <select id="periodo" class="form-control">
+                <option value="">Período</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+            <select id="curso" class="form-control">
+                <option value="">Curso</option>
+                <option value="engenharia">Engenharia</option>
+                <option value="medicina">Medicina</option>
+                <option value="direito">Direito</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+            <select id="area" class="form-control">
+                <option value="">Área</option>
+                <option value="ti">TI</option>
+                <option value="saude">Saúde</option>
+                <option value="juridico">Jurídico</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+            <select id="salario" class="form-control">
+                <option value="">Salário</option>
+                <option value="menos-de-2000">Menos de R$ 2.000</option>
+                <option value="2000-4000">R$ 2.000 - R$ 4.000</option>
+                <option value="mais-de-4000">Mais de R$ 4.000</option>
+            </select>
+            </div>
+        </div>
+        </div>
 
-                <section class="vagas">
-                    <section class="container-cards">
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
 
-                        </div>
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-                        
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-                    </section>
-                </section>
    
         </div>
 

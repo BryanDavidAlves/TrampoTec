@@ -54,7 +54,7 @@
 </head>
 <body>
         <?php
-include '../pag-aluno/components/header.php';
+include '../pag-aluno/components/navbar.php';
 ?>
     <div class="container">
         <h1>Meu Currículo</h1>
