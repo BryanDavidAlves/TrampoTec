@@ -21,7 +21,7 @@ require_once "./back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include('../pag-aluno/components/navbar.php');
+    include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
 

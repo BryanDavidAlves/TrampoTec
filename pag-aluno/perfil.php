@@ -37,7 +37,7 @@ $resultado = $query->fetchAll();
 
 <body>
     <?php
-include '../pag-aluno/components/navbar.php';
+include '../pag-aluno/components/header.php';
 ?>
     <main id="main">
         <div class="align">

@@ -12,6 +12,10 @@
     height: 17%;
     margin-right: 15%;
     }
+    .icone{
+      width: 3%;
+
+    }
     .topicos{
         margin-left: 30%;
     }
@@ -85,12 +89,12 @@
           </ul>
         </li>
     </div>
-    <div class="img">
+    <div class="icone">
       <a href="notificacoes.php">
       <img src="img/icone-notif.png" alt="Bootstrap" width="30" height="24">
       </a>
   </div>
-  <div class="img">
+  <div class="icone">
     <a href="">
       <img src="img/icone-config.png" alt="Bootstrap" width="30" height="24">
     </a>

@@ -75,16 +75,16 @@
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 50px;
-  color: #fff;
+  color: #37517e;
   font-size: 14px;
-  border: 2px solid #47b2e4;
+  border: 2px solid red;
   font-weight: 600;
 }
 
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #31a9e1;
+  background: red;
 }
 
 .navbar .dropdown ul {

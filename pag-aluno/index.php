@@ -23,7 +23,7 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
 
-    <title>Pagina de Vagas</title>
+    <title>Página Inicial</title>
     <style>
 #hero {
   width: 100%;
@@ -60,17 +60,13 @@ require_once "./back-end/login/validador_acesso.php";
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: #47b2e4;
+  background: red;
 }
 
 #hero .btn-get-started:hover {
   background: #209dd8;
 }
 
-
-#hero .btn-watch-video:hover i {
-  color: #47b2e4;
-}
 
 #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
@@ -141,7 +137,7 @@ img {
 <body >
 
     <?php
-    include('../pag-aluno/components/navbar.php');
+    include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
 

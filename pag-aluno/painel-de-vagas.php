@@ -126,7 +126,7 @@ p{
 
 <body>
     <?php
-    include('../pag-aluno/components/navbar.php');
+    include('../pag-aluno/components/header.php');
     ?>
     <main id="main">
 
@@ -228,27 +228,27 @@ p{
                                         <div class="sobre-empresa">
                                             <p> <div style="font-weight: bold; font-size:20px ;"> Empresa: </div>
                                                 <?= $resultado[3] ?>
-                            </p>
+                            </p><br>
                                             <p> <div style="font-weight: bold; font-size:20px ;">Departamento: </div>
                                                 <?= $resultado[13] ?>
-                            </p>
+                            </p><br>
                                             <p> <div style="font-weight: bold; font-size:20px ;">Desde: </div>
                                                 <?= $resultado[15] ?>
-                            </p>
+                            </p><br>
                                             <p><div style="font-weight: bold; font-size:20px ;">Conhecimentos: </div>
 
                                                 <li>JAVA</li>
                                                 <li>PHP</li>
                                                 <li>HTML</li>
-                            </p>
+                            </p><br>
 
                                             <p>
                                                 <?= $resultado[31] ?>
-                                            </p>
+                                            </p><br>
 
                                                 <p>
                                                     <?= $resultado[27] ?>
-                                                </p>
+                                                </p><br>
 
                                         </section>
                                     </div>
