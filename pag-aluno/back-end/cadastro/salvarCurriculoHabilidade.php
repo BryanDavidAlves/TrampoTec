@@ -19,6 +19,10 @@ if ($_POST) {
       
     }
 
+    $queryAprovar ="UPDATE tb_aluno SET curriculo = 1 WHERE idAluno = $aluno_id";
+
+    $aprovar = $conexao->query($queryAprovar);
+    $_SESSION['curriculo'] = 'SIM';
 
 
     

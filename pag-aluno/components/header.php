@@ -91,7 +91,7 @@
       </a>
   </div>
   <div class="img">
-    <a href="">
+    <a href="back-end/login/logout.php">
       <img src="img/icone-config.png" alt="Bootstrap" width="30" height="24">
     </a>
   </div>
