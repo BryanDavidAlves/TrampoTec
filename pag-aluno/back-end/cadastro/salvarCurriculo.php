@@ -45,7 +45,7 @@ if ($_POST) {
 
 
     $id = $conexao->lastInsertId();
-    header('Location: ../../formulario2.php?primeiro=1');
+    header('Location: ../../curriculo.php?primeiro=1');
 exit;
     }
 else{

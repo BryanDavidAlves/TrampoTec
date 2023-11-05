@@ -7,7 +7,12 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == 'não'){
     header ('Location: ../../../one-page/index.php?login=erro');
     
 }
-/* else{
+else if (!isset($_SESSION['curriculo']) || $_SESSION['curriculo'] == 'NAO'){
+    
+    
+    header ('Location: curriculo.php?curri=sim');
+    
+}/* else{
     include('../dao/conexao.php');
     
     $querySelect = "SELECT tb_aluno.*, tb_telefone_aluno.telefoneAluno FROM tb_aluno 
