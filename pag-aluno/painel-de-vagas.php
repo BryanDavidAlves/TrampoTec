@@ -255,11 +255,16 @@ p{
      
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" style="align-items: center;" id="btn" onclick="openModal()">Candidatar-se</button>
-                              </div>                         
+                              </div>        
+                                          
                             </div>
                             </div>
+                     
                           </div>
-                        <?php } ?>
+                <?php } ?>  
+
+                    
+                       
                     </div>
                 </section>
 
