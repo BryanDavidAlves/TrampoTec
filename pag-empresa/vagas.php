@@ -2,15 +2,15 @@
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 
-
-$info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga, tb_vaga.nome, tb_vaga.descricao , tb_vaga.tipoTrabalho, tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem, tb_perfil_empresa.departamento, tb_perfil_empresa.anoFundacao, tb_requisito.requisito
+$info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
+ tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
+ tb_requisito.requisito
 FROM tb_vaga
 INNER JOIN tb_curso
 ON tb_vaga.fk_idCurso = tb_curso.idCurso
 INNER JOIN tb_empresa
 ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-INNER JOIN tb_perfil_empresa
-ON tb_perfil_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+
 INNER JOIN tb_requisito_vaga
 on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
@@ -26,12 +26,11 @@ foreach ($result as $vaga) {
             'nome' => $vaga['nome'],
             'descricao' => $vaga['descricao'],
             'curso' => $vaga['curso'],
-            'tipoTrabalho' => $vaga['tipoTrabalho'],
+
             'salario' => $vaga['salario'],
             'empresa' => $vaga['empresa'],
             'imagem' => $vaga['imagem'],
-            'departamento' => $vaga['departamento'],
-            'anoFundacao' => $vaga['anoFundacao'],
+
             'requisito' => $vaga['requisito'],
             'cidade' => $vaga['cidade'],
             'idVaga' => $vaga['idVaga'],
@@ -59,9 +58,9 @@ foreach ($result as $vaga) {
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -130,38 +129,38 @@ foreach ($result as $vaga) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($vagas as $vaga) { ?>
+                    <?php foreach ($vagas as $vaga) {?>
                         <tr class="infos">
                             <td>
-                                <?= $vaga['idVaga'] ?>
+                                <?=$vaga['idVaga']?>
                             </td>
                             <td>
-                                <?= $vaga['nome'] ?>
+                                <?=$vaga['nome']?>
                             </td>
                             <td>
-                                <?= $vaga['cidade'] ?>
+                                <?=$vaga['cidade']?>
                             </td>
                             <td>
-                                <?= $vaga['bairro'] ?>
+                                <?=$vaga['bairro']?>
                             </td>
                             <td>
-                                <?= $vaga['tipoTrabalho'] ?>
+                                <?=$vaga['tipoTrabalho']?>
                             </td>
                             <td>
-                                <?= $vaga['salario'] ?>
+                                <?=$vaga['salario']?>
                             </td>
                             <td>
-                                <?= $vaga['curso'] ?>
+                                <?=$vaga['curso']?>
                             </td>
                             <td>
-                                <?= $vaga['area'] ?>
+                                <?=$vaga['area']?>
                             </td>
                             <td>
-                                <?= $vaga['periodo'] ?>
+                                <?=$vaga['periodo']?>
                             </td>
 
                             <td>
-                                <a style="color: blue; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-<?= $vaga['idVaga'] ?>"> VER MAIS </a>
+                                <a style="color: blue; cursor: pointer;" href="vagas-candidato.php"> VER MAIS </a>
                             </td>
 
                             <td class="icone-table">
@@ -171,22 +170,22 @@ foreach ($result as $vaga) {
                                 </form>
 
 
-                                <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                <a href="./beck-end/crudVaga/vaga-delete.php?id=<?=$vaga['idVaga']?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
 
 
                             </td>
                         </tr>
 
-                    <?php } ?>
+                    <?php }?>
 
                 </tbody>
             </table>
 
         </section>
 
-        <?php foreach ($vagas as $vaga) { ?>
+        <?php foreach ($vagas as $vaga) {?>
 
-            <div class="modal fade" id="modal-<?= $vaga['idVaga'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal-<?=$vaga['idVaga']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -194,22 +193,22 @@ foreach ($result as $vaga) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <span> <h5>Nome da empresa:</h5><?= $vaga['empresa'] ?></span>
-                            <span> <h5>Departamento :</h5> <?= $vaga['departamento'] ?></span>
-                            <span> <h5>Requisitos:</h5> <?= $vaga['requisito'] ?></span>
-                            <span><h5>Nome da vaga:</h5><?= $vaga['nome'] ?></span>
-                            <span> <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?></span>
-                            <span> <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?></span>
-                            <span> <h5>Tipo de trabalho:</h5><?= $vaga['tipoTrabalho'] ?></span>
-                            <span> <h5>Salario:</h5><?= $vaga['salario'] ?></span>
-                 
+                        <span> <h5>Nome da empresa:</h5><?=$vaga['empresa']?></span>
+                            <span> <h5>Departamento :</h5> <?=$vaga['departamento']?></span>
+                            <span> <h5>Requisitos:</h5> <?=$vaga['requisito']?></span>
+                            <span><h5>Nome da vaga:</h5><?=$vaga['nome']?></span>
+                            <span> <h5>Descrição da vaga:</h5><?=$vaga['descricao']?></span>
+                            <span> <h5>Cursos da vaga:</h5><?=$vaga['curso']?></span>
+                            <span> <h5>Tipo de trabalho:</h5><?=$vaga['tipoTrabalho']?></span>
+                            <span> <h5>Salario:</h5><?=$vaga['salario']?></span>
+
                         </div>
                     </div>
                 </div>
             </div>
-        <?php } ?>
+        <?php }?>
 
-        <!--   
+        <!--
                 <dialog id="vermais" class="ver-mais">
 
             <div class="vermais-body">

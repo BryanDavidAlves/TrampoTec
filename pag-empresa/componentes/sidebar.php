@@ -1,9 +1,7 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 require_once "./beck-end/login/validador_acesso.php";
-
-
 
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idEmpresa'];
@@ -14,9 +12,6 @@ $query = $conexao->query($querySelect);
 
 $resultados = $query->fetchAll();
 
-    
-
-
 ?>
 <header class="side-bar">
         <nav>
@@ -24,8 +19,8 @@ $resultados = $query->fetchAll();
                     <img src="img/trampotec.png" alt="">
             </div>
             <div class="imagem-empresa">
-               <a href="../pag-empresa/perfil.php"><?php foreach($resultados as $resultados)  { ?> <img src="fotosEmpresa/perfil/<?=$resultados[10]?>"> <?php } ?>
-                <i class="icon-foto fa-solid fa-caret-right"></i> 
+               <a href="../pag-empresa/perfil.php"><?php foreach ($resultados as $resultados) {?> <img src="fotosEmpresa/perfil/<?=$resultados[13]?>"> <?php }?>
+                <i class="icon-foto fa-solid fa-caret-right"></i>
                 </a>
             </div>
             <ul>
@@ -37,8 +32,8 @@ $resultados = $query->fetchAll();
                     <li onclick="clickmenu2()"><a><i class="fa-sharp fa-solid fa-bell fa-lg"></i>Notificações</a></li>
                     <li onclick="clickmenu()"><a><i class="fa-solid fa-envelope"></i>Email</a></li>
                     <li><a href="../pag-empresa/configuracoes.php"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
-                    <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>           
+                    <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i>Logout</a></li>
                 </div>
             </ul>
-        </nav>                 
-</header>  
+        </nav>
+</header>
