@@ -63,7 +63,7 @@ if ($_POST) {
 
     $query2 = $conexao->prepare($sql2);
     $query2->execute();
-    if (!empty($novo_nome2)) {
+   /* if (!empty($novo_nome2)) {
         $sql3 = " UPDATE tb_perfil_empresa SET
                 departamento =  '$departamento' ,
                 descricao = '$descricao' ,
@@ -83,7 +83,7 @@ WHERE fk_idEmpresa='$id'
     $query3 = $conexao->prepare($sql3);
     $query3->execute();
     header('Location: ../../perfil.php');
-    exit;
+    exit;*/
 } else {
     header('Location: perfil.php?alterar=erro');
 }

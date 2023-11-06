@@ -1,11 +1,11 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
 include '../dao/conexao.php';
+$cliente_id = $_SESSION['idEmpresa'];
 
-
-$querySelect = "SELECT tb_empresa.* , tb_perfil_empresa.* , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+$querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
 FROM tb_empresa
-INNER JOIN tb_perfil_empresa ON tb_perfil_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+
 INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
 INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
 INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
@@ -15,7 +15,6 @@ INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idReq
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
-
 
 ?>
 <!DOCTYPE html>
@@ -38,8 +37,8 @@ $resultado = $query->fetchAll();
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
-    ?>
+include '../pag-aluno/components/header.php';
+?>
     <main id="main">
 
         <div class="box">
@@ -111,23 +110,23 @@ $resultado = $query->fetchAll();
 
                 <section class="vagas">
                     <div class="align-cards">
-                        <?php foreach ($resultado as $resultado) { ?>
+                        <?php foreach ($resultado as $resultado) {?>
                             <div class="cards">
                                 <div class="localidade">
 
                                 </div>
                                 <h4>
-                                    <?= $resultado[23] ?> -
-                                    <?= $resultado[9] ?>
+                                    <?=$resultado[23]?> -
+                                    <?=$resultado[9]?>
                                 </h4>
                                 <h4>
-                                    <?= $resultado[24] ?>
+                                    <?=$resultado[24]?>
                                 </h4>
                                 <h4>
-                                    <?= $resultado[25] ?>
+                                    <?=$resultado[25]?>
                                 </h4>
                                 <h4>R$
-                                    <?= $resultado[26] ?>
+                                    <?=$resultado[26]?>
                                 </h4>
 
 
@@ -135,7 +134,7 @@ $resultado = $query->fetchAll();
 
                             </div>
                             <dialog id="modal">
-
+                            <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
                                 <section class="container-modal">
                                     <div class="header-modal">
                                         <button id="closeModal">
@@ -147,19 +146,19 @@ $resultado = $query->fetchAll();
 
 
                                             <a><img class="img-modal"
-                                                    src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[10] ?>"></a>
+                                                    src="../pag-empresa/fotosEmpresa/perfil/<?=$resultado[13]?>"></a>
 
 
                                         </div>
                                         <div class="sobre-empresa">
                                             <h2>
-                                                <?= $resultado[3] ?>
+                                                <?=$resultado[3]?>
                                             </h2>
                                             <h3>
-                                                <?= $resultado[13] ?>
+                                                <?=$resultado[13]?>
                                             </h3>
                                             <h4>Desde
-                                                <?= $resultado[15] ?>
+                                                <?=$resultado[15]?>
                                             </h4>
                                         </div>
                                     </section>
@@ -174,22 +173,23 @@ $resultado = $query->fetchAll();
                                         </section>
                                         <section class="desc-vaga">
                                             <h2>
-                                                <?= $resultado[31] ?>
+                                                <?=$resultado[31]?>
                                             </h2>
                                             <div>
                                                 <p>
-                                                    <?= $resultado[27] ?>
+                                                    <?=$resultado[27]?>
                                                 </p>
                                             </div>
                                         </section>
                                     </div>
-                                    <button id="btn" onclick="openModal()">CANDIDATAR-SE</button>
+                                    <button id="btn" onclick="openModal()" type="submit" value="<?$cliente_id?>" >CANDIDATAR-SE</button>
+                                    </form>
                                 </section>
                             </dialog>
 
 
 
-                        <?php } ?>
+                        <?php }?>
 
                     </div>
                 </section>

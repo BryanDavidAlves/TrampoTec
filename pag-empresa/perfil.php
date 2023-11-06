@@ -6,9 +6,8 @@ require_once "./beck-end/login/validador_acesso.php";
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idEmpresa'];
 
-$querySelect = "SELECT tb_empresa.* , tb_perfil_empresa.* , tb_telefone_empresa.*
+$querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*
 FROM tb_empresa
-INNER JOIN tb_perfil_empresa ON tb_perfil_empresa.fk_idEmpresa = tb_empresa.idEmpresa
 INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
     WHERE tb_empresa.idEmpresa = '$cliente_id'
 ";
@@ -51,7 +50,7 @@ $resultado = $query->fetchAll();
 
 
                             <label for="imagem-perfil" style="cursor: pointer;"> <img class="foto-perfil-dialog" src="fotosEmpresa/perfil/<?=$resultado[10]?>"></img> </label>
-                            <input id="imagem-perfil" type="file" style="display: none;" value="<?=$resultado[10]?>" name="imagem-perfil">
+                            <input id="imagem-perfil" type="file" style="display: none;" value="<?=$resultado[13]?>" name="imagem-perfil">
 
                     </div>
                 </div>
@@ -112,7 +111,7 @@ $resultado = $query->fetchAll();
 
             <div class="conteiner-descricao">
 
-                <img class="foto-perfil" src="fotosEmpresa/perfil/<?=$resultado[10]?>"></img>
+                <img class="foto-perfil" src="fotosEmpresa/perfil/<?=$resultado[13]?>"></img>
                 <div class="descricao-conta">
                     <p class="nome-perfil"><?=$resultado[3]?></p>
                     <p class="tipo-perfil"> Empresa de tecnologia</p>
@@ -183,7 +182,7 @@ $resultado = $query->fetchAll();
 
 
     <script src="./js/java-empresa.js">
-        
+
     </script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>

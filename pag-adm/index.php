@@ -11,12 +11,12 @@ $querySelect = "SELECT * FROM tb_aluno";
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchALL();
 $n_aluno = count($aluno);
-
+/*
 $querySelect = "SELECT * FROM tb_professor";
 $resultado = $conexao->query($querySelect);
 $professor = $resultado->fetchALL();
 $n_professor = count($professor);
-
+ */
 $querySelect = "SELECT * FROM tb_admin";
 $resultado = $conexao->query($querySelect);
 $admin = $resultado->fetchALL();
@@ -27,7 +27,7 @@ $resultado = $conexao->query($querySelect);
 $pendenteEm = $resultado->fetchALL();
 $n_pendenteEmpresa = count($pendenteEm);
 
-$total = $n_admin + $n_professor + $n_empresa + $n_aluno;
+$total = $n_admin + $n_empresa + $n_aluno;
 
 ?>
 
@@ -71,6 +71,7 @@ include '../pag-adm/components/sidebar-adm.php';
                         </h2>
                     </div>
                 </a>
+                <!--
                 <a href=" professor.php">
                                 <div class="card">
                                     <div class="header-card">
@@ -82,6 +83,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                     </h2>
                                 </div>
                 </a>
+                -->
                 <a href="aluno.php">
                     <div class="card">
                         <div class="header-card">
