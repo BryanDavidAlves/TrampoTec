@@ -1,7 +1,9 @@
 <?php
-require_once "./back-end/login/validador_acesso.php";
 include '../dao/conexao.php';
-$cliente_id = $_SESSION['idEmpresa'];
+
+require_once "./back-end/login/validador_acesso.php";
+
+$cliente_id = $_SESSION['idAluno'];
 
 $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
 FROM tb_empresa
@@ -38,6 +40,7 @@ $resultado = $query->fetchAll();
 <body>
     <?php
 include '../pag-aluno/components/header.php';
+
 ?>
     <main id="main">
 
@@ -134,7 +137,7 @@ include '../pag-aluno/components/header.php';
 
                             </div>
                             <dialog id="modal">
-                            <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
+                            <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST" >
                                 <section class="container-modal">
                                     <div class="header-modal">
                                         <button id="closeModal">
@@ -182,7 +185,8 @@ include '../pag-aluno/components/header.php';
                                             </div>
                                         </section>
                                     </div>
-                                    <button id="btn" onclick="openModal()" type="submit" value="<?$cliente_id?>" >CANDIDATAR-SE</button>
+                                    <input type="hidden" id="idVaga" name="idVaga" value="<?=$resultado[18]?>">
+                                    <button name="bnt" id="btn" type="submit" value="<?= $cliente_id?>" >CANDIDATAR-SE</button>
                                     </form>
                                 </section>
                             </dialog>

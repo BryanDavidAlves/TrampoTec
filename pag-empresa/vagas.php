@@ -59,6 +59,7 @@ foreach ($result as $vaga) {
 <body>
 
 
+<?php include '../pag-empresa/componentes/sidebar.php'?>
     <?php include '../pag-empresa/componentes/email.php'?>
     <?php include '../pag-empresa/componentes/notificacao.php'?>
 
@@ -159,15 +160,18 @@ foreach ($result as $vaga) {
                                 <?=$vaga['periodo']?>
                             </td>
 
+
                             <td>
-                                <a style="color: blue; cursor: pointer;" href="vagas-candidato.php"> VER MAIS </a>
+                            <form method="POST" action="vagas-candidato.php">
+                                <button type="submit" style="color: blue; cursor: pointer;" name="idVaga" value="<?=$vaga['idVaga']?>" href="vagas-candidato.php"> VER MAIS </button>
+                            </form>
                             </td>
+
 
                             <td class="icone-table">
 
-                                <form>
                                     <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
-                                </form>
+
 
 
                                 <a href="./beck-end/crudVaga/vaga-delete.php?id=<?=$vaga['idVaga']?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>

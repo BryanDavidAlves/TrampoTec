@@ -1,7 +1,8 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
-
+$idvaga = trim($_POST['idVaga']);
+echo $idvaga;
 $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
  tb_requisito.requisito
@@ -14,9 +15,17 @@ ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
 INNER JOIN tb_requisito_vaga
 on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
-ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito";
+ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$idvaga'";
 
-$querySelect = "SELECT * FROM tb_aluno  ";
+$querySelect = "SELECT * FROM tb_aluno"; /* tb_vaga.idVaga AS vaga,tb_vaga_aluno.fk_idAluno  AS aluno, tb_aluno.nome,tb_aluno.imagem,tb_aluno.idAluno,tb_aluno.email
+
+FROM tb_vaga
+INNER JOIN tb_vaga
+ON tb_vaga_aluno.fk_idVaga=tb_vaga.idVaga
+
+INNER JOIN tb_aluno
+on  tb_aluno.idAluno=tb_vaga_aluno.fk_idAluno
+WHERE idVaga= '$idvaga'";*/
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
 $result = $conexao->query($info);
@@ -62,7 +71,7 @@ foreach ($result as $vaga) {
 
 <body>
 
-
+<?php include '../pag-empresa/componentes/sidebar.php'?>
     <?php include '../pag-empresa/componentes/email.php'?>
     <?php include '../pag-empresa/componentes/notificacao.php'?>
 
