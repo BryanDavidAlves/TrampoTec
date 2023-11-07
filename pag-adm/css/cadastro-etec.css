@@ -1,160 +1,193 @@
 .formulario-etec {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    
-    padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 10px;
 }
 
 .formulario-etec form {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    border: 2px solid rgb(161, 161, 161);
-    border-radius: 20px;
-    padding: 40px 80px;
-    align-items: center;
-    margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 2px solid rgb(161, 161, 161);
+  border-radius: 20px;
+  padding: 40px 80px;
+  align-items: center;
+  margin-left: 10%;
 }
-main{
 
-    margin-left: 30%;
+main {
+
+  margin-left: 30%;
 }
-.text-green{
-    color: green;
-    text-align: center;
-    margin-bottom: 5px;
+
+.text-green {
+  color: green;
+  text-align: center;
+  margin-bottom: 5px;
 }
-.text-danger{
-    color: red;
-    text-align: center;
-    margin-bottom: 5px;
+
+.text-danger {
+  color: red;
+  text-align: center;
+  margin-bottom: 5px;
 }
+
 .btn {
-    background-color: red;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    padding: 12px;
-    width: 70%;
-    margin-top: 10px;
-    font-weight: 800;
-    font-size: 1rem;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  width: 70%;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .input-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .input-box input {
-    border-radius: 10px;
-    border: 1px solid rgb(161, 161, 161);
-    width: 250px;
-    padding: 10px;
-    font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(161, 161, 161);
+  width: 250px;
+  padding: 10px;
+  font-size: 1rem;
 }
 
 label {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
+
 .secao-cadastro a {
-    display: flex;
-    color: black;
-    text-decoration: none;
-    align-items: center;
-    margin-left: 25%;
-    font-size: 1.5rem;
-    margin-left: 0;
-    
+  display: flex;
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  margin-left: 25%;
+  font-size: 1.5rem;
+  margin-left: 0;
+
 }
-.secao-cadastro{
-    margin-bottom: 30px;
+
+.secao-cadastro {
+  margin-bottom: 30px;
 }
+
 #icon-titulo {
-    background-color: #555cb3;
-    border-radius: 100%;
-    padding: 10px 10px 10px 10px;
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
-  select{
-    border-radius: 10px;
-    border: 1px solid rgb(161, 161, 161);
-    width: 275px;
-    padding: 10px;
-    font-size: 1rem;
-    animation:400ms linear trans;
+  background-color: #555cb3;
+  border-radius: 100%;
+  padding: 10px 10px 10px 10px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+select {
+  border-radius: 10px;
+  border: 1px solid rgb(161, 161, 161);
+  width: 275px;
+  padding: 10px;
+  font-size: 1rem;
+  animation: 400ms linear trans;
+}
+
+.addCampo {
+  border: 1px solid blue;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  transition: all 0.4s;
+  margin-top: 20px;
+}
+
+.addCampo:hover {
+  color: white;
+  background-color: blue;
+}
+
+.removeCampo {
+  border: 1px solid red;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  transition: all 0.4s;
+}
+
+.removeCampo:hover {
+  color: white;
+  background-color: red;
+}
+
+.campos-selects {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+
+}
+
+.campos-selects::-webkit-scrollbar {
+  width: 10px;
+}
+
+.campos-selects::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+.campos-selects::-webkit-scrollbar-thumb {
+  background-color: #555cb3;
+  border-radius: 50px;
+  border: 2px solid rgb(253, 253, 253);
+}
+
+.campos-selects::-webkit-scrollbar-track-piece {
+  background-color: #9a9999a1;
+  border-radius: 50px;
+  border: 2px solid rgb(253, 253, 253);
+}
+
+@keyframes trans {
+  0% {
+    opacity: 0%;
+    transform: translateY(-10%);
   }
 
-  .addCampo{
-    border: 1px solid blue;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: white;
-    transition: all 0.4s;
-  }
-  .addCampo:hover{
-    color: white;
-    background-color: blue;
+  100% {
+    opacity: 100%;
+    transform: translateY(1%);
   }
 
-  .removeCampo{
-    border: 1px solid red;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: white;
-    transition: all 0.4s;
-  }  .removeCampo:hover{
-    color: white;
-    background-color: red;
-  }
+}
 
-  .campos-selects{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-    padding: 10px;
-    max-height: 100px;
-    overflow-y: auto;
-    
-  }
+select:focus {
+  outline: none;
+}
 
-  .campos-selects::-webkit-scrollbar {
-    width: 10px;              
-  }
-  
-  .campos-selects::-webkit-scrollbar-track {
-    background: rgb(255, 255, 255);    
-  }
-  
-  .campos-selects::-webkit-scrollbar-thumb {
-    background-color:  #555cb3;    
-    border-radius: 50px;      
-    border: 2px solid rgb(253, 253,253);}
-  
-  .campos-selects::-webkit-scrollbar-track-piece{
-    background-color:  #9a9999a1;    
-    border-radius: 50px;      
-    border: 2px solid rgb(253, 253,253);}
-
-    @keyframes trans{
-        0%{opacity: 0%; transform: translateY(-10%);}
-      
-        100%{opacity: 100%; transform: translateY(1%);}
-      
-        }
-
-  select:focus{
-    outline: none;
-  }
-
-  input:focus{
-    outline: none;
-  }
+input:focus {
+  outline: none;
+}
+.campos {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
