@@ -106,11 +106,12 @@ select {
 
 .addCampo {
   border: 1px solid blue;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px;
   background-color: white;
   transition: all 0.4s;
-  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 60%;
 }
 
 .addCampo:hover {
@@ -190,4 +191,39 @@ input:focus {
   justify-content: center;
   width: 100%;
   margin-bottom: 20px;
+}
+thead {
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+}
+
+th {
+  text-align: center;
+  width: 250px;
+  padding: 10px 0px;
+  
+}
+
+table {
+  background-color: rgba(229, 229, 229, 0.641);
+  border-radius: 20px;
+  margin-top: 10px;
+  overflow: auto;
+  height: 5px;
+  width: 500px;
+}
+
+table td {
+  padding: 20px 5px 30px 5px;
+  text-align: center;
+  color: rgb(94, 94, 94);
+}
+.infos{
+  width: 10px;
+  height: 10px;
+  width: 50px;
+  overflow-y: scroll;
+}
+td{
+  margin-top: 80px;
 }

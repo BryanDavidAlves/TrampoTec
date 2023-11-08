@@ -336,7 +336,7 @@ if ($_POST) {
                 }
                 ?>
                 <input type="hidden" id="id_etec" name="id_etec" value="<?= $id_etec ?>">
-                <div class="btn"> <a href="cadastrar-curso-etec.php">PRÓXIMO</a></div>
+                <input type="submit" value="Enviar" class="btn"></input>
                 <!--<input type="submit" class="btn" value="CADASTRAR">-->
             </form>
         </section>

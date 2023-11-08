@@ -9,7 +9,32 @@ $query = $conexao->query($querySelect);
 
 $curso = $query->fetchAll();
 
+if ($_POST) {
+    $id_curso = $_POST['id_curso'];
+    $querySelect = "SELECT * FROM tb_curso  WHERE idCurso = $id_curso";
+    $resultado = $conexao->query($querySelect);
+    $curso = $resultado->fetch();
+    $id_curso = $curso["idCurso"];
+    $nome = $curso["nome"];
+    $cargaHoraria = $curso["cargaHoraria"];
+    $semestre = $curso["semestre"];
+    $modalidade = $curso["modalidade"];
+    $ensino = $curso["ensino"];
+    $querySelect = "SELECT * FROM tb_eixo  WHERE fk_idCurso = $id_curso";
+    $resultado = $conexao->query($querySelect);
+    $eixo = $resultado->fetch();
+    $eixo1 = $eixo["eixo"];
 
+
+} else {
+    $id_curso = "";
+    $nome = "";
+    $cargaHoraria = "";
+    $semestre = "";
+    $modalidade = "";
+    $ensino = "";
+    $eixo1 = "";
+}
 
 /*if ($_POST) {
     $id_etec = $_POST['id_etec'];
@@ -75,14 +100,13 @@ $curso = $query->fetchAll();
                             <option value="<?= $curso[1] ?>"> </option>
                         <?php } ?>
                     </datalist>
-                            <button class="addCampo" type="submit">ADICIONAR CURSO</button>
 
 
                     <!--<div class="campos-selects" id="campoSelect"></div>-->
 
-
                 </div>
-
+                
+                <button class="addCampo" type="submit">ADICIONAR CURSO</button>
                 <?php
                 /*
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
@@ -107,7 +131,45 @@ $curso = $query->fetchAll();
                 ?>
 
                 <input type="submit" class="btn" value="CADASTRAR">
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">CURSO</th>
+                            <th scope="col">MODALIDADE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="infos">
+
+                        <tr>
+                            <td>
+                                abc
+                            </td>
+                            <td>
+                                de
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                abc
+                            </td>
+                            <td>
+                                de
+                            </td>
+
+                        </tr>
+                        
+                    </tbody>
+
+
+                </table>
             </form>
+
+
         </section>
     </main>
     <script src="modal-etec.js"></script>
