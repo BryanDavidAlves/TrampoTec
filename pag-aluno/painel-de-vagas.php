@@ -1,11 +1,32 @@
 <?php
-require_once "./back-end/login/validador_acesso.php";
 include '../dao/conexao.php';
+
+require_once "./back-end/login/validador_acesso.php";
+
 $cliente_id = $_SESSION['idAluno'];
 
 
-if (!empty($_GET)) {
+if (!($_GET)) {
+    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+    
+    FROM tb_empresa
+    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito 
+";
+} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
 
+    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+    FROM tb_empresa
+    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito 
+";
+} else {
     $periodo = trim($_GET['periodo']);
     $curso = trim($_GET['curso']);
     $area = trim($_GET['area']);
@@ -18,21 +39,9 @@ if (!empty($_GET)) {
     INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
     INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
     INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito WHERE tb_vaga.periodo = '$periodo' OR tb_curso.nome = '$curso'
-     OR tb_vaga.area = '$area' OR  tb_vaga.salario BETWEEN 0 AND '$salario'
-    ";
-} else {
-    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
-    FROM tb_empresa
-    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
-    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
-    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito 
+    OR tb_vaga.area = '$area' OR  tb_vaga.salario BETWEEN 0 AND '$salario'
     ";
 }
-
-
-
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
@@ -74,7 +83,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label for="periodo">Período:</label>
                         <select name="periodo" id="periodo">
-                            <option value=" ">Qualquer</option>
+                            <option value="qualquer">Qualquer</option>
                             <option value="matinal">Manhã</option>
                             <option value="diurno">Tarde</option>
                             <option value="noturno">Noite</option>
@@ -85,7 +94,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Curso:</label>
                         <select class="option-curso" name="curso" id="curso">
-                            <option value=" ">Qualquer</option>
+                            <option value="qualquer">Qualquer</option>
                             <option value="desenvolvimento">Desenvolvimento de Sistemas</option>
                             <option value="administracao">Administração</option>
                             <option value="nutricao">Nutrição</option>
@@ -95,7 +104,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Área:</label>
                         <select name="area" id="area">
-                            <option value=" ">Qualquer</option>
+                            <option value="qualquer">Qualquer</option>
                             <option value="tecnologia">Tecnologia</option>
 
                         </select>
@@ -103,7 +112,7 @@ $resultado = $query->fetchAll();
                     <span class="option-filter">
                         <label>Salário:</label>
                         <select name="salario" id="salario">
-                            <option value=" ">Qualquer</option>
+                            <option value="qualquer">Qualquer</option>
                             <option value="1000"> 1000,00 R$</option>
                             <option value="1500">1000,00 R$ - 1500,00 R$</option>
                             <option value="2000">1500,00 R$ - 2000,00 R$</option>
@@ -146,7 +155,7 @@ $resultado = $query->fetchAll();
                                 <button id="btn1">Clique para mais informações</button>
 
                             </div>
-                            
+
                             <dialog id="modal">
                                 <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
                                     <section class="container-modal">
@@ -208,7 +217,7 @@ $resultado = $query->fetchAll();
         </section>
 
 
-       
+
     </main>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
