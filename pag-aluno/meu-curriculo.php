@@ -19,7 +19,7 @@
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 5px solid #34b7a7;
+  border-left: 5px solid blue;
   position: relative;
 }
 
@@ -67,7 +67,7 @@ margin-top: 3%;
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #34b7a7;
+  border: 2px solid blue;
 }
 
 button {
@@ -81,7 +81,8 @@ button {
   border-radius: 50px;
   transition: 0.5s;
   color: #fff;
-  background: #34b7a7;
+  background: red;
+  border-color: transparent;
 }
 
 button:hover {
@@ -95,62 +96,8 @@ button:hover {
         <?php
 include '../pag-aluno/components/header.php';
 ?>
-    <!-- <div class="container">
-        <h1>Meu Currículo</h1>
-
-        <div class="form-group">
-            <label for="nome">Instituição:</label>
-            <div type="text" id="instituicao">Etec de Guainazes </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="curso">Curso:</label>
-            <div type="text" id="curso">Desenvolvimento de sistemas</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="periodo">Período:</label>
-            <div type="text" id="periodo">Tarde</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="semestre">Semestre:</label>
-            <div id="semestre">3º semestre</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="caraga">Carga Horária:</label>
-            <div id="caraga">400 horas </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="conclusao">Coclusão:</label>
-            <div id="conclusao">2023</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="idioma">idioma:</label>
-            <div id="idioma">Inglês</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="nivel">Nivel de proficiência:</label>
-            <div id="nivel">Intermediario</div>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="conhecimentos">Conhecimentos:</label>
-            <div id="conhecimentos">Banco de dados</div>
-        </div>
-        <br>
-       <div class="form-group">
-            <label for="habilidades">Habilidades:</label>
-            <div id="habilidades">Trabalho em equipe</div>
-        </div>
-    </div> -->
     <main id="main">
 
-<!-- ======= Resume Section ======= -->
 <section id="resume" class="resume">
   <div class="container"  data-aos="fade-up">
 

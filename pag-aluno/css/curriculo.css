@@ -14,13 +14,11 @@ form {
 .align {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
 }
 
 .align-tabela {
   display: flex;
   gap: 200px;
-
 
 }
 
@@ -58,78 +56,6 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.card-carta {
-  background-color: rgb(232, 232, 232);
-  width: 420px;
-  padding: 25px;
-  border-radius: 32px;
-  box-shadow: 0px 20px 18px -10px #9b9b9b;
-}
-
-.cartas {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin-bottom: 50px;
-}
-
-.header-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.header-card .etec,
-.prof {
-  display: flex;
-  line-height: 35px;
-}
-
-.prof h3 {
-  font-weight: 700;
-  margin-right: 3px;
-}
-
-.etec h3 {
-  font-weight: 700;
-  margin-right: 3px;
-}
-
-.etec,
-.prof {
-  letter-spacing: 0.5px;
-}
-
-.titulo-recomendacao {
-  text-align: center;
-  font-weight: 800;
-  font-size: 0.8rem;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.conteudo-card p {
-  text-align: justify;
-  width: 90%;
-  margin: 15px auto 15px auto;
-  line-height: 20px;
-  letter-spacing: 0.5px;
-}
-
-.cima-esquerda {
-  width: 20%;
-  position: absolute;
-  top: 10%;
-  z-index: 0;
-}
-
-.cima-direita {
-  width: 13%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 0;
-}
 
 .align-tudo {
   display: flex;
@@ -138,7 +64,6 @@ input[type="submit"]:hover {
   position: fixed;
   width: 100%;
   height: 100%;
-  margin-top: 50px;
   overflow: scroll;
   padding: 200px 0px 100px 0px;
 }

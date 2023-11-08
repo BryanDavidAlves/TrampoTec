@@ -32,7 +32,7 @@ require_once "./back-end/login/validador_acesso.php";
 }
 
 #hero .container {
-  padding-top: 72px;
+  padding-top: 10px;
 }
 
 #hero h1 {
@@ -49,7 +49,7 @@ require_once "./back-end/login/validador_acesso.php";
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+button {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -61,6 +61,7 @@ require_once "./back-end/login/validador_acesso.php";
   margin: 10px 0 0 0;
   color: #fff;
   background: red;
+  border-color: transparent;
 }
 
 #hero .btn-get-started:hover {
@@ -68,9 +69,6 @@ require_once "./back-end/login/validador_acesso.php";
 }
 
 
-#hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
 
 @media (max-width: 991px) {
   #hero {
@@ -82,13 +80,6 @@ require_once "./back-end/login/validador_acesso.php";
     animation: none;
   }
 
-  #hero .hero-img {
-    text-align: center;
-  }
-
-  #hero .hero-img img {
-    width: 50%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -149,13 +140,16 @@ img {
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>Ingressando você no mercado de trabalho</h1>
+          <br>
           <h2>Encontre seu emprego e entre no mercado de trabalho com mais facilidade</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Criar currículo</a>
+          <a href="curriculo.php">
+        <button id="editButton">Criar currículo</button>
+        </a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="img/img-home.png" class="img-fluid animated" alt="">
+          <img src="img/img-home.png" style="width: 500px;" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
