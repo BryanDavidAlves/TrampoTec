@@ -6,10 +6,18 @@ include('../dao/conexao.php');
 
 $querySelect = "SELECT * FROM  tb_curso  ORDER BY nome ASC";
 
+
 $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
 
+
+
+$querySelect2 = "SELECT * FROM  tb_requisito ";
+
+$query2 = $conexao->query($querySelect2);
+
+$requisito = $query2->fetchAll();
 // Loop para coletar todos os campos do formulário
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -103,7 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             <select class="selects" name="curso" id="curso" required>
                                 <option>Selecione um curso</option>
                                 <?php foreach ($resultado as $resultado) { ?>
-                                    <option value="<?= $resultado[0] ?>"><?= $resultado[1] ?></option>
+                                    <option value="<?= $resultado[0] ?>">
+                                        <?= $resultado[1] ?>
+                                    </option>
                                 <?php } ?>
                             </select>
                             <span>
@@ -159,17 +169,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         ADICIONAR REQUISITO
                     </span>
                     <div id="campos" class="body-inputs">
-                    
+
                     </div>
                 </div>
 
                 <?php
                 if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
-                ?>
+                    ?>
                     <div class="text-danger">
                         Erro ao Cadastrar Vaga
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
@@ -180,22 +190,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("campos");
             const adicionarCampoButton = document.getElementById("adicionarCampo");
 
             let contadorCampos = 0;
 
-            adicionarCampoButton.addEventListener("click", function() {
+            adicionarCampoButton.addEventListener("click", function () {
                 contadorCampos++;
 
-                const novoCampo = document.createElement("input");
-                novoCampo.type = "text";
+                const novoCampo = document.createElement("select");
                 novoCampo.name = `campo${contadorCampos}`;
                 novoCampo.placeholder = `Requisito ${contadorCampos}`;
-                camposContainer.appendChild(novoCampo);
+                novoCampo.list = 'requisito'
+
+                // Você pode adicionar opções ao select se desejar
+
+                var select = document.createElement("select");
+                <?php foreach ($requisito as $requisito) { ?>
+                    // Crie um novo elemento select para cada item de $requisito
+                   
+
+                    // Crie uma opção para o select
+                    var option1 = document.createElement("option");
+                    option1.value = "<?= $requisito[0] ?>";
+                    option1.text = "<?= $requisito[1] ?>";
+
+                    // Adicione a opção ao select
+                    select.appendChild(option1);
+
+                    // Adicione o select à página
+                   
+                    document.getElementById("campos").appendChild(select);
+                <?php } ?>
+                
+
+
             });
+
         });
     </script>
 
