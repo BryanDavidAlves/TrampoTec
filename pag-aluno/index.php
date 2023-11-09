@@ -25,6 +25,9 @@ require_once "./back-end/login/validador_acesso.php";
 
     <title>Página Inicial</title>
     <style>
+      body {
+        font-family: sans-serif;
+      }
 #hero {
   width: 100%;
   height: 90vh;
@@ -69,6 +72,9 @@ button {
 }
 
 
+#hero .animated {
+  animation: up-down 2s ;
+}
 
 @media (max-width: 991px) {
   #hero {

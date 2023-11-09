@@ -32,17 +32,19 @@ require_once "./back-end/login/validador_acesso.php";
     <link rel="stylesheet" href="../reset.css">
 
     <style>
-        body {
-  font-family: Arial, sans-serif;
-
+ body {
+    font-family: sans-serif;
 }
 
 form {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 10px;
-  height: 620px;
-  border-radius: 10px;
   padding: 20px;
+  height: auto;
+  border-radius: 10px;
+  padding: 50px;
+  border-color: red;
+  margin-top: 10%;
+
 }
 
 .align {
@@ -55,7 +57,6 @@ form {
   display: flex;
   gap: 200px;
 
-
 }
 
 h4 {
@@ -67,19 +68,23 @@ h4 {
 label {
   display: block;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: medium;
 }
 
 input,
 select {
+  height: 6%;
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
+  margin-top: 5%;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 input[type="submit"] {
+  margin-top: 5%;
   background-color: #4CAF50;
   color: white;
   padding: 10px 15px;
@@ -97,9 +102,6 @@ input[type="submit"]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  width: 100%;
-  height: 100%;
 }
 
 .button {
@@ -127,6 +129,7 @@ input[type="submit"]:hover {
 }
 
 
+
      </style>   
     <title>Meu Curriculo</title>
 
@@ -137,59 +140,67 @@ input[type="submit"]:hover {
     include '../pag-aluno/components/header.php';
     ?>
 
-<div class="align-tudo">
-    <div class="align-tabela">
-        <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
-            <label for="nome">Instituição:</label>
-            <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
-                      placeholder="Nome da Instituição">
-                      <option>Selecione uma Instituição</option>
-                                            <?php foreach ($etec as $etec) {?>
-                                                <option value="<?=$etec[0]?>"><?=$etec[1]?></option>
-                                            <?php }?>
-                                            </select></p>
-
-
-            <label for="curso">Curso:</label>
-            <select class="input" placeholder="curso" name="curso" id="curso">
-                            <option value="">Selecione seu curso</option>
-
-                      </select>
-
-            <label for="periodo">Período:</label>
-            <select class="input" placeholder="periodo" name="periodo">
-                              <option value="">Selecione um período</option>
-                              <option value="">Vespertino</option>
-                              <option value="">Noturno</option>
-                              <option value="">Matutino</option>
-                              <option value="">Integral</option>
-                      </select>
-                      <select class="input" placeholder="semestre" name="semestre">
-                              <option value="1">1 SEMESTRE</option>
-                              <option value="2">2 SEMESTRE</option>
-                              <option value="3">3 SEMESTRE</option>
-                              <option value="4">4 SEMESTRE</option>
-                              <option value="5">5 SEMESTRE</option>
-                              <option value="6">6 SEMESTRE</option>
-
-                      </select>
-
-            <label for="carga_horaria">Carga Horária:</label>
-            <input type="number" id="carga_horaria" name="duracao" required>
-
-            <label for="conclusao">Conclusão:</label>
-            <input class="input" placeholder="conclusao"  name="conclusao" type="date"></p>
-
-            <input type="submit" value="Adicionar Curso">
-            
-            <a href="formulario2.php" class="button">Proximo</a> 
-
-        </form>
-        </div>
+    <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100"></div>
     </div>
 
+    <div class="align-tudo">
+        <div class="align-tabela">
 
+                <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
+                    <label for="nome">Instituição:</label>
+                    <select class="input" placeholder="etec" id="nome-etec" name="nome-etec"
+                        placeholder="Nome da Instituição">
+                        <option>Selecione uma Instituição</option>
+                        <?php foreach ($etec as $etec) { ?>
+                            <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
+                        <?php } ?>
+                    </select>
+
+                    <label for="curso">Curso:</label>
+                    <select class="input" placeholder="curso" name="curso" id="curso">
+                        <option value="">Selecione seu curso</option>
+                    </select>
+
+                    <label for="periodo">Período:</label>
+                    <select class="input" placeholder="periodo" name="periodo">
+                        <option value="">Selecione um período</option>
+                        <option value="">Vespertino</option>
+                        <option value="">Noturno</option>
+                        <option value="">Matutino</option>
+                        <option value="">Integral</option>
+                    </select>
+                    <select class="input" placeholder="semestre" name="semestre">
+                        <option value="1">Selecione um semestre</option>
+                        <option value="1">1 SEMESTRE</option>
+                        <option value="2">2 SEMESTRE</option>
+                        <option value="3">3 SEMESTRE</option>
+                        <option value="4">4 SEMESTRE</option>
+                        <option value="5">5 SEMESTRE</option>
+                        <option value="6">6 SEMESTRE</option>
+                    </select>
+
+                    <label for="carga_horaria">Carga Horária:</label>
+                    <input type="number" id="carga_horaria" name="duracao" required>
+
+                    <label for="conclusao">Conclusão:</label>
+                    <input class="input" placeholder="conclusao" name="conclusao" type="date"></p>
+
+                    <input type="submit" value="Adicionar Curso">
+
+                    <a href="formulario2.php" class="button">Próximo</a>
+
+                </form>
+
+        </div>
+    </div>
 </body>
+
 
 </html>
 <script src="js/funcoes.js"></script>
+
+
+
+

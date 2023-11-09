@@ -34,6 +34,9 @@ $resultado = $query->fetchAll();
     <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <title>Pagina de Vagas</title>
     <style>
+            body {
+        font-family: sans-serif;
+      }
     .container {
       margin-top: 30px;
     }
