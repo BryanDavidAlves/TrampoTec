@@ -94,13 +94,12 @@ if ($_POST) {
 
                 <div class="input-box">
                     <label for="curso">CURSO</label>
-                    
-                    <select id="cursos">
+                    <input list="cursos" placeholder="Digite o nome do curso">
+                    <datalist id="cursos">
                         <?php foreach ($curso as $curso) { ?>
-                            <option value="<?= $curso[0] ?>"><?= $curso[1] ?></option>
-
+                            <option value="<?= $curso[1] ?>"> </option>
                         <?php } ?>
-                    </select>
+                    </datalist>
 
 
                     <!--<div class="campos-selects" id="campoSelect"></div>-->
