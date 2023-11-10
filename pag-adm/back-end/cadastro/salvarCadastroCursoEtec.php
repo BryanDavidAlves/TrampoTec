@@ -5,7 +5,7 @@ include '../../../dao/conexao.php';
 if ($_POST && $_GET) {
     //passando todos os itens do post para as sua variaveis
     $idCurso = trim($_POST['curso']);
-    $idEtec = trim($_POST['etec']);
+    $idEtec = trim($_GET['etec']);
 
 
     $sql = " INSERT INTO tb_curso_etec ( fk_idCurso , fk_idEtec ) VALUES
@@ -20,7 +20,7 @@ if ($_POST && $_GET) {
    
 
 
-    header("Location:../../cadastrar-curso-etec.php");  
+    header("Location:../../cadastrar-curso-etec.php?etec=$idEtec");  
     exit;
 } else {
     header('Location: ../../cadastro-etec.php?cadastro=erro');
