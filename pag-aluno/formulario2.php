@@ -90,7 +90,7 @@ form {
 .link {
   margin-top: 5%;
     width: 200px;
-  background-color: #4CAF50;
+  background-color: red;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -99,7 +99,9 @@ form {
 }
 
 .link:hover {
-  background-color: #45a049;
+  background-color: white;
+  color: red;
+  transition: 0.2s all ease-in-out;
 }
 
 input,
@@ -189,7 +191,6 @@ label {
 
             <div class="align-button">
                 <button type="submit" class="link">Adicionar Novo Idioma</button>
-                <a href="curriculo.php"><button class="link">Voltar</button><a>
                 <a href="formulario3.php" class="button">Avançar<a>
 
             </div>

@@ -111,6 +111,7 @@ require_once "./back-end/login/validador_acesso.php";
         text-decoration: none;
         text-align: center;
 }
+
         input[type="submit"]:hover {
         background-color: white;
         color: #0a3580;
@@ -259,7 +260,6 @@ require_once "./back-end/login/validador_acesso.php";
                     </div>
                     <br>
                     <input type="submit" value="Finalizar">
-                    <a href="formulario2.php"><button class="link">Voltar</button><a>
                 </form>
             </div>
 
