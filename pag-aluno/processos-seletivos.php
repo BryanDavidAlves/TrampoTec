@@ -1,5 +1,21 @@
 <?php
+include '../dao/conexao.php';
+
 require_once "./back-end/login/validador_acesso.php";
+
+$cliente_id = $_SESSION['idAluno'];
+
+$querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+FROM tb_vaga
+INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
+INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+WHERE tb_aluno.idAluno= '$cliente_id'
+
+
+";
+
+$query = $conexao->query($querySelect);
+$resultado = $query->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,54 +99,22 @@ require_once "./back-end/login/validador_acesso.php";
                         <input class="btn-filtro" type="submit" name="" id="">
                     </form>
                 </section>
-
+                <?php foreach ($resultado as $resultado) {?>
                 <section class="vagas">
                     <section class="container-cards">
                         <div class="cards">
                             <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
+                                <h4><?=$resultado[9]?></h4>
+                                <h4><?=$resultado[10]?></h4>
                             </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
+                            <h4 class="nome-vaga"><?=$resultado[1]?></h4>
+                            <h4><?=$resultado[5]?></h4>
+                            <h4><?=$resultado[6]?></h4>
 
                         </div>
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-                        
-
-                        <div class="cards">
-                            <div class="localidade">
-                                <h4>SÃO PAULO - SP</h4>
-                                <h4>TATUAPÉ</h4>
-                            </div>
-                            <h4 class="nome-vaga">Desenvolvedor Front End Junior</h4>
-                            <h4>Presencial</h4>
-                            <h4>R$2.520,00</h4>
-
-                        </div>
-                    </section>
+                                    </section>
                 </section>
+                <?php }?>
    
         </div>
 

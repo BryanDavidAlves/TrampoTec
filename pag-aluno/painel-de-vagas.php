@@ -156,63 +156,64 @@ include '../pag-aluno/components/header.php';
                                 <button id="btn1">Clique para mais informações</button>
 
                             </div>
-
                             <dialog id="modal">
-                                <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
-                                    <section class="container-modal">
-                                        <div class="header-modal">
-                                            <button id="closeModal">
-                                                <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                                            </button>
+                            <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST" >
+                                <section class="container-modal">
+                                    <div class="header-modal">
+                                        <button id="closeModal">
+                                            <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                                        </button>
+                                    </div>
+                                    <section class="info-empresa">
+                                        <div class="div-img-modal">
+
+
+                                            <a><img class="img-modal"
+                                                    src="../pag-empresa/fotosEmpresa/perfil/<?=$resultado[13]?>"></a>
+
+
                                         </div>
-                                        <section class="info-empresa">
-                                            <div class="div-img-modal">
-
-
-                                                <a><img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?=$resultado[13]?>"></a>
-
-
-                                            </div>
-                                            <div class="sobre-empresa">
-                                                <h2>
-                                                    <?=$resultado[3]?>
-                                                </h2>
-                                                <h3>
-                                                    <?=$resultado[13]?>
-                                                </h3>
-                                                <h4>Desde
-                                                    <?=$resultado[15]?>
-                                                </h4>
+                                        <div class="sobre-empresa">
+                                            <h2>
+                                                <?=$resultado[3]?>
+                                            </h2>
+                                            <h3>
+                                                <?=$resultado[13]?>
+                                            </h3>
+                                            <h4>Desde
+                                                <?=$resultado[15]?>
+                                            </h4>
+                                        </div>
+                                    </section>
+                                    <div class="sobre-vaga">
+                                        <section class="conhecimento">
+                                            <h2>CONHECIMENTOS</h2>
+                                            <ul>
+                                                <li>JAVA</li>
+                                                <li>PHP</li>
+                                                <li>HTML</li>
+                                            </ul>
+                                        </section>
+                                        <section class="desc-vaga">
+                                            <h2>
+                                                <?=$resultado[31]?>
+                                            </h2>
+                                            <div>
+                                                <p>
+                                                    <?=$resultado[27]?>
+                                                </p>
                                             </div>
                                         </section>
-                                        <div class="sobre-vaga">
-                                            <section class="conhecimento">
-                                                <h2>CONHECIMENTOS</h2>
-                                                <ul>
-                                                    <li>JAVA</li>
-                                                    <li>PHP</li>
-                                                    <li>HTML</li>
-                                                </ul>
-                                            </section>
-                                            <section class="desc-vaga">
-                                                <h2>
-                                                    <?=$resultado[31]?>
-                                                </h2>
-                                                <div>
-                                                    <p>
-                                                        <?=$resultado[27]?>
-                                                    </p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        <button id="btn" type="submit" value="<? $cliente_id ?>">CANDIDATAR-SE</button>
-                                </form>
-                </section>
-                </dialog>
+                                    </div>
+                                    <input type="hidden" id="idVaga" name="idVaga" value="<?=$resultado[18]?>">
+                                    <button name="bnt" id="btn" type="submit" value="<?=$cliente_id?>" >CANDIDATAR-SE</button>
+                                    </form>
+                                </section>
+                            </dialog>
 
 
 
-            <?php }?>
+                        <?php }?>
 
         </div>
         </section>

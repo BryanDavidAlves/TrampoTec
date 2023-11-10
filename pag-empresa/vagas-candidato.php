@@ -17,15 +17,12 @@ on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
 ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$idvaga'";
 
-$querySelect = "SELECT * FROM tb_aluno"; /* tb_vaga.idVaga AS vaga,tb_vaga_aluno.fk_idAluno  AS aluno, tb_aluno.nome,tb_aluno.imagem,tb_aluno.idAluno,tb_aluno.email
+$querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+WHERE idVaga ='$idvaga'";
 
-FROM tb_vaga
-INNER JOIN tb_vaga
-ON tb_vaga_aluno.fk_idVaga=tb_vaga.idVaga
-
-INNER JOIN tb_aluno
-on  tb_aluno.idAluno=tb_vaga_aluno.fk_idAluno
-WHERE idVaga= '$idvaga'";*/
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
 $result = $conexao->query($info);
@@ -136,20 +133,20 @@ foreach ($result as $vaga) {
         <?php foreach ($aluno as $aluno) {?>
             <tr class="infos">
                 <td>
-                    <?=$aluno[0]?>
+                    <?=$aluno[16]?>
                 </td>
                 <td>
                 <div class="container-perfil">
                 <div class="img-perfil">
-                    <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[13] != "" ? $aluno[13] : '';?>" alt="">
+                    <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[29] != "" ? $aluno[29] : '';?>" alt="">
                 </div>
 
                 </td>
                 <td class="nome-aluno">
-                    <?=$aluno[3]?>
+                    <?=$aluno[19]?>
                 </td>
                 <td>
-                    <?=$aluno[1]?>
+                    <?=$aluno[17]?>
                 </td>
 
 
