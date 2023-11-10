@@ -101,9 +101,8 @@ include '../pag-aluno/components/header.php';
                                                 </span>
 
                                             </div>
-                                            <div class="two-bars">
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>BAIRRO:</h3>
                                                     <input id="inputBairro" type="text" disabled
                                                         value="<?=$resultado[9]?>" name="bairro">
@@ -111,36 +110,34 @@ include '../pag-aluno/components/header.php';
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>ESTADO: </h3>
                                                     <input id="inputEstado" type="text" disabled value="<?=$resultado[7]?>" name="estado">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
-                                            </div>
-                                            <div class="three-bars">
 
-                                                <div class="bar">
+                                                 <div class="one-bar">
                                                     <h3>CEP:</h3>
                                                     <input id="inputCep" type="text" disabled value="<?=$resultado[9]?>" name="cep">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>NUMERO: </h3>
                                                     <input id="inputNumero" type="text"  disabled value="<?=$resultado[7]?>" name="numero">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>COMPLEMENTO: </h3>
                                                     <input id="inputComplemento" type="text" disabled value="<?=$resultado[8]?>" name="complemento">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
-                                            </div>
+
 
                                         </section>
                                     </div>
