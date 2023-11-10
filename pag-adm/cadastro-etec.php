@@ -21,6 +21,17 @@ if ($_POST) {
     $email = $etec["email"];
     $codigo = $etec["codigo"];
     $municipio = $etec["municipio"];
+} 
+else if ($_GET) {
+    $id_etec = $_GET['etec'];
+    $querySelect = "SELECT * FROM tb_etec  WHERE idEtec = $id_etec";
+    $resultado = $conexao->query($querySelect);
+    $etec = $resultado->fetch();
+    $id_etec = $etec["idEtec"];
+    $nome = $etec["nome"];
+    $email = $etec["email"];
+    $codigo = $etec["codigo"];
+    $municipio = $etec["municipio"];
 } else {
     $id_etec = "";
     $nome = "";
@@ -29,6 +40,7 @@ if ($_POST) {
     $municipio = "";
     $cursoEtec = "";
 }
+
 
 
 ?>
@@ -336,7 +348,7 @@ if ($_POST) {
                 }
                 ?>
                 <input type="hidden" id="id_etec" name="id_etec" value="<?= $id_etec ?>">
-                <input type="submit" value="Enviar" class="btn"></input>
+                <input type="submit" value="Próximo" class="btn"></input>
                 <!--<input type="submit" class="btn" value="CADASTRAR">-->
             </form>
         </section>

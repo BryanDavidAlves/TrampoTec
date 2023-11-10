@@ -1,24 +1,25 @@
 <?php
 include '../../../dao/conexao.php';
-require_once "../login/validador_acesso.php";
 //VERIFICA SE ESTÁ VINDO INFORMAÇÕES VIA POST
 
 if ($_POST) {
 
-    //passando todos os itens do post para as sua variaveis
+    $idAluno = trim($_POST['bnt']);
+    $idVaga = trim($_POST['idVaga']);
 
-    $sql = "INSERT INTO tb_vaga_aluno(   fk_idAluno ) VALUES
-    (   '$id'
+    echo $idAluno, $idVaga;
+
+    $sql = "INSERT INTO tb_vaga_aluno ( fk_idAluno, fk_idVaga ) VALUES
+    (   '$idAluno',
+        '$idVaga'
 
     )
     ";
     $query = $conexao->prepare($sql);
     $query->execute();
     $id = $conexao->lastInsertId();
-    header('Location: ../../perfil.php');
+    header('Location: ../../painel-de-vagas.php');
     exit;
-
 } else {
-    header('Location: ../../perfil.php?alterar=erro');
-
+    header('Location: ../../painel-de-vagas.php?alterar=erro');
 }

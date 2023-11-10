@@ -9,53 +9,25 @@ $query = $conexao->query($querySelect);
 
 $curso = $query->fetchAll();
 
-if ($_POST) {
-    $id_curso = $_POST['id_curso'];
-    $querySelect = "SELECT * FROM tb_curso  WHERE idCurso = $id_curso";
-    $resultado = $conexao->query($querySelect);
-    $curso = $resultado->fetch();
-    $id_curso = $curso["idCurso"];
-    $nome = $curso["nome"];
-    $cargaHoraria = $curso["cargaHoraria"];
-    $semestre = $curso["semestre"];
-    $modalidade = $curso["modalidade"];
-    $ensino = $curso["ensino"];
-    $querySelect = "SELECT * FROM tb_eixo  WHERE fk_idCurso = $id_curso";
-    $resultado = $conexao->query($querySelect);
-    $eixo = $resultado->fetch();
-    $eixo1 = $eixo["eixo"];
 
 
-} else {
-    $id_curso = "";
-    $nome = "";
-    $cargaHoraria = "";
-    $semestre = "";
-    $modalidade = "";
-    $ensino = "";
-    $eixo1 = "";
+
+if ($_GET) {
+    $idEtec = $_GET['etec'];
+
+    $querySelect = "SELECT  tb_etec.* ,  tb_curso_etec.* , tb_curso.nome , tb_curso.ensino
+    FROM tb_etec
+
+    INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idEtec = tb_etec.idEtec
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_curso_etec.fk_idCurso
+    WHERE tb_curso_etec.fk_idEtec = $idEtec";
+
+    $query = $conexao->query($querySelect);
+
+    $etecJoin = $query->fetchAll();
 }
 
-/*if ($_POST) {
-    $id_etec = $_POST['id_etec'];
-    $querySelect = "SELECT * FROM tb_etec  WHERE idEtec = $id_etec";
-    $resultado = $conexao->query($querySelect);
-    $etec = $resultado->fetch();
-    $id_etec = $etec["idEtec"];
-    $nome = $etec["nome"];
-    $email = $etec["email"];
-    $codigo = $etec["codigo"];
-    $municipio = $etec["municipio"];
-} else {
-    $id_etec = "";
-    $nome = "";
-    $email = "";
-    $codigo = "";
-    $municipio = "";
-    $cursoEtec = "";
-}
 
-*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,8 +36,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -82,30 +53,29 @@ if ($_POST) {
 
     <header>
         <div class="secao-cadastro">
-            <a href="etec.php">
+            <a href="cadastro-etec.php?etec=<?=$idEtec?>">
                 <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
-                <h2>Cadastrar curso para a ETEC</h2>
+                <h2>Voltar</h2>
             </a>
         </div>
     </header>
     <main>
         <section class="formulario-etec">
-            <form action="" method="post">
+            <form action="back-end/cadastro/salvarCadastroCursoEtec.php?etec=<?= $idEtec ?>" method="post">
 
                 <div class="input-box">
                     <label for="curso">CURSO</label>
-                    <input list="cursos" placeholder="Digite o nome do curso">
-                    <datalist id="cursos">
+                    <select id="cursos" name="curso">
                         <?php foreach ($curso as $curso) { ?>
-                            <option value="<?= $curso[1] ?>"> </option>
+                            <option value="<?= $curso[0] ?>"><?= $curso[1] ?> - <?= $curso[5] ?></option>
                         <?php } ?>
-                    </datalist>
+                    </select>
 
 
                     <!--<div class="campos-selects" id="campoSelect"></div>-->
 
                 </div>
-                
+
                 <button class="addCampo" type="submit">ADICIONAR CURSO</button>
                 <?php
                 /*
@@ -130,7 +100,7 @@ if ($_POST) {
                 }*/
                 ?>
 
-                <input type="submit" class="btn" value="CADASTRAR">
+                <a href="etec.php" class="btn" value="FINALIZA"> FINALIZAR</a>
 
 
                 <table class="table">
@@ -138,31 +108,28 @@ if ($_POST) {
                         <tr>
 
                             <th scope="col">CURSO</th>
-                            <th scope="col">MODALIDADE</th>
+                            <th scope="col">ENSINO</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody class="infos">
+                        <?php foreach ($etecJoin as $etecJoin) { ?>
+                            <tr>
+                                <td>
+                                    <?= $etecJoin[7]?>
+                                </td>
+                                <td>
+                                    <?= $etecJoin[8] ?>
+                                </td>
+                                
+                                <td > <a href="./back-end/crudEtec/etec-curso-delete.php?id=<?=$etecJoin[5]?>&etec=<?=$idEtec?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
 
-                        <tr>
-                            <td>
-                                abc
-                            </td>
-                            <td>
-                                de
-                            </td>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        <?php } ?>
 
-                        <tr>
-                            <td>
-                                abc
-                            </td>
-                            <td>
-                                de
-                            </td>
 
-                        </tr>
-                        
                     </tbody>
 
 

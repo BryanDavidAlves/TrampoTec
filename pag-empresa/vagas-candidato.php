@@ -1,7 +1,8 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
-
+$idvaga = trim($_POST['idVaga']);
+echo $idvaga;
 $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
  tb_requisito.requisito
@@ -14,9 +15,14 @@ ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
 INNER JOIN tb_requisito_vaga
 on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
-ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito";
+ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$idvaga'";
 
-$querySelect = "SELECT * FROM tb_aluno  ";
+$querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+WHERE idVaga ='$idvaga'";
+
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
 $result = $conexao->query($info);
@@ -62,7 +68,7 @@ foreach ($result as $vaga) {
 
 <body>
 
-
+<?php include '../pag-empresa/componentes/sidebar.php'?>
     <?php include '../pag-empresa/componentes/email.php'?>
     <?php include '../pag-empresa/componentes/notificacao.php'?>
 
@@ -127,20 +133,20 @@ foreach ($result as $vaga) {
         <?php foreach ($aluno as $aluno) {?>
             <tr class="infos">
                 <td>
-                    <?=$aluno[0]?>
+                    <?=$aluno[16]?>
                 </td>
                 <td>
                 <div class="container-perfil">
                 <div class="img-perfil">
-                    <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[13] != "" ? $aluno[13] : '';?>" alt="">
+                    <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[29] != "" ? $aluno[29] : '';?>" alt="">
                 </div>
 
                 </td>
                 <td class="nome-aluno">
-                    <?=$aluno[3]?>
+                    <?=$aluno[19]?>
                 </td>
                 <td>
-                    <?=$aluno[1]?>
+                    <?=$aluno[17]?>
                 </td>
 
 
