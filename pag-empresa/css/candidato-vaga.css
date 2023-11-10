@@ -1,0 +1,119 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+main .align-itens {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+main .align-itens .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 20px 18px -10px #9b9b9b;
+  width: 350px;
+  height: 400px;
+}
+main .align-itens .card .itens-card {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 40px;
+  font-weight: 500;
+}
+main .align-itens .card .itens-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+main .align-itens thead {
+  color: rgb(70, 70, 70);
+  font-weight: 600;
+}
+
+main .align-itens th {
+  text-align: center;
+  padding-top: 20px;
+
+  color: black;
+}
+.tabela {
+  border-radius: 15px;
+  overflow-y: scroll;
+  max-height: 400px;
+  max-width: 700px;
+  border: none;
+  background-color: #555cb3;
+
+  box-shadow: 0px 20px 18px -10px #9b9b9b;
+}
+.tabela p {
+  color: white;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+main .align-itens table {
+  background-color: whitesmoke;
+
+  border-radius: 15px;
+  border: none;
+
+  width: 600px;
+
+  box-shadow: 0px 20px 18px -10px #9b9b9b;
+}
+
+main .align-itens .infos {
+  border-bottom: 2px solid rgb(80, 80, 80);
+}
+
+main .align-itens table td {
+  text-align: start;
+  color: rgb(0, 0, 0);
+}
+main .align-itens table .nome-aluno {
+  word-break: break-all;
+  min-width: 209px;
+  font-size: 0.8rem;
+}
+main .align-itens .table {
+  width: 100px;
+}
+
+main .align-itens tr:nth-last-child(1) {
+  border: none;
+}
+td .container-perfil .img-perfil {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td .container-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+td .container-perfil .img-perfil img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
+}

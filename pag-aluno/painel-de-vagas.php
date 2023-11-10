@@ -1,21 +1,50 @@
 <?php
-require_once "./back-end/login/validador_acesso.php";
 include '../dao/conexao.php';
 
+require_once "./back-end/login/validador_acesso.php";
 
-$querySelect = "SELECT tb_empresa.* , tb_perfil_empresa.* , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
-FROM tb_empresa
-INNER JOIN tb_perfil_empresa ON tb_perfil_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
-INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
-INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
-INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
+$cliente_id = $_SESSION['idAluno'];
+
+
+if (!($_GET)) {
+    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+    
+    FROM tb_empresa
+    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito 
 ";
+} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
+
+    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+    FROM tb_empresa
+    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito 
+";
+} else {
+    $periodo = trim($_GET['periodo']);
+    $curso = trim($_GET['curso']);
+    $area = trim($_GET['area']);
+    $salario = trim($_GET['salario']);
+
+    $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
+    FROM tb_empresa
+    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
+    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito WHERE tb_vaga.periodo = '$periodo' OR tb_curso.nome = '$curso'
+    OR tb_vaga.area = '$area' OR  tb_vaga.salario BETWEEN 0 AND '$salario'
+    ";
+}
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
-
 
 ?>
 <!DOCTYPE html>
@@ -24,9 +53,7 @@ $resultado = $query->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -129,7 +156,7 @@ p{
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
+    include '../pag-aluno/components/header.php';
     ?>
     <main id="main">
 
@@ -138,6 +165,7 @@ p{
             <!-- <div class="control">-->
 
             <section class="filtro">
+
             <div class="container mt-4">
   <h5>Filtre por:</h5>
 
@@ -178,6 +206,7 @@ p{
 </div>
  </section>
             <!-- <section class="container">
+
                 <section class="perfil">
                     <div class="div-img">
                         <img src="img/aluno-form.png" alt="">
@@ -193,6 +222,7 @@ p{
                         <h2>Painel de vagas</h2>
 
                         </div>
+
 
 
                         <div class="row">
@@ -272,10 +302,8 @@ p{
                 </section>
 
 
-            </section>
 
-            <!--</div>-->
-        </div>
+
     </main>
 
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
@@ -283,29 +311,25 @@ p{
     <script>
         var btn = document.getElementById('btn')
 
-        function openModal() {
-            alert('Você se cadastrou na vaga')
-            console.log(1)
-        }
 
         var button1 = document.getElementById("btn1")
         var button2 = document.getElementById("btn2")
         var button3 = document.getElementById("btn3")
         var modal = document.getElementById("modal")
 
-        button1.onclick = function () {
+        button1.onclick = function() {
             modal.showModal()
         }
-        button2.onclick = function () {
+        button2.onclick = function() {
             modal.showModal()
         }
-        button3.onclick = function () {
+        button3.onclick = function() {
             modal.showModal()
         }
     </script>
     <script>
         var closeModal = document.getElementById("closeModal")
-        closeModal.onclick = function () {
+        closeModal.onclick = function() {
             modal.close()
         }
     </script>
