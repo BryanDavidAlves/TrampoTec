@@ -8,7 +8,9 @@ $querySelect = "SELECT * FROM  tb_curso";
 $query = $conexao->query($querySelect);
 
 $curso = $query->fetchAll();
-
+if($_GET){
+    $idEtec = $_GET['etec'];
+}
 if ($_POST) {
     $id_curso = $_POST['id_curso'];
     $querySelect = "SELECT * FROM tb_curso  WHERE idCurso = $id_curso";
@@ -90,16 +92,15 @@ if ($_POST) {
     </header>
     <main>
         <section class="formulario-etec">
-            <form action="" method="post">
+            <form action="back-end/cadastro/salvarCadastroCursoEtec.php?etec=<?=$idEtec?>" method="post">
 
                 <div class="input-box">
                     <label for="curso">CURSO</label>
-                    <input list="cursos" placeholder="Digite o nome do curso">
-                    <datalist id="cursos">
+                    <select id="cursos" name="curso">
                         <?php foreach ($curso as $curso) { ?>
-                            <option value="<?= $curso[1] ?>"> </option>
+                            <option value="<?= $curso[0]?>"><?=$curso[1] ?> </option>
                         <?php } ?>
-                    </datalist>
+                    </select>
 
 
                     <!--<div class="campos-selects" id="campoSelect"></div>-->
