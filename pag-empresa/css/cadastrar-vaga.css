@@ -25,7 +25,7 @@ main {
    width: 16%;
 }
 
-.link-header {
+main a {
    font-size: 25px;
    text-decoration: none;
    color: black;
