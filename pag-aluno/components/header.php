@@ -12,6 +12,10 @@
     height: 17%;
     margin-right: 15%;
     }
+    .icone{
+      width: 3%;
+
+    }
     .topicos{
         margin-left: 30%;
     }
@@ -82,21 +86,14 @@
           <li><a class="dropdown-item" href="perfil.php">Meus dados</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="curriculo.php">Currículo</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="notificacoes.php">Notificações</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="index.php">Configurações</a></li>
           </ul>
         </li>
     </div>
-    <div class="img">
-      <a href="notificacoes.php">
-      <img src="img/icone-notif.png" alt="Bootstrap" width="30" height="24">
-      </a>
-  </div>
-  <div class="img">
-    <a href="back-end/login/logout.php">
-      <img src="img/icone-config.png" alt="Bootstrap" width="30" height="24">
-    </a>
-  </div>
   </div>
 </nav>
-
 </body>
 </html> 

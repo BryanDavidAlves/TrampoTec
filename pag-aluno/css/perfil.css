@@ -1,3 +1,6 @@
+body{
+  font-family: sans-serif;
+}
 h1 {
   color: #737373;
   text-align: center;
@@ -21,7 +24,7 @@ h1 {
 }
 
 .container {
-  margin-top: 30px;
+  margin-top: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,13 +46,6 @@ h1 {
   font-weight: 600;
 }
 
-.two-bars {
-  display: flex;
-  justify-content: space-between;
-  width: 101%;
-  gap: 10px;
-  margin-right: 1%;
-}
 
 .endereco .three-bars {
   display: flex;
@@ -64,13 +60,9 @@ h1 {
   font-weight: 400;
   color: #000;
 }
-.three-bars .bar {
-  width: 30%;
-  text-align: start;
-}
 
 .carousel-item h5 {
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
   color: #000;
   font-weight: 800;
@@ -111,31 +103,14 @@ h1 {
   margin-right: 5px;
 }
 
-.two-bars,
-.three-bars h3 {
-  font-size: 1.2rem;
-  color: #6a6a6a;
-}
 
-.one-bar,
-.three-bars h3 {
+.one-bar {
   font-size: 1.1rem;
   color: #6a6a6a;
   margin-left: 5px;
 }
-.two-bars h3 {
-  color: #6a6a6a;
-}
-.two-bars,
-.three-bars input {
-  font-size: 1.1rem;
-  color: #000;
-  margin-left: 5px;
-}
 
-.one-bar,
-.two-bars,
-.three-bars {
+.one-bar {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -206,7 +181,7 @@ h1 {
   color: white;
   border: none;
   cursor: pointer;
-  gap: 10px;
+  gap: 20px;
   margin-bottom: 10px;
 }
 .btn-salvar {

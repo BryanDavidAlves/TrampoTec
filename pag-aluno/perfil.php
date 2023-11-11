@@ -23,14 +23,10 @@ $resultado = $query->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <!--link icone filtro-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
+
     <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../pag-aluno/components/components-aluno.css">
     <link rel="stylesheet" href="../pag-aluno/css/perfil.css">
     <title>Meu Perfil</title>
 </head>
@@ -42,7 +38,6 @@ include '../pag-aluno/components/header.php';
     <main id="main">
         <div class="align">
             <section class="infos">
-                <h1>PERFIL</h1>
                 <div class="box">
                     <div id="carouselExampleDark" class="carousel slide">
 
@@ -62,34 +57,32 @@ include '../pag-aluno/components/header.php';
                                                     name="nome" value="<?=$resultado[3]?>">
                                             </div>
 
-                                            <div class="two-bars">
-
-                                                <div class="bar">
-                                                    <h3 class="titulo-nasc">DATA DE NASC:</h3>
+                                            <div class="one-bar">
+                                                    <h3>DATA DE NASCIMENTO:</h3>
                                                     <input id="inputNasc" name="nasc-aluno" type="text" disabled value="<?=$resultado[5]?>">
 
                                                 </div>
-                                                <div class="bar">
+
+                                                <div class="one-bar">
                                                     <h3>CPF:</h3>
                                                     <input id="inputCpf" name="cdp-aluno" type="text" disabled value="<?=$resultado[4]?>">
                                                 </div>
-                                            </div>
 
-                                            <div class="two-bars">
-                                                <div class="bar">
+
+                                                <div class="one-bar">
                                                     <h3>CELULAR:</h3>
                                                     <input id="inputCelular" type="text" disabled
                                                         value="<?=$resultado[16]?>" name="telefone">
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>TELEFONE: </h3>
                                                     <input id="inputTelefone" type="text" disabled
                                                         value="(11)2552-3735" name="celular">
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
-                                            </div>
+
                                         </section>
                                     </div>
                                 </div>
@@ -107,9 +100,8 @@ include '../pag-aluno/components/header.php';
                                                 </span>
 
                                             </div>
-                                            <div class="two-bars">
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>BAIRRO:</h3>
                                                     <input id="inputBairro" type="text" disabled
                                                         value="<?=$resultado[9]?>" name="bairro">
@@ -117,36 +109,34 @@ include '../pag-aluno/components/header.php';
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>ESTADO: </h3>
                                                     <input id="inputEstado" type="text" disabled value="<?=$resultado[7]?>" name="estado">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
-                                            </div>
-                                            <div class="three-bars">
 
-                                                <div class="bar">
+                                                 <div class="one-bar">
                                                     <h3>CEP:</h3>
                                                     <input id="inputCep" type="text" disabled value="<?=$resultado[9]?>" name="cep">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>NUMERO: </h3>
                                                     <input id="inputNumero" type="text"  disabled value="<?=$resultado[7]?>" name="numero">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
 
-                                                <div class="bar">
+                                                <div class="one-bar">
                                                     <h3>COMPLEMENTO: </h3>
                                                     <input id="inputComplemento" type="text" disabled value="<?=$resultado[8]?>" name="complemento">
 
                                                     <!--fazer o js para possibilitar o edit-->
                                                 </div>
-                                            </div>
+
 
                                         </section>
                                     </div>
