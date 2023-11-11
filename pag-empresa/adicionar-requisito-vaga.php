@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="input-box">
                         <label for="curso">REQUISITO</label>
-                        <input list="requisito" id="requisitos" type="text">
+                        <input list="requisito" nmae="requisitos" id="requisitos" type="text">
                         <datalist id="requisito" name="requisito">
                             <?php foreach ($requisito as $requisito) { ?>
                                 <option value="<?= $requisito[0] ?> ">
