@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="input-box">
                         <label for="curso">REQUISITO</label>
-                        <input list="requisito">
+                        <input list="requisito" id="requisitos" type="text">
                         <datalist id="requisito" name="requisito">
                             <?php foreach ($requisito as $requisito) { ?>
                                 <option value="<?= $requisito[0] ?> ">
@@ -124,68 +124,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                             class="fa-solid fa-x" style="color: #000000;"></i></a>
 
                                 </td>
-
                             </tr>
-
-
-
                         </tbody>
-
-
                     </table>
                 </div>
             </form>
-
         </section>
-
     </main>
-
-    <!-- <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const formulario = document.getElementById("meuFormulario");
-            const camposContainer = document.getElementById("campos");
-            const adicionarCampoButton = document.getElementById("adicionarCampo");
-
-            let contadorCampos = 0;
-
-            adicionarCampoButton.addEventListener("click", function () {
-                contadorCampos++;
-
-                const novoCampo = document.createElement("select");
-                novoCampo.name = `campo${contadorCampos}`;
-                novoCampo.placeholder = `Requisito ${contadorCampos}`;
-                novoCampo.list = 'requisito'
-
-                // Você pode adicionar opções ao select se desejar
-
-                var select = document.createElement("select");
-                <?php foreach ($requisito as $requisito) { ?>
-                    // Crie um novo elemento select para cada item de $requisito
-
-
-                    // Crie uma opção para o select
-                    var option1 = document.createElement("option");
-                    option1.value = "<?= $requisito[0] ?>";
-                    option1.text = "<?= $requisito[1] ?>";
-
-                    // Adicione a opção ao select
-                    select.appendChild(option1);
-
-                    // Adicione o select à página
-
-                    document.getElementById("campos").appendChild(select);
-                <?php } ?>
-
-
-
-            });
-
-        });
-    </script> -->
 
     <script src="./js/funcoes.js"></script>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('requisitos').addEventListener('input', function () {
+            var input = this;
+            var datalist = document.getElementById('requisito');
+            var selectedOption = Array.from(datalist.options).find(option => option.value === input.value);
+
+            if (selectedOption) {
+                // Em vez de ocultar o value, você pode manipular o que é exibido no campo de entrada
+                input.value = selectedOption.text;
+            }
+        });
+    </script>
 </body>
 
 </html>
