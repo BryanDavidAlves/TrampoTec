@@ -46,11 +46,7 @@ main {
   font-weight: 800;
   font-size: 1rem;
   text-align: center;
-}
-
-.btn a {
   text-decoration: none;
-  color: #fff;
 }
 
 .input-box {
