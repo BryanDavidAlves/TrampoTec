@@ -1,0 +1,308 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ 
+ main {
+    margin-left: 20%;
+    overflow: hidden;
+    padding: 20px;
+ }
+ 
+ .cima {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 18%;
+ }
+ 
+ .baixo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 16%;
+ }
+ 
+ main a {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+ }
+ 
+ .fa-chevron-left {
+    font-size: 25px;
+    color: red;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid red;
+    border-radius: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ 
+ .formulario-cadastrar-vaga {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .formulario-cadastrar-vaga form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 60%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 45px;
+    padding: 40px;
+    gap: 15px;
+    z-index: 5;
+ }
+ 
+ 
+ form .alinhaento-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    gap: 20px;
+    padding: 10px;
+ }
+ 
+ 
+ form h1 {
+    font-size: 22px;
+ }
+ 
+ form .alinhaento-inputs span {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+ }
+ 
+ 
+ form .alinhaento-inputs span label {
+    font-size: 17px;
+ }
+ 
+ .formulario-cadastrar-vaga .alinhaento-inputs input {
+    padding: 9px;
+    border-radius: 25px;
+    border: 1px solid blue;
+    width: 100%;
+ }
+ 
+ .formulario-cadastrar-vaga .alinhaento-inputs span .descricao {
+    height: 40px;
+    padding: 10px;
+ }
+ 
+ 
+ input:focus {
+    outline: none;
+ }
+ 
+ .selects:focus {
+    outline: none;
+ }
+ 
+ .selects {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+ }
+ 
+ .botao-vaga {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    color: white;
+    background-color: rgb(10, 10, 87);
+    font-size: 15px;
+    cursor: pointer;
+ }
+ 
+ .caixa-add-requisito {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+ }
+ 
+ .caixa-add-requisito span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }
+ 
+ .add-requisito {
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+ }
+ 
+ .caixa-add-requisito .body-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow-y: auto;
+    width: 300px;
+    max-height: 80px;
+    padding: 10px;
+ }
+ 
+ .body-inputs::-webkit-scrollbar {
+    width: 10px;
+ }
+ 
+ .body-inputs::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+ }
+ 
+ .body-inputs::-webkit-scrollbar-thumb {
+    background-color: #555cb3;
+    border-radius: 50px;
+    border: 2px solid rgb(253, 253, 253);
+ }
+ 
+ .body-inputs::-webkit-scrollbar-track-piece {
+    background-color: #9a9999a1;
+    border-radius: 50px;
+    border: 2px solid rgb(253, 253, 253);
+ }
+ 
+ .caixa-add-requisito .body-inputs select {
+    padding: 9px;
+    border-radius: 25px;
+    border: 1px solid blue;
+    width: 70%;
+    animation: 400ms linear trans;
+    transform: translateY(20%);
+ }
+ 
+ @keyframes trans {
+    0% {
+       opacity: 0%;
+       transform: translateY(-10%);
+    }
+ 
+    100% {
+       opacity: 100%;
+       transform: translateY(20%);
+    }
+ 
+ }
+ 
+ thead {
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+ }
+ 
+ th {
+    text-align: center;
+    width: 250px;
+    padding: 10px 0px;
+    width: 100%;
+ }
+ 
+ 
+ table {
+    background-color: rgba(229, 229, 229, 0.641);
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow: auto;
+    height: 5px;
+    width: 500px;
+ }
+ 
+ table td {
+    padding: 20px 5px 30px 5px;
+    text-align: center;
+    color: rgb(94, 94, 94);
+    padding: 10px 30px 20px 0px;
+ }
+ 
+ 
+ .infos {
+    width: 10px;
+    height: 10px;
+    width: 50px;
+    overflow-y: scroll;
+ }
+ 
+ td {
+    margin-top: 80px;
+ }
+ 
+ 
+ table a {
+    font-size: 18px;
+ }
+ 
+ .addCampo {
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    transition: all 0.4s;
+    width: 47%;
+ }
+ 
+ .addCampo:hover {
+    color: white;
+    background-color: blue;
+ }
+ 
+ .btn {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    width: 55%;
+    font-weight: 800;
+    font-size: 1rem;
+    text-align: center;
+ }
+ 
+ .input-box input {
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 800px;
+    padding: 10px;
+    font-size: 1rem;
+    animation: 400ms linear trans;
+ }
+ 
+ .input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+ 
+ .input-box input {
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+ }
+ 
+ label {
+    margin-bottom: 20px;
+ }
