@@ -119,19 +119,6 @@ select {
   background-color: blue;
 }
 
-.removeCampo {
-  border: 1px solid red;
-  border-radius: 20px;
-  padding: 10px;
-  background-color: white;
-  transition: all 0.4s;
-}
-
-.removeCampo:hover {
-  color: white;
-  background-color: red;
-}
-
 .campos-selects {
   display: flex;
   flex-direction: column;

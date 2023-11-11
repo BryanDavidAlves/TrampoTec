@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
-    <link rel='stylesheet' href='../pag-empresa/css/cadastrar-vaga.css'>
+    <link rel='stylesheet' href='../pag-empresa/css/cadastrar-requisitos.css'>
     <title>TrampoTec</title>
 </head>
 
@@ -65,131 +65,81 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
         <section class="formulario-cadastrar-vaga">
-            <form action="beck-end/cadastroVaga/salvarCadastroVaga.php" method="post">
+            <form action=" " method="post">
 
                 <h1>FORMULARIO CADASTRO DE REQUISITOS</h1>
 
                 <div class="alinhaento-inputs">
-
-                    <div>
+                    <!--<div class="caixa-add-requisito">
                         <span>
-                            <label for="nome">NOME</label>
-                            <input name="nome" type="text" required>
-
+                            <i id="adicionarCampo" class="add-requisito fa-solid fa-circle-plus"></i>
+                            ADICIONAR REQUISITO
                         </span>
+                        <div id="campos" class="body-inputs">
 
-                        <span>
-                            <label for="cidade">CIDADE</label>
-                            <input name="cidade" type="text" required>
-                        </span>
+                        </div>
                     </div>
 
-                    <div>
-                        <span>
-                            <label for="bairro">BAIRRO</label>
-                            <input name="bairro" type="text" required>
-                        </span>
+                    </*?php
+                    if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
+                        ?>
+                        <div class="text-danger">
+                            Erro ao Cadastrar Vaga
+                        </div>
+                        </*?php
+                    }
+                    ?/*>-->
 
-
-                        <span>
-                            <label for="tipo">TIPO TRABALHO</label>
-                            <input name="tipo" type="text" required>
-                        </span>
-                        <span>
-                            <label for="tipo">Semana</label>
-                            <input name="semana" type="text" placeholder="Seg-Sex" maxlength="7" required>
-                        </span>
+                    <div class="input-box">
+                        <label for="curso">REQUISITO</label>
+                        <select id="cursos" name="curso">
+                            <?php foreach ($requisito as $requisito) { ?>
+                                <option value="<?= $requisito[0] ?>">
+                                    <?= $requisito[1] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
                     </div>
 
-                    <div>
-                        <span>
-                            <label for="salario">SALARIO</label>
-                            <input name="salario" type="number" required>
-                        </span>
-                        <span>
-                            <label>Curso</label>
-                            <select class="selects" name="curso" id="curso" required>
-                                <option>Selecione um curso</option>
-                                <?php foreach ($resultado as $resultado) { ?>
-                                    <option value="<?= $resultado[0] ?>">
-                                        <?= $resultado[1] ?>
-                                    </option>
-                                <?php } ?>
-                            </select>
-                            <span>
+                    <button class="addCampo" type="submit">ADICIONAR CURSO</button>
+                    <a href="etec.php" class="btn" value="FINALIZAR"> FINALIZAR</a>
 
 
-                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">REQUISITOS CADASTRADOS PARA A VAGA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="infos">
 
-                    <div>
-                        <span>
-                            <label for="descricao">DESCRIÇÃO</label>
-                            <input class="descricao" name="descricao" type="text" required>
-                        </span>
+                            <tr>
+                                <td>
+                                    asd
+                                </td>
 
-                    </div>
+                                <td> <a
+                                        href="./back-end/crudEtec/etec-curso-delete.php?id=<?= $etecJoin[5] ?>&etec=<?= $idEtec ?>"><i
+                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
 
-                    <div>
-                        <span>
-                            <label for="area">AREA</label>
-                            <input name="area" type="text" required>
-                        </span>
+                                </td>
 
-                        <span>
-                            <label for="periodo">PERIODO</label>
-                            <select class="selects" name="periodo" required>
-                                <option value="noturno">Noturno</option>
-                                <option value="diurno">Diurno</option>
-                                <option value="matinal">Matinal</option>
-                                <option value="integral">integral</option>
-                            </select>
-                        </span>
-                    </div>
+                            </tr>
 
 
 
-                    <div>
-                        <span>
-                            <label for="inicio">INICIO</label>
-                            <input name="inicio" type="time" required>
-                        </span>
+                        </tbody>
 
-                        <span>
-                            <label for="termino">TERMINO</label>
-                            <input name="termino" type="time" required>
-                        </span>
-                    </div>
 
+                    </table>
                 </div>
-
-
-                <div class="caixa-add-requisito">
-                    <span>
-                        <i id="adicionarCampo" class="add-requisito fa-solid fa-circle-plus"></i>
-                        ADICIONAR REQUISITO
-                    </span>
-                    <div id="campos" class="body-inputs">
-
-                    </div>
-                </div>
-
-                <?php
-                if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
-                    ?>
-                    <div class="text-danger">
-                        Erro ao Cadastrar Vaga
-                    </div>
-                    <?php
-                }
-                ?>
-                <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
         </section>
 
     </main>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("campos");
@@ -210,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 var select = document.createElement("select");
                 <?php foreach ($requisito as $requisito) { ?>
                     // Crie um novo elemento select para cada item de $requisito
-                   
+
 
                     // Crie uma opção para o select
                     var option1 = document.createElement("option");
@@ -221,16 +171,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     select.appendChild(option1);
 
                     // Adicione o select à página
-                   
+
                     document.getElementById("campos").appendChild(select);
                 <?php } ?>
-                
+
 
 
             });
 
         });
-    </script>
+    </script> -->
 
     <script src="./js/funcoes.js"></script>
     <script src="./js/java-empresa.js"></script>
