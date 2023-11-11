@@ -73,7 +73,7 @@ button {
 
 
 #hero .animated {
-  animation: up-down 2s ;
+  animation: up-down 0s ;
 }
 
 @media (max-width: 991px) {

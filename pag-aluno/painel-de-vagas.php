@@ -81,7 +81,6 @@ $resultado = $query->fetchAll();
        margin-top: 5%;
      
     }
-
 .services .icon-box {
     margin-top: 17%;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
@@ -203,6 +202,9 @@ include '../pag-aluno/components/header.php';
         <option value="mais-de-4000">Mais de R$ 4.000</option>
       </select>
     </div>
+    <div class="col-md-1">
+        <button type="button" class="btn btn-primary btn-block">Filtrar</button>
+      </div>
   </div>
 </div>
  </section>
@@ -216,7 +218,6 @@ include '../pag-aluno/components/header.php';
                 </section> -->
 
 
-<<<<<<< HEAD
                     <section id="services" class="services section-bg">
                     <div class="container" data-aos="fade-up">
 
@@ -224,28 +225,6 @@ include '../pag-aluno/components/header.php';
                         <h2>Painel de vagas</h2>
 
                         </div>
-=======
-                <section class="vagas">
-                    <div class="align-cards">
-                        <?php foreach ($resultado as $resultado) {?>
-                            <div class="cards">
-                                <div class="localidade">
-
-                                </div>
-                                <h4>
-                                    <?=$resultado[23]?> -
-                                    <?=$resultado[9]?>
-                                </h4>
-                                <h4>
-                                    <?=$resultado[24]?>
-                                </h4>
-                                <h4>
-                                    <?=$resultado[25]?>
-                                </h4>
-                                <h4>R$
-                                    <?=$resultado[26]?>
-                                </h4>
->>>>>>> 8e6e62fb64ec315ec3714dc561a9171fbed633ee
 
 
 
@@ -264,7 +243,6 @@ include '../pag-aluno/components/header.php';
                             Clique para mais informações
                             </button>
                             </div>
-<<<<<<< HEAD
                         </div>
                     </div>
                     </section>
@@ -328,71 +306,6 @@ include '../pag-aluno/components/header.php';
 
 
 
-=======
-                            <dialog id="modal">
-                            <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST" >
-                                <section class="container-modal">
-                                    <div class="header-modal">
-                                        <button id="closeModal">
-                                            <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
-                                        </button>
-                                    </div>
-                                    <section class="info-empresa">
-                                        <div class="div-img-modal">
-
-
-                                            <a><img class="img-modal"
-                                                    src="../pag-empresa/fotosEmpresa/perfil/<?=$resultado[13]?>"></a>
-
-
-                                        </div>
-                                        <div class="sobre-empresa">
-                                            <h2>
-                                                <?=$resultado[3]?>
-                                            </h2>
-                                            <h3>
-                                                <?=$resultado[13]?>
-                                            </h3>
-                                            <h4>Desde
-                                                <?=$resultado[15]?>
-                                            </h4>
-                                        </div>
-                                    </section>
-                                    <div class="sobre-vaga">
-                                        <section class="conhecimento">
-                                            <h2>CONHECIMENTOS</h2>
-                                            <ul>
-                                                <li>JAVA</li>
-                                                <li>PHP</li>
-                                                <li>HTML</li>
-                                            </ul>
-                                        </section>
-                                        <section class="desc-vaga">
-                                            <h2>
-                                                <?=$resultado[31]?>
-                                            </h2>
-                                            <div>
-                                                <p>
-                                                    <?=$resultado[27]?>
-                                                </p>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <input type="hidden" id="idVaga" name="idVaga" value="<?=$resultado[18]?>">
-                                    <button name="bnt" id="btn" type="submit" value="<?=$cliente_id?>" >CANDIDATAR-SE</button>
-                                    </form>
-                                </section>
-                            </dialog>
-
-
-
-                        <?php }?>
-
-        </div>
-        </section>
-
-
->>>>>>> 8e6e62fb64ec315ec3714dc561a9171fbed633ee
 
     </main>
 
@@ -423,8 +336,11 @@ include '../pag-aluno/components/header.php';
             modal.close()
         }
     </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

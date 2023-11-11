@@ -156,6 +156,9 @@ require_once "./back-end/login/validador_acesso.php";
     include('../pag-aluno/components/header.php');
     include('../pag-aluno/components/sidebar.php');
     ?>
+    <div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
     <div class="align-tudo">
         <div class="form-container">
             <div class="formulario">
