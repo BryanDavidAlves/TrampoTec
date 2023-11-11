@@ -79,7 +79,7 @@ $resultado = $query->fetchAll();
         text-align: center;
        font-weight: bold;
        margin-top: 5%;
-     
+
     }
 .services .icon-box {
     margin-top: 17%;
@@ -230,15 +230,15 @@ include '../pag-aluno/components/header.php';
 
                         <div class="row">
 
-                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">                        
-                            <div class="icon-box">                            
-                            <?php foreach ($resultado as $resultado) { ?>
+                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+                            <div class="icon-box">
+                            <?php foreach ($resultado as $resultado) {?>
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href=""><?= $resultado[23] ?> -
-                                <?= $resultado[9] ?></a></h4>
-                            <p><?= $resultado[24] ?></p>
-                            <p><?= $resultado[25] ?></p>
-                            <p>R$<?= $resultado[26] ?></p>
+                            <h4><a href=""><?=$resultado[23]?> -
+                                <?=$resultado[9]?></a></h4>
+                            <p><?=$resultado[24]?></p>
+                            <p><?=$resultado[25]?></p>
+                            <p>R$<?=$resultado[26]?></p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top: 10%;">
                             Clique para mais informações
                             </button>
@@ -249,6 +249,7 @@ include '../pag-aluno/components/header.php';
 
                         <!-- Modal -->
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
+                        <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST" >
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -259,17 +260,17 @@ include '../pag-aluno/components/header.php';
                               <section class="info-empresa">
                                         <div class="div-img-modal">
                                             <a><img class="img-modal"
-                                                    src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[10] ?>"></a>
+                                                    src="../pag-empresa/fotosEmpresa/perfil/<?=$resultado[10]?>"></a>
                                         </div>
                                         <div class="sobre-empresa">
                                             <p> <div style="font-weight: bold; font-size:20px ;"> Empresa: </div>
-                                                <?= $resultado[3] ?>
+                                                <?=$resultado[3]?>
                             </p><br>
                                             <p> <div style="font-weight: bold; font-size:20px ;">Departamento: </div>
-                                                <?= $resultado[13] ?>
+                                                <?=$resultado[13]?>
                             </p><br>
                                             <p> <div style="font-weight: bold; font-size:20px ;">Desde: </div>
-                                                <?= $resultado[15] ?>
+                                                <?=$resultado[15]?>
                             </p><br>
                                             <p><div style="font-weight: bold; font-size:20px ;">Conhecimentos: </div>
 
@@ -279,28 +280,30 @@ include '../pag-aluno/components/header.php';
                             </p><br>
 
                                             <p>
-                                                <?= $resultado[31] ?>
+                                                <?=$resultado[31]?>
                                             </p><br>
 
                                                 <p>
-                                                    <?= $resultado[27] ?>
+                                                    <?=$resultado[27]?>
                                                 </p><br>
 
                                         </section>
                                     </div>
-     
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" style="align-items: center;" id="btn" onclick="openModal()">Candidatar-se</button>
-                              </div>        
-                                          
-                            </div>
-                            </div>
-                     
-                          </div>
-                <?php } ?>  
 
-                    
-                       
+                              <div class="modal-footer">
+                              <input type="hidden" id="idVaga" name="idVaga" value="<?=$resultado[18]?>">
+                                    <button name="bnt" id="btn" type="submit" value="<?=$cliente_id?>"class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
+                                </form>
+                              </div>
+
+                            </div>
+                            </div>
+
+                          </div>
+                <?php }?>
+
+
+
                     </div>
                 </section>
 
