@@ -280,10 +280,10 @@ body {
     text-align: center;
  }
  
- .input-box select {
+ .input-box input {
     border-radius: 10px;
     border: 1px solid rgb(161, 161, 161);
-    width: 275px;
+    width: 800px;
     padding: 10px;
     font-size: 1rem;
     animation: 400ms linear trans;
