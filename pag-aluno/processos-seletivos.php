@@ -52,6 +52,18 @@ $resultado = $query->fetchAll();
        margin-top: 5%;
 
     }
+    .barra{
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
+      .row{
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+      }
     </style>
 </head>
 
@@ -66,42 +78,45 @@ include '../pag-aluno/components/header.php';
                     <div class="container mt-4">
         <h5>Filtre por:</h5>
 
-        <div class="row" style="margin-top: 2%;">
-            <div class="col-md-3">
+        <center><div class="barra" style="margin-top: 2%; align-items: center;">
+        <div class="row" >
+          <div class="col-md-3">
             <select id="periodo" class="form-control">
-                <option value="">Período</option>
-                <option value="manha">Manhã</option>
-                <option value="tarde">Tarde</option>
-                <option value="noite">Noite</option>
+              <option value="">Período</option>
+              <option value="manha">Manhã</option>
+              <option value="tarde">Tarde</option>
+              <option value="noite">Noite</option>
             </select>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <select id="curso" class="form-control">
-                <option value="">Curso</option>
-                <option value="engenharia">Engenharia</option>
-                <option value="medicina">Medicina</option>
-                <option value="direito">Direito</option>
+              <option value="">Curso</option>
+              <option value="engenharia">Engenharia</option>
+              <option value="medicina">Medicina</option>
+              <option value="direito">Direito</option>
             </select>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <select id="area" class="form-control">
-                <option value="">Área</option>
-                <option value="ti">TI</option>
-                <option value="saude">Saúde</option>
-                <option value="juridico">Jurídico</option>
+              <option value="">Área</option>
+              <option value="ti">TI</option>
+              <option value="saude">Saúde</option>
+              <option value="juridico">Jurídico</option>
             </select>
-            </div>
-            <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
             <select id="salario" class="form-control">
-                <option value="">Salário</option>
-                <option value="menos-de-2000">Menos de R$ 2.000</option>
-                <option value="2000-4000">R$ 2.000 - R$ 4.000</option>
-                <option value="mais-de-4000">Mais de R$ 4.000</option>
+              <option value="">Salário</option>
+              <option value="menos-de-2000">Menos de R$ 2.000</option>
+              <option value="2000-4000">R$ 2.000 - R$ 4.000</option>
+              <option value="mais-de-4000">Mais de R$ 4.000</option>
             </select>
+          </div>
+        </div>
+        <div class="col-md-1">
+              <button type="button" class="btn btn-primary btn-block">Filtrar</button>
             </div>
-            <div class="col-md-1">
-        <button type="button" class="btn btn-primary btn-block">Filtrar</button>
-      </div>
+        </div></center>
         </div>
 
         <?php foreach ($resultado as $resultado) {?>

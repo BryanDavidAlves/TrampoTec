@@ -147,7 +147,62 @@ $resultado = $query->fetchAll();
 p{
   font-size: 20px;
 }
+.barra{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.row{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
 
+        .card {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .job-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .job-description {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .how-to-apply {
+            margin-top: 20px;
+        }
+
+        .apply-link {
+            display: block;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+        }
 
   </style>
 </head>
@@ -169,7 +224,8 @@ include '../pag-aluno/components/header.php';
             <div class="container mt-4">
   <h5>Filtre por:</h5>
 
-  <div class="row" style="margin-top: 2%;">
+  <center><div class="barra" style="margin-top: 2%; align-items: center;">
+  <div class="row" >
     <div class="col-md-3">
       <select id="periodo" class="form-control">
         <option value="">Período</option>
@@ -202,10 +258,11 @@ include '../pag-aluno/components/header.php';
         <option value="mais-de-4000">Mais de R$ 4.000</option>
       </select>
     </div>
-    <div class="col-md-1">
+  </div>
+  <div class="col-md-1">
         <button type="button" class="btn btn-primary btn-block">Filtrar</button>
       </div>
-  </div>
+  </div></center>
 </div>
  </section>
             <!-- <section class="container">
@@ -225,26 +282,23 @@ include '../pag-aluno/components/header.php';
                         <h2>Painel de vagas</h2>
 
                         </div>
-
-
-
-                        <div class="row">
-
-                        <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
-                            <div class="icon-box">
-                            <?php foreach ($resultado as $resultado) {?>
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href=""><?=$resultado[23]?> -
-                                <?=$resultado[9]?></a></h4>
-                            <p><?=$resultado[24]?></p>
-                            <p><?=$resultado[25]?></p>
-                            <p>R$<?=$resultado[26]?></p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top: 10%;">
+                        <div class="cards">
+    <?php foreach ($resultado as $resultado) {?> 
+        <div class="card">
+            <img src="./img/logo-nuts-sem-slogan.png" alt="Logo da Empresa">
+            <div class="card-content">
+                <div class="job-title"><?= $resultado[23] ?></div>
+                <div class="job-description">
+                    <p><?= $resultado[24] ?></p>
+                    <p><?= $resultado[25] ?></p>
+                    <p><?= $resultado[26] ?></p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-top: 10%;">
                             Clique para mais informações
                             </button>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+</div>
                     </section>
 
                         <!-- Modal -->
@@ -299,10 +353,7 @@ include '../pag-aluno/components/header.php';
                             </div>
                             </div>
 
-                          </div>
-                <?php }?>
-
-
+                            <?php }?>
 
                     </div>
                 </section>
@@ -316,7 +367,6 @@ include '../pag-aluno/components/header.php';
 
     <script>
         var btn = document.getElementById('btn')
-
 
         var button1 = document.getElementById("btn1")
         var button2 = document.getElementById("btn2")
