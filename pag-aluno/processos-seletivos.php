@@ -50,15 +50,15 @@ $resultado = $query->fetchAll();
         text-align: center;
        font-weight: bold;
        margin-top: 5%;
-     
+
     }
     </style>
 </head>
 
 <body>
     <?php
-    include('../pag-aluno/components/header.php');
-    ?>
+include '../pag-aluno/components/header.php';
+?>
     <main id="main">
 
         <div class="box">
@@ -103,15 +103,35 @@ $resultado = $query->fetchAll();
         <button type="button" class="btn btn-primary btn-block">Filtrar</button>
       </div>
         </div>
+
+        <?php foreach ($resultado as $resultado) {?>
+                <section class="vagas">
+                    <section class="container-cards">
+                        <div class="cards">
+                            <div class="localidade">
+                                <h4><?=$resultado[9]?></h4>
+                                <h4><?=$resultado[10]?></h4>
+                            </div>
+                            <h4 class="nome-vaga"><?=$resultado[1]?></h4>
+                            <h4><?=$resultado[5]?></h4>
+                            <h4><?=$resultado[6]?></h4>
+
+                        </div>
+                                    </section>
+                </section>
+                <?php }?>
+
         </div>
 
 
-   
+
         </div>
+
+
 
     </main>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>

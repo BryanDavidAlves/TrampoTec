@@ -36,7 +36,8 @@ if ($_GET) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -53,7 +54,7 @@ if ($_GET) {
 
     <header>
         <div class="secao-cadastro">
-            <a href="cadastro-etec.php?etec=<?=$idEtec?>">
+            <a href="cadastro-etec.php?etec=<?= $idEtec ?>">
                 <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
                 <h2>Voltar</h2>
             </a>
@@ -67,40 +68,14 @@ if ($_GET) {
                     <label for="curso">CURSO</label>
                     <select id="cursos" name="curso">
                         <?php foreach ($curso as $curso) { ?>
-                            <option value="<?= $curso[0] ?>"><?= $curso[1] ?> - <?= $curso[5] ?></option>
+                            <option value="<?= $curso[0] ?>"> <?= $curso[1] ?> - <?= $curso[5] ?>
+                            </option>
                         <?php } ?>
                     </select>
-
-
-                    <!--<div class="campos-selects" id="campoSelect"></div>-->
-
                 </div>
 
                 <button class="addCampo" type="submit">ADICIONAR CURSO</button>
-                <?php
-                /*
-                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                ?>
-
-                    <div class="text-green">
-                        Cadastro Realizado
-                    </div>
-
-                <?php
-                }
-                ?>
-                <?php
-                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                ?>
-                    <div class="text-danger">
-                        Cadastro com erro
-                    </div>
-
-                <?php
-                }*/
-                ?>
-
-                <a href="etec.php" class="btn" value="FINALIZA"> FINALIZAR</a>
+                <a href="etec.php" class="btn" value="FINALIZAR"> FINALIZAR</a>
 
 
                 <table class="table">
@@ -116,13 +91,15 @@ if ($_GET) {
                         <?php foreach ($etecJoin as $etecJoin) { ?>
                             <tr>
                                 <td>
-                                    <?= $etecJoin[7]?>
+                                    <?= $etecJoin[7] ?>
                                 </td>
                                 <td>
                                     <?= $etecJoin[8] ?>
                                 </td>
-                                
-                                <td > <a href="./back-end/crudEtec/etec-curso-delete.php?id=<?=$etecJoin[5]?>&etec=<?=$idEtec?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
+
+                                <td> <a
+                                        href="./back-end/crudEtec/etec-curso-delete.php?id=<?= $etecJoin[5] ?>&etec=<?= $idEtec ?>"><i
+                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
 
                                 </td>
 
@@ -141,44 +118,6 @@ if ($_GET) {
     </main>
     <script src="modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-    <script>
-        var count = 0;
-
-        function adicionarSelect() {
-            count++;
-            // Crie um elemento select
-            var select = document.createElement("select");
-
-
-            // Defina os atributos desejados para o select
-            select.name = "selectName[]"; // Nome do select
-            select.id = ("selectId" + count); // ID do select (opcional)
-
-            <?php foreach ($curso as $curso) { ?>
-                // Crie opções para o select
-                var option1 = document.createElement("option");
-                option1.value = "<?= $curso[0] ?>";
-                option1.text = "<?= $curso[1] ?>";
-
-                // Adicione as opções ao select
-                select.appendChild(option1);
-
-                // Adicione o select à página
-                document.getElementById("campoSelect").appendChild(select);
-
-            <?php } ?>
-        }
-
-        function apagarUltimoSelect() {
-            var campoSelect = document.getElementById("campoSelect");
-            var selects = campoSelect.getElementsByTagName("select");
-
-            if (selects.length > 0) {
-                // Remove o último select da lista
-                campoSelect.removeChild(selects[selects.length - 1]);
-            }
-        }
-    </script>
 
 </body>
 

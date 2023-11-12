@@ -120,7 +120,7 @@ foreach ($result as $vaga) {
                         <th>NOME VAGA</th>
                         <th>CIDADE</th>
                         <th>BAIRRO</th>
-                        <th>TIPO TABRALHO</th>
+
                         <th>SALARIO</th>
                         <th>CURSO</th>
                         <th>AREA</th>
@@ -144,9 +144,7 @@ foreach ($result as $vaga) {
                             <td>
                                 <?=$vaga['bairro']?>
                             </td>
-                            <td>
-                                <?=$vaga['tipoTrabalho']?>
-                            </td>
+
                             <td>
                                 <?=$vaga['salario']?>
                             </td>

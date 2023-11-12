@@ -162,17 +162,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 </div>
 
-
-                <div class="caixa-add-requisito">
-                    <span>
-                        <i id="adicionarCampo" class="add-requisito fa-solid fa-circle-plus"></i>
-                        ADICIONAR REQUISITO
-                    </span>
-                    <div id="campos" class="body-inputs">
-
-                    </div>
-                </div>
-
                 <?php
                 if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
                     ?>
@@ -189,7 +178,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </main>
 
-    <script>
+    <!-- <script>
         document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("campos");
@@ -208,14 +197,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Você pode adicionar opções ao select se desejar
 
                 var select = document.createElement("select");
-                <?php foreach ($requisito as $requisito) { ?>
+                <*/?php foreach ($requisito as $requisito) { ?>
                     // Crie um novo elemento select para cada item de $requisito
                    
 
                     // Crie uma opção para o select
                     var option1 = document.createElement("option");
-                    option1.value = "<?= $requisito[0] ?>";
-                    option1.text = "<?= $requisito[1] ?>";
+                    option1.value = "</?= $requisito[0] ?>";
+                    option1.text = "</?= $requisito[1] ?>";
 
                     // Adicione a opção ao select
                     select.appendChild(option1);
@@ -223,14 +212,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     // Adicione o select à página
                    
                     document.getElementById("campos").appendChild(select);
-                <?php } ?>
+                <*/?php } ?>
                 
 
 
             });
 
         });
-    </script>
+    </script> -->
 
     <script src="./js/funcoes.js"></script>
     <script src="./js/java-empresa.js"></script>

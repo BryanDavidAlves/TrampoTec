@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Nov-2023 às 21:48
+-- Tempo de geração: 10-Nov-2023 às 05:13
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -72,7 +72,8 @@ CREATE TABLE `tb_aluno` (
 
 INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `logradouro`, `numero`, `complemento`, `bairro`, `estado`, `cidade`, `cep`, `imagem`, `curriculo`) VALUES
 (7, 'laysamelmudes@gmail.com', '123', 'LAYSA COCA MELMUDES', '475.158.398', '0000-00-00', 'Rua Antonio Soares Pais', 271, 'A-31', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ec71fadf9084fd41f62aaaeeca933bcd.png', 1),
-(8, 'lisa@gmail.com', '123', 'lisa', '264.007.440', '06052005', 'rua estevam', 134, 'muro rosa\'', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1);
+(8, 'lisa@gmail.com', '123', 'lisa', '264.007.440', '06052005', 'rua estevam', 134, 'muro rosa\'', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1),
+(9, 'johny@etec.sp.gov.br', '123', 'johny', '26645221835', '06052005', 'dadadadsad', 423, 'dsada', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -90,26 +91,7 @@ CREATE TABLE `tb_aluno_curso` (
 --
 
 INSERT INTO `tb_aluno_curso` (`fk_idAluno`, `fk_idCurso`) VALUES
-(7, 2),
-(7, 2),
-(7, 2),
-(7, 3),
-(7, 1),
-(7, 1),
-(7, 2),
-(7, 2),
-(7, 2),
-(7, 3),
-(7, 1),
-(7, 1),
-(7, 1),
-(7, 1),
-(7, 1),
-(8, 1),
-(7, 1),
-(8, 1),
-(8, 1),
-(8, 1);
+(9, 11);
 
 -- --------------------------------------------------------
 
@@ -127,20 +109,7 @@ CREATE TABLE `tb_aluno_etec` (
 --
 
 INSERT INTO `tb_aluno_etec` (`fk_idEtec`, `fk_idAluno`) VALUES
-(21, 7),
-(21, 7),
-(21, 7),
-(21, 7),
-(21, 7),
-(21, 7),
-(20, 7),
-(20, 7),
-(20, 7),
-(20, 8),
-(20, 7),
-(20, 8),
-(21, 8),
-(21, 8);
+(41, 9);
 
 -- --------------------------------------------------------
 
@@ -162,7 +131,8 @@ INSERT INTO `tb_conhecimento` (`idConhecimento`, `conhecimento`) VALUES
 (3, 'Php'),
 (4, 'EWR'),
 (5, 'Php'),
-(6, 'Php');
+(6, 'Php'),
+(7, 'Php');
 
 -- --------------------------------------------------------
 
@@ -184,7 +154,8 @@ INSERT INTO `tb_conhecimento_aluno` (`fk_idConhecimento`, `fk_idAluno`) VALUES
 (3, 8),
 (4, 7),
 (5, 8),
-(6, 8);
+(6, 8),
+(7, 9);
 
 -- --------------------------------------------------------
 
@@ -206,12 +177,9 @@ CREATE TABLE `tb_curso` (
 --
 
 INSERT INTO `tb_curso` (`idCurso`, `nome`, `cargaHoraria`, `semestre`, `modalidade`, `ensino`) VALUES
-(1, 'desenvolvimento', 0, 0, '0', ''),
-(2, 'nutri', 0, 0, '0', ''),
-(3, 'adm', 0, 0, '0', ''),
-(4, 'eletro', 0, 0, '0', ''),
-(5, 'Administração', 1200, 3, 'Modular', ''),
-(6, 'Agente Comunitário de Saúde', 1200, 3, 'Integrado', '');
+(11, 'Luca', 1200, 1, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)'),
+(12, 'admaafgdf', 1200, 1, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'),
+(13, 'dadsa', 800, 2, 'Presencial', 'Ensino Medio Integrado ao Tecnico(M-TEC)');
 
 -- --------------------------------------------------------
 
@@ -229,14 +197,9 @@ CREATE TABLE `tb_curso_etec` (
 --
 
 INSERT INTO `tb_curso_etec` (`fk_idCurso`, `fk_idEtec`) VALUES
-(1, 20),
-(4, 20),
-(1, 21),
-(3, 21),
-(1, 20),
-(4, 20),
-(1, 21),
-(3, 21);
+(13, 40),
+(11, 41),
+(12, 41);
 
 -- --------------------------------------------------------
 
@@ -255,14 +218,9 @@ CREATE TABLE `tb_eixo` (
 --
 
 INSERT INTO `tb_eixo` (`idEixo`, `eixo`, `fk_idCurso`) VALUES
-(1, 'front-end', 1),
-(2, 'panela', 2),
-(3, 'preguiçoso', 3),
-(4, 'rede', 4),
-(5, 'fio', 4),
-(6, 'assu', 4),
-(7, 'Gestão e Negócios', 5),
-(8, 'Ambiente e Saúde', 6);
+(13, 'Tecnologia e Informação', 11),
+(14, 'Comida e Dieta', 12),
+(15, 'dsads', 13);
 
 -- --------------------------------------------------------
 
@@ -314,19 +272,13 @@ CREATE TABLE `tb_etec` (
 --
 
 INSERT INTO `tb_etec` (`idEtec`, `nome`, `email`, `codigo`, `municipio`) VALUES
-(9, 'Etec Antonio Junqueira da Veiga', 'e033dir@cps.sp.gov.br', 33, 'Igarapava'),
-(10, 'Etec Aristóteles Ferreira', 'e035dir@cps.sp.gov.br', 35, 'Santos'),
-(11, 'Etec Arnaldo Pereira Cheregatti', 'e215dir@cps.sp.gov.br', 215, 'Aguaí'),
-(12, 'Etec Astor de Mattos Carvalho', 'e038dir@cps.sp.gov.br', 38, 'Cabrália Paulista'),
-(13, 'Etec Augusto Tortolero Araújo', 'e039dir@cps.sp.gov.br', 39, 'Paraguaçu Paulista'),
-(14, 'Etec Bartolomeu Bueno da Silva - Anhanguera', 'e262dir@cps.sp.gov.br', 262, 'Santana de Parnaíba'),
-(15, 'Etec Benedito Storani', 'e042dir@cps.sp.gov.br', 42, 'Jundiaí'),
-(16, 'Etec Bento Carlos Botelho do Amaral', 'e256dir@cps.sp.gov.br', 256, 'Guariba'),
-(17, 'Etec Bento Quirino', 'e043dir@cps.sp.gov.br', 43, 'Campinas'),
-(18, 'Etec Carlos de Campos - Brás', 'e045dir@cps.sp.gov.br', 45, 'São Paulo'),
-(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo'),
-(20, 'laysamelmudes@gmail.com', 'laysamelmudes@gmail.co', 53543, 'Caçapava'),
-(21, 'lucas', 'daffs@sdasda', 5646546, 'Birigui');
+(32, 'Etec lindasdsa', 'etec@lindaDADA', 4234454, 'Birigui'),
+(34, 'itaquera', 'itaquera@aa', 534, 'Bebedouro'),
+(36, 'sada', 'dsada@da', 4243, 'Caçapava'),
+(38, 'dadasdad', 'dadadfafds@da', 453, 'Barra Bonita'),
+(39, 'Itaqua', 'itaqua@itaqua.com', 357, 'Bauru'),
+(40, 'Etec cagao', 'cagao@.com', 456, 'Botucatu'),
+(41, 'cdcasda', 'casca@vsv', 757, 'Cachoeira Paulista');
 
 -- --------------------------------------------------------
 
@@ -413,7 +365,9 @@ INSERT INTO `tb_habilidade_aluno` (`fk_idAluno`, `fk_idHabilidade`) VALUES
 (8, 4),
 (8, 1),
 (8, 4),
-(8, 1);
+(8, 1),
+(9, 4),
+(9, 1);
 
 -- --------------------------------------------------------
 
@@ -446,11 +400,10 @@ CREATE TABLE `tb_idioma_aluno` (
 --
 
 INSERT INTO `tb_idioma_aluno` (`idIdiomaAluno`, `nome`, `nivel`, `fk_idAluno`) VALUES
-(18, 'espanhol', 'intermediario', 7),
 (19, 'espanhol', 'intermediario', 8),
-(20, 'espanhol', 'intermediario', 7),
 (21, 'outro', 'intermediario', 8),
-(22, 'ingles', 'iniciante', 8);
+(22, 'ingles', 'iniciante', 8),
+(23, 'frances', 'intermediario', 9);
 
 -- --------------------------------------------------------
 
@@ -485,7 +438,8 @@ INSERT INTO `tb_perfil_aluno` (`idPerfilAluno`, `semestre`, `periodo`, `duracaoC
 (11, 4, '', '4534534', '4543-03-05', 7),
 (12, 3, '', '432423', '43242-02-04', 8),
 (13, 3, '', '4234324', '243242-03-04', 8),
-(14, 3, '', '433453', '4534-03-05', 8);
+(14, 3, '', '433453', '4534-03-05', 8),
+(15, 4, '', '42432', '24324-03-04', 9);
 
 -- --------------------------------------------------------
 
@@ -527,28 +481,6 @@ CREATE TABLE `tb_requisito_vaga` (
   `fk_idRequisito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `tb_requisito_vaga`
---
-
-INSERT INTO `tb_requisito_vaga` (`fk_idVaga`, `fk_idRequisito`) VALUES
-(4, 7),
-(4, 8),
-(6, 11),
-(6, 12),
-(4, 7),
-(4, 8),
-(6, 11),
-(6, 12),
-(4, 7),
-(4, 8),
-(6, 11),
-(6, 12),
-(4, 7),
-(4, 8),
-(6, 11),
-(6, 12);
-
 -- --------------------------------------------------------
 
 --
@@ -578,7 +510,8 @@ CREATE TABLE `tb_telefone_aluno` (
 --
 
 INSERT INTO `tb_telefone_aluno` (`idTelefoneAluno`, `telefoneAluno`, `fk_idAluno`) VALUES
-(6, '(11) 94489-3333', 7);
+(6, '(11) 94489-3333', 7),
+(7, '119593289', 9);
 
 -- --------------------------------------------------------
 
@@ -611,29 +544,6 @@ CREATE TABLE `tb_telefone_etec` (
   `fk_idEtec` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `tb_telefone_etec`
---
-
-INSERT INTO `tb_telefone_etec` (`idTelefoneEtec`, `telefoneEtec`, `fk_idEtec`) VALUES
-(17, '(16) 3172-1814', 9),
-(18, '(13) 3236-9973', 10),
-(19, '(19) 3625-6204', 11),
-(20, '(14) 3285-1210', 12),
-(21, '(14) 99616-436', 12),
-(22, '(18) 3361-1130', 13),
-(23, '(18) 3361-7719', 13),
-(24, '(11) 4156-1435', 14),
-(25, '(11) 4582-1881', 15),
-(26, '(16) 3251-4154', 16),
-(27, '(16) 3251-4063', 16),
-(28, '(16) 3251-1277', 16),
-(29, '(19) 3252-3596', 17),
-(30, '(19) 3251-8934', 17),
-(31, '(11) 3227-0286', 18),
-(32, '(11) 3311-7098', 18),
-(33, ' (11) 5851-931', 19);
-
 -- --------------------------------------------------------
 
 --
@@ -656,14 +566,6 @@ CREATE TABLE `tb_vaga` (
   `fk_idEmpresa` int(11) NOT NULL,
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tb_vaga`
---
-
-INSERT INTO `tb_vaga` (`idVaga`, `nome`, `cidade`, `bairro`, `modalidade`, `salario`, `descricao`, `inicio`, `termino`, `periodo`, `area`, `escala`, `fk_idEmpresa`, `fk_idCurso`) VALUES
-(4, 'Teste', 'São Paulo', 'Guainases', 'Presencial', 2000.00, 'Bom diaaa', '10:00:', '18:00:', 'matinal', 'Tecnologia', 'Seg-Sex', 14, 1),
-(6, 'vaga2', 'sdasd', 'asdasda', 'asdasd', 3000.00, 'NUM AGUENTO MAIS', '10:00:', '20:00:', 'matinal', 'dfsdfs', 'asd-asd', 14, 1);
 
 -- --------------------------------------------------------
 
@@ -877,25 +779,25 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tb_conhecimento`
 --
 ALTER TABLE `tb_conhecimento`
-  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tb_eixo`
 --
 ALTER TABLE `tb_eixo`
-  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tb_empresa`
@@ -907,7 +809,7 @@ ALTER TABLE `tb_empresa`
 -- AUTO_INCREMENT de tabela `tb_etec`
 --
 ALTER TABLE `tb_etec`
-  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `tb_experiencia_aluno`
@@ -937,13 +839,13 @@ ALTER TABLE `tb_horario_aluno`
 -- AUTO_INCREMENT de tabela `tb_idioma_aluno`
 --
 ALTER TABLE `tb_idioma_aluno`
-  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `tb_perfil_aluno`
 --
 ALTER TABLE `tb_perfil_aluno`
-  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tb_requisito`
@@ -961,7 +863,7 @@ ALTER TABLE `tb_sobre_mim`
 -- AUTO_INCREMENT de tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_empresa`
