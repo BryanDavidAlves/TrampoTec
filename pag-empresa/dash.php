@@ -45,7 +45,7 @@ $n_aluno = count($aluno);
                 <div class="card-corpo">
                     <div class="card-itens">
                         <p class="informacao"> Candidatos Totais</p>
-                        <p class="numero"> 15</p>
+                        <p class="numero"><?= $n_aluno ?></p>
 
                     </div>
                     <div class="icon-home">
@@ -58,11 +58,11 @@ $n_aluno = count($aluno);
                 <div class="card-corpo">
                     <div class="card-itens">
                         <p class="informacao"> Vagas Cadastradas</p>
-                        <p class="numero"> 4</p>
+                        <p class="numero"><?= $n_vagas ?></p>
 
                     </div>
                     <div class="icon-home">
-                        <i class="fa-regular fa-user"></i>
+                        <i class="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ $n_aluno = count($aluno);
 
 
         <section class="container-imagens">
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <div id="piechart" style="width: 900px; height: 500px; "></div>
         </section>
 
 

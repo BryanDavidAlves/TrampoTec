@@ -1,16 +1,11 @@
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  height: 100%;
+margin-left: 20%;
 }
 main .align-itens {
   display: flex;
   gap: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 main .align-itens .card {

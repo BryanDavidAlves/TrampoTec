@@ -2,7 +2,6 @@
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 $idvaga = trim($_POST['idVaga']);
-echo $idvaga;
 $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
  tb_requisito.requisito
@@ -54,6 +53,7 @@ foreach ($result as $vaga) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,16 +61,14 @@ foreach ($result as $vaga) {
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
     <link rel='stylesheet' href='../pag-empresa/css/candidato-vaga.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>TrampoTec</title>
 </head>
 
 <body>
 
-<?php include '../pag-empresa/componentes/sidebar.php'?>
-    <?php include '../pag-empresa/componentes/email.php'?>
-    <?php include '../pag-empresa/componentes/notificacao.php'?>
+    <?php include '../pag-empresa/componentes/sidebar.php' ?>
+    <?php include '../pag-empresa/componentes/email.php' ?>
+    <?php include '../pag-empresa/componentes/notificacao.php' ?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -78,125 +76,77 @@ foreach ($result as $vaga) {
     <main class="main">
 
 
-    <div class="align-itens">
+        <div class="align-itens">
 
-
-
-
-
-
-
-        <?php foreach ($vagas as $vaga) {?>
-            <div class="card">
-            <div class="itens-card">
-
-                            <h5>Nome da empresa:</h5><?=$vaga['empresa']?>
-                            </div>
-
-                            <div class="itens-card">
-                            <h5>Requisitos:</h5> <?=$vaga['requisito']?>
-                            </div>
-                            <div class="itens-card"><h5>Nome da vaga:</h5><?=$vaga['nome']?>
-                            </div>
-
-                            <div class="itens-card">
-                            <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
-                            </div>
-                            <div class="itens-card">
-                            <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
-                            </div>
-
-                            <div class="itens-card">
-                            <h5>Salario:</h5><?=$vaga['salario']?>
-                            </div>
-                            </div>
-
-        <?php }?>
-
-
-<div class="tabela">
-   <p>CANDIDATOS A VAGA</p>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>USUARIO</th>
-            <th>NOME</th>
-            <th>EMAIL</th>
-
-
-
-
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($aluno as $aluno) {?>
-            <tr class="infos">
-                <td>
-                    <?=$aluno[16]?>
-                </td>
-                <td>
-                <div class="container-perfil">
-                <div class="img-perfil">
-                    <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[29] != "" ? $aluno[29] : '';?>" alt="">
+            <?php foreach ($vagas as $vaga) { ?>
+                <div class="card">
+                    <div class="itens-card">
+                        <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
+                    </div>
+                    <div class="itens-card">
+                        <h5>Requisitos:</h5> <?= $vaga['requisito'] ?>
+                    </div>
+                    <div class="itens-card">
+                        <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?>
+                    </div>
+                    <div class="itens-card">
+                        <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?>
+                    </div>
+                    <div class="itens-card">
+                        <h5>Salario:</h5><?= $vaga['salario'] ?>
+                    </div>
                 </div>
 
-                </td>
-                <td class="nome-aluno">
-                    <?=$aluno[19]?>
-                </td>
-                <td>
-                    <?=$aluno[17]?>
-                </td>
+            <?php } ?>
+
+
+            <div class="tabela">
+                <p>CANDIDATOS A VAGA</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>USUARIO</th>
+                            <th>NOME</th>
+                            <th>EMAIL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($aluno as $aluno) { ?>
+                            <tr class="infos">
+                                <td>
+                                    <?= $aluno[16] ?>
+                                </td>
+                                <td>
+                                    <div class="container-perfil">
+                                        <div class="img-perfil">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[29] != "" ? $aluno[29] : ''; ?>" alt="">
+                                        </div>
+
+                                </td>
+                                <td class="nome-aluno">
+                                    <?= $aluno[19] ?>
+                                </td>
+                                <td>
+                                    <?= $aluno[17] ?>
+                                </td>
 
 
 
 
-            </tr>
+                            </tr>
 
-        <?php }?>
+                        <?php } ?>
 
-    </tbody>
-</table>
-</div>
-</div>
-
-
-        <!--
-                <dialog id="vermais" class="ver-mais">
-
-            <div class="vermais-body">
-                <span class="ver-fechar"><i onclick="vermais()" class="fa-solid fa-circle-xmark"></i></span>
-                <div class="vermais-align">
-
-                    <div class="vermais-infos">
-                        <h3>Descricao:</h3>
-                        <p id="descricao">
-
-                        </p>
-                    </div>
-
-                    <div class="vermais-infos">
-                        <h3>Requisito:</h3>
-
-                        <p>
-
-                        </p>
-                    </div>
-
-
-
-                </div>
-
-
+                    </tbody>
+                </table>
             </div>
-        </dialog>
-    -->
+        </div>
+
 
 
 
     </main>
-    <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 

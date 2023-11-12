@@ -1,66 +1,44 @@
-h1 {
-    color: #737373;
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2rem;
-    padding-top: 10%;
-}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 
-.box {
+
+  select {
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    width: 100%;
-    flex-direction: column;
-}
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+  }
 
-.control {
+  select {
+    cursor: pointer;
+}
+.filtro{
+    width: 100%;
+}
+  .filtro-icon{
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    gap: 100px;
-}
-
-.filtro {
-    width: 100%;
-    display: flex;
-}
-
-.filtro form {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-}
-
-.icone-filtro {
-    display: flex;
-    gap: 10px;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #000;
     align-items: center;
-}
-
-.icone-filtro i {
-    font-size: 2rem;
-}
-
-.option-filter {
-    display: flex;
     gap: 10px;
-    color: black;
-    font-weight: 600;
-    align-items: baseline;
-    cursor: pointer;
-    font-size: 1.2rem;
-    width: 200px;
-}
+  }
 
-.btn-filtro {
+  .filtro-icon i{
+    font-size: 2rem;
+  }
+
+  #contain-filtro{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  #botao-filtro{
     background-color: #0a3580;
     border: none;
     color: #fff;
@@ -68,89 +46,60 @@ h1 {
     padding: 5px 20px;
     border-radius: 10px;
     cursor: pointer;
-}
+  }
 
-.option-filter label {
-    cursor: pointer;
+  h5 {
+    text-align: center;
+    font-weight: bold;
+  }
 
-}
+  p {
+    font-size: 20px;
+  }
 
-.option-filter select {
-    width: 100%;
-    font-weight: 700;
-    border: none;
-    font-size: 1rem;
-}
-
-select:focus {
-    outline: none;
-}
-.vagas{
-    width: 100%;
+  #barra {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
-    margin-top: 2%;
-}
-.option-filter select {
-    cursor: pointer;
-}
-.vagas{
-    width: 100%;
+    gap: 10px;
+
+  }
+
+  .row {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
-    justify-content: center;
-}
-.container-cards {
-    width: 1180px;
+  }
+
+  .box {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
-    justify-content: start;
-}
+    justify-content: center;
+    gap: 70px;
+    margin-top: 4%;
 
+  }
 
-.container-cards .cards {
+  #card {
     display: flex;
-    flex-direction: column;
-    background-color: #B4D9FF;
     align-items: center;
-    padding: 5px;
-    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0a3580;
+  color: white;
+    border-radius: 20px;
     width: 350px;
     height: 160px;
-    justify-content: center;
-    box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
+    border: none;
+    gap: 10px;
 }
 
-.vagas .container-cards .cards .localidade {
-    display: flex;
+h4:nth-last-child(1) {
+color: yellow;
 }
 
-.vagas .container-cards .cards .localidade h4 {
-    margin-right: 20px;
-    color: rgb(75, 75, 75);
-}
 
-.vagas .container-cards .cards h4 {
-    padding: 5px;
-}
-select{
-    font-size: 1.2rem;
-}
-.nome-vaga{
-    font-weight: 600;
-}
-.cima-esquerda{
-    width: 20%;
-    position: absolute;
-    top: 10%;
-    z-index: 0;
-}
-.cima-direita{
-    width: 13%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 0;
+.vaga{
+    font-size: 25px  ;
 }
