@@ -69,45 +69,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <h1>FORMULARIO DE CADASTRO DE VAGA</h1>
 
-                <div class="alinhaento-inputs">
+                <div class="alinhamento-inputs">
 
                     <div>
-                        <span>
-                            <label for="nome">NOME</label>
+                        <span class="input-box">
+
                             <input name="nome" type="text" required>
+                            <label class="label-anim" for="nome">NOME</label>
 
                         </span>
 
-                        <span>
-                            <label for="cidade">CIDADE</label>
+                        <span class="input-box">
+
                             <input name="cidade" type="text" required>
+                            <label class="label-anim" class="label-anim" for="cidade">CIDADE</label>
                         </span>
                     </div>
 
                     <div>
-                        <span>
-                            <label for="bairro">BAIRRO</label>
+                        <span class="input-box">
+
                             <input name="bairro" type="text" required>
+                            <label class="label-anim" for="bairro">BAIRRO</label>
                         </span>
 
 
-                        <span>
-                            <label for="tipo">TIPO TRABALHO</label>
+                        <span class="input-box">
+
                             <input name="tipo" type="text" required>
+                            <label class="label-anim" for="tipo">TRABALHO</label>
                         </span>
-                        <span>
-                            <label for="tipo">Semana</label>
-                            <input name="semana" type="text" placeholder="Seg-Sex" maxlength="7" required>
+                        <span class="input-box">
+
+                            <input name="semana" type="text" maxlength="7" required>
+                            <label class="label-anim" for="tipo">SEMANA</label>
                         </span>
                     </div>
 
                     <div>
-                        <span>
-                            <label for="salario">SALARIO</label>
+                        <span class="input-box">
                             <input name="salario" type="number" required>
+                            <label class="label-anim" for="salario">SALARIO</label>
                         </span>
-                        <span>
-                            <label>Curso</label>
+                        <span class="input-box-select">
+                            <label class="label-select">Curso</label>
                             <select class="selects" name="curso" id="curso" required>
                                 <option>Selecione um curso</option>
                                 <?php foreach ($resultado as $resultado) { ?>
@@ -122,20 +127,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
 
                     <div>
-                        <span>
-                            <label for="descricao">DESCRIÇÃO</label>
-                            <input class="descricao" name="descricao" type="text" required>
-                        </span>
+                        <span class="input-box">
 
+                            <input class="descricao" name="descricao" type="text" required>
+                            <label class="label-anim" for="descricao">DESCRIÇÃO</label>
+                        </span>
                     </div>
 
                     <div>
-                        <span>
-                            <label for="area">AREA</label>
+                        <span class="input-box">
+
                             <input name="area" type="text" required>
+                            <label class="label-anim" for="area">AREA</label>
                         </span>
 
-                        <span>
+                        <span class="input-box-select">
                             <label for="periodo">PERIODO</label>
                             <select class="selects" name="periodo" required>
                                 <option value="noturno">Noturno</option>
@@ -148,15 +154,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-                    <div>
+                    <div input-box-select>
                         <span>
                             <label for="inicio">INICIO</label>
-                            <input name="inicio" type="time" required>
+                            <input
+                                style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
+                            name="inicio" type="time" required>
                         </span>
 
                         <span>
                             <label for="termino">TERMINO</label>
-                            <input name="termino" type="time" required>
+                            <input
+                                style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
+                            name="termino" type="time" required>
                         </span>
                     </div>
 

@@ -21,8 +21,7 @@ if ($_POST) {
     $email = $etec["email"];
     $codigo = $etec["codigo"];
     $municipio = $etec["municipio"];
-} 
-else if ($_GET) {
+} else if ($_GET) {
     $id_etec = $_GET['etec'];
     $querySelect = "SELECT * FROM tb_etec  WHERE idEtec = $id_etec";
     $resultado = $conexao->query($querySelect);
@@ -70,7 +69,7 @@ else if ($_GET) {
     <header>
         <div class="secao-cadastro">
             <a href="etec.php">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-chevron-left"></i>
                 <h2>Cadastrar uma nova ETEC</h2>
             </a>
         </div>
@@ -79,35 +78,21 @@ else if ($_GET) {
         <section class="formulario-etec">
             <form action="back-end/cadastro/salvarCadastroEtec.php" method="post">
                 <div class="input-box">
-                    <label for="nome">NOME</label>
                     <input type="text" id="nome" name="nome" value="<?= $nome ?>" required>
+                    <label class="label-anim" for="nome">NOME</label>
                 </div>
                 <div class="input-box">
-                    <label for="nome">EMAIL</label>
-                    <input type="text" id="email" name="email" placeholder="@cps.sp.gov.br" value="<?= $email ?>"
+
+                    <input type="text" id="email" name="email" value="<?= $email ?>"
                         required>
+                    <label class="label-anim" for="nome">EMAIL</label>
                 </div>
-
-                <!--<div class="input-box">
-                    <label for="curso">CURSO</label>
-
-                    <div>
-                        <button class="addCampo" onclick="adicionarSelect()">Gerar Campo Select</button>
-                        <button class="removeCampo" onclick="apagarUltimoSelect()">Apagar Campo Select</button>
-                    </div>
-
-
-         
-                        <div  class="campos-selects" id="campoSelect"></div>
-              
-
-                </div>-->
                 <div class="input-box">
-                    <label for="nome">CODIGO</label>
                     <input maxlength="text" type="numeric" id="codigo" name="codigo" value="<?= $codigo ?>" required>
+                    <label class="label-anim" for="nome">CODIGO</label>
                 </div>
                 <div class="input-box">
-                    <label for="municipio">MUNICIPIO</label>
+                    <label class="label" for="municipio">MUNICIPIO</label>
                     <select id="municipio" name="municipio">
                         <option value="Adamantina" <?= $municipio == 'Adamantina' ? 'selected' : '' ?>>Adamantina</option>
                         <option value="Aguaí" <?= $municipio == 'Aguaí' ? 'selected' : '' ?>>Aguaí</option>
