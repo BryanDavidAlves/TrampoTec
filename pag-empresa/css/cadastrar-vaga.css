@@ -37,7 +37,7 @@ main a i {
    padding: 10px;
    width: 25px;
    height: 25px;
-   border: 1px solid red;
+   border: 2px solid red;
    border-radius: 100px;
    display: flex;
    text-align: center;
@@ -60,15 +60,60 @@ main a i {
    width: 60%;
    height: auto;
    background-color: rgb(255, 255, 255);
-   border: 1px solid rgb(255, 0, 0);
+   border: 2px solid rgb(255, 0, 0);
    border-radius: 45px;
    padding: 40px;
    gap: 15px;
    z-index: 5;
+   justify-content: center;
 }
 
+.input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin-bottom: 20px;
+   position: relative;
+   width: 100%;
+   display: flex;
+   align-items: center;
 
-form .alinhaento-inputs {
+}
+
+.input-box input {
+   all: unset;
+   color: black;
+   padding: 1rem;
+   border: 2px solid #1d44b8;
+   border-radius: 10px;
+   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+   width: 95%;
+}
+
+.input-box input:focus {
+   border: 2px solid #1d44b8;
+}
+
+.input-box input:is(:focus, :valid)~.label-anim {
+   transform: translateY(-125%) scale(0.7);
+   background-color: #ffffff;
+   padding-inline: 0.3rem;
+   color: black;
+   font-size: 1.3rem;
+   font-weight: 600;
+   left: 1%;
+}
+
+.label-anim {
+   position: absolute;
+   left: 1%;
+   color: black;
+   pointer-events: none;
+   transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+   font-size: 0.8rem;
+}
+
+form .alinhamento-inputs {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -84,7 +129,7 @@ form h1 {
 }
 
 
-form .alinhaento-inputs div {
+form .alinhamento-inputs div {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -95,28 +140,17 @@ form .alinhaento-inputs div {
 }
 
 
-form .alinhaento-inputs span {
+form .alinhamento-inputs span {
    display: flex;
    flex-direction: column;
    gap: 8px;
    width: 100%;
 }
 
+.formulario-cadastrar-vaga .alinhamento-inputs span .descricao {
 
-form .alinhaento-inputs span label {
-   font-size: 17px;
-}
-
-.formulario-cadastrar-vaga .alinhaento-inputs input {
-   padding: 9px;
-   border-radius: 25px;
-   border: 1px solid blue;
    width: 100%;
-}
-
-.formulario-cadastrar-vaga .alinhaento-inputs span .descricao {
-   height: 40px;
-   padding: 10px;
+   padding: 1rem;
 }
 
 
@@ -129,11 +163,15 @@ input:focus {
 }
 
 .selects {
-   padding: 10px;
-   border-radius: 25px;
-   border: 1px solid blue;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 15px;
+   border-radius: 10px;
+   border: 2px solid #1a3b9e;
+   width: 105%;
+   padding: 1rem;
+   font-size: 1rem;
+}
+.input-box-select{
+   margin-top: -25px;
+
 }
 
 .botao-vaga {
