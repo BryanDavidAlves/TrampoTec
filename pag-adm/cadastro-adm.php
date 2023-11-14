@@ -20,7 +20,7 @@ require_once "back-end/login/validador_acesso.php";
     <header>
         <div class="secao-cadastro">
             <a href="adm.php">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-chevron-left" ></i>
                 <h2>Cadastrar um novo Administrador</h2>
             </a>
         </div>
@@ -28,17 +28,18 @@ require_once "back-end/login/validador_acesso.php";
     <main>
         <section class="formulario-adm">
             <form action="back-end/cadastro/salvarCadastro.php" method="post">
+
                 <div class="input-box">
-                    <label for="nome">NOME</label>
-                    <input type="text" id="nome" name="nome">
+                    <input type="text" id="nome" name="nome" required>
+                    <label class="label-anim" for="nome">NOME</label>
                 </div>
                 <div class="input-box">
-                    <label for="nome">EMAIL</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" required>
+                    <label class="label-anim" for="nome">EMAIL</label>
                 </div>
                 <div class="input-box">
-                    <label for="nome">SENHA</label>
-                    <input type="password" id="senha" name="senha">
+                    <input type="password" id="senha" name="senha" required>
+                    <label class="label-anim" for="nome">SENHA</label>
                 </div>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {

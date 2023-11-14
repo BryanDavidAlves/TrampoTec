@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    border: 2px solid rgb(161, 161, 161);
+    border: 2px solid rgb(255, 0, 0);
     border-radius: 20px;
     padding: 40px 150px;
     align-items: center;
@@ -31,7 +31,7 @@ main{
     margin-bottom: 5px;
 }
 .btn {
-    background-color: red;
+    background-color: #1a3b9e;
     border: none;
     border-radius: 20px;
     color: white;
@@ -41,40 +41,77 @@ main{
     margin-top: 10px;
     font-weight: 800;
     font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
 }
 
 .input-box input {
+    all: unset;
+    color: black;
+    padding: 1rem;
+    border: 2px solid #1d44b8;
     border-radius: 10px;
-    border: 1px solid rgb(161, 161, 161);
-    width: 250px;
-    padding: 10px;
-    font-size: 1rem;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 60%;
+}
+
+.input-box input:focus {
+    border: 2px solid #1d44b8;
+}
+
+.input-box input:is(:focus, :valid)~.label-anim {
+    transform: translateY(-140%) scale(0.7);
+    background-color: #ffffff;
+    padding-inline: 0.3rem;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    left: 20%;
+}
+
+.label-anim {
+    position: absolute;
+    left: 20%;
+    color: black;
+    pointer-events: none;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
 }
 
 .input-select {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    gap:30px;
+    gap:20px;
+    align-items: center;
+    margin-top: 20px;
 }
-
+.sub-form{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
 .input-select select {
     border-radius: 10px;
-    border: 1px solid rgb(161, 161, 161);
-    width: 250px;
-    padding: 10px;
+    border: 2px solid #1a3b9e;
+    width: 68%;
+    padding: 1rem;
     font-size: 1rem;
 }
 
-label {
-    margin-bottom: 20px;
-}
+
 .secao-cadastro a {
     display: flex;
     color: black;
@@ -90,10 +127,17 @@ label {
     margin-left: 6%;
 }
 #icon-titulo {
-    background-color: #555cb3;
-    border-radius: 100%;
-    padding: 10px 10px 10px 12px;
-    font-size: 1.5rem;
+    font-size: 25px;
+    color: red;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid red;
+    border-radius: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
 }
 .secao-adicionar{

@@ -55,7 +55,7 @@ if ($_GET) {
     <header>
         <div class="secao-cadastro">
             <a href="cadastro-etec.php?etec=<?= $idEtec ?>">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-chevron-left" ></i> 
                 <h2>Voltar</h2>
             </a>
         </div>

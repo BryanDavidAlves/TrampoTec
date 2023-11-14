@@ -119,7 +119,7 @@ main {
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  margin-right: 10px;
 }
 
 select {
