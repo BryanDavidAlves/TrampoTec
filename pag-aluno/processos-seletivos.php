@@ -5,14 +5,28 @@ require_once "./back-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idAluno'];
 
-$querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
-FROM tb_vaga
-INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
-INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
-WHERE tb_aluno.idAluno= '$cliente_id'
+if (!($_GET)) {
+  $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+  FROM tb_vaga
+  INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
+  INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+  WHERE tb_aluno.idAluno= '$cliente_id'
+  ";
+} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
+  $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+  FROM tb_vaga
+  INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
+  INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+  WHERE tb_aluno.idAluno= '$cliente_id'
+  ";
+} else {
+  $periodo = trim($_GET['periodo']);
+  $curso = trim($_GET['curso']);
+  $area = trim($_GET['area']);
+  $salario = trim($_GET['salario']);
 
+}
 
-";
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
@@ -92,18 +106,18 @@ $resultado = $query->fetchAll();
     </section>
 
     <div class="box">
-   
-        <?php foreach ($resultado as $resultado) { ?>
 
-          <div id="card">
+      <?php foreach ($resultado as $resultado) { ?>
+
+        <div id="card">
           <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
-            <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
-            <h4 class="preço">R$ <?= $resultado[5] ?> - <?= $resultado[9] ?></h4>
-            <h4>STATUS : EM ANDAMENTO</h4>
-          </div>
+          <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
+          <h4 class="preço">R$ <?= $resultado[5] ?> - <?= $resultado[9] ?></h4>
+          <h4>STATUS : EM ANDAMENTO</h4>
+        </div>
 
 
-        <?php } ?>
+      <?php } ?>
 
 
     </div>
