@@ -74,7 +74,7 @@ if($_POST) {
     <header>
         <div class="secao-cadastro">
             <a href="curso.php">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-chevron-left"></i>
                 <h2>Cadastrar um novo curso</h2>
             </a>
         </div>
@@ -84,15 +84,18 @@ if($_POST) {
             <form action="back-end/cadastro/salvarCadastroCurso.php" method="post" id="meuFormulario">
 
                 <div class="input-box">
-                    <label for="nome">NOME DO CURSO</label>
+                    
                     <input type="text" id="nomeCuso" name="nomeCuso"  value="<?=$nome?>" required>
+                    <label class="label-anim" for="nome">NOME DO CURSO</label>
                 </div>
 
                 <div class="input-box">
-                    <label for="eixo">EIXO</label>
+                    
                     <input type="text" id="eixo" name="eixo"  value="<?=$eixo1?>" required>
+                    <label class="label-anim" for="eixo">EIXO</label>
                 </div>
                 <div class="input-select">
+                    <h3 class="sub-form">Informaçoes Adicionais</h3>
                     <select type="text" id="cargaHoraria" name="cargaHoraria"  value="<?=$cargaHoraria?>" required>
                        
                         <option>1200 horas</option>
