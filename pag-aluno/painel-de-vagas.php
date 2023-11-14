@@ -6,22 +6,23 @@ require_once "./back-end/login/validador_acesso.php";
 $cliente_id = $_SESSION['idAluno'];
 
 if (!($_GET)) {
-  $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
-
-    FROM tb_empresa
+  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
+  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
+    FROM tb_vaga
+    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
     INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
     INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
 ";
-
 } else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
-
-  $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
-    FROM tb_empresa
+  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
+  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
+    FROM tb_vaga
+    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
     INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
     INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
@@ -32,19 +33,58 @@ if (!($_GET)) {
   $area = trim($_GET['area']);
   $salario = trim($_GET['salario']);
 
-  $querySelect = "SELECT tb_empresa.*  , tb_telefone_empresa.*, tb_vaga.* , tb_curso.*  , tb_requisito_vaga.*, tb_requisito.*
-    FROM tb_empresa
+
+  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
+  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
+    FROM tb_vaga
+    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_vaga ON tb_vaga.fk_IdEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
     INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
     INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito WHERE tb_vaga.periodo = '$periodo' OR tb_curso.nome = '$curso'
     OR tb_vaga.area = '$area' OR  tb_vaga.salario BETWEEN 0 AND '$salario'
-    ";
+";
 }
 
-$query = $conexao->query($querySelect);
-$resultado = $query->fetchAll();
+$result = $conexao->query($querySelect);
+$vagas = array();
+foreach ($result as $vaga) {
+  $vagaId = $vaga['idVaga'];
+  if (!isset($vagas[$vagaId])) {
+    $vagas[$vagaId] = array(
+      'nomeEmpresa' => $vaga['nomeEmpresa'],
+      'email' => $vaga['email'],
+      'departamento' => $vaga['departamento'],
+      'anoFundacao' => $vaga['anoFundacao'],
+      'cnpj' => $vaga['cnpj'],
+      'cep' => $vaga['cep'],
+      'logradouro' => $vaga['logradouro'],
+      'numero' => $vaga['numero'],
+      'estado' => $vaga['estado'],
+      'bairro' => $vaga['bairro'],
+      'imagem' => $vaga['imagem'],
+      'numeroTelefone' => $vaga['numeroTelefone'],
+      'idVaga' => $vaga['idVaga'],
+      'nome' => $vaga['nome'],
+      'cidade' => $vaga['cidade'],
+      'bairroVaga' => $vaga['bairroVaga'],
+      'salario' => $vaga['salario'],
+      'descricao' => $vaga['descricao'],
+      'descEmpresa' => $vaga['descEmpresa'],
+      'requisito' => $vaga['requisito'],
+      'area' => $vaga['area'],
+      'periodo' => $vaga['periodo'],
+      'termino' => $vaga['termino'],
+      'inicio' => $vaga['inicio'],
+      'cursoNome' => $vaga['cursoNome'],
+    );
+  }
+}
+
+$selectCurso = "SELECT nome FROM  tb_curso";
+$query = $conexao->query($selectCurso);
+$curso = $query->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -98,18 +138,18 @@ $resultado = $query->fetchAll();
               </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
-                  <option value="qualquer">Área</option>
-                  <option value="ti">TI</option>
-                  <option value="saude">Saúde</option>
-                  <option value="juridico">Jurídico</option>
+                  <option value="qualquer">area</option>
+                  <?php foreach ($vagas as $vaga) { ?>
+                    <option value=" <?= $vaga['area'] ?> "> <?= $vaga['area'] ?> </option>
+                  <?php } ?>
                 </select>
               </div>
               <div class="col-md-3">
                 <select name="curso" class="form-control">
-                  <option value="qualquer">Curso</option>
-                  <option value="desenvolvimento">desenvolvimento</option>
-                  <option value="medicina">Medicina</option>
-                  <option value="direito">Direito</option>
+                  <option value="qualquer">curso</option>
+                  <?php foreach ($curso as $curso) { ?>
+                    <option value=" <?= $curso[0] ?> "> <?= $curso[0] ?> </option>
+                  <?php } ?>
                 </select>
               </div>
             </div>
@@ -122,21 +162,21 @@ $resultado = $query->fetchAll();
     </section>
 
     <div class="box">
-      <?php foreach ($resultado as $resultado) { ?>
+      <?php foreach ($vagas as $vaga) { ?>
         <div id="cards">
           <div class="card" id="card">
             <div class="card-content" id="conteudo-card">
               <div id="job-title">
-                <?= $resultado[20] ?> - <?= $resultado[21] ?>
+                <?= $vaga['cidade'] ?> - <?= $vaga['bairroVaga'] ?>
               </div>
               <div class="job-description" id="descricao-vaga">
-                <p><?= $resultado[19] ?></p>
-                <p><?= $resultado[25] ?> as <?= $resultado[26] ?></< /p>
-                <p>R$ <?= $resultado[23] ?> </p>
+                <p><?= $vaga['nome'] ?></p>
+                <p><?= $vaga['inicio'] ?> as <?= $vaga['termino'] ?></< /p>
+                <p>R$ <?= $vaga['salario'] ?> </p>
 
 
               </div>
-              <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $resultado[18] ?>">
+              <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
                 Clique para mais informações
               </button>
             </div>
@@ -145,7 +185,7 @@ $resultado = $query->fetchAll();
 
 
 
-        <div class="modal fade bd-example-modal-lg<?= $resultado[18] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="modal-vaga">
               <div class="modal-header" id="modal-cabeaca-footer">
@@ -158,17 +198,17 @@ $resultado = $query->fetchAll();
                 <section id="info-empresa">
                   <div id="infos-vaga-modal">
                     <div id="div-img-modal">
-                      <img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?= $resultado[13] ?>">
+                      <img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?= $vaga['imagem'] ?>">
                     </div>
                     <div id="sobre-empresa">
                       <span id="info-titulo">
-                        <?= $resultado[3] ?>
+                        <?= $vaga['nomeEmpresa'] ?>
                       </span>
                       <span id="info-nome">
-                        <?= $resultado[4] ?>
+                        <?= $vaga['departamento'] ?>
                       </span>
                       <span id="info-ano">
-                        <?= $resultado[7] ?>
+                        <?= $vaga['anoFundacao'] ?>
                       </span>
                     </div>
                   </div>
@@ -177,19 +217,13 @@ $resultado = $query->fetchAll();
                       <span id="titulo2">CONHECIMENTOS :</span>
                       <div id="requisitos-vaga">
                         <span>
-                          <?= $resultado[41] ?>
-                        </span>
-                        <span>
-                          <?= $resultado[41] ?>
-                        </span>
-                        <span>
-                          <?= $resultado[41] ?>
+                          <?= $vaga['requisito'] ?>
                         </span>
                       </div>
                     </div>
                     <div id="descrição-vaga">
                       <p id="texto-descs">
-                        <?= $resultado[24] ?>
+                        <?= $vaga['descricao'] ?>
                       </p>
                     </div>
                   </div>
@@ -197,7 +231,7 @@ $resultado = $query->fetchAll();
               </div>
               <div class="modal-footer" id="modal-footer">
                 <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
-                  <input type="hidden" id="idVaga" name="idVaga" value="<?= $resultado[18] ?>">
+                  <input type="hidden" id="idVaga" name="idVaga" value="<?= $vaga['idVaga'] ?>">
                   <button name="bnt" id="botao-candidatar" type="submit" value="<?= $cliente_id ?>" class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
                 </form>
               </div>
