@@ -3,6 +3,20 @@ body {
   font-size: 100%;
 }
 
+aside::-webkit-scrollbar {
+  width: 10px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: #4d3cd1;
+  border-radius: 30px;
+  border: 3px solid rgb(253, 253,  253);
+}
+
 .img-sidebar {
   width: 70%;
   display: block;
