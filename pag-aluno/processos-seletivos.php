@@ -53,7 +53,7 @@ $resultado = $query->fetchAll();
   ?>
   <main id="main">
 
-    <section class="filtro">
+  <section class="filtro">
       <div class="container  mt-4" id="contain-filtro">
         <span class="filtro-icon">
           <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
@@ -82,18 +82,18 @@ $resultado = $query->fetchAll();
               </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
-                  <option value="qualquer">Área</option>
-                  <option value="ti">TI</option>
-                  <option value="saude">Saúde</option>
-                  <option value="juridico">Jurídico</option>
+                  <option value="qualquer">area</option>
+                  <?php foreach ($vagas as $vaga) { ?>
+                    <option value=" <?= $vaga['area'] ?> "> <?= $vaga['area'] ?> </option>
+                  <?php } ?>
                 </select>
               </div>
               <div class="col-md-3">
                 <select name="curso" class="form-control">
-                  <option value="qualquer">Curso</option>
-                  <option value="desenvolvimento">desenvolvimento</option>
-                  <option value="medicina">Medicina</option>
-                  <option value="direito">Direito</option>
+                  <option value="qualquer">curso</option>
+                  <?php foreach ($curso as $curso) { ?>
+                    <option value=" <?= $curso[0] ?> "> <?= $curso[0] ?> </option>
+                  <?php } ?>
                 </select>
               </div>
             </div>
