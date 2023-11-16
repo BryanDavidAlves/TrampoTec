@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
 
-        <a href="./vagas.php"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisito</a>
+        <a class="cabecalho" href="./vagas.php"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisitos</a>
 
 
         <section class="formulario-cadastrar-vaga">
@@ -148,6 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         });
     </script>
+
 </body>
 
 </html>
