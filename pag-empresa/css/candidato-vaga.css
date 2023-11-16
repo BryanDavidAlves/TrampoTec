@@ -54,11 +54,11 @@ main .align-itens th {
   margin-left: -10px;
   gap: 5px;
 }
-.tabela .align-links a {
+.tabela .align-links button {
   padding: 10px 10px 10px 10px;
   border: 1px solid;
   border-radius: 15px;
-
+background-color: transparent;
   font-size: 0.9rem;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
@@ -66,7 +66,7 @@ main .align-itens th {
   color: white;
   transition: 0.5s all ease-in-out;
 }
-.tabela .align-links a:hover {
+.tabela .align-links button:hover {
   background-color: white;
   color: #555cb3;
   border: 1px solid #555cb3;

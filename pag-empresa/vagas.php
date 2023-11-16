@@ -160,7 +160,7 @@ foreach ($result as $vaga) {
 
 
                             <td>
-                                <form method="POST" action="vagas-candidato.php">
+                                <form method="POST" action="vagas-candidato.php?aprovado=1">
                                     <button type="submit" name="idVaga" value="<?= $vaga['idVaga'] ?>" href="vagas-candidato.php"> VER MAIS </button>
                                 </form>
                             </td>
