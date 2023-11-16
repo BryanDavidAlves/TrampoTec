@@ -25,10 +25,15 @@ main {
    width: 16%;
 }
 
-main a {
+.cabecalho {
    font-size: 25px;
    text-decoration: none;
    color: black;
+   margin-left: 5%;
+}
+
+a {
+   text-decoration: none;
 }
 
 .fa-chevron-left {
@@ -50,6 +55,7 @@ main a {
    display: flex;
    align-items: center;
    justify-content: center;
+   animation: 800ms ease-out anim-form;
 }
 
 .formulario-cadastrar-vaga form {
@@ -83,126 +89,49 @@ form h1 {
    font-size: 22px;
 }
 
-form .alinhaento-inputs span {
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
-   width: 100%;
-}
-
-
-form .alinhaento-inputs span label {
-   font-size: 17px;
-}
-
-.formulario-cadastrar-vaga .alinhaento-inputs input {
-   padding: 9px;
-   border-radius: 25px;
-   border: 1px solid blue;
-   width: 100%;
-}
-
-.formulario-cadastrar-vaga .alinhaento-inputs span .descricao {
-   height: 40px;
-   padding: 10px;
-}
-
-
 input:focus {
    outline: none;
-}
-
-.selects:focus {
-   outline: none;
-}
-
-.selects {
-   padding: 10px;
-   border-radius: 25px;
-   border: 1px solid blue;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 15px;
-}
-
-.botao-vaga {
-   padding: 10px;
-   border-radius: 20px;
-   border: none;
-   width: 200px;
-   color: white;
-   background-color: rgb(10, 10, 87);
-   font-size: 15px;
-   cursor: pointer;
-}
-
-.caixa-add-requisito {
-   display: flex;
-   justify-content: space-around;
-   align-items: flex-start;
-   gap: 20px;
-}
-
-.caixa-add-requisito span {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-}
-
-.add-requisito {
-   font-size: 30px;
-   color: red;
-   cursor: pointer;
-}
-
-.caixa-add-requisito .body-inputs {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-   overflow-y: auto;
-   width: 300px;
-   max-height: 80px;
-   padding: 10px;
-}
-
-.body-inputs::-webkit-scrollbar {
-   width: 10px;
-}
-
-.body-inputs::-webkit-scrollbar-track {
-   background: rgb(255, 255, 255);
-}
-
-.body-inputs::-webkit-scrollbar-thumb {
-   background-color: #555cb3;
-   border-radius: 50px;
-   border: 2px solid rgb(253, 253, 253);
-}
-
-.body-inputs::-webkit-scrollbar-track-piece {
-   background-color: #9a9999a1;
-   border-radius: 50px;
-   border: 2px solid rgb(253, 253, 253);
-}
-
-.caixa-add-requisito .body-inputs select {
-   padding: 9px;
-   border-radius: 25px;
-   border: 1px solid blue;
-   width: 70%;
-   animation: 400ms linear trans;
-   transform: translateY(20%);
 }
 
 @keyframes trans {
    0% {
       opacity: 0%;
-      transform: translateY(-10%);
+      transform: translateY(-200%);
+   }
+
+   50% {
+      opacity: 25%;
+   }
+
+   60% {
+      opacity: 50%;
+   }
+
+   70% {
+      opacity: 70%;
    }
 
    100% {
       opacity: 100%;
-      transform: translateY(20%);
+      transform: translateY(0%);
+   }
+
+
+}
+
+@keyframes anim-form {
+   0% {
+      opacity: 0%;
+      transform: translateY(-15%);
+   }
+
+   50% {
+      opacity: 50%;
+   }
+
+   100% {
+      opacity: 100%;
+      transform: translateY(0%);
    }
 
 }
@@ -227,6 +156,7 @@ table {
    overflow: auto;
    height: 5px;
    width: 500px;
+   animation: 900ms ease trans;
 }
 
 table td {
@@ -259,7 +189,8 @@ table a {
    padding: 10px;
    background-color: white;
    transition: all 0.4s;
-   width: 47%;
+   width: 50%;
+   animation: 1000ms linear trans;
 }
 
 .addCampo:hover {
@@ -270,48 +201,45 @@ table a {
 .btn {
    background-color: red;
    border: none;
-   border-radius: 20px;
+   border-radius: 10px;
    color: white;
    cursor: pointer;
    padding: 12px;
-   width: 55%;
+   width: 47%;
    font-weight: 800;
    font-size: 1rem;
    text-align: center;
+   animation: 800ms linear trans;
 }
 
 .input-box input {
    border-radius: 10px;
-   border: 1px solid rgb(161, 161, 161);
-   width: 800px;
+   border: 2px solid blue;
+   width: 90%;
    padding: 10px;
    font-size: 1rem;
-   animation: 400ms linear trans;
+   animation: 1500ms ease trans;
+   margin: auto;
 }
 
 .input-box {
+   width: 50%;
    display: flex;
    flex-direction: column;
    justify-content: center;
+
 }
 
-.input-box input {
-   border-radius: 10px;
-   border: 1px solid rgb(161, 161, 161);
-   width: 50%;
-   padding: 10px;
-   font-size: 1rem;
-}
 
 label {
    margin-bottom: 20px;
 }
 
-#reqsuito::after {
+/*#reqsuito::after {
    content: attr(data-display-text);
    display: block;
    position: absolute;
    top: 0;
    left: 0;
    pointer-events: none;
- }
+ }*/
