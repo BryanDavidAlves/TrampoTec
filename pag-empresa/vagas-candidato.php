@@ -1,8 +1,12 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
+
 $idvaga = trim($_POST['idVaga']);
-$info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
+
+if (isset($_GET) && $_GET['aprovado'] == 1) {
+
+    $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
  tb_requisito.requisito
 FROM tb_vaga
@@ -16,11 +20,34 @@ on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
 ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$idvaga'";
 
-$querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+    $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
 FROM tb_aluno
 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
-WHERE idVaga ='$idvaga'";
+WHERE idVaga ='$idvaga' AND aprovado = 1";
+} else  if (isset($_GET) && $_GET['aprovado'] == 0) {
+
+    $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
+ tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
+ tb_requisito.requisito
+FROM tb_vaga
+INNER JOIN tb_curso
+ON tb_vaga.fk_idCurso = tb_curso.idCurso
+INNER JOIN tb_empresa
+ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+
+INNER JOIN tb_requisito_vaga
+on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
+INNER JOIN tb_requisito
+ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$idvaga'";
+
+    $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+WHERE idVaga ='$idvaga' AND aprovado = 0";
+}
+
 
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
@@ -102,6 +129,19 @@ foreach ($result as $vaga) {
 
             <div class="tabela">
                 <p>CANDIDATOS A VAGA</p>
+                <div class="align-links">
+                    <form method="POST" action="vagas-candidato.php?aprovado=1">
+                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
+                            CADASTRADAS
+                        </button>
+                    </form>
+                    <form method="POST" action="vagas-candidato.php?aprovado=0">
+                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
+                            PENDENTES
+                        </button>
+                    </form>
+                </div>
+
                 <table>
                     <thead>
                         <tr>
@@ -111,24 +151,35 @@ foreach ($result as $vaga) {
                             <th>EMAIL</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="infos" id="result">
+
                         <?php foreach ($aluno as $aluno) { ?>
                             <tr class="infos">
                                 <td>
-                                    <?= $aluno[16] ?>
+                                    <?= $aluno[17] ?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[29] != "" ? $aluno[29] : ''; ?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[30] != "" ? $aluno[30] : ''; ?>" alt="">
                                         </div>
 
                                 </td>
                                 <td class="nome-aluno">
-                                    <?= $aluno[19] ?>
+                                    <?= $aluno[20] ?>
                                 </td>
                                 <td>
-                                    <?= $aluno[17] ?>
+                                    <?= $aluno[18] ?>
+                                </td>
+                                <td>
+                                    <div class="icons">
+
+                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?id=' . $resultado[0] . '">
+                                            <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i></a>
+                                        <a href="./beck-end/crudAluno/aluno-deletar.php?id=' . $resultado[0] . '">
+                                            <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                                        </a>
+                                    </div>
                                 </td>
 
 
@@ -137,6 +188,8 @@ foreach ($result as $vaga) {
                             </tr>
 
                         <?php } ?>
+
+
 
                     </tbody>
                 </table>
@@ -147,6 +200,7 @@ foreach ($result as $vaga) {
 
 
     </main>
+
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 
