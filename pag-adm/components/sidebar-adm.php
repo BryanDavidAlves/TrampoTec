@@ -6,9 +6,9 @@
 
                 <li><a href="index.php"><i class="fa-solid fa-table-cells-large" style="color: #3C86D;"></i> Dashboard</a></li>
                 <li><a href="empresa.php?aprovado=1"><i class="fa-solid fa-building" style="color: #3C86D;"></i> Empresas</a></li>
-                <li><a href="professor.php"><i class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i> Professores</a></li>
+               <!--  <li><a href="professor.php"><i class="fa-solid fa-chalkboard-user" style="color: #3C86D;"></i> Professores</a></li> -->
                 <li><a href="aluno.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Alunos</a></li>
-                <li><a href="adm.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Administradores</a></li>
+               <li><a href="adm.php"><i class="fa-solid fa-user" style="color: #3C86D;"></i> Administradores</a></li> 
                 <li><a href="etec.php?aprovado=1"><i class="fa-solid fa-school" style="color: #3C86D;"></i> Etec</a></li>
                 <li><a href="curso.php"><i class="fa-solid fa-book" style="color: #3C86D;"></i> Cursos</a></li>
             </div>

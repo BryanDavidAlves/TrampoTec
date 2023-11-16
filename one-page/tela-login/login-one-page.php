@@ -44,11 +44,11 @@
                                     <a href="../../pag-adm/login.php">    <button type="submit" placeholder="">Administrador</button></a>
                                 </div>
 
-
+<!--
                                 <div class="barra-agendar">
                                     <a href="../../pag-professor/cadastro.php">   <button type="submit" placeholder="">Professor</button></a>
                                 </div>
-
+-->
                             </div>
 
                     </div>

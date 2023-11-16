@@ -89,9 +89,6 @@ require_once "./back-end/login/validador_acesso_curri.php";
       }
     }
 
-    img {
-      margin-left: 19%;
-    }
 
     @media (max-width: 575px) {
       #hero .hero-img img {

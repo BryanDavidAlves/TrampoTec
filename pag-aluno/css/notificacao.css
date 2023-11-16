@@ -1,7 +1,11 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
     color: #737373;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 1%;
     font-size: 2rem;
 }
 
@@ -45,17 +49,19 @@ p{
     display: flex;
     width: 960px;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 100px;
 }
 .empresas {
     width: 100%;
     display: flex;
     justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 2%;
 }
 .align{
     width: 100%;
-    position: absolute;
 }
 .linha{
     background-color:#0a3580;
