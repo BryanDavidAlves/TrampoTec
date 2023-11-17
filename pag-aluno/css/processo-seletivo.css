@@ -2,6 +2,23 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  
+  .imagem-3{
+    position: fixed;
+    width: 10%;
+    left: 0;
+    bottom: 0;
+    z-index: -5;
+  }
+  .imagem-4{
+    position: fixed;
+    bottom: -30px;
+    object-fit: cover;
+    right: -30px;
+    width: 20%;
+    z-index: -5;
+
+  }
 
 
   #form-control {
@@ -76,9 +93,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 70px;
+    gap: 60px;
     margin-top: 4%;
-
+   margin-left: 10%;
+   margin-right: 10%;
   }
 
   #card {

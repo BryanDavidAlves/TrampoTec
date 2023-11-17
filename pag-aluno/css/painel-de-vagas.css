@@ -2,6 +2,39 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  .imagem-1{
+    position: fixed;
+    width: 20%;
+    object-fit: contain;
+    top: -60px;
+     right: -60px;
+    z-index: -5;
+  }
+  
+  .imagem-2{
+    position: fixed;
+    width: 13%;
+    left: 30px;
+    top: 150px;
+    z-index: -5;
+  }
+  
+  .imagem-3{
+    position: fixed;
+    width: 10%;
+    left: 0;
+    bottom: 0;
+    z-index: -5;
+  }
+  .imagem-4{
+    position: fixed;
+    bottom: 0;
+    object-fit: cover;
+    right: 0;
+    width: 15%;
+    z-index: -5;
+  }
+
 
 
   select {
@@ -76,13 +109,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 70px;
-    margin-top: 1%;
+    gap: 50px;
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
   }
 
-  #cards{
-    padding: 40px 20px 0 20px;
-  }
+  
 
   #card {
     background-color: rgb(232, 232, 232);
@@ -92,12 +125,13 @@ body {
     justify-content: center;
     box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
     border: none;
+    padding: 20px;
 }
 
   #conteudo-card{   
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     padding: 10px;
