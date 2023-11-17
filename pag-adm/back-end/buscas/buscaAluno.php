@@ -23,8 +23,8 @@ if ($resultado > 0) {
         '<td class="text-center">' . $resultado[10] . '</td>',
         '<td class="text-center">' . $resultado[9] . '</td>',
         '<td class="text-center">' . $resultado[7] . '</td>',
-            ' <td class="icone-table">
-        <a  href="back-end/crudAluno/aluno-delete.php?id=' . $resultado[0] . '"><i  class="fa-solid fa-x" style="color: #000000;"></i></a>
+        ' <td class="icone-table">
+        <a  href="back-end/crudAluno/aluno-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark"></i></a>
     </td>
     </tr>';
     }

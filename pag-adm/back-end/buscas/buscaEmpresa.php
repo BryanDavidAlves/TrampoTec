@@ -18,22 +18,18 @@ if ($resultado > 0) {
         echo
         '<tr class="infos">
          <td class="table-id">' . $resultado[0] . '</td>',
-        '<td class="table-nome-empresa">' . $resultado[1] . '</td>',
-        '<td class="table-email-empresa">' . $resultado[3] . '</td>',
-        '<td class="table-cnpj">' . $resultado[1] . '</td>',
-        '<td class="table-cep">' . $resultado[4] . '</td>',
-        '<td class="table-nome-curso">' . $resultado[5] . '</td>',
-        '<td class="table-numero">' . $resultado[7] . '</td>',
-        '<td class="table-estado">' . $resultado[9] . '</td>',
-            '<td class="icone-table">
+        '<td class="table-nome-empresa">' . $resultado[3] . '</td>',
+        '<td class="table-email-empresa">' . $resultado[1] . '</td>',
+        '<td class="table-cnpj">' . $resultado[7] . '</td>',
+        '<td class="table-cep">' . $resultado[8] . '</td>',
+        '<td class="table-estado">' . $resultado[12] . '</td>',
+        '<td class="icone-table2">
             <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=' . $resultado[0] . '"><i
-                    class="fa-solid fa-check" style="color: #ff0000;"></i></a>
-
-            <a href="./back-end/crudEmpresa/empresa-delete.php?id=' . $resultado[0] . '"><i
-                    class="fa-solid fa-x" style="color: #000000;"></i></a>
+                    class="fa-solid fa-check"></i></a>
     </td>
-</tr>
-        </td>
+    <td class="icone-table">
+            <a href="./back-end/crudEmpresa/empresa-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark" ></i></a>
+    </td>
     </tr>';
     }
 }

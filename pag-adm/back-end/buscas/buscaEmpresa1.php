@@ -20,14 +20,12 @@ if ($resultado > 0) {
          <td class="table-id">' . $resultado[0] . '</td>',
         '<td class="table-nome-empresa">' . $resultado[3] . '</td>',
         '<td class="table-email-empresa">' . $resultado[1] . '</td>',
-        '<td class="table-cnpj">' . $resultado[4] . '</td>',
-        '<td class="table-cep">' . $resultado[5] . '</td>',
-        '<td class="table-nome-curso">' . $resultado[7] . '</td>',
-
-        '<td class="table-estado">' . $resultado[9] . '</td>',
-            '<td class="icone-table">
+        '<td class="table-cnpj">' . $resultado[7] . '</td>',
+        '<td class="table-cep">' . $resultado[8] . '</td>',
+        '<td class="table-estado">' . $resultado[12] . '</td>',
+        '<td class="icone-table">
             <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=' . $resultado[0] . '">
-            <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+            <i class="fa-solid fa-xmark" ></i></a>
     </td>
     </tr>';
     }

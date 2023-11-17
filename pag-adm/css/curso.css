@@ -29,7 +29,6 @@
 
 main {
     margin-left: 20%;
-    padding-bottom: 50px;
 }
 
 .sistema-busca .barra-pesquisa {
@@ -198,7 +197,7 @@ thead {
 
 th {
     text-align: center;
-    padding-top: 20px;
+
 }
 
 table {
@@ -210,9 +209,10 @@ table {
 
 .infos {
     border-bottom: 1px solid black;
-    padding: 10px;
+    height: 100px;
 
 }
+
 
 table td {
     padding: 20px 10px 5px 15px;
@@ -225,16 +225,7 @@ tr:nth-last-child(1) {
     border: none;
 }
 
-.icone-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.icone-table i {
-    margin: 3px;
-}
 
 .cima {
     position: absolute;
@@ -251,10 +242,28 @@ tr:nth-last-child(1) {
 
 #icon-titulo {
     background-color: #555cb3;
+    border: 1px solid #555cb3 ;
     border-radius: 100%;
     padding: 10px;
     font-size: 1.5rem;
     margin-right: 10px;
+    color: white;
+    transition: .300s ease-in-out;
+}
+
+#icon-titulo:hover {
+    background-color: white;
+    border: 1px solid #555cb3 ;
+    color: #555cb3;
+}
+
+
+.secao-cadastro {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
 }
 
 .secao-cadastro a {
@@ -262,12 +271,6 @@ tr:nth-last-child(1) {
     color: black;
     text-decoration: none;
     align-items: center;
-    font-size: 1.5rem;
-
-}
-
-.secao-cadastro {
-    margin-top: 30px;
 }
 
 .modal-infos {
@@ -295,5 +298,46 @@ tr:nth-last-child(1) {
     cursor:pointer; 
     color: #4d3cd1;
     font-weight: 600;
-    
 }
+
+
+.icone-table{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-table a{
+    color: red;
+    border-radius: 100px;
+    transition: 0.300s ease-in-out;
+    font-size: 20px;
+    width: 20px;
+    padding: 8px;
+    text-align: center;
+}
+
+.icone-table a:hover{
+    background-color: rgb(255, 0, 0);
+   color: white;
+}
+
+
+.botao-editar{
+    
+    border: none;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    color: rgb(60, 60, 226);
+    transition: 0.300s ease-in-out;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.botao-editar:hover{
+    background-color: rgb(60, 60, 226);
+    color: white;
+}
+
