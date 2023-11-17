@@ -1,8 +1,12 @@
 <?php
 include '../../../dao/conexao.php';
-$id = trim($_GET['id']);
 
-$queryAprovar = "UPDATE tb_vaga_aluno SET aprovado = 1 ";
+$idAluno = trim($_GET['idAluno']);
+$idVaga = trim($_GET['idVaga']);
 
-$aprovar = $conexao->query($queryAprovar);
-header('Location: ../../vagas-candidato.php?aprovado=1');
+$queryAprovar = "UPDATE tb_vaga_aluno SET aprovado = 1 WHERE fk_idVaga = $idVaga AND fk_idAluno = $idAluno";
+
+
+$remover = $conexao->query($queryAprovar);
+header("Location: ../../vagas-candidato.php?aprovado=0&idVaga=$idVaga");
+?>
