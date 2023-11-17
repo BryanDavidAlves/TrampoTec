@@ -162,7 +162,6 @@ include '../pag-adm/components/sidebar-adm.php';
                 ['Task', 'Hours per Day'],
                 ['Empresas', <?=$n_empresa?>],
                 ['Alunos', <?=$n_aluno?>],
-                ['Professores', <?=$n_professor?>],
                 ['Administradores', <?=$n_admin?>]
             ]);
 

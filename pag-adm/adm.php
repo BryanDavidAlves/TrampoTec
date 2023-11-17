@@ -29,7 +29,7 @@ require_once "back-end/login/validador_acesso.php";
     </header>
     <div class="secao-cadastro">
         <a href="cadastro-adm.php">
-            <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+            <i id="icon-titulo" class="fa-solid fa-plus"></i>
             <h2>Cadastrar um novo Administrador</h2>
         </a>
     </div>

@@ -2,40 +2,29 @@
 include '../dao/conexao.php';
 
 require_once "back-end/login/validador_acesso.php";
-
-?>
-
-
-<?php
-require_once "back-end/login/validador_acesso.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/curso.css">
-
     <title>Cursos</title>
 </head>
 
 <body>
     <?php
-include '../pag-adm/components/sidebar-adm.php';
-?>
+    include '../pag-adm/components/sidebar-adm.php';
+    ?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Cursos</h1>
         <div class="secao-cadastro">
             <a href="cadastro-curso.php">
-                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-plus" "></i>
                 <h2>Cadastrar um novo curso</h2>
             </a>
         </div>
@@ -100,7 +89,8 @@ include '../pag-adm/components/sidebar-adm.php';
                         <th>Semestre</th>
                         <th>Modalidade</th>
                         <th>Ensino</th>
-
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">

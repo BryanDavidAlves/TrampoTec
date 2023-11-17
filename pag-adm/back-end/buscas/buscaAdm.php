@@ -18,17 +18,17 @@ if ($resultado > 0) {
         echo
         '<tr class="infos">
         <td class="table-id">
-            '.$resultado[0].'
+            ' . $resultado[0] . '
         </td>
         <td class="table-nome-adm">
-            '. $resultado[1] .'
+            ' . $resultado[1] . '
         </td>
         <td class="table-email-adm">
-            '. $resultado[2] .'
+            ' . $resultado[2] . '
         </td>
 
         <td class="icone-table"> 
-                <a href="./back-end/crudAdm/adm-delete.php?id='. $resultado[0] .'"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
+                <a href="./back-end/crudAdm/adm-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark"></i></a>
         
         </td>
     </tr>';

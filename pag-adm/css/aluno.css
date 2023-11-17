@@ -198,7 +198,6 @@ thead {
 
 th {
     text-align: center;
-    padding-top: 20px;
 }
 
 table {
@@ -209,8 +208,7 @@ table {
 
 .infos {
     border-bottom: 1px solid black;
-    padding: 10px;
-
+    height: 80px;
 }
 
 table td {
@@ -233,15 +231,26 @@ tr:nth-last-child(1) {
     border: none;
 }
 
-.icone-table {
+.icone-table{
+    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.icone-table i {
-    margin: 3px;
+.icone-table a{
+    color: red;
+    border-radius: 100px;
+    transition: 0.300s ease-in-out;
+    font-size: 20px;
+    width: 20px;
+    padding: 8px;
+    text-align: center;
+}
+
+.icone-table a:hover{
+    background-color: rgb(255, 0, 0);
+   color: white;
 }
 
 .text-center {

@@ -26,16 +26,15 @@ if ($resultado > 0) {
         '<td class="table-nome-curso">' . $resultado[5] . '</td>',
         '<td class="text-center">
                 <form action="cadastro-curso.php" method="POST">
-                    <input type="hidden" class="form-control" id="id_curso" name="id_curso"
-                        value="'. $resultado[0] .'">
-                    <button type="submit" class="dropdown-item"><i
-                            class="fas fa-edit fa-lg text-secondary"></i>
+                    <input type="hidden" class="form-control" id="id_curso" name="id_curso" value="' . $resultado[0] . '">
+                    <button type="submit" class="botao-editar" class="dropdown-item">
+                    <i class="fas fa-edit fa-lg text-secondary"></i>
                     </button>
                 </form>
             </td>
         <td class="icone-table">
 
-        <a href="./back-end/crudCurso/delete-curso.php?id='.$resultado[0].'"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
+        <a href="./back-end/crudCurso/delete-curso.php?id=' . $resultado[0] . '"> <i class="fa-solid fa-xmark"></i></a>
         </td>
     </tr>';
     }

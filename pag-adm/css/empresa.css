@@ -195,6 +195,7 @@ table td{
     padding: 20px 5px 30px 5px;
     text-align: center;
     color: rgb(94, 94, 94);
+    word-break: break-all ;
 
 }
 .table-nome-empresa{
@@ -203,18 +204,24 @@ table td{
 }
 .table-email-empresa{
     word-break: break-all ;
-    width: 300px;
+    width: 200px;
 }
 .table-id{
-    width: 60px;
+    width: 40px;
 }
 tr:nth-last-child(1){
     border: none;
 }
 .table-cnpj{
-    width: 250px;
+    width: 100px;
     word-break: break-all ;
 }
+
+.table-estado{
+    width: 100px;
+    word-break: break-all ; 
+}
+
 .table-cep{
     width: 200px;
     word-break: break-all;
@@ -223,14 +230,57 @@ tr:nth-last-child(1){
     width: 200px;
 }
 .icone-table{
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+
+.icone-table a{
     display: flex;
-    flex-direction: column;
+    text-decoration: none;
+    color: red;
+    border-radius: 100px;
+    transition: 0.300s ease-in-out;
+    font-size: 20px;
+    width: 20px;
+    padding: 8px;
+    text-align: center;
     align-items: center;
     justify-content: center;
 }
-.icone-table i{
-    margin: 3px;
+
+.icone-table a:hover{
+    background-color: rgb(255, 0, 0);
+   color: white;
 }
+
+.icone-table2 {
+    text-align: center;
+    align-items: center;
+}
+
+.icone-table2 a{
+    color: green;
+    border-radius: 100px;
+    transition: 0.300s ease-in-out;
+    font-size: 20px;
+    width: 20px;
+    padding: 8px;
+    text-align: center;
+    display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+}
+
+.icone-table2 a:hover{
+    background-color: green;
+   color: white;
+}
+
+
 .cima{
     position: absolute;
     top: 0;

@@ -32,7 +32,7 @@ include '../pag-adm/components/sidebar-adm.php';
         <h1>Etecs</h1>
         <div class="secao-cadastro">
             <a href="cadastro-etec.php">
-                <i id="icon-titulo" class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                <i id="icon-titulo" class="fa-solid fa-plus"></i>
                 <h2>Cadastrar uma nova ETEC</h2>
             </a>
         </div>
@@ -95,7 +95,8 @@ include '../pag-adm/components/sidebar-adm.php';
                         <th>EMAIL</th>
                         <th>CÓDIGO</th>
                         <th>MUNICIPIO</th>
-
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">

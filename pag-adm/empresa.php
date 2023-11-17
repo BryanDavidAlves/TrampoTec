@@ -88,8 +88,10 @@ include '../pag-adm/components/sidebar-adm.php';
                     <th>EMAIL</th>
                     <th>CNPJ</th>
                     <th>CEP</th>
-                    <th>NÚMERO</th>
                     <th>ESTADO</th>
+                    <th></th>
+                    <th></th>
+             
                 </tr>
             </thead>
             <tbody class="infos" id="result">
