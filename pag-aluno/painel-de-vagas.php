@@ -107,6 +107,11 @@ $curso = $query->fetchAll();
 
   ?>
 
+<img class="imagem-1" src="./img/12.png" alt="">
+  <img class="imagem-2" src="./img/11.png" alt="">
+
+
+
   <main id="main">
 
     <section class="filtro">
@@ -250,7 +255,8 @@ $curso = $query->fetchAll();
 
 
   </main>
-
+  <img class="imagem-3" src="./img/10.png" alt="">
+  <img class="imagem-4" src="./img/9.png" alt="">
   <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

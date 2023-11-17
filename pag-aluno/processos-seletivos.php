@@ -123,8 +123,10 @@ $resultado = $query->fetchAll();
     </div>
 
   </main>
-  <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+  <img class="imagem-4" src="./img/icon1.png" alt="">
+  <img class="imagem-3" src="./img/icon3.png" alt="">
 
+  <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
