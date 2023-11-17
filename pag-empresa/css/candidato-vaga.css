@@ -1,86 +1,70 @@
 main {
-  margin-left: 20%;
+  margin-left: 22%;
 }
 main .align-itens {
   display: flex;
   gap: 20px;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  align-items: start;
 }
 main .align-itens .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  padding: 10px;
   gap: 25px;
-  background-color: whitesmoke;
+  background-color: rgb(234, 231, 231);
   border-radius: 15px;
-  border: none;
   box-shadow: 0px 20px 18px -10px #9b9b9b;
-  width: 350px;
+  width: 400px;
   height: 400px;
+
 }
 main .align-itens .card .itens-card {
   display: flex;
-
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
   width: 100%;
-  margin-left: 40px;
   font-weight: 500;
 }
 main .align-itens .card .itens-card h5 {
   font-size: 1.1rem;
   font-weight: 600;
 }
-main .align-itens thead {
-  color: rgb(70, 70, 70);
-  font-weight: 600;
-}
 
-main .align-itens th {
-  text-align: center;
-  padding-top: 20px;
-
-  color: black;
-}
 .tabela .align-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   width: 100%;
-  margin-bottom: 5px;
-  margin-left: -10px;
-  gap: 5px;
+  height: 100px;
 }
+
+
 .tabela .align-links button {
   padding: 10px 10px 10px 10px;
   border: 1px solid;
   border-radius: 15px;
-background-color: transparent;
+  border: 1px solid #555cb3;
   font-size: 0.9rem;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
-  color: white;
+  background-color: white;
+  color: #555cb3;
   transition: 0.5s all ease-in-out;
 }
 .tabela .align-links button:hover {
-  background-color: white;
-  color: #555cb3;
-  border: 1px solid #555cb3;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
   transition: 0.5s all ease-in-out;
 }
 
 .tabela {
   border-radius: 15px;
-  overflow-y: scroll;
-  max-height: 400px;
-  max-width: 700px;
   border: none;
   background-color: #555cb3;
-
   box-shadow: 0px 20px 18px -10px #9b9b9b;
 }
 .tabela p {
@@ -93,30 +77,24 @@ background-color: transparent;
 }
 main .align-itens table {
   background-color: whitesmoke;
-
   border-radius: 15px;
-  border: none;
-
   width: 600px;
-
   box-shadow: 0px 20px 18px -10px #9b9b9b;
 }
 
+th{
+  padding: 10px;
+}
+
 main .align-itens .infos {
-  border-bottom: 2px solid rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(80, 80, 80);
 }
 
 main .align-itens table td {
-  text-align: start;
   color: rgb(0, 0, 0);
-}
-main .align-itens table .nome-aluno {
-  word-break: break-all;
-  min-width: 160px;
-  font-size: 0.8rem;
-}
-main .align-itens .table {
-  width: 100px;
+  padding: 10px;
+width: 100%;
+
 }
 
 main .align-itens tr:nth-last-child(1) {
@@ -140,4 +118,50 @@ td .container-perfil .img-perfil img {
   object-fit: cover;
   border: none;
   border-radius: 50%;
+}
+
+#result{
+  overflow-y: scroll;
+  max-height: 400px;
+  max-width: 700px;
+}
+
+.icon-1 a{
+  color: green;
+  border-radius: 100px;
+  transition: 0.300s ease-in-out;
+  font-size: 20px;
+  width: 20px;
+  padding: 8px;
+  text-align: center;
+  display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+}
+
+.icon-1 a:hover{
+  background-color: green;
+ color: white;
+}
+
+
+.icon-2 a{
+  display: flex;
+  text-decoration: none;
+  color: red;
+  border-radius: 100px;
+  transition: 0.300s ease-in-out;
+  font-size: 20px;
+  width: 20px;
+  padding: 8px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-2 a:hover{
+  background-color: rgb(255, 0, 0);
+ color: white;
 }

@@ -2,7 +2,7 @@
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 
-$idvaga = trim($_POST['idVaga']);
+$idvaga = trim($_GET['idVaga']);
 
 if (isset($_GET) && $_GET['aprovado'] == 1) {
 
@@ -24,7 +24,7 @@ ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE idVaga ='$i
 FROM tb_aluno
 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
-WHERE idVaga ='$idvaga' AND aprovado = 1";
+WHERE idVaga ='$idvaga' AND tb_vaga_aluno.aprovado = 1";
 } else  if (isset($_GET) && $_GET['aprovado'] == 0) {
 
     $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
@@ -35,7 +35,6 @@ INNER JOIN tb_curso
 ON tb_vaga.fk_idCurso = tb_curso.idCurso
 INNER JOIN tb_empresa
 ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-
 INNER JOIN tb_requisito_vaga
 on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
@@ -103,10 +102,10 @@ foreach ($result as $vaga) {
     <main class="main">
 
 
-        <div class="align-itens">
+        <section class="align-itens">
+            <div class="card">
+                <?php foreach ($vagas as $vaga) { ?>
 
-            <?php foreach ($vagas as $vaga) { ?>
-                <div class="card">
                     <div class="itens-card">
                         <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
                     </div>
@@ -122,20 +121,23 @@ foreach ($result as $vaga) {
                     <div class="itens-card">
                         <h5>Salario:</h5><?= $vaga['salario'] ?>
                     </div>
-                </div>
+                <?php } ?>
+            </div>
 
-            <?php } ?>
+
 
 
             <div class="tabela">
-                <p>CANDIDATOS A VAGA</p>
+
                 <div class="align-links">
-                    <form method="POST" action="vagas-candidato.php?aprovado=1">
+                    <form method="GET" action="vagas-candidato.php">
+                        <input type="hidden" value="1" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
                             CADASTRADAS
                         </button>
                     </form>
-                    <form method="POST" action="vagas-candidato.php?aprovado=0">
+                    <form method="GET" action="vagas-candidato.php?aprovado=0">
+                        <input type="hidden" value="0" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
                             PENDENTES
                         </button>
@@ -149,13 +151,15 @@ foreach ($result as $vaga) {
                             <th>USUARIO</th>
                             <th>NOME</th>
                             <th>EMAIL</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody class="infos" id="result">
+                    <tbody id="result">
 
                         <?php foreach ($aluno as $aluno) { ?>
                             <tr class="infos">
-                                <td>
+                                <td class="id-aluno">
                                     <?= $aluno[17] ?>
                                 </td>
                                 <td>
@@ -163,25 +167,28 @@ foreach ($result as $vaga) {
                                         <div class="img-perfil">
                                             <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[30] != "" ? $aluno[30] : ''; ?>" alt="">
                                         </div>
-
+                                    </div>
                                 </td>
                                 <td class="nome-aluno">
                                     <?= $aluno[20] ?>
                                 </td>
-                                <td>
+                                <td class="email-aluno">
                                     <?= $aluno[18] ?>
                                 </td>
                                 <td>
-                                    <div class="icons">
-
-                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?id=' . $resultado[0] . '">
-                                            <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i></a>
-                                        <a href="./beck-end/crudAluno/aluno-deletar.php?id=' . $resultado[0] . '">
-                                            <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
+                                    <button class="icon-1">
+                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[17] ?>&idVaga=<?= $idvaga ?>">
+                                            <i class="fa-solid fa-check"></i>
                                         </a>
-                                    </div>
+                                    </button>
                                 </td>
-
+                                <td>
+                                    <button class="icon-2">
+                                        <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[17] ?>&idVaga=<?= $idvaga ?>">
+                                            <i class="fa-solid fa-xmark" ></i>
+                                        </a>
+                                    </button>
+                                </td>
 
 
 
@@ -194,7 +201,7 @@ foreach ($result as $vaga) {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
 
 
 
