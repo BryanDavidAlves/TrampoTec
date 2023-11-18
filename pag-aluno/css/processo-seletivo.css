@@ -113,10 +113,13 @@ body {
     gap: 10px;
 }
 
-h4:nth-last-child(1) {
+.nao-aceito {
 color: yellow;
 }
 
+.aceito {
+  color: rgb(0, 255, 13);
+  }
 
 .vaga{
     font-size: 25px  ;

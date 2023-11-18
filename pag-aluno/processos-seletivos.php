@@ -24,7 +24,6 @@ if (!($_GET)) {
   $curso = trim($_GET['curso']);
   $area = trim($_GET['area']);
   $salario = trim($_GET['salario']);
-
 }
 
 
@@ -53,7 +52,7 @@ $resultado = $query->fetchAll();
   ?>
   <main id="main">
 
-  <section class="filtro">
+    <section class="filtro">
       <div class="container  mt-4" id="contain-filtro">
         <span class="filtro-icon">
           <i class="fa-solid fa-sliders" style="color: #0a3580;"></i>
@@ -113,7 +112,17 @@ $resultado = $query->fetchAll();
           <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
           <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
           <h4 class="preço">R$ <?= $resultado[5] ?> - <?= $resultado[9] ?></h4>
-          <h4>STATUS : EM ANDAMENTO</h4>
+          <?php $querySelect = "SELECT * FROM tb_vaga_aluno WHERE fk_idAluno = $cliente_id AND fk_idVaga = $resultado[0] AND aprovado = 1";
+          $resultado = $conexao->query($querySelect);
+          $num = $resultado->fetchALL();
+          $qtn = count($num);
+
+          if ($qtn >= 1) { ?>
+            <h4 class="aceito">STATUS : ACEITO</h4>
+          <?php } else {  ?>
+            <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
+          <?php } ?>
+
         </div>
 
 
