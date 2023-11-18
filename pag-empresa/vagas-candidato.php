@@ -96,6 +96,22 @@ foreach ($result as $vaga) {
     }
 }
 
+
+$querySelect1 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 1 AND fk_idVaga = $idvaga";
+$resultado1 = $conexao->query($querySelect1);
+$aluno1 = $resultado1->fetchALL();
+$n_aluno1 = count($aluno1);
+
+$querySelect0 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 0 AND fk_idVaga = $idvaga";
+$resultado0 = $conexao->query($querySelect0);
+$aluno0 = $resultado0->fetchALL();
+$n_aluno0 = count($aluno0);
+
+$querySelect2 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 2 AND fk_idVaga = $idvaga";
+$resultado2 = $conexao->query($querySelect2);
+$aluno2 = $resultado2->fetchALL();
+$n_aluno2 = count($aluno2);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -163,19 +179,20 @@ foreach ($result as $vaga) {
                     <form method="GET" action="vagas-candidato.php">
                         <input type="hidden" value="1" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            CADASTRADAS
+                        ( <?= $n_aluno1 ?> )    CADASTRADAS
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=0">
                         <input type="hidden" value="0" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            PENDENTES
+                        ( <?= $n_aluno0 ?> )       PENDENTES
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=2">
+                  
                         <input type="hidden" value="2" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            RECUSADOS
+                       ( <?= $n_aluno2 ?> )  RECUSADOS
                         </button>
                     </form>
                 </div>
