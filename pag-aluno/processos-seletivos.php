@@ -122,15 +122,27 @@ $resultado = $query->fetchAll();
           $num = $resultado2->fetchALL();
           $qtn = count($num);
 
+
+          $querySelect3 = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
+          FROM tb_vaga_aluno 
+          INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+          INNER JOIN tb_empresa ON tb_empresa.idEmpresa = tb_vaga.fk_idEmpresa
+          WHERE tb_vaga_aluno.fk_idAluno = $cliente_id AND tb_vaga_aluno.fk_idVaga = $resultado[0] AND tb_vaga_aluno.aprovado = 2";
+          $resultado3 = $conexao->query($querySelect3);
+          $num2 = $resultado3->fetchALL();
+          $qtn2 = count($num2);
+
+
           if ($qtn >= 1) { ?>
             <h4 class="aceito">STATUS : ACEITO</h4>
             <?php foreach ($num as $num) { ?>
               <h3>( <?= $num[1] ?> )</h3>
               <?php } ?>
-          <?php } else {  ?>
+          <?php } else if($qtn2 >= 1) {  ?>
+            <h4 style="color: red;">STATUS : RECUSADO</h4>
+          <?php } else {?>
             <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
-          <?php } ?>
-
+            <?php } ?>
         </div>
 
 
