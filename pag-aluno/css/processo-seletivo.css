@@ -123,3 +123,31 @@ color: yellow;
 .vaga{
     font-size: 25px  ;
 }
+
+.botao-excluir{
+  width: 330px;
+  display: flex;
+  justify-content: right;
+  align-items: start;
+  height:150px;
+  position:absolute ;
+}
+
+.botao-excluir a{
+  display: flex;
+  text-decoration: none;
+  color: red;
+  border-radius: 100px;
+  transition: 0.300s ease-in-out;
+  font-size: 20px;
+  width: 35px;
+  padding: 8px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-excluir a:hover{
+  background-color: rgb(255, 0, 0);
+ color: white;
+}

@@ -106,9 +106,12 @@ $resultado = $query->fetchAll();
 
     <div class="box">
 
-      <?php foreach ($resultado as $resultado) { ?>
+      <?php
+
+      foreach ($resultado as $resultado) { ?>
 
         <div id="card">
+
           <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
           <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
 
@@ -135,14 +138,24 @@ $resultado = $query->fetchAll();
 
           if ($qtn >= 1) { ?>
             <h4 class="aceito">STATUS : ACEITO</h4>
+            <span class="botao-excluir">
+              <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </span>
             <?php foreach ($num as $num) { ?>
-              <h3>( <?= $num[1] ?> )</h3>
-              <?php } ?>
-          <?php } else if($qtn2 >= 1) {  ?>
-            <h4 style="color: red;">STATUS : RECUSADO</h4>
-          <?php } else {?>
-            <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
+              <h3>( <?= $num[1] ?> )</h3> 
             <?php } ?>
+          <?php } else if ($qtn2 >= 1) {  ?>
+            <h4 style="color: red;">STATUS : RECUSADO</h4>
+          <?php } else { ?>
+            <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
+            <span class="botao-excluir">
+              <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </span>
+          <?php } ?>
         </div>
 
 
