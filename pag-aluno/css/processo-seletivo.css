@@ -6,18 +6,17 @@ body {
   .imagem-3{
     position: fixed;
     width: 10%;
-    left: 0;
+    right: 0;
     bottom: 0;
     z-index: -5;
   }
   .imagem-4{
     position: fixed;
-    bottom: -30px;
     object-fit: cover;
-    right: -30px;
+    left: -50px;
+    top: 30px;
     width: 20%;
     z-index: -5;
-
   }
 
 

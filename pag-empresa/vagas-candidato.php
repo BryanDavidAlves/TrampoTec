@@ -101,6 +101,16 @@ foreach ($result as $vaga) {
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
 
+        <section class="voltar-pag">
+            <div class="body-voltar">
+                <span class="icon-voltar">
+                    <a href="./vagas.php"><i class="fa-solid fa-chevron-left"></i></a>
+                </span>
+                <span>
+                    <h1>Voltar</h1>
+                </span>
+            </div>
+        </section>
 
         <section class="align-itens">
             <div class="card">
@@ -185,7 +195,7 @@ foreach ($result as $vaga) {
                                 <td>
                                     <button class="icon-2">
                                         <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[17] ?>&idVaga=<?= $idvaga ?>">
-                                            <i class="fa-solid fa-xmark" ></i>
+                                            <i class="fa-solid fa-xmark"></i>
                                         </a>
                                     </button>
                                 </td>
@@ -207,7 +217,6 @@ foreach ($result as $vaga) {
 
 
     </main>
-
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 
