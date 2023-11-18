@@ -107,7 +107,7 @@ $curso = $query->fetchAll();
 
   ?>
 
-<img class="imagem-1" src="./img/12.png" alt="">
+  <img class="imagem-1" src="./img/12.png" alt="">
   <img class="imagem-2" src="./img/11.png" alt="">
 
 
@@ -221,9 +221,19 @@ $curso = $query->fetchAll();
                     <div id="infos-vaga-requisito">
                       <span id="titulo2">CONHECIMENTOS :</span>
                       <div id="requisitos-vaga">
-                        <span>
-                          <?= $vaga['requisito'] ?>
-                        </span>
+                        <?php
+                        $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
+                      FROM  tb_requisito
+                      INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE tb_requisito_vaga.fk_idVaga = $vaga[idVaga]
+                      ";
+                        $query1 = $conexao->query($selectRequisito);
+                        $requisito1 = $query1->fetchAll();
+                        foreach ($requisito1 as $requisito1) { ?>
+                          <span>
+                            <?= $requisito1[3] ?>
+                          </span>
+                        <?php } ?>
+
                       </div>
                     </div>
                     <div id="descrição-vaga">
