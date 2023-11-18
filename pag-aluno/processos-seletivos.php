@@ -111,14 +111,22 @@ $resultado = $query->fetchAll();
         <div id="card">
           <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
           <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
-          <h4 class="preço">R$ <?= $resultado[5] ?> - <?= $resultado[9] ?></h4>
-          <?php $querySelect = "SELECT * FROM tb_vaga_aluno WHERE fk_idAluno = $cliente_id AND fk_idVaga = $resultado[0] AND aprovado = 1";
-          $resultado = $conexao->query($querySelect);
-          $num = $resultado->fetchALL();
+
+          <?php
+          $querySelect = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
+          FROM tb_vaga_aluno 
+          INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+          INNER JOIN tb_empresa ON tb_empresa.idEmpresa = tb_vaga.fk_idEmpresa
+          WHERE tb_vaga_aluno.fk_idAluno = $cliente_id AND tb_vaga_aluno.fk_idVaga = $resultado[0] AND tb_vaga_aluno.aprovado = 1";
+          $resultado2 = $conexao->query($querySelect);
+          $num = $resultado2->fetchALL();
           $qtn = count($num);
 
           if ($qtn >= 1) { ?>
             <h4 class="aceito">STATUS : ACEITO</h4>
+            <?php foreach ($num as $num) { ?>
+              <h3>( <?= $num[1] ?> )</h3>
+              <?php } ?>
           <?php } else {  ?>
             <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
           <?php } ?>

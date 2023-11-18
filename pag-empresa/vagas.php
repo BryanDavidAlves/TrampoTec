@@ -52,7 +52,7 @@ foreach ($result as $vaga) {
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
- <!--   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <title>TrampoTec</title>
 </head>
@@ -121,11 +121,9 @@ foreach ($result as $vaga) {
                         <th>VAGA</th>
                         <th>CIDADE</th>
                         <th>BAIRRO</th>
-                        <th>SALARIO</th>
-                        <th>CURSO</th>
                         <th>AREA</th>
                         <th>PERIODO</th>
-                        <th>INFORMAÇÕES</th>
+                        <th>CANDIDATOS</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -144,13 +142,6 @@ foreach ($result as $vaga) {
                             <td>
                                 <?= $vaga['bairro'] ?>
                             </td>
-
-                            <td>
-                                <?= $vaga['salario'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['curso'] ?>
-                            </td>
                             <td>
                                 <?= $vaga['area'] ?>
                             </td>
@@ -162,19 +153,18 @@ foreach ($result as $vaga) {
                             <td>
                                 <form method="GET" action="vagas-candidato.php">
                                     <input type="hidden" value="1" name="aprovado">
-                                    <button type="submit" name="idVaga" value="<?= $vaga['idVaga'] ?>" href="vagas-candidato.php"> VER MAIS </button>
+                                    <button id="ver-mais-vaga" type="submit" name="idVaga" value="<?= $vaga['idVaga'] ?>" href="vagas-candidato.php"> VER MAIS </button>
                                 </form>
                             </td>
 
 
                             <td class="icone-table">
-
-                                <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" style="color:grey; "></i></a>
-
-
-
-                                <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x" style="color: #000000;"></i></a>
-
+                                <butto class="editar-vaga">
+                                    <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" ></i></a>
+                                </butto>
+                                <button class="delete-vaga">
+                                    <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x" ></i></a>
+                                </button>
 
                             </td>
                         </tr>
