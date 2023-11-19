@@ -5,31 +5,82 @@ require_once "./back-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idAluno'];
 
-if (!($_GET)) {
-  $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
-  FROM tb_vaga
-  INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
-  INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
-  WHERE tb_aluno.idAluno= '$cliente_id'
-  ";
-} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
-  $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
-  FROM tb_vaga
-  INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
-  INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
-  WHERE tb_aluno.idAluno= '$cliente_id'
-  ";
-} else {
-  $periodo = trim($_GET['periodo']);
-  $curso = trim($_GET['curso']);
-  $area = trim($_GET['area']);
-  $salario = trim($_GET['salario']);
-}
+$queryAreas = "SELECT DISTINCT tb_vaga.area FROM tb_vaga";
+$resultAreas = $conexao->query($queryAreas);
+$areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 
+// $queryCursosAluno = "SELECT tb_curso.nome FROM tb_curso 
+//                     INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idCurso = tb_curso.idCurso 
+//                     INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idCurso = tb_curso_etec.fk_idCurso 
+//                     INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_aluno_curso.fk_idAluno;
+//                     WHERE tb_aluno_curso.fk_idAluno = $cliente_id";
+// $resultCursosAluno = $conexao->query($queryCursosAluno);
+// $cursosAluno = $resultCursosAluno->fetchAll(PDO::FETCH_ASSOC);
+
+//       $queryCursos = "SELECT tb_curso.nome AS curso FROM tb_vaga
+//                 INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+//                 WHERE tb_curso.nome = $cliente_id";
+
+if (!empty($_GET)) {
+  $filtro = "WHERE tb_aluno.idAluno = '$cliente_id'";
+
+  $periodo = isset($_GET['periodo']) ? trim($_GET['periodo']) : "qualquer";
+  $salario = isset($_GET['salario']) ? trim($_GET['salario']) : "qualquer";
+  $area = isset($_GET['area']) ? trim($_GET['area']) : "qualquer";
+  $curso = isset($_GET['curso']) ? trim($_GET['curso']) : "qualquer";
+  $status = isset($_GET['status']) ? trim($_GET['status']) : "qualquer";
+
+  if ($status != "qualquer") {
+    if ($status == "aceito") {
+      $filtro .= " AND tb_vaga_aluno.aprovado = 1";
+    } elseif ($status == "recusado") {
+      $filtro .= " AND tb_vaga_aluno.aprovado = 2";
+    } elseif ($status == "andamento") {
+      $filtro .= " AND tb_vaga_aluno.aprovado = 0";
+    }
+  }
+
+  if ($periodo != "qualquer") {
+    $filtro .= " AND tb_vaga.periodo = '$periodo'";
+  }
+
+  if ($salario != "qualquer") {
+
+    if ($salario == "2000") {
+      $filtro .= " AND tb_vaga.salario < 2000";
+    } elseif ($salario == "4000") {
+      $filtro .= " AND tb_vaga.salario BETWEEN 2000 AND 4000";
+    } elseif ($salario == "6000") {
+      $filtro .= " AND tb_vaga.salario > 4000";
+    }
+  }
+
+  if ($area != "qualquer") {
+    $filtro .= " AND tb_vaga.area = '$area'";
+  }
+
+  // if ($curso != "qualquer") {
+  //   $filtro .= " AND tb_curso.nome = '$curso'";
+  // }
+
+  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*
+                FROM tb_vaga
+                INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
+                INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+                $filtro";
+} else {
+
+  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*
+                  FROM tb_vaga
+                  INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
+                  INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+                  WHERE tb_aluno.idAluno = '$cliente_id'";
+}
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,90 +127,104 @@ $resultado = $query->fetchAll();
                   <option value="qualquer">Salário</option>
                   <option value="2000">Menos de R$ 2.000</option>
                   <option value="4000">R$ 2.000 - R$ 4.000</option>
-                  <option value=6000">Mais de R$ 4.000</option>
+                  <option value="6000">Mais de R$ 4.000</option>
                 </select>
               </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
-                  <option value="qualquer">area</option>
-                  <?php foreach ($vagas as $vaga) { ?>
-                    <option value=" <?= $vaga['area'] ?> "> <?= $vaga['area'] ?> </option>
+                  <option value="qualquer">Área</option>
+                  <?php foreach ($areas as $areaOpcao) { ?>
+                    <option value="<?= $areaOpcao['area'] ?>"><?= $areaOpcao['area'] ?></option>
                   <?php } ?>
                 </select>
               </div>
               <div class="col-md-3">
+                <select name="status" class="form-control">
+                  <option value="qualquer">Status</option>
+                  <option value="aceito">Aceito</option>
+                  <option value="recusado">Recusado</option>
+                  <option value="andamento">Em Andamento</option>
+                </select>
+              </div>
+              <div class="col-md-3">
                 <select name="curso" class="form-control">
-                  <option value="qualquer">curso</option>
-                  <?php foreach ($curso as $curso) { ?>
-                    <option value=" <?= $curso[0] ?> "> <?= $curso[0] ?> </option>
+                  <option value="qualquer">Curso</option>
+                  <?php foreach ($curso as $curcoOpcao) { ?>
+                    <option value="<?= $curcoOpcao['curso'] ?>"><?= $curcoOpcao['curso'] ?></option>
                   <?php } ?>
                 </select>
               </div>
-            </div>
-            <div class="col-md-1">
-              <button type="submit" id="botao-filtro">Filtrar</button>
-            </div>
+              <div class="col-md-1">
+                <button type="submit" id="botao-filtro">Filtrar</button>
+              </div>
           </form>
         </div>
       </div>
     </section>
 
+
     <div class="box">
 
-      <?php
+      <?php if (count($resultado) == 0) { ?>
+        <div class="box">
+          <p>Não foram encontradas vagas com os critérios de filtragem selecionados.</p>
+        </div>
+      <?php } else { ?>
 
-      foreach ($resultado as $resultado) { ?>
+        <?php foreach ($resultado as $resultado) { ?>
+          <div id="card">
 
-        <div id="card">
+            <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
+            <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
 
-          <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
-          <h4 class="vaga"><?= $resultado[1] ?> - <?= $resultado[10] ?></h4>
-
-          <?php
-          $querySelect = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
+            <?php
+            $querySelect = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
           FROM tb_vaga_aluno 
           INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
           INNER JOIN tb_empresa ON tb_empresa.idEmpresa = tb_vaga.fk_idEmpresa
           WHERE tb_vaga_aluno.fk_idAluno = $cliente_id AND tb_vaga_aluno.fk_idVaga = $resultado[0] AND tb_vaga_aluno.aprovado = 1";
-          $resultado2 = $conexao->query($querySelect);
-          $num = $resultado2->fetchALL();
-          $qtn = count($num);
+            $resultado2 = $conexao->query($querySelect);
+            $num = $resultado2->fetchALL();
+            $qtn = count($num);
 
 
-          $querySelect3 = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
+            $querySelect3 = "SELECT tb_vaga_aluno.aprovado , tb_empresa.email , tb_vaga.idVaga
           FROM tb_vaga_aluno 
           INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
           INNER JOIN tb_empresa ON tb_empresa.idEmpresa = tb_vaga.fk_idEmpresa
           WHERE tb_vaga_aluno.fk_idAluno = $cliente_id AND tb_vaga_aluno.fk_idVaga = $resultado[0] AND tb_vaga_aluno.aprovado = 2";
-          $resultado3 = $conexao->query($querySelect3);
-          $num2 = $resultado3->fetchALL();
-          $qtn2 = count($num2);
+            $resultado3 = $conexao->query($querySelect3);
+            $num2 = $resultado3->fetchALL();
+            $qtn2 = count($num2);
 
 
-          if ($qtn >= 1) { ?>
-            <h4 class="aceito">STATUS : ACEITO</h4>
-            <span class="botao-excluir">
-              <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
-                <i class="fa-solid fa-xmark"></i>
-              </a>
-            </span>
-            <?php foreach ($num as $num) { ?>
-              <h3>( <?= $num[1] ?> )</h3> 
+            if ($qtn >= 1) { ?>
+              <h4 class="aceito">STATUS : ACEITO</h4>
+              <span class="botao-excluir">
+                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+              </span>
+              <?php foreach ($num as $num) { ?>
+                <h3>( <?= $num[1] ?> )</h3>
+              <?php } ?>
+            <?php } else if ($qtn2 >= 1) {  ?>
+              <h4 style="color: red;">STATUS : RECUSADO</h4>
+            <?php } else { ?>
+              <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
+              <span class="botao-excluir">
+                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+              </span>
             <?php } ?>
-          <?php } else if ($qtn2 >= 1) {  ?>
-            <h4 style="color: red;">STATUS : RECUSADO</h4>
-          <?php } else { ?>
-            <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
-            <span class="botao-excluir">
-              <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
-                <i class="fa-solid fa-xmark"></i>
-              </a>
-            </span>
-          <?php } ?>
-        </div>
-
-
+          </div>
+        <?php } ?>
       <?php } ?>
+
+
+
+
 
 
     </div>

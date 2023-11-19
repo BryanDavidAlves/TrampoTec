@@ -5,6 +5,7 @@ require_once "./back-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idAluno'];
 
+
 if (!($_GET)) {
   $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
   tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
@@ -138,7 +139,7 @@ $curso = $query->fetchAll();
                   <option value="qualquer">Salário</option>
                   <option value="2000">Menos de R$ 2.000</option>
                   <option value="4000">R$ 2.000 - R$ 4.000</option>
-                  <option value=6000">Mais de R$ 4.000</option>
+                  <option value="6000">Mais de R$ 4.000</option>
                 </select>
               </div>
               <div class="col-md-3">
@@ -187,9 +188,6 @@ $curso = $query->fetchAll();
             </div>
           </div>
         </div>
-
-
-
         <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="modal-vaga">
@@ -258,6 +256,12 @@ $curso = $query->fetchAll();
 
 
       <?php } ?>
+
+
+
+
+
+
 
 
 
