@@ -25,7 +25,7 @@ FROM tb_aluno
 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
 WHERE idVaga ='$idvaga' AND tb_vaga_aluno.aprovado = 1";
-} else  if (isset($_GET) && $_GET['aprovado'] == 0) {
+} else if (isset($_GET) && $_GET['aprovado'] == 0) {
 
     $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
@@ -45,7 +45,7 @@ FROM tb_aluno
 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
 WHERE idVaga ='$idvaga' AND aprovado = 0";
-} else  if (isset($_GET) && $_GET['aprovado'] == 2) {
+} else if (isset($_GET) && $_GET['aprovado'] == 2) {
 
     $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
  tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
@@ -66,7 +66,6 @@ INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
 WHERE idVaga ='$idvaga' AND aprovado = 2";
 }
-
 
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
@@ -96,7 +95,6 @@ foreach ($result as $vaga) {
     }
 }
 
-
 $querySelect1 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 1 AND fk_idVaga = $idvaga";
 $resultado1 = $conexao->query($querySelect1);
 $aluno1 = $resultado1->fetchALL();
@@ -119,6 +117,8 @@ $n_aluno2 = count($aluno2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
@@ -128,9 +128,9 @@ $n_aluno2 = count($aluno2);
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -150,24 +150,25 @@ $n_aluno2 = count($aluno2);
 
         <section class="align-itens">
             <div class="card">
-                <?php foreach ($vagas as $vaga) { ?>
+                <p>INFORMAÇOES DA VAGA</p>
+                <?php foreach ($vagas as $vaga) {?>
 
                     <div class="itens-card">
-                        <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
+                        <h5>Nome da vaga:</h5><?=$vaga['nome']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Requisitos:</h5> <?= $vaga['requisito'] ?>
+                        <h5>Requisitos:</h5> <?=$vaga['requisito']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?>
+                        <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?>
+                        <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Salario:</h5><?= $vaga['salario'] ?>
+                        <h5>Salario:</h5><?=$vaga['salario']?>
                     </div>
-                <?php } ?>
+                <?php }?>
             </div>
 
 
@@ -178,21 +179,21 @@ $n_aluno2 = count($aluno2);
                 <div class="align-links">
                     <form method="GET" action="vagas-candidato.php">
                         <input type="hidden" value="1" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                        ( <?= $n_aluno1 ?> )    CADASTRADAS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                        ( <?=$n_aluno1?> )    CADASTRADAS
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=0">
                         <input type="hidden" value="0" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                        ( <?= $n_aluno0 ?> )       PENDENTES
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                        ( <?=$n_aluno0?> )       PENDENTES
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=2">
-                  
+
                         <input type="hidden" value="2" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                       ( <?= $n_aluno2 ?> )  RECUSADOS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                       ( <?=$n_aluno2?> )  RECUSADOS
                         </button>
                     </form>
                 </div>
@@ -210,34 +211,34 @@ $n_aluno2 = count($aluno2);
                     </thead>
                     <tbody id="result">
 
-                        <?php foreach ($aluno as $aluno) { ?>
+                        <?php foreach ($aluno as $aluno) {?>
                             <tr class="infos">
                                 <td class="id-aluno">
-                                    <?= $aluno[17] ?>
+                                    <?=$aluno[17]?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[30] != "" ? $aluno[30] : ''; ?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[30] != "" ? $aluno[30] : '';?>" alt="">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="nome-aluno">
-                                    <?= $aluno[20] ?>
+                                    <?=$aluno[20]?>
                                 </td>
                                 <td class="email-aluno">
-                                    <?= $aluno[18] ?>
+                                    <?=$aluno[18]?>
                                 </td>
                                 <td>
                                     <button class="icon-1">
-                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[17] ?>&idVaga=<?= $idvaga ?>">
+                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[17]?>&idVaga=<?=$idvaga?>">
                                             <i class="fa-solid fa-check"></i>
                                         </a>
                                     </button>
                                 </td>
                                 <td>
                                     <button class="icon-2">
-                                        <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[17] ?>&idVaga=<?= $idvaga ?>">
+                                        <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[17]?>&idVaga=<?=$idvaga?>">
                                             <i class="fa-solid fa-xmark"></i>
                                         </a>
                                     </button>
@@ -247,7 +248,7 @@ $n_aluno2 = count($aluno2);
 
                             </tr>
 
-                        <?php } ?>
+                        <?php }?>
 
 
 
