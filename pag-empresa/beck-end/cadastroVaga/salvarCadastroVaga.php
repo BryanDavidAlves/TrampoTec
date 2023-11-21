@@ -24,18 +24,18 @@ if ($_POST) {
     $semana = trim($_POST['semana']);
     $cliente_id = $_SESSION['idEmpresa'];
 
-    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , /*tipoTrabalho */ salario , descricao , inicio , termino , periodo , area , /*semana*/  fk_idEmpresa , fk_idCurso) VALUES
+    $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , modalidade , salario , descricao , inicio , termino , periodo , area , escala , fk_idEmpresa , fk_idCurso) VALUES
                 (   '$nome',
                     '$cidade',
                     '$bairro',
-                    /*'$tipoTrabalho',*/
+                    '$tipoTrabalho',
                     '$salario',
                     '$descricao',
                     '$inicio',
                     '$termino',
                     '$periodo',
                     '$area',
-                    /*'$semana',*/
+                    '$semana',
                     '$cliente_id',
                     '$curso'
 

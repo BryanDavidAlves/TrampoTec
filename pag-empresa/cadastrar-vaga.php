@@ -94,11 +94,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </span>
 
 
-                        <span class="input-box">
 
-                            <input name="tipo" type="text" required>
-                            <label class="label-anim" for="tipo">TRABALHO</label>
+                        <span class="input-box-select">
+                            <label for="tipo">TRABALHO</label>
+                            <select class="selects" name="tipo" required>
+                                <option value="presencial">Presencial</option>
+                                <option value="home-office">Home-office</option>
+                                <option value="hibrido">Hibrido</option>
+                            </select>
                         </span>
+
+
                         <span class="input-box">
 
                             <input name="semana" type="text" maxlength="7" required>
@@ -157,16 +163,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div input-box-select>
                         <span>
                             <label for="inicio">INICIO</label>
-                            <input
-                                style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
-                            name="inicio" type="time" required>
+                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="inicio" type="time" required>
                         </span>
 
                         <span>
                             <label for="termino">TERMINO</label>
-                            <input
-                                style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
-                            name="termino" type="time" required>
+                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="termino" type="time" required>
                         </span>
                     </div>
 
@@ -174,11 +176,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 <?php
                 if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
-                    ?>
+                ?>
                     <div class="text-danger">
                         Erro ao Cadastrar Vaga
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
