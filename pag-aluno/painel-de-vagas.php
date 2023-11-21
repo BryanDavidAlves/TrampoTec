@@ -5,7 +5,7 @@ require_once "./back-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idAluno'];
 
-if (!($_GET)) {
+if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
     $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
   tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
   tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
@@ -16,18 +16,7 @@ if (!($_GET)) {
     INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
     INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
 ";
-} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
-    $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
-  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
-    FROM tb_vaga
-    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
-    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
-    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
-";
-} else {
+}else {
     $periodo = trim($_GET['periodo']);
     $curso = trim($_GET['curso']);
     $area = trim($_GET['area']);
@@ -85,6 +74,9 @@ $selectCurso = "SELECT nome FROM  tb_curso";
 $query = $conexao->query($selectCurso);
 $curso = $query->fetchAll();
 
+$queryAreas = "SELECT DISTINCT tb_vaga.area FROM tb_vaga";
+$resultAreas = $conexao->query($queryAreas);
+$areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -142,9 +134,9 @@ include '../pag-aluno/components/header.php';
               </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
-                  <option value="qualquer">area</option>
-                  <?php foreach ($vagas as $vaga) {?>
-                    <option value=" <?=$vaga['area']?> "> <?=$vaga['area']?> </option>
+                  <option value="qualquer">Área</option>
+                  <?php foreach ($areas as $areaOpcao) {?>
+                    <option value="<?=$areaOpcao['area']?>"><?=$areaOpcao['area']?></option>
                   <?php }?>
                 </select>
               </div>
@@ -166,6 +158,13 @@ include '../pag-aluno/components/header.php';
     </section>
 
     <div class="box">
+
+    <?php if (count($vagas) == 0) {?>
+        <div class="box">
+          <p>Não foram encontradas vagas com os critérios de filtragem selecionados.</p>
+        </div>
+      <?php } else {?>
+
       <?php foreach ($vagas as $vaga) {?>
         <div id="cards">
           <div class="card" id="card">
@@ -256,7 +255,7 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
       <?php }?>
 
 
-
+      <?php } ?>
 
 
 
