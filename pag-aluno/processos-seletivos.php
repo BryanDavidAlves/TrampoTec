@@ -113,7 +113,7 @@ $resultado = $query->fetchAll();
         <div>
           <form id="barra" method="get">
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <select name="periodo" class="form-control">
                   <option value="qualquer">Período</option>
                   <option value="matinal">Manhã</option>
@@ -122,7 +122,7 @@ $resultado = $query->fetchAll();
                   <option value="integral">integral</option>
                 </select>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <select name="salario" class="form-control">
                   <option value="qualquer">Salário</option>
                   <option value="2000">Menos de R$ 2.000</option>
@@ -130,7 +130,7 @@ $resultado = $query->fetchAll();
                   <option value="6000">Mais de R$ 4.000</option>
                 </select>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <select name="area" class="form-control">
                   <option value="qualquer">Área</option>
                   <?php foreach ($areas as $areaOpcao) { ?>
@@ -138,7 +138,7 @@ $resultado = $query->fetchAll();
                   <?php } ?>
                 </select>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <select name="status" class="form-control">
                   <option value="qualquer">Status</option>
                   <option value="aceito">Aceito</option>
@@ -146,7 +146,7 @@ $resultado = $query->fetchAll();
                   <option value="andamento">Em Andamento</option>
                 </select>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <select name="curso" class="form-control">
                   <option value="qualquer">Curso</option>
                   <?php foreach ($curso as $curcoOpcao) { ?>

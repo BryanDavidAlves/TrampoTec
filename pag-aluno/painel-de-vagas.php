@@ -6,18 +6,7 @@ require_once "./back-end/login/validador_acesso.php";
 $cliente_id = $_SESSION['idAluno'];
 
 
-if (!($_GET)) {
-  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
-  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
-    FROM tb_vaga
-    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
-    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
-    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
-";
-} else if ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
+if (!($_GET) || ($_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer")) {
   $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
   tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
   tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
@@ -87,6 +76,10 @@ $selectCurso = "SELECT nome FROM  tb_curso";
 $query = $conexao->query($selectCurso);
 $curso = $query->fetchAll();
 
+$queryAreas = "SELECT DISTINCT tb_vaga.area FROM tb_vaga";
+$resultAreas = $conexao->query($queryAreas);
+$areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -144,9 +137,9 @@ $curso = $query->fetchAll();
               </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
-                  <option value="qualquer">area</option>
-                  <?php foreach ($vagas as $vaga) { ?>
-                    <option value=" <?= $vaga['area'] ?> "> <?= $vaga['area'] ?> </option>
+                  <option value="qualquer">Área</option>
+                  <?php foreach ($areas as $areaOpcao) { ?>
+                    <option value="<?= $areaOpcao['area'] ?>"><?= $areaOpcao['area'] ?></option>
                   <?php } ?>
                 </select>
               </div>
@@ -167,99 +160,102 @@ $curso = $query->fetchAll();
       </div>
     </section>
 
-    <div class="box">
-      <?php foreach ($vagas as $vaga) { ?>
-        <div id="cards">
-          <div class="card" id="card">
-            <div class="card-content" id="conteudo-card">
-              <div id="job-title">
-                <?= $vaga['cidade'] ?> - <?= $vaga['bairroVaga'] ?>
-              </div>
-              <div class="job-description" id="descricao-vaga">
-                <p><?= $vaga['nome'] ?></p>
-                <p><?= $vaga['inicio'] ?> as <?= $vaga['termino'] ?></< /p>
-                <p>R$ <?= $vaga['salario'] ?> </p>
+      <?php if (count($vagas) == 0) { ?>
+      <div class="box">
+        <p>Não foram encontradas vagas com os critérios de filtragem selecionados.</p>
+      </div>
+    <?php } else { ?>
+      <div class="box">
+        <?php foreach ($vagas as $vaga) { ?>
+          <div id="cards">
+            <div class="card" id="card">
+              <div class="card-content" id="conteudo-card">
+                <div id="job-title">
+                  <?= $vaga['cidade'] ?> - <?= $vaga['bairroVaga'] ?>
+                </div>
+                <div class="job-description" id="descricao-vaga">
+                  <p><?= $vaga['nome'] ?></p>
+                  <p><?= $vaga['inicio'] ?> as <?= $vaga['termino'] ?></< /p>
+                  <p>R$ <?= $vaga['salario'] ?> </p>
 
 
-              </div>
-              <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
-                Clique para mais informações
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="modal-vaga">
-              <div class="modal-header" id="modal-cabeaca-footer">
-                <h5 class=" modal-title" id="exampleModalLabel"></h5>
-                <button type="button" data-dismiss="modal" aria-label="Close" id="botao-fechar">
-                  <span aria-hidden="true"> <i class="fa-solid fa-xmark" style="color: #ff0000;"></i></span>
+                </div>
+                <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
+                  Clique para mais informações
                 </button>
               </div>
-              <div class="modal-body">
-                <section id="info-empresa">
-                  <div id="infos-vaga-modal">
-                    <div id="div-img-modal">
-                      <img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?= $vaga['imagem'] ?>">
+            </div>
+          </div>
+          <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content" id="modal-vaga">
+                <div class="modal-header" id="modal-cabeaca-footer">
+                  <h5 class=" modal-title" id="exampleModalLabel"></h5>
+                  <button type="button" data-dismiss="modal" aria-label="Close" id="botao-fechar">
+                    <span aria-hidden="true"> <i class="fa-solid fa-xmark" style="color: #ff0000;"></i></span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <section id="info-empresa">
+                    <div id="infos-vaga-modal">
+                      <div id="div-img-modal">
+                        <img class="img-modal" src="../pag-empresa/fotosEmpresa/perfil/<?= $vaga['imagem'] ?>">
+                      </div>
+                      <div id="sobre-empresa">
+                        <span id="info-titulo">
+                          <?= $vaga['nomeEmpresa'] ?>
+                        </span>
+                        <span id="info-nome">
+                          <?= $vaga['departamento'] ?>
+                        </span>
+                        <span id="info-ano">
+                          <?= $vaga['anoFundacao'] ?>
+                        </span>
+                      </div>
                     </div>
-                    <div id="sobre-empresa">
-                      <span id="info-titulo">
-                        <?= $vaga['nomeEmpresa'] ?>
-                      </span>
-                      <span id="info-nome">
-                        <?= $vaga['departamento'] ?>
-                      </span>
-                      <span id="info-ano">
-                        <?= $vaga['anoFundacao'] ?>
-                      </span>
-                    </div>
-                  </div>
-                  <div id="container-infos">
-                    <div id="infos-vaga-requisito">
-                      <span id="titulo2">CONHECIMENTOS :</span>
-                      <div id="requisitos-vaga">
-                        <?php
-                        $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
+                    <div id="container-infos">
+                      <div id="infos-vaga-requisito">
+                        <span id="titulo2">CONHECIMENTOS :</span>
+                        <div id="requisitos-vaga">
+                          <?php
+                          $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                       FROM  tb_requisito
                       INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE tb_requisito_vaga.fk_idVaga = $vaga[idVaga]
                       ";
-                        $query1 = $conexao->query($selectRequisito);
-                        $requisito1 = $query1->fetchAll();
-                        foreach ($requisito1 as $requisito1) { ?>
-                          <span>
-                            <?= $requisito1[3] ?>
-                          </span>
-                        <?php } ?>
+                          $query1 = $conexao->query($selectRequisito);
+                          $requisito1 = $query1->fetchAll();
+                          foreach ($requisito1 as $requisito1) { ?>
+                            <span>
+                              <?= $requisito1[3] ?>
+                            </span>
+                          <?php } ?>
 
+                        </div>
+                      </div>
+                      <div id="descrição-vaga">
+                        <p id="texto-descs">
+                          <?= $vaga['descricao'] ?>
+                        </p>
                       </div>
                     </div>
-                    <div id="descrição-vaga">
-                      <p id="texto-descs">
-                        <?= $vaga['descricao'] ?>
-                      </p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="modal-footer" id="modal-footer">
-                <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
-                  <input type="hidden" id="idVaga" name="idVaga" value="<?= $vaga['idVaga'] ?>">
-                  <button name="bnt" id="botao-candidatar" type="submit" value="<?= $cliente_id ?>" class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
-                </form>
+                  </section>
+                </div>
+                <div class="modal-footer" id="modal-footer">
+                  <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
+                    <input type="hidden" id="idVaga" name="idVaga" value="<?= $vaga['idVaga'] ?>">
+                    <button name="bnt" id="botao-candidatar" type="submit" value="<?= $cliente_id ?>" class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
 
 
+
+        <?php } ?>
 
       <?php } ?>
-
-
-
-
 
 
 
