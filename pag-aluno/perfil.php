@@ -187,6 +187,7 @@ include '../pag-aluno/components/header.php';
                                 </button>
                             </div>
                             <div class="align-salvar">
+                                <br>
                                 <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
                             <button type="submit" class="btn-salvar"  value="<?=$id_aluno?>" name="id">
                                     <i class="fa-solid fa-check" style="color: #ffffff;"></i>
