@@ -198,10 +198,10 @@ if ($_POST) {
 
 
 
-                    <div input-box-select>
+                    <div class="input-box-select">
                         <span>
-                            <label for="inicio">INICIO</label>
-                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="inicio" type="time" value="<?= $inicio ?>" required>
+                            <label class="label-no-anim" for="inicio">INICIO</label>
+                            <input  style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="inicio" type="time" value="<?= $inicio ?>" required>
                         </span>
 
                         <span>

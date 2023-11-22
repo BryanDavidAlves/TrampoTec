@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Nov-2023 às 05:13
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 21-Nov-2023 às 21:36
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -481,6 +481,20 @@ CREATE TABLE `tb_requisito_vaga` (
   `fk_idRequisito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_requisito_vaga`
+--
+
+INSERT INTO `tb_requisito_vaga` (`fk_idVaga`, `fk_idRequisito`) VALUES
+(8, 6),
+(7, 5),
+(8, 6),
+(7, 5),
+(10, 10),
+(9, 12),
+(10, 10),
+(9, 12);
+
 -- --------------------------------------------------------
 
 --
@@ -553,8 +567,12 @@ CREATE TABLE `tb_telefone_etec` (
 CREATE TABLE `tb_vaga` (
   `idVaga` int(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
+  `logradouro` varchar(60) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `cep` varchar(10) NOT NULL,
   `cidade` varchar(40) NOT NULL,
   `bairro` varchar(40) NOT NULL,
+  `estado` varchar(25) NOT NULL,
   `modalidade` varchar(30) NOT NULL,
   `salario` double(10,2) NOT NULL,
   `descricao` char(100) NOT NULL,
@@ -567,6 +585,16 @@ CREATE TABLE `tb_vaga` (
   `fk_idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tb_vaga`
+--
+
+INSERT INTO `tb_vaga` (`idVaga`, `nome`, `logradouro`, `numero`, `cep`, `cidade`, `bairro`, `estado`, `modalidade`, `salario`, `descricao`, `inicio`, `termino`, `periodo`, `area`, `escala`, `fk_idEmpresa`, `fk_idCurso`) VALUES
+(7, 'asfasfasf', '', 0, '', 'asfasfasf', 'asfasf', '', 'home-office', 321300.00, 'asdasd', '11:11', '22:22', 'noturno', 'sadasd', 'asfdasf', 14, 12),
+(8, 'adfasfa', '', 0, '', 'asfasf', 'asfasfa', '', 'hibrido', 65465.00, 'asdasd', '11:11', '10:00', 'matinal', 'asdasd', 'asfdasf', 14, 12),
+(9, 'fghfhf', '', 0, '', 'gfhfgh', 'fghfgh', '', 'home-office', 2000.00, 'fghfgh', '10:00', '16:00', 'matinal', 'fghfgh', 'fghfgh', 14, 12),
+(10, 'fghfghkhjk', '', 0, '', 'hjlhkjljh', 'hjkhjk', '', 'presencial', 1500.00, 'jkhjk', '10:00', '16:16', 'diurno', 'hujkhjk', 'jhlhjkl', 14, 13);
+
 -- --------------------------------------------------------
 
 --
@@ -575,8 +603,16 @@ CREATE TABLE `tb_vaga` (
 
 CREATE TABLE `tb_vaga_aluno` (
   `fk_idAluno` int(11) NOT NULL,
-  `fk_idVaga` int(11) NOT NULL
+  `fk_idVaga` int(11) NOT NULL,
+  `aprovado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_vaga_aluno`
+--
+
+INSERT INTO `tb_vaga_aluno` (`fk_idAluno`, `fk_idVaga`, `aprovado`) VALUES
+(7, 8, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -881,7 +917,7 @@ ALTER TABLE `tb_telefone_etec`
 -- AUTO_INCREMENT de tabela `tb_vaga`
 --
 ALTER TABLE `tb_vaga`
-  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para despejos de tabelas

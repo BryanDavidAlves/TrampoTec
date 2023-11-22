@@ -1,6 +1,6 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
-include ('../dao/conexao.php');
+include('../dao/conexao.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dados = [];
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-if($_POST) {
+if ($_POST) {
     $id_curso = $_POST['id_curso'];
     $querySelect = "SELECT * FROM tb_curso  WHERE idCurso = $id_curso";
     $resultado = $conexao->query($querySelect);
@@ -35,9 +35,9 @@ if($_POST) {
     $resultado = $conexao->query($querySelect);
     $eixo = $resultado->fetch();
     $eixo1 = $eixo["eixo"];
-    
 
-  }else{
+
+} else {
     $id_curso = "";
     $nome = "";
     $cargaHoraria = "";
@@ -45,7 +45,7 @@ if($_POST) {
     $modalidade = "";
     $ensino = "";
     $eixo1 = "";
-  }
+}
 
 ?>
 
@@ -56,7 +56,8 @@ if($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -84,26 +85,26 @@ if($_POST) {
             <form action="back-end/cadastro/salvarCadastroCurso.php" method="post" id="meuFormulario">
 
                 <div class="input-box">
-                    
-                    <input type="text" id="nomeCuso" name="nomeCuso"  value="<?=$nome?>" required>
+
+                    <input type="text" id="nomeCuso" name="nomeCuso" value="<?= $nome ?>" required>
                     <label class="label-anim" for="nome">NOME DO CURSO</label>
                 </div>
 
                 <div class="input-box">
-                    
-                    <input type="text" id="eixo" name="eixo"  value="<?=$eixo1?>" required>
+
+                    <input type="text" id="eixo" name="eixo" value="<?= $eixo1 ?>" required>
                     <label class="label-anim" for="eixo">EIXO</label>
                 </div>
                 <div class="input-select">
                     <h3 class="sub-form">Informaçoes Adicionais</h3>
-                    <select type="text" id="cargaHoraria" name="cargaHoraria"  value="<?=$cargaHoraria?>" required>
-                       
+                    <select type="text" id="cargaHoraria" name="cargaHoraria" value="<?= $cargaHoraria ?>" required>
+
                         <option>1200 horas</option>
                         <option>1600 horas</option>
                         <option>800 horas</option>
-                     
+
                     </select>
-                    <select type="text" id="semestre" name="semestre"  value="<?=$semestre?>" required>
+                    <select type="text" id="semestre" name="semestre" value="<?= $semestre ?>" required>
                         <option>1º semestre</option>
 
                         <option>2º semestre</option>
@@ -113,21 +114,25 @@ if($_POST) {
                         <option>5º semestre</option>
                         <option>6º semestre</option>
                     </select>
-                    <select type="text" id="modalidade" name="modalidade"  required>
-                        <option>Modalidade</option>         
-                        <option  <?=$modalidade=='Presencial'?'selected':''?>>Presencial</option>
-                        <option  <?=$modalidade=='Online'?'selected':''?>>Online</option>
+                    <select type="text" id="modalidade" name="modalidade" required>
+                        <option>Modalidade</option>
+                        <option <?= $modalidade == 'Presencial' ? 'selected' : '' ?>>Presencial</option>
+                        <option <?= $modalidade == 'Online' ? 'selected' : '' ?>>Online</option>
 
 
                     </select>
                     <select type="text" id="modalidade" name="ensino" required>
-                        <option >Ensino</option>
-                        <option  <?=$ensino=='Curso Tecnico'?'selected':''?>>Curso Tecnico</option>
-                        <option  <?=$ensino=='Ensino Medio Integrado ao Tecnico(M-TEC)'?'selected':''?>>Ensino Medio Integrado ao Tecnico(M-TEC)</option>
-                        <option <?=$ensino=='Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'?'selected':''?>>Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)</option>
-                        <option  <?=$ensino=='Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)'?'selected':''?>>Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)</option>
-                        <option <?=$ensino=='Articulação dos Ensino Medio - Técnico e Superior (AMS)'?'selected':''?>>Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>        
-                        <option <?=$ensino=='Especialização Técnica'?'selected':''?>>Especialização Técnica</option>
+                        <option>Ensino</option>
+                        <option <?= $ensino == 'Curso Tecnico' ? 'selected' : '' ?>>Curso Tecnico</option>
+                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico(M-TEC)' ? 'selected' : '' ?>>Ensino Medio
+                            Integrado ao Tecnico(M-TEC)</option>
+                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)' ? 'selected' : '' ?>>Ensino Medio Integrado ao Tecnico em Periodo
+                            Integral(M-TEC-Pi)</option>
+                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)' ? 'selected' : '' ?>>Ensino Medio Integrado ao Tecnico em Periodo
+                            Noturno(M-TEC-N)</option>
+                        <option <?= $ensino == 'Articulação dos Ensino Medio - Técnico e Superior (AMS)' ? 'selected' : '' ?>>
+                            Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
+                        <option <?= $ensino == 'Especialização Técnica' ? 'selected' : '' ?>>Especialização Técnica</option>
 
 
                     </select>
@@ -136,32 +141,32 @@ if($_POST) {
 
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                ?>
+                    ?>
                     <div class="text-green">
                         Cadastro Realizado
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
                 <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                ?>
+                    ?>
                     <div class="text-danger">
                         Cadastro com erro
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
-                 <?php
+                <?php
                 if (isset($_GET['cadastro']) && $_GET['cadastro'] == "atualizado") {
-                ?>
+                    ?>
                     <div class="text-green">
                         Cadastro Atualizado
                     </div>
-                <?php
+                    <?php
                 }
                 ?>
-                <input type="hidden" id="id_curso" name="id_curso" value="<?=$id_curso?>">
+                <input type="hidden" id="id_curso" name="id_curso" value="<?= $id_curso ?>">
                 <input type="submit" class="btn" value="CADASTRAR">
             </form>
         </section>
@@ -169,14 +174,14 @@ if($_POST) {
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("campos");
             const adicionarCampoButton = document.getElementById("adicionarCampo");
 
             let contadorCampos = 0;
 
-            adicionarCampoButton.addEventListener("click", function() {
+            adicionarCampoButton.addEventListener("click", function () {
                 contadorCampos++;
 
                 const novoCampo = document.createElement("input");
@@ -188,14 +193,14 @@ if($_POST) {
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const formulario = document.getElementById("meuFormulario");
             const camposContainer = document.getElementById("area");
             const adicionarCampoButton = document.getElementById("adicionarArea");
 
             let contadorArea = 0;
 
-            adicionarCampoButton.addEventListener("click", function() {
+            adicionarCampoButton.addEventListener("click", function () {
                 contadorArea++;
 
                 const novoArea = document.createElement("input");

@@ -38,7 +38,7 @@ a {
 
 .fa-chevron-left {
    font-size: 25px;
-   color: red;
+   color: white;
    padding: 10px;
    width: 25px;
    height: 25px;
@@ -48,6 +48,19 @@ a {
    text-align: center;
    justify-content: center;
    align-items: center;
+   background-color: red;
+   border: 2px solid red;
+   transition: 0.300s ease-in-out;
+}
+.fa-chevron-left:hover {
+   font-size: 25px;
+   color: red;
+   padding: 10px;
+   width: 25px;
+   height: 25px;
+   border: 2px solid red;
+   background-color: white;
+   border-radius: 100px;
 }
 
 
@@ -191,6 +204,7 @@ table a {
    transition: all 0.4s;
    width: 50%;
    animation: 1000ms linear trans;
+   font-weight: 600;
 }
 
 .addCampo:hover {

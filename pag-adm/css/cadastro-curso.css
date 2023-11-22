@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 20px;
+    animation: 800ms ease-out anim-form;
 }
 
 .formulario-etec form {
@@ -31,7 +32,7 @@ main{
     margin-bottom: 5px;
 }
 .btn {
-    background-color: #1a3b9e;
+    background-color: rgb(10, 10, 87);
     border: none;
     border-radius: 20px;
     color: white;
@@ -43,8 +44,14 @@ main{
     font-size: 1rem;
     text-align: center;
     text-decoration: none;
+    animation: 800ms linear trans;
+    transition: 200ms linear;
 }
-
+.btn:hover{
+    background-color: #1a3b9e;
+    scale: 1.02;
+ 
+ }
 .input-box {
     display: flex;
     flex-direction: column;
@@ -65,6 +72,7 @@ main{
     border-radius: 10px;
     transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 60%;
+    animation: 1500ms ease trans;
 }
 
 .input-box input:focus {
@@ -88,6 +96,7 @@ main{
     pointer-events: none;
     transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.8rem;
+    animation: 1500ms ease transLabel;
 }
 
 .input-select {
@@ -97,11 +106,13 @@ main{
     gap:20px;
     align-items: center;
     margin-top: 20px;
+    
 }
 .sub-form{
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 10px;
+    animation: 2000ms ease transLabel;
 }
 .input-select select {
     border-radius: 10px;
@@ -109,6 +120,7 @@ main{
     width: 68%;
     padding: 1rem;
     font-size: 1rem;
+    animation: 1500ms ease trans;
 }
 
 
@@ -224,8 +236,71 @@ button{
     border-radius: 10px;
     border: 1px solid rgb(161, 161, 161);
 }
-
-
-
-
-
+@keyframes trans {
+    0% {
+       opacity: 0%;
+       transform: translateY(-200%);
+    }
+ 
+    50% {
+       opacity: 25%;
+    }
+ 
+    60% {
+       opacity: 50%;
+    }
+ 
+    70% {
+       opacity: 70%;
+    }
+ 
+    100% {
+       opacity: 100%;
+       transform: translateY(0%);
+    }
+ 
+ 
+ }
+ 
+ @keyframes transLabel {
+    0% {
+       opacity: 0%;
+       transform: translateY(-600%);
+    }
+ 
+    50% {
+       opacity: 25%;
+    }
+ 
+    60% {
+       opacity: 50%;
+    }
+ 
+    70% {
+       opacity: 70%;
+    }
+ 
+    100% {
+       opacity: 100%;
+       transform: translateY(0%);
+    }
+ 
+ 
+ }
+ 
+ @keyframes anim-form {
+    0% {
+       opacity: 0%;
+       transform: translateY(-15%);
+    }
+ 
+    50% {
+       opacity: 50%;
+    }
+ 
+    100% {
+       opacity: 100%;
+       transform: translateY(0%);
+    }
+ 
+ }
