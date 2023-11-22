@@ -40,6 +40,8 @@ if ($_POST) {
     $termino = $vaga['termino'];
     $tipoTrabalho = $vaga['modalidade'];
     $semana = $vaga['escala'];
+    $id_curso = $vaga['fk_idCurso'];
+
 }  else if ($_GET) {
     $id_vaga = $_GET['id'];
     $querySelect = "SELECT * FROM tb_vaga  WHERE idVaga = $id_vaga";
@@ -57,6 +59,7 @@ if ($_POST) {
     $termino = $vaga['termino'];
     $tipoTrabalho = $vaga['escala'];
     $semana = $vaga['modalidade'];
+    $id_curso = $vaga['fk_idCurso'];
 }  else {
     $id_vaga = "";
     $nome = "";
@@ -71,6 +74,7 @@ if ($_POST) {
     $termino ="";
     $tipoTrabalho = "";
     $semana = "";
+    $id_curso = "";
 }
 
 
@@ -134,8 +138,10 @@ if ($_POST) {
 
 
                         <span class="input-box-select">
-                            <label for="tipo">TRABALHO</label>
+                            <br>
+                            
                             <select class="selects" name="tipo" required>
+                            <option value="trabalho" >TRABALHO</option>
                                 <option value="presencial" <?= $tipoTrabalho == 'presencial' ? 'selected' : '' ?>>Presencial</option>
                                 <option value="home-office" <?= $tipoTrabalho == 'home-office' ? 'selected' : '' ?>>Home-office</option>
                                 <option value="hibrido" <?= $tipoTrabalho == 'hibrido' ? 'selected' : '' ?>>Hibrido</option>
@@ -156,14 +162,14 @@ if ($_POST) {
                             <label class="label-anim" for="salario">SALARIO</label>
                         </span>
                         <span class="input-box-select">
-                            <label class="label-select">Curso</label>
+                            <br>
                             <select class="selects" name="curso" id="curso" required>
-                                <option>Selecione um curso</option>
+                                <option>SELECIONE UM CURSO</option>
                                 <?php foreach ($resultado as $resultado) { ?>
-                                    <option value="<?= $resultado[0] ?>">
-                                        <?= $resultado[1] ?>
-                                    </option>
-                                <?php } ?>
+    
+                                    <option value="<?= $resultado[0] ?>"<?= $id_curso== $resultado[0] ? 'selected' : '' ?>><?= $resultado[1] ?></option>
+                                <?php } 
+                                ?>
                             </select>
                             <span>
 
@@ -186,8 +192,9 @@ if ($_POST) {
                         </span>
 
                         <span class="input-box-select">
-                            <label for="periodo">PERIODO</label>
+                            <br>
                             <select class="selects" name="periodo" required>
+                            <option value="periodo"  >PERIODO</option>
                                 <option value="noturno"  <?= $periodo == 'noturno' ? 'selected' : '' ?>>Noturno</option>
                                 <option value="diurno"  <?= $periodo == 'diurno' ? 'selected' : '' ?>>Diurno</option>
                                 <option value="matinal" <?= $periodo == 'matinal' ? 'selected' : '' ?>>Matinal</option>

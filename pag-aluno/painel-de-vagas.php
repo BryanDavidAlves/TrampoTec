@@ -205,7 +205,7 @@ include '../pag-aluno/components/header.php';
                         <?=$vaga['nomeEmpresa']?>
                       </span>
                       <span id="info-nome">
-                        <?=$vaga['departamento']?>
+                        <?=$vaga['nome']?>
                       </span>
                       <span id="info-ano">
                         <?=$vaga['anoFundacao']?>
@@ -225,17 +225,22 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
     $requisito1 = $query1->fetchAll();
     foreach ($requisito1 as $requisito1) {?>
                           <span>
-                            <?=$requisito1[3]?>
+                            . <?=$requisito1[3]?>
                           </span>
                         <?php }?>
 
                       </div>
                     </div>
                     <div id="descrição-vaga">
+                      DESCRIÇAO DA VAGA:
                       <p id="texto-descs">
                         <?=$vaga['descricao']?>
                       </p>
                     </div>
+                    <p id="texto-descs">
+                        <?=$vaga['escala']?>
+                      </p>
+                    
                   </div>
                 </section>
               </div>
