@@ -159,11 +159,14 @@ foreach ($result as $vaga) {
 
 
                             <td class="icone-table">
-                                <butto class="editar-vaga">
-                                    <a href="./editar-vaga.php"><i class="fa-solid fa-pen-to-square" ></i></a>
-                                </butto>
+                                <form action="cadastrar-vaga.php" method="POST" class="editar-vaga">
+                                    <input type="hidden" class="form-control" id="id" name="id" value=<?= $vaga['idVaga'] ?>>
+                                    <button type="submit" class="botao-editar" class="dropdown-item">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </button>
+                                </form>
                                 <button class="delete-vaga">
-                                    <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x" ></i></a>
+                                    <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x"></i></a>
                                 </button>
 
                             </td>

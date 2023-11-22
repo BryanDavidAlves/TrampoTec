@@ -60,12 +60,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
+        <?php
 
-        <a class="cabecalho" href="./vagas.php"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisitos</a>
+        if ($_GET) {
+            $idVaga = trim($_GET['id']);
 
+            $querySelect = "SELECT  tb_requisito.* ,  tb_requisito_vaga.* 
+            FROM tb_requisito
+
+            INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE tb_requisito_vaga.fk_idVaga = $idVaga";
+            $query = $conexao->query($querySelect);
+
+            $requisitoJoin = $query->fetchAll();
+        }
+
+        ?>
+        <a class="cabecalho" href="./cadastrar-vaga.php?id=<?=$idVaga?>"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisitos</a>
 
         <section class="formulario-cadastrar-vaga">
-            <form action=" " method="post">
+            <form action="beck-end/cadastroVaga/salvarRequisitoVaga.php?id=<?= $idVaga ?>" method="post">
 
                 <h1>FORMULARIO CADASTRO DE REQUISITOS</h1>
 
@@ -92,18 +105,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <div class="input-box">
                         <label for="curso">REQUISITO</label>
-                        <input list="requisito" nmae="requisitos" id="requisitos" type="text">
-                        <datalist id="requisito" name="requisito">
-                            <?php foreach ($requisito as $requisito) { ?>
-                                <option value="<?= $requisito[0] ?> ">
-                                    <?= $requisito[1] ?>
-                                </option>
-                            <?php } ?>
-                        </datalist>
+                        <input list="requisito" name="requisitos" id="requisitos" type="text">
+
                     </div>
 
                     <button class="addCampo" type="submit">ADICIONAR CURSO</button>
-                    <a href="etec.php" class="btn" value="FINALIZAR"> FINALIZAR</a>
+                    <a href="vagas.php?vaga=cadastrada" class="btn" value="FINALIZAR"> FINALIZAR</a>
 
 
                     <table class="table">
@@ -113,18 +120,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </tr>
                         </thead>
                         <tbody class="infos">
+                            <?php foreach ($requisitoJoin as $requisitoJoin) { ?>
+                                <tr>
+                                    <td>
+                                        <?= $requisitoJoin[1] ?>
+                                    </td>
 
-                            <tr>
-                                <td>
-                                    asd
-                                </td>
+                                    <td> <a href="./beck-end/crudRequisito/requisito-delete.php?idRequisito=<?= $requisitoJoin[0] ?>&idVaga=<?= $idVaga ?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
 
-                                <td> <a
-                                        href="./back-end/crudEtec/etec-curso-delete.php?id=<?= $etecJoin[5] ?>&etec=<?= $idEtec ?>"><i
-                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
-
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -137,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 
     <script>
-        document.getElementById('requisitos').addEventListener('input', function () {
+        document.getElementById('requisitos').addEventListener('input', function() {
             var input = this;
             var datalist = document.getElementById('requisito');
             var selectedOption = Array.from(datalist.options).find(option => option.value === input.value);
