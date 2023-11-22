@@ -18,24 +18,62 @@ $querySelect2 = "SELECT * FROM  tb_requisito ";
 $query2 = $conexao->query($querySelect2);
 
 $requisito = $query2->fetchAll();
-// Loop para coletar todos os campos do formulário
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $dados = [];
 
-    // Loop para coletar todos os campos do formulário
-    $contadorCampos = 1;
-    while (isset($_POST["campo{$contadorCampos}"])) {
-        $campo = $_POST["campo{$contadorCampos}"];
-        $dados[] = $campo;
-        $contadorCampos++;
-    }
 
-    // Agora, você pode fazer o que quiser com os dados (por exemplo, armazená-los no banco de dados ou exibi-los)
-    foreach ($dados as $campo) {
-        echo "Campo: " . htmlspecialchars($campo) . "<br>";
-    }
+
+if ($_POST) {
+    $id_vaga = $_POST['id'];
+    echo $id_vaga;
+    $querySelect = "SELECT * FROM tb_vaga  WHERE idVaga = $id_vaga";
+    $resultado1 = $conexao->query($querySelect);
+    $vaga = $resultado1->fetch();
+    $id_vaga = $vaga["idVaga"];
+    $nome = $vaga['nome'];
+    $cidade = $vaga['cidade'];
+    $bairro = $vaga['bairro'];
+    $salario = $vaga['salario'];
+    $descricao = $vaga['descricao'];
+    $area = $vaga['area'];
+    $periodo = $vaga['periodo'];
+    $inicio = $vaga['inicio'];
+    $termino = $vaga['termino'];
+    $tipoTrabalho = $vaga['modalidade'];
+    $semana = $vaga['escala'];
+}  else if ($_GET) {
+    $id_vaga = $_GET['id'];
+    $querySelect = "SELECT * FROM tb_vaga  WHERE idVaga = $id_vaga";
+    $resultado1 = $conexao->query($querySelect);
+    $vaga = $resultado1->fetch();
+    $id_vaga = $vaga["idVaga"];
+    $nome = $vaga['nome'];
+    $cidade = $vaga['cidade'];
+    $bairro = $vaga['bairro'];
+    $salario = $vaga['salario'];
+    $descricao = $vaga['descricao'];
+    $area = $vaga['area'];
+    $periodo = $vaga['periodo'];
+    $inicio = $vaga['inicio'];
+    $termino = $vaga['termino'];
+    $tipoTrabalho = $vaga['escala'];
+    $semana = $vaga['modalidade'];
+}  else {
+    $id_vaga = "";
+    $nome = "";
+    $cidade = "";
+    $bairro = "";
+    $salario = "";
+    $curso = "";
+    $descricao = "";
+    $area = "";
+    $periodo = "";
+    $inicio = "";
+    $termino ="";
+    $tipoTrabalho = "";
+    $semana = "";
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -74,14 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span class="input-box">
 
-                            <input name="nome" type="text" required>
+                            <input name="nome" type="text" value="<?= $nome ?>"required>
                             <label class="label-anim" for="nome">NOME</label>
 
                         </span>
 
                         <span class="input-box">
 
-                            <input name="cidade" type="text" required>
+                            <input name="cidade" type="text" value="<?= $cidade ?>" required>
                             <label class="label-anim" class="label-anim" for="cidade">CIDADE</label>
                         </span>
                     </div>
@@ -89,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span class="input-box">
 
-                            <input name="bairro" type="text" required>
+                            <input name="bairro" type="text" value="<?= $bairro ?>" required>
                             <label class="label-anim" for="bairro">BAIRRO</label>
                         </span>
 
@@ -98,23 +136,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <span class="input-box-select">
                             <label for="tipo">TRABALHO</label>
                             <select class="selects" name="tipo" required>
-                                <option value="presencial">Presencial</option>
-                                <option value="home-office">Home-office</option>
-                                <option value="hibrido">Hibrido</option>
+                                <option value="presencial" <?= $tipoTrabalho == 'presencial' ? 'selected' : '' ?>>Presencial</option>
+                                <option value="home-office" <?= $tipoTrabalho == 'home-office' ? 'selected' : '' ?>>Home-office</option>
+                                <option value="hibrido" <?= $tipoTrabalho == 'hibrido' ? 'selected' : '' ?>>Hibrido</option>
                             </select>
                         </span>
 
 
                         <span class="input-box">
 
-                            <input name="semana" type="text" maxlength="7" required>
+                            <input name="semana" type="text" maxlength="7" value="<?= $semana ?>" required>
                             <label class="label-anim" for="tipo">SEMANA</label>
                         </span>
                     </div>
 
                     <div>
                         <span class="input-box">
-                            <input name="salario" type="number" required>
+                            <input name="salario" type="number" value="<?= $salario ?>" required>
                             <label class="label-anim" for="salario">SALARIO</label>
                         </span>
                         <span class="input-box-select">
@@ -135,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span class="input-box">
 
-                            <input class="descricao" name="descricao" type="text" required>
+                            <input class="descricao" name="descricao" type="text" value="<?= $descricao ?>" required>
                             <label class="label-anim" for="descricao">DESCRIÇÃO</label>
                         </span>
                     </div>
@@ -143,17 +181,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div>
                         <span class="input-box">
 
-                            <input name="area" type="text" required>
+                            <input name="area" type="text" value="<?= $area ?>" required>
                             <label class="label-anim" for="area">AREA</label>
                         </span>
 
                         <span class="input-box-select">
                             <label for="periodo">PERIODO</label>
                             <select class="selects" name="periodo" required>
-                                <option value="noturno">Noturno</option>
-                                <option value="diurno">Diurno</option>
-                                <option value="matinal">Matinal</option>
-                                <option value="integral">integral</option>
+                                <option value="noturno"  <?= $periodo == 'noturno' ? 'selected' : '' ?>>Noturno</option>
+                                <option value="diurno"  <?= $periodo == 'diurno' ? 'selected' : '' ?>>Diurno</option>
+                                <option value="matinal" <?= $periodo == 'matinal' ? 'selected' : '' ?>>Matinal</option>
+                                <option value="integral" <?= $periodo == 'integral' ? 'selected' : '' ?>>integral</option>
                             </select>
                         </span>
                     </div>
@@ -163,12 +201,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <div input-box-select>
                         <span>
                             <label for="inicio">INICIO</label>
-                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="inicio" type="time" required>
+                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="inicio" type="time" value="<?= $inicio ?>" required>
                         </span>
 
                         <span>
                             <label for="termino">TERMINO</label>
-                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="termino" type="time" required>
+                            <input style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;" name="termino" type="time"  value="<?= $termino ?>" required>
                         </span>
                     </div>
 
@@ -183,6 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <?php
                 }
                 ?>
+                <input type="hidden" id="id_vaga" name="id_vaga" value="<?= $id_vaga ?>">
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
