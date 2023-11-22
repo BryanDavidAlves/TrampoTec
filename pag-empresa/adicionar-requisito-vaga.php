@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     </div>
 
-                    <button class="addCampo" type="submit">ADICIONAR CURSO</button>
+                    <button class="addCampo" type="submit">ADICIONAR REQUISITO</button>
                     <a href="vagas.php?vaga=cadastrada" class="btn" value="FINALIZAR"> FINALIZAR</a>
 
 

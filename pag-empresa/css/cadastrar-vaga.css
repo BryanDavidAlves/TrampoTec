@@ -48,7 +48,7 @@ main a i {
    transition: 0.300s ease-in-out;
 }
 
-main a i:hover{
+main a i:hover {
    font-size: 25px;
    color: red;
    padding: 10px;
@@ -64,6 +64,7 @@ main a i:hover{
    display: flex;
    align-items: center;
    justify-content: center;
+   animation: 800ms ease-out anim-form;
 }
 
 .formulario-cadastrar-vaga form {
@@ -102,6 +103,7 @@ main a i:hover{
    border-radius: 10px;
    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
    width: 95%;
+   animation: 1500ms ease trans;
 }
 
 .input-box input:focus {
@@ -125,6 +127,7 @@ main a i:hover{
    pointer-events: none;
    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
    font-size: 0.8rem;
+   animation: 1500ms ease transLabel;
 }
 
 form .alinhamento-inputs {
@@ -140,6 +143,7 @@ form .alinhamento-inputs {
 
 form h1 {
    font-size: 22px;
+   animation: 2000ms ease trans;
 }
 
 
@@ -182,10 +186,16 @@ input:focus {
    width: 105%;
    padding: 1rem;
    font-size: 1rem;
+   animation: 1350ms ease trans;
 }
-.input-box-select{
+
+.input-box-select {
    margin-top: -25px;
 
+}
+
+.input-box-select label {
+   animation: 1500ms ease transLabel;
 }
 
 .botao-vaga {
@@ -197,36 +207,14 @@ input:focus {
    background-color: rgb(10, 10, 87);
    font-size: 15px;
    cursor: pointer;
+   animation: 800ms linear trans;
+   transition: 200ms linear;
+   
 }
+.botao-vaga:hover{
+   background-color: #1a3b9e;
+   scale: 1.05;
 
-.caixa-add-requisito {
-   display: flex;
-   justify-content: space-around;
-   align-items: flex-start;
-   gap: 20px;
-}
-
-.caixa-add-requisito span {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-}
-
-.add-requisito {
-   font-size: 30px;
-   color: red;
-   cursor: pointer;
-}
-
-.caixa-add-requisito .body-inputs {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-   overflow-y: auto;
-   width: 300px;
-   max-height: 80px;
-   padding: 10px;
 }
 
 .body-inputs::-webkit-scrollbar {
@@ -261,12 +249,68 @@ input:focus {
 @keyframes trans {
    0% {
       opacity: 0%;
-      transform: translateY(-10%);
+      transform: translateY(-200%);
+   }
+
+   50% {
+      opacity: 25%;
+   }
+
+   60% {
+      opacity: 50%;
+   }
+
+   70% {
+      opacity: 70%;
    }
 
    100% {
       opacity: 100%;
-      transform: translateY(20%);
+      transform: translateY(0%);
+   }
+
+
+}
+
+@keyframes transLabel {
+   0% {
+      opacity: 0%;
+      transform: translateY(-600%);
+   }
+
+   50% {
+      opacity: 25%;
+   }
+
+   60% {
+      opacity: 50%;
+   }
+
+   70% {
+      opacity: 70%;
+   }
+
+   100% {
+      opacity: 100%;
+      transform: translateY(0%);
+   }
+
+
+}
+
+@keyframes anim-form {
+   0% {
+      opacity: 0%;
+      transform: translateY(-15%);
+   }
+
+   50% {
+      opacity: 50%;
+   }
+
+   100% {
+      opacity: 100%;
+      transform: translateY(0%);
    }
 
 }
