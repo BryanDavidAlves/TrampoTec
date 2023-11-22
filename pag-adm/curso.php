@@ -22,14 +22,21 @@ require_once "back-end/login/validador_acesso.php";
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Cursos</h1>
+        <section id="content2">
         <div class="secao-cadastro">
             <a href="cadastro-curso.php">
                 <i id="icon-titulo" class="fa-solid fa-plus" "></i>
                 <h2>Cadastrar um novo curso</h2>
             </a>
         </div>
+        </section>
     </header>
     <main>
+    <div id="loading">
+        <img src="img/loading.gif" alt="Carregando"> <!-- Use uma imagem de loading ou outra animação -->
+        <p>Carregando...</p>
+    </div>
+        <section id="content">
         <div class="secao-busca">
             <section class="sistema-busca">
                 <div class="barra-pesquisa">
@@ -77,6 +84,7 @@ require_once "back-end/login/validador_acesso.php";
 
                     </form>
                 </div>
+            </section>
         </div>
 
         <section>
@@ -100,6 +108,7 @@ require_once "back-end/login/validador_acesso.php";
 
 
         </section>
+    </section>
     </main>
 
     <dialog id="modal">
@@ -151,7 +160,7 @@ require_once "back-end/login/validador_acesso.php";
     </script>
     <script src="js/modal-curso.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
-
+    <script src="js/anim-load.js"></script>
 </body>
 
 </html>

@@ -47,9 +47,10 @@ $total = $n_admin + $n_empresa + $n_aluno;
 
 <body>
     <?php
-include '../pag-adm/components/sidebar-adm.php';
-?>
+    include '../pag-adm/components/sidebar-adm.php';
+    ?>
     <header>
+        <br><br>
         <h1>Dashboard</h1>
     </header>
     <!--<img class="baixo" src="img/fundo1.png" alt="">-->
@@ -57,7 +58,8 @@ include '../pag-adm/components/sidebar-adm.php';
     <img class="cima" src="img/fundo2.png" alt="">
 
     <main>
-        <section class="dashboard">
+  
+        <section id="dashboard" class="dashboard">
 
             <div class="align-card">
                 <a href="empresa.php?aprovado=1">
@@ -67,7 +69,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <i id="empresas" class="fa-solid fa-building" "></i>
                         </div>
                         <h2>
-                            <?=$n_empresa?>
+                            <?= $n_empresa ?>
                         </h2>
                     </div>
                 </a>
@@ -79,7 +81,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                         <i id="prof" class="fa-solid fa-chalkboard-user"></i>
                                     </div>
                                     <h2>
-                                        <?=$n_professor?>
+                                        </*?= $n_professor ?>
                                     </h2>
                                 </div>
                 </a>
@@ -91,7 +93,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <i id="aluno" class="fa-solid fa-user" "></i>
                         </div>
                         <h2>
-                            <?=$n_aluno?>
+                            <?= $n_aluno ?>
                         </h2>
                     </div>
                 </a>
@@ -107,7 +109,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                 <i id="adm" class="fa-solid fa-user"></i>
                             </div>
                             <h2>
-                                <?=$n_admin?>
+                                <?= $n_admin ?>
                             </h2>
                         </div>
                     </a>
@@ -120,7 +122,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?=$n_pendenteEmpresa?>
+                                <?= $n_pendenteEmpresa ?>
                             </h2>
                         </div>
                     </a>
@@ -131,7 +133,7 @@ include '../pag-adm/components/sidebar-adm.php';
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?=$total?>
+                                <?= $total ?>
                             </h2>
                         </div>
                     </a>
@@ -142,14 +144,17 @@ include '../pag-adm/components/sidebar-adm.php';
 
                 <div class="dash-card">
                     <div id="donutchart"></div>
-                 <!--   <div id="chart_div"></div> -->
+                    <!--   <div id="chart_div"></div> -->
                 </div>
             </div>
         </section>
 
 
-
+        <div class="align-pdf">
+            <button id="pdf"><i class="fa-regular fa-file-pdf"></i></button>
+        </div>
     </main>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load("current", {
@@ -160,13 +165,13 @@ include '../pag-adm/components/sidebar-adm.php';
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Empresas', <?=$n_empresa?>],
-                ['Alunos', <?=$n_aluno?>],
-                ['Administradores', <?=$n_admin?>]
+                ['Empresas', <?= $n_empresa ?>],
+                ['Alunos', <?= $n_aluno ?>],
+                ['Administradores', <?= $n_admin ?>]
             ]);
 
             var options = {
-                title: 'Usuarios Totais Cadastrados (<?=$total?>)',
+                title: 'Usuarios Totais Cadastrados (<?= $total ?>)',
                 pieHole: 0.2,
             };
 
@@ -174,7 +179,7 @@ include '../pag-adm/components/sidebar-adm.php';
             chart.draw(data, options);
         }
     </script>
-   <!-- <script type="text/javascript">
+    <!-- <script type="text/javascript">
         google.charts.load('current', {
             'packages': ['corechart']
         });
@@ -207,6 +212,9 @@ include '../pag-adm/components/sidebar-adm.php';
         }
     </script> -->
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/pdf.js" defer></script>
+
 </body>
 
 </html>

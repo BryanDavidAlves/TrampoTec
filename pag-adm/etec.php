@@ -12,8 +12,7 @@ require_once "back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -25,86 +24,95 @@ require_once "back-end/login/validador_acesso.php";
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-include '../pag-adm/components/sidebar-adm.php';
-?>
+    include '../pag-adm/components/sidebar-adm.php';
+    ?>
 
     <header>
         <h1>Etecs</h1>
-        <div class="secao-cadastro">
-            <a href="cadastro-etec.php">
-                <i id="icon-titulo" class="fa-solid fa-plus"></i>
-                <h2>Cadastrar uma nova ETEC</h2>
-            </a>
-        </div>
+        <section id="content2">
+            <div class="secao-cadastro">
+                <a href="cadastro-etec.php">
+                    <i id="icon-titulo" class="fa-solid fa-plus"></i>
+                    <h2>Cadastrar uma nova ETEC</h2>
+                </a>
+            </div>
+        </section>
     </header>
     <main>
-        <div class="secao-busca">
-            <section class="sistema-busca">
-                <div class="barra-pesquisa">
-                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-                    <input type="text" id="busca" placeholder="buscar por etec">
-                </div>
+        <div id="loading">
+            <img src="img/loading.gif" alt="Carregando"> <!-- Use uma imagem de loading ou outra animação -->
+            <p>Carregando...</p>
+        </div>
+        <section id="content">
+            <div class="secao-busca">
+                <section class="sistema-busca">
+                    <div class="barra-pesquisa">
+                        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                        <input type="text" id="busca" placeholder="buscar por etec">
+                    </div>
 
-                <div class="align-filtro">
-                    <!--<div class="btn-side">
+                    <div class="align-filtro">
+                        <!--<div class="btn-side">
                         <p>CADASTRADAS</p>
                     </div>
                     <div class="btn-side">
                         <p>PENDENTES</p>
                     </div>-->
-                    <div class="filtro" onclick="abrirFiltro()">
-                        <span class="material-symbols-outlined">
-                            tune
-                        </span>
-                        <p>Filtrar</p>
+                        <div class="filtro" onclick="abrirFiltro()">
+                            <span class="material-symbols-outlined">
+                                tune
+                            </span>
+                            <p>Filtrar</p>
 
+                        </div>
                     </div>
-                </div>
 
-                <div class="modal-filtro" id="abrir-filtro">
-                    <form action="">
-                        <div class="align-form-filtro">
-                            <label for="">Periodo</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <div class="align-form-filtro">
-                            <label for="">Horario</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <div class="align-form-filtro">
-                            <label for="">Curso</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <div class="align-form-filtro">
-                            <label for="">Area</label>
-                            <input type="checkbox" name="" id="">
-                        </div>
-                        <input type="submit" value="Aplicar" class="button-filtro">
+                    <div class="modal-filtro" id="abrir-filtro">
+                        <form action="">
+                            <div class="align-form-filtro">
+                                <label for="">Periodo</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="align-form-filtro">
+                                <label for="">Horario</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="align-form-filtro">
+                                <label for="">Curso</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="align-form-filtro">
+                                <label for="">Area</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <input type="submit" value="Aplicar" class="button-filtro">
 
-                    </form>
-                </div>
-        </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
 
-        <section class="etec">
+            <section class="etec">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>EMAIL</th>
-                        <th>CÓDIGO</th>
-                        <th>MUNICIPIO</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="infos" id="result">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOME</th>
+                            <th>EMAIL</th>
+                            <th>CÓDIGO</th>
+                            <th>MUNICIPIO</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="infos" id="result">
 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
+            </section>
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -134,6 +142,7 @@ include '../pag-adm/components/sidebar-adm.php';
     </script>
     <script src="js/modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+    <script src="js/anim-load.js"></script>
 </body>
 
 </html>

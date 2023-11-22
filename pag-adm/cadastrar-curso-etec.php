@@ -75,7 +75,7 @@ if ($_GET) {
                 </div>
 
                 <button class="addCampo" type="submit">ADICIONAR CURSO</button>
-                <a href="etec.php" class="btn" value="FINALIZAR"> FINALIZAR</a>
+                <a href="etec.php" class="btn2" value="FINALIZAR"> FINALIZAR</a>
 
 
                 <table class="table">

@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .imagem-1 {
@@ -25,6 +25,15 @@ body {
   left: 0;
   bottom: 0;
   z-index: -5;
+}
+.modalidades{
+  font-size: 0.9em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  
+
+
 }
 .imagem-4 {
   position: fixed;
@@ -123,10 +132,11 @@ p {
 #card {
   background-color: rgb(232, 232, 232);
   border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
   width: 350px;
   height: 220px;
   justify-content: center;
-  box-shadow: 0px 25px 20px -15px rgba(0, 0, 0, 0.437);
+  
   border: none;
   padding: 20px;
 }
@@ -138,38 +148,44 @@ p {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 #descricao-vaga {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #3d3b3b;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  text-align: center;
 }
 
 #job-title {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
   color: #333;
+  font-family: "Poppins", sans-serif;
 }
 
 #botao-vaga-modal {
   background-color: #0a3580;
-  padding: 8px 5px;
+  padding: 10px 8px;
   color: white;
+  width: 150px;
   border: none;
   border-radius: 8px;
   margin-top: 15px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: ease-in-out 0.1s;
+  transition: 0.3s all ease-in-out;
 }
 
 #botao-vaga-modal:hover {
-  scale: 1.01;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.455);
+  transform: scale(1.03);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.455);
+  background-color:  #0a3580d1;
+  transition: 0.3s all ease-in-out;
 }
 
 #modal-vaga {
@@ -275,6 +291,7 @@ p {
 
 #descrição-vaga {
   width: 60%;
+  
 }
 
 #botao-candidatar {

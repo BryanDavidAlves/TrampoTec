@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .sistema-busca .barra-pesquisa {
@@ -81,6 +82,7 @@ main .img-cima img {
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
+   
 }
 
 .sistema-busca {
@@ -93,6 +95,7 @@ main .img-cima img {
     border-radius: 15px;
     margin-top: 5%;
     padding: 10px 0px 10px 0px;
+    z-index: 2;
 }
 
 .btn-side {
@@ -269,3 +272,20 @@ tr:nth-last-child(1) {
     color: red;
     text-decoration: none;
 }
+#content{
+    display: none;
+}
+#loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    flex-direction: column;
+  }
+
+  #loading img {
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Ajuste conforme necessário */
+    margin-right: 10px;
+  }

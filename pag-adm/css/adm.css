@@ -297,3 +297,21 @@ tr:nth-last-child(1) {
     z-index: 0;
     width: 16%;
 }
+#content,
+#content2 {
+  display: none;
+}
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 78vh;
+
+  flex-direction: column;
+}
+
+#loading img {
+  width: 100px; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  margin-right: 10px;
+}
