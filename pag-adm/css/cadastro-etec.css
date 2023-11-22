@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 10px;
+  animation: 800ms ease-out anim-form;
 }
 
 .formulario-etec form {
@@ -34,7 +35,7 @@ main {
 }
 
 .btn {
-  background-color: #1a3b9e;
+  background-color: rgb(10, 10, 87);
   border: none;
   border-radius: 20px;
   color: white;
@@ -46,8 +47,35 @@ main {
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
+  transition: 200ms linear;
+  animation: 800ms linear trans;
 }
+.btn2{
+  background-color: rgb(10, 10, 87);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  width: 55%;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 200ms linear;
+  animation: 800ms linear trans;
+}
+.btn:hover{
+  background-color: #1a3b9e;
+  scale: 1.01;
 
+}
+.btn2:hover{
+  background-color: #1a3b9e;
+  scale: 1.01;
+
+}
 .input-box {
   display: flex;
   flex-direction: column;
@@ -67,6 +95,7 @@ main {
   border: 2px solid #1d44b8;
   border-radius: 10px;
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: 1500ms ease trans;
   width: 80%;
 }
 .input-box input:focus {
@@ -90,8 +119,11 @@ main {
   pointer-events: none;
   transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 0.8rem;
+  animation: 1500ms ease transLabel;
 }
-
+.label-mun{
+  animation: 1500ms ease transLabel;
+}
 .secao-cadastro a {
   display: flex;
   color: black;
@@ -106,32 +138,6 @@ main {
 .secao-cadastro {
   margin-bottom: 30px;
 }
-
-#icon-titulo {
-  font-size: 25px;
-  color: red;
-  padding: 10px;
-  width: 25px;
-  height: 25px;
-  border: 2px solid red;
-  border-radius: 100px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-}
-
-select {
-  border-radius: 10px;
-  border: 2px solid #1a3b9e;
-  width: 89%;
-  padding: 1rem;
-  font-size: 1rem;
-  animation: 400ms linear trans;
-  margin-top: 10px;
-}
-
 .addCampo {
   border: 1px solid #1d44b8;
   border-radius: 10px;
@@ -140,7 +146,51 @@ select {
   transition: all 0.4s;
   margin-bottom: 10px;
   width: 60%;
+  animation: 800ms linear trans;
 }
+
+.addCampo:hover {
+  color: white;
+  background-color: #1d44b8;
+}
+#icon-titulo {
+  font-size: 25px;
+  color: white;
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid red;
+  border-radius: 100px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border: 2px solid red;
+  transition: 0.300s ease-in-out;
+  margin-right: 5px;
+}
+#icon-titulo:hover {
+  font-size: 25px;
+  color: red;
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  border: 2px solid red;
+  background-color: white;
+  border-radius: 100px;
+}
+
+select {
+  border-radius: 10px;
+  border: 2px solid #1a3b9e;
+  width: 87%;
+  padding: 1rem;
+  font-size: 1rem;
+  animation: 1350ms ease trans;
+  margin-top: 10px;
+}
+
 
 .addCampo:hover {
   color: white;
@@ -180,19 +230,6 @@ select {
   border: 2px solid rgb(253, 253, 253);
 }
 
-@keyframes trans {
-  0% {
-    opacity: 0%;
-    transform: translateY(-10%);
-  }
-
-  100% {
-    opacity: 100%;
-    transform: translateY(1%);
-  }
-
-}
-
 select:focus {
   outline: none;
 }
@@ -228,6 +265,8 @@ table {
   overflow: auto;
   height: 5px;
   width: 500px;
+  animation: 1500ms ease anim-form;
+  margin-top: 50px;
 }
 
 table td {
@@ -245,4 +284,72 @@ table td {
 
 td {
   margin-top: 80px;
+}
+@keyframes trans {
+  0% {
+     opacity: 0%;
+     transform: translateY(-200%);
+  }
+
+  50% {
+     opacity: 25%;
+  }
+
+  60% {
+     opacity: 50%;
+  }
+
+  70% {
+     opacity: 70%;
+  }
+
+  100% {
+     opacity: 100%;
+     transform: translateY(0%);
+  }
+
+
+}
+
+@keyframes transLabel {
+  0% {
+     opacity: 0%;
+     transform: translateY(-700%);
+  }
+
+  50% {
+     opacity: 25%;
+  }
+
+  60% {
+     opacity: 50%;
+  }
+
+  70% {
+     opacity: 70%;
+  }
+
+  100% {
+     opacity: 100%;
+     transform: translateY(0%);
+  }
+
+
+}
+
+@keyframes anim-form {
+  0% {
+     opacity: 0%;
+     transform: translateY(-20%);
+  }
+
+  50% {
+     opacity: 50%;
+  }
+
+  100% {
+     opacity: 100%;
+     transform: translateY(0%);
+  }
+
 }

@@ -150,3 +150,28 @@ a {
   text-decoration: none;
   height: 150px;
 }
+.align-pdf {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+.align-pdf button {
+  color: #182052;
+  border: 2px solid #182052;
+  padding: 10px 12px 10px 12px;
+  border-radius: 100%;
+  font-size: 3rem;
+  margin-right: 30px;
+  cursor: pointer;
+}
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f000;
+  margin-left: 20%;
+ 
+}

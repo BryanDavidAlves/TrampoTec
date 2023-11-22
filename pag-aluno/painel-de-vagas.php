@@ -8,7 +8,7 @@ $cliente_id = $_SESSION['idAluno'];
 if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
     $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
   tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area ,tb_vaga.modalidade, tb_curso.nome AS cursoNome , tb_requisito.requisito
     FROM tb_vaga
     INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
@@ -21,10 +21,11 @@ if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer"
     $curso = trim($_GET['curso']);
     $area = trim($_GET['area']);
     $salario = trim($_GET['salario']);
+    
 
     $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
-  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
+  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade ,tb_vaga.bairro AS bairroVaga ,tb_vaga.modalidade, tb_vaga.salario ,
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo ,  tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
     FROM tb_vaga
     INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
@@ -61,6 +62,9 @@ foreach ($result as $vaga) {
             'descricao' => $vaga['descricao'],
             'descEmpresa' => $vaga['descEmpresa'],
             'requisito' => $vaga['requisito'],
+            'modalidade' => $vaga['modalidade'],
+            
+            
             'area' => $vaga['area'],
             'periodo' => $vaga['periodo'],
             'termino' => $vaga['termino'],
@@ -84,6 +88,10 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -180,7 +188,7 @@ include '../pag-aluno/components/header.php';
 
               </div>
               <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?=$vaga['idVaga']?>">
-                Clique para mais informações
+                Mais Informações
               </button>
             </div>
           </div>
@@ -204,11 +212,12 @@ include '../pag-aluno/components/header.php';
                       <span id="info-titulo">
                         <?=$vaga['nomeEmpresa']?>
                       </span>
+                      
+                      <span id="info-ano">
+                        Desde <?=$vaga['anoFundacao']?>
+                      </span>
                       <span id="info-nome">
                         <?=$vaga['nome']?>
-                      </span>
-                      <span id="info-ano">
-                        <?=$vaga['anoFundacao']?>
                       </span>
                     </div>
                   </div>
@@ -237,10 +246,11 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                         <?=$vaga['descricao']?>
                       </p>
                     </div>
+                    <div class="modalidades">
+                    <p>MODALIDADE:</p>
                     <p id="texto-descs">
-                        <?=$vaga['escala']?>
+                        <?=$vaga['modalidade']?>
                       </p>
-                    
                   </div>
                 </section>
               </div>

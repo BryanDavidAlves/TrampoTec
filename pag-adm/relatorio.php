@@ -13,11 +13,6 @@ $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchALL();
 $n_aluno = count($aluno);
 
-$querySelect = "SELECT * FROM tb_professor";
-$resultado = $conexao->query($querySelect);
-$professor = $resultado->fetchALL();
-$n_professor = count($professor);
-
 $querySelect = "SELECT * FROM tb_admin";
 $resultado = $conexao->query($querySelect);
 $admin = $resultado->fetchALL();
