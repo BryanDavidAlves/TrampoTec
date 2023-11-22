@@ -137,6 +137,7 @@ p {
   align-items: start;
   height: 150px;
   position: absolute;
+
 }
 
 .botao-excluir a {
@@ -157,3 +158,22 @@ p {
   background-color: rgb(255, 0, 0);
   color: white;
 }
+
+.chat{
+  z-index: 5;
+}
+
+.chat button{
+  border: none;
+  background-color: transparent;
+}
+
+.chat button I{
+color: white;
+font-size: 35px;
+}
+
+.chat button I:hover{
+  color: rgb(35, 178, 35);
+  font-size: 35px;
+  }

@@ -199,14 +199,19 @@ $resultado = $query->fetchAll();
             $qtn2 = count($num2);
 
             if ($qtn >= 1) { ?>
-              <h4 class="aceito">STATUS : ACEITO</h4>
               <span class="botao-excluir">
                 <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
                   <i class="fa-solid fa-xmark"></i>
                 </a>
               </span>
+              <h4 class="aceito">STATUS : ACEITO</h4>
               <?php foreach ($num as $num) { ?>
-                <h3>( <?= $num[1] ?> )</h3>
+                <form class="chat" method="post" action="./chat.php">
+                  <input type="hidden" name="emailEmpresa" value="<?= $num[1] ?>">
+                  <button type="submit" value="<?= $cliente_id ?>" name="idCandidato">
+                    <i class="fa-solid fa-envelope"></i>
+                  </button>
+                </form>
               <?php } ?>
             <?php } else if ($qtn2 >= 1) { ?>
               <h4 style="color: red;">STATUS : RECUSADO</h4>
