@@ -47,8 +47,8 @@ $total = $n_admin + $n_empresa + $n_aluno;
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <header>
         <br><br>
         <h1>Dashboard</h1>
@@ -58,7 +58,7 @@ $total = $n_admin + $n_empresa + $n_aluno;
     <img class="cima" src="img/fundo2.png" alt="">
 
     <main>
-  
+
         <section id="dashboard" class="dashboard">
 
             <div class="align-card">
@@ -69,7 +69,7 @@ $total = $n_admin + $n_empresa + $n_aluno;
                             <i id="empresas" class="fa-solid fa-building" "></i>
                         </div>
                         <h2>
-                            <?= $n_empresa ?>
+                            <?=$n_empresa?>
                         </h2>
                     </div>
                 </a>
@@ -93,11 +93,11 @@ $total = $n_admin + $n_empresa + $n_aluno;
                             <i id="aluno" class="fa-solid fa-user" "></i>
                         </div>
                         <h2>
-                            <?= $n_aluno ?>
+                            <?=$n_aluno?>
                         </h2>
                     </div>
                 </a>
-                <a href=" relatorio.php"><button type="submit" class="btn-relatorio">Ver Relatório </button>
+               <!-- <a href=" relatorio.php"><button type="submit" class="btn-relatorio">Ver Relatório </button>-->
                 </a>
             </div>
             <div class="align-graficos">
@@ -109,7 +109,7 @@ $total = $n_admin + $n_empresa + $n_aluno;
                                 <i id="adm" class="fa-solid fa-user"></i>
                             </div>
                             <h2>
-                                <?= $n_admin ?>
+                                <?=$n_admin?>
                             </h2>
                         </div>
                     </a>
@@ -122,7 +122,7 @@ $total = $n_admin + $n_empresa + $n_aluno;
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?= $n_pendenteEmpresa ?>
+                                <?=$n_pendenteEmpresa?>
                             </h2>
                         </div>
                     </a>
@@ -133,7 +133,7 @@ $total = $n_admin + $n_empresa + $n_aluno;
                                 <i id="empresas" class="fa-solid fa-building"></i>
                             </div>
                             <h2>
-                                <?= $total ?>
+                                <?=$total?>
                             </h2>
                         </div>
                     </a>
@@ -165,13 +165,13 @@ $total = $n_admin + $n_empresa + $n_aluno;
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Empresas', <?= $n_empresa ?>],
-                ['Alunos', <?= $n_aluno ?>],
-                ['Administradores', <?= $n_admin ?>]
+                ['Empresas', <?=$n_empresa?>],
+                ['Alunos', <?=$n_aluno?>],
+                ['Administradores', <?=$n_admin?>]
             ]);
 
             var options = {
-                title: 'Usuarios Totais Cadastrados (<?= $total ?>)',
+                title: 'Usuarios Totais Cadastrados (<?=$total?>)',
                 pieHole: 0.2,
             };
 

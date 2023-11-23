@@ -4,12 +4,6 @@ require_once "./beck-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idEmpresa'];
 
-$querySelect = "SELECT * FROM tb_aluno
-
-";
-
-$query = $conexao->query($querySelect);
-$resultado = $query->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -62,16 +56,18 @@ $resultado = $query->fetchAll();
 
 
                 <div class="barra-pesquisa">
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" name="busca" id="busca" placeholder="buscar por aluno">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                 </div>
 
                 <div class="align-filtro">
+                    <!--
                     <div class="filtro" onclick="abrirFiltro()">
                         <i class="fa-solid fa-filter"></i>
                         <span>Filtrar</span>
 
                     </div>
+                    -->
                 </div>
 
                 <div class="modal-filtro" id="abrir-filtro">
@@ -108,21 +104,8 @@ $resultado = $query->fetchAll();
 
                 </thead>
 
-                <tbody>
-                <?php foreach ($resultado as $resultado) {?>
-                    <tr class="infos">
-                        <td class="table-nome-candidato"><?=$resultado[3]?></td>
-                        <td class="table-email-candidato">Desenvolvimento de sistemas</td>
+                <tbody class="infos" id="result">
 
-                        <td class="table-cnpj"><?=$resultado[1]?></td>
-                        <td class="icone-table">
-                        <div class="icons">
-                            <i id="btn1" class="fa-solid fa-circle-check" style="color: #0c5fed;"></i>
-                            <i class="fa-solid fa-xmark" style="color: #e00000;"></i>
-                        </div>
-                        </td>
-                    </tr>
-                    <?php }?>
 
                 </tbody>
 
@@ -130,7 +113,32 @@ $resultado = $query->fetchAll();
         </section>
 
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
+            var busca = ("");
+            $.post('./beck-end/buscaAluno/buscaAluno.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./beck-end/buscaAluno/buscaAluno.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+
+        </script>
 
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>

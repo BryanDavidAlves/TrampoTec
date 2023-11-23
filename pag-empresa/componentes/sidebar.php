@@ -20,15 +20,15 @@ $resultados = $query->fetchAll();
         </div>
         <div class="imagem-empresa">
             <a href="../pag-empresa/perfil.php">
-                <?php foreach ($resultados as $resultados) { ?> <img src="fotosEmpresa/perfil/<?= $resultados[13] ?>">
-                <?php } ?>
+                <?php foreach ($resultados as $resultados) {?> <img src="fotosEmpresa/perfil/<?=$resultados[13]?>">
+                <?php }?>
                 <i class="icon-foto fa-solid fa-caret-right"></i>
             </a>
         </div>
         <ul>
             <div class="coluna-um">
                 <li><a href="../pag-empresa/dash.php"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                <li><a href="../pag-empresa/home.php"><i class="fa-solid fa-house"></i> Home</a></li>
+              <!--  <li><a href="../pag-empresa/home.php"><i class="fa-solid fa-house"></i> Home</a></li>-->
                 <li> <a href="../pag-empresa/candidatos.php"><i class="fa-solid fa-user"></i> Candidatos</a></li>
                 <li><a href="../pag-empresa/vagas.php"><i class="fa-solid fa-bag-shopping"></i> Vagas</a></li>
                 <li onclick="clickmenu2()"><a><i class="fa-sharp fa-solid fa-bell fa-lg"></i> Notificações</a></li>

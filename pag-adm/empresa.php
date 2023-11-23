@@ -53,6 +53,7 @@ include '../dao/conexao.php';
                             <a href="empresa.php?aprovado=0">
                                 <p>PENDENTES</p></a>
                         </div>
+                        <!--
                         <div class="filtro" onclick="abrirFiltro()">
                             <span class="material-symbols-outlined">
                                 tune
@@ -60,6 +61,7 @@ include '../dao/conexao.php';
                             <p>Filtrar</p>
 
                         </div>
+-->
                     </div>
 
                     <div class="modal-filtro" id="abrir-filtro">
