@@ -21,14 +21,14 @@ require_once "./beck-end/login/validador_acesso.php";
 
 <main class="main">
 <div class="container-icon">
-     <a class="link-add" href="./"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> </a>
+     <a class="link-add" href="../pag-empresa/candidatos.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i> </a>
 </div>
 
 
 <section class="divs-configs">
 
 
-<a class="card" href="editar.php">
+<!-- <a class="card" href="editar.php">
             <div class="card-corpo">
                 <div class="card-itens">
                     <i class="icon-config fa-regular fa-user"></i>
@@ -39,11 +39,11 @@ require_once "./beck-end/login/validador_acesso.php";
                 <div class="tres-pontinhos">
                 <i class="fa-solid fa-angle-right"></i>
                 </div>
-</a>    
+</a>     -->
 
 <br><p class="titulo-config"> Configuracoes gerais </p><br>
 
-<a class="card" >
+<!-- <a class="card" >
             <div class="card-corpo">
                 <div class="card-itens">
                 <i class="icon-config fa-solid fa-moon"></i>
@@ -57,7 +57,7 @@ require_once "./beck-end/login/validador_acesso.php";
                 <span class="slider"></span>
             </label>
            </div>
-</a> 
+</a>  -->
 
 <a class="card" href="fale-conosco.php">
             <div class="card-corpo">

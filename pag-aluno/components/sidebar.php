@@ -5,7 +5,7 @@ require_once "./back-end/login/validador_acesso.php";
 $id_aluno = $_SESSION["idAluno"];
 
 $querySelect = "SELECT nome FROM tb_aluno
-    WHERE tb_aluno.idAluno= '$id_aluno'
+    WHERE tb_aluno.idAluno = '$id_aluno'
 ";
 
 $query = $conexao->query($querySelect);
