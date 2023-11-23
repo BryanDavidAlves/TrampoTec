@@ -16,32 +16,6 @@ on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
 ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito";
 
-$result = $conexao->query($info);
-
-$vagas = array();
-foreach ($result as $vaga) {
-    $vagaId = $vaga['idVaga'];
-    if (!isset($vagas[$vagaId])) {
-        $vagas[$vagaId] = array(
-            'nome' => $vaga['nome'],
-            'descricao' => $vaga['descricao'],
-            'curso' => $vaga['curso'],
-
-            'salario' => $vaga['salario'],
-            'empresa' => $vaga['empresa'],
-            'imagem' => $vaga['imagem'],
-
-            'requisito' => $vaga['requisito'],
-            'cidade' => $vaga['cidade'],
-            'idVaga' => $vaga['idVaga'],
-            'bairro' => $vaga['bairro'],
-            'area' => $vaga['area'],
-            'periodo' => $vaga['periodo'],
-
-        );
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,9 +34,9 @@ foreach ($result as $vaga) {
 <body>
 
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -77,16 +51,18 @@ foreach ($result as $vaga) {
                 <span an class="add-vaga"><a href="./cadastrar-vaga.php"><i class="fa-solid fa-circle-plus"></i></a>
                     Cadastra Nova Vaga</span>
                 <div class="barra-pesquisa">
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="">
+                    <input type="text" name="pesquisa" id="busca" placeholder="Buscar por vaga">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                 </div>
 
                 <div class="align-filtro">
+                    <!--
                     <div class="filtro" onclick="abrirFiltro()">
                         <i class="fa-solid fa-filter"></i>
                         <span>Filtrar</span>
 
                     </div>
+-->
                 </div>
 
                 <div class="modal-filtro" id="abrir-filtro">
@@ -127,61 +103,16 @@ foreach ($result as $vaga) {
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($vagas as $vaga) { ?>
-                        <tr class="infos">
-                            <td>
-                                <?= $vaga['idVaga'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['nome'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['cidade'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['bairro'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['area'] ?>
-                            </td>
-                            <td>
-                                <?= $vaga['periodo'] ?>
-                            </td>
-
-
-                            <td>
-                                <form method="GET" action="vagas-candidato.php">
-                                    <input type="hidden" value="1" name="aprovado">
-                                    <button id="ver-mais-vaga" type="submit" name="idVaga" value="<?= $vaga['idVaga'] ?>" href="vagas-candidato.php"> VER MAIS </button>
-                                </form>
-                            </td>
-
-
-                            <td class="icone-table">
-                                <form action="cadastrar-vaga.php" method="POST" class="editar-vaga">
-                                    <input type="hidden" class="form-control" id="id" name="id" value=<?= $vaga['idVaga'] ?>>
-                                    <button type="submit" class="botao-editar" class="dropdown-item">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
-                                </form>
-                                <button class="delete-vaga">
-                                    <a href="./beck-end/crudVaga/vaga-delete.php?id=<?= $vaga['idVaga'] ?>"> <i class="fa-solid fa-x"></i></a>
-                                </button>
-
-                            </td>
-                        </tr>
-
-                    <?php } ?>
+                <tbody class="infos" id="result">
 
                 </tbody>
             </table>
 
         </section>
 
-        <!--   <?php foreach ($vagas as $vaga) { ?>
+        <!--   <?php foreach ($vagas as $vaga) {?>
 
-            <div class="modal fade" id="modal-<?= $vaga['idVaga'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal-<?=$vaga['idVaga']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -190,37 +121,64 @@ foreach ($result as $vaga) {
                         </div>
                         <div class="modal-body">
                             <span>
-                                <h5>Nome da empresa:</h5><?= $vaga['empresa'] ?>
+                                <h5>Nome da empresa:</h5><?=$vaga['empresa']?>
                             </span>
                             <span>
-                                <h5>Departamento :</h5> <?= $vaga['departamento'] ?>
+                                <h5>Departamento :</h5> <?=$vaga['departamento']?>
                             </span>
                             <span>
-                                <h5>Requisitos:</h5> <?= $vaga['requisito'] ?>
+                                <h5>Requisitos:</h5> <?=$vaga['requisito']?>
                             </span>
                             <span>
-                                <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
+                                <h5>Nome da vaga:</h5><?=$vaga['nome']?>
                             </span>
                             <span>
-                                <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?>
+                                <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
                             </span>
                             <span>
-                                <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?>
+                                <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
                             </span>
                             <span>
-                                <h5>Tipo de trabalho:</h5><?= $vaga['tipoTrabalho'] ?>
+                                <h5>Tipo de trabalho:</h5><?=$vaga['tipoTrabalho']?>
                             </span>
                             <span>
-                                <h5>Salario:</h5><?= $vaga['salario'] ?>
+                                <h5>Salario:</h5><?=$vaga['salario']?>
                             </span>
 
                         </div>
                     </div>
                 </div>
             </div>
-        <?php } ?>  -->
+        <?php }?>  -->
 
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var busca = ("");
+            $.post('./beck-end/buscaVaga/buscaVaga.php', {
+                busca
+            }, function(data) {
+                $("#result").html(data);
+            });
+
+
+            $("#busca").keyup(function() {
+
+                busca = $("#busca").val();
+                $.post('./beck-end/buscaVaga/buscaVaga.php', {
+                    busca: busca
+                }, function(data) {
+                    $("#result").html(data);
+                });
+
+
+            });
+        });
+
+        </script>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>

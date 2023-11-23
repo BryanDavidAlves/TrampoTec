@@ -214,31 +214,31 @@ $n_aluno2 = count($aluno2);
                         <?php foreach ($aluno as $aluno) {?>
                             <tr class="infos">
                                 <td class="id-aluno">
-                                    <?=$aluno[17]?>
+                                    <?=$aluno[21]?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[30] != "" ? $aluno[30] : '';?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[34] != "" ? $aluno[34] : '';?>" alt="">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="nome-aluno">
-                                    <?=$aluno[20]?>
+                                    <?=$aluno[24]?>
                                 </td>
                                 <td class="email-aluno">
-                                    <?=$aluno[18]?>
+                                    <?=$aluno[22]?>
                                 </td>
                                 <td>
                                     <button class="icon-1">
-                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[17]?>&idVaga=<?=$idvaga?>">
+                                        <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                             <i class="fa-solid fa-check"></i>
                                         </a>
                                     </button>
                                 </td>
                                 <td>
                                     <button class="icon-2">
-                                        <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[17]?>&idVaga=<?=$idvaga?>">
+                                        <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                             <i class="fa-solid fa-xmark"></i>
                                         </a>
                                     </button>
