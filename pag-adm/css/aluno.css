@@ -5,19 +5,6 @@
 
 }
 
-.sistema-busca .barra-pesquisa {
-    border-radius: 20px;
-    padding: 5px;
-    border: none;
-    margin-top: 0px;
-    width: 30%;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30px;
-    display: flex;
-    background-color: white;
-}
-
 .sistema-busca .barra-pesquisa input {
     border: none;
     width: 100%;
@@ -45,6 +32,7 @@ main {
     position: absolute;
     display: flex;
     background-color: white;
+    width: 300px;
 }
 
 .sistema-busca .barra-pesquisa input {
@@ -82,7 +70,8 @@ main .img-cima img {
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
-   
+    animation: 1000ms ease-out trans;
+
 }
 
 .sistema-busca {
@@ -208,6 +197,7 @@ table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
+    animation: 1500ms ease-out trans2;
 }
 
 .infos {
@@ -235,14 +225,14 @@ table td {
     border: none;
 }
 
-.icone-table{
+.icone-table {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.icone-table a{
+.icone-table a {
     color: red;
     border-radius: 100px;
     transition: 0.300s ease-in-out;
@@ -252,9 +242,9 @@ table td {
     text-align: center;
 }
 
-.icone-table a:hover{
+.icone-table a:hover {
     background-color: rgb(255, 0, 0);
-   color: white;
+    color: white;
 }
 
 .text-center {
@@ -273,9 +263,11 @@ table td {
     color: red;
     text-decoration: none;
 }
-#content{
+
+#content {
     display: none;
 }
+
 #loading {
     display: flex;
     align-items: center;
@@ -283,10 +275,71 @@ table td {
     height: 80vh;
 
     flex-direction: column;
-  }
+}
 
-  #loading img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: 100px; /* Ajuste conforme necessário */
+#loading img {
+    width: 100px;
+    /* Ajuste conforme necessário */
+    height: 100px;
+    /* Ajuste conforme necessário */
     margin-right: 10px;
-  }
+}
+@keyframes trans {
+    0% {
+        opacity: 0%;
+        transform: translatex(50%);
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    60% {
+        opacity: 0%;
+    }
+
+    70% {
+        opacity: 5%;
+    }
+    80%{
+        opacity: 10%;
+    }
+    90%{
+        opacity: 25%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+
+
+}
+
+@keyframes trans2 {
+    0% {
+        opacity: 0%;
+        transform: translatex(70%);
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    60% {
+        opacity: 2%;
+    }
+
+    70% {
+        opacity: 5%;
+    }
+    80%{
+        opacity: 15%;
+    }
+    90%{
+        opacity: 40%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
