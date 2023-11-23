@@ -92,7 +92,6 @@ include '../pag-adm/components/sidebar-adm.php';
                             <th>NOME</th>
                             <th>EMAIL INSTITUICIONAL</th>
                             <th>CPF</th>
-                            <th>INSTITUIÇÃO</th>
                             <th>CEP</th>
                             <th>ESTADO</th>
                        
