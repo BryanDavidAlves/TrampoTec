@@ -90,7 +90,7 @@ require_once "back-end/login/validador_acesso.php";
         <section>
             <table>
                 <thead>
-                    <tr>
+                 
                         <th>ID</th>
                         <th>NOME</th>
                         <th>Carga Horaria</th>
@@ -99,7 +99,7 @@ require_once "back-end/login/validador_acesso.php";
                         <th>Ensino</th>
                         <th></th>
                         <th></th>
-                    </tr>
+                
                 </thead>
                 <tbody class="infos" id="result">
 

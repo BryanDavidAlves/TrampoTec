@@ -4,25 +4,6 @@
     align-items: center;
 }
 
-.sistema-busca .barra-pesquisa {
-    border-radius: 20px;
-    padding: 5px;
-    border: none;
-    margin-top: 0px;
-    width: 30%;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30px;
-    display: flex;
-    background-color: white;
-}
-
-.sistema-busca .barra-pesquisa input {
-    border: none;
-    width: 100%;
-    padding: 5px;
-}
-
 .sistema-busca .barra-pesquisa input:focus {
     outline: none;
 }
@@ -37,13 +18,15 @@ main {
     padding: 5px;
     border: none;
     margin-top: 0px;
-    width: 30%;
+    width: 300px;
     align-items: center;
     justify-content: center;
     margin-left: 30px;
     position: absolute;
     display: flex;
     background-color: white;
+    z-index: 2;
+    
 }
 
 .sistema-busca .barra-pesquisa input {
@@ -55,12 +38,14 @@ main {
 .sistema-busca .barra-pesquisa input:focus {
     outline: none;
 }
+
 .secao-busca {
     display: flex;
     width: 100%;
     justify-content: center;
     margin-bottom: 30px;
     z-index: 2;
+    animation: 1000ms ease-out trans;
 }
 
 .sistema-busca {
@@ -73,6 +58,7 @@ main {
     border-radius: 15px;
     margin-top: 5%;
     padding: 10px 0px 10px 0px;
+    z-index: 1;
 }
 
 .btn-side {
@@ -174,69 +160,80 @@ thead {
     color: rgb(70, 70, 70);
     font-weight: 600;
 }
-th{
+
+th {
     text-align: center;
     padding-top: 20px;
 }
+
 table {
     background-color: rgba(247, 247, 247, 0.641);
     border-radius: 20px;
     width: 90%;
     margin-left: 5%;
+    animation: 1500ms ease-out trans2;
 }
 
-.infos{
+.infos {
     border-bottom: 1px solid black;
     padding: 10px;
 
 }
 
-table td{
+table td {
     padding: 20px 5px 30px 5px;
     text-align: center;
     color: rgb(94, 94, 94);
-    word-break: break-all ;
+    word-break: break-all;
 
 }
-.table-nome-empresa{
-    word-break: break-all ;
+
+.table-nome-empresa {
+    word-break: break-all;
     width: 100px;
 }
-.table-email-empresa{
-    word-break: break-all ;
+
+.table-email-empresa {
+    word-break: break-all;
     width: 200px;
 }
-.table-id{
+
+.table-id {
     width: 40px;
 }
-tr:nth-last-child(1){
-    border: none;
-}
-.table-cnpj{
-    width: 100px;
-    word-break: break-all ;
+
+.infos:nth-last-child(1) {
+    border-bottom: none;
+
 }
 
-.table-estado{
+.table-cnpj {
     width: 100px;
-    word-break: break-all ; 
+    word-break: break-all;
 }
 
-.table-cep{
+.table-estado {
+    width: 100px;
+    word-break: break-all;
+}
+
+.table-cep {
     width: 200px;
     word-break: break-all;
 }
-.table-numero{
+
+.table-numero {
     width: 200px;
 }
-.icone-table{
-display: flex;
-text-align: center;
-align-items: center;
-justify-content: center;
+
+.icone-table {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.icone-table a{
+.icone-table a {
     display: flex;
     text-decoration: none;
     color: red;
@@ -250,9 +247,9 @@ justify-content: center;
     justify-content: center;
 }
 
-.icone-table a:hover{
+.icone-table a:hover {
     background-color: rgb(255, 0, 0);
-   color: white;
+    color: white;
 }
 
 .icone-table2 {
@@ -260,7 +257,7 @@ justify-content: center;
     align-items: center;
 }
 
-.icone-table2 a{
+.icone-table2 a {
     color: green;
     border-radius: 100px;
     transition: 0.300s ease-in-out;
@@ -269,43 +266,108 @@ justify-content: center;
     padding: 8px;
     text-align: center;
     display: flex;
-text-align: center;
-align-items: center;
-justify-content: center;
-text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
-.icone-table2 a:hover{
+.icone-table2 a:hover {
     background-color: green;
-   color: white;
+    color: white;
 }
 
 
-.cima{
+.cima {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
     width: 16%;
 }
-.btn-side a{
+
+.btn-side a {
     color: red;
     text-decoration: none;
 }
-#content{
+
+#content {
     display: none;
+    
 }
+
 #loading {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80vh;
-
     flex-direction: column;
-  }
+}
 
-  #loading img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: 100px; /* Ajuste conforme necessário */
+#loading img {
+    width: 100px;
+    /* Ajuste conforme necessário */
+    height: 100px;
+    /* Ajuste conforme necessário */
     margin-right: 10px;
-  }
+}
+
+@keyframes trans {
+    0% {
+        opacity: 0%;
+        transform: translatex(50%);
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    60% {
+        opacity: 0%;
+    }
+
+    70% {
+        opacity: 5%;
+    }
+    80%{
+        opacity: 10%;
+    }
+    90%{
+        opacity: 25%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+
+
+}
+
+@keyframes trans2 {
+    0% {
+        opacity: 0%;
+        transform: translatex(70%);
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    60% {
+        opacity: 2%;
+    }
+
+    70% {
+        opacity: 5%;
+    }
+    80%{
+        opacity: 15%;
+    }
+    90%{
+        opacity: 40%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
