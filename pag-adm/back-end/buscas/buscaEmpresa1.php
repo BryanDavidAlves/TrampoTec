@@ -23,7 +23,7 @@ if ($resultado > 0) {
         '<td class="table-cnpj">' . $resultado[7] . '</td>',
         '<td class="table-cep">' . $resultado[8] . '</td>',
         '<td class="table-estado">' . $resultado[12] . '</td>',
-        '<td class="icone-table">
+            '<td class="icone-table">
             <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=' . $resultado[0] . '">
             <i class="fa-solid fa-xmark" ></i></a>
     </td>

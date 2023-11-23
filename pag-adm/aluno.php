@@ -27,8 +27,8 @@ $resultado = $query->fetchAll();
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Alunos</h1>

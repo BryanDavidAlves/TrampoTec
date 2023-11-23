@@ -1,5 +1,5 @@
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 require_once "back-end/login/validador_acesso.php";
 
@@ -25,8 +25,8 @@ $resultado = $query->fetchAll();
 
 <body>
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Perfil</h1>
@@ -34,14 +34,18 @@ $resultado = $query->fetchAll();
     <main>
         <section class="perfil">
             <div class="perfil-info">
-                <?php foreach($resultado as $resultado) { ?>
+                <?php foreach ($resultado as $resultado) {?>
                 <h2>EMAIL:</h2>
                 <h3><?=$resultado[2]?></h3>
             </div>
             <div class="perfil-info">
+                <h2>NOME:</h2>
+                <h3><?=$resultado[1]?></h3>
+            </div>
+            <div class="perfil-info">
                 <h2>SENHA:</h2>
                 <h3><?=$resultado[3]?></h3>
-            </div> 
+            </div>
             <?php }?>
         </section>
     </main>

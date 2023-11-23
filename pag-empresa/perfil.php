@@ -34,9 +34,9 @@ $resultado = $query->fetchAll();
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
     <dialog id="requisito" class="dialog-requisitos">
         <form class="form-requisitos" action="./beck-end/alterar/update.php" method="post">
@@ -44,53 +44,53 @@ $resultado = $query->fetchAll();
                 <span class="nav-dialog">
                     <i onclick="modalrequisito()" class="fa-solid fa-circle-xmark"></i>
                     <b>Editar perfil</b>
-                    <button class="salvar-dialog" id="idEmpresa" value="<?= $cliente_id ?>" name="id">SALVAR</button>
+                    <button class="salvar-dialog" id="idEmpresa" value="<?=$cliente_id?>" name="id">SALVAR</button>
                 </span>
-                <?php foreach ($resultado as $resultado) { ?>
+                <?php foreach ($resultado as $resultado) {?>
                     <div class="componentes-perfil-dialog">
                         <div class="conteiner-descricao-dialog">
                             <label for="imagem-perfil" style="cursor: pointer;">
-                                <img class="foto-perfil-dialog" src="fotosEmpresa/perfil/<?= $resultado[13] ?>"></img>
-                                <input id="imagem-perfil" type="file" style="display: none;" value="<?= $resultado[13] ?>" name="imagem-perfil">
+                                <img class="foto-perfil-dialog" src="fotosEmpresa/perfil/<?=$resultado[13]?>"></img>
+                                <input id="imagem-perfil" type="file" style="display: none;" value="<?=$resultado[13]?>" name="imagem-perfil">
                             </label>
                         </div>
                     </div>
                     <div class="dialog-corpo-inputs">
                         <label class="campos-inputs-label" for="nome">NOME
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[3] ?>" type="text" id="nome" name="nome" value="<?= $resultado[3] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[3]?>" type="text" id="nome" name="nome" value="<?=$resultado[3]?>">
                         </label>
                         <label class="campos-inputs-label" for="email">EMAIL
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[1] ?>" type="text" id="email" name="email" value="<?= $resultado[1] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[1]?>" type="text" id="email" name="email" value="<?=$resultado[1]?>">
                         </label>
                         <label class="campos-inputs-label" for="ano">ANO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[6] ?>" type="text" id="ano" name="ano" value="<?= $resultado[6] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[6]?>" type="text" id="ano" name="ano" value="<?=$resultado[6]?>">
                         </label>
 
                         <label class="campos-inputs-label" for="telefone">TELEFONE:
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[16] ?>" type="tell" id="telefone" name="telefone" value="<?= $resultado[16] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[16]?>" type="tell" id="telefone" name="telefone" value="<?=$resultado[16]?>">
                         </label>
                         <label class="campos-inputs-label" for="cep">CEP
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[8] ?>" type="text" id="cep" name="cep" value="<?= $resultado[8] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[8]?>" type="text" id="cep" name="cep" value="<?=$resultado[8]?>">
                         </label>
                         <label class="campos-inputs-label" for="logradouro">LOGRADOURO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[6] ?>" type="text" id="logradouro" name="logradouro" value="<?= $resultado[6] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[6]?>" type="text" id="logradouro" name="logradouro" value="<?=$resultado[6]?>">
                         </label>
                         <label class="campos-inputs-label" for="numero">NUMERO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[7] ?>" type="text" id="numero" name="numero" value="<?= $resultado[7] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[7]?>" type="text" id="numero" name="numero" value="<?=$resultado[7]?>">
                         </label>
                         <label class="campos-inputs-label" for="bairro">BAIRRO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[8] ?>" type="text" id="bairro" name="bairro" value="<?= $resultado[8] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[8]?>" type="text" id="bairro" name="bairro" value="<?=$resultado[8]?>">
                         </label>
                         <label class="campos-inputs-label" for="estado">ESTADO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[9] ?>" type="text" id="estado" name="estado" value="<?= $resultado[9] ?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[9]?>" type="text" id="estado" name="estado" value="<?=$resultado[9]?>">
                         </label>
                         <label class="campos-inputs-label" for="descricao">DESCRICAO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[5] ?>" type="text" id="descricao" name="descricao" value="<?= $resultado[5] ?> ">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[5]?>" type="text" id="descricao" name="descricao" value="<?=$resultado[5]?> ">
                         </label>
                         <label class="campos-inputs-label" for="departamento">DEPARTAMENTO
-                            <input class="campos-inputs-text" placeholder="<?= $resultado[4] ?>" type="text" id="departamento" name="departamento" value="<?= $resultado[4] ?>">
-                        </label>                
-              
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[4]?>" type="text" id="departamento" name="departamento" value="<?=$resultado[4]?>">
+                        </label>
+
                     </div>
 
 
@@ -103,10 +103,10 @@ $resultado = $query->fetchAll();
 
         <div class="componentes-perfil">
             <div class="conteiner-descricao">
-                <img class="foto-perfil" src="fotosEmpresa/perfil/<?= $resultado[13] ?>"></img>
+                <img class="foto-perfil" src="fotosEmpresa/perfil/<?=$resultado[13]?>"></img>
                 <div class="descricao-conta">
-                    <p class="nome-perfil"><?= $resultado[3] ?></p>
-                    <p class="tipo-perfil"><?= $resultado[4] ?></p>
+                    <p class="nome-perfil"><?=$resultado[3]?></p>
+                    <p class="tipo-perfil"><?=$resultado[4]?></p>
                 </div>
             </div>
             <div class="div-botao-editar">
@@ -122,24 +122,24 @@ $resultado = $query->fetchAll();
                     <div class="card-itens">
 
                         <p class="titulo-descricao"> Email </p>
-                        <p class="conteudo-descricao"> <?= $resultado[1] ?></p>
+                        <p class="conteudo-descricao"> <?=$resultado[1]?></p>
 
                         <p class="titulo-descricao"> CPNJ</p>
-                        <p class="conteudo-descricao"> <?= $resultado[7] ?></p>
+                        <p class="conteudo-descricao"> <?=$resultado[7]?></p>
 
 
                         <p class="titulo-descricao"> Derpatamento</p>
-                        <p class="conteudo-descricao"><?= $resultado[4] ?></p>
+                        <p class="conteudo-descricao"><?=$resultado[4]?></p>
 
                         <p class="titulo-descricao"> Descricao</p>
-                        <p class="conteudo-descricao"><?= $resultado[5] ?></p>
+                        <p class="conteudo-descricao"><?=$resultado[5]?></p>
 
                         <p class="titulo-descricao"> Ano de origem </p>
-                        <p class="conteudo-descricao"><?= $resultado[6] ?>
+                        <p class="conteudo-descricao"><?=$resultado[6]?>
                         </p>
 
                         <p class="titulo-descricao"> Telefone</p>
-                        <p class="conteudo-descricao"><?= $resultado[16] ?>
+                        <p class="conteudo-descricao"><?=$resultado[16]?>
                         </p>
 
                     </div>
@@ -150,7 +150,7 @@ $resultado = $query->fetchAll();
                 <div class="card-corpo">
                     <div class="card-itens">
                         <p class="titulo-descricao"> Localizacao</p>
-                        <p class="conteudo-descricao"> <?= $resultado[8] ?> , <?= $resultado[9] ?>, <?= $resultado[10] ?>, <?= $resultado[11] ?> , <?= $resultado[12] ?> </p>
+                        <p class="conteudo-descricao"> <?=$resultado[8]?> , <?=$resultado[9]?>, <?=$resultado[10]?>, <?=$resultado[11]?> , <?=$resultado[12]?> </p>
                         <span>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14632.732484011547!2d-46.67088371218347!3d-23.525915236928455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce580f7c039a63%3A0xcf365b1a0b3158be!2sBarra%20Funda%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1690229585202!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </span>
@@ -161,7 +161,7 @@ $resultado = $query->fetchAll();
             </div>
 
 
-        <?php } ?>
+        <?php }?>
 
         </section>
 

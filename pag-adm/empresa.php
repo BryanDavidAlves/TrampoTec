@@ -23,8 +23,8 @@ include '../dao/conexao.php';
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
@@ -51,6 +51,7 @@ include '../dao/conexao.php';
                             <a href="empresa.php?aprovado=0">
                                 <p>PENDENTES</p><a>
                         </div>
+                        <!--
                         <div class="filtro" onclick="abrirFiltro()">
                             <span class="material-symbols-outlined">
                                 tune
@@ -58,8 +59,9 @@ include '../dao/conexao.php';
                             <p>Filtrar</p>
 
                         </div>
+                        -->
                     </div>
-
+ <!--
                     <div class="modal-filtro" id="abrir-filtro">
                         <form action="">
                             <div class="align-form-filtro">
@@ -82,6 +84,7 @@ include '../dao/conexao.php';
 
                         </form>
                     </div>
+                      -->
                 </section>>
             </div>
 
@@ -112,7 +115,7 @@ include '../dao/conexao.php';
     <script>
         $(document).ready(function() {
 
-            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") { ?>
+            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") {?>
 
                 var busca = ("");
                 $.post('./back-end/buscas/buscaEmpresa1.php', {
@@ -133,8 +136,8 @@ include '../dao/conexao.php';
 
 
                 });
-            <?php } ?>
-            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") { ?>
+            <?php }?>
+            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") {?>
 
                 var busca = ("0");
                 $.post('./back-end/buscas/buscaEmpresa.php', {
@@ -155,7 +158,7 @@ include '../dao/conexao.php';
 
 
                 });
-            <?php } ?>
+            <?php }?>
         });
     </script>
     <script src="js/modal-empresa.js"></script>
