@@ -20,6 +20,7 @@ INNER JOIN tb_curso
 ON tb_vaga.fk_idCurso = tb_curso.idCurso
 INNER JOIN tb_empresa
 ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+WHERE tb_vaga.idVaga = $idvaga
 ";
 $result = $conexao->query($info);
 $vagas = array();

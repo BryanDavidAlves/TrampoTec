@@ -1,15 +1,24 @@
 <?php
 require_once "./back-end/login/validador_acesso.php";
 ?>
+<?php
+include '../dao/conexao.php';
+
+$querySelect = "SELECT * FROM tb_fale_conosco";
+
+$resultado = $conexao->query($querySelect);
+
+$faleConosco = $resultado->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <!--link icone filtro-->
@@ -32,13 +41,13 @@ require_once "./back-end/login/validador_acesso.php";
             </section>
 
             <section class="formulario">
-                <form action="">
+                <form action="back-end/faleConosco/salvar.php" method="post">
                     <div class="align">
                         <div class="box-input">
                             <label for="nome">NOME:</label>
                             <input type="text" id="nome" name="nome">
                         </div>
-                        <select name="tipo" id="tipo">
+                        <select name="categoria" id="categoria">
                             <option value="elogio">Elogio</option>
                             <option value="sugestao">Sugestão</option>
                             <option value="reclamacao">Reclamação</option>
@@ -49,7 +58,7 @@ require_once "./back-end/login/validador_acesso.php";
                         <input type="email" id="email" name="email">
                     </div>
 
-                    <textarea name="" id="" cols="30" rows="10" placeholder="detalhes"></textarea>
+                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="detalhes"></textarea>
                     <br>
                     <input class="btn" type="submit" value="ENVIAR" name="" id="">
                 </form>
@@ -57,12 +66,12 @@ require_once "./back-end/login/validador_acesso.php";
             </section>
         </div>
 
-        
+
         <img class="icone" src="img/icone-contato.png" alt="">
     </main>
     <?php
-        include('../pag-aluno/components/sidebar.php');
-        ?>
+    include('../pag-aluno/components/sidebar.php');
+    ?>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
