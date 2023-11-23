@@ -2,25 +2,19 @@
 require_once "./beck-end/login/validador_acesso.php";
 ?>
 <?php
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 
 $querySelect = "SELECT * FROM  tb_curso  ORDER BY nome ASC";
-
 
 $query = $conexao->query($querySelect);
 
 $resultado = $query->fetchAll();
-
-
 
 $querySelect2 = "SELECT * FROM  tb_requisito ";
 
 $query2 = $conexao->query($querySelect2);
 
 $requisito = $query2->fetchAll();
-
-
-
 
 if ($_POST) {
     $id_vaga = $_POST['id'];
@@ -89,8 +83,6 @@ if ($_POST) {
     $id_curso = "";
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -111,16 +103,16 @@ if ($_POST) {
 
 <body>
 
-    <?php include('../pag-empresa/componentes/sidebar.php') ?>
-    <?php include('../pag-empresa/componentes/email.php') ?>
-    <?php include('../pag-empresa/componentes/notificacao.php') ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
 
-        <a href="./vagas.php"><i class="fa-solid fa-chevron-left"></i> Cadastro de Vagas</a>
+        <a href="./vagas.php" id="alinhar"><i class="fa-solid fa-chevron-left" id="align"></i> Cadastro de Vagas</a>
 
 
         <section class="formulario-cadastrar-vaga">
@@ -133,7 +125,7 @@ if ($_POST) {
                     <div>
                         <span class="input-box">
 
-                            <input name="nome" type="text" value="<?= $nome ?>" required>
+                            <input name="nome" type="text" value="<?=$nome?>" required>
                             <label class="label-anim" for="nome">NOME</label>
 
                         </span>
@@ -147,11 +139,11 @@ if ($_POST) {
 
                             <select class="selects" name="tipo" required>
                                 <option value="trabalho">TRABALHO</option>
-                                <option value="presencial" <?= $tipoTrabalho == 'presencial' ? 'selected' : '' ?>>
+                                <option value="presencial" <?=$tipoTrabalho == 'presencial' ? 'selected' : ''?>>
                                     Presencial</option>
-                                <option value="home-office" <?= $tipoTrabalho == 'home-office' ? 'selected' : '' ?>>
+                                <option value="home-office" <?=$tipoTrabalho == 'home-office' ? 'selected' : ''?>>
                                     Home-office</option>
-                                <option value="hibrido" <?= $tipoTrabalho == 'hibrido' ? 'selected' : '' ?>>Hibrido
+                                <option value="hibrido" <?=$tipoTrabalho == 'hibrido' ? 'selected' : ''?>>Hibrido
                                 </option>
                             </select>
                         </span>
@@ -159,27 +151,27 @@ if ($_POST) {
 
                         <span class="input-box">
 
-                            <input class="input2" name="semana" type="text" maxlength="7" value="<?= $semana ?>" required>
+                            <input class="input2" name="semana" type="text" maxlength="7" value="<?=$semana?>" required>
                             <label class="label-anim" for="tipo">SEMANA</label>
                         </span>
                     </div>
 
                     <div>
                         <span class="input-box">
-                            <input class="input2" name="salario" type="number" value="<?= $salario ?>" required>
+                            <input class="input2" name="salario" type="number" value="<?=$salario?>" required>
                             <label class="label-anim" for="salario">SALARIO</label>
                         </span>
                         <span class="input-box-select">
                             <br>
                             <select class="selects" name="curso" id="curso" required>
                                 <option>SELECIONE UM CURSO</option>
-                                <?php foreach ($resultado as $resultado) { ?>
+                                <?php foreach ($resultado as $resultado) {?>
 
-                                    <option value="<?= $resultado[0] ?>" <?= $id_curso == $resultado[0] ? 'selected' : '' ?>>
-                                        <?= $resultado[1] ?>
+                                    <option value="<?=$resultado[0]?>" <?=$id_curso == $resultado[0] ? 'selected' : ''?>>
+                                        <?=$resultado[1]?>
                                     </option>
                                 <?php }
-                                ?>
+?>
                             </select>
                             <span>
 
@@ -189,7 +181,7 @@ if ($_POST) {
                     <div>
                         <span class="input-box">
 
-                            <input class="descricao" name="descricao" type="text" value="<?= $descricao ?>" required>
+                            <input class="descricao" name="descricao" type="text" value="<?=$descricao?>" required>
                             <label class="label-anim" for="descricao">DESCRIÇÃO</label>
                         </span>
                     </div>
@@ -197,7 +189,7 @@ if ($_POST) {
                     <div>
                         <span class="input-box">
 
-                            <input name="area" type="text" value="<?= $area ?>" required>
+                            <input name="area" type="text" value="<?=$area?>" required>
                             <label class="label-anim" for="area">AREA</label>
                         </span>
 
@@ -205,10 +197,10 @@ if ($_POST) {
                             <br>
                             <select class="selects" name="periodo" required>
                                 <option value="periodo">PERIODO</option>
-                                <option value="noturno" <?= $periodo == 'noturno' ? 'selected' : '' ?>>Noturno</option>
-                                <option value="diurno" <?= $periodo == 'diurno' ? 'selected' : '' ?>>Diurno</option>
-                                <option value="matinal" <?= $periodo == 'matinal' ? 'selected' : '' ?>>Matinal</option>
-                                <option value="integral" <?= $periodo == 'integral' ? 'selected' : '' ?>>integral</option>
+                                <option value="noturno" <?=$periodo == 'noturno' ? 'selected' : ''?>>Noturno</option>
+                                <option value="diurno" <?=$periodo == 'diurno' ? 'selected' : ''?>>Diurno</option>
+                                <option value="matinal" <?=$periodo == 'matinal' ? 'selected' : ''?>>Matinal</option>
+                                <option value="integral" <?=$periodo == 'integral' ? 'selected' : ''?>>integral</option>
                             </select>
                         </span>
                     </div>
@@ -221,14 +213,14 @@ if ($_POST) {
                             <label class="label-no-anim" for="inicio">INICIO</label>
                             <input
                                 style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
-                                name="inicio" type="time" value="<?= $inicio ?>" required>
+                                name="inicio" type="time" value="<?=$inicio?>" required>
                         </span>
 
                         <span>
                             <label for="termino">TERMINO</label>
                             <input
                                 style="border-radius: 10px; border: 2px solid #1a3b9e; width: 90%; padding: 1rem; font-size: 1rem;"
-                                name="termino" type="time" value="<?= $termino ?>" required>
+                                name="termino" type="time" value="<?=$termino?>" required>
                         </span>
                     </div>
 
@@ -238,7 +230,7 @@ if ($_POST) {
 
                 <div class="linha">
                     <span class="input-box2">
-                        <input class=" cep obrigatorio" type="numeric" id="cep" name="cep" value="<?= $cep ?>" required>
+                        <input class=" cep obrigatorio" type="numeric" id="cep" name="cep" value="<?=$cep?>" required>
                         <label class="label-anim2" for="descricao">CEP</label>
                         <div class="invalid-feedback">
                             Informe um CEP válido
@@ -246,7 +238,7 @@ if ($_POST) {
                     </span>
                     <div>
                         <span class="input-box2">
-                            <input readonly type="text" id="logradouro" name="logradouro" value="<?= $logradouro ?>"
+                            <input readonly type="text" id="logradouro" name="logradouro" value="<?=$logradouro?>"
                              placeholder="Informe um CEP">
                             <label class="label-anim0" for="descricao">LOGRADOURO</label>
 
@@ -263,7 +255,7 @@ if ($_POST) {
                         <span class="input-box2">
 
                             <input class="address-search" readonly type="text" id="cidade" name="cidade"
-                                value="<?= $cidade ?>" placeholder="Informe um CEP">
+                                value="<?=$cidade?>" placeholder="Informe um CEP">
                             <label class="label-anim0" for="descricao">CIDADE</label>
 
                         </span>
@@ -273,7 +265,7 @@ if ($_POST) {
                     <div>
                         <span class="input-box2">
                             <input class="address-search form-control" readonly type="text" id="estado" name="estado"
-                                value="<?= $estado ?>" placeholder="Informe um CEP">
+                                value="<?=$estado?>" placeholder="Informe um CEP">
                             <label class="label-anim0" for="descricao">ESTADO</label>
                         </span>
 
@@ -289,7 +281,7 @@ if ($_POST) {
                         <span class="input-box2">
 
                             <input class="address-search form-control" readonly type="text" id="bairro" name="bairro"
-                                value="<?= $bairro ?>" placeholder="Informe um CEP">
+                                value="<?=$bairro?>" placeholder="Informe um CEP">
                             <label class="label-anim0" for="descricao">BAIRRO</label>
                         </span>
 
@@ -298,7 +290,7 @@ if ($_POST) {
                     <div>
                         <span class="input-box2">
 
-                            <input type="text" id="numero" name="numero" value="<?= $numero ?>" required>
+                            <input type="text" id="numero" name="numero" value="<?=$numero?>" required>
 
                             <label class="label-anim2" for="descricao">NUMERO</label>
 
@@ -311,15 +303,15 @@ if ($_POST) {
                 </div>
 
                 <?php
-                if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
-                    ?>
+if (isset($_GET['CadastroVaga']) && $_GET['CadastroVaga'] == "erro") {
+    ?>
                     <div class="text-danger">
                         Erro ao Cadastrar Vaga
                     </div>
                     <?php
-                }
-                ?>
-                <input type="hidden" id="id_vaga" name="id_vaga" value="<?= $id_vaga ?>">
+}
+?>
+                <input type="hidden" id="id_vaga" name="id_vaga" value="<?=$id_vaga?>">
                 <button class="botao-vaga" type="submit">CADASTRAR</button>
             </form>
 
@@ -348,7 +340,7 @@ if ($_POST) {
                 var select = document.createElement("select");
                 <*/?php foreach ($requisito as $requisito) { ?>
                     // Crie um novo elemento select para cada item de $requisito
-                   
+
 
                     // Crie uma opção para o select
                     var option1 = document.createElement("option");
@@ -359,10 +351,10 @@ if ($_POST) {
                     select.appendChild(option1);
 
                     // Adicione o select à página
-                   
+
                     document.getElementById("campos").appendChild(select);
                 <*/?php } ?>
-                
+
 
 
             });

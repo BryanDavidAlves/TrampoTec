@@ -1,5 +1,5 @@
 <?php
-include('../../../dao/conexao.php');
+include '../../../dao/conexao.php';
 
 $email_empresa = $_POST['email'];
 $senha_empresa = $_POST['senha'];
@@ -21,15 +21,12 @@ if ($n == 1) {
     $aprovado = $empresas[0]['aprovado'];
     if ($aprovado == 1) {
         $_SESSION['aprovado'] = 'SIM';
-    }
-    else{
+    } else {
         $_SESSION['aprovado'] = 'não';
     }
-    header('Location: ../../home.php');
+    header('Location: ../../dash.php');
 
 } else {
     header('Location: ../../pags-logins/login.php?login=erro');
     $_SESSION['autenticado'] = "não";
 }
-
-?>
