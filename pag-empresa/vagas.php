@@ -142,16 +142,15 @@ $id = $_SESSION['idEmpresa'];
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        <?php
 
-if ($_GET) {
-    $id = trim($_GET['id']);
-    $info = "AND idEmpresa = $id";
-
-    $result = $conexao->query($info);
-}
-?>
         $(document).ready(function() {
+
+            <?php
+
+if (isset($_GET['id'])) {?>
+$id = $_GET['id'] ;
+
+
 
             var busca = ("");
             $.post('./beck-end/buscaVaga/buscaVaga.php?<?=$id?>', {
@@ -172,7 +171,8 @@ if ($_GET) {
 
 
             });
-        });
+
+        <?php }?>
 
 
         </script>

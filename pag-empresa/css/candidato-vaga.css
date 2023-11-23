@@ -8,7 +8,7 @@ main .align-itens {
   align-items: start;
 }
 main .align-itens .card p {
-  margin-top: -5px;
+  margin-top: 0px;
   color: #555cb3;
 }
 main .align-itens .card {

@@ -5,7 +5,6 @@ include "../dao/conexao.php";
 $cliente_id = $_SESSION['idEmpresa'];
 $idvaga = trim($_GET['idVaga']);
 
-
 if (isset($_GET) && $_GET['aprovado'] == 1) {
     $status = " AND tb_vaga_aluno.aprovado = 1";
 } else if (isset($_GET) && $_GET['aprovado'] == 2) {
@@ -36,7 +35,6 @@ foreach ($result as $vaga) {
             'empresa' => $vaga['empresa'],
             'imagem' => $vaga['imagem'],
 
-
             'cidade' => $vaga['cidade'],
             'idVaga' => $vaga['idVaga'],
             'bairro' => $vaga['bairro'],
@@ -53,10 +51,8 @@ INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
 WHERE idVaga ='$idvaga' $status";
 
-
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchAll();
-
 
 $querySelect1 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 1 AND fk_idVaga = $idvaga";
 $resultado1 = $conexao->query($querySelect1);
@@ -72,7 +68,6 @@ $querySelect2 = "SELECT * FROM tb_vaga_aluno WHERE aprovado = 2 AND fk_idVaga = 
 $resultado2 = $conexao->query($querySelect2);
 $aluno2 = $resultado2->fetchALL();
 $n_aluno2 = count($aluno2);
-
 
 $querySelect5 = "SELECT email FROM  tb_empresa WHERE idEmpresa = $cliente_id ";
 $query6 = $conexao->query($querySelect5);
@@ -103,9 +98,9 @@ foreach ($emailCandidato as $emailCandidato) {
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -126,37 +121,37 @@ foreach ($emailCandidato as $emailCandidato) {
         <section class="align-itens">
             <div class="card">
                 <p>INFORMAÇOES DA VAGA</p>
-                <?php foreach ($vagas as $vaga) { ?>
+                <?php foreach ($vagas as $vaga) {?>
 
                     <div class="itens-card">
-                        <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
+                        <h5>Nome da vaga:</h5><?=$vaga['nome']?>
                     </div>
                     <div class="itens-card">
                         <h5>Requisitos:</h5>
                         <?php
-                        $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
+$selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                       FROM  tb_requisito
                       INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE tb_requisito_vaga.fk_idVaga = $vaga[idVaga]
                       ";
-                        $query1 = $conexao->query($selectRequisito);
-                        $requisito1 = $query1->fetchAll();
-                        foreach ($requisito1 as $requisito1) { ?>
+    $query1 = $conexao->query($selectRequisito);
+    $requisito1 = $query1->fetchAll();
+    foreach ($requisito1 as $requisito1) {?>
 
-                            <?= $requisito1[3] ?> ,
+                            <?=$requisito1[3]?> ,
 
-                        <?php } ?>
+                        <?php }?>
 
                     </div>
                     <div class="itens-card">
-                        <h5>Descrição da vaga:</h5><?= $vaga['descricao'] ?>
+                        <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?>
+                        <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Salario:</h5><?= $vaga['salario'] ?>
+                        <h5>Salario:</h5><?=$vaga['salario']?>
                     </div>
-                <?php } ?>
+                <?php }?>
             </div>
 
 
@@ -167,21 +162,21 @@ foreach ($emailCandidato as $emailCandidato) {
                 <div class="align-links">
                     <form method="GET" action="vagas-candidato.php">
                         <input type="hidden" value="1" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno1 ?> ) CADASTRADAS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno1?> ) CADASTRADAS
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=0">
                         <input type="hidden" value="0" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno0 ?> ) PENDENTES
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno0?> ) PENDENTES
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=2">
 
                         <input type="hidden" value="2" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno2 ?> ) RECUSADOS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno2?> ) RECUSADOS
                         </button>
                     </form>
                 </div>
@@ -199,44 +194,44 @@ foreach ($emailCandidato as $emailCandidato) {
                     </thead>
                     <tbody id="result">
 
-                        <?php foreach ($aluno as $aluno) { ?>
+                        <?php foreach ($aluno as $aluno) {?>
                             <tr class="infos">
                                 <td class="id-aluno">
-                                    <?= $aluno[21] ?>
+                                    <?=$aluno[21]?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[34] != "" ? $aluno[34] : ''; ?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[34] != "" ? $aluno[34] : '';?>" alt="">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="nome-aluno">
-                                    <?= $aluno[24] ?>
+                                    <?=$aluno[24]?>
                                 </td>
                                 <td class="email-aluno">
-                                    <?= $aluno[22] ?>
+                                    <?=$aluno[22]?>
                                 </td>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 1) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 1) {?>
                                     <td>
                                         <button class="icon-2">
-                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[21] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                         </button>
                                     </td>
 
                                     <td>
-                                        <button value="<?= $aluno[22] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[21] ?>" data-bs-whatever="@fat">
+                                        <button value="<?=$aluno[22]?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$aluno[21]?>" data-bs-whatever="@fat">
                                             <i class=" fa-solid fa-envelope"></i>
                                         </button>
                                     </td>
 
-                                    <div class="modal fade" id="exampleModal<?= $aluno[21] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal<?=$aluno[21]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="https://formsubmit.co/<?= $aluno[22] ?>" method="POST">
+                                                <form action="https://formsubmit.co/<?=$aluno[22]?>" method="POST">
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Entrar em Contato</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -245,9 +240,9 @@ foreach ($emailCandidato as $emailCandidato) {
                                                         <!--    <input type="hidden" name="_captcha" value="false"> -->
                                                         <div class="mb-3">
                                                             <label for="recipient-name" class="col-form-label">Para:</label>
-                                                            <label><?= $aluno[22] ?></label>
+                                                            <label><?=$aluno[22]?></label>
                                                         </div>
-                                                        <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                                        <input type="hidden" name="entre em contato" value=" <?=$email?>">
                                                         <div class="mb-3">
                                                             <textarea class="form-control" name="message" rows="10" required></textarea>
                                                         </div>
@@ -261,12 +256,12 @@ foreach ($emailCandidato as $emailCandidato) {
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+                                <?php }?>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 2) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 2) {?>
                                     <td>
                                         <button class="icon-1">
-                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[21] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
                                         </button>
@@ -274,25 +269,25 @@ foreach ($emailCandidato as $emailCandidato) {
 
 
 
-                                <?php        } ?>
+                                <?php }?>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 0) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 0) {?>
 
                                     <td>
                                         <button class="icon-1">
-                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[21] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
                                         </button>
                                     </td>
                                     <td>
                                         <button class="icon-2">
-                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[21] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                         </button>
                                     </td>
-                                <?php } ?>
+                                <?php }?>
 
 
 
@@ -301,7 +296,7 @@ foreach ($emailCandidato as $emailCandidato) {
 
                             </tr>
 
-                        <?php } ?>
+                        <?php }?>
 
 
 
