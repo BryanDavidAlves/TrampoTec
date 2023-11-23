@@ -8,21 +8,13 @@ header {
   box-shadow: 0px 0px 80px 5px rgba(0, 0, 0, 0.518);
 }
 
-.container {
-  position: absolute;
-  width: 100%;
-}
-
 h1 {
-  color: #fff;
-
   margin-top: 100px;
   font-size: 2.5rem;
   font-weight: 700;
 }
 
 h2 {
-  color: #fff;
   font-size: 1.2rem;
   margin-top: 10px;
   padding-bottom: 25px;
@@ -41,10 +33,11 @@ select:focus {
 }
 
 .formulario {
-  margin-left: 2%;
+  width: 500px;
   display: flex;
   align-items: center;
   justify-content: start;
+  margin-left: 2%;
 }
 
 .box-input {
@@ -65,9 +58,9 @@ input {
 }
 
 textarea {
-  background-color: #4e8af1cf;
-  color: #fff;
-  border: none;
+  border: #114baf 2px solid;
+  color: #000;
+
   border-radius: 5px;
   padding: 10px;
   font-size: 0.9rem;
@@ -75,7 +68,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: #fff;
+  color: #000;
 }
 
 .align {
@@ -112,4 +105,47 @@ select {
   bottom: 0;
   right: 0;
   z-index: 1;
+}
+
+.input-box input:is(:focus, :valid) ~ .label-anim {
+  transform: translateY(-100%) scale(0.7);
+  background-color: #ffffff;
+  padding-inline: 0.3rem;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 600;
+  left: 1%;
+}
+
+.label-anim {
+  position: absolute;
+  left: 2%;
+  color: black;
+  pointer-events: none;
+  transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.8rem;
+  animation: 1500ms ease transLabel;
+}
+.input-box input:focus {
+  border: 2px solid #1d44b8;
+}
+.input-box input {
+  all: unset;
+  color: black;
+  padding: 1rem;
+  border: 2px solid #1d44b8;
+  border-radius: 10px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 93%;
+  animation: 1500ms ease trans;
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
