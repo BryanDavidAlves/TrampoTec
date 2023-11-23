@@ -1,3 +1,81 @@
+<?php
+
+include '../dao/conexao.php';
+
+require_once "./back-end/login/validador_acesso.php";
+
+$cliente_id =  $_SESSION['idAluno'];
+
+
+//$querySelect = "SELECT tb_aluno., tb_aluno_curso., tb_aluno_etec.,tb_etec.,tb_curso.,tb_conhecimento.,tb_conhecimento_aluno.,tb_habilidade.
+//,tb_habilidade_aluno.,tb_idioma_aluno.,tb_telefone_aluno.,tb_perfil_aluno.
+//FROM tb_aluno
+//INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+//INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+//INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+//INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+//INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
+
+//INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+//INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento 
+
+//INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno 
+//INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+
+//INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+
+
+//WHERE tb_aluno.idAluno = $cliente_id
+//GROUP BY tb_aluno.idAluno";
+//$query = $conexao->query($querySelect);
+//$aluno = $query->fetchAll();
+
+
+$querySelect = "SELECT tb_aluno.*, tb_aluno_curso.*, tb_aluno_etec.*,tb_etec.*,tb_curso.* ,tb_perfil_aluno.*
+FROM tb_aluno
+INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
+WHERE tb_aluno.idAluno = $cliente_id
+GROUP BY tb_aluno.idAluno";
+$query = $conexao->query($querySelect);
+$aluno = $query->fetchAll();
+
+
+$querySelect2 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento 
+WHERE tb_conhecimento_aluno.fk_idAluno = $cliente_id
+GROUP BY tb_aluno.idAluno
+";
+$query2 = $conexao->query($querySelect2);
+$aluno2= $query2->fetchAll();
+
+
+$querySelect3 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+FROM tb_aluno
+INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno 
+INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+WHERE tb_habilidade_aluno.fk_idAluno = $cliente_id
+GROUP BY tb_aluno.idAluno
+";
+$query3 = $conexao->query($querySelect3);
+$aluno3= $query3->fetchAll();
+
+
+
+$querySelect4 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+FROM tb_aluno
+INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+WHERE tb_aluno.idAluno = $cliente_id
+GROUP BY tb_aluno.idAluno";
+$query4 = $conexao->query($querySelect4);
+$aluno4 = $query4->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,38 +193,51 @@
         <div class="row">
           <div class="col-lg-6" style="text-align:justify;">
             <h3 class="resume-title">Acadêmico</h3>
+         
+
             <div class="resume-item ">
+            <?php foreach($aluno as $aluno) { ?>
               <h4>Conhecimentos escolares</h4>
-              <li>Instituição:<p><em>Etec de Guainazes</em></p>
+              <li>Instituição:<p><em><?=$aluno[20]?></em></p>
               </li>
               <p>
-                <li>Curso:<p><em>Desenvolvimento de Sistemas</em></p>
+                <li>Curso:<p><em><?=$aluno[29]?></em></p>
                 </li>
-                <li>Carga Horária:<p><em>400 Horas</em></p>
+                <li>Carga Horária:<p><em><?=$aluno[33]?></em></p>
                 </li>
-                <li>Conclusão:<p><em>2023</em></p>
+                <li>Conclusão:<p><em><?=$aluno[34]?></em></p>
                 </li>
+                <?php   }?>
             </div>
-
+     
             <h3 class="resume-title">Adicional</h3>
             <div class="resume-item">
               <h4>Informações adicionais</h4>
-              <li>Conhecimentos:<p><em>Banco de dados</em></p>
+              <?php foreach($aluno2 as $aluno2) { ?>
+               
+              <li>Conhecimentos:<p><em><?=$aluno2[1]?></em></p>
               </li>
+              <?php   }?>
               <p>
-                <li>Habilidades:<p><em>Trabalho em equipe</em></p>
+              <?php foreach($aluno3 as $aluno3) { 
+                
+                ?>
+                <li>Habilidades:<p><em><?=$aluno3[16]?></</em></p>
                 </li>
+                <?php   }?>
             </div>
           </div>
           <div class="col-lg-6" style="text-align:justify;">
             <h3 class="resume-title">Idiomas</h3>
             <div class="resume-item">
+            <?php foreach($aluno4 as $aluno4) { ?>
               <h4>Idiomas e nível de proficiência</h4>
-              <li>idiomas:<p><em>Inglês</em></p>
+              <li>idiomas:<p><em><?=$aluno4[16]?></em></p>
               </li>
               <p>
-                <li>Nível:<p><em>Intermediário</em></p>
+                <li>Nível:<p><em><?=$aluno4[17]?></em></p>
                 </li>
+                <?php   }?>
             </div>
           </div>
         </div>
