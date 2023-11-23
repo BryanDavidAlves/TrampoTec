@@ -205,14 +205,14 @@ $resultado = $query->fetchAll();
                 </a>
               </span>
               <h4 class="aceito">STATUS : ACEITO</h4>
-              <?php foreach ($num as $num) { ?>
+       <!--       <?php foreach ($num as $num) { ?>
                 <form class="chat" method="post" action="./chat.php">
                   <input type="hidden" name="emailEmpresa" value="<?= $num[1] ?>">
                   <button type="submit" value="<?= $cliente_id ?>" name="idCandidato">
                     <i class="fa-solid fa-envelope"></i>
                   </button>
                 </form>
-              <?php } ?>
+              <?php } ?> -->
             <?php } else if ($qtn2 >= 1) { ?>
               <h4 style="color: red;">STATUS : RECUSADO</h4>
             <?php } else { ?>

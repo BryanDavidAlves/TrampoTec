@@ -181,6 +181,30 @@ td .container-perfil .img-perfil img {
   color: white;
 }
 
+
+.icon-3 {
+  background-color: transparent;
+  color: green;
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+  font-size: 20px;
+  margin-left: -10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.icon-3:hover {
+  background-color: green;
+  color: white;
+}
+
+
+
 .voltar-pag {
   display: flex;
   justify-content: left;
