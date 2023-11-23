@@ -7,7 +7,7 @@ if (isset($_POST['busca'])) {
 FROM tb_aluno
 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
-WHERE tb_aluno.nome LIKE '%$busca%' OR tb_vaga.nome LIKE '%$busca%'
+WHERE tb_aluno.nome LIKE '%$busca%' OR tb_vaga.nome LIKE '%$busca%' OR tb_aluno.email LIKE '%$busca%'
 
 ";
 } else {

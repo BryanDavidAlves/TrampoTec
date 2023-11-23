@@ -75,7 +75,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="notificacoes.php">Notificações</a></li>
+              <!--<li><a class="dropdown-item" href="notificacoes.php">Notificações</a></li>-->
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -83,7 +83,7 @@
               <li>
                 <hr class="dropdown-divider">
                 <!--       </li>
-            <li><a class="dropdown-item" href="#">Configurações</a></li> 
+            <li><a class="dropdown-item" href="#">Configurações</a></li>
               <li>
                 <hr class="dropdown-divider">-->
               </li>

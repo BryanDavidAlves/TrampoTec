@@ -111,11 +111,9 @@ foreach ($emailCandidato as $emailCandidato) {
         <section class="voltar-pag">
             <div class="body-voltar">
                 <span class="icon-voltar">
-                    <a href="./vagas.php"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="./vagas.php" id="alinhar"><i class="fa-solid fa-chevron-left" id="align"></i>Voltar</a>
                 </span>
-                <span>
-                    <h1>Voltar</h1>
-                </span>
+
             </div>
         </section>
 
