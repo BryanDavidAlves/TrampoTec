@@ -4,19 +4,6 @@
     align-items: center;
 }
 
-.sistema-busca .barra-pesquisa {
-    border-radius: 20px;
-    padding: 5px;
-    border: none;
-    margin-top: 0px;
-    width: 30%;
-    align-items: center;
-    justify-content: center;
-    margin-left: 30px;
-    display: flex;
-    background-color: white;
-}
-
 .sistema-busca .barra-pesquisa input {
     border: none;
     width: 100%;
@@ -44,6 +31,7 @@ main {
     position: absolute;
     display: flex;
     background-color: white;
+    z-index: 2;
 }
 
 .sistema-busca .barra-pesquisa input {
@@ -73,6 +61,7 @@ main {
     border-radius: 15px;
     margin-top: 5%;
     padding: 10px 0px 10px 0px;
+    z-index: 1;
 }
 
 .btn-side {
@@ -209,8 +198,9 @@ table td{
 .table-id{
     width: 40px;
 }
-tr:nth-last-child(1){
-    border: none;
+.infos:nth-last-child(1){
+    border-bottom: none;
+    
 }
 .table-cnpj{
     width: 100px;

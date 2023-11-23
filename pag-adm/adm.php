@@ -87,13 +87,9 @@ require_once "back-end/login/validador_acesso.php";
 
                 <table>
                     <thead>
-                        <tr>
                             <th>ID</th>
                             <th>NOME</th>
-                            <th>EMAIL INSTITUICIONAL</th>
-
-
-                        </tr>
+                            <th>EMAIL INSTITUICIONAL</th>                     
                     </thead>
                     <tbody class="infos" id="result">
 

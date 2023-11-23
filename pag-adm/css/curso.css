@@ -196,6 +196,7 @@ thead {
 
 th {
   text-align: center;
+  padding-top: 20px;
 }
 
 table {
@@ -217,7 +218,7 @@ table td {
   text-align: center;
 }
 
-tr:nth-last-child(1) {
+.infos:nth-last-child(1) {
   border: none;
 }
 

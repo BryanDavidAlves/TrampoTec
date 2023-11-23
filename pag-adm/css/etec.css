@@ -177,6 +177,7 @@ thead {
 
 th {
   text-align: center;
+  padding-top: 20px;
 }
 
 table {
@@ -205,8 +206,9 @@ table td {
   width: 200px;
 }
 
-tr:nth-last-child(1) {
+.infos:nth-last-child(1) {
   border: none;
+
 }
 
 .cima {
