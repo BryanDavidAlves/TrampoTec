@@ -1,41 +1,46 @@
 <?php
 include '../../../dao/conexao.php';
 
-if (isset($_POST['busca'])) {
-    $busca = $_POST['busca'];
+if ($_GET) {
 
-    $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
-    tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
-    tb_requisito.requisito
-   FROM tb_vaga
-   INNER JOIN tb_curso
-   ON tb_vaga.fk_idCurso = tb_curso.idCurso
-   INNER JOIN tb_empresa
-   ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+    $idEmpresa = trim($_GET['idEmpresa']);
 
-   INNER JOIN tb_requisito_vaga
-   on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
-   INNER JOIN tb_requisito
-   ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito
-   WHERE tb_vaga.nome LIKE '%$busca%' OR tb_vaga.cidade LIKE '%$busca%' OR tb_vaga.bairro LIKE '%$busca%'
-   OR tb_vaga.area LIKE '%$busca%' OR tb_vaga.periodo LIKE '%$busca%'
-   ";
-} else {
+    if (isset($_POST['busca'])) {
+        $busca = $_POST['busca'];
 
-    $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
-    tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
-    tb_requisito.requisito
-   FROM tb_vaga
-   INNER JOIN tb_curso
-   ON tb_vaga.fk_idCurso = tb_curso.idCurso
-   INNER JOIN tb_empresa
-   ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+        $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
+        tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
+        tb_requisito.requisito
+       FROM tb_vaga
+       INNER JOIN tb_curso
+       ON tb_vaga.fk_idCurso = tb_curso.idCurso
+       INNER JOIN tb_empresa
+       ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+       INNER JOIN tb_requisito_vaga
+       on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
+       INNER JOIN tb_requisito
+       ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito
+       WHERE (tb_vaga.nome LIKE '%$busca%' OR tb_vaga.cidade LIKE '%$busca%' OR tb_vaga.bairro LIKE '%$busca%'
+       OR tb_vaga.area LIKE '%$busca%' OR tb_vaga.periodo LIKE '%$busca%' )AND tb_empresa.idEmpresa = $idEmpresa
+       ";
+    } else {
 
-   INNER JOIN tb_requisito_vaga
-   on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
-   INNER JOIN tb_requisito
-   ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito
-   ";
+        $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
+        tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
+        tb_requisito.requisito
+       FROM tb_vaga
+       INNER JOIN tb_curso
+       ON tb_vaga.fk_idCurso = tb_curso.idCurso
+       INNER JOIN tb_empresa
+       ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+
+       INNER JOIN tb_requisito_vaga
+       on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
+       INNER JOIN tb_requisito
+       ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito
+       WHERE tb_empresa.idEmpresa = 15
+       ";
+    }
 }
 
 $result = $conexao->query($info);
