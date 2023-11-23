@@ -28,7 +28,7 @@
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -155,7 +155,7 @@
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -281,7 +281,7 @@
             <ul>
               <li><a href="perfil.php">Meus dados</a></li>
               <li class="dropdown"><a href="curriculo.php"><span>Currículo</span> <i class="bi bi-chevron-right"></i></a>
-              <li class="dropdown"><a href="notificacoes.php"><span>Notificações</span> <i class="bi bi-chevron-right"></i></a>
+            <!--  <li class="dropdown"><a href="notificacoes.php"><span>Notificações</span> <i class="bi bi-chevron-right"></i></a>-->
               <li class="dropdown"><a href="curriculo.php"><span>Configurações</span> <i class="bi bi-chevron-right"></i></a>
               </li>
             </ul>

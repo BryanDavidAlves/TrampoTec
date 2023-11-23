@@ -224,8 +224,18 @@ td .container-perfil .img-perfil img {
 .body-voltar span h1 {
   font-size: 25px;
 }
+#alinhar {
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  width: 280px;
+  gap: 10px;
+  padding: 15px;
+}
 
-.icon-voltar a {
+#align {
   font-size: 25px;
   color: white;
   padding: 10px;
@@ -236,13 +246,14 @@ td .container-perfil .img-perfil img {
   border-radius: 100px;
   display: flex;
   text-align: center;
+  padding: 20px 20px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   transition: 0.3s ease-in-out;
 }
 
-.icon-voltar a:hover {
+#align:hover {
   font-size: 25px;
   color: red;
   padding: 10px;
@@ -251,9 +262,5 @@ td .container-perfil .img-perfil img {
   border: 2px solid red;
   background-color: white;
   border-radius: 100px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+  padding: 20px;
 }

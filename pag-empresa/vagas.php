@@ -142,14 +142,17 @@ $id = $_SESSION['idEmpresa'];
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+        <?php
 
+if (isset($_GET['id'])) {
+    // Obter a ID da URL
+    $id = $_GET['id'];
+
+    // Fazer algo com a ID, como exibir ou processar
+    echo "ID recebida: " . $id;
+}
+?>
         $(document).ready(function() {
-
-            <?php
-
-if (isset($_GET['id'])) {?>
-$id = $_GET['id'] ;
-
 
 
             var busca = ("");
@@ -171,8 +174,7 @@ $id = $_GET['id'] ;
 
 
             });
-
-        <?php }?>
+        });
 
 
         </script>
