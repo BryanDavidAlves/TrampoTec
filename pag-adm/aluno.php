@@ -87,7 +87,7 @@ include '../pag-adm/components/sidebar-adm.php';
 
                 <table>
                     <thead>
-                        <tr>
+                
                             <th>ID</th>
                             <th>NOME</th>
                             <th>EMAIL INSTITUICIONAL</th>
@@ -95,7 +95,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <th>INSTITUIÇÃO</th>
                             <th>CEP</th>
                             <th>ESTADO</th>
-                        </tr>
+                       
                     </thead>
                     <tbody class="infos" id="result">
 

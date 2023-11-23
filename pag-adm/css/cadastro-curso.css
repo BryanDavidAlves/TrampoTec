@@ -14,23 +14,27 @@
     border-radius: 20px;
     padding: 40px 150px;
     align-items: center;
-  
+
 }
-main{
+
+main {
 
     margin-left: 30%;
 }
-.text-green{
+
+.text-green {
     color: green;
     text-align: center;
-    
+
     margin-top: 10px;
 }
-.text-danger{
+
+.text-danger {
     color: red;
     text-align: center;
     margin-bottom: 5px;
 }
+
 .btn {
     background-color: rgb(10, 10, 87);
     border: none;
@@ -47,11 +51,13 @@ main{
     animation: 800ms linear trans;
     transition: 200ms linear;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #1a3b9e;
     scale: 1.02;
- 
- }
+
+}
+
 .input-box {
     display: flex;
     flex-direction: column;
@@ -103,17 +109,19 @@ main{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    gap:20px;
+    gap: 20px;
     align-items: center;
     margin-top: 20px;
-    
+
 }
-.sub-form{
+
+.sub-form {
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 10px;
     animation: 2000ms ease transLabel;
 }
+
 .input-select select {
     border-radius: 10px;
     border: 2px solid #1a3b9e;
@@ -132,12 +140,14 @@ main{
     margin-left: 25%;
     font-size: 1.5rem;
     margin-left: 0;
-    
+
 }
-.secao-cadastro{
+
+.secao-cadastro {
     margin-bottom: 30px;
     margin-left: 6%;
 }
+
 #icon-titulo {
     font-size: 25px;
     color: white;
@@ -154,8 +164,9 @@ main{
     border: 2px solid red;
     transition: 0.300s ease-in-out;
     margin-right: 5px;
-  }
-  #icon-titulo:hover {
+}
+
+#icon-titulo:hover {
     font-size: 25px;
     color: red;
     padding: 10px;
@@ -164,15 +175,16 @@ main{
     border: 2px solid red;
     background-color: white;
     border-radius: 100px;
-  }
-  
-.secao-adicionar{
+}
+
+.secao-adicionar {
     margin-bottom: 40px;
     margin-top: 40px;
     display: flex;
     align-items: center;
 
 }
+
 #icon-adicionar {
     background-color: #555cb3;
     border-radius: 100%;
@@ -180,8 +192,9 @@ main{
     font-size: 1.5rem;
     margin-right: 10px;
 }
-h3{
-    font-size:1.2rem ;
+
+h3 {
+    font-size: 1.2rem;
 
 }
 
@@ -192,103 +205,109 @@ h3{
     font-size: 1rem;
     margin-right: 10px;
 }
-button{
+
+button {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     font-size: 1.2rem;
     display: flex;
     align-items: center;
 }
-#campos, #area{
+
+#campos,
+#area {
     display: flex;
     flex-direction: column;
     margin: 20px 0px;
 }
 
-#campos input{
+#campos input {
     padding: 4px;
     font-size: 1rem;
     margin: 5px 0px;
     border-radius: 10px;
     border: 1px solid rgb(161, 161, 161);
 }
-#area, #area{
+
+#area,
+#area {
     display: flex;
     flex-direction: column;
 }
 
-#area input{
+#area input {
     padding: 4px;
     font-size: 1rem;
     margin: 5px 0px;
     border-radius: 10px;
     border: 1px solid rgb(161, 161, 161);
 }
+
 @keyframes trans {
     0% {
-       opacity: 0%;
-       transform: translateY(-200%);
+        opacity: 0%;
+        transform: translateY(-200%);
     }
- 
+
     50% {
-       opacity: 25%;
+        opacity: 25%;
     }
- 
+
     60% {
-       opacity: 50%;
+        opacity: 50%;
     }
- 
+
     70% {
-       opacity: 70%;
+        opacity: 70%;
     }
- 
+
     100% {
-       opacity: 100%;
-       transform: translateY(0%);
+        opacity: 100%;
+        transform: translateY(0%);
     }
- 
- 
- }
- 
- @keyframes transLabel {
+
+
+}
+
+@keyframes transLabel {
     0% {
-       opacity: 0%;
-       transform: translateY(-600%);
+        opacity: 0%;
+        transform: translateY(-600%);
     }
- 
+
     50% {
-       opacity: 25%;
+        opacity: 25%;
     }
- 
+
     60% {
-       opacity: 50%;
+        opacity: 50%;
     }
- 
+
     70% {
-       opacity: 70%;
+        opacity: 70%;
     }
- 
+
     100% {
-       opacity: 100%;
-       transform: translateY(0%);
+        opacity: 100%;
+        transform: translateY(0%);
     }
- 
- 
- }
- 
- @keyframes anim-form {
+
+
+}
+
+@keyframes anim-form {
     0% {
-       opacity: 0%;
-       transform: translateY(-15%);
+        opacity: 0%;
+        transform: translateY(-15%);
     }
- 
+
     50% {
-       opacity: 50%;
+        opacity: 50%;
     }
- 
+
     100% {
-       opacity: 100%;
-       transform: translateY(0%);
+        opacity: 100%;
+        transform: translateY(0%);
     }
- 
- }
+
+}

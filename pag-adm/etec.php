@@ -12,7 +12,8 @@ require_once "back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -96,15 +97,14 @@ include '../pag-adm/components/sidebar-adm.php';
 
                 <table>
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NOME</th>
-                            <th>EMAIL</th>
-                            <th>CÓDIGO</th>
-                            <th>MUNICIPIO</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>EMAIL</th>
+                        <th>CÓDIGO</th>
+                        <th>MUNICIPIO</th>
+                        <th></th>
+                        <th></th>
+
                     </thead>
                     <tbody class="infos" id="result">
 
@@ -117,22 +117,22 @@ include '../pag-adm/components/sidebar-adm.php';
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             var busca = ("");
             $.post('./back-end/buscas/buscaEtec.php', {
                 busca
-            }, function(data) {
+            }, function (data) {
                 $("#result").html(data);
             });
 
 
-            $("#busca").keyup(function() {
+            $("#busca").keyup(function () {
 
                 busca = $("#busca").val();
                 $.post('./back-end/buscas/buscaEtec.php', {
                     busca: busca
-                }, function(data) {
+                }, function (data) {
                     $("#result").html(data);
                 });
 
