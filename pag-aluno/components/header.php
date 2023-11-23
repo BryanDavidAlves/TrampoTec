@@ -78,6 +78,10 @@
               <li><a class="dropdown-item" href="notificacoes.php">Notificações</a></li>
               <li>
                 <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="contato.php">Fale Conosco</a></li>
+              <li>
+                <hr class="dropdown-divider">
                 <!--       </li>
             <li><a class="dropdown-item" href="#">Configurações</a></li> 
               <li>
