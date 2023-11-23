@@ -2,6 +2,7 @@
 include '../dao/conexao.php';
 
 require_once "./beck-end/login/validador_acesso.php";
+$id = $_SESSION['idEmpresa'];
 
 // Pega o ID do cliente logado
 $cliente_id = $_SESSION['idEmpresa'];

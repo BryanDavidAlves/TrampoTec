@@ -1,6 +1,7 @@
 <?php
 require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
+$id = $_SESSION['idEmpresa'];
 
 ?>
 <!DOCTYPE html>
@@ -141,10 +142,19 @@ include "../dao/conexao.php";
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+        <?php
+
+if ($_GET) {
+    $id = trim($_GET['id']);
+    $info = "AND idEmpresa = $id";
+
+    $result = $conexao->query($info);
+}
+?>
         $(document).ready(function() {
 
             var busca = ("");
-            $.post('./beck-end/buscaVaga/buscaVaga.php', {
+            $.post('./beck-end/buscaVaga/buscaVaga.php?<?=$id?>', {
                 busca
             }, function(data) {
                 $("#result").html(data);
@@ -154,7 +164,7 @@ include "../dao/conexao.php";
             $("#busca").keyup(function() {
 
                 busca = $("#busca").val();
-                $.post('./beck-end/buscaVaga/buscaVaga.php', {
+                $.post('./beck-end/buscaVaga/buscaVaga.php?<?=$id?>', {
                     busca: busca
                 }, function(data) {
                     $("#result").html(data);
@@ -163,6 +173,7 @@ include "../dao/conexao.php";
 
             });
         });
+
 
         </script>
     <script src="./js/java-empresa.js"></script>
