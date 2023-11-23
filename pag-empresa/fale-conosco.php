@@ -26,9 +26,7 @@ $faleConosco = $resultado->fetchAll();
 <body>
 
 
-    <?php include('../pag-empresa/componentes/sidebar.php') ?>
-    <?php include('../pag-empresa/componentes/email.php') ?>
-    <?php include('../pag-empresa/componentes/notificacao.php') ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -36,21 +34,22 @@ $faleConosco = $resultado->fetchAll();
     <main class="main">
 
         <span class="container-icon">
-            <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i></a> <span> Fale-Conosco </span>
+            <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i><span> Fale-Conosco </span></a>
         </span>
 
 
         <div class="container">
             <section class="titulo">
-                <h2>Tire suas úvidas de forma rápida</h2>
+                <h2>Tire suas Dúvidas de forma rápida</h2>
             </section>
 
             <section class="formulario">
                 <form action="beck-end/faleConosco/salvar.php" method="post">
                     <div class="align">
-                        <div class="box-input">
-                            <label for="nome">NOME:</label>
-                            <input type="text" id="nome" name="nome">
+                        <div class="input-box">
+
+                            <input type="text" id="nome" name="nome" required>
+                            <label class="label-anim" for="nome">NOME:</label>
                         </div>
                         <select name="categoria" id="categoria">
                             <option value="elogio">Elogio</option>
@@ -58,9 +57,10 @@ $faleConosco = $resultado->fetchAll();
                             <option value="reclamacao">Reclamação</option>
                         </select>
                     </div>
-                    <div class="box-input">
-                        <label for="email">EMAIL:</label>
-                        <input type="email" id="email" name="email">
+                    <div class="input-box">
+
+                        <input  type="email" id="email" name="email" required>
+                        <label class="label-anim"  for="email">EMAIL:</label>
                     </div>
 
                     <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="detalhes"></textarea>
