@@ -22,8 +22,8 @@ require_once "back-end/login/validador_acesso.php";
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <h1>Administradores</h1>
@@ -48,7 +48,7 @@ require_once "back-end/login/validador_acesso.php";
                         <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                         <input type="text" id="busca" placeholder="buscar por administradores ">
                     </div>
-
+<!--
                     <div class="align-filtro">
                         <div class="filtro" onclick="abrirFiltro()">
                             <span class="material-symbols-outlined">
@@ -81,6 +81,7 @@ require_once "back-end/login/validador_acesso.php";
 
                         </form>
                     </div>
+-->
                 </section>
             </div>
             <section class="adm">
@@ -89,7 +90,7 @@ require_once "back-end/login/validador_acesso.php";
                     <thead>
                             <th>ID</th>
                             <th>NOME</th>
-                            <th>EMAIL INSTITUICIONAL</th>                     
+                            <th>EMAIL INSTITUICIONAL</th>
                     </thead>
                     <tbody class="infos" id="result">
 

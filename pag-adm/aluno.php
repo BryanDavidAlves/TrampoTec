@@ -46,7 +46,7 @@ include '../pag-adm/components/sidebar-adm.php';
                         <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                         <input type="text" id="busca" placeholder="buscar por aluno">
                     </div>
-
+<!--
                     <div class="align-filtro">
                         <div class="filtro" onclick="abrirFiltro()">
                             <span class="material-symbols-outlined">
@@ -55,6 +55,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <p>Filtrar</p>
 
                         </div>
+
                     </div>
 
                     <div class="modal-filtro" id="abrir-filtro">
@@ -79,6 +80,7 @@ include '../pag-adm/components/sidebar-adm.php';
 
                         </form>
                     </div>
+-->
                 </section>
             </div>
 
@@ -87,14 +89,14 @@ include '../pag-adm/components/sidebar-adm.php';
 
                 <table>
                     <thead>
-                
+
                             <th>ID</th>
                             <th>NOME</th>
                             <th>EMAIL INSTITUICIONAL</th>
                             <th>CPF</th>
                             <th>CEP</th>
                             <th>ESTADO</th>
-                       
+
                     </thead>
                     <tbody class="infos" id="result">
 

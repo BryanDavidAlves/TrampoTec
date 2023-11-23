@@ -17,8 +17,8 @@ require_once "back-end/login/validador_acesso.php";
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Cursos</h1>
@@ -43,16 +43,16 @@ require_once "back-end/login/validador_acesso.php";
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                     <input type="text" id="busca" placeholder="buscar por curso">
                 </div>
-
+<!--
                 <div class="align-filtro">
-                    <!--<div class="btn-side">
+                    <div class="btn-side">
                         <a href="empresa.php?aprovado=1">
                             <p>CADASTRADAS</p><a>
                     </div>
                     <div class="btn-side">
                         <a href="empresa.php?aprovado=0">
                             <p>PENDENTES</p><a>
-                    </div>-->
+                    </div>
                     <div class="filtro" onclick="abrirFiltro()">
                         <span class="material-symbols-outlined">
                             tune
@@ -84,13 +84,14 @@ require_once "back-end/login/validador_acesso.php";
 
                     </form>
                 </div>
+-->
             </section>
         </div>
 
         <section>
             <table>
                 <thead>
-                 
+
                         <th>ID</th>
                         <th>NOME</th>
                         <th>Carga Horaria</th>
@@ -99,7 +100,7 @@ require_once "back-end/login/validador_acesso.php";
                         <th>Ensino</th>
                         <th></th>
                         <th></th>
-                
+
                 </thead>
                 <tbody class="infos" id="result">
 
