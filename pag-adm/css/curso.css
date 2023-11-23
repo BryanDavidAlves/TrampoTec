@@ -79,7 +79,7 @@ main .img-cima img {
   border: none;
   border-radius: 15px;
   margin-top: 5%;
-  padding: 10px 0px 10px 0px;
+  padding: 30px;
 }
 
 .btn-side {
@@ -375,8 +375,6 @@ table td {
     opacity: 100%;
     transform: translateY(0%);
   }
-
-
 }
 
 @keyframes trans2 {

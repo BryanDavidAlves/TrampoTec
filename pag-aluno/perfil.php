@@ -32,8 +32,8 @@ $resultado = $query->fetchAll();
 
 <body>
     <?php
-    include '../pag-aluno/components/header.php';
-    ?>
+include '../pag-aluno/components/header.php';
+?>
     <main id="main">
         <div class="align">
             <section class="infos">
@@ -45,8 +45,8 @@ $resultado = $query->fetchAll();
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <h5>INFORMAÇÕES PESSOAIS</h5>
-                                    <?php foreach ($resultado as $resultado) { ?>
-                                    <?php } ?>
+                                    <?php foreach ($resultado as $resultado) {?>
+                                    <?php }?>
                                     <div class="container">
                                         <section id="info-pessoal" class="info-pessoal">
 
@@ -54,27 +54,27 @@ $resultado = $query->fetchAll();
 
                                                 <h3>NOME COMPLETO: </h3>
                                                 <input id="inputNome" type="text" disabled name="nome"
-                                                    value="<?= $resultado[3] ?>">
+                                                    value="<?=$resultado[3]?>">
                                             </div>
 
                                             <div class="one-bar">
                                                 <h3 id="titu-nasc">DATA DE NASCIMENTO:</h3>
                                                 <input id="inputNasc" name="nasc-aluno" type="text" disabled
-                                                    value="<?= $resultado[5] ?>">
+                                                    value="<?=$resultado[5]?>">
 
                                             </div>
 
                                             <div class="one-bar">
                                                 <h3>CPF:</h3>
                                                 <input id="inputCpf" name="cdp-aluno" type="text" disabled
-                                                    value="<?= $resultado[4] ?>">
+                                                    value="<?=$resultado[4]?>">
                                             </div>
 
 
                                             <div class="one-bar">
                                                 <h3>CELULAR:</h3>
                                                 <input id="inputCelular" type="text" disabled
-                                                    value="<?= $resultado[16] ?>" name="telefone">
+                                                    value="<?=$resultado[16]?>" name="telefone">
                                                 <!--fazer o js para possibilitar o edit-->
                                             </div>
 
@@ -95,11 +95,11 @@ $resultado = $query->fetchAll();
                                         <section class="endereco" id="endereco">
 
                                             <div class="one-bar">
-                                
+
                                                     <h3>LOGRADOURO:</h3>
                                                     <input id="inputLogradouro" type="text" disabled
-                                                        value="<?= $resultado[6] ?>" name="logradouro">
-                                              
+                                                        value="<?=$resultado[6]?>" name="logradouro">
+
 
                                             </div>
 
@@ -113,7 +113,7 @@ $resultado = $query->fetchAll();
 
                                             <div class="one-bar">
                                                 <h3>ESTADO: </h3>
-                                                <input id="inputEstado" type="text" disabled value="<?= $resultado[7] ?>"
+                                                <input id="inputEstado" type="text" disabled value="<?=$resultado[7]?>"
                                                     name="estado">
 
                                                 <!--fazer o js para possibilitar o edit-->
@@ -121,7 +121,7 @@ $resultado = $query->fetchAll();
 
                                             <div class="one-bar">
                                                 <h3>CEP:</h3>
-                                                <input id="inputCep" type="text" disabled value="<?= $resultado[9] ?>"
+                                                <input id="inputCep" type="text" disabled value="<?=$resultado[9]?>"
                                                     name="cep">
 
                                                 <!--fazer o js para possibilitar o edit-->
@@ -129,7 +129,7 @@ $resultado = $query->fetchAll();
 
                                             <div class="one-bar">
                                                 <h3>NUMERO: </h3>
-                                                <input id="inputNumero" type="text" disabled value="<?= $resultado[7] ?>"
+                                                <input id="inputNumero" type="text" disabled value="<?=$resultado[7]?>"
                                                     name="numero">
 
                                                 <!--fazer o js para possibilitar o edit-->
@@ -138,7 +138,7 @@ $resultado = $query->fetchAll();
                                             <div class="one-bar">
                                                 <h3>COMPLEMENTO: </h3>
                                                 <input id="inputComplemento" type="text" disabled
-                                                    value="<?= $resultado[8] ?>" name="complemento">
+                                                    value="<?=$resultado[8]?>" name="complemento">
 
                                                 <!--fazer o js para possibilitar o edit-->
                                             </div>
@@ -155,20 +155,20 @@ $resultado = $query->fetchAll();
                                     <div class="container">
 
                                         <section class="configuracoes" id="configuracoes">
-                                        
+
                                             <div class="two-bars">
                                                 <div class="bar">
                                                     <h3>Email: </h3>
-                                                    <h4><?= $resultado[1] ?></h4>
+                                                    <h4><?=$resultado[1]?></h4>
                                                 </div>
 
                                                 <div class="bar">
                                                     <h3 class="senha">SENHA ATUAL:</h3>
-                                                    <input type="password" disabled value="<?= $resultado[2] ?>"
+                                                    <input type="password" disabled value="<?=$resultado[2]?>"
                                                         name="senha" placeholder="Digite sua nova senha ">
                                                 </div>
 
-                                               
+
 
 
                                             </div>
@@ -184,6 +184,10 @@ $resultado = $query->fetchAll();
                                         <section class="foto-perfil" id="fotoPerfil">
                                             <div class="secao-img">
                                                 <img src="img/aluno-form.png" alt="">
+                                                <label class="font-weight-bold"  for="foto" id="label-file">
+                                                <input type="hidden" id="foto_usuario" name="foto" accept="image/*"   enctype="multipart/form-data"  value="<?=$resultado[4]?>">
+                                                <input class="form-control obrigatorio" type="file"  id="foto"  value="<?=$resultado[4]?>"
+                                                name="foto_usuario" >
                                                 <div class="icone-lapis"><i class="fa-solid fa-pen" style="color: #000000;"></i></div>
                                             </div>
                                         </section>
@@ -206,7 +210,7 @@ $resultado = $query->fetchAll();
                             <div class="align-salvar">
                                 <br>
                                 <!--colocar o onclick na div 'btn-salvar' por que ai facilita para o usuario apertar o botao para chamar a função-->
-                                <button type="submit" class="btn-salvar" value="<?= $id_aluno ?>" name="id">
+                                <button type="submit" class="btn-salvar" value="<?=$id_aluno?>" name="id">
                                     <i class="fa-solid fa-check" style="color: #ffffff;"></i>
                                     <h3>Salvar</h3>
                                 </button>

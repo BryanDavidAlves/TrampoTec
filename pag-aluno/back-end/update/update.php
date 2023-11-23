@@ -18,9 +18,11 @@ if ($_POST) {
     $bairro = trim($_POST['bairro']);
     $complemento = trim($_POST['complemento']);
     $numero = trim($_POST['numero']);
+    $novo_nome = trim($_POST['foto_usuario']);
     $logradouro = trim($_POST['logradouro']);
 
-    $sql = " UPDATE tb_aluno SET
+    if (!empty($novo_nome)) {
+        $sql = " UPDATE tb_aluno SET
                   nome = '$nome' ,
                   senha = '$senha' ,
                   cpf =  '$cpf' ,
@@ -28,12 +30,29 @@ if ($_POST) {
                   bairro = '$bairro',
                   estado = '$estado',
                   cep = '$cep',
+                  imagem = '$novo_nome',
                   logradouro = '$logradouro',
                   numero = '$numero',
                   complemento = '$complemento'
 
              WHERE idAluno='$id'
                 ";
+    } else {
+        $sql = " UPDATE tb_aluno SET
+                    nome = '$nome' ,
+                    senha = '$senha' ,
+                    cpf =  '$cpf' ,
+                    dtNasc = '$data_nasc',
+                    bairro = '$bairro',
+                    estado = '$estado',
+                    cep = '$cep',
+                    logradouro = '$logradouro',
+                    numero = '$numero',
+                    complemento = '$complemento'
+
+               WHERE idAluno='$id'
+                  ";
+    }
 
     $sql2 = " UPDATE tb_telefone_aluno SET
 
