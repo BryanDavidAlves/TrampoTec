@@ -200,6 +200,7 @@ input[type="submit"]:hover {
 
 </html>
 <script src="js/funcoes.js"></script>
+<script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 
 
 

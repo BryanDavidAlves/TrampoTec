@@ -13,7 +13,11 @@ if ($_POST) {
     $nome = trim($_POST['nome']);
     $cidade = trim($_POST['cidade']);
     $bairro = trim($_POST['bairro']);
+    $logradouro = trim($_POST['logradouro']);
+    $cep = trim($_POST['cep']);
+    $numero = trim($_POST['numero']);
     $salario = trim($_POST['salario']);
+    $estado = trim($_POST['estado']);
     $curso = trim($_POST['curso']);
     $descricao = trim($_POST['descricao']);
     $area = trim($_POST['area']);
@@ -23,13 +27,17 @@ if ($_POST) {
     $tipoTrabalho = trim($_POST['tipo']);
     $semana = trim($_POST['semana']);
     $cliente_id = $_SESSION['idEmpresa'];
-
+    echo $curso;
 
     if (is_numeric($id_vaga)) {
         $sql = " UPDATE tb_vaga SET
         nome = '$nome',
+        logradouro = '$logradouro',
+        numero = '$numero',
+        cep = '$cep',
         cidade = '$cidade',
         bairro= '$bairro',
+        estado = '$estado',
         modalidade= '$tipoTrabalho',
         salario= '$salario',
         descricao= '$descricao',
@@ -48,10 +56,14 @@ if ($_POST) {
 
         header("Location: ../../adicionar-requisito-vaga.php?id=$id_vaga");
     } else {
-        $sql2 = "INSERT INTO tb_vaga ( nome , cidade , bairro , modalidade , salario , descricao , inicio , termino , periodo , area , escala , fk_idEmpresa , fk_idCurso) VALUES
+        $sql2 = "INSERT INTO tb_vaga ( nome , logradouro , numero , cep , cidade , bairro , estado ,  modalidade , salario , descricao , inicio , termino , periodo , area , escala , fk_idEmpresa , fk_idCurso) VALUES
                 (   '$nome',
+                    '$logradouro',
+                    '$numero',
+                    '$cep',
                     '$cidade',
                     '$bairro',
+                    '$estado',
                     '$tipoTrabalho',
                     '$salario',
                     '$descricao',
