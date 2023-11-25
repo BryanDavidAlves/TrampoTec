@@ -16,15 +16,13 @@ if ($resultado > 0) {
     foreach ($resultado as $resultado) {
         echo
         '<tr class="infos">
-         <td class="table-id">' . $resultado[0] . '</td>',
-        '<td class="table-nome-aluno">' . $resultado[3] . '</td>',
-        '<td class="table-email-aluno">' . $resultado[1] . '</td>',
+         <td class="table-id text-center">' . $resultado[0] . '</td>',
+        '<td class="table-nome-aluno text-center">' . $resultado[3] . '</td>',
+        '<td class="table-email-aluno text-center">' . $resultado[1] . '</td>',
         '<td class="text-center">' . $resultado[4] . '</td>',
         '<td class="text-center">' . $resultado[12] . '</td>',
         '<td class="text-center">' . $resultado[10] . '</td>',
-            ' <td class="icone-table">
-        <a  href="back-end/crudAluno/aluno-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark"></i></a>
-    </td>
-    </tr>';
+        '<td class="text-center"><a class="dropdown-item" onclick="modalRemover('. $resultado[0] .', \'id_usuario\')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a></td>',
+        '</tr>';
     }
 }
