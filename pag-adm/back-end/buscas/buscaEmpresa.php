@@ -23,13 +23,11 @@ if ($resultado > 0) {
         '<td class="table-cnpj">' . $resultado[7] . '</td>',
         '<td class="table-cep">' . $resultado[8] . '</td>',
         '<td class="table-estado">' . $resultado[12] . '</td>',
-        '<td class="icone-table2">
+        '<td class="table-id">
             <a href="./back-end/crudEmpresa/empresa-aceitar.php?id=' . $resultado[0] . '"><i
                     class="fa-solid fa-check"></i></a>
     </td>
-    <td class="icone-table">
-            <a href="./back-end/crudEmpresa/empresa-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark" ></i></a>
-    </td>
+   <td class="table-id"><a class="dropdown-item" onclick="modalRemover('. $resultado[0] .', \'id_usuario\')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a></td>,
     </tr>';
     }
 }

@@ -27,10 +27,7 @@ if ($resultado > 0) {
             ' . $resultado[2] . '
         </td>
 
-        <td class="icone-table"> 
-                <a href="./back-end/crudAdm/adm-delete.php?id=' . $resultado[0] . '">    <i class="fa-solid fa-xmark"></i></a>
-        
-        </td>
+        <td class="text-center"><a class="dropdown-item" onclick="modalRemover('. $resultado[0] .', \'id_usuario\')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a></td>,
     </tr>';
     }
 }

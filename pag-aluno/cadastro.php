@@ -11,6 +11,7 @@ include '../dao/conexao.php';
     <link rel='stylesheet' href='../pag-empresa/css/login-cadastro.css'>
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <link rel='stylesheet' href='../assets/css/style.css'>
+    
     <title>TrampoTec - Cadastro de Aluno </title>
 </head>
 
@@ -202,11 +203,22 @@ include '../dao/conexao.php';
             </div>
         </div>
     </div>
+    <?php
+    if (isset($_GET['erroCpf']) && $_GET['erroCpf'] == "true") {
+        ?>
+       
+        <?php
+    }
+    ?>
     <script src="../assets/js/jquery-3.7.1.js"></script>
     <script src="../assets/js/jquery.mask.min.js"></script>
     <script src="../assets/js/my-mask.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src='js/modal-deletar.js'></script>
 
     <script type="text/javascript">
         $(function () {
