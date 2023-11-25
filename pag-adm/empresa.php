@@ -15,9 +15,13 @@ include '../dao/conexao.php';
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/empresa.css">
+   
 
     <title>Empresas</title>
 </head>
@@ -98,14 +102,32 @@ include '../dao/conexao.php';
                         <th>CNPJ</th>
                         <th>CEP</th>
                         <th>ESTADO</th>
-                        <th></th>
-                        <th></th>
+                        
                 </thead>
                 <tbody class="infos" id="result">
 
                 </tbody>
             </table>
-
+            <div class="modal fade" id="modalExcluir" role="dialog">
+                    <div class=" modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger text-white">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Empresa</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body  ">
+                        <form action="back-end/crudEmpresaCadastrada/empresa-delete.php" method="post">
+                            <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
+                            <p>Tem certeza que deseja excluir o item selcionado?
+                            <div class=" text-end">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                            <button type="submit" class="btn btn-warning ms-3">Sim </button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
         </section>
     </main>
@@ -173,6 +195,10 @@ include '../dao/conexao.php';
             }, 2000); // Tempo de espera em milissegundos
         })
     </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src='js/modal-deletar.js'></script>
 </body>
 
 </html>

@@ -6,7 +6,6 @@ if ($_POST) {
     $nome = trim($_POST['nome']);
     $cpf = trim($_POST['cdp-aluno']);
     $dtNascimento = trim($_POST['nasc-aluno']);
-
     $senha = trim($_POST['senha']);
     $cep = trim($_POST['cep']);
     $logradouro = trim($_POST['logradouro']);
@@ -14,7 +13,7 @@ if ($_POST) {
     $bairro = trim($_POST['bairro']);
     $cidade = trim($_POST['cidade']);
     $estado = trim($_POST['estado']);
-    $telAluno = trim($_POST['telefone']);
+    $telAluno = trim($_POST['telefone']); 
     $email = trim($_POST['email']);
     $novo_nome =trim($_POST['foto_usuario']);
 
@@ -36,6 +35,14 @@ if ($_POST) {
          } ;
    
     
+
+    $sqlValidaCpf = "SELECT * FROM tb_aluno WHERE cpf = '$cpf' ";
+    $queryCpf = $conexao->query($sqlValidaCpf);
+
+    if($queryCpf->rowCount() > 0){
+        header('Location: ../../cadastro.php?erroCpf=true');
+    }
+
     $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep ,  imagem) VALUES
     (   '$email',
         '$senha',
