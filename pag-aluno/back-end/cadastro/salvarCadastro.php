@@ -40,7 +40,7 @@ if ($_POST) {
     $queryCpf = $conexao->query($sqlValidaCpf);
 
     if($queryCpf->rowCount() > 0){
-        header('Location: ../../cadastro.php?erroCpf=true');
+        header("Location: ../../cadastro.php?cpfCadastrado=true&email=$email");
     }
 
     $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep ,  imagem) VALUES
