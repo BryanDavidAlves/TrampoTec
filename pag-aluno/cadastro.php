@@ -237,8 +237,9 @@ include '../dao/conexao.php';
 
 <!-- Modal -->
             <div id="modal">
+                <h6>Ops temos um problema!!</h6>
                 <span id="closeBtn" onclick="fecharModal()">&times;</span>
-                <p>Cpf já cadastrado</p>
+                <p>Este Cpf já foi cadastrado, tente outro!!</p>
                 <button onclick="fecharModal()">OK</button>
             </div>
 
