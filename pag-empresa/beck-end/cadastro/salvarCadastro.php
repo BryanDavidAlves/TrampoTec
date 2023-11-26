@@ -39,14 +39,14 @@ if ($_POST) {
     $queryCnpj = $conexao->query($sqlValidaCnpj);
 
     if($queryCnpj->rowCount() > 0){
-        header('Location: ../../pags-logins/criar-login.php?erroCnpj=true');
+        header("Location: ../../pags-logins/criar-login.php?erroCnpj=true&nome=$nome&email=$email&senha=$senha&cep=$cep&logradouro=$logradouro&numero=$numero&bairro=$bairro&estado=$$estado&telefone=$telefone");
     }
 
     $sqlValidaEmail = "SELECT * FROM tb_empresa WHERE email = '$email' ";
     $queryEmail = $conexao->query($sqlValidaEmail);
 
     if($queryEmail->rowCount() > 0){
-        header('Location: ../../pags-logins/criar-login.php?erroEmail=true');
+        header("Location: ../../pags-logins/criar-login.php?erroEmail=true&nome=$nome&cnpj=$cnpj&senha=$senha&cep=$cep&logradouro=$logradouro&numero=$numero&bairro=$bairro&estado=$estado&telefone=$telefone");
     }
     $sql2 = "
                 INSERT INTO tb_empresa (email , senha , nome , cnpj, cep , logradouro , numero , bairro , estado , imagem) VALUES
