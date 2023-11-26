@@ -63,13 +63,7 @@ include '../pag-adm/components/sidebar-adm.php';
                     <div class="btn-side">
                         <p>PENDENTES</p>
                     </div>-->
-                        <div class="filtro" onclick="abrirFiltro()">
-                            <span class="material-symbols-outlined">
-                                tune
-                            </span>
-                            <p>Filtrar</p>
-
-                        </div>
+           
                     </div>
 
                     <div class="modal-filtro" id="abrir-filtro">
