@@ -1,29 +1,104 @@
 body {
-  background-image: url(../img/bg-contato-aluno.PNG);
-  background-repeat: no-repeat;
-  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-  box-shadow: 0px 0px 80px 5px rgba(0, 0, 0, 0.518);
+main {
+  margin-left: 22%;
 }
+
 
 h1 {
-  margin-top: 100px;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-h2 {
   font-size: 1.2rem;
   margin-top: 10px;
   padding-bottom: 25px;
 }
 
-.titulo {
-  border-bottom: 2px solid #9ab4ff;
-  width: 50%;
-  margin: 15px;
+.cima {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -5;
+  width: 18%;
+}
+
+.baixo {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -5;
+  width: 16%;
+}
+
+.container-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 290px;
+  height: 80px;
+}
+
+.icon-add {
+  color: rgb(255, 0, 0);
+  display: flex;
+  font-size: 45px;
+}
+
+.link-add {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.link-add span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.titulo-config {
+  font-size: 20px;
+  text-decoration: solid;
+  margin-left: 140px;
+}
+
+.textos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caixa-texto {
+  border-radius: 50px;
+  width: 400px;
+  height: 300px;
+  max-width: 400px;
+  max-height: 300px;
+  min-width: 400px;
+  min-height: 300px;
+  align-items: center;
+  border: 1px solid black;
+  padding: 20px;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao-fale {
+  display: block;
+  margin-left: auto;
+  margin-right: 30%;
+  border: none;
+  border-radius: 100%;
+  padding: 10px;
+  background-color: rgb(48, 48, 186);
+  color: #ffffff;
+}
+
+.icon-enviar {
+  font-size: 25px;
+  padding: 3px;
 }
 
 textarea,
@@ -33,11 +108,12 @@ select:focus {
 }
 
 .formulario {
-  width: 500px;
+  width: 600px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   margin-left: 2%;
+  animation: 800ms ease-out anim-form;
 }
 
 .box-input {
@@ -50,21 +126,14 @@ select:focus {
   border-radius: 20px;
 }
 
-input {
-  background-color: #114baf;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-}
-
 textarea {
   border: #114baf 2px solid;
   color: #000;
-
   border-radius: 5px;
   padding: 10px;
   font-size: 0.9rem;
   width: 350px;
+  animation: 1500ms ease trans;
 }
 
 textarea::placeholder {
@@ -73,42 +142,41 @@ textarea::placeholder {
 
 .align {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 20px;
 }
 
 select {
-  background-color: #114baf;
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  color: #fff;
-  width: 100px;
+  border: 2px solid #1d44b8;
+  border-radius: 10px;
+  padding: 15px;
+  width: 105px;
   font-size: 1rem;
+  animation: 1500ms ease trans;
 }
 
 .btn {
-  background-color: #fff;
-  color: #062863;
-  font-weight: 800;
-  padding: 10px 30px 10px 30px;
+  padding: 10px;
   border-radius: 20px;
+  border: none;
+  width: 200px;
+  color: white;
+  background-color: rgb(10, 10, 87);
+  font-size: 15px;
+  cursor: pointer;
+  animation: 800ms linear trans;
+  transition: 200ms linear;
   margin-top: 20px;
   margin-left: 25%;
-  cursor: pointer;
-}
-.icone {
-  /*
-    float: right;
-    margin-top: 22%;
-    margin-right: 40px;*/
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
 }
 
-.input-box input:is(:focus, :valid) ~ .label-anim {
-  transform: translateY(-100%) scale(0.7);
+.btn:hover {
+  background-color: #1a3b9e;
+  scale: 1.05;
+}
+
+.input-box input:is(:focus, :valid)~.label-anim {
+  transform: translateY(-120%) scale(0.7);
   background-color: #ffffff;
   padding-inline: 0.3rem;
   color: black;
@@ -126,9 +194,26 @@ select {
   font-size: 0.8rem;
   animation: 1500ms ease transLabel;
 }
+
+.label-no-anim {
+  position: absolute;
+  left: 5%;
+  color: black;
+  pointer-events: none;
+  transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.8rem;
+  animation: 1500ms ease transLabel;
+  top: -4%;
+  font-size: 0.9rem;
+  padding: 2px;
+  background-color: #fff;
+  font-weight: 600;
+}
+
 .input-box input:focus {
   border: 2px solid #1d44b8;
 }
+
 .input-box input {
   all: unset;
   color: black;
@@ -139,6 +224,7 @@ select {
   width: 93%;
   animation: 1500ms ease trans;
 }
+
 .input-box {
   display: flex;
   flex-direction: column;
@@ -148,4 +234,67 @@ select {
   width: 100%;
   display: flex;
   align-items: center;
+}
+@keyframes trans {
+  0% {
+    opacity: 0%;
+    transform: translateY(-200%);
+  }
+
+  50% {
+    opacity: 25%;
+  }
+
+  60% {
+    opacity: 50%;
+  }
+
+  70% {
+    opacity: 70%;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes transLabel {
+  0% {
+    opacity: 0%;
+    transform: translateY(-600%);
+  }
+
+  50% {
+    opacity: 25%;
+  }
+
+  60% {
+    opacity: 50%;
+  }
+
+  70% {
+    opacity: 70%;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes anim-form {
+  0% {
+    opacity: 0%;
+    transform: translateY(-15%);
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
 }
