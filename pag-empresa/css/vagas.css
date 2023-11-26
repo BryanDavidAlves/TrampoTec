@@ -259,13 +259,14 @@ button {
 
 #ver-mais-vaga {
   background-color: rgb(255, 255, 255);
-  color: rgb(61, 157, 61);
+  color: black;
   border-radius: 25px;
   padding: 10px;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 #ver-mais-vaga:hover {
-  background-color: rgb(61, 157, 61);
+  background-color:#555cb3;;
   color: white;
 }
 .sistema-busca .barra-pesquisa input:focus {
@@ -282,14 +283,15 @@ button {
   justify-content: center;
   display: flex;
   background-color: white;
+  padding: 10px;
 }
 
 .sistema-busca .barra-pesquisa input {
   border-radius: 20px;
   width: 100%;
-
   border: none;
   background-color: none;
+  font-size: 1rem;
 }
 
 .sistema-busca .barra-pesquisa input:focus {
