@@ -13,11 +13,47 @@ include '../dao/conexao.php';
     <link rel='stylesheet' href='../assets/css/style.css'>
     
     <title>TrampoTec - Cadastro de Aluno </title>
+
+    <style>
+        /* Estilos para o modal e overlay */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
     <img class="cima" src="img/imagemfundocima.png">
-
+    
+   
     <img class="baixo" src="img/imagemfundobaixo.png">
     <div class="align-form">
         <div class="container">
@@ -197,19 +233,22 @@ include '../dao/conexao.php';
                                     </div>
                                 </div>
                             </form>
+                            <div id="overlay"></div>
+
+<!-- Modal -->
+            <div id="modal">
+                <span id="closeBtn" onclick="fecharModal()">&times;</span>
+                <p>Cpf já cadastrado</p>
+                <button onclick="fecharModal()">OK</button>
+            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php
-    if (isset($_GET['erroCpf']) && $_GET['erroCpf'] == "true") {
-        ?>
-       
-        <?php
-    }
-    ?>
+   
     <script src="../assets/js/jquery-3.7.1.js"></script>
     <script src="../assets/js/jquery.mask.min.js"></script>
     <script src="../assets/js/my-mask.js"></script>
@@ -283,6 +322,27 @@ include '../dao/conexao.php';
             })
         })
     </script>
+    <script>
+    // Função para abrir o modal
+    function abrirModal() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    // Função para fechar o modal
+    function fecharModal() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    // Verificar se o CPF já está cadastrado via GET
+    let urlParams = new URLSearchParams(window.location.search);
+    let cpfCadastrado = urlParams.get('cpfCadastrado');
+
+    if (cpfCadastrado === 'true') {
+        abrirModal();
+    }
+</script>
 </body>
 
 </html>
