@@ -152,7 +152,7 @@ if ($_POST) {
                         <span class="input-box">
 
                             <input class="input2" name="semana" type="text" maxlength="7" value="<?=$semana?>" required>
-                            <label class="label-anim" for="tipo">SEMANA</label>
+                            <label class="label-anim" for="tipo">ESCALA</label>
                         </span>
                     </div>
 

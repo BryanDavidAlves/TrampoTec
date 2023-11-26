@@ -18,7 +18,7 @@ $faleConosco = $resultado->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
-    <link rel='stylesheet' href='../pag-empresa/css/conosco.css'>
+
     <link rel="stylesheet" href="../pag-empresa/css/fale.css">
     <title>TrampoTec</title>
 </head>
@@ -26,7 +26,7 @@ $faleConosco = $resultado->fetchAll();
 <body>
 
 
-    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/sidebar.php' ?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -34,13 +34,13 @@ $faleConosco = $resultado->fetchAll();
     <main class="main">
 
         <span class="container-icon">
-            <a class="link-add" href="./configuracoes.php"> <i class="icon-add fa-solid fa-circle-chevron-left"></i><span> Fale-Conosco </span></a>
+            <a class="link-add" href="./configuracoes.php"> <i
+                    class="icon-add fa-solid fa-circle-chevron-left"></i><span> Fale-Conosco </span></a>
         </span>
 
 
         <div class="container">
             <section class="titulo">
-                <h2>Tire suas Dúvidas de forma rápida</h2>
             </section>
 
             <section class="formulario">
@@ -49,7 +49,7 @@ $faleConosco = $resultado->fetchAll();
                         <div class="input-box">
 
                             <input type="text" id="nome" name="nome" required>
-                            <label class="label-anim" for="nome">NOME:</label>
+                            <label class="label-anim" for="nome">NOME: *</label>
                         </div>
                         <select name="categoria" id="categoria">
                             <option value="elogio">Elogio</option>
@@ -59,12 +59,13 @@ $faleConosco = $resultado->fetchAll();
                     </div>
                     <div class="input-box">
 
-                        <input  type="email" id="email" name="email" required>
-                        <label class="label-anim"  for="email">EMAIL:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label class="label-anim" for="email">EMAIL: *</label>
                     </div>
-
-                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="detalhes"></textarea>
-                    <br>
+                    <div class="input-box">
+                        <textarea name="comentario" id="comentario" cols="30" rows="10" required placeholder="Digite aqui o motivo do seu contato"></textarea>
+                        <label class="label-no-anim" for="email" >MENSAGEM: * </label>
+                    </div>
                     <input class="btn" type="submit" value="ENVIAR" name="" id="">
                 </form>
 
