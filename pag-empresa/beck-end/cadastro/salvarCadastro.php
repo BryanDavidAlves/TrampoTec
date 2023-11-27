@@ -74,7 +74,7 @@ if ($_POST) {
 
     $query = $conexao->prepare($sql);
     $query->execute();
-    header('Location: ../../../one-page/index.html');
+    header('Location: ../../../one-page/index.html?cadastroEmpresaFeito=true');
     exit;
 } else {
     header('Location: login.php?login=erro');

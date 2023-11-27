@@ -1,7 +1,17 @@
 <?php 
 include('../../../dao/conexao.php');
 require_once "../login/validador_acesso.php";
-if ($_POST) {
+$aluno_id = $_SESSION['idAluno'];
+$querySelect = "SELECT * FROM  tb_aluno WHERE idAluno = '$aluno_id' ";
+
+$query = $conexao->query($querySelect);
+
+$aluno = $query->fetchAll();
+foreach($aluno as $aluno){
+    $curriculo = $aluno[14];
+}
+
+if ($_POST && $curriculo==0 ) {
     //passando todos os itens do post para as sua variaveis
     
     $aluno_id = $_SESSION['idAluno'];
@@ -26,9 +36,13 @@ if ($_POST) {
 
 
     
-     header('Location: ../../index.php?curriculo=sim'); 
+     header('Location: ../../index.php?curriculo=true'); 
 exit;
-    }
+}
+else if($curriculo == 1){
+    header('Location: ../../index.php?curriculoAtualizado=true'); 
+}
+  
 else{
     header('Location: ../../formulario3.php?login=erro');
 }

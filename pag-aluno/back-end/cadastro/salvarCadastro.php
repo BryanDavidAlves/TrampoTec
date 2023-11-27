@@ -40,7 +40,7 @@ if ($_POST) {
     $queryCpf = $conexao->query($sqlValidaCpf);
 
     if($queryCpf->rowCount() > 0){
-        header("Location: ../../cadastro.php?cpfCadastrado=true&email=$email");
+        header("Location: ../../cadastro.php?cpfCadastrado=true&email=$email&nome=$nome&dtNascimento=$dtNascimento&senha=$senha&cep=$cep&logradouro=$logradouro&numero=$numero&bairro=$bairro&cidade=$cidade&estado=$estado&telAluno=$telAluno");
     }
 
     $sql2 = "INSERT INTO tb_aluno ( email , senha , nome , cpf , dtNasc , bairro , estado , cidade , cep ,  imagem) VALUES
@@ -69,7 +69,7 @@ if ($_POST) {
         
     $query = $conexao->prepare($sql);
     $query->execute();
-    header('Location: ../../../one-page/index.html');
+    header('Location: ../../../one-page/index.html?cadastroFeito=true');
 exit;
     }
 else{
