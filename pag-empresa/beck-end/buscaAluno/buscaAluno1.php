@@ -18,6 +18,7 @@ foreach ($resultado as $resultado) {
     '<td class="nome-aluno">' . $resultado[20] . '</td>',
     '<td class="table-cnpj">' . $resultado[18] . '</td>',
         '<td class="icone-table">
+
             <a href="./back-end/crudEmpresaCadastrada/empresa-delete.php?id=' . $resultado[0] . '">
             <i class="fa-solid fa-x" style="color: #000000;"></i></a>
     </td>
