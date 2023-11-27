@@ -4,6 +4,59 @@ require_once "./beck-end/login/validador_acesso.php";
 
 $cliente_id = $_SESSION['idEmpresa'];
 
+$querySelect = "SELECT tb_aluno.idAluno, tb_aluno_etec.*,tb_etec.*
+FROM tb_aluno
+INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+WHERE tb_aluno.idAluno = $cliente_id
+";
+$query = $conexao->query($querySelect);
+$aluno = $query->fetchAll();
+
+$querySelect2 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
+WHERE tb_conhecimento_aluno.fk_idAluno = $cliente_id
+";
+$query2 = $conexao->query($querySelect2);
+$aluno2 = $query2->fetchAll();
+
+$querySelect3 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+FROM tb_aluno
+INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+WHERE tb_habilidade_aluno.fk_idAluno = $cliente_id
+
+";
+$query3 = $conexao->query($querySelect3);
+$aluno3 = $query3->fetchAll();
+
+$querySelect4 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+FROM tb_aluno
+INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+WHERE tb_aluno.idAluno = $cliente_id
+";
+$query4 = $conexao->query($querySelect4);
+$aluno4 = $query4->fetchAll();
+
+$querySelect5 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
+FROM tb_aluno
+INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+WHERE tb_aluno.idAluno = $cliente_id
+";
+$query5 = $conexao->query($querySelect5);
+$aluno5 = $query5->fetchAll();
+
+$querySelect6 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
+FROM tb_aluno
+INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
+WHERE tb_aluno.idAluno = $cliente_id
+";
+$query6 = $conexao->query($querySelect6);
+$aluno6 = $query6->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,6 +64,9 @@ $cliente_id = $_SESSION['idEmpresa'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/candidatos.css'>
@@ -28,24 +84,61 @@ $cliente_id = $_SESSION['idEmpresa'];
     <img class="baixo" src="./img/fundo1.png" alt="">
 
 
-    <dialog id="abrir-indicacao">
 
-        <div class="align-card-indicacao">
-            <h5 class="title-indicacao">Reagendar Entrevista</h5><br>
-            <form class="" action="#">
-                <label ">TITULO</label>
-                <input type=" text" name="email-professor" id="">
+        <dialog id="abrir-indicacao">
 
-                    <label>HORARIO</label>
-                    <input type="date" name="email-professor" id="">
+              <div class="align-card-indicacao" id="dialog">
+                <div class="fechar-indicacao" id="btn3">
+                <i class="fa-solid fa-xmark"  ></i>
+                </div>
+                    <div class="imagem-perfil-update">
+                    <img src="fotosEmpresa/perfil/8441cc4fbc018b3c121bd94849a55af0.png" alt="">
+                    <div class="info1">
+                    <p class="nome">Ryan Dias </p>
+                    <p class="curso">Instituição: Etec Guainazes </p>
+                    </div>
+                    </div>
 
-                    <label ">NOME DO ENTREVISTADO</label>
-                    <input type=" text" name="email-professor" id="">
-                    <button class="botao-indicacao" type="submit">REAGENDAR</button>
-        </form>
-        </div>
+                    <div class="itens-curriculo">
+                        <div class="habilidades">
+                            <p class="title-habilidades">HABILIDADES</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                        </div>
 
-    </dialog>
+                        <div class="habilidades">
+                            <p class="title-habilidades">IDIOMAS</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                        </div>
+                        </div>
+                        <div class="itens-curriculo">
+                        <div class="habilidades">
+                            <p class="title-habilidades">CONHECIMENTOS </p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                        </div>
+
+                        <div class="habilidades">
+                            <p class="title-habilidades">CURSOS</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                            <p>.TECNOLOGIA</p>
+                        </div>
+                        </div>
+
+
+
+
+
+              </div>
+
+
+        </dialog>
+
 
     <main class="main">
 
@@ -99,6 +192,7 @@ $cliente_id = $_SESSION['idEmpresa'];
                         <th>VAGA</th>
 
                         <th>EMAIL</th>
+                        <th>CURRICULO</th>
 
                     </tr>
 

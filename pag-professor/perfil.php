@@ -1,28 +1,5 @@
 <?php
 include '../dao/conexao.php';
-require_once "./back-end/login/validador_acesso.php";
-// Pega o ID do cliente logado
-$cliente_id = $_SESSION['idProfessor'];
-
-$querySelect = "SELECT tb_professor.* , tb_curso.*
-FROM tb_curso
-INNER JOIN tb_professor ON tb_professor.fk_idCurso= tb_curso.idCurso
-    WHERE tb_professor.idProfessor= '$cliente_id'
-";
-
-
-/*
-$querySelect = "SELECT tb_professor.* , tb_curso.*
-FROM tb_professor
-INNER JOIN tb_curso ON tb_curso.idCurso = tb_professor.idProfessor
-
-WHERE tb_professor.idProfessor = '$cliente_id'
-";
- *
- */
-$query = $conexao->query($querySelect);
-
-$resultado = $query->fetchAll();
 
 ?>
 
@@ -90,7 +67,7 @@ include '../pag-professor/components/sidebar.php';
               <label for="mensagem">SENHA</label>
               <input type="text" name="senha" id="" value="<?=$resultado[3]?>" placeholder="<?=$resultado[3]?>">
 
-             
+
 
             <button type="submit"  class="botao-indicacao"   value="<?=$cliente_id?>" name="id">EDITAR</button>
           </form>
