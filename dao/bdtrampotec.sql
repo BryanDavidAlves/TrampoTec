@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Nov-2023 às 21:36
--- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Tempo de geração: 27-Nov-2023 às 04:29
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,7 +71,7 @@ CREATE TABLE `tb_aluno` (
 --
 
 INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `logradouro`, `numero`, `complemento`, `bairro`, `estado`, `cidade`, `cep`, `imagem`, `curriculo`) VALUES
-(7, 'laysamelmudes@gmail.com', '123', 'LAYSA COCA MELMUDES', '475.158.398', '0000-00-00', 'Rua Antonio Soares Pais', 271, 'A-31', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ec71fadf9084fd41f62aaaeeca933bcd.png', 1),
+(7, 'laysamelmudes@gmail.com', '123', 'LAYSA COCA MELMUDES', '475.158.398', '0000-00-00', 'Rua Antonio Soares Pais', 271, 'A-31', 'Vila Santa Teresinha', '271', 'São Paulo', 'Vila San', 'ec71fadf9084fd41f62aaaeeca933bcd.png', 1),
 (8, 'lisa@gmail.com', '123', 'lisa', '264.007.440', '06052005', 'rua estevam', 134, 'muro rosa\'', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1),
 (9, 'johny@etec.sp.gov.br', '123', 'johny', '26645221835', '06052005', 'dadadadsad', 423, 'dsada', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1);
 
@@ -177,7 +177,6 @@ CREATE TABLE `tb_curso` (
 --
 
 INSERT INTO `tb_curso` (`idCurso`, `nome`, `cargaHoraria`, `semestre`, `modalidade`, `ensino`) VALUES
-(11, 'Luca', 1200, 1, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)'),
 (12, 'admaafgdf', 1200, 1, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'),
 (13, 'dadsa', 800, 2, 'Presencial', 'Ensino Medio Integrado ao Tecnico(M-TEC)');
 
@@ -303,8 +302,24 @@ CREATE TABLE `tb_fale_conosco` (
   `nome` varchar(60) NOT NULL,
   `email` varchar(40) NOT NULL,
   `categoria` varchar(20) NOT NULL,
-  `comentario` char(100) NOT NULL
+  `comentario` char(100) NOT NULL,
+  `tipoUsuario` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_fale_conosco`
+--
+
+INSERT INTO `tb_fale_conosco` (`idFaleConosco`, `nome`, `email`, `categoria`, `comentario`, `tipoUsuario`) VALUES
+(15, 'Empresa boa', 'laysamelmudes@gmail.com', 'elogio', 'teste', 'Empresa'),
+(16, 'Empresa boa', 'laysamelmudes@gmail.com', 'elogio', 'teste', 'Empresa'),
+(17, 'aaaaaaaaaaaaa', 'laysamelmudes@gmail.com', 'elogio', 'asdadsads', ''),
+(18, 'nome', 'adm@gmail.com', 'elogio', 'ASDADS', ''),
+(19, 'nome', 'adm@gmail.com', 'elogio', 'asdasd', 'Aluno'),
+(20, 'nome', 'laysamelmudes@gmail.com', 'elogio', 'asdadsasd', 'Aluno'),
+(21, '', '', 'elogio', '', 'Aluno'),
+(22, '', '', 'elogio', 'asdasda', 'Aluno'),
+(23, 'aaaaaaaaa', 'admin@teste.com', 'elogio', 'asdasdads', '');
 
 -- --------------------------------------------------------
 
@@ -818,220 +833,10 @@ ALTER TABLE `tb_aluno`
   MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de tabela `tb_conhecimento`
---
-ALTER TABLE `tb_conhecimento`
-  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `tb_curso`
---
-ALTER TABLE `tb_curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT de tabela `tb_eixo`
---
-ALTER TABLE `tb_eixo`
-  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT de tabela `tb_empresa`
---
-ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT de tabela `tb_etec`
---
-ALTER TABLE `tb_etec`
-  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
---
--- AUTO_INCREMENT de tabela `tb_experiencia_aluno`
---
-ALTER TABLE `tb_experiencia_aluno`
-  MODIFY `idExperiaciaAluno` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tb_fale_conosco`
 --
 ALTER TABLE `tb_fale_conosco`
-  MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_habilidade`
---
-ALTER TABLE `tb_habilidade`
-  MODIFY `idHabilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT de tabela `tb_horario_aluno`
---
-ALTER TABLE `tb_horario_aluno`
-  MODIFY `idHorarioAluno` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_idioma_aluno`
---
-ALTER TABLE `tb_idioma_aluno`
-  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT de tabela `tb_perfil_aluno`
---
-ALTER TABLE `tb_perfil_aluno`
-  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT de tabela `tb_requisito`
---
-ALTER TABLE `tb_requisito`
-  MODIFY `idRequisito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de tabela `tb_sobre_mim`
---
-ALTER TABLE `tb_sobre_mim`
-  MODIFY `idSobreMim` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tb_telefone_aluno`
---
-ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `tb_telefone_empresa`
---
-ALTER TABLE `tb_telefone_empresa`
-  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT de tabela `tb_telefone_etec`
---
-ALTER TABLE `tb_telefone_etec`
-  MODIFY `idTelefoneEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT de tabela `tb_vaga`
---
-ALTER TABLE `tb_vaga`
-  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `tb_aluno_curso`
---
-ALTER TABLE `tb_aluno_curso`
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_2` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`);
-
---
--- Limitadores para a tabela `tb_conhecimento_aluno`
---
-ALTER TABLE `tb_conhecimento_aluno`
-  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_conhecimento_aluno_ibfk_2` FOREIGN KEY (`fk_idConhecimento`) REFERENCES `tb_conhecimento` (`idConhecimento`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_curso_etec`
---
-ALTER TABLE `tb_curso_etec`
-  ADD CONSTRAINT `tb_curso_etec_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_curso_etec_ibfk_2` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_eixo`
---
-ALTER TABLE `tb_eixo`
-  ADD CONSTRAINT `tb_eixo_ibfk_1` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_experiencia_aluno`
---
-ALTER TABLE `tb_experiencia_aluno`
-  ADD CONSTRAINT `tb_experiencia_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_habilidade_aluno`
---
-ALTER TABLE `tb_habilidade_aluno`
-  ADD CONSTRAINT `tb_habilidade_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_habilidade_aluno_ibfk_2` FOREIGN KEY (`fk_idHabilidade`) REFERENCES `tb_habilidade` (`idHabilidade`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_horario_aluno`
---
-ALTER TABLE `tb_horario_aluno`
-  ADD CONSTRAINT `tb_horario_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_idioma_aluno`
---
-ALTER TABLE `tb_idioma_aluno`
-  ADD CONSTRAINT `tb_idioma_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_perfil_aluno`
---
-ALTER TABLE `tb_perfil_aluno`
-  ADD CONSTRAINT `tb_perfil_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_requisito_vaga`
---
-ALTER TABLE `tb_requisito_vaga`
-  ADD CONSTRAINT `tb_requisito_vaga_ibfk_1` FOREIGN KEY (`fk_idRequisito`) REFERENCES `tb_requisito` (`idRequisito`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_requisito_vaga_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_sobre_mim`
---
-ALTER TABLE `tb_sobre_mim`
-  ADD CONSTRAINT `tb_sobre_mim_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_telefone_aluno`
---
-ALTER TABLE `tb_telefone_aluno`
-  ADD CONSTRAINT `tb_telefone_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_telefone_empresa`
---
-ALTER TABLE `tb_telefone_empresa`
-  ADD CONSTRAINT `tb_telefone_empresa_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_telefone_etec`
---
-ALTER TABLE `tb_telefone_etec`
-  ADD CONSTRAINT `tb_telefone_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_vaga`
---
-ALTER TABLE `tb_vaga`
-  ADD CONSTRAINT `tb_vaga_ibfk_1` FOREIGN KEY (`fk_idEmpresa`) REFERENCES `tb_empresa` (`idEmpresa`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_vaga_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_vaga_aluno`
---
-ALTER TABLE `tb_vaga_aluno`
-  ADD CONSTRAINT `tb_vaga_aluno_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_vaga_aluno_ibfk_2` FOREIGN KEY (`fk_idVaga`) REFERENCES `tb_vaga` (`idVaga`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
