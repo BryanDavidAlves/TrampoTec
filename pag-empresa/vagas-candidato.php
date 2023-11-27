@@ -119,7 +119,7 @@ foreach ($emailCandidato as $emailCandidato) {
 
         <section class="align-itens">
             <div class="card">
-                <p>INFORMAÇOES DA VAGA</p>
+                <p class="title-card">INFORMAÇOES DA VAGA</p>
                 <?php foreach ($vagas as $vaga) {?>
 
                     <div class="itens-card">
@@ -142,7 +142,7 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
 
                     </div>
                     <div class="itens-card">
-                        <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
+                        <h5>Descrição da vaga:</h5><p class="desc"><?=$vaga['descricao']?></p>
                     </div>
                     <div class="itens-card">
                         <h5>Cursos da vaga:</h5><?=$vaga['curso']?>

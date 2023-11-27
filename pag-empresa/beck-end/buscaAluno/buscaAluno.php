@@ -1,6 +1,52 @@
 <?php
 include '../../../dao/conexao.php';
 
+
+
+$querySelect2 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
+
+";
+$query2 = $conexao->query($querySelect2);
+$aluno2 = $query2->fetchAll();
+
+$querySelect3 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+FROM tb_aluno
+INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+
+
+";
+$query3 = $conexao->query($querySelect3);
+$aluno3 = $query3->fetchAll();
+
+$querySelect4 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+FROM tb_aluno
+INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+
+";
+$query4 = $conexao->query($querySelect4);
+$aluno4 = $query4->fetchAll();
+
+$querySelect5 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
+FROM tb_aluno
+INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+
+";
+$query5 = $conexao->query($querySelect5);
+$aluno5 = $query5->fetchAll();
+
+$querySelect6 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
+FROM tb_aluno
+INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
+
+";
+$query6 = $conexao->query($querySelect6);
+$aluno6 = $query6->fetchAll();
+
 if (isset($_POST['busca'])) {
     $busca = $_POST['busca'];
     $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
@@ -24,47 +70,30 @@ $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
 
 foreach ($resultado as $resultado) {
-    echo
-    '<tr class="infos">
+
+    $querySelect1 = "SELECT tb_aluno.idAluno, tb_aluno_etec.*,tb_etec.*
+    FROM tb_aluno
+    INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+    INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+    ";
+    $query1 = $conexao->query($querySelect1);
+    $aluno1 = $query1->fetchAll();
+  
+        echo
+        '<tr class="infos">
          <td class="table-id">' . $resultado[24] . '</td>',
-    '<td class="table-nome-aluno">' . $resultado[15] . '</td>',
-    '<td class="table-email-aluno">' . $resultado[22] . '</td>,
+        '<td class="table-nome-aluno">' . $resultado[15] . '</td>',
+        '<td class="table-email-aluno">' . $resultado[22] . ' </td>,
     <td class="table-email-aluno">
-    <button href="" id="btn1">  VER CURRICULO  </button>,
-
-    </td>',
-
-        '</tr>
-
-
+    <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop' . $resultado[19] . '">
+    VER CURRICULO
+</button>
+    </td>
+        </tr>
+   
         ';
 }
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<script>
 
-
-
-var button1 = document.getElementById("btn1")
-            var fechar = document.getElementById("btn-fechar")
-            var indicar = document.getElementById('abrir-indicacao')
-
-            button1.onclick = function (){
-                indicar.showModal()
-            }
-
-             button3.onclick = function (){
-                indicar.close()
-            }
-
-
-    </script>
-</body>
-</html>
