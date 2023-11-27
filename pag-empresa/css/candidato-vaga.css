@@ -3,13 +3,16 @@ main {
 }
 main .align-itens {
   display: flex;
-  gap: 20px;
+  gap: 80px;
   justify-content: center;
   align-items: start;
 }
-main .align-itens .card p {
+main .align-itens .card .title-card {
   margin-top: 0px;
   color: #555cb3;
+  
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 main .align-itens .card {
   display: flex;
@@ -22,8 +25,15 @@ main .align-itens .card {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
   width: 400px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   transition: 0.3s all ease-in-out;
+}
+main .align-itens .card .desc{
+  word-break: break-all;
+  width: 300px;
+  margin: 0px;
+  font-size: 0.9rem;
 }
 main .align-itens .card:hover {
   transform: scale(1.02);
@@ -36,13 +46,13 @@ main .align-itens .card .itens-card {
   flex-direction: column;
 
   gap: 1px;
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
 main .align-itens .card .itens-card h5 {
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
 

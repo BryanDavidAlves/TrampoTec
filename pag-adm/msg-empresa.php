@@ -162,34 +162,6 @@ $resultado = $query->fetchAll();
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-/*
-        $(document).ready(function () {
-
-
-            var busca = ("");
-            $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
-        busca
-            }, function (data) {
-            $("#result").html(data);
-        });
-
-
-        $("#busca").keyup(function () {
-
-            busca = $("#busca").val();
-            $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
-                busca: busca
-            }, function (data) {
-                $("#result").html(data);
-            });
-
-
-        });
-        });
-* /
-
-    </script>
     <script src="./js/java-empresa.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
