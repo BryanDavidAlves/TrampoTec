@@ -60,6 +60,69 @@ require_once "./back-end/login/validador_acesso_curri.php";
       animation: up-down 0s;
     }
 
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* Estilos para o botão de fechar */
+    #closeBtn {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+    }
+    #modal2 {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    #overlay2 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* Estilos para o botão de fechar */
+    #closeBtn2 {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+    }
+
     @media (max-width: 991px) {
       #hero {
         height: 100vh;
@@ -118,6 +181,24 @@ require_once "./back-end/login/validador_acesso_curri.php";
   <?php
   include('../pag-aluno/components/header.php');
   ?>
+  <div id="overlay"></div>
+
+  <!-- Modal -->
+  <div id="modal">
+    <h6>Bem Vindo ao nosso site</h6>
+    <span id="closeBtn" onclick="fecharModal()">&times;</span>
+    <p>Desejamos a melhor experiencia para voce para a procura de estágios!!</p>
+    <button onclick="fecharModal()">OK</button>
+  </div>
+  <div id="overlay2"></div>
+
+  <!-- Modal -->
+  <div id="modal2">
+    <h6>Finalizado</h6>
+    <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
+    <p>Corriculo atualizado com sucesso!!</p>
+    <button onclick="fecharModal2()">OK</button>
+  </div>
   <main id="main">
 
 
@@ -172,6 +253,48 @@ require_once "./back-end/login/validador_acesso_curri.php";
         'seja bem Vindo ao TrampoTec!',
         'success'
       )
+    }
+  </script>
+  <script>
+    // Função para abrir o modal
+    function abrirModal() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    // Função para fechar o modal
+    function fecharModal() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Verificar se o CPF já está cadastrado via GET
+    let urlParams = new URLSearchParams(window.location.search);
+    let curriculo = urlParams.get('curriculo');
+
+    if (curriculo === 'true') {
+      abrirModal();
+    }
+  </script>
+   <script>
+    // Função para abrir o modal
+    function abrirModal2() {
+      document.getElementById('overlay2').style.display = 'block';
+      document.getElementById('modal2').style.display = 'block';
+    }
+
+    // Função para fechar o modal
+    function fecharModal2() {
+      document.getElementById('overlay2').style.display = 'none';
+      document.getElementById('modal2').style.display = 'none';
+    }
+
+    // Verificar se o CPF já está cadastrado via GET
+    let urlParamss = new URLSearchParams(window.location.search);
+    let curriculoAtualizado = urlParamss.get('curriculoAtualizado');
+
+    if (curriculoAtualizado === 'true') {
+      abrirModal2();
     }
   </script>
 

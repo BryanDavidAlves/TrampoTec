@@ -10,7 +10,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == 'não'){
 else if (!isset($_SESSION['curriculo']) || $_SESSION['curriculo'] == 'NAO'){
     
     
-    header ('Location: curriculo.php?curri=sim');
+    header ('Location: curriculo.php?curri=true');
     
 }/* else{
     include('../dao/conexao.php');
