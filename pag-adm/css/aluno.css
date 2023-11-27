@@ -3,6 +3,44 @@
   justify-content: center;
   align-items: center;
 }
+header{
+  display: flex;
+  justify-content: space-between;
+}
+svg{
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  right: 195px;
+  top: 22px;
+  position: absolute;
+  border-radius: 100%;
+}
+.box-msg {
+  background-color: #555cb3;
+  color: white;
+  border-radius: 10px;
+  margin-right: 200px;
+  border: 2px solid #555cb3;
+  transition: 200ms linear;
+  text-decoration: none;
+}
+
+.fa-comment-dots {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px 15px;
+  
+}
+.box-msg:hover {
+  border: 2px solid #555cb3;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.fa-comment-dots:hover{
+  color: #555cb3;
+}
 
 .sistema-busca .barra-pesquisa input {
   border: none;

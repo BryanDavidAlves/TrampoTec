@@ -3,12 +3,15 @@ require_once "./back-end/login/validador_acesso.php";
 ?>
 <?php
 include '../dao/conexao.php';
+$id = $_SESSION['idAluno'];
 
-$querySelect = "SELECT * FROM tb_fale_conosco";
+$querySelect = "SELECT tb_aluno.nome, tb_aluno.email FROM tb_aluno
+    WHERE tb_aluno.idAluno = $id";
+
 
 $resultado = $conexao->query($querySelect);
 
-$faleConosco = $resultado->fetchAll();
+$resultado = $resultado->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +20,13 @@ $faleConosco = $resultado->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
@@ -43,6 +50,7 @@ $faleConosco = $resultado->fetchAll();
             <section class="formulario">
                 <form action="back-end/faleConosco/salvar.php" method="post">
                     <div class="align">
+
                         <div class="box-input">
                             <label for="nome">NOME:</label>
                             <input type="text" id="nome" name="nome">
@@ -60,7 +68,9 @@ $faleConosco = $resultado->fetchAll();
 
                     <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="detalhes"></textarea>
                     <br>
+                    <input type="hidden" name="tipoUsuario" value="Aluno">
                     <input class="btn" type="submit" value="ENVIAR" name="" id="">
+
                 </form>
 
             </section>

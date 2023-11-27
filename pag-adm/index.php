@@ -73,19 +73,7 @@ include '../pag-adm/components/sidebar-adm.php';
                         </h2>
                     </div>
                 </a>
-                <!--
-                <a href=" professor.php">
-                                <div class="card">
-                                    <div class="header-card">
-                                        <h3>Professores cadastrados</h3>
-                                        <i id="prof" class="fa-solid fa-chalkboard-user"></i>
-                                    </div>
-                                    <h2>
-                                        </*?= $n_professor ?>
-                                    </h2>
-                                </div>
-                </a>
-                -->
+
                 <a href="aluno.php">
                     <div class="card">
                         <div class="header-card">
