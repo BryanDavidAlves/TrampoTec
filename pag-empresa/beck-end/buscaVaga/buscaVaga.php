@@ -38,7 +38,7 @@ if ($_GET) {
        on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
        INNER JOIN tb_requisito
        ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito
-       WHERE tb_empresa.idEmpresa = 15
+       WHERE tb_empresa.idEmpresa = $idEmpresa
        ";
     }
 }
@@ -91,9 +91,10 @@ foreach ($vagas as $vaga) {
             <i class="fa-solid fa-pen-to-square"></i>
             </button>
             </form>
-            <button class="delete-vaga">
-            <a href="./beck-end/crudVaga/vaga-delete.php?id=' . $vaga['idVaga'] . '"> <i class="fa-solid fa-x"></i></a>
-             </button>
+            <button type="button" class="btn btn-primary preencher-vaga-btn" data-bs-toggle="modal" data-bs-target="#confirmarPreenchimentoModal'.$vaga['idVaga'].'" value="'. $vaga['idVaga'] .'">
+            Preencher Vaga
+            </button>
+
     <td>
         </tr>';
 }
