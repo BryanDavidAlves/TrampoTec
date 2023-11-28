@@ -78,6 +78,59 @@ foreach ($emailCandidato as $emailCandidato) {
     $email = $emailCandidato[0];
 }
 
+$querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_etec.*,tb_etec.*
+FROM tb_aluno
+INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+
+";
+$query = $conexao->query($querySelect6);
+$aluno0 = $query->fetchAll();
+
+$querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
+
+";
+$query2 = $conexao->query($querySelect7);
+$aluno2 = $query2->fetchAll();
+
+$querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+FROM tb_aluno
+INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+
+
+";
+$query3 = $conexao->query($querySelect8);
+$aluno3 = $query3->fetchAll();
+
+$querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+FROM tb_aluno
+INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+
+";
+$query4 = $conexao->query($querySelect9);
+$aluno4 = $query4->fetchAll();
+
+$querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
+FROM tb_aluno
+INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+
+";
+$query5 = $conexao->query($querySelect10);
+$aluno5 = $query5->fetchAll();
+
+$querySelect11 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
+FROM tb_aluno
+INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
+
+";
+$query6 = $conexao->query($querySelect11);
+$aluno6 = $query6->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -119,7 +172,7 @@ foreach ($emailCandidato as $emailCandidato) {
 
         <section class="align-itens">
             <div class="card">
-                <p>INFORMAÇOES DA VAGA</p>
+                <p class="title-card">INFORMAÇOES DA VAGA</p>
                 <?php foreach ($vagas as $vaga) {?>
 
                     <div class="itens-card">
@@ -142,7 +195,7 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
 
                     </div>
                     <div class="itens-card">
-                        <h5>Descrição da vaga:</h5><?=$vaga['descricao']?>
+                        <h5>Descrição da vaga:</h5><p class="desc"><?=$vaga['descricao']?></p>
                     </div>
                     <div class="itens-card">
                         <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
@@ -211,14 +264,20 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                 <td class="email-aluno">
                                     <?=$aluno[22]?>
                                 </td>
+                                <td class="email-aluno">
+
+                                </td>
 
                                 <?php if (isset($_GET) && $_GET['aprovado'] == 1) {?>
                                     <td>
                                         <button class="icon-2">
                                             <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-xmark"></i>
+
                                             </a>
+
                                         </button>
+
                                     </td>
 
                                     <td>
@@ -255,6 +314,7 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                             </div>
                                         </div>
                                     </div>
+
                                 <?php }?>
 
                                 <?php if (isset($_GET) && $_GET['aprovado'] == 2) {?>
@@ -263,7 +323,9 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                             <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
+
                                         </button>
+
                                     </td>
 
 
@@ -278,7 +340,9 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
                                         </button>
+
                                     </td>
+
                                     <td>
                                         <button class="icon-2">
                                             <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[21]?>&idVaga=<?=$idvaga?>">
@@ -286,7 +350,11 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                             </a>
                                         </button>
                                     </td>
+                                    <td>    <button value="<?=$aluno[22]?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$aluno[19]?>" data-bs-whatever="@fat">
+                                        <i class="fa-solid fa-newspaper fa-lg" ></i></td>
+                                </button>
                                 <?php }?>
+
 
 
 
@@ -302,12 +370,73 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                     </tbody>
                 </table>
             </div>
+
         </section>
 
 
 
 
     </main>
+    <div class="modal fade" id="exampleModal<?=$aluno[19]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Vaga:
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+
+                                                    <div class="itens-curriculo" id="itens-curriculo">
+                    <div class="imagem-perfil-update" id="imagem-perfil-update">
+                        <img src="fotosEmpresa/perfil/2cd93350824a7e4e94b21b312ec4ca79.png" alt="">
+                        <div class="info1">
+                        <?php foreach ($aluno0 as $aluno0) {?>
+                            <p class="nome"><?=$aluno0[1]?></p>
+
+                  <p class="curso"><?=$aluno0[5]?> - <?=$aluno0[8]?></p>
+                  <?php }?>
+                        </div>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+
+                            <div class="habilidades" id="habilidades">
+                            <div class="itens-habilidades">
+                            <p class="title-habilidades"> CURSOS</p>
+                            <?php foreach ($aluno5 as $aluno5) {?><p class="itens"><?=$aluno5[4]?> - <?=$aluno5[5]?> Horas </p>
+                            <?php }?>
+                            </div>
+
+                            <div class="itens-habilidades">
+                            <p class="title-habilidades"> CONHECIMENTOS</p>
+                            <?php foreach ($aluno2 as $aluno2) {?>
+                            <p class="itens">  <?=$aluno2[1]?></p>
+                            <?php }?>
+                            </div>
+                            </div>
+
+
+
+                            <div class="habilidades" id="habilidades">
+                                <div class="itens-habilidades">
+                                <p class="title-habilidades"> HABILIDADES</p>
+                                <?php foreach ($aluno3 as $aluno3) {?>
+                                <p class="itens"> <?=$aluno3[16]?> </p>
+                                <?php }?>
+                                </div>
+
+
+                                <div class="itens-habilidades">
+                                <p class="title-habilidades"> IDIOMAS</p>
+                                <?php foreach ($aluno4 as $aluno4) {?>
+                                <p class="itens"><?=$aluno4[16]?> - <?=$aluno4[17]?></em></p>
+                                <?php }?>
+                                </div>
+                            </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 

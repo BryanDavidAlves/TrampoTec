@@ -199,18 +199,14 @@ table td {
 tr:nth-last-child(1) {
   border: none;
 }
-dialog .align-card-indicacao {
+#modal-body {
   display: flex;
-  border: 2px solid gray;
-  border-radius: 0px;
-  border-radius: 30px;
-  flex-direction: column;
+  width: 100%;
+  align-items: center;
   justify-content: center;
-  gap: 40px;
-  height: 420px;
-  width: 400px;
+
   font-family: "Poppins", sans-serif;
-  background-color: white;
+
   animation: 0.5s linear trans;
   transform: translateY(1%);
 }
@@ -299,23 +295,37 @@ dialog {
 }
 .itens-curriculo {
   display: flex;
-
-  width: 80%;
+  flex-direction: column;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 0px;
-  gap: 20px;
-  margin-top: -10px;
+  justify-content: center;
 }
-.itens-curriculo .habilidades {
+.itens-curriculo #habilidades {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-}
-.itens-curriculo .habilidades .title-habilidades {
-  font-weight: 600;
-  font-size: 1.1rem;
+  gap: 30px;
   width: 100%;
+  margin-left: 20px;
+  justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+.itens-curriculo #habilidades .itens-habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+.itens-curriculo #habilidades .itens-habilidades .itens {
+  font-size: 1rem;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.itens-curriculo #habilidades .itens-habilidades .title-habilidades {
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
   text-align: start;
 }
 .imagem-perfil-update {
@@ -340,17 +350,27 @@ dialog {
   gap: 5px;
 }
 .imagem-perfil-update img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
   object-fit: cover;
+  margin-left: 20px;
+  margin-top: 10px;
 }
-
 .table-email-aluno button:hover {
   background-color: #555bb3;
   transition: 0.3s all ease-in-out;
   border: 1px solid #555bb3;
   color: white;
+}
+#modal {
+  width: 700px;
+  min-height: 500px;
+  height: auto;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+
+  flex-direction: column;
 }
 
 .sistema-busca .barra-pesquisa {

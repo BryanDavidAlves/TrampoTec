@@ -8,12 +8,13 @@ if ($_POST) {
     $email = trim($_POST['email']);
     $categoria = trim($_POST['categoria']);
     $comentario = trim($_POST['comentario']);
+    $tipoUsuario = trim($_POST['tipoUsuario']);
 
     $sql =
         "INSERT INTO tb_fale_conosco
-        (nome,email,categoria,comentario)
+        (nome,email,categoria,comentario,tipoUsuario)
         VALUES 
-        ('$nome','$email','$categoria','$comentario')";
+        ('$nome','$email','$categoria','$comentario','$tipoUsuario')";
 
     $query = $conexao->prepare($sql);
     $query->execute();
