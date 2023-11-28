@@ -35,8 +35,8 @@ include '../pag-adm/components/sidebar-adm.php';
         <form class="form-requisitos" action="./back-end/alterar/update.php" method="post">
             <div class="inputs-dialog">
                 <span class="nav-dialog">
-                    <i onclick="modalrequisito()" class="fa-solid fa-circle-xmark"></i>
-                    <b>Editar perfil</b>
+                    <i onclick="modalrequisito()" class="fa-solid fa-xmark"></i>
+                    <b>EDITAR PERFIL</b>
                     <button class="salvar-dialog" id="idAdmin" value="<?=$cliente_id?>" name="id">SALVAR</button>
                 </span>
                 <?php foreach ($resultado as $resultado) {?>

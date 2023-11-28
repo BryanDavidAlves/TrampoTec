@@ -13,11 +13,12 @@ $resultado = $query->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel='stylesheet' href='../pag-adm/css/fale.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>TrampoTec</title>
 </head>
 
@@ -25,8 +26,8 @@ $resultado = $query->fetchAll();
 
 
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -91,17 +92,17 @@ $resultado = $query->fetchAll();
                 </thead>
                 <tbody class="infos" id="result">
                     <?php
-                    foreach ($resultado as $resultado) {
-                    ?>
+foreach ($resultado as $resultado) {
+    ?>
                         <tr class="infos">
-                            <td class="table-id"><?= $resultado[0] ?></td>
-                            <td class="table-nome-aluno"> <?= $resultado[1] ?> </td>
-                            <td class="table-email-aluno"><?= $resultado[2] ?> </td>
-                            <td class="table-email-aluno"><?= $resultado[5] ?> </td>
+                            <td class="table-id"><?=$resultado[0]?></td>
+                            <td class="table-nome-aluno"> <?=$resultado[1]?> </td>
+                            <td class="table-email-aluno"><?=$resultado[2]?> </td>
+                            <td class="table-email-aluno"><?=$resultado[5]?> </td>
                             <td class="text-center">
                                 <form method="GET" action="vagas-candidato.php">
                                     <input type="hidden" value="1" name="aprovado">
-                                    <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?= $resultado[0] ?>">
+                                    <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?=$resultado[0]?>">
                                         MENSAGEM
                                     </button>
                                 </form>
@@ -112,26 +113,26 @@ $resultado = $query->fetchAll();
                                 </button>
                             <td>
                             <td class="icone-table">
-                                <button class="email"  data-bs-toggle="modal" data-bs-target="#exampleModal<?= $resultado[0] ?>">
+                                <button class="email"  data-bs-toggle="modal" data-bs-target="#exampleModal<?=$resultado[0]?>">
                                   <i class="fa-solid fa-envelope" style="color: #055bc3;"></i>
                                 </button>
                             <td>
                         </tr>
 
 
-                        <div class="modal fade" id="staticBackdrop<?= $resultado[0] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="staticBackdrop<?=$resultado[0]?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel"> <?= $resultado[5] ?>: <?= $resultado[1] ?>
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel"> <?=$resultado[5]?>: <?=$resultado[1]?>
                                         </h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5>Tipo de Comentario:</h5>
-                                        <p class="comentario"><?= $resultado[3] ?></p>
+                                        <p class="comentario"><?=$resultado[3]?></p>
                                         <h5>Mensagem:</h5>
-                                        <p class="comentario"><?= $resultado[4] ?></p>
+                                        <p class="comentario"><?=$resultado[4]?></p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -140,21 +141,21 @@ $resultado = $query->fetchAll();
                             </div>
                         </div>
 
-                        <div class="modal fade" id="exampleModal<?= $resultado[0] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<?=$resultado[0]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="https://formsubmit.co/<?= $resultado[2] ?>" method="POST">
+                                    <form action="https://formsubmit.co/<?=$resultado[2]?>" method="POST">
                                         <div class="modal-header">
                                             <h1 class="modal-title fs-5" id="exampleModalLabel">Entrar em Contato</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                               <input type="hidden" name="_captcha" value="false"> 
+                                               <input type="hidden" name="_captcha" value="false">
                                             <div class="mb-3">
                                                 <label for="recipient-name" class="col-form-label">Para:</label>
-                                                <label><?= $resultado[2] ?></label>
+                                                <label><?=$resultado[2]?></label>
                                             </div>
-                                            <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                            <input type="hidden" name="entre em contato" value=" <?=$email?>">
                                             <div class="mb-3">
                                                 <textarea class="form-control" name="message" rows="10" required></textarea>
                                             </div>
@@ -170,8 +171,8 @@ $resultado = $query->fetchAll();
                         </div>
 
                     <?php
-                    }
-                    ?>
+}
+?>
 
                 </tbody>
             </table>

@@ -16,11 +16,12 @@ $querySelect = "SELECT * FROM  tb_empresa WHERE";
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
-    <link rel="stylesheet" href="../reset.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/empresa.css">
 
@@ -30,13 +31,13 @@ $querySelect = "SELECT * FROM  tb_empresa WHERE";
 
 <body>
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
     <img class="cima" src="img/fundo2.png" alt="">
     <header>
         <h1>Empresas</h1>
     </header>
-    
+
     <main>
         <div id="loading">
             <img src="img/loading.gif" alt="Carregando"> <!-- Use uma imagem de loading ou outra animação -->
@@ -130,7 +131,7 @@ $querySelect = "SELECT * FROM  tb_empresa WHERE";
     <script>
         $(document).ready(function () {
 
-            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") { ?>
+            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "1") {?>
 
                 var busca = ("");
                 $.post('./back-end/buscas/buscaEmpresa1.php', {
@@ -151,8 +152,8 @@ $querySelect = "SELECT * FROM  tb_empresa WHERE";
 
 
                 });
-            <?php } ?>
-            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") { ?>
+            <?php }?>
+            <?php if (isset($_GET['aprovado']) && $_GET['aprovado'] == "0") {?>
 
                 var busca = ("0");
                 $.post('./back-end/buscas/buscaEmpresa.php', {
@@ -173,7 +174,7 @@ $querySelect = "SELECT * FROM  tb_empresa WHERE";
 
 
                 });
-            <?php } ?>
+            <?php }?>
         });
     </script>
     <script src="js/modal-empresa.js"></script>
