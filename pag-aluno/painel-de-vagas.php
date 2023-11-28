@@ -6,16 +6,16 @@ require_once "./back-end/login/validador_acesso.php";
 $cliente_id = $_SESSION['idAluno'];
 
 if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
-  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
-  tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito
-    FROM tb_vaga
-    INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
-    INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
-    INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
-    INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
-";
+  $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email, tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
+    tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
+    tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito, tb_vaga.preenchida
+      FROM tb_vaga
+      INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
+      INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
+      INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
+      INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
+      INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
+      WHERE tb_vaga.preenchida = 0";;
 } else {
   $periodo = trim($_GET['periodo']);
   $curso = trim($_GET['curso']);
@@ -68,6 +68,7 @@ foreach ($result as $vaga) {
       'termino' => $vaga['termino'],
       'inicio' => $vaga['inicio'],
       'cursoNome' => $vaga['cursoNome'],
+      'preenchida' => $vaga['preenchida'],
     );
   }
 }
@@ -181,12 +182,11 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                   <p><?= $vaga['nome'] ?></p>
                   <p><?= $vaga['inicio'] ?> as <?= $vaga['termino'] ?></< /p>
                   <p>R$ <?= $vaga['salario'] ?> </p>
-
-
+                  <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
+                    Mais Informações
+                  </button>
                 </div>
-                <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
-                  Mais Informações
-                </button>
+
               </div>
             </div>
           </div>

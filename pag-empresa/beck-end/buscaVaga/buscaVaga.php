@@ -1,6 +1,13 @@
 <?php
 include '../../../dao/conexao.php';
 
+$queryPreenchida = "SELECT tb_vaga.idVaga, tb_vaga.preenchida FROM tb_vaga
+            WHERE tb_vaga.preenchida = 1";
+$preenchida = $conexao->query($queryPreenchida);
+$num3 = $preenchida->fetchALL();
+$qtn3 = count($num3);
+
+
 if ($_GET) {
 
     $idEmpresa = trim($_GET['idEmpresa']);
@@ -10,7 +17,7 @@ if ($_GET) {
 
         $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
         tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
-        tb_requisito.requisito
+        tb_requisito.requisito, tb_vaga.preenchida
        FROM tb_vaga
        INNER JOIN tb_curso
        ON tb_vaga.fk_idCurso = tb_curso.idCurso
@@ -27,7 +34,7 @@ if ($_GET) {
 
         $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
         tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
-        tb_requisito.requisito
+        tb_requisito.requisito, tb_vaga.preenchida
        FROM tb_vaga
        INNER JOIN tb_curso
        ON tb_vaga.fk_idCurso = tb_curso.idCurso
@@ -64,6 +71,7 @@ foreach ($result as $vaga) {
             'bairro' => $vaga['bairro'],
             'area' => $vaga['area'],
             'periodo' => $vaga['periodo'],
+            'preenchida' => $vaga['preenchida'],
 
         );
     }
@@ -84,17 +92,20 @@ foreach ($vagas as $vaga) {
     <button id="ver-mais-vaga" type="submit" name="idVaga" value="' . $vaga['idVaga'] . '" href="vagas-candidato.php"> VER MAIS </button>
     </form>
     <td>
-    <td class="icone-table">
-            <form action="cadastrar-vaga.php" method="POST" class="editar-vaga">
-            <input type="hidden" class="form-control" id="id" name="id" value="' . $vaga['idVaga'] . '">
-            <button type="submit" class="botao-editar" class="dropdown-item">
-            <i class="fa-solid fa-pen-to-square"></i>
-            </button>
+    <td class="icone-table">';
+    if ($vaga['preenchida'] == 1) {
+        echo '<h6>ESTA VAGA JÁ FOI PREENCHIDA</h6>';
+    } else {
+        echo '<form action="cadastrar-vaga.php" method="POST" class="editar-vaga">
+                <input type="hidden" class="form-control" id="id" name="id" value="' . $vaga['idVaga'] . '">
+                <button type="submit" class="botao-editar" class="dropdown-item">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
             </form>
-            <button type="button" class="btn btn-primary preencher-vaga-btn" data-bs-toggle="modal" data-bs-target="#confirmarPreenchimentoModal'.$vaga['idVaga'].'" value="'. $vaga['idVaga'] .'">
-            Preencher Vaga
-            </button>
-
-    <td>
-        </tr>';
+            <button type="button" class="btn btn-primary preencher-vaga-btn" data-bs-toggle="modal" data-bs-target="#confirmarPreenchimentoModal' . $vaga['idVaga'] . '" value="' . $vaga['idVaga'] . '">
+                Preencher Vaga
+            </button>';
+    }
+    echo '</td>
+    </tr>';
 }
