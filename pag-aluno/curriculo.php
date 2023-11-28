@@ -270,34 +270,37 @@ require_once "./back-end/login/validador_acesso.php";
       </form>
 
     </div>
-    <div id="card">
+    <div class="algin-cards">
 
-      <h2>Informações do Curso</h2>
-      <div>
-        <h3>Instituição:</h3>
-        <p>Nome da Instituição</p>
-      </div>
-      <div>
-        <h3>Curso:</h3>
-        <p> Nome do Curso</p>
-      </div>
-      <div>
-        <h3>Período:</h3>
-        <p> Manhã</p>
-      </div>
-      <div>
-        <h3>Semestres Totais:</h3>
-        <p> 8</p>
-      </div>
-      <div>
-        <h3>Carga Horária:</h3>
-        <p> 1600 horas</p>
-      </div>
-      <div>
-        <h3>Conclusão:</h3>
-        <p> Dezembro de 2024</p>
-      </div>
+      <div id="card">
 
+        <h2>Informações do Curso</h2>
+        <div>
+          <h3>Instituição:</h3>
+          <p>Nome da Instituição</p>
+        </div>
+        <div>
+          <h3>Curso:</h3>
+          <p> Nome do Curso</p>
+        </div>
+        <div>
+          <h3>Período:</h3>
+          <p> Manhã</p>
+        </div>
+        <div>
+          <h3>Semestres Totais:</h3>
+          <p> 8</p>
+        </div>
+        <div>
+          <h3>Carga Horária:</h3>
+          <p> 1600 horas</p>
+        </div>
+        <div>
+          <h3>Conclusão:</h3>
+          <p> Dezembro de 2024</p>
+        </div>
+      </div>
+      
     </div>
   </div>
 </body>
