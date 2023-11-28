@@ -1,8 +1,6 @@
 <?php
 include '../../../dao/conexao.php';
 
-
-
 $querySelect2 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
 FROM tb_aluno
 INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
@@ -55,6 +53,7 @@ INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
 INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
 WHERE tb_aluno.nome LIKE '%$busca%' OR tb_vaga.nome LIKE '%$busca%' OR tb_aluno.email LIKE '%$busca%'
 
+
 ";
 } else {
     $querySelect = "SELECT  tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
@@ -78,22 +77,19 @@ foreach ($resultado as $resultado) {
     ";
     $query1 = $conexao->query($querySelect1);
     $aluno1 = $query1->fetchAll();
-  
-        echo
-        '<tr class="infos">
+
+    echo
+    '<tr class="infos">
          <td class="table-id">' . $resultado[24] . '</td>',
-        '<td class="table-nome-aluno">' . $resultado[15] . '</td>',
+    '<td class="table-nome-aluno">' . $resultado[15] . '</td>',
         '<td class="table-email-aluno">' . $resultado[22] . ' </td>,
     <td class="table-email-aluno">
-    <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal"
-    data-bs-target="#staticBackdrop' . $resultado[19] . '">
+  <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#exampleModal' . $resultado[21] . '">
     VER CURRICULO
 </button>
     </td>
         </tr>
-   
+
         ';
 }
-
-?>
-

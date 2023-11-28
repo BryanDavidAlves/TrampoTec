@@ -199,16 +199,14 @@ table td {
 tr:nth-last-child(1) {
   border: none;
 }
- #modal-body {
+#modal-body {
   display: flex;
- width: 100%; 
+  width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: aqua;
-  
- 
+
   font-family: "Poppins", sans-serif;
-  background-color: white;
+
   animation: 0.5s linear trans;
   transform: translateY(1%);
 }
@@ -297,27 +295,37 @@ dialog {
 }
 .itens-curriculo {
   display: flex;
-
+  flex-direction: column;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: center;
 }
-.itens-curriculo #habilidades{
+.itens-curriculo #habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-left: 20px;
+  justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+.itens-curriculo #habilidades .itens-habilidades {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
-
-
+  font-family: "Poppins", sans-serif;
 }
-.itens-curriculo #habilidades p {
-font-size: 0.9rem;
+.itens-curriculo #habilidades .itens-habilidades .itens {
+  font-size: 1rem;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-.itens-curriculo #habilidades .title-habilidades {
+.itens-curriculo #habilidades .itens-habilidades .title-habilidades {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   width: 100%;
+  font-family: "Poppins", sans-serif;
   text-align: start;
 }
 .imagem-perfil-update {
@@ -349,12 +357,20 @@ font-size: 0.9rem;
   margin-left: 20px;
   margin-top: 10px;
 }
-
 .table-email-aluno button:hover {
   background-color: #555bb3;
   transition: 0.3s all ease-in-out;
   border: 1px solid #555bb3;
   color: white;
+}
+#modal {
+  width: 700px;
+  min-height: 500px;
+  height: auto;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+
+  flex-direction: column;
 }
 
 .sistema-busca .barra-pesquisa {
