@@ -10,7 +10,7 @@ main .align-itens {
 main .align-itens .card .title-card {
   margin-top: 0px;
   color: #555cb3;
-  
+
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -29,7 +29,7 @@ main .align-itens .card {
   height: auto;
   transition: 0.3s all ease-in-out;
 }
-main .align-itens .card .desc{
+main .align-itens .card .desc {
   word-break: break-all;
   width: 300px;
   margin: 0px;
@@ -273,4 +273,103 @@ td .container-perfil .img-perfil img {
   background-color: white;
   border-radius: 100px;
   padding: 20px;
+}
+#modal-body {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-family: "Poppins", sans-serif;
+
+  animation: 0.5s linear trans;
+  transform: translateY(1%);
+}
+
+@keyframes trans {
+  0% {
+    opacity: 0%;
+    transform: translateY(-15%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(1%);
+  }
+}
+
+.itens-curriculo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.itens-curriculo #habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-left: 20px;
+  justify-content: space-evenly;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+.itens-curriculo #habilidades .itens-habilidades {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+.itens-curriculo #habilidades .itens-habilidades .itens {
+  font-size: 1rem;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.itens-curriculo #habilidades .itens-habilidades .title-habilidades {
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  text-align: start;
+}
+.imagem-perfil-update {
+  width: 100%;
+  gap: 10px;
+  object-fit: cover;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+}
+.imagem-perfil-update .info1 .nome {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.imagem-perfil-update .info1 .curso {
+  font-size: 1.1rem;
+}
+.imagem-perfil-update .info1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.imagem-perfil-update img {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#modal {
+  width: 700px;
+  min-height: 500px;
+  height: auto;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+
+  flex-direction: column;
 }
