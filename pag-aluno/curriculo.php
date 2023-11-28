@@ -24,8 +24,11 @@ require_once "./back-end/login/validador_acesso.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
   <!--link icone filtro-->
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
@@ -100,8 +103,8 @@ require_once "./back-end/login/validador_acesso.php";
 
     .align-tudo {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: space-around;
     }
 
     .button {
@@ -160,6 +163,40 @@ require_once "./back-end/login/validador_acesso.php";
       right: 10px;
       font-size: 18px;
     }
+
+    #card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 10%;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 15px
+    }
+
+    p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    #card div {
+      display: flex;
+      align-items: baseline;
+      margin: 15px 0px;
+      gap: 2px;
+    }
+
+    /* Adicione estilos adicionais conforme necessário */
   </style>
   <title>Meu Curriculo</title>
 
@@ -179,7 +216,8 @@ require_once "./back-end/login/validador_acesso.php";
     <button onclick="fecharModal()">OK</button>
   </div>
   <div class="progress">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100"></div>
   </div>
 
   <div class="align-tudo">
@@ -190,7 +228,9 @@ require_once "./back-end/login/validador_acesso.php";
         <select class="input" placeholder="etec" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
           <option>Selecione uma Instituição</option>
           <?php foreach ($etec as $etec) { ?>
-            <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
+            <option value="<?= $etec[0] ?>">
+              <?= $etec[1] ?>
+            </option>
           <?php } ?>
         </select>
 
@@ -230,6 +270,35 @@ require_once "./back-end/login/validador_acesso.php";
       </form>
 
     </div>
+    <div id="card">
+
+      <h2>Informações do Curso</h2>
+      <div>
+        <h3>Instituição:</h3>
+        <p>Nome da Instituição</p>
+      </div>
+      <div>
+        <h3>Curso:</h3>
+        <p> Nome do Curso</p>
+      </div>
+      <div>
+        <h3>Período:</h3>
+        <p> Manhã</p>
+      </div>
+      <div>
+        <h3>Semestres Totais:</h3>
+        <p> 8</p>
+      </div>
+      <div>
+        <h3>Carga Horária:</h3>
+        <p> 1600 horas</p>
+      </div>
+      <div>
+        <h3>Conclusão:</h3>
+        <p> Dezembro de 2024</p>
+      </div>
+
+    </div>
   </div>
 </body>
 
@@ -238,23 +307,23 @@ require_once "./back-end/login/validador_acesso.php";
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 <script>
-        // Função para abrir o modal
-        function abrirModal() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('modal').style.display = 'block';
-        }
+  // Função para abrir o modal
+  function abrirModal() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
+  }
 
-        // Função para fechar o modal
-        function fecharModal() {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('modal').style.display = 'none';
-        }
+  // Função para fechar o modal
+  function fecharModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
 
-        // Verificar se o CPF já está cadastrado via GET
-        let urlParams = new URLSearchParams(window.location.search);
-        let curri = urlParams.get('curri');
+  // Verificar se o CPF já está cadastrado via GET
+  let urlParams = new URLSearchParams(window.location.search);
+  let curri = urlParams.get('curri');
 
-        if (curri === 'true') {
-            abrirModal();
-        }
-    </script>
+  if (curri === 'true') {
+    abrirModal();
+  }
+</script>
