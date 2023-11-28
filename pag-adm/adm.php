@@ -12,15 +12,15 @@ require_once "back-end/login/validador_acesso.php";
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
-    <link rel="stylesheet" href="../reset.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/adm.css">
-    
+
     <title>Administradores</title>
 </head>
 
@@ -96,7 +96,7 @@ include '../pag-adm/components/sidebar-adm.php';
                             <th>ID</th>
                             <th>NOME</th>
                             <th>EMAIL INSTITUICIONAL</th>
-                            
+
                     </thead>
                     <tbody class="infos" id="result">
 
