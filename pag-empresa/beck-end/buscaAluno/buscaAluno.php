@@ -85,7 +85,7 @@ foreach ($resultado as $resultado) {
         '<td class="table-email-aluno">' . $resultado[23] . ' </td>,
     <td class="table-email-aluno">
   <button type="button" id="ver-mais" class="btn btn-primary" value=" ' . $resultado[0] . '" data-bs-toggle="modal"
-    data-bs-target="#exampleModal' . $resultado[0] . $resultado[22] . '">
+    data-bs-target="#exampleModal'  . $resultado[22] . '">
 
 VER CANDIDATOS
 </button>
