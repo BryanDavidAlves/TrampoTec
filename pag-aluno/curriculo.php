@@ -24,10 +24,11 @@ require_once "./back-end/login/validador_acesso.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-  <!--link icone filtro-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <!--link icone filtro-->
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../reset.css">
 
@@ -100,8 +101,8 @@ require_once "./back-end/login/validador_acesso.php";
 
     .align-tudo {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: space-around;
     }
 
     .button {
@@ -160,6 +161,45 @@ require_once "./back-end/login/validador_acesso.php";
       right: 10px;
       font-size: 18px;
     }
+
+    #card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 10%;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 15px
+    }
+
+    p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    #card div {
+      display: flex;
+      align-items: baseline;
+      margin: 15px 0px;
+      gap: 2px;
+    }
+
+    #card i {
+      margin-left: 230px;
+      cursor: pointer;
+    }
+
+    /* Adicione estilos adicionais conforme necessário */
   </style>
   <title>Meu Curriculo</title>
 
@@ -190,7 +230,9 @@ require_once "./back-end/login/validador_acesso.php";
         <select class="input" placeholder="etec" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
           <option>Selecione uma Instituição</option>
           <?php foreach ($etec as $etec) { ?>
-            <option value="<?= $etec[0] ?>"><?= $etec[1] ?></option>
+            <option value="<?= $etec[0] ?>">
+              <?= $etec[1] ?>
+            </option>
           <?php } ?>
         </select>
 
@@ -230,31 +272,91 @@ require_once "./back-end/login/validador_acesso.php";
       </form>
 
     </div>
+    <div class="algin-cards">
+
+      <div id="card">
+      <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+        <h2>Informações do Curso</h2>
+        <div>
+          <h3>Instituição:</h3>
+          <p>Nome da Instituição</p>
+        </div>
+        <div>
+          <h3>Curso:</h3>
+          <p> Nome do Curso</p>
+        </div>
+        <div>
+          <h3>Período:</h3>
+          <p> Manhã</p>
+        </div>
+        <div>
+          <h3>Semestres Totais:</h3>
+          <p> 8</p>
+        </div>
+        <div>
+          <h3>Carga Horária:</h3>
+          <p> 1600 horas</p>
+        </div>
+        <div>
+          <h3>Conclusão:</h3>
+          <p> Dezembro de 2024</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="modal fade" id="modalExcluir" role="dialog">
+      <div class=" modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body  ">
+            <form action="back-end/crudAdm/adm-delete.php" method="post">
+              <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
+              <p>Tem certeza que deseja excluir o item selcionado?
+              <div class=" text-end">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                <button type="submit" class="btn btn-warning ms-3">Sim </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </body>
 
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 <script>
-        // Função para abrir o modal
-        function abrirModal() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('modal').style.display = 'block';
-        }
+  // Função para abrir o modal
+  function abrirModal() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
+  }
 
-        // Função para fechar o modal
-        function fecharModal() {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('modal').style.display = 'none';
-        }
+  // Função para fechar o modal
+  function fecharModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
 
-        // Verificar se o CPF já está cadastrado via GET
-        let urlParams = new URLSearchParams(window.location.search);
-        let curri = urlParams.get('curri');
+  // Verificar se o CPF já está cadastrado via GET
+  let urlParams = new URLSearchParams(window.location.search);
+  let curri = urlParams.get('curri');
 
-        if (curri === 'true') {
-            abrirModal();
-        }
-    </script>
+  if (curri === 'true') {
+    abrirModal();
+  }
+</script>

@@ -55,8 +55,9 @@ $faleConosco = $resultado->fetchAll();
                             foreach ($faleConosco as $faleConosco) {
                                 ?>
 
-                                <input type="text" id="nome" name="nome" value="<?=$faleConosco[0]?>" required>
-                                <label class="label-anim" for="nome">NOME: *</label>
+                                <input type="text" value="<?=$faleConosco[0]?>" disabled>
+                                <input type="hidden" id="nome" name="nome" value="<?=$faleConosco[0]?>">
+                                <label class="label-anim0" for="nome">NOME: *</label>
                             </div>
                             <select name="categoria" id="categoria">
                                 <option value="elogio">Elogio</option>
@@ -65,8 +66,9 @@ $faleConosco = $resultado->fetchAll();
                             </select>
                         </div>
                         <div class="input-box">
-                            <input type="email" id="email" name="email" value="<?=$faleConosco[1]?>" required>
-                            <label class="label-anim" for="email">EMAIL: *</label>
+                            <input type="email" value="<?=$faleConosco[1]?>" disabled>
+                            <input type="hidden" id="email" name="email" value="<?=$faleConosco[1]?>" required>
+                            <label class="label-anim0" for="email">EMAIL: *</label>
                             <?php
                             }
                             ?>
