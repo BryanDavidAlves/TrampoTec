@@ -69,7 +69,7 @@ $resultado = $resultado->fetchAll();
                     <?php
                     }
                     ?>
-                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="detalhes"></textarea>
+                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Detalhes da mensagem"></textarea>
                     <br>
 
                     <input type="hidden" name="tipoUsuario" value="Aluno">
@@ -81,7 +81,7 @@ $resultado = $resultado->fetchAll();
         </div>
 
 
-        <img class="icone" src="img/icone-contato.png" alt="">
+        <img class="icone" src="img/contato.png" alt="">
     </main>
     <?php
     include('../pag-aluno/components/sidebar.php');

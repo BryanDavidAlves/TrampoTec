@@ -1,5 +1,5 @@
 body {
-    background-image: url(../img/bg-contato-aluno.PNG);
+  background-image: url(../img/bg-contato-aluno.PNG);
     background-repeat: no-repeat;
     background-size: cover ;
 }
@@ -55,7 +55,10 @@ select:focus {
     margin-left: 0px;
     color: #fff;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+.box-input input {
+    width: 250px;
 }
 
 input {
@@ -71,8 +74,9 @@ textarea {
     border: none;
     border-radius: 5px;
     padding: 10px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     width: 350px;
+    resize: none;
 }
 
 textarea::placeholder {
@@ -87,7 +91,7 @@ textarea::placeholder {
 select {
     background-color: #114baf;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
     color: #fff;
     width: 100px;
@@ -104,11 +108,21 @@ select {
     margin-left: 25%;
     cursor: pointer;
 }
+
+.btn:hover{
+    background-color:#051b42;
+    color: white;
+    border: 1px solid white ;
+    font-weight: 800;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 25%;
+    cursor: pointer;
+}
+
 .icone{
-    /*
-    float: right;
-    margin-top: 22%;
-    margin-right: 40px;*/
+    width: 90vh;
     position:fixed;
     bottom:0 ;
     right: 0;
