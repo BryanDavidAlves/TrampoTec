@@ -24,13 +24,11 @@ require_once "./back-end/login/validador_acesso.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-
-  <!--link icone filtro-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <!--link icone filtro-->
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../reset.css">
 
@@ -196,6 +194,11 @@ require_once "./back-end/login/validador_acesso.php";
       gap: 2px;
     }
 
+    #card i {
+      margin-left: 230px;
+      cursor: pointer;
+    }
+
     /* Adicione estilos adicionais conforme necessário */
   </style>
   <title>Meu Curriculo</title>
@@ -216,8 +219,7 @@ require_once "./back-end/login/validador_acesso.php";
     <button onclick="fecharModal()">OK</button>
   </div>
   <div class="progress">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-      aria-valuemax="100"></div>
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
 
   <div class="align-tudo">
@@ -273,7 +275,7 @@ require_once "./back-end/login/validador_acesso.php";
     <div class="algin-cards">
 
       <div id="card">
-
+      <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
         <h2>Informações do Curso</h2>
         <div>
           <h3>Instituição:</h3>
@@ -300,13 +302,41 @@ require_once "./back-end/login/validador_acesso.php";
           <p> Dezembro de 2024</p>
         </div>
       </div>
-      
+
     </div>
+
+
+    <div class="modal fade" id="modalExcluir" role="dialog">
+      <div class=" modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body  ">
+            <form action="back-end/crudAdm/adm-delete.php" method="post">
+              <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
+              <p>Tem certeza que deseja excluir o item selcionado?
+              <div class=" text-end">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                <button type="submit" class="btn btn-warning ms-3">Sim </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </body>
 
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 <script>
