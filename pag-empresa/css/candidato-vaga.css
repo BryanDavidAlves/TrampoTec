@@ -308,13 +308,12 @@ td .container-perfil .img-perfil img {
 }
 .itens-curriculo #habilidades {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  margin-left: 20px;
-  justify-content: space-evenly;
+
+  width: 90%;
+  align-items: flex-start;
+  justify-content: space-between;
   font-family: "Poppins", sans-serif;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .itens-curriculo #habilidades .itens-habilidades {
   display: flex;

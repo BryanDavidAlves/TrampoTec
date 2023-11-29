@@ -85,7 +85,7 @@ INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
 
 ";
 $query = $conexao->query($querySelect6);
-$aluno0 = $query->fetchAll();
+$alunoUm = $query->fetchAll();
 
 $querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
 FROM tb_aluno
@@ -94,7 +94,7 @@ INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_a
 
 ";
 $query2 = $conexao->query($querySelect7);
-$aluno2 = $query2->fetchAll();
+$alunoDois = $query2->fetchAll();
 
 $querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
 FROM tb_aluno
@@ -104,7 +104,7 @@ INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_i
 
 ";
 $query3 = $conexao->query($querySelect8);
-$aluno3 = $query3->fetchAll();
+$alunoTres = $query3->fetchAll();
 
 $querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
 FROM tb_aluno
@@ -112,7 +112,7 @@ INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
 
 ";
 $query4 = $conexao->query($querySelect9);
-$aluno4 = $query4->fetchAll();
+$alunoQuatro = $query4->fetchAll();
 
 $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
 FROM tb_aluno
@@ -121,7 +121,7 @@ INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
 
 ";
 $query5 = $conexao->query($querySelect10);
-$aluno5 = $query5->fetchAll();
+$alunoCinco = $query5->fetchAll();
 
 $querySelect11 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
 FROM tb_aluno
@@ -129,7 +129,7 @@ INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
 
 ";
 $query6 = $conexao->query($querySelect11);
-$aluno6 = $query6->fetchAll();
+$alunoSeis = $query6->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -249,20 +249,20 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                         <?php foreach ($aluno as $aluno) {?>
                             <tr class="infos">
                                 <td class="id-aluno">
-                                    <?=$aluno[21]?>
+                                    <?=$aluno[22]?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[34] != "" ? $aluno[34] : '';?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[35] != "" ? $aluno[35] : '';?>" alt="">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="nome-aluno">
-                                    <?=$aluno[24]?>
+                                    <?=$aluno[25]?>
                                 </td>
                                 <td class="email-aluno">
-                                    <?=$aluno[22]?>
+                                    <?=$aluno[23]?>
                                 </td>
                                 <td class="email-aluno">
 
@@ -387,51 +387,53 @@ $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                                                     </div>
 
                                                     <div class="itens-curriculo" id="itens-curriculo">
-                    <div class="imagem-perfil-update" id="imagem-perfil-update">
-                        <img src="fotosEmpresa/perfil/2cd93350824a7e4e94b21b312ec4ca79.png" alt="">
-                        <div class="info1">
-                        <?php foreach ($aluno0 as $aluno0) {?>
-                            <p class="nome"><?=$aluno0[1]?></p>
 
-                  <p class="curso"><?=$aluno0[5]?> - <?=$aluno0[8]?></p>
-                  <?php }?>
-                        </div>
-                    </div>
-                    <div id="modal-body" class="modal-body">
+                                                        <div class="imagem-perfil-update" id="imagem-perfil-update">
+                                                        <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[35] != "" ? $aluno[35] : '';?>" alt="">
+                                                            <div class="info1">
 
-                            <div class="habilidades" id="habilidades">
-                            <div class="itens-habilidades">
-                            <p class="title-habilidades"> CURSOS</p>
-                            <?php foreach ($aluno5 as $aluno5) {?><p class="itens"><?=$aluno5[4]?> - <?=$aluno5[5]?> Horas </p>
-                            <?php }?>
-                            </div>
+                                                                <p class="nome"><?=$aluno[25]?></p>
 
-                            <div class="itens-habilidades">
-                            <p class="title-habilidades"> CONHECIMENTOS</p>
-                            <?php foreach ($aluno2 as $aluno2) {?>
-                            <p class="itens">  <?=$aluno2[1]?></p>
-                            <?php }?>
-                            </div>
-                            </div>
+                                                                <?php foreach ($alunoUm as $alunoUm) {?>
+                                                    <p class="curso"><?=$alunoUm[5]?> - <?=$alunoUm[8]?></p>
+                                                    <?php }?>
+                                                            </div>
+                                                        </div>
 
 
+                                                        <div class="habilidades" id="habilidades">
+                                                        <div class="itens-habilidades">
+                                                        <p class="title-habilidades"> CURSOS</p>
+                                                        <?php foreach ($alunoCinco as $alunoCinco) {?><p class="itens"><?=$alunoCinco[4]?> - <?=$alunoCinco[5]?> Horas </p>
+                                                        <?php }?>
+                                                        </div>
 
-                            <div class="habilidades" id="habilidades">
-                                <div class="itens-habilidades">
-                                <p class="title-habilidades"> HABILIDADES</p>
-                                <?php foreach ($aluno3 as $aluno3) {?>
-                                <p class="itens"> <?=$aluno3[16]?> </p>
-                                <?php }?>
-                                </div>
+                                                        <div class="itens-habilidades">
+                                                        <p class="title-habilidades"> CONHECIMENTOS</p>
+                                                        <?php foreach ($alunoDois as $alunoDois) {?>
+                                                        <p class="itens">  <?=$alunoDois[1]?></p>
+                                                        <?php }?>
+                                                        </div>
+                                                        </div>
 
 
-                                <div class="itens-habilidades">
-                                <p class="title-habilidades"> IDIOMAS</p>
-                                <?php foreach ($aluno4 as $aluno4) {?>
-                                <p class="itens"><?=$aluno4[16]?> - <?=$aluno4[17]?></em></p>
-                                <?php }?>
-                                </div>
-                            </div>
+
+                                                        <div class="habilidades" id="habilidades">
+                                                            <div class="itens-habilidades">
+                                                            <p class="title-habilidades"> HABILIDADES</p>
+                                                            <?php foreach ($alunoTres as $alunoTres) {?>
+                                                            <p class="itens"> <?=$alunoTres[16]?> </p>
+                                                            <?php }?>
+                                                            </div>
+
+
+                                                            <div class="itens-habilidades">
+                                                            <p class="title-habilidades"> IDIOMAS</p>
+                                                            <?php foreach ($alunoQuatro as $alunoQuatro) {?>
+                                                            <p class="itens"><?=$alunoQuatro[16]?> - <?=$alunoQuatro[17]?></em></p>
+                                                            <?php }?>
+                                                            </div>
+                                                        </div>
 
                                                 </div>
                                             </div>
