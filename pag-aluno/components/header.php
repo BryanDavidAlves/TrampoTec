@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
 
 <style>
   .img-nav {
@@ -35,10 +28,10 @@
   .navbar-nav .nav-link {
     transition: background-color 0.3s ease-in-out;
   }
+  
 </style>
-</head>
 
-<body>
+
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -93,6 +86,4 @@
       </div>
     </div>
   </nav>
-</body>
 
-</html>
