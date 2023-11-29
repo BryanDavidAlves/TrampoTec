@@ -109,6 +109,10 @@ $alunoSeis = $query6->fetchAll();
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
     <link rel='stylesheet' href='../pag-empresa/css/candidato-vaga.css'>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -256,12 +260,15 @@ $alunoSeis = $query6->fetchAll();
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
+                                                    <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/vagas-candidato.php?aprovado=1&idVaga=<?=$idvaga?>">
+
+
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Entrar em Contato</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <!--    <input type="hidden" name="_captcha" value="false"> -->
+                                                          <input type="hidden" name="_captcha" value="false"> 
                                                         <div class="mb-3">
                                                             <label for="recipient-name" class="col-form-label">Para:</label>
                                                             <label><?= $aluno[23] ?></label>
@@ -319,6 +326,117 @@ $alunoSeis = $query6->fetchAll();
                                     <td> <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
                                             <i class="fa-solid fa-newspaper fa-lg"></i></td>
                                     </button>
+
+                                    <div class="modal fade" id="exampleModal<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" >
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+
+                                                <div class="itens-curriculo" id="itens-curriculo">
+
+                                                    <div class="imagem-perfil-update" id="imagem-perfil-update">
+                                                        <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[35] != "" ? $aluno[35] : ''; ?>" alt="">
+                                                        <div class="info1" id="info1">
+                                                            <p class="nome" id="nome"><?= $aluno[25] ?></p>
+
+
+                                                            
+                                                            <?php
+                                                            $querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_etec.*,tb_etec.*
+                                                                FROM tb_aluno
+                                                                INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+                                                                INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+                                                                WHERE tb_aluno.idAluno = $aluno[19]
+                                                                ";  
+                                                            $query = $conexao->query($querySelect6);
+                                                            $alunoUm = $query->fetchAll();
+                                                            
+                                                        foreach ($alunoUm as $alunoUm) { ?>
+                                                        <p class="instituicao" id="instituicao"><?= $alunoUm[5] ?> - <?= $alunoUm[8] ?></p>
+                                                    <?php } ?>
+
+                                                        </div>
+                                                       
+                                                    </div>
+
+<div class="align-modal" id="align-modal">
+                                                    <div class="habilidades" id="habilidades">
+                                                        <div class="itens-habilidades" id="itens-habilidades">
+                                                            <p class="title-habilidades " id="title-habilidades"> CURSOS</p>
+                                                            <?php
+                                                            $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
+                            FROM tb_aluno
+                            INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
+                            INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+                            WHERE tb_aluno.idAluno = $aluno[19]
+                            ";
+                                                            $query5 = $conexao->query($querySelect10);
+                                                            $alunoCinco = $query5->fetchAll();
+                                                            foreach ($alunoCinco as $alunoCinco) { ?><p class="itens" id="itens"><?= $alunoCinco[4] ?> - <?= $alunoCinco[5] ?> Horas </p>
+                                                            <?php } ?>
+                                                        </div>
+
+                                                        <div class="itens-habilidades" id="itens-habilidades">
+                                                            <p class="title-habilidades" id="title-habilidades"> CONHECIMENTOS</p>
+                                                            <?php
+                                                            $querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+                            FROM tb_aluno
+                            INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
+                            INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
+                            WHERE tb_aluno.idAluno = $aluno[19]
+                            ";
+                                                            $query2 = $conexao->query($querySelect7);
+                                                            $alunoDois = $query2->fetchAll();
+                                                            foreach ($alunoDois as $alunoDois) { ?>
+                                                                <p class="itens" id="itens"> <?= $alunoDois[1] ?></p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="habilidades" id="habilidades">
+                                                        <div class="itens-habilidades" id="itens-habilidades">
+                                                            <p class="title-habilidades" id="title-habilidades"> HABILIDADES</p>
+                                                            <?php
+                                                            $querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+                            FROM tb_aluno
+                            INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
+                            INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
+                            WHERE tb_aluno.idAluno = $aluno[19]
+                            ";
+                                                            $query3 = $conexao->query($querySelect8);
+                                                            $alunoTres = $query3->fetchAll();
+                                                            foreach ($alunoTres as $alunoTres) { ?>
+                                                                <p class="itens" id="itens"> <?= $alunoTres[16] ?> </p>
+                                                            <?php } ?>
+                                                        </div>
+
+
+                                                        <div class="itens-habilidades" id="itens-habilidades1">
+                                                            <p class="title-habilidades" id="title-habilidades"> IDIOMAS</p>
+                                                            <?php
+                                                            $querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+                            FROM tb_aluno
+                            INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
+                            WHERE tb_aluno.idAluno = $aluno[19]
+                            ";
+                                                            $query4 = $conexao->query($querySelect9);
+                                                            $alunoQuatro = $query4->fetchAll();
+                                                            foreach ($alunoQuatro as $alunoQuatro) { ?>
+                                                                <p class="itens" id="itens"><?= $alunoQuatro[16] ?> - <?= $alunoQuatro[17] ?></em></p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php } ?>
                             </tr>
 
@@ -336,112 +454,7 @@ $alunoSeis = $query6->fetchAll();
 
 
     </main>
-    <div class="modal fade" id="exampleModal<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Vaga:
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
 
-                <div class="itens-curriculo" id="itens-curriculo">
-
-                    <div class="imagem-perfil-update" id="imagem-perfil-update">
-                        <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[35] != "" ? $aluno[35] : ''; ?>" alt="">
-                        <div class="info1">
-
-                            <p class="nome"><?= $aluno[25] ?></p>
-
-                            <?php 
-                            $querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_etec.*,tb_etec.*
-                            FROM tb_aluno
-                            INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
-                            INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
-                            WHERE tb_aluno.idAluno = $aluno[19]
-                            ";
-                            $query = $conexao->query($querySelect6);
-                            $alunoUm = $query->fetchAll();
-                            foreach ($alunoUm as $alunoUm) { ?>
-                                <p class="curso"><?= $alunoUm[5] ?> - <?= $alunoUm[8] ?></p>
-                            <?php } ?>
-                        </div>
-                    </div>
-
-
-                    <div class="habilidades" id="habilidades">
-                        <div class="itens-habilidades">
-                            <p class="title-habilidades"> CURSOS</p>
-                            <?php
-                            $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
-                            FROM tb_aluno
-                            INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
-                            INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
-                            WHERE tb_aluno.idAluno = $aluno[19]
-                            ";
-                            $query5 = $conexao->query($querySelect10);
-                            $alunoCinco = $query5->fetchAll();
-                            foreach ($alunoCinco as $alunoCinco) { ?><p class="itens"><?= $alunoCinco[4] ?> - <?= $alunoCinco[5] ?> Horas </p>
-                            <?php } ?>
-                        </div>
-
-                        <div class="itens-habilidades">
-                            <p class="title-habilidades"> CONHECIMENTOS</p>
-                            <?php 
-                            $querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
-                            FROM tb_aluno
-                            INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
-                            INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
-                            WHERE tb_aluno.idAluno = $aluno[19]
-                            ";
-                            $query2 = $conexao->query($querySelect7);
-                            $alunoDois = $query2->fetchAll();
-                            foreach ($alunoDois as $alunoDois) { ?>
-                                <p class="itens"> <?= $alunoDois[1] ?></p>
-                            <?php } ?>
-                        </div>
-                    </div>
-
-
-
-                    <div class="habilidades" id="habilidades">
-                        <div class="itens-habilidades">
-                            <p class="title-habilidades"> HABILIDADES</p>
-                            <?php 
-                            $querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
-                            FROM tb_aluno
-                            INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
-                            INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
-                            WHERE tb_aluno.idAluno = $aluno[19]
-                            ";
-                            $query3 = $conexao->query($querySelect8);
-                            $alunoTres = $query3->fetchAll();
-                            foreach ($alunoTres as $alunoTres) { ?>
-                                <p class="itens"> <?= $alunoTres[16] ?> </p>
-                            <?php } ?>
-                        </div>
-
-
-                        <div class="itens-habilidades">
-                            <p class="title-habilidades"> IDIOMAS</p>
-                            <?php
-                            $querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
-                            FROM tb_aluno
-                            INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
-                            WHERE tb_aluno.idAluno = $aluno[19]
-                            ";
-                            $query4 = $conexao->query($querySelect9);
-                            $alunoQuatro = $query4->fetchAll();
-                            foreach ($alunoQuatro as $alunoQuatro) { ?>
-                                <p class="itens"><?= $alunoQuatro[16] ?> - <?= $alunoQuatro[17] ?></em></p>
-                            <?php } ?>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
 </body>
 
