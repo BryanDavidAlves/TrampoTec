@@ -160,27 +160,28 @@ $aluno6 = $query6->fetchAll();
 
            <?php foreach ($resultado as $resultado) {?>
 
-            <div class="modal fade" id="exampleModal<?=$resultado[21]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade"  id="exampleModal<?=$resultado[0], $resultado[22]?>"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" >
             <div class="modal-content" id="modal">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModal">Vaga: <?=$resultado[21]?>
+                    <h1 class="modal-title fs-5" id="exampleModal">Vaga: <?=$resultado[1]?>
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="itens-curriculo" id="itens-curriculo">
                     <div class="imagem-perfil-update" id="imagem-perfil-update">
-                        <img src="fotosEmpresa/perfil/2cd93350824a7e4e94b21b312ec4ca79.png" alt="">
+                        <img src="../pag-aluno/fotosAluno/perfil/<?=$resultado[35] != "" ? $resultado[35] : '';?>" alt="">
                         <div class="info1">
-                        <?php foreach ($aluno as $aluno) {?>
-                            <p class="nome"><?=$aluno[1]?></p>
 
-                  <p class="curso"><?=$aluno[5]?> - <?=$aluno[8]?></p>
+                            <p class="nome"><?=$resultado[25]?></p>
+
+                        <?php foreach ($aluno as $aluno) {?>
+                  <p class="curso"><?=$aluno[0]?> - <?=$aluno[8]?></p>
                   <?php }?>
                         </div>
                     </div>
-                    <div id="modal-body" class="modal-body">
+
 
                             <div class="habilidades" id="habilidades">
                             <div class="itens-habilidades">
@@ -200,10 +201,10 @@ $aluno6 = $query6->fetchAll();
 
 
                             <div class="habilidades" id="habilidades">
-                                <div class="itens-habilidades">
-                                <p class="title-habilidades"> HABILIDADES</p>
+                                <div class="itens-habilidades"  >
+                                <p class="title-habilidades" > HABILIDADES</p>
                                 <?php foreach ($aluno3 as $aluno3) {?>
-                                <p class="itens"> <?=$aluno3[16]?> </p>
+                                <p class="itens" > <?=$aluno3[16]?> </p>
                                 <?php }?>
                                 </div>
 

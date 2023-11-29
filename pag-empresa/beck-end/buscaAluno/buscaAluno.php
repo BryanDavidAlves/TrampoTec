@@ -70,23 +70,24 @@ $resultado = $query->fetchAll();
 
 foreach ($resultado as $resultado) {
 
-    $querySelect1 = "SELECT tb_aluno.idAluno, tb_aluno_etec.*,tb_etec.*
+    $querySelect1 = "SELECT tb_aluno.idAluno,tb_aluno.nome, tb_aluno_etec.*,tb_etec.*
     FROM tb_aluno
     INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
     INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
     ";
     $query1 = $conexao->query($querySelect1);
-    $aluno1 = $query1->fetchAll();
+    $aluno = $query1->fetchAll();
 
     echo
     '<tr class="infos">
-         <td class="table-id">' . $resultado[24] . '</td>',
-    '<td class="table-nome-aluno">' . $resultado[15] . '</td>',
-        '<td class="table-email-aluno">' . $resultado[22] . ' </td>,
+         <td class="table-id">' . $resultado[25] . '</td>',
+    '<td class="table-nome-aluno">' . $resultado[1] . '</td>',
+        '<td class="table-email-aluno">' . $resultado[23] . ' </td>,
     <td class="table-email-aluno">
-  <button type="button" id="ver-mais" class="btn btn-primary" data-bs-toggle="modal"
-    data-bs-target="#exampleModal' . $resultado[21] . '">
-    VER CURRICULO
+  <button type="button" id="ver-mais" class="btn btn-primary" value=" ' . $resultado[0] . '" data-bs-toggle="modal"
+    data-bs-target="#exampleModal' . $resultado[0] . $resultado[22] . '">
+
+VER CANDIDATOS
 </button>
     </td>
         </tr>
