@@ -52,7 +52,8 @@ $resultado = $resultado->fetchAll();
 
                             <div class="box-input">
                                 <label for="nome">NOME:</label>
-                                <input type="text" id="nome" name="nome" value="<?=$resultado[0]?>">
+                                <input type="text" value="<?= $resultado[0] ?>" disabled>
+                                <input type="hidden" id="nome" name="nome" value="<?= $resultado[0] ?>">
                             </div>
                             <select name="categoria" id="categoria">
                                 <option value="elogio">Elogio</option>
@@ -62,7 +63,8 @@ $resultado = $resultado->fetchAll();
                         </div>
                         <div class="box-input">
                             <label for="email">EMAIL:</label>
-                            <input type="email" id="email" name="email" value="<?=$resultado[1]?>">
+                            <input type="email" value="<?= $resultado[1] ?>" disabled>
+                            <input type="hidden" id="email" name="email" value="<?= $resultado[1] ?>">
                         </div>
                     <?php
                     }
