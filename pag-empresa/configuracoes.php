@@ -6,6 +6,9 @@ require_once "./beck-end/login/validador_acesso.php";
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../reset.css">
 <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
 <link rel='stylesheet' href='../pag-empresa/css/config.css'>
