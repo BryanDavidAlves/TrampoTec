@@ -7,8 +7,11 @@ require_once "./back-end/login/validador_acesso_curri.php";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../reset.css">
   <title>Página Inicial</title>
   <style>
@@ -66,11 +69,197 @@ require_once "./back-end/login/validador_acesso_curri.php";
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 20px;
+      width: 400px;
+      min-height: 300px;
+      height: auto;
       background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
+      transition: transform 0.4s, top 0.4s;
+      padding: 20px;
     }
+
+    #modal .align-itens {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #modal .align-itens .btn {
+      padding: 10px 0;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: white;
+      background-color: #4caf50;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+      width: 90%;
+      transition: 0.3s all ease-in-out;
+
+
+    }
+
+    #modal .align-itens .btn:hover {
+      background-color: #4caf4fe8;
+      transition: 0.3s all ease-in-out;
+    }
+
+    #modal .align-itens .titulo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    #modal .titulo1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+
+    }
+
+    #modal .align-x .btn1 {
+      font-size: 2.2rem;
+    }
+
+    #modal .align-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #modal .align-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: -50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #modal .align-x {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 20px;
+
+    }
+
+
+
+
+    #modal2 {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      min-height: 300px;
+      height: auto;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      transition: transform 0.4s, top 0.4s;
+      padding: 20px;
+    }
+
+    #modal2 .align-itens {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #modal2 .align-itens .btn {
+      padding: 10px 0;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: white;
+      background-color: #4caf50;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+      width: 90%;
+      transition: 0.3s all ease-in-out;
+
+
+    }
+
+    #modal2 .align-itens .btn:hover {
+      background-color: #4caf4fe8;
+      transition: 0.3s all ease-in-out;
+    }
+
+    #modal2 .align-itens .titulo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    #modal2 .titulo1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+
+    }
+
+    #modal2 .align-x .btn1 {
+      font-size: 2.2rem;
+    }
+
+    #modal2 .align-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #modal2 .align-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: -50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #modal2 .align-x {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 20px;
+
+    }
+
+
+
 
     #overlay {
       display: none;
@@ -91,6 +280,7 @@ require_once "./back-end/login/validador_acesso_curri.php";
       right: 10px;
       font-size: 18px;
     }
+
     #modal2 {
       display: none;
       position: fixed;
@@ -185,19 +375,34 @@ require_once "./back-end/login/validador_acesso_curri.php";
 
   <!-- Modal -->
   <div id="modal">
-    <h6>Bem Vindo ao nosso site</h6>
-    <span id="closeBtn" onclick="fecharModal()">&times;</span>
-    <p>Desejamos a melhor experiencia para voce para a procura de estágios!!</p>
-    <button onclick="fecharModal()">OK</button>
+
+    <div class="align-img">
+      <img src="img/bemvindo.JPg" alt="">
+    </div>
+    <div class="align-x">
+      <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
+    </div>
+    <div class="align-itens">
+      <h6 class="titulo">Bem Vindo ao nosso site</h6>
+      <p class="titulo1">Desejamos a melhor experiencia para voce para a procura de estágios!!</p>
+      <button class="btn" onclick="fecharModal()">OK</button>
+    </div>
   </div>
   <div id="overlay2"></div>
 
   <!-- Modal -->
   <div id="modal2">
-    <h6>Finalizado</h6>
-    <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
-    <p>Corriculo atualizado com sucesso!!</p>
-    <button onclick="fecharModal2()">OK</button>
+    <div class="align-img">
+      <img src="img/check.png" alt="">
+    </div>
+    <div class="align-x">
+      <span id="closeBtn" class="btn1" onclick="fecharModa2()">&times;</span>
+    </div>
+    <div class="align-itens">
+      <h4 class="titulo">Atualizado com Sucesso</h4>
+      <p class="titulo1">Curriculo atualizado com sucesso!!</p>
+      <button class="btn" onclick="fecharModal2()">OK</button>
+    </div>
   </div>
   <main id="main">
 
@@ -207,7 +412,8 @@ require_once "./back-end/login/validador_acesso_curri.php";
 
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+            data-aos="fade-up" data-aos-delay="200">
             <h1>Ingressando você no mercado de trabalho</h1>
             <br>
             <h2>Encontre seu emprego e entre no mercado de trabalho com mais facilidade</h2>
@@ -229,11 +435,11 @@ require_once "./back-end/login/validador_acesso_curri.php";
   </main>
   <?php
   if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
-  ?>
+    ?>
     <div>
 
     </div>
-  <?php
+    <?php
   }
 
   ?>
@@ -243,7 +449,7 @@ require_once "./back-end/login/validador_acesso_curri.php";
   <script src="../assets/js/sweetalert2@11.js"></script>
   <script>
     var closeModal = document.getElementById("closeModal")
-    closeModal.onclick = function() {
+    closeModal.onclick = function () {
       modal.close()
     }
 
@@ -276,7 +482,7 @@ require_once "./back-end/login/validador_acesso_curri.php";
       abrirModal();
     }
   </script>
-   <script>
+  <script>
     // Função para abrir o modal
     function abrirModal2() {
       document.getElementById('overlay2').style.display = 'block';
