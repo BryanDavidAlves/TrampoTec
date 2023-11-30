@@ -20,10 +20,94 @@ require_once "back-end/login/validador_acesso.php";
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            width: 400px;
+            min-height: 300px;
+            height: auto;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            transition: transform 0.4s, top 0.4s;
+            padding: 20px;
+        }
+
+        #modal .align-itens {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #modal .align-itens .btn {
+            padding: 10px 0;
+            border: 0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background-color: #4caf50;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            width: 90%;
+            transition: 0.3s all ease-in-out;
+
+
+        }
+
+        #modal .align-itens .btn:hover {
+            background-color: #4caf4fe8;
+            transition: 0.3s all ease-in-out;
+        }
+
+        #modal .align-itens .titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        #modal .titulo1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+
+        }
+
+        #modal .align-x .btn1 {
+            font-size: 2.2rem;
+        }
+
+        #modal .align-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #modal .align-img img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #modal .align-x {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 20px;
+
         }
 
         #overlay {
@@ -48,14 +132,99 @@ require_once "back-end/login/validador_acesso.php";
 
         #modal2 {
             display: none;
+            padding: 20px;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            width: 400px;
+            min-height: 300px;
+            height: auto;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        #modal2 .align-itens {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #modal2 .align-itens .btn {
+            padding: 10px 0;
+            border: 0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background-color: #b5b5b5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            width: 90%;
+            transition: 0.3s all ease-in-out;
+
+
+        }
+
+        #modal2 .align-itens .btn:hover {
+            background-color: #8c8c8c;
+            transition: 0.3s all ease-in-out;
+        }
+
+        #modal2 .align-itens .titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        #modal2 .align-itens .titulo1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        #modal2 .align-x .btn1 {
+            font-size: 2.2rem;
+        }
+
+        #modal2 .align-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #modal2 .align-img img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #modal2 .align-x {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 20px;
+
         }
 
         #overlay2 {
@@ -67,15 +236,6 @@ require_once "back-end/login/validador_acesso.php";
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
-        }
-
-        /* Estilos para o botão de fechar */
-        #closeBtn2 {
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 18px;
         }
     </style>
 </head>
@@ -97,21 +257,48 @@ require_once "back-end/login/validador_acesso.php";
 
         <!-- Modal -->
         <div id="modal">
+            <div class="align-img">
+                <img src="img/check.png" alt="">
+            </div>
+            <div class="align-x">
+                <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
+            </div>
+            <div class="align-itens">
+                <h4 class="titulo">Atualizado com Sucesso</h4>
+                <p class="titulo1">Curriculo atualizado com sucesso!!</p>
+                <button class="btn" onclick="fecharModal()">OK</button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <!-- <div id="modal">
             <span id="closeBtn" onclick="fecharModal()">&times;</span>
             <p>Cadastro realizado com sucesso!!</p>
             <button onclick="fecharModal()">OK</button>
-        </div>
+        </div> -->
         <div id="overlay2"></div>
-
-        <!-- Modal -->
         <div id="modal2">
+            <div class="align-img">
+                <img src="img/atencao.png" alt="">
+            </div>
+            <div class="align-x">
+                <span id="closeBtn" class="btn1" onclick="fecharModal2()">&times;</span>
+            </div>
+            <div class="align-itens">
+                <h4 class="titulo">Atenção!</h4>
+                <h4 class="titulo">Cadastro com erro</h4>
+                <p class="titulo1">Tente novamente!!</p>
+                <button class="btn" onclick="fecharModal2()">OK</button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <!-- <div id="modal2">
             <h4>Atenção</h4>
             <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
             <p>Cadastro com erro, tente novamente</p>
             <button onclick="fecharModal2()">OK</button>
-        </div>
+        </div> -->
         <section class="formulario-adm">
-            <form action="back-end/cadastro/salvarCadastro.php" method="post">
+            <form action="back-end/cadastro/salvarCadastro.php" method="POST">
 
                 <div class="input-box">
                     <input type="text" id="nome" name="nome" required>

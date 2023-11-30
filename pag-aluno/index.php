@@ -313,6 +313,8 @@ require_once "./back-end/login/validador_acesso_curri.php";
       font-size: 18px;
     }
 
+    
+
     @media (max-width: 991px) {
       #hero {
         height: 100vh;
