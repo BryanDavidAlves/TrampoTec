@@ -14,17 +14,101 @@ include '../../dao/conexao.php';
     <title>TrampoTec - Cadastro Empresa</title>
 
     <style>
-        /* Estilos para o modal e overlay */
         #modal {
             display: none;
+            padding: 20px;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            width: 400px;
+            min-height: 300px;
+            height: auto;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        #modal .align-itens {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #modal .align-itens .btn {
+            padding: 10px 0;
+            border: 0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background-color: #b5b5b5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            width: 90%;
+            transition: 0.3s all ease-in-out;
+
+
+        }
+
+        #modal .align-itens .btn:hover {
+            background-color: #8c8c8c;
+            transition: 0.3s all ease-in-out;
+        }
+
+        #modal .align-itens .titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        #modal .align-itens .titulo1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        #modal .align-x .btn1 {
+            font-size: 2.2rem;
+        }
+
+        #modal .align-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #modal .align-img img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #modal .align-x {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 20px;
+
         }
 
         #overlay {
@@ -46,16 +130,102 @@ include '../../dao/conexao.php';
             right: 10px;
             font-size: 18px;
         }
+
         #modal2 {
             display: none;
+            padding: 20px;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            width: 400px;
+            min-height: 300px;
+            height: auto;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        #modal2 .align-itens {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #modal2 .align-itens .btn {
+            padding: 10px 0;
+            border: 0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background-color: #b5b5b5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            width: 90%;
+            transition: 0.3s all ease-in-out;
+
+
+        }
+
+        #modal2 .align-itens .btn:hover {
+            background-color: #8c8c8c;
+            transition: 0.3s all ease-in-out;
+        }
+
+        #modal2 .align-itens .titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        #modal2 .align-itens .titulo1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        #modal2 .align-x .btn1 {
+            font-size: 2.2rem;
+        }
+
+        #modal2 .align-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #modal2 .align-img img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #modal2 .align-x {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 20px;
+
         }
 
         #overlay2 {
@@ -95,7 +265,7 @@ include '../../dao/conexao.php';
                     <div class="row">
                         <div class="col-12 mt-5">
                             <p class="titulo-um"> Bem vindo! Crie sua conta</p>
-                            <p class="titulo-dois">Já tem uma conta? <a href="">Fazer login</a></p>
+                            <p class="titulo-dois">Já tem uma conta? <a href="login.php">Fazer login</a></p>
                         </div>
                     </div>
                     <div class="row">
@@ -210,20 +380,46 @@ include '../../dao/conexao.php';
                             <div id="overlay"></div>
 
                             <!-- Modal -->
-                            <div id="modal">
+                            <!-- <div id="modal">
                                 <h6>Ops temos um problema!!</h6>
                                 <span id="closeBtn" onclick="fecharModal()">&times;</span>
                                 <p>Este email ja foi cadastrado, tente outro!!</p>
                                 <button onclick="fecharModal()">OK</button>
+                            </div> -->
+                            <div id="modal">
+                                <div class="align-img">
+                                    <img src="../img/atencao.png" alt="">
+                                </div>
+                                <div class="align-x">
+                                    <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
+                                </div>
+                                <div class="align-itens">
+                                    <h4 class="titulo">Atenção!</h4>
+                                    <p>Este email ja foi cadastrado, tente outro!!</p>
+                                    <button class="btn" onclick="fecharModal()">OK</button>
+                                </div>
                             </div>
                             <div id="overlay2"></div>
 
                             <!-- Modal -->
-                            <div id="modal2">
+                            <!-- <div id="modal2">
                                 <h6>Ops temos um problema!!</h6>
                                 <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
                                 <p>Este Cnpj ja foi cadastrado, tente outro!!</p>
                                 <button onclick="fecharModal2()">OK</button>
+                            </div> -->
+                            <div id="modal2">
+                                <div class="align-img">
+                                    <img src="../img/atencao.png" alt="">
+                                </div>
+                                <div class="align-x">
+                                    <span id="closeBtn" class="btn1" onclick="fecharModal2()">&times;</span>
+                                </div>
+                                <div class="align-itens">
+                                    <h4 class="titulo">Atenção!</h4>
+                                    <p>Este Cnpj ja foi cadastrado, tente outro!!</p>
+                                    <button class="btn" onclick="fecharModal2()">OK</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -312,10 +508,12 @@ include '../../dao/conexao.php';
         if (erroCnpj === 'true') {
             abrirModal1();
         }
+
         function abrirModal1() {
             document.getElementById('overlay2').style.display = 'block';
             document.getElementById('modal2').style.display = 'block';
         }
+
         function fecharModal2() {
             document.getElementById('overlay2').style.display = 'none';
             document.getElementById('modal2').style.display = 'none';
