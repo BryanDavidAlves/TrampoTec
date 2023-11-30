@@ -54,6 +54,7 @@ $resultado = $query->fetchAll();
                                 <img class="foto-perfil-dialog" src="fotosEmpresa/perfil/<?=$resultado[13]?>"></img>
                                 <input id="imagem-perfil" type="file" style="display: none;" value="<?=$resultado[13]?>" name="imagem-perfil">
                             </label>
+                            Altere sua foto clicando na imagem
                         </div>
                     </div>
                     <div class="dialog-corpo-inputs">
@@ -74,20 +75,21 @@ $resultado = $query->fetchAll();
                             <input class="campos-inputs-text" placeholder="<?=$resultado[8]?>" type="text" id="cep" name="cep" value="<?=$resultado[8]?>">
                         </label>
                         <label class="campos-inputs-label" for="logradouro">LOGRADOURO
-                            <input class="campos-inputs-text" placeholder="<?=$resultado[6]?>" type="text" id="logradouro" name="logradouro" value="<?=$resultado[6]?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[9]?>" type="text" id="logradouro" name="logradouro" value="<?=$resultado[9]?>">
                         </label>
                         <label class="campos-inputs-label" for="numero">NUMERO
                             <input class="campos-inputs-text" placeholder="<?=$resultado[7]?>" type="text" id="numero" name="numero" value="<?=$resultado[7]?>">
                         </label>
                         <label class="campos-inputs-label" for="bairro">BAIRRO
-                            <input class="campos-inputs-text" placeholder="<?=$resultado[8]?>" type="text" id="bairro" name="bairro" value="<?=$resultado[8]?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[11]?>" type="text" id="bairro" name="bairro" value="<?=$resultado[11]?>">
                         </label>
                         <label class="campos-inputs-label" for="estado">ESTADO
-                            <input class="campos-inputs-text" placeholder="<?=$resultado[9]?>" type="text" id="estado" name="estado" value="<?=$resultado[9]?>">
+                            <input class="campos-inputs-text" placeholder="<?=$resultado[12]?>" type="text" id="estado" name="estado" value="<?=$resultado[12]?>">
                         </label>
                         <label class="campos-inputs-label" for="descricao">DESCRICAO
                             <input class="campos-inputs-text" placeholder="<?=$resultado[5]?>" type="text" id="descricao" name="descricao" value="<?=$resultado[5]?> ">
                         </label>
+
                         <label class="campos-inputs-label" for="departamento">DEPARTAMENTO
                             <input class="campos-inputs-text" placeholder="<?=$resultado[4]?>" type="text" id="departamento" name="departamento" value="<?=$resultado[4]?>">
                         </label>

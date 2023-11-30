@@ -2,13 +2,12 @@ body {
   background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
-*{
+* {
   font-family: "Poppins", sans-serif;
 }
 
 main {
   margin-left: 20%;
-  
 }
 
 .baixo {
@@ -19,11 +18,11 @@ main {
   width: 18%;
 }
 
-.componentes-perfil{
+.componentes-perfil {
   width: 100%;
   display: flex;
   align-items: center;
- justify-content: center;
+  justify-content: center;
 }
 
 .descricao-conta {
@@ -34,13 +33,12 @@ main {
   padding: 10px;
 }
 
-
 .conteiner-descricao {
-display: flex;
-align-items: center;
-width:90%;
-padding: 50px;
-padding-bottom: 0px;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 50px;
+  padding-bottom: 0px;
 }
 
 .foto-perfil {
@@ -51,7 +49,6 @@ padding-bottom: 0px;
   background-color: rgb(199, 196, 196);
   border: 1px solid gray;
 }
-
 
 .nome-perfil {
   font-size: 25px;
@@ -70,14 +67,18 @@ padding-bottom: 0px;
   padding-left: 40px;
   padding-top: 20px;
 }
-
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.3s all ease-in-out;
+}
 .card {
   width: 24%;
   height: auto;
   border: none;
+  transition: 0.3s all ease-in-out;
   border-radius: 25px;
   background-color: rgb(233, 227, 227);
-  border: 1px solid  rgb(163, 158, 158);
+  border: 1px solid rgb(163, 158, 158);
   display: flex;
   justify-content: center;
   padding: 25px;
@@ -101,8 +102,6 @@ padding-bottom: 0px;
   align-items: center;
 }
 
-
-
 .titulo-descricao {
   font-size: 17px;
   font-weight: bold;
@@ -114,7 +113,7 @@ padding-bottom: 0px;
   margin-bottom: 10px;
 }
 
-.div-botao-editar{
+.div-botao-editar {
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -224,7 +223,6 @@ padding-bottom: 0px;
   transition: 0.2s ease-in-out all;
 }
 
-
 .dialog-requisitos .form-requisitos .salvar-dialog {
   padding: 6px;
   border-radius: 20px;
@@ -248,7 +246,6 @@ padding-bottom: 0px;
   margin-top: 10%;
 }
 
-
 .dialog-requisitos
   .form-requisitos
   .inputs-dialog
@@ -259,24 +256,20 @@ padding-bottom: 0px;
   height: 90px;
   width: 90px;
   margin-left: 10px;
-  object-fit: fill;
+  object-fit: cover;
   z-index: 5;
   background-color: rgb(234, 228, 228);
 }
-
 
 .dialog-requisitos
   .form-requisitos
   .inputs-dialog
   .componentes-perfil-dialog
-  .conteiner-descricao-dialog{
-    display: flex;
-    align-items: center;
-    gap: 2%;
-  }
-
-
-
+  .conteiner-descricao-dialog {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
 
 .dialog-requisitos .form-requisitos .inputs-dialog .dialog-corpo-inputs {
   display: flex;
