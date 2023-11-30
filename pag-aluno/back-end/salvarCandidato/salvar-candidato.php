@@ -13,7 +13,7 @@ if ($_POST) {
     $qtn = count($num);
 
  if( $qtn >= 1){
-    header('Location: ../../painel-de-vagas.php');
+    header('Location: ../../painel-de-vagas.php?candidaturaJaFeita=true&area=qualquer&curso=qualquer&periodo=qualquer&salario=qualquer');
     exit;
  }else{
     $sql = "INSERT INTO tb_vaga_aluno ( fk_idAluno, fk_idVaga ) VALUES
@@ -24,12 +24,12 @@ if ($_POST) {
     ";
     $query = $conexao->prepare($sql);
     $query->execute();
-    header('Location: ../../painel-de-vagas.php');
+    header('Location: ../../painel-de-vagas.php?candidaturaFeita=true&area=qualquer&curso=qualquer&periodo=qualquer&salario=qualquer');
     exit;
  }
 
 
 } else {
-    header('Location: ../../painel-de-vagas.php?alterar=erro');
+    header('Location: ../../painel-de-vagas.php?candidaturaErro=true&area=qualquer&curso=qualquer&periodo=qualquer&salario=qualquer');
     exit;
 }
