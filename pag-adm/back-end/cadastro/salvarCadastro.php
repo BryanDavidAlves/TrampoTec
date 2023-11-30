@@ -20,8 +20,8 @@ if ($_POST) {
     $query->execute();
     $id = $conexao->lastInsertId();
 
-    header('Location:../../cadastro-adm.php?cadastro=feito');
+    header('Location:../../cadastro-adm.php?cadastro=true');
     exit;
 } else {
-    header('Location: ../../cadastro-adm.php?cadastro=erro');
+    header('Location: ../../cadastro-adm.php?cadastroErro=false');
 }

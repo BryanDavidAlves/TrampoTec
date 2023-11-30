@@ -25,7 +25,7 @@ include '../pag-adm/components/sidebar-adm.php';
         <section id="content2">
         <div class="secao-cadastro">
             <a href="cadastro-curso.php">
-                <i id="icon-titulo" class="fa-solid fa-plus" "></i>
+                <i id="icon-titulo" class="fa-solid fa-plus" ></i>
                 <h2>Cadastrar um novo curso</h2>
             </a>
         </div>
