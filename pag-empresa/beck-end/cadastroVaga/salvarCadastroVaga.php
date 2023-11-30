@@ -54,7 +54,7 @@ if ($_POST) {
         $query->execute();
 
 
-        header("Location: ../../adicionar-requisito-vaga.php?id=$id_vaga");
+        header("Location: ../../adicionar-requisito-vaga.php?id=$id_vaga&vagaAtualizada=true");
     } else {
         $sql2 = "INSERT INTO tb_vaga ( nome , logradouro , numero , cep , cidade , bairro , estado ,  modalidade , salario , descricao , inicio , termino , periodo , area , escala , fk_idEmpresa , fk_idCurso) VALUES
                 (   '$nome',
@@ -85,7 +85,7 @@ if ($_POST) {
 
 
 
-        header("Location: ../../adicionar-requisito-vaga.php?id=$id");
+        header("Location: ../../adicionar-requisito-vaga.php?id=$id&vagaAtualizada=false");
         exit;
     }
 } else {

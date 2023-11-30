@@ -38,7 +38,16 @@ if ($_POST) {
         ";
         $query = $conexao->prepare($sql2);
         $query->execute();
-        header("Location: ../../adicionar-requisito-vaga.php?id=$id");
+
+        $atu = trim($_POST['atualiza']);
+        if ($atu == "atualizada") {
+            header("Location:../../adicionar-requisito-vaga.php?id=$id&vagaAtualizada=true"); 
+        }
+        else{
+            header("Location:../../adicionar-requisito-vaga.php?id=$id&vagaAtualizada=false");   
+    
+        }
+
     }
     else{
         $querySelect = "SELECT * FROM  tb_requisito WHERE requisito = '$nomeRequisito'";
@@ -56,12 +65,18 @@ if ($_POST) {
         $query = $conexao->prepare($sql2);
         $query->execute();
 
-        header("Location: ../../adicionar-requisito-vaga.php?id=$id");
+        $atu = trim($_POST['atualiza']);
+        if ($atu == "atualizada") {
+            header("Location:../../adicionar-requisito-vaga.php?id=$id&vagaAtualizada=true"); 
+        }
+        else{
+            header("Location:../../adicionar-requisito-vaga.php?id=$id&vagaAtualizada=false");   
+        }
     }
 
     exit;
 } else {
 
-    header('Location: ../../cadastrar-vaga.php?CadastroVaga=erro');
+    header('Location: ../../adicionar-requisito-vaga.php?cadastro=erro');
     $_SESSION['autenticado'] = "NAO";
 }
