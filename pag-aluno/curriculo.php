@@ -352,39 +352,28 @@ require_once "./back-end/login/validador_acesso.php";
     </div>
     <div class="algin-cards">
       <?php
-      $querySelect = "SELECT  tb_aluno_etec.*,tb_etec.*
-      FROM tb_aluno
-      INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
-      INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
-      WHERE tb_aluno.idAluno = $cliente_id
-      ";
-      $query = $conexao->query($querySelect);
-      $aluno = $query->fetchAll();
-
-      foreach ($aluno as $aluno) {
+       $querySelect5 = "SELECT tb_aluno_etec.* , tb_etec.nome , tb_curso_etec.* , tb_curso.*
+       FROM tb_aluno_etec
+       INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+       INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idEtec = tb_etec.idEtec
+       INNER JOIN tb_curso ON tb_curso.idCurso = tb_curso_etec.fk_idCurso
+       WHERE tb_aluno_etec.fk_idAluno = $cliente_id
+       ";
+       $query5 = $conexao->query($querySelect5);
+       $aluno5 = $query5->fetchAll();
+       foreach ($aluno5 as $aluno5) {
       ?>
         <div id="card">
           <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
           <div>
             <h3>Instituição:</h3>
-            <p><?= $aluno[3] ?></p>
+            <p><?= $aluno5[2] ?></p>
           </div>
 
           <div>
             <h3>Curso:</h3>
-            <?php
-            $querySelect5 = "SELECT tb_aluno_etec.* , tb_etec.idEtec , tb_curso_etec.* , tb_curso.*
-            FROM tb_aluno_etec
-            INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
-            INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idEtec = tb_etec.idEtec
-            INNER JOIN tb_curso ON tb_curso.idCurso = tb_curso_etec.fk_idCurso
-            WHERE tb_aluno_etec.fk_idEtec = $aluno[2]  AND tb_aluno_etec.fk_idAluno = $cliente_id
-            ";
-            $query5 = $conexao->query($querySelect5);
-            $aluno5 = $query5->fetchAll();
-            foreach ($aluno5 as $aluno5) {
-            ?>
+         
               <p><?= $aluno5[6] ?> </p>
           
           </div>
@@ -397,7 +386,7 @@ require_once "./back-end/login/validador_acesso.php";
             <h3>Semestres Totais:</h3>
             <p> <?= $aluno5[8] ?> </p>
           </div>
-          <?php } ?>
+    
 
         </div>
 
