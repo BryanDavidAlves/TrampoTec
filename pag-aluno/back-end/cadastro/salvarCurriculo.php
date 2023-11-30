@@ -6,7 +6,6 @@ if ($_POST) {
     $nome = trim($_POST['nome-etec']);
     $curso = trim($_POST['curso']);
      $semestre = trim($_POST['semestre']);
-    $duracao = trim($_POST['duracao']);
     $periodo = trim($_POST['periodo']);
     $conclusao = trim($_POST['conclusao']);
    
@@ -31,10 +30,9 @@ if ($_POST) {
     $query->execute();
 
      //Salvando periodo, semestre conclusao duração curso
-     $sql = "INSERT INTO tb_perfil_aluno ( semestre, periodo, duracaoCurso, conclusao, fk_idAluno ) VALUES
+     $sql = "INSERT INTO tb_perfil_aluno ( semestre, periodo, conclusao, fk_idAluno ) VALUES
      (  '$semestre' ,
         '$periodo',
-        '$duracao',
         '$conclusao',
         '$aluno_id'
             
