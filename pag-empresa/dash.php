@@ -3,7 +3,9 @@ include '../dao/conexao.php';
 
 require_once "./beck-end/login/validador_acesso.php";
 
-$querySelect = "SELECT * FROM tb_vaga";
+$cliente_id = $_SESSION['idEmpresa'];
+
+$querySelect = "SELECT * FROM tb_vaga WHERE fk_idEmpresa = $cliente_id ";
 $resultado = $conexao->query($querySelect);
 $vaga = $resultado->fetchALL();
 $n_vagas = count($vaga);
