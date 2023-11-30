@@ -48,10 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
     <link rel='stylesheet' href='../pag-empresa/css/cadastrar-requisitos.css'>
     <title>TrampoTec</title>
+
+   
 </head>
 
 <body>
-
+  
     <?php include('../pag-empresa/componentes/sidebar.php') ?>
     <?php include('../pag-empresa/componentes/email.php') ?>
     <?php include('../pag-empresa/componentes/notificacao.php') ?>
@@ -75,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         ?>
-        <a class="cabecalho" href="./cadastrar-vaga.php?id=<?=$idVaga?>"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisitos</a>
+        <a class="cabecalho" href="./cadastrar-vaga.php?id=<?= $idVaga ?>"><i class="fa-solid fa-chevron-left"></i> Cadastro de requisitos</a>
 
         <section class="formulario-cadastrar-vaga">
             <form action="beck-end/cadastroVaga/salvarRequisitoVaga.php?id=<?= $idVaga ?>" method="post">
@@ -108,9 +110,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input list="requisito" name="requisitos" id="requisitos" type="text">
 
                     </div>
-
+                    <?php
+                    if (isset($_GET['vagaAtualizada']) && $_GET['vagaAtualizada'] == "true") {
+                    ?>
+                        <input type="hidden" value="atualizada" name="atualiza">
+                    <?php
+                    }
+                    ?>
                     <button class="addCampo" type="submit">ADICIONAR REQUISITO</button>
-                    <a href="vagas.php?vaga=cadastrada" class="btn" value="FINALIZAR"> FINALIZAR</a>
+                    <?php
+                    if (isset($_GET['vagaAtualizada']) && $_GET['vagaAtualizada'] == "true") {
+                    ?>
+                        <a href="vagas.php?atualizada=true" class="btn" value="FINALIZAR"> FINALIZAR</a>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    if (isset($_GET['vagaAtualizada']) && $_GET['vagaAtualizada'] == "false") {
+                    ?>
+                        <a href="vagas.php?cadastrada=true" class="btn" value="FINALIZAR"> FINALIZAR</a>
+                    <?php
+                    }
+                    ?>
 
 
                     <table class="table">
@@ -154,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         });
     </script>
-
+  
 </body>
 
 </html>

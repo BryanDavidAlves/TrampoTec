@@ -59,6 +59,73 @@ foreach ($result as $vaga) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>TrampoTec</title>
+
+    <style>
+        /* Estilos para o modal e overlay */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+
+        #modal2 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn2 {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
@@ -74,7 +141,22 @@ foreach ($result as $vaga) {
     <main class="main">
 
         <p>Vagas</p>
+        <div id="overlay"></div>
 
+        <!-- Modal cadastro feito-->
+        <div id="modal">
+            <span id="closeBtn" onclick="fecharModal()">&times;</span>
+            <p>Cadastro atualizado com sucesso!!</p>
+            <button onclick="fecharModal()">OK</button>
+        </div>
+        <div id="overlay2"></div>
+
+        <!-- Modal cadastro feito-->
+        <div id="modal2">
+            <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
+            <p>Cadastro realizado com sucesso!!</p>
+            <button onclick="fecharModal2()">OK</button>
+        </div>
         <section class="sistema-busca">
             <div class="secao-busca">
 
@@ -139,33 +221,33 @@ foreach ($result as $vaga) {
             </table>
 
             <?php foreach ($vagas as $vaga) { ?>
-            <div class="modal" tabindex="-1" role="dialog" id="confirmarPreenchimentoModal<?= $vaga['idVaga'] ?>">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Confirmação</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Você tem certeza que deseja preencher esta vaga?</p>
+                <div class="modal" tabindex="-1" role="dialog" id="confirmarPreenchimentoModal<?= $vaga['idVaga'] ?>">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Confirmação</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Você tem certeza que deseja preencher esta vaga?</p>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <form action="./beck-end/vagaPreenchida/vaga-preenchida.php" method="POST">
-                                <input type="hidden" name="idVaga" value=" <?= $vaga['idVaga'] ?>">
-                                <button name="preenchida" id="vaga-preenchida" type="submit" class="btn btn-primary" style="align-items: center;">Preencher Vaga</button>
-                            </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <form action="./beck-end/vagaPreenchida/vaga-preenchida.php" method="POST">
+                                    <input type="hidden" name="idVaga" value=" <?= $vaga['idVaga'] ?>">
+                                    <button name="preenchida" id="vaga-preenchida" type="submit" class="btn btn-primary" style="align-items: center;">Preencher Vaga</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             <?php } ?>
         </section>
 
-    
-                               
+
+
 
     </main>
 
@@ -198,6 +280,49 @@ foreach ($result as $vaga) {
     <script src="./js/java-empresa.js"></script>
     <script src="js/modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+    <script>
+        // Função para abrir o modal
+        function abrirModal() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Verificar se o CPF já está cadastrado via GET
+        let urlParams = new URLSearchParams(window.location.search);
+        let atualizada = urlParams.get('atualizada');
+
+        if (atualizada === 'true') {
+            abrirModal();
+        }
+    </script>
+    <script>
+        // Função para abrir o modal
+        function abrirModal2() {
+            document.getElementById('overlay2').style.display = 'block';
+            document.getElementById('modal2').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function fecharModal2() {
+            document.getElementById('overlay2').style.display = 'none';
+            document.getElementById('modal2').style.display = 'none';
+        }
+
+        // Verificar se o CPF já está cadastrado via GET
+        let urlParamss = new URLSearchParams(window.location.search);
+        let cadastrada = urlParamss.get('cadastrada');
+
+        if (cadastrada === 'true') {
+            abrirModal2();
+        }
+    </script>
+
 </body>
 
 </html>
