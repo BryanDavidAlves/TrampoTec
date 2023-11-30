@@ -72,7 +72,13 @@ if ($_GET) {
                         <?php } ?>
                     </select>
                 </div>
-
+                <?php
+                if (isset($_GET['atualizada']) && $_GET['atualizada'] == "true") {
+                ?>
+                     <input type="hidden" value="atualizada" name="atualiza">
+                <?php
+                }
+                ?>           
                 <button class="addCampo" type="submit">ADICIONAR CURSO</button>
                 <?php
                 if (isset($_GET['atualizada']) && $_GET['atualizada'] == "true") {
@@ -82,7 +88,7 @@ if ($_GET) {
                 }
                 ?>
                 <?php
-                if (isset($_GET['atualizada']) && $_GET['atualizada'] == "true") {
+                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "true") {
                 ?>
                     <a href="etec.php?cadastro=true" class="btn2" value="FINALIZAR"> FINALIZAR</a>
                 <?php
