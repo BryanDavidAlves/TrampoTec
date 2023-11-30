@@ -98,48 +98,100 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
   <title>Pagina de Vagas</title>
   <style>
     /* Estilos para o modal e overlay */
-    #modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-    }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-
-    /* Estilos para o botão de fechar */
-    #closeBtn {
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 18px;
-    }
-
     #modal2 {
       display: none;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 20px;
+      width: 400px;
+      min-height: 300px;
+      height: auto;
       background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
+      transition: transform 0.4s, top 0.4s;
+      padding: 20px;
+    }
+
+    #modal2 .align-itens {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #modal2 .align-itens .btn {
+      padding: 10px 0;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: white;
+      background-color: #4caf50;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+      width: 90%;
+      transition: 0.3s all ease-in-out;
+
+
+    }
+
+    #modal2 .align-itens .btn:hover {
+      background-color: #4caf4fe8;
+      transition: 0.3s all ease-in-out;
+    }
+
+    #modal2 .align-itens .titulo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    #modal2 .titulo1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+
+    }
+
+    #modal2 .align-x .btn1 {
+      font-size: 2.2rem;
+    }
+
+    #modal2 .align-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #modal2 .align-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: -50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #modal2 .align-x {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 20px;
+
     }
 
     #overlay2 {
@@ -153,8 +205,114 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       z-index: 999;
     }
 
-    /* Estilos para o botão de fechar */
-    #closeBtn2 {
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      min-height: 300px;
+      height: auto;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      transition: transform 0.4s, top 0.4s;
+      padding: 20px;
+    }
+
+    #modal .align-itens {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #modal .align-itens .btn {
+      padding: 10px 0;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: white;
+      background-color: #4caf50;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+      width: 90%;
+      transition: 0.3s all ease-in-out;
+
+
+    }
+
+    #modal .align-itens .btn:hover {
+      background-color: #4caf4fe8;
+      transition: 0.3s all ease-in-out;
+    }
+
+    #modal .align-itens .titulo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    #modal .titulo1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+
+    }
+
+    #modal .align-x .btn1 {
+      font-size: 2.2rem;
+    }
+
+    #modal .align-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #modal .align-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: -50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #modal .align-x {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 20px;
+
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    #closeBtn {
       cursor: pointer;
       position: absolute;
       top: 10px;
@@ -162,16 +320,102 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       font-size: 18px;
     }
 
+
     #modal3 {
       display: none;
+      padding: 20px;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 20px;
+      width: 400px;
+      min-height: 300px;
+      height: auto;
       background-color: #fff;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
       z-index: 1000;
+      transition: transform 0.4s, top 0.4s;
+    }
+
+    #modal3 .align-itens {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #modal3 .align-itens .btn {
+      padding: 10px 0;
+      border: 0;
+      border-radius: 4px;
+      outline: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: white;
+      background-color: #b5b5b5;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
+      width: 90%;
+      transition: 0.3s all ease-in-out;
+
+
+    }
+
+    #modal3 .align-itens .btn:hover {
+      background-color: #8c8c8c;
+      transition: 0.3s all ease-in-out;
+    }
+
+    #modal3 .align-itens .titulo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    #modal3 .align-itens .titulo1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      line-height: 25px;
+
+    }
+
+    #modal3 .align-x .btn1 {
+      font-size: 2.2rem;
+    }
+
+    #modal3 .align-img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #modal3 .align-img img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: -50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #modal3 .align-x {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 20px;
+
     }
 
     #overlay3 {
@@ -183,15 +427,6 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 999;
-    }
-
-    /* Estilos para o botão de fechar */
-    #closeBtn3 {
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 18px;
     }
   </style>
 </head>
@@ -209,31 +444,67 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 
   <main id="main">
     <div id="overlay"></div>
-
-    <!-- Modal cadastro feito-->
     <div id="modal">
+      <div class="align-img">
+        <img src="img/atencao.png" alt="">
+      </div>
+      <div class="align-x">
+        <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
+      </div>
+      <div class="align-itens">
+        <h4 class="titulo">Atenção!</h4>
+        <p class="titulo1">Você ja se candidatou para esta vaga!!</p>
+        <button class="btn" onclick="fecharModal()">OK</button>
+      </div>
+    </div>
+    <!-- Modal cadastro feito-->
+    <!-- <div id="modal">
       <p>Atenção!!</p>
       <span id="closeBtn" onclick="fecharModal()">&times;</span>
       <p>Você ja se candidatou para esta vaga</p>
       <button onclick="fecharModal()">OK</button>
-    </div>
-    <div id="overlay2"></div>
+    </div> -->
 
-    <!-- Modal cadastro feito-->
+    <div id="overlay2"></div>
     <div id="modal2">
+      <div class="align-img">
+        <img src="img/check.png" alt="">
+      </div>
+      <div class="align-x">
+        <span id="closeBtn" class="btn1" onclick="fecharModal2()">&times;</span>
+      </div>
+      <div class="align-itens">
+        <h4 class="titulo">Candidatura realizada com Sucesso!!</h4>
+        <button class="btn" onclick="fecharModal2()">OK</button>
+      </div>
+    </div>
+    <!-- Modal cadastro feito-->
+    <!-- <div id="modal2">
       <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
       <p>Candidatura realizada com sucesso!!</p>
       <button onclick="fecharModal2()">OK</button>
-    </div>
+    </div> -->
     <div id="overlay3"></div>
-
-    <!-- Modal cadastro feito-->
     <div id="modal3">
+      <div class="align-img">
+        <img src="img/atencao.png" alt="">
+      </div>
+      <div class="align-x">
+        <span id="closeBtn" class="btn1" onclick="fecharModal3()">&times;</span>
+      </div>
+      <div class="align-itens">
+        <h4 class="titulo">Atenção!</h4>
+        <p class="titulo1">Sua candidatura esta com erro, tente novamente!!</p>
+        <button class="btn" onclick="fecharModal3()">OK</button>
+      </div>
+    </div>
+    <!-- Modal cadastro feito-->
+    <!-- <div id="modal3">
       <h6>Ops temos um problema!!</h6>
       <span id="closeBtn3" onclick="fecharModal3()">&times;</span>
       <p>Sua candidatura esta com erro, tente novamente!!</p>
       <button onclick="fecharModal3()">OK</button>
-    </div>
+    </div> -->
     <section class="filtro">
       <div class="container  mt-4" id="contain-filtro">
         <span class="filtro-icon">
