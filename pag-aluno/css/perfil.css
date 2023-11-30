@@ -356,15 +356,17 @@ h3 {
   border-radius: 50%; /* Utilizando 50% para criar um círculo */
   width: 300px;
   height: 300px;
+
   overflow: hidden; /* Garante que a borda circular não será cortada */
   position: relative; /* Necessário para posicionar o ícone dentro do container */
 }
 
 .secao-img img {
   width: 100%; /* Ajusta a largura da imagem para preencher o círculo */
-  height: auto; /* Mantém a proporção da imagem */
+  height: 100%; /* Mantém a proporção da imagem */
   transition: filter 0.3s ease-in-out;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .secao-img:hover img {

@@ -183,7 +183,7 @@ include '../pag-aluno/components/header.php';
 
                                         <section class="foto-perfil" id="fotoPerfil">
                                             <div class="secao-img">
-                                                <img src="img/aluno-form.png" alt="">
+                                                <img src="fotosAluno/perfil/<?=$resultado[13]?>" alt="">
                                                 <label class="font-weight-bold"  for="foto" id="label-file">
                                                 <input type="hidden" id="foto_usuario" name="foto" accept="image/*"   enctype="multipart/form-data"  value="<?=$resultado[4]?>">
                                                 <input class="form-control obrigatorio" type="file"  id="foto"  value="<?=$resultado[4]?>"
