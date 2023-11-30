@@ -7,7 +7,7 @@ $query = $conexao->query($querySelect);
 
 $etec = $query->fetchAll();
 
-$aluno_id = $_SESSION['idAluno'];
+$cliente_id = $_SESSION['idAluno'];
 
 
 
@@ -22,13 +22,10 @@ require_once "./back-end/login/validador_acesso.php";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-      <!--link icone filtro-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <!--link icone filtro-->
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../reset.css">
 
@@ -42,22 +39,7 @@ require_once "./back-end/login/validador_acesso.php";
       padding: 20px;
       height: auto;
       border-radius: 10px;
-      padding: 50px;
-      border-color: red;
-      margin-top: 10%;
-
-    }
-
-    .align {
-      display: flex;
-      justify-content: center;
-      margin-top: 100px;
-    }
-
-    .align-tabela {
-      display: flex;
-      gap: 200px;
-
+      margin-top: 6%;
     }
 
     h4 {
@@ -98,11 +80,10 @@ require_once "./back-end/login/validador_acesso.php";
       background-color: #45a049;
     }
 
-
     .align-tudo {
       display: flex;
       align-items: start;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
 
     .button {
@@ -199,7 +180,16 @@ require_once "./back-end/login/validador_acesso.php";
       cursor: pointer;
     }
 
-    /* Adicione estilos adicionais conforme necessário */
+    .algin-cards {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: column;
+      max-height: 600px;
+      overflow-y: auto;
+      margin-top: 5%;
+      padding-right: 20px;
+    }
   </style>
   <title>Meu Curriculo</title>
 
@@ -273,36 +263,57 @@ require_once "./back-end/login/validador_acesso.php";
 
     </div>
     <div class="algin-cards">
+      <?php
+      $querySelect = "SELECT  tb_aluno_etec.*,tb_etec.*
+      FROM tb_aluno
+      INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
+      INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+      WHERE tb_aluno.idAluno = $cliente_id
+      ";
+      $query = $conexao->query($querySelect);
+      $aluno = $query->fetchAll();
 
-      <div id="card">
-      <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
-        <h2>Informações do Curso</h2>
-        <div>
-          <h3>Instituição:</h3>
-          <p>Nome da Instituição</p>
-        </div>
-        <div>
-          <h3>Curso:</h3>
-          <p> Nome do Curso</p>
-        </div>
-        <div>
-          <h3>Período:</h3>
-          <p> Manhã</p>
-        </div>
-        <div>
-          <h3>Semestres Totais:</h3>
-          <p> 8</p>
-        </div>
-        <div>
-          <h3>Carga Horária:</h3>
-          <p> 1600 horas</p>
-        </div>
-        <div>
-          <h3>Conclusão:</h3>
-          <p> Dezembro de 2024</p>
-        </div>
-      </div>
+      foreach ($aluno as $aluno) {
+      ?>
+        <div id="card">
+          <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+          <h2>Informações do Curso</h2>
+          <div>
+            <h3>Instituição:</h3>
+            <p><?= $aluno[3] ?></p>
+          </div>
 
+          <div>
+            <h3>Curso:</h3>
+            <?php
+            $querySelect5 = "SELECT tb_aluno_etec.* , tb_etec.idEtec , tb_curso_etec.* , tb_curso.*
+            FROM tb_aluno_etec
+            INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+            INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idEtec = tb_etec.idEtec
+            INNER JOIN tb_curso ON tb_curso.idCurso = tb_curso_etec.fk_idCurso
+            WHERE tb_aluno_etec.fk_idEtec = $aluno[2]  AND tb_aluno_etec.fk_idAluno = $cliente_id
+            ";
+            $query5 = $conexao->query($querySelect5);
+            $aluno5 = $query5->fetchAll();
+            foreach ($aluno5 as $aluno5) {
+            ?>
+              <p><?= $aluno5[6] ?> </p>
+          
+          </div>
+          <div>
+            <h3>Carga Horária:</h3>
+            <p> <?= $aluno5[7] ?> HORAS</p>
+          </div>
+
+          <div>
+            <h3>Semestres Totais:</h3>
+            <p> <?= $aluno5[8] ?> </p>
+          </div>
+          <?php } ?>
+
+        </div>
+
+      <?php } ?>
     </div>
 
 
@@ -334,9 +345,8 @@ require_once "./back-end/login/validador_acesso.php";
 
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+</script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 <script>
