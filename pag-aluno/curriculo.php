@@ -249,9 +249,7 @@ require_once "./back-end/login/validador_acesso.php";
           <option value="6">6 SEMESTRE</option>
         </select>
 
-        <label for="carga_horaria">Carga Horária:</label>
-        <input type="number" id="carga_horaria" name="duracao" required>
-
+       
         <label for="conclusao">Conclusão:</label>
         <input class="input" placeholder="conclusao" name="conclusao" type="date"></p>
 
