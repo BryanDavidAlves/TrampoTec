@@ -212,6 +212,7 @@ $alunoSeis = $query6->fetchAll();
                             <th>EMAIL</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="result">
@@ -316,7 +317,7 @@ $alunoSeis = $query6->fetchAll();
 
                                     <td>
                                         <button class="icon-2" data-bs-toggle="modal" data-bs-target="#exampleModall<?= $aluno[19] ?>">
-                                            <a style="color: white;"><i class="fa-solid fa-xmark"></i></a>
+                                           <a> <i  class="fa-solid fa-xmark"></i> </a>
                                         </button>
 
                                         <div class="modal fade" id="exampleModall<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -356,9 +357,13 @@ $alunoSeis = $query6->fetchAll();
                                         </div>
 
                                     </td>
-                                    <td> <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
-                                            <i class="fa-solid fa-newspaper fa-lg"></i></td>
-                                    </button>
+                                    <td> 
+                                        
+                                    <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
+                                           <a><i class="fa-solid fa-newspaper fa-lg"></i></a> 
+                                            </button>  
+                                        </td>
+                                  
 
                                     <div class="modal fade" id="exampleModal<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
