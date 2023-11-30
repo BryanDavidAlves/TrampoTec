@@ -15,17 +15,101 @@ include '../dao/conexao.php';
     <title>TrampoTec - Cadastro de Aluno </title>
 
     <style>
-        /* Estilos para o modal e overlay */
         #modal {
             display: none;
+            padding: 20px;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px;
+            width: 400px;
+            min-height: 300px;
+            height: auto;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        #modal .align-itens {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        #modal .align-itens .btn {
+            padding: 10px 0;
+            border: 0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: white;
+            background-color: #b5b5b5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            width: 90%;
+            transition: 0.3s all ease-in-out;
+
+
+        }
+
+        #modal .align-itens .btn:hover {
+            background-color: #8c8c8c;
+            transition: 0.3s all ease-in-out;
+        }
+
+        #modal .align-itens .titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        #modal .align-itens .titulo1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            line-height: 25px;
+
+        }
+
+        #modal .align-x .btn1 {
+            font-size: 2.2rem;
+        }
+
+        #modal .align-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #modal .align-img img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #modal .align-x {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 20px;
+
         }
 
         #overlay {
@@ -46,6 +130,54 @@ include '../dao/conexao.php';
             top: 10px;
             right: 10px;
             font-size: 18px;
+        }
+
+        #card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 10%;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px
+        }
+
+        p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        #card div {
+            display: flex;
+            align-items: baseline;
+            margin: 15px 0px;
+            gap: 2px;
+        }
+
+        #card i {
+            margin-left: 230px;
+            cursor: pointer;
+        }
+
+        .algin-cards {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            max-height: 600px;
+            overflow-y: auto;
+            margin-top: 5%;
+            padding-right: 20px;
         }
     </style>
 </head>
@@ -122,7 +254,7 @@ include '../dao/conexao.php';
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label class="font-weight-bold border-0" for="telefone"><small>Telefone</small></label>
-                                            <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" id="telefone" name="telefone"  <?= isset($_GET['telAluno']) ? '(00) 90000-0000' : '' ?> value="<?= $_GET['telAluno'] ?? '' ?>">
+                                            <input class="form-control celular obrigatorio" type="text" placeholder="(00) 90000-0000" id="telefone" name="telefone" <?= isset($_GET['telAluno']) ? '(00) 90000-0000' : '' ?> value="<?= $_GET['telAluno'] ?? '' ?>">
                                             <div class="invalid-feedback">
                                                 O telefone é obrigatório
                                             </div>
@@ -207,15 +339,29 @@ include '../dao/conexao.php';
                                     </div>
                                 </div>
                             </form>
-                            <div id="overlay"></div>
 
-                            <!-- Modal -->
+                            <div id="overlay"></div>
                             <div id="modal">
+                                <div class="align-img">
+                                    <img src="img/atencao.png" alt="">
+                                </div>
+                                <div class="align-x">
+                                    <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
+                                </div>
+                                <div class="align-itens">
+                                    <h4 class="titulo">Atenção!</h4>
+
+                                    <p class="titulo1">Este Cpf já foi cadastrado, tente outro!!</p>
+                                    <button class="btn" onclick="fecharModal()">OK</button>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <!-- <div id="modal">
                                 <h6>Ops temos um problema!!</h6>
                                 <span id="closeBtn" onclick="fecharModal()">&times;</span>
                                 <p>Este Cpf já foi cadastrado, tente outro!!</p>
                                 <button onclick="fecharModal()">OK</button>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
