@@ -355,6 +355,7 @@ require_once "./back-end/login/validador_acesso.php";
        $querySelect5 = "SELECT tb_aluno_curso.* , tb_curso.* 
        FROM tb_curso
        INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idCurso = tb_curso.idCurso
+       INNER JOIN tb_aluno_etec
        WHERE tb_aluno_curso.fk_idAluno = $cliente_id 
        ";
        $query5 = $conexao->query($querySelect5);
