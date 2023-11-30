@@ -361,8 +361,9 @@ require_once "./back-end/login/validador_acesso.php";
        $aluno5 = $query5->fetchAll();
        foreach ($aluno5 as $aluno5) {
       ?>
+
         <div id="card">
-          <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+          <a class="dropdown-item" onclick="modalRemover(<?=$aluno5[3]?>, 'id_curso' , <?=$cliente_id?> , 'id_usuario')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
        <!--   <div>
             <h3>Instituição:</h3>
@@ -400,8 +401,9 @@ require_once "./back-end/login/validador_acesso.php";
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body  ">
-            <form action="back-end/crudAdm/adm-delete.php" method="post">
+            <form action="back-end/crudCurriculo/curriculo-delete.php" method="post">
               <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
+              <input class="form-control" id="id_curso" name="id_curso" type="hidden">
               <p>Tem certeza que deseja excluir o item selcionado?
               <div class=" text-end">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
@@ -424,6 +426,10 @@ require_once "./back-end/login/validador_acesso.php";
 </script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
+  <script src='js/modal-deletar.js'></script>
 <script>
   // Função para abrir o modal
   function abrirModal() {
