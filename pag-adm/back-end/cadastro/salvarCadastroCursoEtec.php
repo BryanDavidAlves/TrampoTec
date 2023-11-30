@@ -18,6 +18,7 @@ if ($_POST && $_GET) {
     $id = $conexao->lastInsertId();
     
    
+    
 
 
     header("Location:../../cadastrar-curso-etec.php?etec=$idEtec");  

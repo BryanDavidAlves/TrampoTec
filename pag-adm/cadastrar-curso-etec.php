@@ -36,8 +36,7 @@ if ($_GET) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
@@ -55,7 +54,7 @@ if ($_GET) {
     <header>
         <div class="secao-cadastro">
             <a href="cadastro-etec.php?etec=<?= $idEtec ?>">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" ></i> 
+                <i id="icon-titulo" class="fa-solid fa-chevron-left"></i>
                 <h2>Voltar</h2>
             </a>
         </div>
@@ -66,7 +65,7 @@ if ($_GET) {
 
                 <div class="input-box">
                     <label for="curso">CURSO</label>
-                    <select id="cursos" name="curso">
+                    <select id="cursos" name="curso">   
                         <?php foreach ($curso as $curso) { ?>
                             <option value="<?= $curso[0] ?>"> <?= $curso[1] ?> - <?= $curso[5] ?>
                             </option>
@@ -75,7 +74,21 @@ if ($_GET) {
                 </div>
 
                 <button class="addCampo" type="submit">ADICIONAR CURSO</button>
-                <a href="etec.php" class="btn2" value="FINALIZAR"> FINALIZAR</a>
+                <?php
+                if (isset($_GET['atualizada']) && $_GET['atualizada'] == "true") {
+                ?>
+                    <a href="etec.php?atualizada=true" class="btn2" value="FINALIZAR"> FINALIZAR</a>
+                <?php
+                }
+                ?>
+                <?php
+                if (isset($_GET['atualizada']) && $_GET['atualizada'] == "true") {
+                ?>
+                    <a href="etec.php?cadastro=true" class="btn2" value="FINALIZAR"> FINALIZAR</a>
+                <?php
+                }
+                ?>
+                
 
 
                 <table class="table">
@@ -97,9 +110,7 @@ if ($_GET) {
                                     <?= $etecJoin[8] ?>
                                 </td>
 
-                                <td> <a
-                                        href="./back-end/crudEtec/etec-curso-delete.php?id=<?= $etecJoin[5] ?>&etec=<?= $idEtec ?>"><i
-                                            class="fa-solid fa-x" style="color: #000000;"></i></a>
+                                <td> <a href="./back-end/crudEtec/etec-curso-delete.php?id=<?= $etecJoin[5] ?>&etec=<?= $idEtec ?>"><i class="fa-solid fa-x" style="color: #000000;"></i></a>
 
                                 </td>
 

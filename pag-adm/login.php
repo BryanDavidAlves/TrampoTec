@@ -34,14 +34,14 @@
                         </div>
                     </div>
                     <?php
-if (isset($_GET['login']) && $_GET['login'] == "erro") {
-    ?>
-                            <div class="text-danger">
-                                Usuario ou senha Inválidos
-                            </div>
-                            <?php
-}
-?>
+                    if (isset($_GET['login']) && $_GET['login'] == "erro") {
+                    ?>
+                        <div class="text-danger">
+                            Usuario ou senha Inválidos
+                        </div>
+                    <?php
+                    }
+                    ?>
                     <button class="botao"><a href="../pag-adm/index.php" style="color: white">Entrar</a></button><!--<input class="botao" type="submit" value="Entrar">-->
                     <div class="remember">
                         <div>

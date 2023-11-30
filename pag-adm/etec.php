@@ -12,27 +12,75 @@ require_once "back-end/login/validador_acesso.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!--link icone filtro-->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="components/component-adm.css">
     <link rel="stylesheet" href="css/etec.css">
     <title>Etecs</title>
+
+    <style>
+        /* Estilos para o modal e overlay */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-include '../pag-adm/components/sidebar-adm.php';
-?>
+    include '../pag-adm/components/sidebar-adm.php';
+    ?>
 
     <header>
+        <div id="overlay"></div>
+
+        <!-- Modal cadastro feito-->
+        <div id="modal">
+            <span id="closeBtn" onclick="fecharModal()">&times;</span>
+            <p>Cadastro realizado com sucesso!!</p>
+            <button onclick="fecharModal()">OK</button>
+        </div>
+        <div id="overlay2"></div>
+
+        <!-- Modal cadastro feito-->
+        <div id="modal2">
+            <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
+            <p>Cadastro realizado com sucesso!!</p>
+            <button onclick="fecharModal2()">OK</button>
+        </div>
         <h1>Etecs</h1>
         <section id="content2">
             <div class="secao-cadastro">
@@ -111,22 +159,22 @@ include '../pag-adm/components/sidebar-adm.php';
                 </table>
                 <div class="modal fade" id="modalExcluir" role="dialog">
                     <div class=" modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Etec</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body  ">
-                        <form action="back-end/crudEtec/etec-delete.php" method="post">
-                            <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
-                            <p>Tem certeza que deseja excluir o item selcionado?
-                            <div class=" text-end">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
-                            <button type="submit" class="btn btn-warning ms-3">Sim </button>
+                        <div class="modal-content">
+                            <div class="modal-header bg-danger text-white">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Etec</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                        </form>
+                            <div class="modal-body  ">
+                                <form action="back-end/crudEtec/etec-delete.php" method="post">
+                                    <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
+                                    <p>Tem certeza que deseja excluir o item selcionado?
+                                    <div class=" text-end">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                                        <button type="submit" class="btn btn-warning ms-3">Sim </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </section>
@@ -134,22 +182,22 @@ include '../pag-adm/components/sidebar-adm.php';
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             var busca = ("");
             $.post('./back-end/buscas/buscaEtec.php', {
                 busca
-            }, function (data) {
+            }, function(data) {
                 $("#result").html(data);
             });
 
 
-            $("#busca").keyup(function () {
+            $("#busca").keyup(function() {
 
                 busca = $("#busca").val().trim();
                 $.post('./back-end/buscas/buscaEtec.php', {
                     busca: busca
-                }, function (data) {
+                }, function(data) {
                     $("#result").html(data);
                 });
 
@@ -160,10 +208,30 @@ include '../pag-adm/components/sidebar-adm.php';
     <script src="js/modal-etec.js"></script>
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
     <script src="js/anim-load.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-  </script>
-  <script src='js/modal-deletar.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+    <script src='js/modal-deletar.js'></script>
+    <script>
+        // Função para abrir o modal
+        function abrirModal() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Verificar se o CPF já está cadastrado via GET
+        let urlParams = new URLSearchParams(window.location.search);
+        let cadastro = urlParams.get('cadastro');
+
+        if (cadastro === 'true') {
+            abrirModal();
+        }
+    </script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ if ($_POST) {
         $query->execute();
 
        
-        header("Location: ../../cadastrar-curso-etec.php?etec=$id_etec");
+        header("Location: ../../cadastrar-curso-etec.php?etec=$id_etec&atualizada=true");
     } else {
        
 

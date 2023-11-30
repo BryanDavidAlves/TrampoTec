@@ -57,6 +57,41 @@ if ($_POST) {
     <link rel="stylesheet" href="css/cadastro-etec.css">
 
     <title>cadastrar etecs</title>
+
+    <style>
+        /* Estilos para o modal e overlay */
+        #modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+        </style>
 </head>
 
 <body>
@@ -66,9 +101,18 @@ if ($_POST) {
     ?>
 
     <header>
+        <div id="overlay"></div>
+
+        <!-- Modal -->
+        <div id="modal">
+            <h6>Ops temos um problema!!</h6>
+            <span id="closeBtn" onclick="fecharModal()">&times;</span>
+            <p>Este email ja foi cadastrado, tente outro!!</p>
+            <button onclick="fecharModal()">OK</button>
+        </div>
         <div class="secao-cadastro">
             <a href="etec.php">
-                <i id="icon-titulo" class="fa-solid fa-chevron-left" > </i>
+                <i id="icon-titulo" class="fa-solid fa-chevron-left"> </i>
                 <h2>Cadastrar uma nova ETEC</h2>
             </a>
         </div>
@@ -83,7 +127,7 @@ if ($_POST) {
                 </div>
 
                 <div class="input-box">
-                    <input type="text" id="email" name="email"  value="<?= $email ?>" required>
+                    <input type="text" id="email" name="email" value="<?= $email ?>" required>
                     <label class="label-anim" for="nome">EMAIL:</label>
                 </div>
 
@@ -311,27 +355,7 @@ if ($_POST) {
 
                     </select>
                 </div>
-                <?php
-                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "feito") {
-                ?>
 
-                    <div class="text-green">
-                        Cadastro Realizado
-                    </div>
-
-                <?php
-                }
-                ?>
-                <?php
-                if (isset($_GET['cadastro']) && $_GET['cadastro'] == "erro") {
-                ?>
-                    <div class="text-danger">
-                        Cadastro com erro
-                    </div>
-
-                <?php
-                }
-                ?>
                 <input type="hidden" id="id_etec" name="id_etec" value="<?= $id_etec ?>">
                 <input type="submit" value="Próximo" class="btn"></input>
                 <!--<input type="submit" class="btn" value="CADASTRAR">-->
@@ -376,6 +400,27 @@ if ($_POST) {
                 // Remove o último select da lista
                 campoSelect.removeChild(selects[selects.length - 1]);
             }
+        }
+    </script>
+    <script>
+        // Função para abrir o modal
+        function abrirModal() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Verificar se o CPF já está cadastrado via GET
+        let urlParams = new URLSearchParams(window.location.search);
+        let erroEmail = urlParams.get('erroEmail');
+
+        if (erroEmail === 'true') {
+            abrirModal();
         }
     </script>
 

@@ -32,7 +32,7 @@ if ($_POST) {
         
         $query = $conexao->prepare($sql);
         $query->execute();
-        header('Location: ../../cadastro-curso.php?cadastro=atualizado');
+        header('Location: ../../cadastro-curso.php?cadastroAtualizado=true');
 
     } else {
 
@@ -58,7 +58,7 @@ if ($_POST) {
         $query = $conexao->prepare($sql);
         $query->execute();
 
-        header('Location: ../../cadastro-curso.php?cadastro=feito');
+        header('Location: ../../cadastro-curso.php?cadastro=true');
     }
 
     /* $contadorCampos = 1;
@@ -96,6 +96,6 @@ if ($_POST) {
    
     exit;
 } else {
-    header('Location: ../../cadastro-curso.php?cadastro=erro');
+    header('Location: ../../cadastro-curso.php?cadastroErro=true');
 }
 ?>
