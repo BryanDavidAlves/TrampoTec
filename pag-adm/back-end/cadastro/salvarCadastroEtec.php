@@ -44,7 +44,7 @@ if ($_POST) {
 
 
 
-        header("Location:../../cadastrar-curso-etec.php?etec=$id");
+        header("Location:../../cadastrar-curso-etec.php?etec=$id&cadastro=true");
         exit;
     }
 } else {

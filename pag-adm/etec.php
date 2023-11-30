@@ -55,6 +55,37 @@ require_once "back-end/login/validador_acesso.php";
             right: 10px;
             font-size: 18px;
         }
+        #modal2 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #overlay2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Estilos para o botão de fechar */
+        #closeBtn2 {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
     </style>
 </head>
 
@@ -78,7 +109,7 @@ require_once "back-end/login/validador_acesso.php";
         <!-- Modal cadastro feito-->
         <div id="modal2">
             <span id="closeBtn2" onclick="fecharModal2()">&times;</span>
-            <p>Cadastro realizado com sucesso!!</p>
+            <p>Cadastro atualizado com sucesso!!</p>
             <button onclick="fecharModal2()">OK</button>
         </div>
         <h1>Etecs</h1>
@@ -230,6 +261,27 @@ require_once "back-end/login/validador_acesso.php";
 
         if (cadastro === 'true') {
             abrirModal();
+        }
+    </script>
+     <script>
+        // Função para abrir o modal
+        function abrirModal2() {
+            document.getElementById('overlay2').style.display = 'block';
+            document.getElementById('modal2').style.display = 'block';
+        }
+
+        // Função para fechar o modal
+        function fecharModal2() {
+            document.getElementById('overlay2').style.display = 'none';
+            document.getElementById('modal2').style.display = 'none';
+        }
+
+        // Verificar se o CPF já está cadastrado via GET
+        let urlParamss = new URLSearchParams(window.location.search);
+        let atualizada = urlParamss.get('atualizada');
+
+        if (atualizada === 'true') {
+            abrirModal2();
         }
     </script>
 </body>

@@ -16,12 +16,19 @@ if ($_POST && $_GET) {
     $query = $conexao->prepare($sql);
     $query->execute();
     $id = $conexao->lastInsertId();
-    
-   
+
+    $atu = trim($_POST['atualiza']);
+    if ($atu == "atualizada") {
+        header("Location:../../cadastrar-curso-etec.php?etec=$idEtec&atualizada=true"); 
+    }
+    else{
+        header("Location:../../cadastrar-curso-etec.php?etec=$idEtec&cadastro=true");   
+
+    }
     
 
 
-    header("Location:../../cadastrar-curso-etec.php?etec=$idEtec");  
+    
     exit;
 } else {
     header('Location: ../../cadastro-etec.php?cadastro=erro');
