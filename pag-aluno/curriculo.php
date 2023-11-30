@@ -352,12 +352,10 @@ require_once "./back-end/login/validador_acesso.php";
     </div>
     <div class="algin-cards">
       <?php
-       $querySelect5 = "SELECT DISTINCT tb_aluno_curso.* , tb_curso.* , tb_curso_etec.* , tb_etec.nome
+       $querySelect5 = "SELECT tb_aluno_curso.* , tb_curso.* 
        FROM tb_curso
        INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idCurso = tb_curso.idCurso
-       INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idCurso = tb_aluno_curso.fk_idCurso
-       INNER JOIN tb_etec on tb_etec.idEtec = tb_curso_etec.fk_idEtec
-       WHERE tb_aluno_curso.fk_idAluno = $cliente_id
+       WHERE tb_aluno_curso.fk_idAluno = $cliente_id 
        ";
        $query5 = $conexao->query($querySelect5);
        $aluno5 = $query5->fetchAll();
@@ -366,10 +364,10 @@ require_once "./back-end/login/validador_acesso.php";
         <div id="card">
           <a class="dropdown-item" onclick="modalRemover()"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
-          <div>
+       <!--   <div>
             <h3>Instituição:</h3>
-            <p><?= $aluno5[11] ?></p>
-          </div>
+            <p><?= $aluno5[0] ?></p>
+          </div> -->
 
           <div>
             <h3>Curso:</h3>
