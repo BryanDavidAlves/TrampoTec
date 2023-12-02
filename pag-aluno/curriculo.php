@@ -23,8 +23,10 @@ require_once "./back-end/login/validador_acesso.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <!--link icone filtro-->
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../reset.css">
@@ -83,7 +85,9 @@ require_once "./back-end/login/validador_acesso.php";
     .align-tudo {
       display: flex;
       align-items: start;
-      justify-content: space-evenly;
+      justify-content: space-around;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .button {
@@ -265,15 +269,51 @@ require_once "./back-end/login/validador_acesso.php";
       cursor: pointer;
     }
 
-    .algin-cards {
+    .align-cards {
       display: flex;
       align-items: center;
       justify-content: start;
       flex-direction: column;
-      max-height: 600px;
+      height: 600px;
       overflow-y: auto;
       margin-top: 5%;
       padding-right: 20px;
+    }
+
+    #btn-curso {
+      display: none;
+      justify-content: center;
+    }
+
+    .link-btn {
+      text-align: center;
+      color: white;
+      padding: 12px;
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      background-color: #0a3580;
+      transition: 100ms linear;
+    }
+
+    .link-btn:hover {
+      background-color: #124192;
+      color: white;
+      scale: 1.01;
+    }
+
+    @media (max-width: 785px) {
+      #btn-curso{
+        display: flex;
+      }
+      .align-cards{
+        height: 400px;
+      }
+      .align-tudo{
+        padding: 15px;
+      }
     }
   </style>
   <title>Meu Curriculo</title>
@@ -303,8 +343,11 @@ require_once "./back-end/login/validador_acesso.php";
   </div>
 
   <div class="align-tudo">
-    <div class="align-tabela">
 
+    <div class="align-tabela">
+      <div id="btn-curso">
+        <a class="link-btn" href="#align-cards">Ver cursos cadastrados</a>
+      </div>
       <form action="./back-end/cadastro/salvarCurriculo.php" method="POST">
         <label for="nome">Instituição:</label>
         <select class="input" placeholder="etec" id="nome-etec" name="nome-etec" placeholder="Nome da Instituição">
@@ -339,7 +382,7 @@ require_once "./back-end/login/validador_acesso.php";
           <option value="6">6 SEMESTRE</option>
         </select>
 
-       
+
         <label for="conclusao">Conclusão:</label>
         <input class="input" placeholder="conclusao" name="conclusao" type="date"></p>
 
@@ -350,43 +393,51 @@ require_once "./back-end/login/validador_acesso.php";
       </form>
 
     </div>
-    <div class="algin-cards">
+    <div id="align-cards" class="align-cards">
       <?php
-       $querySelect5 = "SELECT tb_aluno_curso.* , tb_curso.* 
+      $querySelect5 = "SELECT tb_aluno_curso.* , tb_curso.* 
        FROM tb_curso
        INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idCurso = tb_curso.idCurso
        INNER JOIN tb_aluno_etec
        WHERE tb_aluno_curso.fk_idAluno = $cliente_id 
        ";
-       $query5 = $conexao->query($querySelect5);
-       $aluno5 = $query5->fetchAll();
-       foreach ($aluno5 as $aluno5) {
-      ?>
+      $query5 = $conexao->query($querySelect5);
+      $aluno5 = $query5->fetchAll();
+      foreach ($aluno5 as $aluno5) {
+        ?>
 
         <div id="card">
-          <a class="dropdown-item" onclick="modalRemover(<?=$aluno5[3]?>, 'id_curso' , <?=$cliente_id?> , 'id_usuario')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+          <a class="dropdown-item"
+            onclick="modalRemover(<?= $aluno5[3] ?>, 'id_curso' , <?= $cliente_id ?> , 'id_usuario')"><i
+              class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
-       <!--   <div>
+          <!--   <div>
             <h3>Instituição:</h3>
             <p><?= $aluno5[0] ?></p>
           </div> -->
 
           <div>
             <h3>Curso:</h3>
-         
-              <p><?= $aluno5[4] ?> </p>
-          
+
+            <p>
+              <?= $aluno5[4] ?>
+            </p>
+
           </div>
           <div>
             <h3>Carga Horária:</h3>
-            <p> <?= $aluno5[5] ?> HORAS</p>
+            <p>
+              <?= $aluno5[5] ?> HORAS
+            </p>
           </div>
 
           <div>
             <h3>Semestres Totais:</h3>
-            <p> <?= $aluno5[6] ?> </p>
+            <p>
+              <?= $aluno5[6] ?>
+            </p>
           </div>
-    
+
 
         </div>
 
@@ -423,14 +474,15 @@ require_once "./back-end/login/validador_acesso.php";
 
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
   </script>
-  <script src='js/modal-deletar.js'></script>
+<script src='js/modal-deletar.js'></script>
 <script>
   // Função para abrir o modal
   function abrirModal() {
