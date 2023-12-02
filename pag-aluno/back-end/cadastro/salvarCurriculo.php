@@ -11,36 +11,17 @@ if ($_POST) {
    
     $aluno_id = $_SESSION['idAluno'];
 
-
-    //Salvando etec
-    $sql2 = "INSERT INTO tb_aluno_etec ( fk_idEtec , fk_idAluno ) VALUES
-    (   '$nome',
-        '$aluno_id'   
-    )";
-     $query = $conexao->prepare($sql2);
-     $query->execute();
-
-     //Salvando curso
-     $sql = "INSERT INTO tb_aluno_curso ( fk_idAluno , fk_idCurso ) VALUES
+     $sql = "INSERT INTO tb_aluno_curso_etec ( fk_idAluno , fk_idCurso , fk_idEtec , conclusao ) VALUES
      (   '$aluno_id',
-         '$curso'   
+         '$curso',
+         '$nome' ,
+         '$conclusao' 
      )";
    
     $query = $conexao->prepare($sql);
     $query->execute();
 
-     //Salvando periodo, semestre conclusao duração curso
-     $sql = "INSERT INTO tb_perfil_aluno ( semestre, periodo, conclusao, fk_idAluno ) VALUES
-     (  '$semestre' ,
-        '$periodo',
-        '$conclusao',
-        '$aluno_id'
-            
-     )";
-   
-    $query = $conexao->prepare($sql);
-    $query->execute();
-
+ 
 
     $id = $conexao->lastInsertId();
     header('Location: ../../curriculo.php?primeiro=1');
