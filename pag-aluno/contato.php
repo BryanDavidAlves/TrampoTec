@@ -39,7 +39,7 @@ $resultado = $resultado->fetchAll();
 
         <div class="container">
             <section class="titulo">
-                <h1>CENTRAL FALE CONOSCO</h1>
+                <h1 id="titu">CENTRAL FALE CONOSCO</h1>
                 <h2>Tire suas úvidas de forma rápida</h2>
             </section>
 
