@@ -31,15 +31,15 @@ $cliente_id =  $_SESSION['idAluno'];
 //$aluno = $query->fetchAll();
 
 
-$querySelect = "SELECT tb_aluno.idAluno, tb_aluno_etec.*,tb_etec.*
+$querySelect5 = "SELECT tb_aluno_curso_etec.* , tb_aluno.idAluno , tb_curso.* , tb_etec.nome
 FROM tb_aluno
-INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
-INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
-WHERE tb_aluno.idAluno = $cliente_id
+INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso_etec.fk_idCurso
+INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_curso_etec.fk_idEtec
+WHERE tb_aluno.idAluno = $cliente_id 
 ";
-$query = $conexao->query($querySelect);
-$aluno = $query->fetchAll();
-
+$query5 = $conexao->query($querySelect5);
+$aluno5 = $query5->fetchAll();
 
 $querySelect2 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
 FROM tb_aluno
@@ -72,22 +72,6 @@ $query4 = $conexao->query($querySelect4);
 $aluno4 = $query4->fetchAll();
 
 
-$querySelect5 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
-FROM tb_aluno
-INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
-INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
-WHERE tb_aluno.idAluno = $cliente_id
-";
-$query5 = $conexao->query($querySelect5);
-$aluno5 = $query5->fetchAll();
-
-$querySelect6 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
-FROM tb_aluno
-INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
-WHERE tb_aluno.idAluno = $cliente_id
-";
-$query6 = $conexao->query($querySelect6);
-$aluno6 = $query6->fetchAll();
 ?>
 
 
@@ -217,20 +201,20 @@ $aluno6 = $query6->fetchAll();
               <h4>Conhecimentos escolares</h4>
 
               <li>Instituição:
-                <?php foreach ($aluno as $aluno) { ?>
-                  <p><em><?= $aluno[4] ?> - <?= $aluno[7] ?></em></p>
-                  <?php } ?>
+                <?php foreach ($aluno5 as $aluno5) { ?>
+                  <p><em><?= $aluno5[11] ?></em></p>
+              
               </li>
         
 
             <li>Curso:
-              <?php foreach ($aluno5 as $aluno5) { ?><p><em><?= $aluno5[4] ?> - <?= $aluno5[5] ?> Horas </em></p>
-                <?php } ?>
+           <p><em><?= $aluno5[6] ?> - <?= $aluno5[7] ?> Horas </em></p>
+           
             </li>
 
           </li>
           <li>Conclusão:
-          <?php foreach ($aluno6 as $aluno6) { ?><p><em> <?= $aluno6[5] ?> </em></p>
+         <p><em> <?= $aluno5[3] ?> </em></p>
                 <?php } ?>
           </li>
 

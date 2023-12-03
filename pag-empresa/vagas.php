@@ -12,7 +12,6 @@ INNER JOIN tb_curso
 ON tb_vaga.fk_idCurso = tb_curso.idCurso
 INNER JOIN tb_empresa
 ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
-
 INNER JOIN tb_requisito_vaga
 on tb_vaga.idVaga = tb_requisito_vaga.fk_idVaga
 INNER JOIN tb_requisito
