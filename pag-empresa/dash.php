@@ -10,7 +10,11 @@ $resultado = $conexao->query($querySelect);
 $vaga = $resultado->fetchALL();
 $n_vagas = count($vaga);
 
-$querySelect = "SELECT * FROM tb_aluno";
+$querySelect = "SELECT tb_vaga.* , tb_vaga_aluno.* , tb_aluno.*
+FROM tb_aluno
+INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idAluno = tb_aluno.idAluno
+INNER JOIN tb_vaga ON tb_vaga.idVaga = tb_vaga_aluno.fk_idVaga
+WHERE tb_vaga.fk_idEmpresa = $cliente_id";
 $resultado = $conexao->query($querySelect);
 $aluno = $resultado->fetchALL();
 $n_aluno = count($aluno);

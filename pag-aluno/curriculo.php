@@ -395,7 +395,7 @@ require_once "./back-end/login/validador_acesso.php";
     </div>
     <div id="align-cards" class="align-cards">
       <?php
-      $querySelect5 = "SELECT tb_aluno_curso_etec.* , tb_aluno.idAluno , tb_curso.* , tb_etec.nome
+      $querySelect5 = "SELECT tb_aluno_curso_etec.* , tb_aluno.idAluno , tb_curso.* , tb_etec.nome , tb_etec.idEtec
        FROM tb_aluno
        INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
        INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso_etec.fk_idCurso
@@ -408,7 +408,7 @@ require_once "./back-end/login/validador_acesso.php";
       ?>
 
         <div id="card">
-          <a class="dropdown-item" onclick="modalRemover(<?= $aluno5[3] ?>, 'id_curso' , <?= $cliente_id ?> , 'id_usuario')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+          <a class="dropdown-item" onclick="modalRemover(<?= $aluno5[5] ?>, 'id_curso' , <?= $cliente_id ?> , 'id_usuario' , <?= $aluno5[12] ?> , 'id_etec')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
           <div>
             <h3>Instituição:</h3>
@@ -464,6 +464,7 @@ require_once "./back-end/login/validador_acesso.php";
             <form action="back-end/crudCurriculo/curriculo-delete.php" method="post">
               <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
               <input class="form-control" id="id_curso" name="id_curso" type="hidden">
+              <input class="form-control" id="id_etec" name="id_etec" type="hidden">
               <p>Tem certeza que deseja excluir o item selcionado?
               <div class=" text-end">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
