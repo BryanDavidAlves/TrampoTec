@@ -4,7 +4,7 @@ body{
 }
 
 main {
-  margin-left:200px; /* Same as the width of the sidenav */
+  margin-left: 22%;
   margin-right:0px;
   overflow:hidden;
 } 
