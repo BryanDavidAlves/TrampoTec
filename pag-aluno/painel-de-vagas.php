@@ -454,7 +454,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       width: 10px;
     }
 
-    #texto-vaga::-webkit-scrollbar-track {}
+
 
     #texto-vaga::-webkit-scrollbar-thumb {
       background-color: #fff;
@@ -488,9 +488,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
         font-size: 15px;
       }
 
-      #infos-vaga-requisito {
-        font-size: ;
-      }
+   
     }
   </style>
 </head>
@@ -738,7 +736,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 
       <?php } ?>
 
-
+    </div>
 
 
 

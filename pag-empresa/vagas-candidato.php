@@ -79,15 +79,6 @@ foreach ($emailCandidato as $emailCandidato) {
 }
 
 
-
-
-
-
-
-
-
-
-
 $querySelect11 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
 FROM tb_aluno
 INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno

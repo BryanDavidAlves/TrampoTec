@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Nov-2023 às 21:23
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 03-Dez-2023 às 21:23
+-- Versão do servidor: 10.4.28-MariaDB
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,48 +71,31 @@ CREATE TABLE `tb_aluno` (
 --
 
 INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `logradouro`, `numero`, `complemento`, `bairro`, `estado`, `cidade`, `cep`, `imagem`, `curriculo`) VALUES
-(14, 'ryan.souza44@etec.sp.gov.br', 'Otario15@', 'Ryan Dias', '569.614.918-98', '2005-10-17', 'Rua Antônio Soares Pais', 271, '', 'Vila São Geraldo', 'SP', 'São Paulo', '08460-50', '67d8b47c91c617b233e145dd7121ab84avif', 1),
-(15, 'aline.cordeiro5@etec.sp.gov.br', 'Aline123@', 'Aline Mendonca', '272.948.658-50', '1990-05-07', 'Rua Feliciano de Mendonça', 290, '', 'Jardim São Paulo(Zona Leste)', 'SP', 'São Paulo', '08460-36', 'a7ab82742ff4789c02658dd67facf0e6.jpg', 1);
+(14, 'ryan.souza44@etec.sp.gov.br', 'Otario15@', 'Ryan Dias', '569.614.918-98', '2005-10-17', 'Rua Antônio Soares Pais', 271, '66', 'Vila São Geraldo', '271', 'São Paulo', 'Vila São', '67d8b47c91c617b233e145dd7121ab84avif', 1),
+(15, 'aline.cordeiro5@etec.sp.gov.br', 'Aline123@', 'Aline Mendonca', '272.948.658-50', '1990-05-07', 'Rua Feliciano de Mendonça', 290, '', 'Jardim São Paulo(Zona Leste)', 'SP', 'São Paulo', '08460-36', 'a7ab82742ff4789c02658dd67facf0e6.jpg', 1),
+(16, 'johny.gomes@etec.sp.gov.br', 'euamoagabS2@', 'johny david marques gomes', '549.664.138-18', '2005-08-25', 'Rua Redeiras', 66, '', 'Lajeado', '66', 'São Paulo', 'Lajeado', '2ba2409e8ac905aade6e7ccdd7599357.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_aluno_curso`
+-- Estrutura da tabela `tb_aluno_curso_etec`
 --
 
-CREATE TABLE `tb_aluno_curso` (
+CREATE TABLE `tb_aluno_curso_etec` (
   `fk_idAluno` int(11) NOT NULL,
-  `fk_idCurso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tb_aluno_curso`
---
-
-INSERT INTO `tb_aluno_curso` (`fk_idAluno`, `fk_idCurso`) VALUES
-(14, 13),
-(15, 12),
-(15, 11);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_aluno_etec`
---
-
-CREATE TABLE `tb_aluno_etec` (
+  `fk_idCurso` int(11) NOT NULL,
   `fk_idEtec` int(11) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
+  `conclusao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tb_aluno_etec`
+-- Extraindo dados da tabela `tb_aluno_curso_etec`
 --
 
-INSERT INTO `tb_aluno_etec` (`fk_idEtec`, `fk_idAluno`) VALUES
-(9, 14),
-(9, 15),
-(9, 15);
+INSERT INTO `tb_aluno_curso_etec` (`fk_idAluno`, `fk_idCurso`, `fk_idEtec`, `conclusao`) VALUES
+(16, 12, 12, '2023-12-02'),
+(14, 11, 12, '8120-01-12'),
+(15, 11, 10, '2025-11-12');
 
 -- --------------------------------------------------------
 
@@ -146,7 +129,11 @@ INSERT INTO `tb_conhecimento` (`idConhecimento`, `conhecimento`) VALUES
 (15, 'PHP'),
 (16, 'MySQL'),
 (17, 'SQL Server'),
-(18, 'Oracle db');
+(18, 'Oracle db'),
+(19, 'php'),
+(20, 'javascript'),
+(21, 'java'),
+(22, 'SQL server');
 
 -- --------------------------------------------------------
 
@@ -168,7 +155,11 @@ INSERT INTO `tb_conhecimento_aluno` (`fk_idConhecimento`, `fk_idAluno`) VALUES
 (15, 15),
 (16, 15),
 (17, 15),
-(18, 15);
+(18, 15),
+(19, 16),
+(20, 16),
+(21, 16),
+(22, 16);
 
 -- --------------------------------------------------------
 
@@ -433,7 +424,9 @@ INSERT INTO `tb_habilidade_aluno` (`fk_idAluno`, `fk_idHabilidade`) VALUES
 (14, 4),
 (14, 1),
 (15, 4),
-(15, 1);
+(15, 1),
+(16, 4),
+(16, 1);
 
 -- --------------------------------------------------------
 
@@ -466,9 +459,10 @@ CREATE TABLE `tb_idioma_aluno` (
 --
 
 INSERT INTO `tb_idioma_aluno` (`idIdiomaAluno`, `nome`, `nivel`, `fk_idAluno`) VALUES
-(24, 'espanhol', 'intermediario', 14),
 (25, 'ingles', 'intermediario', 15),
-(26, 'espanhol', 'iniciante', 15);
+(26, 'espanhol', 'iniciante', 15),
+(27, 'ingles', 'intermediario', 16),
+(29, 'ingles', 'intermediario', 14);
 
 -- --------------------------------------------------------
 
@@ -492,7 +486,11 @@ CREATE TABLE `tb_perfil_aluno` (
 INSERT INTO `tb_perfil_aluno` (`idPerfilAluno`, `semestre`, `periodo`, `duracaoCurso`, `conclusao`, `fk_idAluno`) VALUES
 (16, 3, '', '', '2024-10-12', 14),
 (17, 3, '', '', '2000-12-10', 15),
-(18, 1, '', '', '2010-12-10', 15);
+(18, 1, '', '', '2010-12-10', 15),
+(19, 4, '', '', '2024-06-06', 16),
+(20, 3, '', '', '2024-12-08', 16),
+(21, 4, '', '', '12321-03-21', 16),
+(22, 6, '', '', '123123-03-21', 16);
 
 -- --------------------------------------------------------
 
@@ -625,7 +623,8 @@ CREATE TABLE `tb_telefone_aluno` (
 
 INSERT INTO `tb_telefone_aluno` (`idTelefoneAluno`, `telefoneAluno`, `fk_idAluno`) VALUES
 (12, '(11) 98428-6282', 14),
-(13, '(11) 98989-8989', 15);
+(13, '(11) 98989-8989', 15),
+(14, '(11) 95828-1911', 16);
 
 -- --------------------------------------------------------
 
@@ -719,7 +718,6 @@ INSERT INTO `tb_vaga` (`idVaga`, `nome`, `logradouro`, `numero`, `cep`, `cidade`
 (7, 'Nutricionista', 'Avenida Queimada', 55, '06429-215', 'Barueri', 'Residencial Morada dos Lagos', 'SP', 'presencial', 1650.00, 'Realizar avaliações nutricionais abrangentes para determinar as necessidades dietéticas individuais', '08:00', '15:00', 'diurno', 'Saúde', 'seg-sex', 20, 12, 0),
 (8, 'Eletricista', 'Praça Osvaldo Valério', 42, '12043-040', 'Taubaté', 'Cecap', 'SP', 'presencial', 2100.00, 'Realizar instalações elétricas em conformidade com os códigos e normas locais. Diagnosticar e soluci', '08:00', '16:00', 'matinal', 'Industria', 'seg-sex', 14, 12, 0),
 (9, 'Programador Front-End', 'Rua X 33', 50, '74921-410', 'Aparecida de Goiânia', 'Sítios Santa Luzia Residencial', 'GO', 'home-office', 2200.00, 'Estamos buscando um talentoso Programador Front-End para se juntar à nossa equipe dinâmica. O candid', '10:00', '16:00', 'matinal', 'Tecnologia', 'Seg-Sex', 14, 11, 0),
-(16, 'Administração de projetos', 'Rua Francisco Nunes Cubas', 359, '08450-460', 'São Paulo', 'Jardim Fanganiello', 'SP', 'home-office', 1200.00, 'Administrar projetos no geral', '07:00', '12:00', 'matinal', 'Administração', 'seg-sex', 14, 11, 0),
 (17, 'Gerenciamento de projetos', 'Rua Francisco Nunes Cubas', 359, '08450-460', 'São Paulo', 'Jardim Fanganiello', 'SP', 'home-office', 1200.00, 'Gerenciar projetos no geral', '07:00', '12:00', 'diurno', 'Tecnologia', 'seg-sex', 14, 11, 0),
 (18, 'DBA', 'Rua Antônio Soares Pais', 234, '08460-500', 'São Paulo', 'Vila São Geraldo', 'SP', 'presencial', 2000.00, 'Criar e analisar bancos de dados', '17:00', '23:00', 'noturno', 'Tecnologia', 'seg-sex', 14, 11, 0),
 (20, 'Técnico em Edificações', 'Rua Antônio Soares Pais', 23, '08460-500', 'São Paulo', 'Vila São Geraldo', 'SP', 'presencial', 1600.00, 'Estamos em busca de um profissional qualificado e experiente para integrar nossa equipe como Técnico em Edificações. O candidato ideal será responsável por apoiar e coordenar atividades relacionadas à construção e manutenção de edifícios, garantindo padrões de qualidade, segurança e conformidade com regulamentações.', '07:00', '14:00', 'matinal', 'Industria', 'seg-sex', 20, 13, 0),
@@ -743,10 +741,13 @@ CREATE TABLE `tb_vaga_aluno` (
 --
 
 INSERT INTO `tb_vaga_aluno` (`fk_idAluno`, `fk_idVaga`, `aprovado`) VALUES
-(14, 8, 0),
+(14, 8, 1),
 (14, 9, 1),
 (14, 21, 1),
-(15, 22, 0);
+(15, 22, 1),
+(16, 21, 0),
+(16, 18, 0),
+(16, 22, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -767,18 +768,12 @@ ALTER TABLE `tb_aluno`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `tb_aluno_curso`
+-- Índices para tabela `tb_aluno_curso_etec`
 --
-ALTER TABLE `tb_aluno_curso`
+ALTER TABLE `tb_aluno_curso_etec`
   ADD KEY `fk_idAluno` (`fk_idAluno`),
-  ADD KEY `fk_idCurso` (`fk_idCurso`);
-
---
--- Índices para tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD KEY `fk_idEtec` (`fk_idEtec`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
+  ADD KEY `fk_idCurso` (`fk_idCurso`),
+  ADD KEY `fk_idEtec` (`fk_idEtec`);
 
 --
 -- Índices para tabela `tb_conhecimento`
@@ -949,13 +944,13 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `tb_conhecimento`
 --
 ALTER TABLE `tb_conhecimento`
-  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tb_curso`
@@ -1009,13 +1004,13 @@ ALTER TABLE `tb_horario_aluno`
 -- AUTO_INCREMENT de tabela `tb_idioma_aluno`
 --
 ALTER TABLE `tb_idioma_aluno`
-  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `tb_perfil_aluno`
 --
 ALTER TABLE `tb_perfil_aluno`
-  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tb_requisito`
@@ -1033,7 +1028,7 @@ ALTER TABLE `tb_sobre_mim`
 -- AUTO_INCREMENT de tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_empresa`
@@ -1058,18 +1053,12 @@ ALTER TABLE `tb_vaga`
 --
 
 --
--- Limitadores para a tabela `tb_aluno_curso`
+-- Limitadores para a tabela `tb_aluno_curso_etec`
 --
-ALTER TABLE `tb_aluno_curso`
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_2` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`);
+ALTER TABLE `tb_aluno_curso_etec`
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_3` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_conhecimento_aluno`
