@@ -398,7 +398,7 @@ require_once "./back-end/login/validador_acesso_curri.php";
       <img src="img/check.png" alt="">
     </div>
     <div class="align-x">
-      <span id="closeBtn" class="btn1" onclick="fecharModa2()">&times;</span>
+      <span id="closeBtn" class="btn1" onclick="fecharModal2()">&times;</span>
     </div>
     <div class="align-itens">
       <h4 class="titulo">Atualizado com Sucesso</h4>

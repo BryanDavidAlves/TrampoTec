@@ -321,7 +321,6 @@ $aluno4 = $query4->fetchAll();
           <a href="curriculo.php">
             <button id="editButton">Editar currículo</button>
           </a>
-          <button id="editButton">Tranformar em PDF</button>
         </div>
 
       </div>
