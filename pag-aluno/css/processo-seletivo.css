@@ -121,7 +121,7 @@ p {
   height: 160px;
   border: none;
   gap: 10px;
-  animation: 900ms linear anim-card;
+  animation: 500ms linear anim-card;
 }
 
 .nao-aceito {

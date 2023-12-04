@@ -143,7 +143,7 @@ p {
   justify-content: center;
   border: none;
   padding: 20px;
-  animation: 900ms linear anim-card;
+  animation: 500ms linear anim-card;
 }
 
 #conteudo-card {

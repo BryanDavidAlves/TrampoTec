@@ -23,8 +23,10 @@ require_once "./back-end/login/validador_acesso.php";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
   <link rel="stylesheet" href="../reset.css">
 
@@ -39,6 +41,7 @@ require_once "./back-end/login/validador_acesso.php";
       height: auto;
       border-radius: 10px;
       margin-top: 6%;
+      animation: 1000ms linear anim-left;
     }
 
     h4 {
@@ -275,6 +278,7 @@ require_once "./back-end/login/validador_acesso.php";
       overflow-y: auto;
       margin-top: 5%;
       padding-right: 20px;
+      animation: 1000ms linear anim-right;
     }
 
     #btn-curso {
@@ -301,9 +305,10 @@ require_once "./back-end/login/validador_acesso.php";
       scale: 1.01;
     }
 
-    @media (max-width: 785px) {
+    @media (max-width: 786px) {
       #btn-curso {
         display: flex;
+        animation: 1000ms linear anim-card;
       }
 
       .align-cards {
@@ -312,6 +317,91 @@ require_once "./back-end/login/validador_acesso.php";
 
       .align-tudo {
         padding: 15px;
+      }
+
+      form {
+        animation: 1000ms linear anim-card2;
+      }
+
+      .align-cards {
+        animation: 1000ms linear anim-card2;
+      }
+
+      @keyframes anim-card {
+        0% {
+          opacity: 0%;
+          transform: translateY(-10%);
+        }
+
+        50% {
+          opacity: 50%;
+        }
+
+        100% {
+          opacity: 100%;
+        }
+      }
+
+      @keyframes anim-card2 {
+        0% {
+          opacity: 0%;
+          transform: translateY(-2%);
+        }
+
+        50% {
+          opacity: 50%;
+        }
+
+        100% {
+          opacity: 100%;
+        }
+      }
+
+    }
+
+
+
+    @keyframes anim-left {
+      0% {
+        opacity: 0%;
+        transform: translateX(-20%);
+      }
+
+      50% {
+        opacity: 50%;
+        transform: translateX(0%);
+      }
+
+      100% {
+        opacity: 100%;
+      }
+    }
+
+
+    @keyframes anim-right {
+      0% {
+        opacity: 0%;
+        transform: translateX(20%);
+      }
+
+      50% {
+        opacity: 50%;
+        transform: translateX(0%);
+      }
+
+      100% {
+        opacity: 100%;
+      }
+    }
+
+    .progress-bar {
+      width: 25%;
+      animation: 3s bar;
+    }
+
+    @keyframes bar {
+      0% {
+        width: 0;
       }
     }
   </style>
@@ -340,7 +430,10 @@ require_once "./back-end/login/validador_acesso.php";
       <button class="btn" onclick="fecharModal()">OK</button>
     </div>
   </div>
-
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    </div>
+  </div>
   <div class="align-tudo">
 
     <div class="align-tabela">
@@ -404,14 +497,18 @@ require_once "./back-end/login/validador_acesso.php";
       $query5 = $conexao->query($querySelect5);
       $aluno5 = $query5->fetchAll();
       foreach ($aluno5 as $aluno5) {
-      ?>
+        ?>
 
         <div id="card">
-          <a class="dropdown-item" onclick="modalRemover(<?= $aluno5[5] ?>, 'id_curso' , <?= $cliente_id ?> , 'id_usuario' , <?= $aluno5[12] ?> , 'id_etec')"><i class="fas fa-trash-alt fa-lg text-danger"></i></a>
+          <a class="dropdown-item"
+            onclick="modalRemover(<?= $aluno5[5] ?>, 'id_curso' , <?= $cliente_id ?> , 'id_usuario' , <?= $aluno5[12] ?> , 'id_etec')"><i
+              class="fas fa-trash-alt fa-lg text-danger"></i></a>
           <h2>Informações do Curso</h2>
           <div>
             <h3>Instituição:</h3>
-            <p><?= $aluno5[11] ?></p>
+            <p>
+              <?= $aluno5[11] ?>
+            </p>
           </div>
 
           <div>
@@ -482,7 +579,8 @@ require_once "./back-end/login/validador_acesso.php";
 
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="js/funcoes.js"></script>
 <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </script>
