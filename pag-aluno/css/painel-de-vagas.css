@@ -26,12 +26,14 @@ body {
   bottom: 0;
   z-index: -5;
 }
+
 .modalidades {
   font-size: 0.9em;
   color: white;
   display: flex;
   flex-direction: column;
 }
+
 .imagem-4 {
   position: fixed;
   bottom: 0;
@@ -51,9 +53,11 @@ select {
 select {
   cursor: pointer;
 }
+
 .filtro {
   width: 100%;
 }
+
 .filtro-icon {
   display: flex;
   font-size: 1.1rem;
@@ -61,6 +65,7 @@ select {
   color: #000;
   align-items: center;
   gap: 10px;
+  animation: 900ms linear anim-left;
 }
 
 .filtro-icon i {
@@ -85,7 +90,9 @@ select {
   cursor: pointer;
   border: 1px solid #0a3580;
   transition: 0.3s all ease-in-out;
+  animation: 900ms linear anim-right;
 }
+
 #botao-filtro:hover {
   background-color: white;
   transition: 0.3s all ease-in-out;
@@ -124,7 +131,7 @@ p {
   margin-top: 3%;
   margin-left: 8%;
   margin-right: 8%;
-  padding:0px 50px;
+  padding: 0px 50px;
 }
 
 #card {
@@ -136,6 +143,7 @@ p {
   justify-content: center;
   border: none;
   padding: 20px;
+  animation: 900ms linear anim-card;
 }
 
 #conteudo-card {
@@ -191,6 +199,7 @@ p {
   background-color: #0382ac;
   color: #fff;
 }
+
 #botao-fechar {
   border: none;
   background-color: transparent;
@@ -259,6 +268,7 @@ p {
 #info-nome {
   font-size: 20px;
 }
+
 #info-ano {
   font-size: 15px;
 }
@@ -313,4 +323,67 @@ p {
   display: flex;
   justify-content: center;
   border: none;
+}
+
+@keyframes anim-card {
+  0% {
+    opacity: 0%;
+    transform: translateY(-20%);
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes anim-left {
+  0% {
+    opacity: 0%;
+    transform: translateX(-20%);
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+@keyframes anim-right {
+  0% {
+    opacity: 0%;
+    transform: translateX(20%);
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.col-md-3:nth-child(1) {
+  animation: 900ms linear anim-left;
+}
+
+.col-md-3:nth-child(2) {
+  animation: 900ms linear anim-left;
+}
+
+.col-md-3:nth-child(3) {
+  animation: 900ms linear anim-right;
+
+}
+
+.col-md-3:nth-child(4) {
+  animation: 900ms linear anim-right;
 }
