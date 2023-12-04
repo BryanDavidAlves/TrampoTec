@@ -34,12 +34,12 @@ include '../pag-adm/components/sidebar-adm.php';
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
 
-        <p>Mensagem</p>
+        <p>Mensagens dos Usuarios</p>
 
         <section class="sistema-busca">
             <div class="secao-busca">
                 <div class="barra-pesquisa">
-                    <input type="text" name="pesquisa" id="busca" placeholder="Buscar por empresa">
+                    <input type="text" name="pesquisa" id="busca" placeholder="Buscar por usuario">
                     <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
                 </div>
 

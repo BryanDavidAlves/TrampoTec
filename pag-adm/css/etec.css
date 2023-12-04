@@ -18,6 +18,9 @@ main {
   margin-left: 20%;
   padding-bottom: 50px;
 }
+i{
+  cursor: pointer;
+}
 
 .sistema-busca .barra-pesquisa {
   border-radius: 20px;

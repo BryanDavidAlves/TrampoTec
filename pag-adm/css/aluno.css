@@ -16,6 +16,9 @@ svg{
   position: absolute;
   border-radius: 100%;
 }
+i{
+  cursor: pointer;
+}
 .box-msg {
   background-color: #555cb3;
   color: white;

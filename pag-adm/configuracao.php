@@ -69,9 +69,9 @@ include '../pag-adm/components/sidebar-adm.php';
     </header>
     <main>
         <section class="configuracoes">
-            <div class="configuracao">
+            <div onclick="modalrequisito()" class="configuracao">
                 <div class="part1">
-                    <i class="fa-solid fa-circle-exclamation" onclick="modalrequisito()"></i>
+                    <i class="fa-solid fa-circle-exclamation"></i>
                     <h2> Alterar Dados</h2>
                 </div>
                 <i class="fa-solid fa-chevron-right" ></i>

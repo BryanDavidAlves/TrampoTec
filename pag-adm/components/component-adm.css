@@ -14,7 +14,6 @@ aside::-webkit-scrollbar-track {
 aside::-webkit-scrollbar-thumb {
   background-color: #4d3cd1;
   border-radius: 30px;
-  border: 3px solid rgb(253, 253,  253);
 }
 
 .img-sidebar {
@@ -77,4 +76,7 @@ header {
 h1 {
   font-weight: 600;
   font-size: 2rem;
+}
+aside li{
+  margin-left: 10%;
 }

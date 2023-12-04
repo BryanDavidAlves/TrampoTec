@@ -26,7 +26,7 @@ if ($resultado > 0) {
             <input type="hidden" class="form-control" id="id_etec" name="id_etec"
                 value="' . $resultado[0] . '">', '
             <button type="submit" class="botao-editar" class="dropdown-item">
-            <i class="fas fa-edit fa-lg text-secondary"></i>
+            <i class="fas fa-edit fa-lg"></i>
             </button>
         </form>
     </td>
