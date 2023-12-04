@@ -55,8 +55,11 @@ foreach ($result as $vaga) {
     <link rel="stylesheet" href="../reset.css">
     <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <title>TrampoTec</title>
 
     <style>
@@ -351,16 +354,16 @@ foreach ($result as $vaga) {
 
                 <span an class="add-vaga">
                     <span>
-                    <a href="./cadastrar-vaga.php">
-                    <i class="fa-solid fa-plus"></i>
-                    </a>
+                        <a href="./cadastrar-vaga.php">
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
                     </span>
-                   
+
                     Cadastra Nova Vaga
                 </span>
                 <div class="barra-pesquisa">
                     <input type="text" name="pesquisa" id="busca" placeholder="Buscar por vaga">
-                    <i class="fa-solid fa-magnifying-glass fa-lg" ></i>
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </div>
 
                 <div class="align-filtro">
@@ -432,7 +435,8 @@ foreach ($result as $vaga) {
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                 <form action="./beck-end/vagaPreenchida/vaga-preenchida.php" method="POST">
                                     <input type="hidden" name="idVaga" value=" <?= $vaga['idVaga'] ?>">
-                                    <button name="preenchida" id="vaga-preenchida" type="submit" class="btn btn-primary" style="align-items: center;">Preencher Vaga</button>
+                                    <button name="preenchida" id="vaga-preenchida" type="submit" class="btn btn-primary"
+                                        style="align-items: center;">Preencher Vaga</button>
                                 </form>
                             </div>
                         </div>
@@ -449,23 +453,23 @@ foreach ($result as $vaga) {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
 
             var busca = ("");
             $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
                 busca
-            }, function(data) {
+            }, function (data) {
                 $("#result").html(data);
             });
 
 
-            $("#busca").keyup(function() {
+            $("#busca").keyup(function () {
 
                 busca = $("#busca").val();
                 $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
                     busca: busca
-                }, function(data) {
+                }, function (data) {
                     $("#result").html(data);
                 });
 

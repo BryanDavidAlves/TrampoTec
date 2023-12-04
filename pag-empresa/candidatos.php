@@ -116,7 +116,7 @@ $resultado = $query->fetchAll();
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-
+                            <h2>Perfil do candidato</h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 

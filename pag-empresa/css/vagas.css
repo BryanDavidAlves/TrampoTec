@@ -61,7 +61,7 @@ main p {
   font-size: 35px;
   padding: 10px;
   background-color: rgb(218, 30, 30);
-  border:1px solid rgb(218, 30, 30);
+  border: 1px solid rgb(218, 30, 30);
   transition: 0.2s ease-in-out;
 }
 
@@ -71,13 +71,13 @@ main p {
   font-size: 35px;
   padding: 10px;
   background-color: white;
-  border:1px solid rgb(218, 30, 30);
+  border: 1px solid rgb(218, 30, 30);
 }
 
 
 .add-vaga a {
   padding: 0px;
-margin: 0px;
+  margin: 0px;
 }
 
 .secao-busca {
@@ -283,21 +283,24 @@ button {
 }
 
 #ver-mais-vaga {
-  background-color:#555cb3;
+  background-color: #555cb3;
   color: white;
-  border-radius:10px;
+  border-radius: 10px;
   width: 100px;
   height: 35px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  border: 1px solid #555cb3;
 
 }
+
 #ver-mais-vaga:hover {
-  transform: scale(1.1);
-  border: 1px solid #555cb3 ;
+  transform: scale(1.05);
+  border: 1px solid #555cb3;
   color: #555cb3;
-  background-color:white;
+  background-color: white;
 }
+
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
 }
@@ -382,6 +385,7 @@ button {
   align-items: center;
   gap: 40px;
 }
+
 .ver-mais .vermais-body .vermais-infos {
   gap: 15px;
   display: flex;
@@ -447,30 +451,42 @@ button {
 }
 
 .editar-vaga .botao-editar:hover {
-  color:  rgb(160, 160, 160);
+  color: rgb(160, 160, 160);
   border: 1px solid rgb(160, 160, 160);
   background-color: transparent;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .preencher-vaga {
   color: WHITE;
-  border-radius: 100px;
-  transition: 0.2s ease-in-out;
-  font-size: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  font-size: 1rem;
   text-align: center;
   display: flex;
-  background-color: red;
-  border: 1px solid red;
+  background-color: green;
+  border: 1px solid green;
 }
 
 .preencher-vaga:hover {
-  color: red;
-  border: 1px solid red;
+  color: green;
+  border: 1px solid green;
   background-color: transparent;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
+.modal-footer .btn:nth-child(1):hover {
+  transform: scale(1.05);
+  background-color: transparent;
+  color: black;
+}
+.modal-footer .btn:nth-child(2):hover {
+  transform: scale(1.05);
+  background-color: transparent;
+  color: blue;
+}
 
+.modal-footer .btn{
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}

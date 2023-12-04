@@ -97,7 +97,7 @@ $alunoSeis = $query6->fetchAll();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../reset.css">
-    <link rel='stylesheet' href='../pag-empresa/componentes/componente.css'>
+    <link rel='stylesheet' href='../pag-empresa/componentes/componentE.css'>
     <link rel='stylesheet' href='../pag-empresa/css/vagas.css'>
     <link rel='stylesheet' href='../pag-empresa/css/candidato-vaga.css'>
 
@@ -203,7 +203,6 @@ $alunoSeis = $query6->fetchAll();
                             <th>EMAIL</th>
                             <th></th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="result">
@@ -225,9 +224,6 @@ $alunoSeis = $query6->fetchAll();
                                 </td>
                                 <td class="email-aluno">
                                     <?= $aluno[23] ?>
-                                </td>
-                                <td class="email-aluno">
-
                                 </td>
 
                                 <?php if (isset($_GET) && $_GET['aprovado'] == 1) { ?>

@@ -1,18 +1,21 @@
 main {
   margin-left: 20%;
 }
+
 main .align-itens {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: start;
 }
+
 main .align-itens .card .title-card {
   margin-top: 0px;
   color: #555cb3;
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 main .align-itens .card {
   display: flex;
   flex-direction: column;
@@ -26,16 +29,19 @@ main .align-itens .card {
   height: auto;
   transition: 0.3s all ease-in-out;
 }
+
 main .align-itens .card .desc {
   word-break: break-all;
   width: 300px;
   margin: 0px;
   font-size: 0.9rem;
 }
+
 main .align-itens .card:hover {
   transform: scale(1.02);
   transition: 0.3s all ease-in-out;
 }
+
 main .align-itens .card .itens-card {
   width: 100%;
   display: flex;
@@ -44,6 +50,7 @@ main .align-itens .card .itens-card {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
+
 main .align-itens .card .itens-card h5 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -69,13 +76,14 @@ main .align-itens .card .itens-card h5 {
   text-decoration: none;
   background-color: white;
   color: #555cb3;
-  transition: 0.5s all ease-in-out;
+  transition: 0.1s linear;
+  font-weight: 600;
 }
+
 .tabela .align-links button:hover {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  transition: 0.5s all ease-in-out;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  scale: 1.02;
 }
 
 .tabela {
@@ -84,6 +92,7 @@ main .align-itens .card .itens-card h5 {
   background-color: #555cb3;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
 }
+
 .tabela p {
   color: white;
   font-weight: 500;
@@ -92,6 +101,7 @@ main .align-itens .card .itens-card h5 {
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
+
 main .align-itens table {
   background-color: white;
   border-radius: 15px;
@@ -112,12 +122,17 @@ main .align-itens .infos {
 main .align-itens table td {
   color: rgb(0, 0, 0);
   padding: 20px;
-  
 }
-
+main .align-itens table td:nth-child(5) {
+  padding: 5px;
+}
+main .align-itens table td:nth-child(6) {
+  padding: 5px;
+}
 main .align-itens tr:nth-last-child(1) {
   border: none;
 }
+
 td .container-perfil .img-perfil {
   width: 100%;
   height: 100%;
@@ -125,11 +140,13 @@ td .container-perfil .img-perfil {
   justify-content: center;
   align-items: center;
 }
+
 td .container-perfil {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 td .container-perfil .img-perfil img {
   width: 60px;
   height: 60px;
@@ -166,11 +183,11 @@ td .container-perfil .img-perfil img {
 }
 
 
-.icon-2 a{
-text-decoration: none;
+.icon-2 a {
+  text-decoration: none;
 }
 
-.icon-2 a i{
+.icon-2 a i {
   display: flex;
   text-decoration: none;
   color: red;
@@ -228,6 +245,7 @@ text-decoration: none;
 .body-voltar span h1 {
   font-size: 25px;
 }
+
 #alinhar {
   font-size: 25px;
   text-decoration: none;
@@ -268,6 +286,7 @@ text-decoration: none;
   border-radius: 100px;
   padding: 20px;
 }
+
 #modal-body {
   display: flex;
   width: 100%;
@@ -299,9 +318,10 @@ text-decoration: none;
   width: 100%;
   align-items: center;
   justify-content: center;
-  
+
 }
-#itens-curriculo #align-modal{
+
+#itens-curriculo #align-modal {
   display: flex;
 
   padding-bottom: 30px;
@@ -310,19 +330,21 @@ text-decoration: none;
   width: 100%;
 
 }
+
 #itens-curriculo #habilidades {
 
 
   width: 100%;
-  
+
   position: relative;
   font-family: "Poppins", sans-serif;
 }
+
 #itens-curriculo #habilidades #itens-habilidades1 {
   display: flex;
   flex-direction: column;
-  gap:5px;
-  
+  gap: 5px;
+
   font-family: "Poppins", sans-serif;
   color: black;
 }
@@ -346,14 +368,16 @@ text-decoration: none;
 
   color: black;
 }
+
 #itens-curriculo #habilidades #itens-habilidades {
   display: flex;
   flex-direction: column;
-  gap:5px;
-  
+  gap: 5px;
+
   font-family: "Poppins", sans-serif;
   color: black;
 }
+
 #itens-curriculo #habilidades #itens-habilidades #itens {
   font-size: 1rem;
   margin: 0;
@@ -362,6 +386,7 @@ text-decoration: none;
   width: 100%;
   text-align: start;
 }
+
 #itens-curriculo #habilidades #itens-habilidades #title-habilidades {
   font-weight: 600;
   font-size: 1.2rem;
@@ -372,6 +397,7 @@ text-decoration: none;
 
   color: black;
 }
+
 #imagem-perfil-update {
   width: 100%;
   gap: 10px;
@@ -380,6 +406,7 @@ text-decoration: none;
   justify-content: flex-start;
   display: flex;
 }
+
 #imagem-perfil-update #info1 #nome {
   font-size: 1.3rem;
   font-weight: 600;
@@ -395,18 +422,20 @@ text-decoration: none;
   font-family: "Poppins", sans-serif;
   margin: 0;
 
-  color:black;
+  color: black;
 }
-#imagem-perfil-update #info1 #instituicao{
-  width:100%;
+
+#imagem-perfil-update #info1 #instituicao {
+  width: 100%;
   text-align: start;
 
   font-size: 0.9rem;
   color: black;
-font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
 
 }
+
 #imagem-perfil-update #info1 {
   display: flex;
   flex-direction: column;
@@ -414,6 +443,7 @@ font-family: "Poppins", sans-serif;
   width: 100%;
   font-family: "Poppins", sans-serif;
 }
+
 #imagem-perfil-update img {
   width: 90px;
   height: 90px;
@@ -429,6 +459,5 @@ font-family: "Poppins", sans-serif;
   height: auto;
   display: flex;
   font-family: "Poppins", sans-serif;
-
   flex-direction: column;
 }

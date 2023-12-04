@@ -12,6 +12,11 @@ main {
 main p {
   font-size: 25px;
 }
+h2{
+  margin-left: 32%;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
 .cima {
   position: fixed;

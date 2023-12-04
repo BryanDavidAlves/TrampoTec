@@ -157,7 +157,7 @@ select {
 
 .btn {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   width: 200px;
   color: white;
@@ -172,6 +172,7 @@ select {
 
 .btn:hover {
   background-color: #1a3b9e;
+  color: white;
   scale: 1.05;
 }
 
@@ -235,6 +236,7 @@ select {
   display: flex;
   align-items: center;
 }
+
 @keyframes trans {
   0% {
     opacity: 0%;
@@ -298,6 +300,7 @@ select {
     transform: translateY(0%);
   }
 }
+
 .label-anim0 {
   position: absolute;
   left: 5%;
