@@ -74,7 +74,6 @@ main p {
   border: 1px solid rgb(218, 30, 30);
 }
 
-
 .add-vaga a {
   padding: 0px;
   margin: 0px;
@@ -291,7 +290,6 @@ button {
   transition: 0.2s ease-in-out;
   cursor: pointer;
   border: 1px solid #555cb3;
-
 }
 
 #ver-mais-vaga:hover {
@@ -436,6 +434,25 @@ button {
   gap: 5px;
 }
 
+#content {
+  display: none;
+}
+
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+#loading img {
+  width: 100px;
+  /* Ajuste conforme necessário */
+  height: 100px;
+  /* Ajuste conforme necessário */
+  margin-right: 10px;
+}
 
 .editar-vaga .botao-editar {
   color: WHITE;
@@ -486,7 +503,7 @@ button {
   color: blue;
 }
 
-.modal-footer .btn{
+.modal-footer .btn {
   transition: 0.3s ease-in-out;
   font-weight: 500;
 }

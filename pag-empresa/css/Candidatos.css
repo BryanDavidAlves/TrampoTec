@@ -12,7 +12,7 @@ main {
 main p {
   font-size: 25px;
 }
-h2{
+h2 {
   margin-left: 32%;
   font-size: 1.2rem;
   font-weight: 600;
@@ -303,30 +303,47 @@ dialog {
   width: 100%;
   align-items: center;
   justify-content: center;
-  
 }
-#itens-curriculo #align-modal{
+#itens-curriculo #align-modal {
   display: flex;
 
   padding-bottom: 30px;
   padding-left: 60px;
   align-items: center;
   width: 100%;
-
 }
+
+#content {
+  display: none;
+}
+
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+#loading img {
+  width: 100px;
+  /* Ajuste conforme necessário */
+  height: 100px;
+  /* Ajuste conforme necessário */
+  margin-right: 10px;
+}
+
 #itens-curriculo #habilidades {
-
-
   width: 100%;
-  
+
   position: relative;
   font-family: "Poppins", sans-serif;
 }
 #itens-curriculo #habilidades #itens-habilidades1 {
   display: flex;
   flex-direction: column;
-  gap:5px;
-  
+  gap: 5px;
+
   font-family: "Poppins", sans-serif;
   color: black;
 }
@@ -353,8 +370,8 @@ dialog {
 #itens-curriculo #habilidades #itens-habilidades {
   display: flex;
   flex-direction: column;
-  gap:5px;
-  
+  gap: 5px;
+
   font-family: "Poppins", sans-serif;
   color: black;
 }
@@ -399,17 +416,16 @@ dialog {
   font-family: "Poppins", sans-serif;
   margin: 0;
 
-  color:black;
+  color: black;
 }
-#imagem-perfil-update #info1 #instituicao{
-  width:100%;
+#imagem-perfil-update #info1 #instituicao {
+  width: 100%;
   text-align: start;
 
   font-size: 0.9rem;
   color: black;
-font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
-
 }
 #imagem-perfil-update #info1 {
   display: flex;
@@ -523,18 +539,18 @@ dialog {
   gap: 10px;
 }
 
-#ver-mais{
+#ver-mais {
   color: white;
   background-color: rgb(99, 99, 194);
-  border: 1px solid  rgb(99, 99, 194);
+  border: 1px solid rgb(99, 99, 194);
   padding: 13px;
   text-align: center;
 }
 
-#ver-mais:hover{
-  color: rgb(99, 99, 194) ;
+#ver-mais:hover {
+  color: rgb(99, 99, 194);
   background-color: transparent;
-  border: 1px solid  rgb(99, 99, 194);
+  border: 1px solid rgb(99, 99, 194);
   padding: 13px;
   text-align: center;
   transform: scale(1.1);

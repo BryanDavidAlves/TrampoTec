@@ -1,5 +1,4 @@
 body {
-  background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -14,6 +13,26 @@ main {
   right: 0;
   z-index: -5;
   width: 18%;
+}
+
+#content {
+  display: none;
+}
+
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+#loading img {
+  width: 100px;
+  /* Ajuste conforme necessário */
+  height: 100px;
+  /* Ajuste conforme necessário */
+  margin-right: 10px;
 }
 
 .baixo {

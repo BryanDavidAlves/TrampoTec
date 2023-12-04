@@ -78,7 +78,6 @@ foreach ($emailCandidato as $emailCandidato) {
     $email = $emailCandidato[0];
 }
 
-
 $querySelect11 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
 FROM tb_aluno
 INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
@@ -112,15 +111,14 @@ $alunoSeis = $query6->fetchAll();
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
-
         <section class="voltar-pag">
             <div class="body-voltar">
                 <span class="icon-voltar">
@@ -133,38 +131,38 @@ $alunoSeis = $query6->fetchAll();
         <section class="align-itens">
             <div class="card">
                 <p class="title-card">INFORMAÇOES DA VAGA</p>
-                <?php foreach ($vagas as $vaga) { ?>
+                <?php foreach ($vagas as $vaga) {?>
 
                     <div class="itens-card">
-                        <h5>Nome da vaga:</h5><?= $vaga['nome'] ?>
+                        <h5>Nome da vaga:</h5><?=$vaga['nome']?>
                     </div>
                     <div class="itens-card">
                         <h5>Requisitos:</h5>
                         <?php
-                        $selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
+$selectRequisito = "SELECT tb_requisito_vaga.* , tb_requisito.*
                       FROM  tb_requisito
                       INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idRequisito = tb_requisito.idRequisito WHERE tb_requisito_vaga.fk_idVaga = $vaga[idVaga]
                       ";
-                        $query1 = $conexao->query($selectRequisito);
-                        $requisito1 = $query1->fetchAll();
-                        foreach ($requisito1 as $requisito1) { ?>
+    $query1 = $conexao->query($selectRequisito);
+    $requisito1 = $query1->fetchAll();
+    foreach ($requisito1 as $requisito1) {?>
 
-                            <?= $requisito1[3] ?> ,
+                            <?=$requisito1[3]?> ,
 
-                        <?php } ?>
+                        <?php }?>
 
                     </div>
                     <div class="itens-card">
                         <h5>Descrição da vaga:</h5>
-                        <p class="desc"><?= $vaga['descricao'] ?></p>
+                        <p class="desc"><?=$vaga['descricao']?></p>
                     </div>
                     <div class="itens-card">
-                        <h5>Cursos da vaga:</h5><?= $vaga['curso'] ?>
+                        <h5>Cursos da vaga:</h5><?=$vaga['curso']?>
                     </div>
                     <div class="itens-card">
-                        <h5>Salario:</h5><?= $vaga['salario'] ?>
+                        <h5>Salario:</h5><?=$vaga['salario']?>
                     </div>
-                <?php } ?>
+                <?php }?>
             </div>
 
 
@@ -175,21 +173,21 @@ $alunoSeis = $query6->fetchAll();
                 <div class="align-links">
                     <form method="GET" action="vagas-candidato.php">
                         <input type="hidden" value="1" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno1 ?> ) CADASTRADAS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno1?> ) CADASTRADAS
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=0">
                         <input type="hidden" value="0" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno0 ?> ) PENDENTES
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno0?> ) PENDENTES
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=2">
 
                         <input type="hidden" value="2" name="aprovado">
-                        <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno2 ?> ) RECUSADOS
+                        <button type="submit" name="idVaga" value="<?=$idvaga?>">
+                            ( <?=$n_aluno2?> ) RECUSADOS
                         </button>
                     </form>
                 </div>
@@ -207,29 +205,29 @@ $alunoSeis = $query6->fetchAll();
                     </thead>
                     <tbody id="result">
 
-                        <?php foreach ($aluno as $aluno) { ?>
+                        <?php foreach ($aluno as $aluno) {?>
                             <tr class="infos">
                                 <td class="id-aluno">
-                                    <?= $aluno[22] ?>
+                                    <?=$aluno[22]?>
                                 </td>
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
-                                            <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[35] != "" ? $aluno[35] : ''; ?>" alt="">
+                                            <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[35] != "" ? $aluno[35] : '';?>" alt="">
                                         </div>
                                     </div>
                                 </td>
                                 <td class="nome-aluno">
-                                    <?= $aluno[25] ?>
+                                    <?=$aluno[25]?>
                                 </td>
                                 <td class="email-aluno">
-                                    <?= $aluno[23] ?>
+                                    <?=$aluno[23]?>
                                 </td>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 1) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 1) {?>
                                     <td>
                                         <button class="icon-2">
-                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[22]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                         </button>
@@ -237,16 +235,16 @@ $alunoSeis = $query6->fetchAll();
                                     </td>
 
                                     <td>
-                                        <button value="<?= $aluno[22] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[22] ?>" data-bs-whatever="@fat">
+                                        <button value="<?=$aluno[22]?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$aluno[22]?>" data-bs-whatever="@fat">
                                             <i class=" fa-solid fa-envelope"></i>
                                         </button>
                                     </td>
 
-                                    <div class="modal fade" id="exampleModal<?= $aluno[22] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal<?=$aluno[22]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
-                                                    <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/vagas-candidato.php?aprovado=1&idVaga=<?= $idvaga ?>">
+                                                <form action="https://formsubmit.co/<?=$aluno[23]?>" method="POST">
+                                                    <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/vagas-candidato.php?aprovado=1&idVaga=<?=$idvaga?>">
 
 
                                                     <div class="modal-header">
@@ -257,9 +255,9 @@ $alunoSeis = $query6->fetchAll();
                                                         <input type="hidden" name="_captcha" value="false">
                                                         <div class="mb-3">
                                                             <label for="recipient-name" class="col-form-label">Para:</label>
-                                                            <label><?= $aluno[23] ?></label>
+                                                            <label><?=$aluno[23]?></label>
                                                         </div>
-                                                        <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                                        <input type="hidden" name="entre em contato" value=" <?=$email?>">
                                                         <div class="mb-3">
                                                             <textarea class="form-control" name="message" rows="10" required></textarea>
                                                         </div>
@@ -274,12 +272,12 @@ $alunoSeis = $query6->fetchAll();
                                         </div>
                                     </div>
 
-                                <?php } ?>
+                                <?php }?>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 2) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 2) {?>
                                     <td>
                                         <button class="icon-1">
-                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[22]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
 
@@ -289,13 +287,13 @@ $alunoSeis = $query6->fetchAll();
 
 
 
-                                <?php } ?>
+                                <?php }?>
 
-                                <?php if (isset($_GET) && $_GET['aprovado'] == 0) { ?>
+                                <?php if (isset($_GET) && $_GET['aprovado'] == 0) {?>
 
                                     <td>
                                         <button class="icon-1">
-                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                            <a href="./beck-end/crudAluno/aluno-aceitar.php?idAluno=<?=$aluno[22]?>&idVaga=<?=$idvaga?>">
                                                 <i class="fa-solid fa-check"></i>
                                             </a>
                                         </button>
@@ -303,28 +301,28 @@ $alunoSeis = $query6->fetchAll();
                                     </td>
 
                                     <td>
-                                        <button class="icon-2" data-bs-toggle="modal" data-bs-target="#exampleModall<?= $aluno[19] ?>">
+                                        <button class="icon-2" data-bs-toggle="modal" data-bs-target="#exampleModall<?=$aluno[19]?>">
                                             <a> <i class="fa-solid fa-xmark"></i> </a>
                                         </button>
 
-                                        <div class="modal fade" id="exampleModall<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="exampleModall<?=$aluno[19]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <div class="mb-3">
                                                             <label for="recipient-name" class="col-form-label">Carta de recusa</label>
-                                                            <label><?= $aluno[23] ?></label>
+                                                            <label><?=$aluno[23]?></label>
                                                         </div>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
-                                                        <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                                    <form action="https://formsubmit.co/<?=$aluno[23]?>" method="POST">
+                                                        <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?=$aluno[22]?>&idVaga=<?=$idvaga?>">
 
 
                                                         <div class="modal-body">
                                                             <input type="hidden" name="_captcha" value="false">
 
-                                                            <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                                            <input type="hidden" name="entre em contato" value=" <?=$email?>">
                                                             <div class="mb-3">
                                                                 <textarea class="form-control" name="message" rows="10" required style="resize: none;"></textarea>
                                                             </div>
@@ -346,13 +344,13 @@ $alunoSeis = $query6->fetchAll();
                                     </td>
                                     <td>
 
-                                        <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
+                                        <button value="<?=$aluno[19]?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$aluno[19]?>" data-bs-whatever="@fat">
                                             <a><i class="fa-solid fa-newspaper fa-lg"></i></a>
                                         </button>
                                     </td>
 
 
-                                    <div class="modal fade" id="exampleModal<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal<?=$aluno[19]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -363,25 +361,25 @@ $alunoSeis = $query6->fetchAll();
                                                 <div class="itens-curriculo" id="itens-curriculo">
 
                                                     <div class="imagem-perfil-update" id="imagem-perfil-update">
-                                                        <img src="../pag-aluno/fotosAluno/perfil/<?= $aluno[35] != "" ? $aluno[35] : ''; ?>" alt="">
+                                                        <img src="../pag-aluno/fotosAluno/perfil/<?=$aluno[35] != "" ? $aluno[35] : '';?>" alt="">
                                                         <div class="info1" id="info1">
-                                                            <p class="nome" id="nome"><?= $aluno[25] ?></p>
+                                                            <p class="nome" id="nome"><?=$aluno[25]?></p>
 
 
 
                                                             <?php
-                                                            $querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_curso_etec.*,tb_etec.*
+$querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_curso_etec.*,tb_etec.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
                                                                 INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_curso_etec.fk_idEtec
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
-                                                            $query = $conexao->query($querySelect6);
-                                                            $alunoUm = $query->fetchAll();
+    $query = $conexao->query($querySelect6);
+    $alunoUm = $query->fetchAll();
 
-                                                            foreach ($alunoUm as $alunoUm) { ?>
-                                                                <p class="instituicao" id="instituicao"><?= $alunoUm[7] ?> - <?= $alunoUm[10] ?></p>
-                                                            <?php } ?>
+    foreach ($alunoUm as $alunoUm) {?>
+                                                                <p class="instituicao" id="instituicao"><?=$alunoUm[7]?> - <?=$alunoUm[10]?></p>
+                                                            <?php }?>
 
                                                         </div>
 
@@ -392,32 +390,32 @@ $alunoSeis = $query6->fetchAll();
                                                             <div class="itens-habilidades" id="itens-habilidades">
                                                                 <p class="title-habilidades " id="title-habilidades"> CURSOS</p>
                                                                 <?php
-                                                                $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso_etec.*,tb_curso.*
+$querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso_etec.*,tb_curso.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
                                                                 INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso_etec.fk_idCurso
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
-                                                                $query5 = $conexao->query($querySelect10);
-                                                                $alunoCinco = $query5->fetchAll();
-                                                                foreach ($alunoCinco as $alunoCinco) { ?><p class="itens" id="itens"><?= $alunoCinco[6] ?> - <?= $alunoCinco[7] ?> Horas </p>
-                                                                <?php } ?>
+    $query5 = $conexao->query($querySelect10);
+    $alunoCinco = $query5->fetchAll();
+    foreach ($alunoCinco as $alunoCinco) {?><p class="itens" id="itens"><?=$alunoCinco[6]?> - <?=$alunoCinco[7]?> Horas </p>
+                                                                <?php }?>
                                                             </div>
 
                                                             <div class="itens-habilidades" id="itens-habilidades">
                                                                 <p class="title-habilidades" id="title-habilidades"> CONHECIMENTOS</p>
                                                                 <?php
-                                                                $querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
+$querySelect7 = "SELECT tb_conhecimento.*,tb_conhecimento_aluno.* , tb_aluno.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_conhecimento_aluno ON tb_conhecimento_aluno.fk_idAluno = tb_aluno.idAluno
                                                                 INNER JOIN tb_conhecimento ON tb_conhecimento.idConhecimento = tb_conhecimento_aluno.fk_idConhecimento
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
-                                                                $query2 = $conexao->query($querySelect7);
-                                                                $alunoDois = $query2->fetchAll();
-                                                                foreach ($alunoDois as $alunoDois) { ?>
-                                                                    <p class="itens" id="itens"> <?= $alunoDois[1] ?></p>
-                                                                <?php } ?>
+    $query2 = $conexao->query($querySelect7);
+    $alunoDois = $query2->fetchAll();
+    foreach ($alunoDois as $alunoDois) {?>
+                                                                    <p class="itens" id="itens"> <?=$alunoDois[1]?></p>
+                                                                <?php }?>
                                                             </div>
                                                         </div>
 
@@ -427,51 +425,51 @@ $alunoSeis = $query6->fetchAll();
                                                             <div class="itens-habilidades" id="itens-habilidades">
                                                                 <p class="title-habilidades" id="title-habilidades"> HABILIDADES</p>
                                                                 <?php
-                                                                $querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
+$querySelect8 = "SELECT tb_aluno.*,tb_habilidade.*,tb_habilidade_aluno.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_habilidade_aluno ON tb_habilidade_aluno.fk_idAluno = tb_aluno.idAluno
                                                                 INNER JOIN tb_habilidade ON tb_habilidade.idHabilidade= tb_habilidade_aluno.fk_idHabilidade
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
-                                                                $query3 = $conexao->query($querySelect8);
-                                                                $alunoTres = $query3->fetchAll();
-                                                                foreach ($alunoTres as $alunoTres) { ?>
-                                                                    <p class="itens" id="itens"> <?= $alunoTres[16] ?> </p>
-                                                                <?php } ?>
+    $query3 = $conexao->query($querySelect8);
+    $alunoTres = $query3->fetchAll();
+    foreach ($alunoTres as $alunoTres) {?>
+                                                                    <p class="itens" id="itens"> <?=$alunoTres[16]?> </p>
+                                                                <?php }?>
                                                             </div>
 
 
                                                             <div class="itens-habilidades" id="itens-habilidades1">
                                                                 <p class="title-habilidades" id="title-habilidades"> IDIOMAS</p>
                                                                 <?php
-                                                                $querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
+$querySelect9 = "SELECT tb_aluno.*,tb_idioma_aluno.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_idioma_aluno ON tb_idioma_aluno.fk_idAluno = tb_aluno.idAluno
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
-                                                                $query4 = $conexao->query($querySelect9);
-                                                                $alunoQuatro = $query4->fetchAll();
-                                                                foreach ($alunoQuatro as $alunoQuatro) { ?>
-                                                                    <p class="itens" id="itens"><?= $alunoQuatro[16] ?> - <?= $alunoQuatro[17] ?></em></p>
-                                                                <?php } ?>
+    $query4 = $conexao->query($querySelect9);
+    $alunoQuatro = $query4->fetchAll();
+    foreach ($alunoQuatro as $alunoQuatro) {?>
+                                                                    <p class="itens" id="itens"><?=$alunoQuatro[16]?> - <?=$alunoQuatro[17]?></em></p>
+                                                                <?php }?>
                                                             </div>
 
                                                             <div class="itens-habilidades" id="itens-habilidades1">
                                                                 <p  class="title-habilidades" id="title-habilidades">CONTATO</p>
                                                                 <?php
-                                                                $querySelect = "SELECT tb_aluno.idAluno , tb_telefone_aluno.* 
+$querySelect = "SELECT tb_aluno.idAluno , tb_telefone_aluno.*
                                                                 FROM tb_aluno
                                                                 INNER JOIN tb_telefone_aluno ON tb_telefone_aluno.fk_idAluno = tb_aluno.idAluno
                                                                 WHERE tb_aluno.idAluno= $aluno[19]
                                                                 ";
 
-                                                                $query = $conexao->query($querySelect);
+    $query = $conexao->query($querySelect);
 
-                                                                $resultado = $query->fetchAll();
-                                                                foreach ($resultado as $resultado) { ?>
-                                                                    
-                                                                    <p  class="itens" id="itens"><?= $resultado[2] ?></p>
-                                                                <?php  } ?>
+    $resultado = $query->fetchAll();
+    foreach ($resultado as $resultado) {?>
+
+                                                                    <p  class="itens" id="itens"><?=$resultado[2]?></p>
+                                                                <?php }?>
                                                             </div>
 
                                                         </div>
@@ -481,10 +479,10 @@ $alunoSeis = $query6->fetchAll();
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+                                <?php }?>
                             </tr>
 
-                        <?php } ?>
+                        <?php }?>
 
 
 
@@ -500,6 +498,19 @@ $alunoSeis = $query6->fetchAll();
     </main>
 
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Simular um carregamento de 2 segundos
+            setTimeout(function () {
+                // Oculta a tela de carregamento
+                document.getElementById("loading").style.display = "none";
+
+                // Exibe a tela de conteúdo
+                document.getElementById("content").style.display = "block";
+            }, 2000); // Tempo de espera em milissegundos
+        })
+    </script>
+
 </body>
 
 </html>
