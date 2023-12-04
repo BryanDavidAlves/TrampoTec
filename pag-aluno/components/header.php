@@ -11,7 +11,7 @@
   .container-fluid {
     min-height: 100px;
     height: auto;
-    animation: 1200ms linear anim-link;
+    animation: 800ms linear anim-link;
     
   }
 
@@ -116,7 +116,7 @@
       }
     }
   .navbar{
-    animation: 900ms ease-in anim-nav;
+    animation: 800ms ease-in-out anim-nav;
   }
 </style>
 
