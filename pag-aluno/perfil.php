@@ -113,7 +113,7 @@ include '../pag-aluno/components/header.php';
 
                                             <div class="one-bar">
                                                 <h3>ESTADO: </h3>
-                                                <input id="inputEstado" type="text" disabled value="<?=$resultado[7]?>"
+                                                <input id="inputEstado" type="text" disabled value="<?=$resultado[10]?>"
                                                     name="estado">
 
                                                 <!--fazer o js para possibilitar o edit-->
