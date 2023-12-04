@@ -4,7 +4,7 @@ include '../dao/conexao.php';
 
 require_once "./back-end/login/validador_acesso.php";
 
-$cliente_id =  $_SESSION['idAluno'];
+$cliente_id = $_SESSION['idAluno'];
 
 
 //$querySelect = "SELECT tb_aluno., tb_aluno_curso., tb_aluno_etec.,tb_etec.,tb_curso.,tb_conhecimento.,tb_conhecimento_aluno.,tb_habilidade.
@@ -82,7 +82,8 @@ $aluno4 = $query4->fetchAll();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Currículo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -172,6 +173,57 @@ $aluno4 = $query4->fetchAll();
     .container {
       padding: 50px;
     }
+
+    @keyframes anim1 {
+      0% {
+        opacity: 0%;
+        transform: translateY(-5%);
+      }
+      25%{
+        opacity: 25%;
+      }
+      50% {
+        opacity: 50%;
+      }
+
+      100% {
+        opacity: 100%;
+      }
+    }
+
+    @keyframes anim2 {
+      0% {
+        opacity: 0%;
+        transform: translateY(-5%);
+      }
+      25%{
+        opacity: 0%;
+      }
+      50%{
+        opacity: 0%;
+      }
+      80%{
+        opacity: 10%;
+      }
+      90% {
+        opacity: 50%;
+      }
+
+      100% {
+        opacity: 100%;
+      }
+    }
+
+    .primeiro{
+      animation: 1000ms linear anim1 ;
+    }
+    .segundo{
+      animation: 1000ms linear anim2 ;
+    }
+    .titulo{
+      animation: 1000ms linear anim1 ;
+      margin-top: 3%;
+    }
   </style>
 
 </head>
@@ -187,36 +239,43 @@ $aluno4 = $query4->fetchAll();
 
 
         <div class="section-title">
-          <h2 style=" margin-top: 3%;">Meu currículo</h2>
+          <h2 class="titulo" >Meu currículo</h2>
         </div>
 
 
         <div class="row">
-          <div class="col-lg-6" style="text-align:justify;">
+          <div class="col-lg-6 primeiro" style="text-align:justify;">
             <h3 class="resume-title">Acadêmico</h3>
 
 
-            <div class="resume-item ">
+            <div class="resume-item">
 
               <h4>Conhecimentos escolares</h4>
 
               <li>Instituição:
                 <?php foreach ($aluno5 as $aluno5) { ?>
-                  <p><em><?= $aluno5[11] ?></em></p>
-              
-              </li>
-        
+                  <p><em>
+                      <?= $aluno5[11] ?>
+                    </em></p>
 
-            <li>Curso:
-           <p><em><?= $aluno5[6] ?> - <?= $aluno5[7] ?> Horas </em></p>
-           
-            </li>
+                </li>
 
-          </li>
-          <li>Conclusão:
-         <p><em> <?= $aluno5[3] ?> </em></p>
+
+                <li>Curso:
+                  <p><em>
+                      <?= $aluno5[6] ?> -
+                      <?= $aluno5[7] ?> Horas
+                    </em></p>
+
+                </li>
+
+                </li>
+                <li>Conclusão:
+                  <p><em>
+                      <?= $aluno5[3] ?>
+                    </em></p>
                 <?php } ?>
-          </li>
+              </li>
 
             </div>
 
@@ -226,27 +285,34 @@ $aluno4 = $query4->fetchAll();
 
               <li>Conhecimentos:
                 <?php foreach ($aluno2 as $aluno2) { ?>
-                  <p><em><?= $aluno2[1] ?></em></p>
-                <?php  } ?>
+                  <p><em>
+                      <?= $aluno2[1] ?>
+                    </em></p>
+                <?php } ?>
               </li>
 
               <li>Habilidades:
                 <?php foreach ($aluno3 as $aluno3) { ?>
-                  <p><em><?= $aluno3[16] ?></em> </p>
-                <?php  } ?>
+                  <p><em>
+                      <?= $aluno3[16] ?>
+                    </em> </p>
+                <?php } ?>
               </li>
 
             </div>
           </div>
-          <div class="col-lg-6" style="text-align:justify;">
+          <div class="col-lg-6 segundo" style="text-align:justify;">
             <h3 class="resume-title">Idiomas</h3>
             <div class="resume-item">
               <h4>Idiomas e nível de proficiência</h4>
 
               <li>idiomas:
                 <?php foreach ($aluno4 as $aluno4) { ?>
-                  <p><em><?= $aluno4[16] ?> - <?= $aluno4[17] ?></em></p>
-                <?php   } ?>
+                  <p><em>
+                      <?= $aluno4[16] ?> -
+                      <?= $aluno4[17] ?>
+                    </em></p>
+                <?php } ?>
               </li>
             </div>
           </div>
@@ -261,7 +327,9 @@ $aluno4 = $query4->fetchAll();
       </div>
     </section>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
