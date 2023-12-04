@@ -146,7 +146,6 @@ $resultado = $query->fetchAll();
                                 </div>
 
                             </div>
-
                             <div class="align-modal" id="align-modal">
                                 <div class="habilidades" id="habilidades">
                                     <div class="itens-habilidades" id="itens-habilidades">
