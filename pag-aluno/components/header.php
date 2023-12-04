@@ -1,24 +1,28 @@
-
 <style>
-  body{
+  body {
     padding-bottom: 50px;
   }
-  .navbar-nav{
+  .navbar-nav {
     width: 100%;
     justify-content: center;
-    
+
   }
-  .container-fluid{
+
+  .container-fluid {
     min-height: 100px;
     height: auto;
+    animation: 1200ms linear anim-link;
+    
   }
-  .img-nav{
+
+  .img-nav {
     width: 180px;
     height: auto;
     position: absolute;
     top: 0;
     padding-top: 10px;
   }
+
   .img-nav img {
     width: 100%;
     height: auto;
@@ -46,23 +50,78 @@
   .navbar-nav .nav-link {
     transition: background-color 0.3s ease-in-out;
   }
+
   @media (max-width: 600px) {
-  #align-nav{
-    margin-left: 12px;
-    margin-top: 10px;
-    border-top: #c9c9c9 2px solid;
+    #align-nav {
+      margin-left: 12px;
+      margin-top: 10px;
+      border-top: #c9c9c9 2px solid;
+    }
+
+    .img-nav {
+      padding-bottom: 5px;
+      position: static;
+      padding-top: 0px;
+    }
+
+
+
+
   }
-  .img-nav{
-    padding-bottom: 5px;
-    position: static;
-    padding-top: 0px;
+
+  @keyframes anim-nav {
+      0% {
+        opacity: 0%;
+        transform: translatey(-100%);
+      }
+
+      70% {
+        transform: translatey(1%);
+        opacity: 100%;
+      }
+    }
+    @keyframes anim-link {
+      0% {
+        opacity: 0%;
+      }
+      10%{
+        opacity: 0%;
+      }
+      20%{
+        opacity: 0%;
+      }
+      30%{
+        opacity: 0%;
+      }
+      40%{
+        opacity: 0%;
+      }
+      50%{
+        opacity: 0%;
+      }
+      60%{
+        opacity: 5%;
+      }
+      70%{
+        opacity: 10%;
+      }
+      80%{
+        opacity: 25%;
+      }
+      90%{
+       opacity: 50%; 
+      }
+      100% {
+        opacity: 100%;
+      }
+    }
+  .navbar{
+    animation: 900ms ease-in anim-nav;
   }
-}
 </style>
 
 
-
-  <nav  class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <div class="img">
         <img class="img-nav" src="img/trampotec-logo.png" alt="Bootstrap" width="30" height="24">
@@ -94,7 +153,7 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="curriculo.php">Currículo</a></li>
-           <!--   <li>
+              <!--   <li>
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="notificacoes.php">Notificações</a></li>-->
@@ -115,4 +174,3 @@
       </div>
     </div>
   </nav>
-
