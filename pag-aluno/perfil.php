@@ -120,12 +120,11 @@ include '../pag-aluno/components/header.php';
 
                                             <div class="one-bar">
                                                 <h3>CEP:</h3>
-                                                <input id="inputCep" type="text" disabled value="<?=$resultado[9]?>"
+                                                <input id="inputCep" type="text" disabled value="<?=$resultado[12]?>"
                                                     name="cep">
 
                                                 <!--fazer o js para possibilitar o edit-->
                                             </div>
-
                                             <div class="one-bar">
                                                 <h3>NUMERO: </h3>
                                                 <input id="inputNumero" type="text" disabled value="<?=$resultado[7]?>"
@@ -157,7 +156,7 @@ include '../pag-aluno/components/header.php';
 
                                             <div class="two-bars">
                                                 <div class="bar">
-                                                    <h3>Email: </h3>
+                                                    <h3>EMAIL:</h3>
                                                     <h4><?=$resultado[1]?></h4>
                                                 </div>
 
