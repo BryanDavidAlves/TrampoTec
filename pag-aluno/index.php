@@ -371,8 +371,8 @@ require_once "./back-end/login/validador_acesso_curri.php";
 <body>
 
   <?php
-  include('../pag-aluno/components/header.php');
-  ?>
+include '../pag-aluno/components/header.php';
+?>
   <div id="overlay"></div>
 
   <!-- Modal -->
@@ -420,8 +420,8 @@ require_once "./back-end/login/validador_acesso_curri.php";
             <br>
             <h2>Encontre seu emprego e entre no mercado de trabalho com mais facilidade</h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
-              <a href="curriculo.php">
-                <button id="editButton">Criar currículo</button>
+              <a href="painel-de-vagas.php">
+                <button id="editButton">Ver Vagas</button>
               </a>
             </div>
           </div>
@@ -436,15 +436,15 @@ require_once "./back-end/login/validador_acesso_curri.php";
 
   </main>
   <?php
-  if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
+if (isset($_GET['curriculo']) && $_GET['curriculo'] == "sim") {
     ?>
     <div>
 
     </div>
     <?php
-  }
+}
 
-  ?>
+?>
 
   <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
   <script src="js/modal-vagas.js"></script>
