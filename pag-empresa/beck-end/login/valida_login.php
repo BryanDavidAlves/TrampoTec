@@ -10,6 +10,7 @@ $empresas = $resultado->fetchAll();
 $n = count($empresas);
 
 if ($n == 1) {
+    session_name('empresa_session');
     session_start();
     $_SESSION['idEmpresa'] = $empresas[0]['idEmpresa'];
     $_SESSION['imagem'] = $empresas[0]['imagem'];

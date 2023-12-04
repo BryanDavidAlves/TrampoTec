@@ -178,7 +178,6 @@ table {
 table td {
   z-index: 2;
   text-align: center;
-
   color: rgb(0, 0, 0);
   padding: 25px;
 }
@@ -517,4 +516,21 @@ dialog {
   width: 100%;
   font-size: 1.3rem;
   gap: 10px;
+}
+
+#ver-mais{
+  color: white;
+  background-color: rgb(99, 99, 194);
+  border: 1px solid  rgb(99, 99, 194);
+  padding: 13px;
+  text-align: center;
+}
+
+#ver-mais:hover{
+  color: rgb(99, 99, 194) ;
+  background-color: transparent;
+  border: 1px solid  rgb(99, 99, 194);
+  padding: 13px;
+  text-align: center;
+  transform: scale(1.1);
 }

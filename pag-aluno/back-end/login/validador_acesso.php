@@ -1,4 +1,5 @@
 <?php
+session_name('aluno_session');
 session_start();
 
 if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] == 'não'){
