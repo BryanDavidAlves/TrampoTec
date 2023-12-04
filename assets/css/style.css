@@ -9,10 +9,9 @@ body{
     background-color: white;
     border-radius: 10px;
     width: 80%;
-    position: relative;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }
 #nome-etec{
     height: 40px;
@@ -23,9 +22,8 @@ body{
 }
 .align-form {
     display: flex;
-    justify-content: center;
     width: 100%;
     align-items: center;
     height: 100%;
-    position: absolute;
+    
 }

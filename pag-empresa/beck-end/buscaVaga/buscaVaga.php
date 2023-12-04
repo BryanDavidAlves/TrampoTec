@@ -93,7 +93,7 @@ foreach ($vagas as $vaga) {
     <td>
     <td class="icone-table">';
     if ($vaga['preenchida'] == 1) {
-        echo '<h6>ESTA VAGA JÁ FOI PREENCHIDA</h6>';
+        echo '<h6 style="color: red;"> VAGA PREENCHIDA</h6>';
     } else {
         echo '<form action="cadastrar-vaga.php" method="POST" class="editar-vaga">
                 <input type="hidden" class="form-control" id="id" name="id" value="' . $vaga['idVaga'] . '">

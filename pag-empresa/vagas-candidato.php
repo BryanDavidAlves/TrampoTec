@@ -176,7 +176,7 @@ $alunoSeis = $query6->fetchAll();
                     <form method="GET" action="vagas-candidato.php">
                         <input type="hidden" value="1" name="aprovado">
                         <button type="submit" name="idVaga" value="<?= $idvaga ?>">
-                            ( <?= $n_aluno1 ?> ) CADASTRADAS
+                            ( <?= $n_aluno1 ?> ) CANDIDATOS
                         </button>
                     </form>
                     <form method="GET" action="vagas-candidato.php?aprovado=0">
@@ -197,7 +197,7 @@ $alunoSeis = $query6->fetchAll();
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <!--  <th>ID</th> --->
                             <th>USUARIO</th>
                             <th>NOME</th>
                             <th>EMAIL</th>
@@ -209,9 +209,9 @@ $alunoSeis = $query6->fetchAll();
 
                         <?php foreach ($aluno as $aluno) { ?>
                             <tr class="infos">
-                                <td class="id-aluno">
-                                    <?= $aluno[22] ?>
-                                </td>
+                                <!--        <td class="id-aluno">
+                                    
+                                </td> -->
                                 <td>
                                     <div class="container-perfil">
                                         <div class="img-perfil">
@@ -228,13 +228,49 @@ $alunoSeis = $query6->fetchAll();
 
                                 <?php if (isset($_GET) && $_GET['aprovado'] == 1) { ?>
                                     <td>
-                                        <button class="icon-2">
-                                            <a href="./beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                        <button class="icon-2" data-bs-toggle="modal" data-bs-target="#exampleModalll<?= $aluno[19] ?>">
+                                            <a>
                                                 <i class="fa-solid fa-xmark"></i>
                                             </a>
                                         </button>
 
                                     </td>
+
+                                    <div class="modal fade" id="exampleModalll<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">Carta de recusa</label>
+                                                            <label><?= $aluno[23] ?></label>
+                                                        </div>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
+                                                        <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+
+
+                                                        <div class="modal-body">
+                                                            <input type="hidden" name="_captcha" value="false">
+
+                                                            <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                                            <div class="mb-3">
+                                                                <textarea class="form-control" name="message" rows="10" required style="resize: none;"></textarea>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                                            <button type="submit" class="btn btn-primary">
+
+                                                                Enviar
+                                                            </button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     <td>
                                         <button value="<?= $aluno[22] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[22] ?>" data-bs-whatever="@fat">
@@ -247,8 +283,6 @@ $alunoSeis = $query6->fetchAll();
                                             <div class="modal-content">
                                                 <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
                                                     <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/vagas-candidato.php?aprovado=1&idVaga=<?= $idvaga ?>">
-
-
                                                     <div class="modal-header">
                                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Entrar em Contato</h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -457,7 +491,7 @@ $alunoSeis = $query6->fetchAll();
                                                             </div>
 
                                                             <div class="itens-habilidades" id="itens-habilidades1">
-                                                                <p  class="title-habilidades" id="title-habilidades">CONTATO</p>
+                                                                <p class="title-habilidades" id="title-habilidades">CONTATO</p>
                                                                 <?php
                                                                 $querySelect = "SELECT tb_aluno.idAluno , tb_telefone_aluno.* 
                                                                 FROM tb_aluno
@@ -469,8 +503,8 @@ $alunoSeis = $query6->fetchAll();
 
                                                                 $resultado = $query->fetchAll();
                                                                 foreach ($resultado as $resultado) { ?>
-                                                                    
-                                                                    <p  class="itens" id="itens"><?= $resultado[2] ?></p>
+
+                                                                    <p class="itens" id="itens"><?= $resultado[2] ?></p>
                                                                 <?php  } ?>
                                                             </div>
 
