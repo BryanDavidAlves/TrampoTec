@@ -3,7 +3,6 @@ require_once "./beck-end/login/validador_acesso.php";
 include "../dao/conexao.php";
 $id = $_SESSION['idEmpresa'];
 
-
 $info = "SELECT tb_vaga.cidade, tb_vaga.area, tb_vaga.periodo, tb_vaga.bairro, tb_vaga.idVaga,
 tb_vaga.nome, tb_vaga.descricao ,  tb_vaga.salario, tb_curso.nome AS curso,tb_empresa.nome AS empresa, tb_empresa.imagem,
 tb_requisito.requisito
@@ -299,14 +298,19 @@ foreach ($result as $vaga) {
 <body>
 
 
-    <?php include '../pag-empresa/componentes/sidebar.php' ?>
-    <?php include '../pag-empresa/componentes/email.php' ?>
-    <?php include '../pag-empresa/componentes/notificacao.php' ?>
+    <?php include '../pag-empresa/componentes/sidebar.php'?>
+    <?php include '../pag-empresa/componentes/email.php'?>
+    <?php include '../pag-empresa/componentes/notificacao.php'?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
     <img class="baixo" src="./img/fundo1.png" alt="">
     <main class="main">
+    <div id="loading">
+            <img src="img/loading.gif" alt="Carregando"> <!-- Use uma imagem de loading ou outra animação -->
+            <p>Carregando...</p>
+        </div>
+        <div id="content">
 
         <p>Vagas</p>
         <div id="overlay"></div>
@@ -419,8 +423,8 @@ foreach ($result as $vaga) {
                 </tbody>
             </table>
 
-            <?php foreach ($vagas as $vaga) { ?>
-                <div class="modal" tabindex="-1" role="dialog" id="confirmarPreenchimentoModal<?= $vaga['idVaga'] ?>">
+            <?php foreach ($vagas as $vaga) {?>
+                <div class="modal" tabindex="-1" role="dialog" id="confirmarPreenchimentoModal<?=$vaga['idVaga']?>">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -434,7 +438,7 @@ foreach ($result as $vaga) {
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                 <form action="./beck-end/vagaPreenchida/vaga-preenchida.php" method="POST">
-                                    <input type="hidden" name="idVaga" value=" <?= $vaga['idVaga'] ?>">
+                                    <input type="hidden" name="idVaga" value=" <?=$vaga['idVaga']?>">
                                     <button name="preenchida" id="vaga-preenchida" type="submit" class="btn btn-primary"
                                         style="align-items: center;">Preencher Vaga</button>
                                 </form>
@@ -443,8 +447,9 @@ foreach ($result as $vaga) {
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php }?>
         </section>
+        </div>
 
 
 
@@ -457,7 +462,7 @@ foreach ($result as $vaga) {
 
 
             var busca = ("");
-            $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
+            $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?=$id?>', {
                 busca
             }, function (data) {
                 $("#result").html(data);
@@ -467,7 +472,7 @@ foreach ($result as $vaga) {
             $("#busca").keyup(function () {
 
                 busca = $("#busca").val();
-                $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?= $id ?>', {
+                $.post('./beck-end/buscaVaga/buscaVaga.php?idEmpresa=<?=$id?>', {
                     busca: busca
                 }, function (data) {
                     $("#result").html(data);
@@ -522,6 +527,19 @@ foreach ($result as $vaga) {
             abrirModal2();
         }
     </script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Simular um carregamento de 2 segundos
+            setTimeout(function () {
+                // Oculta a tela de carregamento
+                document.getElementById("loading").style.display = "none";
+
+                // Exibe a tela de conteúdo
+                document.getElementById("content").style.display = "block";
+            }, 2000); // Tempo de espera em milissegundos
+        })
+    </script>
+
 
 </body>
 
