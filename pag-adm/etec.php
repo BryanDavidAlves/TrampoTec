@@ -31,8 +31,8 @@ require_once "back-end/login/validador_acesso.php";
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-            min-height: 300px;
-            height: auto;
+
+            height: 250px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
@@ -46,10 +46,10 @@ require_once "back-end/login/validador_acesso.php";
             flex-direction: column;
             align-items: center;
             position: relative;
-            height: 100%;
+
             justify-content: center;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         #modal .align-itens .btn {
@@ -63,7 +63,7 @@ require_once "back-end/login/validador_acesso.php";
             color: white;
             background-color: #4caf50;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            margin-top: 20px;
             width: 90%;
             transition: 0.3s all ease-in-out;
 
@@ -76,7 +76,7 @@ require_once "back-end/login/validador_acesso.php";
         }
 
         #modal .align-itens .titulo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
             font-family: 'Poppins', sans-serif;
 
@@ -146,8 +146,8 @@ require_once "back-end/login/validador_acesso.php";
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-            min-height: 300px;
-            height: auto;
+
+            height: 260px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
@@ -164,7 +164,7 @@ require_once "back-end/login/validador_acesso.php";
             height: 100%;
             justify-content: center;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 0px;
         }
 
         #modal2 .align-itens .btn {
@@ -178,7 +178,7 @@ require_once "back-end/login/validador_acesso.php";
             color: white;
             background-color: #4caf50;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            margin-top: 20px;
             width: 90%;
             transition: 0.3s all ease-in-out;
 
@@ -259,8 +259,8 @@ require_once "back-end/login/validador_acesso.php";
 <body>
     <img class="cima" src="img/fundo2.png" alt="">
     <?php
-    include '../pag-adm/components/sidebar-adm.php';
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <div id="overlay"></div>
@@ -272,7 +272,8 @@ require_once "back-end/login/validador_acesso.php";
                 <span id="closeBtn" class="btn1" onclick="fecharModal()">&times;</span>
             </div>
             <div class="align-itens">
-                <p class="titulo1">Cadastro realizado com sucesso!!</p>
+                <p class="titulo">Cadastro de Etec realizado </p>
+                <p class="titulo">  com sucesso! 😁</p>
                 <button class="btn" onclick="fecharModal()">OK</button>
             </div>
         </div>
@@ -294,7 +295,7 @@ require_once "back-end/login/validador_acesso.php";
             </div>
             <div class="align-itens">
                 <h4 class="titulo">Atualizada com Sucesso</h4>
-                <p class="titulo1">Etec atualizada com sucesso!!</p>
+                <p class="titulo1">Etec atualizada com sucesso! 😁</p>
                 <button class="btn" onclick="fecharModal2()">OK</button>
             </div>
         </div>

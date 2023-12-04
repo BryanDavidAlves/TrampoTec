@@ -1,6 +1,6 @@
 <?php
 require_once "back-end/login/validador_acesso.php";
-include('../dao/conexao.php');
+include '../dao/conexao.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dados = [];
 
@@ -17,8 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Campo: " . htmlspecialchars($campo) . "<br>";
     }
 }
-
-
 
 if ($_POST) {
     $id_curso = $_POST['id_curso'];
@@ -70,8 +68,7 @@ if ($_POST) {
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-            min-height: 300px;
-            height: auto;
+            height: 250px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
@@ -87,8 +84,8 @@ if ($_POST) {
             position: relative;
             height: 100%;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 4px;
+
         }
 
         #modal .align-itens .btn {
@@ -102,7 +99,7 @@ if ($_POST) {
             color: white;
             background-color: #4caf50;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            margin-top: 20px;
             width: 90%;
             transition: 0.3s all ease-in-out;
             padding-left: 42%;
@@ -121,8 +118,8 @@ if ($_POST) {
         }
 
         #modal .titulo1 {
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.6rem;
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
             text-align: center;
 
@@ -242,8 +239,7 @@ if ($_POST) {
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-            min-height: 300px;
-            height: auto;
+            height: 250px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
@@ -260,7 +256,8 @@ if ($_POST) {
             height: 100%;
             justify-content: center;
             gap: 10px;
-            margin-top: 20px;
+            margin-top:-10px;
+
         }
 
         #modal2 .align-itens .btn {
@@ -274,11 +271,10 @@ if ($_POST) {
             color: white;
             background-color: #4caf50;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
+            margin-top: 40px;
             width: 90%;
             transition: 0.3s all ease-in-out;
             padding-left: 42%;
-
         }
 
         #modal2 .align-itens .btn:hover {
@@ -294,8 +290,8 @@ if ($_POST) {
         }
 
         #modal2 .titulo1 {
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.6rem;
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
             text-align: center;
 
@@ -331,6 +327,7 @@ if ($_POST) {
 
         }
 
+
         /* Estilos para o botão de fechar */
         #closeBtn2 {
             cursor: pointer;
@@ -338,6 +335,16 @@ if ($_POST) {
             top: 10px;
             right: 10px;
             font-size: 18px;
+        }
+        #overlay2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
         }
 
         #modal3 {
@@ -454,8 +461,8 @@ if ($_POST) {
 
     <!--<img class="cima" src="img/fundo2.png" alt="">-->
     <?php
-    include('../pag-adm/components/sidebar-adm.php');
-    ?>
+include '../pag-adm/components/sidebar-adm.php';
+?>
 
     <header>
         <div class="secao-cadastro">
@@ -479,7 +486,8 @@ if ($_POST) {
             </div>
             <div class="align-itens">
 
-                <p class="titulo1">Cadastro realizado com sucesso!!</p>
+                <p class="titulo1">Cadastro de Curso </p>
+                <p class="titulo1"> realizado com sucesso!😁</p>
                 <button class="btn" onclick="fecharModal()">OK</button>
             </div>
         </div>
@@ -507,7 +515,7 @@ if ($_POST) {
             </div>
             <div class="align-itens">
 
-                <p class="titulo1">Curso atualizado com sucesso!!</p>
+                <p class="titulo1">Curso atualizado com sucesso!😁</p>
                 <button class="btn" onclick="fecharModal2()">OK</button>
             </div>
         </div>
@@ -540,25 +548,25 @@ if ($_POST) {
 
                 <div class="input-box">
 
-                    <input type="text" id="nomeCuso" name="nomeCuso" value="<?= $nome ?>" required>
+                    <input type="text" id="nomeCuso" name="nomeCuso" value="<?=$nome?>" required>
                     <label class="label-anim" for="nome">NOME DO CURSO</label>
                 </div>
 
                 <div class="input-box">
 
-                    <input type="text" id="eixo" name="eixo" value="<?= $eixo1 ?>" required>
+                    <input type="text" id="eixo" name="eixo" value="<?=$eixo1?>" required>
                     <label class="label-anim" for="eixo">EIXO</label>
                 </div>
                 <div class="input-select">
                     <h3 class="sub-form">Informaçoes Adicionais</h3>
-                    <select type="text" id="cargaHoraria" name="cargaHoraria" value="<?= $cargaHoraria ?>" required>
+                    <select type="text" id="cargaHoraria" name="cargaHoraria" value="<?=$cargaHoraria?>" required>
 
                         <option>1200 horas</option>
                         <option>1600 horas</option>
                         <option>800 horas</option>
 
                     </select>
-                    <select type="text" id="semestre" name="semestre" value="<?= $semestre ?>" required>
+                    <select type="text" id="semestre" name="semestre" value="<?=$semestre?>" required>
                         <option>1º semestre</option>
 
                         <option>2º semestre</option>
@@ -570,23 +578,23 @@ if ($_POST) {
                     </select>
                     <select type="text" id="modalidade" name="modalidade" required>
                         <option>Modalidade</option>
-                        <option <?= $modalidade == 'Presencial' ? 'selected' : '' ?>>Presencial</option>
-                        <option <?= $modalidade == 'Online' ? 'selected' : '' ?>>Online</option>
+                        <option <?=$modalidade == 'Presencial' ? 'selected' : ''?>>Presencial</option>
+                        <option <?=$modalidade == 'Online' ? 'selected' : ''?>>Online</option>
 
 
                     </select>
                     <select type="text" id="modalidade" name="ensino" required>
                         <option>Ensino</option>
-                        <option <?= $ensino == 'Curso Tecnico' ? 'selected' : '' ?>>Curso Tecnico</option>
-                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico(M-TEC)' ? 'selected' : '' ?>>Ensino Medio
+                        <option <?=$ensino == 'Curso Tecnico' ? 'selected' : ''?>>Curso Tecnico</option>
+                        <option <?=$ensino == 'Ensino Medio Integrado ao Tecnico(M-TEC)' ? 'selected' : ''?>>Ensino Medio
                             Integrado ao Tecnico(M-TEC)</option>
-                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)' ? 'selected' : '' ?>>Ensino Medio Integrado ao Tecnico em Periodo
+                        <option <?=$ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)' ? 'selected' : ''?>>Ensino Medio Integrado ao Tecnico em Periodo
                             Integral(M-TEC-Pi)</option>
-                        <option <?= $ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)' ? 'selected' : '' ?>>Ensino Medio Integrado ao Tecnico em Periodo
+                        <option <?=$ensino == 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)' ? 'selected' : ''?>>Ensino Medio Integrado ao Tecnico em Periodo
                             Noturno(M-TEC-N)</option>
-                        <option <?= $ensino == 'Articulação dos Ensino Medio - Técnico e Superior (AMS)' ? 'selected' : '' ?>>
+                        <option <?=$ensino == 'Articulação dos Ensino Medio - Técnico e Superior (AMS)' ? 'selected' : ''?>>
                             Articulação dos Ensino Medio - Técnico e Superior (AMS)</option>
-                        <option <?= $ensino == 'Especialização Técnica' ? 'selected' : '' ?>>Especialização Técnica</option>
+                        <option <?=$ensino == 'Especialização Técnica' ? 'selected' : ''?>>Especialização Técnica</option>
 
 
                     </select>
@@ -594,7 +602,7 @@ if ($_POST) {
 
 
 
-                <input type="hidden" id="id_curso" name="id_curso" value="<?= $id_curso ?>">
+                <input type="hidden" id="id_curso" name="id_curso" value="<?=$id_curso?>">
                 <input type="submit" class="btn" value="CADASTRAR">
             </form>
         </section>
