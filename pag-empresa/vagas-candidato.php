@@ -79,15 +79,6 @@ foreach ($emailCandidato as $emailCandidato) {
 }
 
 
-
-
-
-
-
-
-
-
-
 $querySelect11 = "SELECT tb_aluno.idAluno , tb_perfil_aluno.*
 FROM tb_aluno
 INNER JOIN tb_perfil_aluno ON tb_perfil_aluno.fk_idAluno = tb_aluno.idAluno
@@ -212,6 +203,7 @@ $alunoSeis = $query6->fetchAll();
                             <th>EMAIL</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="result">
@@ -316,7 +308,7 @@ $alunoSeis = $query6->fetchAll();
 
                                     <td>
                                         <button class="icon-2" data-bs-toggle="modal" data-bs-target="#exampleModall<?= $aluno[19] ?>">
-                                            <a style="color: white;"><i class="fa-solid fa-xmark"></i></a>
+                                            <a> <i class="fa-solid fa-xmark"></i> </a>
                                         </button>
 
                                         <div class="modal fade" id="exampleModall<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -345,7 +337,7 @@ $alunoSeis = $query6->fetchAll();
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                                             <button type="submit" class="btn btn-primary">
-                                                            
+
                                                                 Enviar
                                                             </button>
                                                         </div>
@@ -356,9 +348,13 @@ $alunoSeis = $query6->fetchAll();
                                         </div>
 
                                     </td>
-                                    <td> <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
-                                            <i class="fa-solid fa-newspaper fa-lg"></i></td>
-                                    </button>
+                                    <td>
+
+                                        <button value="<?= $aluno[19] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[19] ?>" data-bs-whatever="@fat">
+                                            <a><i class="fa-solid fa-newspaper fa-lg"></i></a>
+                                        </button>
+                                    </td>
+
 
                                     <div class="modal fade" id="exampleModal<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -378,17 +374,17 @@ $alunoSeis = $query6->fetchAll();
 
 
                                                             <?php
-                                                            $querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_etec.*,tb_etec.*
+                                                            $querySelect6 = "SELECT tb_aluno.idAluno, tb_aluno.nome, tb_aluno_curso_etec.*,tb_etec.*
                                                                 FROM tb_aluno
-                                                                INNER JOIN tb_aluno_etec ON tb_aluno_etec.fk_idAluno = tb_aluno.idAluno
-                                                                INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_etec.fk_idEtec
+                                                                INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
+                                                                INNER JOIN tb_etec ON tb_etec.idEtec = tb_aluno_curso_etec.fk_idEtec
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
                                                             $query = $conexao->query($querySelect6);
                                                             $alunoUm = $query->fetchAll();
 
                                                             foreach ($alunoUm as $alunoUm) { ?>
-                                                                <p class="instituicao" id="instituicao"><?= $alunoUm[5] ?> - <?= $alunoUm[8] ?></p>
+                                                                <p class="instituicao" id="instituicao"><?= $alunoUm[7] ?> - <?= $alunoUm[10] ?></p>
                                                             <?php } ?>
 
                                                         </div>
@@ -400,15 +396,15 @@ $alunoSeis = $query6->fetchAll();
                                                             <div class="itens-habilidades" id="itens-habilidades">
                                                                 <p class="title-habilidades " id="title-habilidades"> CURSOS</p>
                                                                 <?php
-                                                                $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso.*,tb_curso.*
+                                                                $querySelect10 = "SELECT tb_aluno.idAluno, tb_aluno_curso_etec.*,tb_curso.*
                                                                 FROM tb_aluno
-                                                                INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idAluno = tb_aluno.idAluno
-                                                                INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso.fk_idCurso
+                                                                INNER JOIN tb_aluno_curso_etec ON tb_aluno_curso_etec.fk_idAluno = tb_aluno.idAluno
+                                                                INNER JOIN tb_curso ON tb_curso.idCurso = tb_aluno_curso_etec.fk_idCurso
                                                                 WHERE tb_aluno.idAluno = $aluno[19]
                                                                 ";
                                                                 $query5 = $conexao->query($querySelect10);
                                                                 $alunoCinco = $query5->fetchAll();
-                                                                foreach ($alunoCinco as $alunoCinco) { ?><p class="itens" id="itens"><?= $alunoCinco[4] ?> - <?= $alunoCinco[5] ?> Horas </p>
+                                                                foreach ($alunoCinco as $alunoCinco) { ?><p class="itens" id="itens"><?= $alunoCinco[6] ?> - <?= $alunoCinco[7] ?> Horas </p>
                                                                 <?php } ?>
                                                             </div>
 
@@ -463,6 +459,25 @@ $alunoSeis = $query6->fetchAll();
                                                                     <p class="itens" id="itens"><?= $alunoQuatro[16] ?> - <?= $alunoQuatro[17] ?></em></p>
                                                                 <?php } ?>
                                                             </div>
+
+                                                            <div class="itens-habilidades" id="itens-habilidades1">
+                                                                <p  class="title-habilidades" id="title-habilidades">CONTATO</p>
+                                                                <?php
+                                                                $querySelect = "SELECT tb_aluno.idAluno , tb_telefone_aluno.* 
+                                                                FROM tb_aluno
+                                                                INNER JOIN tb_telefone_aluno ON tb_telefone_aluno.fk_idAluno = tb_aluno.idAluno
+                                                                WHERE tb_aluno.idAluno= $aluno[19]
+                                                                ";
+
+                                                                $query = $conexao->query($querySelect);
+
+                                                                $resultado = $query->fetchAll();
+                                                                foreach ($resultado as $resultado) { ?>
+                                                                    
+                                                                    <p  class="itens" id="itens"><?= $resultado[2] ?></p>
+                                                                <?php  } ?>
+                                                            </div>
+
                                                         </div>
                                                     </div>
 

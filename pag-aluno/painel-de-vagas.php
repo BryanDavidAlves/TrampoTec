@@ -8,14 +8,14 @@ $cliente_id = $_SESSION['idAluno'];
 if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer" && $_GET['area'] == "qualquer" && $_GET['curso'] == "qualquer") {
   $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email, tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
     tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-    tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito, tb_vaga.preenchida
+    tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo ,tb_vaga.preenchida, tb_vaga.area , tb_curso.nome AS cursoNome , tb_requisito.requisito, tb_vaga.preenchida
       FROM tb_vaga
       INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
       INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
       INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
       INNER JOIN tb_requisito_vaga ON tb_requisito_vaga.fk_idVaga = tb_vaga.idVaga
       INNER JOIN tb_requisito ON tb_requisito.idRequisito = tb_requisito_vaga.fk_idRequisito
-      WHERE tb_vaga.preenchida = 0";;
+      WHERE tb_vaga.preenchida = 0";
 } else {
   $periodo = trim($_GET['periodo']);
   $curso = trim($_GET['curso']);
@@ -24,7 +24,7 @@ if (!($_GET) || $_GET['periodo'] == "qualquer" && $_GET['salario'] == "qualquer"
 
   $querySelect = "SELECT tb_empresa.nome AS nomeEmpresa, tb_empresa.email,tb_empresa.descricao AS descEmpresa , tb_empresa.departamento , tb_empresa.anoFundacao, tb_empresa.cnpj, tb_empresa.cep, tb_empresa.logradouro , tb_empresa.numero ,
   tb_empresa.estado , tb_empresa.bairro , tb_empresa.imagem , tb_telefone_empresa.numeroTelefone , tb_vaga.idVaga , tb_vaga.nome , tb_vaga.cidade , tb_vaga.bairro AS bairroVaga , tb_vaga.salario ,
-  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo , tb_vaga.area ,tb_vaga.modalidade, tb_curso.nome AS cursoNome , tb_requisito.requisito
+  tb_vaga.descricao , tb_vaga.inicio , tb_vaga.termino , tb_vaga.periodo ,tb_vaga.preenchida, tb_vaga.area ,tb_vaga.modalidade, tb_curso.nome AS cursoNome , tb_requisito.requisito
     FROM tb_vaga
     INNER JOIN tb_empresa ON tb_vaga.fk_idEmpresa = tb_empresa.idEmpresa
     INNER JOIN tb_telefone_empresa ON tb_telefone_empresa.fk_idEmpresa = tb_empresa.idEmpresa
@@ -90,9 +90,13 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="./css/painel-de-vagas.css">
   <title>Pagina de Vagas</title>
@@ -428,6 +432,64 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 999;
     }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    #texto-descs {
+      word-break: break-word;
+    }
+
+    #texto-vaga {
+      color: #fff;
+      max-height: 30vh;
+      overflow-y: auto;
+    }
+
+    #texto-vaga::-webkit-scrollbar {
+      width: 10px;
+    }
+
+
+
+    #texto-vaga::-webkit-scrollbar-thumb {
+      background-color: #fff;
+      border-radius: 30px;
+      border: 3px solid #0382ac;
+    }
+
+    @media (max-width: 900px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      #texto-descs {
+        font-size: 1rem;
+      }
+
+      #card {
+        width: 300px;
+        height: 230px;
+      }
+
+      #job-title {
+        font-size: 1.1em;
+      }
+
+      #descricao-vaga p {
+        font-size: 1rem;
+      }
+
+      #titulo2 {
+        font-size: 15px;
+      }
+
+   
+    }
   </style>
 </head>
 
@@ -536,7 +598,9 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                 <select name="area" class="form-control">
                   <option value="qualquer">Área</option>
                   <?php foreach ($areas as $areaOpcao) { ?>
-                    <option value="<?= $areaOpcao['area'] ?>"><?= $areaOpcao['area'] ?></option>
+                    <option value="<?= $areaOpcao['area'] ?>">
+                      <?= $areaOpcao['area'] ?>
+                    </option>
                   <?php } ?>
                 </select>
               </div>
@@ -544,7 +608,9 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                 <select name="curso" class="form-control">
                   <option value="qualquer">curso</option>
                   <?php foreach ($curso as $curso) { ?>
-                    <option value=" <?= $curso[0] ?> "> <?= $curso[0] ?> </option>
+                    <option value=" <?= $curso[0] ?> ">
+                      <?= $curso[0] ?>
+                    </option>
                   <?php } ?>
                 </select>
               </div>
@@ -570,13 +636,22 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
             <div class="card" id="card">
               <div class="card-content" id="conteudo-card">
                 <div id="job-title">
-                  <?= $vaga['cidade'] ?> - <?= $vaga['bairroVaga'] ?>
+                  <?= $vaga['cidade'] ?> -
+                  <?= $vaga['bairroVaga'] ?>
                 </div>
                 <div class="job-description" id="descricao-vaga">
-                  <p><?= $vaga['nome'] ?></p>
-                  <p><?= $vaga['inicio'] ?> as <?= $vaga['termino'] ?></< /p>
-                  <p>R$ <?= $vaga['salario'] ?> </p>
-                  <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal" data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
+                  <p>
+                    <?= $vaga['nome'] ?>
+                  </p>
+                  <p>
+                    <?= $vaga['inicio'] ?> as
+                    <?= $vaga['termino'] ?>
+                    </< /p>
+                  <p>R$
+                    <?= $vaga['salario'] ?>
+                  </p>
+                  <button type=" button" class="btn btn-primary" id="botao-vaga-modal" data-toggle="modal"
+                    data-target=".bd-example-modal-lg<?= $vaga['idVaga'] ?>">
                     Mais Informações
                   </button>
                 </div>
@@ -584,7 +659,8 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
               </div>
             </div>
           </div>
-          <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal fade bd-example-modal-lg<?= $vaga['idVaga'] ?>" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content" id="modal-vaga">
                 <div class="modal-header" id="modal-cabeaca-footer">
@@ -624,14 +700,15 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                           $requisito1 = $query1->fetchAll();
                           foreach ($requisito1 as $requisito1) { ?>
                             <span>
-                              .<?= $requisito1[3] ?>
+                              .
+                              <?= $requisito1[3] ?>
                             </span>
                           <?php } ?>
 
                         </div>
                       </div>
-                      <div id="descrição-vaga">
-                        DESCRICAO VAGA
+                      <div id="texto-vaga">
+                        <h2>DESCRIÇÃO DA VAGA</h2>
                         <p id="texto-descs">
                           <?= $vaga['descricao'] ?>
                         </p>
@@ -643,7 +720,8 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                 <div class="modal-footer" id="modal-footer">
                   <form action="./back-end/salvarCandidato/salvar-candidato.php" method="POST">
                     <input type="hidden" id="idVaga" name="idVaga" value="<?= $vaga['idVaga'] ?>">
-                    <button name="bnt" id="botao-candidatar" type="submit" value="<?= $cliente_id ?>" class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
+                    <button name="bnt" id="botao-candidatar" type="submit" value="<?= $cliente_id ?>"
+                      class="btn btn-primary" style="align-items: center;" onclick="openModal()">CANDIDATAR-SE</button>
                   </form>
                 </div>
               </div>
@@ -658,7 +736,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 
       <?php } ?>
 
-
+    </div>
 
 
 

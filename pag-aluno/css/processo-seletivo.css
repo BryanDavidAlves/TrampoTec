@@ -9,6 +9,7 @@ body {
   bottom: 0;
   z-index: -5;
 }
+
 .imagem-4 {
   position: fixed;
   object-fit: cover;
@@ -28,9 +29,11 @@ body {
 select {
   cursor: pointer;
 }
+
 .filtro {
   width: 100%;
 }
+
 .filtro-icon {
   display: flex;
   font-size: 1.1rem;
@@ -63,6 +66,7 @@ select {
   border: 1px solid #0a3580;
   transition: 0.3s all ease-in-out;
 }
+
 #botao-filtro:hover {
   background-color: white;
   transition: 0.3s all ease-in-out;
@@ -128,6 +132,7 @@ p {
 
 .vaga {
   font-size: 25px;
+  text-align: center;
 }
 
 .botao-excluir {
@@ -137,7 +142,6 @@ p {
   align-items: start;
   height: 150px;
   position: absolute;
-
 }
 
 .botao-excluir a {
@@ -159,21 +163,26 @@ p {
   color: white;
 }
 
-.chat{
+.chat {
   z-index: 5;
 }
 
-.chat button{
+.chat button {
   border: none;
   background-color: transparent;
 }
 
-.chat button I{
-color: white;
-font-size: 35px;
+.chat button I {
+  color: white;
+  font-size: 35px;
 }
 
-.chat button I:hover{
+.chat button I:hover {
   color: rgb(35, 178, 35);
   font-size: 35px;
+}
+@media (max-width: 410px) {
+  .botao-excluir{
+    width: 80%;
   }
+}

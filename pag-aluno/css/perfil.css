@@ -152,6 +152,7 @@ h3 {
   justify-content: space-around;
   gap: 30px;
   padding-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .input-disponibilidade {
@@ -387,4 +388,19 @@ h3 {
 }
 .icone-lapis i {
   font-size: 1.5rem;
+}
+@media (max-width: 977px) {
+    .configuracoes .two-bars{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .bar {
+      width: 100%;
+      align-items: center;
+      
+    }
+    .configuracoes .two-bars .bar h4{
+      word-break: break-all;
+    }
 }

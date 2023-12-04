@@ -87,7 +87,8 @@ include '../pag-adm/components/sidebar-adm.php';
                         <th>USUARIO</th>
                         <th></th>
                         <th></th>
-                        <th></th>
+
+
                     </tr>
                 </thead>
                 <tbody class="infos" id="result">
@@ -107,11 +108,7 @@ foreach ($resultado as $resultado) {
                                     </button>
                                 </form>
                             <td>
-                            <td class="icone-table">
-                                <button class="check">
-                                    <a href=" "> <i class="fa-solid fa-check"></i></a>
-                                </button>
-                            <td>
+
                             <td class="icone-table">
                                 <button class="email"  data-bs-toggle="modal" data-bs-target="#exampleModal<?=$resultado[0]?>">
                                   <i class="fa-solid fa-envelope" style="color: #055bc3;"></i>

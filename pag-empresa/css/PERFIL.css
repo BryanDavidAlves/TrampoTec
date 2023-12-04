@@ -7,7 +7,7 @@ body {
 }
 
 main {
-  margin-left: 20%;
+  margin-left: 22%;
 }
 
 .baixo {
@@ -19,26 +19,42 @@ main {
 }
 
 .componentes-perfil {
-  width: 100%;
+  width: 90%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.descricao-conta {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 5px;
-  padding: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .conteiner-descricao {
   display: flex;
   align-items: center;
-  width: 90%;
-  padding: 50px;
-  padding-bottom: 0px;
+  gap: 10px;
+}
+
+.div-botao-editar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40%;
+}
+
+.botao-editar {
+  border-radius: 40px;
+  background-color: #4d3cd1;
+  color: white;
+  width: 117px;
+  height: 35px;
+  border: 1px solid #4d3cd1;
+  transition: 0.2s ease-in-out all;
+}
+.botao-editar:hover {
+  background-color: white;
+  color: #4d3cd1;
+  border: 1px solid #4d3cd1;
+  transition: 0.2s ease-in-out all;
 }
 
 .foto-perfil {
@@ -63,44 +79,44 @@ main {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
-  gap: 5%;
-  padding-left: 40px;
-  padding-top: 20px;
-}
-.card:hover {
-  transform: scale(1.03);
-  transition: 0.3s all ease-in-out;
-}
-.card {
-  width: 24%;
-  height: auto;
-  border: none;
-  transition: 0.3s all ease-in-out;
-  border-radius: 25px;
-  background-color: rgb(233, 227, 227);
-  border: 1px solid rgb(163, 158, 158);
-  display: flex;
-  justify-content: center;
-  padding: 25px;
-  margin: 10px;
-  font-family: "Poppins", sans-serif;
 }
 
-.card-corpo {
+.card {
+  width: 99%;
+  height: auto;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 15px;
+}
+
+.card-corpo { 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 90%;
 }
 
 .card-itens {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 10px;
+  gap: 20px;
+  width: auto;
 }
 
-.card .imagens {
+.card-itens-localizacao {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  gap: 20px;
+  width: auto;
 }
+
+
 
 .titulo-descricao {
   font-size: 17px;
@@ -108,34 +124,13 @@ main {
   margin-bottom: 7px;
 }
 
-.conteudo-descricao {
+#descricao-empresa {
   font-size: 15px;
-  margin-bottom: 10px;
+  max-width: 400px;
+  word-break: normal;
+  
 }
 
-.div-botao-editar {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.botao-editar {
-  border-radius: 40px;
-  background-color: #4d3cd1;
-  color: white;
-  width: 117px;
-  height: 35px;
-  border: 1px solid #4d3cd1;
-  transition: 0.2s ease-in-out all;
-}
-.botao-editar:hover {
-  background-color: white;
-  color: #4d3cd1;
-  border: 1px solid #4d3cd1;
-  transition: 0.2s ease-in-out all;
-}
 
 .dialog-requisitos .form-requisitos .inputs-dialog::-webkit-scrollbar {
   border-radius: 0px 50px 50px 0px;

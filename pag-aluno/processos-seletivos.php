@@ -9,6 +9,8 @@ $queryAreas = "SELECT DISTINCT tb_vaga.area FROM tb_vaga";
 $resultAreas = $conexao->query($queryAreas);
 $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
 
+
+
 // $queryCursosAluno = "SELECT tb_curso.nome FROM tb_curso
 //                     INNER JOIN tb_curso_etec ON tb_curso_etec.fk_idCurso = tb_curso.idCurso
 //                     INNER JOIN tb_aluno_curso ON tb_aluno_curso.fk_idCurso = tb_curso_etec.fk_idCurso
@@ -37,6 +39,9 @@ if (!empty($_GET)) {
       $filtro .= " AND tb_vaga_aluno.aprovado = 2";
     } elseif ($status == "andamento") {
       $filtro .= " AND tb_vaga_aluno.aprovado = 0";
+
+    } elseif ($status == "preenchida") {
+      $filtro .= " AND tb_vaga.preenchida = 1";
     }
   }
 
@@ -59,23 +64,37 @@ if (!empty($_GET)) {
     $filtro .= " AND tb_vaga.area = '$area'";
   }
 
+  if ($curso != "qualquer") {
+    $filtro .= " AND tb_curso.nome = '$curso'";
+  }
+
   // if ($curso != "qualquer") {
   //   $filtro .= " AND tb_curso.nome = '$curso'";
   // }
+  // $selectCurso = "SELECT DISTINCT tb_curso.nome FROM  tb_curso";
+  // $resultCursosAluno = $conexao->query($selectCurso);
+  // $cursos = $resultCursosAluno->fetchAll(PDO::FETCH_ASSOC);
 
-  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*
+  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*, tb_curso.nome 
                 FROM tb_vaga
                 INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
                 INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+                INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
                 $filtro";
 } else {
+  //   $selectCurso = "SELECT DISTINCT tb_curso.nome FROM  tb_curso";
+// $resultCursosAluno = $conexao->query($selectCurso);
+// $cursos = $resultCursosAluno->fetchAll(PDO::FETCH_ASSOC);
 
-  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*
+  $querySelect = "SELECT tb_vaga.*, tb_vaga_aluno.*, tb_aluno.*,  tb_curso.nome 
                   FROM tb_vaga
                   INNER JOIN tb_vaga_aluno ON tb_vaga_aluno.fk_idVaga = tb_vaga.idVaga
                   INNER JOIN tb_aluno ON tb_aluno.idAluno = tb_vaga_aluno.fk_idAluno
+                  INNER JOIN tb_curso ON tb_curso.idCurso = tb_vaga.fk_idCurso
                   WHERE tb_aluno.idAluno = '$cliente_id'";
 }
+
+
 
 $query = $conexao->query($querySelect);
 $resultado = $query->fetchAll();
@@ -87,10 +106,14 @@ $resultado = $query->fetchAll();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!--link icone filtro-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="../pag-aluno/css/processo-seletivo.css">
   <title>Processos Seletivos</title>
@@ -113,7 +136,7 @@ $resultado = $query->fetchAll();
         <div>
           <form id="barra" method="get">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <select name="periodo" class="form-control">
                   <option value="qualquer">Período</option>
                   <option value="matinal">Manhã</option>
@@ -122,7 +145,7 @@ $resultado = $query->fetchAll();
                   <option value="integral">integral</option>
                 </select>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <select name="salario" class="form-control">
                   <option value="qualquer">Salário</option>
                   <option value="2000">Menos de R$ 2.000</option>
@@ -130,30 +153,33 @@ $resultado = $query->fetchAll();
                   <option value="6000">Mais de R$ 4.000</option>
                 </select>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <select name="area" class="form-control">
                   <option value="qualquer">Área</option>
                   <?php foreach ($areas as $areaOpcao) { ?>
-                    <option value="<?= $areaOpcao['area'] ?>"><?= $areaOpcao['area'] ?></option>
+                    <option value="<?= $areaOpcao['area'] ?>">
+                      <?= $areaOpcao['area'] ?>
+                    </option>
                   <?php } ?>
                 </select>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <select name="status" class="form-control">
                   <option value="qualquer">Status</option>
                   <option value="aceito">Aceito</option>
                   <option value="recusado">Recusado</option>
                   <option value="andamento">Em Andamento</option>
+                  <option value="preenchida">Vagas Preenchidas</option>
                 </select>
               </div>
-              <div class="col-md-2">
+              <!-- <div class="col-md-2">
                 <select name="curso" class="form-control">
-                  <option value="qualquer">Curso</option>
-                  <?php foreach ($curso as $curcoOpcao) { ?>
-                    <option value="<?= $curcoOpcao['curso'] ?>"><?= $curcoOpcao['curso'] ?></option>
+                  <option value="curso">Curso</option>
+                  <?php foreach ($cursos as $cursos) { ?>
+                    <option value=" <?= $cursos['curso'] ?> "> <?= $cursos['curso'] ?> </option>
                   <?php } ?>
                 </select>
-              </div>
+              </div> -->
             </div>
 
             <div class="col-md-1">
@@ -176,8 +202,13 @@ $resultado = $query->fetchAll();
         <?php foreach ($resultado as $resultado) { ?>
           <div id="card">
 
-            <h4 class="local"><?= $resultado[2] ?> - <?= $resultado[3] ?></h4>
-            <h4 class="vaga"><?= $resultado[1] ?> </h4>
+            <h4 class="local">
+              <?= $resultado[2] ?> -
+              <?= $resultado[3] ?>
+            </h4>
+            <h4 class="vaga">
+              <?= $resultado[1] ?>
+            </h4>
 
             <?php
             $queryPreenchida = "SELECT tb_vaga_aluno.aprovado, tb_empresa.email, tb_vaga.idVaga, tb_vaga.preenchida FROM tb_vaga_aluno
@@ -215,11 +246,11 @@ $resultado = $query->fetchAll();
               </span>
             <?php } elseif ($qtn >= 1) { ?>
               <span class="botao-excluir">
-                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id?>&idVaga=<?= $resultado[0] ?>">
+                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
                   <i class="fa-solid fa-xmark"></i>
                 </a>
               </span>
-              <h4 class="aceito">STATUS : ACEITO</h4>
+              <h4 class="aceito">STATUS : ACEITO NO PROCESSO SELETIVO</h4>
               <!--       <?php foreach ($num as $num) { ?>
                 <form class="chat" method="post" action="./chat.php">
                   <input type="hidden" name="emailEmpresa" value="<?= $num[1] ?>">
@@ -229,14 +260,14 @@ $resultado = $query->fetchAll();
                 </form>
               <?php } ?> -->
             <?php } else if ($qtn2 >= 1) { ?>
-              <h4 style="color: red;">STATUS : RECUSADO</h4>
+                <h4 style="color: red;">STATUS : RECUSADO</h4>
             <?php } else { ?>
-              <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
-              <span class="botao-excluir">
-                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
-                  <i class="fa-solid fa-xmark"></i>
-                </a>
-              </span>
+                <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
+                <span class="botao-excluir">
+                  <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                    <i class="fa-solid fa-xmark"></i>
+                  </a>
+                </span>
 
             <?php } ?>
           </div>

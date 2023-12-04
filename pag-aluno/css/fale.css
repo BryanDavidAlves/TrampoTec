@@ -1,7 +1,7 @@
 body {
-  background-image: url(../img/bg-contato-aluno.PNG);
+    background-image: url(../img/bg-contato-aluno.PNG);
     background-repeat: no-repeat;
-    background-size: cover ;
+    background-size: cover;
 }
 
 header {
@@ -15,7 +15,6 @@ header {
 
 h1 {
     color: #fff;
-
     margin-top: 100px;
     font-size: 2.5rem;
     font-weight: 700;
@@ -57,6 +56,7 @@ select:focus {
     padding: 10px;
     border-radius: 10px;
 }
+
 .box-input input {
     width: 250px;
 }
@@ -109,10 +109,10 @@ select {
     cursor: pointer;
 }
 
-.btn:hover{
-    background-color:#051b42;
+.btn:hover {
+    background-color: #051b42;
     color: white;
-    border: 1px solid white ;
+    border: 1px solid white;
     font-weight: 800;
     padding: 10px 30px 10px 30px;
     border-radius: 20px;
@@ -121,10 +121,20 @@ select {
     cursor: pointer;
 }
 
-.icone{
-    width: 90vh;
-    position:fixed;
-    bottom:0 ;
+.icone {
+    width: 89vh;
+    position: absolute;
+    bottom: 0;
     right: 0;
     z-index: 1;
+}
+
+@media (max-width: 1240px) {
+    .icone {
+        width: 80vh;
+        margin-top: 90px;
+    }
+    #titu {
+        margin-top: 1000px;
+    }
 }

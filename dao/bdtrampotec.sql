@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Nov-2023 às 21:31
+-- Tempo de geração: 03-Dez-2023 às 21:23
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -53,7 +53,7 @@ CREATE TABLE `tb_aluno` (
   `email` varchar(40) NOT NULL,
   `senha` varchar(15) NOT NULL,
   `nome` varchar(60) NOT NULL,
-  `cpf` char(11) NOT NULL,
+  `cpf` char(16) NOT NULL,
   `dtNasc` varchar(10) NOT NULL,
   `logradouro` varchar(80) NOT NULL,
   `numero` int(11) NOT NULL,
@@ -71,38 +71,31 @@ CREATE TABLE `tb_aluno` (
 --
 
 INSERT INTO `tb_aluno` (`idAluno`, `email`, `senha`, `nome`, `cpf`, `dtNasc`, `logradouro`, `numero`, `complemento`, `bairro`, `estado`, `cidade`, `cep`, `imagem`, `curriculo`) VALUES
-(7, 'laysamelmudes@gmail.com', '123', 'LAYSA COCA MELMUDES', '475.158.398', '0000-00-00', 'Rua Antonio Soares Pais', 271, 'A-31', 'Vila Santa Teresinha', 'SP', 'São Paulo', '08247-09', 'ec71fadf9084fd41f62aaaeeca933bcd.png', 1),
-(8, 'lisa@gmail.com', '123', 'lisa', '264.007.440', '06052005', 'rua estevam', 134, 'muro rosa\'', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1),
-(9, 'johny@etec.sp.gov.br', '123', 'johny', '26645221835', '06052005', 'dadadadsad', 423, 'dsada', 'xv de novembro ', 'sao paulo', 'sao paulo', '08246080', NULL, 1);
+(14, 'ryan.souza44@etec.sp.gov.br', 'Otario15@', 'Ryan Dias', '569.614.918-98', '2005-10-17', 'Rua Antônio Soares Pais', 271, '66', 'Vila São Geraldo', '271', 'São Paulo', 'Vila São', '67d8b47c91c617b233e145dd7121ab84avif', 1),
+(15, 'aline.cordeiro5@etec.sp.gov.br', 'Aline123@', 'Aline Mendonca', '272.948.658-50', '1990-05-07', 'Rua Feliciano de Mendonça', 290, '', 'Jardim São Paulo(Zona Leste)', 'SP', 'São Paulo', '08460-36', 'a7ab82742ff4789c02658dd67facf0e6.jpg', 1),
+(16, 'johny.gomes@etec.sp.gov.br', 'euamoagabS2@', 'johny david marques gomes', '549.664.138-18', '2005-08-25', 'Rua Redeiras', 66, '', 'Lajeado', '66', 'São Paulo', 'Lajeado', '2ba2409e8ac905aade6e7ccdd7599357.jpg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_aluno_curso`
+-- Estrutura da tabela `tb_aluno_curso_etec`
 --
 
-CREATE TABLE `tb_aluno_curso` (
+CREATE TABLE `tb_aluno_curso_etec` (
   `fk_idAluno` int(11) NOT NULL,
-  `fk_idCurso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tb_aluno_curso`
---
-
-INSERT INTO `tb_aluno_curso` (`fk_idAluno`, `fk_idCurso`) VALUES
-(9, 11);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tb_aluno_etec`
---
-
-CREATE TABLE `tb_aluno_etec` (
+  `fk_idCurso` int(11) NOT NULL,
   `fk_idEtec` int(11) NOT NULL,
-  `fk_idAluno` int(11) NOT NULL
+  `conclusao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `tb_aluno_curso_etec`
+--
+
+INSERT INTO `tb_aluno_curso_etec` (`fk_idAluno`, `fk_idCurso`, `fk_idEtec`, `conclusao`) VALUES
+(16, 12, 12, '2023-12-02'),
+(14, 11, 12, '8120-01-12'),
+(15, 11, 10, '2025-11-12');
 
 -- --------------------------------------------------------
 
@@ -131,7 +124,16 @@ INSERT INTO `tb_conhecimento` (`idConhecimento`, `conhecimento`) VALUES
 (10, 'PYTHON'),
 (11, 'HTML'),
 (12, 'CSS'),
-(13, 'REACT NATIVE');
+(13, 'REACT NATIVE'),
+(14, 'java'),
+(15, 'PHP'),
+(16, 'MySQL'),
+(17, 'SQL Server'),
+(18, 'Oracle db'),
+(19, 'php'),
+(20, 'javascript'),
+(21, 'java'),
+(22, 'SQL server');
 
 -- --------------------------------------------------------
 
@@ -149,12 +151,15 @@ CREATE TABLE `tb_conhecimento_aluno` (
 --
 
 INSERT INTO `tb_conhecimento_aluno` (`fk_idConhecimento`, `fk_idAluno`) VALUES
-(2, 7),
-(3, 8),
-(4, 7),
-(5, 8),
-(6, 8),
-(7, 9);
+(14, 14),
+(15, 15),
+(16, 15),
+(17, 15),
+(18, 15),
+(19, 16),
+(20, 16),
+(21, 16),
+(22, 16);
 
 -- --------------------------------------------------------
 
@@ -178,7 +183,9 @@ CREATE TABLE `tb_curso` (
 INSERT INTO `tb_curso` (`idCurso`, `nome`, `cargaHoraria`, `semestre`, `modalidade`, `ensino`) VALUES
 (11, 'Desenvolvimento de Sistemas', 1200, 3, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Noturno(M-TEC-N)'),
 (12, 'Nutrição', 1600, 3, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'),
-(13, 'Edificações', 1200, 3, 'Presencial', 'Ensino Medio Integrado ao Tecnico(M-TEC)');
+(13, 'Edificações', 1200, 3, 'Presencial', 'Ensino Medio Integrado ao Tecnico(M-TEC)'),
+(14, 'Eletrotécnica', 1600, 3, 'Presencial', 'Ensino Medio Integrado ao Tecnico em Periodo Integral(M-TEC-Pi)'),
+(15, 'Turismo', 1200, 1, 'Presencial', 'Curso Tecnico');
 
 -- --------------------------------------------------------
 
@@ -197,7 +204,49 @@ CREATE TABLE `tb_curso_etec` (
 
 INSERT INTO `tb_curso_etec` (`fk_idCurso`, `fk_idEtec`) VALUES
 (11, 9),
-(13, 11);
+(13, 11),
+(12, 10),
+(13, 10),
+(11, 10),
+(12, 9),
+(13, 9),
+(12, 11),
+(13, 11),
+(14, 9),
+(11, 12),
+(12, 12),
+(14, 12),
+(13, 12),
+(11, 13),
+(12, 13),
+(13, 13),
+(14, 13),
+(11, 14),
+(12, 14),
+(13, 14),
+(14, 14),
+(11, 15),
+(12, 15),
+(13, 15),
+(14, 15),
+(11, 16),
+(12, 16),
+(13, 16),
+(14, 16),
+(11, 17),
+(12, 17),
+(13, 17),
+(14, 17),
+(11, 18),
+(12, 18),
+(13, 18),
+(14, 18),
+(11, 19),
+(12, 19),
+(13, 19),
+(14, 19),
+(11, 45),
+(15, 45);
 
 -- --------------------------------------------------------
 
@@ -218,7 +267,9 @@ CREATE TABLE `tb_eixo` (
 INSERT INTO `tb_eixo` (`idEixo`, `eixo`, `fk_idCurso`) VALUES
 (13, 'Tecnologia e Informação', 11),
 (14, 'Comida e Dieta', 12),
-(15, 'Infraestrutura', 13);
+(15, 'Infraestrutura', 13),
+(16, 'Elétrica', 14),
+(17, 'Serviços', 15);
 
 -- --------------------------------------------------------
 
@@ -234,7 +285,7 @@ CREATE TABLE `tb_empresa` (
   `departamento` varchar(100) NOT NULL,
   `descricao` varchar(1000) NOT NULL,
   `anoFundacao` int(4) NOT NULL,
-  `cnpj` char(18) NOT NULL,
+  `cnpj` char(20) NOT NULL,
   `cep` char(8) NOT NULL,
   `logradouro` varchar(60) NOT NULL,
   `numero` int(11) NOT NULL,
@@ -249,13 +300,12 @@ CREATE TABLE `tb_empresa` (
 --
 
 INSERT INTO `tb_empresa` (`idEmpresa`, `email`, `senha`, `nome`, `departamento`, `descricao`, `anoFundacao`, `cnpj`, `cep`, `logradouro`, `numero`, `bairro`, `estado`, `imagem`, `aprovado`) VALUES
-(14, 'laysamelmudes@gmail.com', '123', 'TechLogs', '', '', 0, '85.656.164/0001-24', '08247-09', 'Rua Nossa Senhora das Candeias', 123, 'Vila Santa Teresinha', 'SP', 'ab5cd8aa072b4848b8b257bf73157bde.png', 1),
-(15, 'empresa@gmail.com', '123', 'empresa teste', 'Tecnologia', 'dfsdfsdfsdf', 2000, '28.641.924/0001-96', '47807-12', 'Rua Noruega', 110, 'Boa Sorte', 'Bahia', NULL, 1),
-(20, 'datasphere@gmail.com', 'datasphereempre', 'DataSphere Technologies', 'Tecnologia', 'DataSphere Technologies é uma empresa líder em soluções tecnológicas para a transformação digital, oferecendo uma gama completa de serviços e produtos para maximizar o potencial dos dados empresariais. Com uma abordagem centrada no cliente, nossa equipe especializada colabora de perto para desenvolver soluções personalizadas. Estamos na vanguarda da inovação, investindo em pesquisa e desenvolvimento, e priorizamos a segurança e conformidade dos dados. Se sua empresa busca uma parceira confiável para impulsionar a jornada digital, a DataSphere Technologies oferece soluções de classe mundial para transformar dados em vantagem competitiva.', 1998, '68.157.261/0001-53', '68535-97', 'Rua Magalhaes Barata 789', 32, 'Centro', 'Pará', NULL, 0),
-(22, 'ecotech4solucions@gmail.com', 'techsolucions', 'EcoTech Solutions', 'Departamento de Desenvolvimento Sustentável e Soluções de Tecnologia Verde', 'A EcoTech Solutions é uma empresa inovadora focada em oferecer soluções sustentáveis para desafios contemporâneos. Especializada em tecnologias e produtos que integram tecnologia com preservação ambiental, a empresa lidera a revolução verde. Sua missão é criar um impacto positivo duradouro, proporcionando soluções sustentáveis para empresas e consumidores. Com serviços que abrangem energias renováveis, eficiência energética, gestão de resíduos e agricultura sustentável, a EcoTech Solutions destaca-se como uma parceira confiável para organizações comprometidas com a responsabilidade ambiental, promovendo um futuro mais limpo e saudável. Junte-se a nós nessa jornada para um mundo mais sustentável.', 2010, '98.075.949/0001-55', '25924-64', 'Rua Luiz Antônio Ramos', 50, 'Parque Recreio Dom Pedro II (Guia de Pacobaíba)', 'Rio de Janeiro', NULL, 0),
+(14, 'laysamelmudes@gmail.com', '123', 'Alpha Tecnology', 'tecnologia', 'Empresa focada em fornecer satisfação ao clientes!', 2023, '85.656.164/0001-24', '08247-09', 'Rua Antônio Soares Pais', 85656, 'Vila São Geraldo', 'SP', 'rosto2.jpg', 1),
+(20, 'datasphere@gmail.com', 'datasphereempre', 'DataSphere Technologies', 'Tecnologia', 'DataSphere Technologies é uma empresa líder em soluções tecnológicas para a transformação digital, oferecendo uma gama completa de serviços e produtos para maximizar o potencial dos dados empresariais. Com uma abordagem centrada no cliente, nossa equipe especializada colabora de perto para desenvolver soluções personalizadas. Estamos na vanguarda da inovação, investindo em pesquisa e desenvolvimento, e priorizamos a segurança e conformidade dos dados. Se sua empresa busca uma parceira confiável para impulsionar a jornada digital, a DataSphere Technologies oferece soluções de classe mundial para transformar dados em vantagem competitiva.', 1998, '68.157.261/0001-53', '68535-97', 'Rua Magalhaes Barata 789', 68157, 'Centro', 'Pará', 'perfil.jpg', 1),
+(22, 'ecotech4solucions@gmail.com', 'techsolucions', 'EcoTech Solutions', 'Departamento de Desenvolvimento Sustentável e Soluções de Tecnologia Verde', 'A EcoTech Solutions é uma empresa inovadora focada em oferecer soluções sustentáveis para desafios contemporâneos. Especializada em tecnologias e produtos que integram tecnologia com preservação ambiental, a empresa lidera a revolução verde. Sua missão é criar um impacto positivo duradouro, proporcionando soluções sustentáveis para empresas e consumidores. Com serviços que abrangem energias renováveis, eficiência energética, gestão de resíduos e agricultura sustentável, a EcoTech Solutions destaca-se como uma parceira confiável para organizações comprometidas com a responsabilidade ambiental, promovendo um futuro mais limpo e saudável. Junte-se a nós nessa jornada para um mundo mais sustentável.', 2010, '98.075.949/0001-55', '25924-64', 'Rua Luiz Antônio Ramos', 50, 'Parque Recreio Dom Pedro II (Guia de Pacobaíba)', 'Rio de Janeiro', NULL, 1),
 (24, 'vitalcare55solucions@gmail.com', 'vital65saude', ' VitalCare Solutions', 'Departamento 1: BioWellness Labs\r\n\r\nÁrea de Atuação: Análises clínicas avançadas, testes genéticos e', 'A VitalCare Solutions é uma empresa inovadora comprometida em fornecer soluções de cuidados de saúde avançadas. Especializada em desenvolver e implementar tecnologias de ponta para melhorar a eficiência e qualidade dos serviços de saúde, a VitalCare Solutions está na vanguarda da transformação digital no setor. Com uma equipe dedicada e experiente, a empresa busca oferecer soluções personalizadas que promovam o bem-estar dos pacientes e otimizem os processos de cuidados de saúde.', 2002, '53.214.138/0001-50', '71575-13', 'Quadra Quadra 36 Conjunto G', 33, 'Paranoá', 'Brasília', NULL, 0),
 (25, 'mindbody@gmail.com', 'bodymind522', 'MindBody Therapeutics', 'Departamento 1: NeuroCalm Clinics\r\n\r\nÁrea de Atuação: Serviços especializados em saúde mental, terap', 'A MindBody Therapeutics é uma empresa inovadora dedicada ao bem-estar integral, oferecendo soluções terapêuticas que integram mente e corpo. Com uma abordagem holística, a empresa busca promover equilíbrio e saúde por meio de práticas terapêuticas inovadoras, visando o cuidado tanto da saúde mental quanto física.', 2015, '45.785.524/0001-73', '41402-03', 'Rua da Esperança', 72, 'CEASA', 'Bahia', NULL, 0),
-(26, 'nuts@gmail.com', 'nutsempresa', 'Nuts', '', '', 0, '', '17018-77', '0', 64930, '17018-77', 'Rua Maria Benedita de Oli', '6d3521bd1debac2817a08094419109cc.png', 1);
+(27, 'profalinemendonca@gmail.com', 'Aline123@', 'Escola de programadores', '', '', 0, '07.110.884/0001-86', '08440-00', 'Rua Porto do Bezerra', 225, 'Jardim Guaianazes', 'SP', '5df4eb41f174fe564023f5546a4ecbb5.png', 1);
 
 -- --------------------------------------------------------
 
@@ -279,14 +329,15 @@ INSERT INTO `tb_etec` (`idEtec`, `nome`, `email`, `codigo`, `municipio`) VALUES
 (9, 'Etec Antonio Junqueira da Veiga', 'e033dir@cps.sp.gov.br', 33, 'Igarapava'),
 (10, 'Etec Aristóteles Ferreira', 'e035dir@cps.sp.gov.br', 35, 'Santos'),
 (11, 'Etec Arnaldo Pereira Cheregatti', 'e215dir@cps.sp.gov.br', 215, 'Aguaí'),
-(12, 'Etec Astor de Mattos Carvalho', 'e038dir@cps.sp.gov.br', 38, 'Cabrália Paulista'),
+(12, 'Etec Astor de Mattos Carvalho', 'e038dir@cps.sp.gov.br', 38, 'Adamantina'),
 (13, 'Etec Augusto Tortolero Araújo', 'e039dir@cps.sp.gov.br', 39, 'Paraguaçu Paulista'),
 (14, 'Etec Bartolomeu Bueno da Silva - Anhanguera', 'e262dir@cps.sp.gov.br', 262, 'Santana de Parnaíba'),
-(15, 'Etec Benedito Storani', 'e042dir@cps.sp.gov.br', 42, 'Jundiaí'),
+(15, 'Etec Benedito Storani', 'e042dir@cps.sp.gov.br', 42, 'Adamantina'),
 (16, 'Etec Bento Carlos Botelho do Amaral', 'e256dir@cps.sp.gov.br', 256, 'Guariba'),
 (17, 'Etec Bento Quirino', 'e043dir@cps.sp.gov.br', 43, 'Campinas'),
 (18, 'Etec Carlos de Campos - Brás', 'e045dir@cps.sp.gov.br', 45, 'São Paulo'),
-(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo');
+(19, 'Etec Carolina Carinhato Sampaio - Jardim São Luís', 'e134dir@cps.sp.gov.br', 134, 'São Paulo'),
+(45, 'ETEC Itaim Paulista', 'e245adm@cps.sp.gov.br', 245, 'São Paulo');
 
 -- --------------------------------------------------------
 
@@ -320,14 +371,7 @@ CREATE TABLE `tb_fale_conosco` (
 --
 
 INSERT INTO `tb_fale_conosco` (`idFaleConosco`, `nome`, `email`, `categoria`, `comentario`, `tipoUsuario`) VALUES
-(1, 'Esther', 'batistaesther135@gmail.com', 'sugestao', 'asdasda', ''),
-(2, 'Esther', 'batistaesther135@gmail.com', 'reclamacao', 'ghfhfghfgh', ''),
-(3, 'Esther', 'batistaesther135@gmail.com', 'sugestao', 'sdasdas', ''),
-(4, 'Esther', 'esther.silva97@etec.sp.gov.br', 'reclamacao', 'sdfsdfs', ''),
-(5, 'Esther', 'laysamelmudes@gmail.com', 'sugestao', 'dfgdfgdfg', ''),
-(6, 'Laysa', 'laysamelmudes@gmail.com', 'reclamacao', 'asdasda', ''),
-(7, 'Ryan', 'ryan@gmail.com', 'reclamacao', 'pessimo site', ''),
-(8, 'Bruna', 'brunasurfistinha@gmail.com', 'sugestao', 'Taca lhe pau', '');
+(9, 'DataSphere Technologies', 'datasphere@gmail.com', 'elogio', 'salve', 'Empresa');
 
 -- --------------------------------------------------------
 
@@ -377,20 +421,12 @@ CREATE TABLE `tb_habilidade_aluno` (
 --
 
 INSERT INTO `tb_habilidade_aluno` (`fk_idAluno`, `fk_idHabilidade`) VALUES
-(7, 4),
-(7, 1),
-(7, 4),
-(7, 1),
-(8, 4),
-(8, 1),
-(7, 4),
-(7, 1),
-(8, 4),
-(8, 1),
-(8, 4),
-(8, 1),
-(9, 4),
-(9, 1);
+(14, 4),
+(14, 1),
+(15, 4),
+(15, 1),
+(16, 4),
+(16, 1);
 
 -- --------------------------------------------------------
 
@@ -423,10 +459,10 @@ CREATE TABLE `tb_idioma_aluno` (
 --
 
 INSERT INTO `tb_idioma_aluno` (`idIdiomaAluno`, `nome`, `nivel`, `fk_idAluno`) VALUES
-(19, 'espanhol', 'intermediario', 8),
-(21, 'outro', 'intermediario', 8),
-(22, 'ingles', 'iniciante', 8),
-(23, 'frances', 'intermediario', 9);
+(25, 'ingles', 'intermediario', 15),
+(26, 'espanhol', 'iniciante', 15),
+(27, 'ingles', 'intermediario', 16),
+(29, 'ingles', 'intermediario', 14);
 
 -- --------------------------------------------------------
 
@@ -448,21 +484,13 @@ CREATE TABLE `tb_perfil_aluno` (
 --
 
 INSERT INTO `tb_perfil_aluno` (`idPerfilAluno`, `semestre`, `periodo`, `duracaoCurso`, `conclusao`, `fk_idAluno`) VALUES
-(1, 2, 'matutino', 'OI', '2023-10-01', 7),
-(2, 2, 'noturno', 'OI', '2023-10-08', 7),
-(3, 2, 'matutino', 'OI', '2023-10-19', 7),
-(4, 5, 'Noturno', '800 horas', '2023-10-01', 7),
-(5, 0, '', '', '2023-10-15', 7),
-(6, 0, '', '', '2023-10-11', 7),
-(7, 3, '', '43242', '3423-02-04', 7),
-(8, 3, '', '5345435', '4534-03-05', 7),
-(9, 3, '', '453534', '5645-04-06', 7),
-(10, 3, '', '424', '0432-02-04', 8),
-(11, 4, '', '4534534', '4543-03-05', 7),
-(12, 3, '', '432423', '43242-02-04', 8),
-(13, 3, '', '4234324', '243242-03-04', 8),
-(14, 3, '', '433453', '4534-03-05', 8),
-(15, 4, '', '42432', '24324-03-04', 9);
+(16, 3, '', '', '2024-10-12', 14),
+(17, 3, '', '', '2000-12-10', 15),
+(18, 1, '', '', '2010-12-10', 15),
+(19, 4, '', '', '2024-06-06', 16),
+(20, 3, '', '', '2024-12-08', 16),
+(21, 4, '', '', '12321-03-21', 16),
+(22, 6, '', '', '123123-03-21', 16);
 
 -- --------------------------------------------------------
 
@@ -507,7 +535,21 @@ INSERT INTO `tb_requisito` (`idRequisito`, `requisito`) VALUES
 (25, 'Git'),
 (26, 'Node.js'),
 (27, 'Experiência prática no desenvolvimento de APIs RESTful e serviços web.'),
-(28, 'Experiência sólida em design e otimização de bancos de dados relacionais e não relacionais.');
+(28, 'Experiência sólida em design e otimização de bancos de dados relacionais e não relacionais.'),
+(29, 'Java Script'),
+(30, 'Mysql'),
+(31, 'sql server'),
+(32, 'Realizar levantamentos topográficos e cadastrar informações relevantes para projetos de construção.'),
+(33, 'Formação técnica em Edificações ou áreas relacionadas.'),
+(34, 'vExperiência comprovada em projetos de construção civil e/ou manutenção predial.'),
+(35, 'Conhecimento sólido em leitura e interpretação de projetos arquitetônicos e de engenharia.'),
+(36, 'Formação técnica em Eletrotécnica ou área relacionada.'),
+(37, 'Experiência comprovada em instalações elétricas industriais.'),
+(38, 'Capacidade de diagnosticar e solucionar problemas em sistemas elétricos de forma eficiente.'),
+(39, 'Excelentes habilidades de comunicação e trabalho em equipe.'),
+(40, 'Conhecimento em linguagens de programação'),
+(41, 'Trabalho em equipe'),
+(42, 'Boa lógica de programação');
 
 -- --------------------------------------------------------
 
@@ -525,9 +567,6 @@ CREATE TABLE `tb_requisito_vaga` (
 --
 
 INSERT INTO `tb_requisito_vaga` (`fk_idVaga`, `fk_idRequisito`) VALUES
-(12, 14),
-(12, 10),
-(12, 15),
 (7, 16),
 (7, 17),
 (7, 18),
@@ -540,11 +579,19 @@ INSERT INTO `tb_requisito_vaga` (`fk_idVaga`, `fk_idRequisito`) VALUES
 (9, 10),
 (9, 24),
 (9, 25),
-(10, 13),
-(10, 8),
-(10, 26),
-(10, 27),
-(10, 28);
+(17, 29),
+(18, 30),
+(18, 31),
+(20, 33),
+(20, 34),
+(20, 35),
+(21, 36),
+(21, 37),
+(21, 38),
+(21, 39),
+(22, 40),
+(22, 41),
+(22, 42);
 
 -- --------------------------------------------------------
 
@@ -575,8 +622,9 @@ CREATE TABLE `tb_telefone_aluno` (
 --
 
 INSERT INTO `tb_telefone_aluno` (`idTelefoneAluno`, `telefoneAluno`, `fk_idAluno`) VALUES
-(6, '(11) 94489-3333', 7),
-(7, '119593289', 9);
+(12, '(11) 98428-6282', 14),
+(13, '(11) 98989-8989', 15),
+(14, '(11) 95828-1911', 16);
 
 -- --------------------------------------------------------
 
@@ -596,7 +644,8 @@ CREATE TABLE `tb_telefone_empresa` (
 
 INSERT INTO `tb_telefone_empresa` (`idTelefoneEmpresa`, `numeroTelefone`, `fk_idEmpresa`) VALUES
 (9, '(11) 94489-032', 14),
-(10, '(14) 98931-1602', 26);
+(11, '11963939546', 20),
+(12, '(11) 98989-8989', 27);
 
 -- --------------------------------------------------------
 
@@ -666,11 +715,14 @@ CREATE TABLE `tb_vaga` (
 --
 
 INSERT INTO `tb_vaga` (`idVaga`, `nome`, `logradouro`, `numero`, `cep`, `cidade`, `bairro`, `estado`, `modalidade`, `salario`, `descricao`, `inicio`, `termino`, `periodo`, `area`, `escala`, `fk_idEmpresa`, `fk_idCurso`, `preenchida`) VALUES
-(7, 'Nutricionista', 'Avenida Queimada', 55, '06429-215', 'Barueri', 'Residencial Morada dos Lagos', 'SP', 'presencial', 1650.00, 'Realizar avaliações nutricionais abrangentes para determinar as necessidades dietéticas individuais', '08:00', '15:00', 'diurno', 'Saúde', 'seg-sex', 14, 12, 1),
-(8, 'Eletricista', 'Praça Osvaldo Valério', 42, '12043-040', 'Taubaté', 'Cecap', 'SP', 'presencial', 2100.00, 'Realizar instalações elétricas em conformidade com os códigos e normas locais. Diagnosticar e soluci', '08:00', '16:00', 'matinal', 'Industria', 'seg-sex', 14, 12, 1),
-(9, 'Programador Front-End', 'Rua X 33', 50, '74921-410', 'Aparecida de Goiânia', 'Sítios Santa Luzia Residencial', 'GO', 'home-office', 2000.00, 'Estamos buscando um talentoso Programador Front-End para se juntar à nossa equipe dinâmica. O candid', '10:00', '16:00', 'matinal', 'Tecnologia', 'Seg-Sex', 14, 11, 0),
-(10, 'Desenvolvedor Back-End', 'Avenida Bento Gonçalves', 23, '91509-900', 'Porto Alegre', 'Agronomia', 'RS', 'home-office', 1850.00, 'Estamos em busca de um talentoso Desenvolvedor Back-End para se juntar à nossa equipe de tecnologia ', '19:00', '23:00', 'noturno', 'Tecnologia', 'Seg-Sex', 26, 11, 0),
-(12, 'Front-End', 'Rua Gustavo Maciel', 167, '17015-320', 'Bauru', 'Centro', 'SP', 'hibrido', 2300.00, 'teste', '19:00', '22:00', 'noturno', 'Tecnologia', 'seg-sex', 26, 11, 0);
+(7, 'Nutricionista', 'Avenida Queimada', 55, '06429-215', 'Barueri', 'Residencial Morada dos Lagos', 'SP', 'presencial', 1650.00, 'Realizar avaliações nutricionais abrangentes para determinar as necessidades dietéticas individuais', '08:00', '15:00', 'diurno', 'Saúde', 'seg-sex', 20, 12, 0),
+(8, 'Eletricista', 'Praça Osvaldo Valério', 42, '12043-040', 'Taubaté', 'Cecap', 'SP', 'presencial', 2100.00, 'Realizar instalações elétricas em conformidade com os códigos e normas locais. Diagnosticar e soluci', '08:00', '16:00', 'matinal', 'Industria', 'seg-sex', 14, 12, 0),
+(9, 'Programador Front-End', 'Rua X 33', 50, '74921-410', 'Aparecida de Goiânia', 'Sítios Santa Luzia Residencial', 'GO', 'home-office', 2200.00, 'Estamos buscando um talentoso Programador Front-End para se juntar à nossa equipe dinâmica. O candid', '10:00', '16:00', 'matinal', 'Tecnologia', 'Seg-Sex', 14, 11, 0),
+(17, 'Gerenciamento de projetos', 'Rua Francisco Nunes Cubas', 359, '08450-460', 'São Paulo', 'Jardim Fanganiello', 'SP', 'home-office', 1200.00, 'Gerenciar projetos no geral', '07:00', '12:00', 'diurno', 'Tecnologia', 'seg-sex', 14, 11, 0),
+(18, 'DBA', 'Rua Antônio Soares Pais', 234, '08460-500', 'São Paulo', 'Vila São Geraldo', 'SP', 'presencial', 2000.00, 'Criar e analisar bancos de dados', '17:00', '23:00', 'noturno', 'Tecnologia', 'seg-sex', 14, 11, 0),
+(20, 'Técnico em Edificações', 'Rua Antônio Soares Pais', 23, '08460-500', 'São Paulo', 'Vila São Geraldo', 'SP', 'presencial', 1600.00, 'Estamos em busca de um profissional qualificado e experiente para integrar nossa equipe como Técnico em Edificações. O candidato ideal será responsável por apoiar e coordenar atividades relacionadas à construção e manutenção de edifícios, garantindo padrões de qualidade, segurança e conformidade com regulamentações.', '07:00', '14:00', 'matinal', 'Industria', 'seg-sex', 20, 13, 0),
+(21, 'Técnico em Eletrotécnica', 'Rua Domingos da Cruz', 55, '08461-570', 'São Paulo', 'Jardim São Paulo(Zona Leste)', 'SP', 'presencial', 1530.00, 'Estamos em busca de um profissional altamente qualificado para integrar nossa equipe como Técnico em Eletrotécnica. O candidato ideal terá uma sólida formação técnica, experiência prática e habilidades excepcionais em lidar com sistemas elétricos complexos. Este papel é fundamental para garantir o funcionamento eficiente e seguro de nossos equipamentos elétricos, contribuindo para a confiabilidade de nossas operações.', '08:00', '15:00', 'matinal', 'Industria', 'seg-sex', 20, 14, 1),
+(22, 'Desenvolvedor full stack', 'Rua Feliciano de Mendonça', 290, '08460-365', 'São Paulo', 'Jardim São Paulo(Zona Leste)', 'SP', 'hibrido', 1800.00, 'Dar suporte a aplicações node js, php e Python', '08:00', '12:00', 'diurno', 'Tecnologia', 'seg-sex', 14, 11, 0);
 
 -- --------------------------------------------------------
 
@@ -689,9 +741,13 @@ CREATE TABLE `tb_vaga_aluno` (
 --
 
 INSERT INTO `tb_vaga_aluno` (`fk_idAluno`, `fk_idVaga`, `aprovado`) VALUES
-(7, 8, 2),
-(7, 7, 1),
-(7, 9, 0);
+(14, 8, 1),
+(14, 9, 1),
+(14, 21, 1),
+(15, 22, 1),
+(16, 21, 0),
+(16, 18, 0),
+(16, 22, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -712,18 +768,12 @@ ALTER TABLE `tb_aluno`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `tb_aluno_curso`
+-- Índices para tabela `tb_aluno_curso_etec`
 --
-ALTER TABLE `tb_aluno_curso`
+ALTER TABLE `tb_aluno_curso_etec`
   ADD KEY `fk_idAluno` (`fk_idAluno`),
-  ADD KEY `fk_idCurso` (`fk_idCurso`);
-
---
--- Índices para tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD KEY `fk_idEtec` (`fk_idEtec`),
-  ADD KEY `fk_idAluno` (`fk_idAluno`);
+  ADD KEY `fk_idCurso` (`fk_idCurso`),
+  ADD KEY `fk_idEtec` (`fk_idEtec`);
 
 --
 -- Índices para tabela `tb_conhecimento`
@@ -894,37 +944,37 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT de tabela `tb_aluno`
 --
 ALTER TABLE `tb_aluno`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `tb_conhecimento`
 --
 ALTER TABLE `tb_conhecimento`
-  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idConhecimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
-  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tb_eixo`
 --
 ALTER TABLE `tb_eixo`
-  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idEixo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `tb_empresa`
 --
 ALTER TABLE `tb_empresa`
-  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `idEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `tb_etec`
 --
 ALTER TABLE `tb_etec`
-  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `idEtec` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `tb_experiencia_aluno`
@@ -936,7 +986,7 @@ ALTER TABLE `tb_experiencia_aluno`
 -- AUTO_INCREMENT de tabela `tb_fale_conosco`
 --
 ALTER TABLE `tb_fale_conosco`
-  MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idFaleConosco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tb_habilidade`
@@ -954,19 +1004,19 @@ ALTER TABLE `tb_horario_aluno`
 -- AUTO_INCREMENT de tabela `tb_idioma_aluno`
 --
 ALTER TABLE `tb_idioma_aluno`
-  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idIdiomaAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `tb_perfil_aluno`
 --
 ALTER TABLE `tb_perfil_aluno`
-  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idPerfilAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tb_requisito`
 --
 ALTER TABLE `tb_requisito`
-  MODIFY `idRequisito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `idRequisito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `tb_sobre_mim`
@@ -978,13 +1028,13 @@ ALTER TABLE `tb_sobre_mim`
 -- AUTO_INCREMENT de tabela `tb_telefone_aluno`
 --
 ALTER TABLE `tb_telefone_aluno`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_empresa`
 --
 ALTER TABLE `tb_telefone_empresa`
-  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idTelefoneEmpresa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `tb_telefone_etec`
@@ -996,25 +1046,19 @@ ALTER TABLE `tb_telefone_etec`
 -- AUTO_INCREMENT de tabela `tb_vaga`
 --
 ALTER TABLE `tb_vaga`
-  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restrições para despejos de tabelas
 --
 
 --
--- Limitadores para a tabela `tb_aluno_curso`
+-- Limitadores para a tabela `tb_aluno_curso_etec`
 --
-ALTER TABLE `tb_aluno_curso`
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_curso_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `tb_aluno_etec`
---
-ALTER TABLE `tb_aluno_etec`
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_1` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `tb_aluno_etec_ibfk_2` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`);
+ALTER TABLE `tb_aluno_curso_etec`
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_1` FOREIGN KEY (`fk_idAluno`) REFERENCES `tb_aluno` (`idAluno`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_2` FOREIGN KEY (`fk_idCurso`) REFERENCES `tb_curso` (`idCurso`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_aluno_curso_etec_ibfk_3` FOREIGN KEY (`fk_idEtec`) REFERENCES `tb_etec` (`idEtec`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `tb_conhecimento_aluno`

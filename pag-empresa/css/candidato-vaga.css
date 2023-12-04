@@ -1,16 +1,15 @@
 main {
-  margin-left: 22%;
+  margin-left: 20%;
 }
 main .align-itens {
   display: flex;
-  gap: 80px;
+  gap: 20px;
   justify-content: center;
   align-items: start;
 }
 main .align-itens .card .title-card {
   margin-top: 0px;
   color: #555cb3;
-
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -20,12 +19,10 @@ main .align-itens .card {
   align-items: center;
   justify-content: start;
   padding: 10px;
-
   background-color: white;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
   width: 400px;
-  min-height: 400px;
   height: auto;
   transition: 0.3s all ease-in-out;
 }
@@ -40,12 +37,9 @@ main .align-itens .card:hover {
   transition: 0.3s all ease-in-out;
 }
 main .align-itens .card .itens-card {
-  
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  gap: 1px;
   margin-top: 20px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
@@ -106,7 +100,9 @@ main .align-itens table {
 }
 
 th {
-  padding: 10px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
 }
 
 main .align-itens .infos {
@@ -115,8 +111,8 @@ main .align-itens .infos {
 
 main .align-itens table td {
   color: rgb(0, 0, 0);
-  padding: 10px;
-  width: 100%;
+  padding: 20px;
+  
 }
 
 main .align-itens tr:nth-last-child(1) {
@@ -142,12 +138,6 @@ td .container-perfil .img-perfil img {
   border-radius: 50%;
 }
 
-#result {
-  overflow-y: scroll;
-  max-height: 400px;
-  max-width: 700px;
-}
-
 .icon-1 {
   background-color: transparent;
 }
@@ -161,8 +151,7 @@ td .container-perfil .img-perfil img {
   border-radius: 100px;
   transition: 0.3s ease-in-out;
   font-size: 20px;
-  width: 20px;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   display: flex;
   text-align: center;
@@ -176,21 +165,26 @@ td .container-perfil .img-perfil img {
   color: white;
 }
 
-.icon-2 a {
+
+.icon-2 a{
+text-decoration: none;
+}
+
+.icon-2 a i{
   display: flex;
   text-decoration: none;
   color: red;
   border-radius: 100px;
   transition: 0.3s ease-in-out;
   font-size: 20px;
-  width: 20px;
-  padding: 8px;
+  width: 40px;
+  padding: 10px;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-.icon-2 a:hover {
+.icon-2 a i:hover {
   background-color: rgb(255, 0, 0);
   color: white;
 }
