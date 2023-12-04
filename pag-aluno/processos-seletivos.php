@@ -240,13 +240,15 @@ $resultado = $query->fetchAll();
             if ($qtn3 == 1) { ?>
               <h4>ESTÁ VAGA JÁ FOI PREENCHIDA</h4>
               <span class="botao-excluir">
-                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                <a
+                  href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
                   <i class="fa-solid fa-xmark"></i>
                 </a>
               </span>
             <?php } elseif ($qtn >= 1) { ?>
               <span class="botao-excluir">
-                <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                <a
+                  href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
                   <i class="fa-solid fa-xmark"></i>
                 </a>
               </span>
@@ -264,7 +266,8 @@ $resultado = $query->fetchAll();
             <?php } else { ?>
                 <h4 class="nao-aceito">STATUS : EM ANDAMENTO</h4>
                 <span class="botao-excluir">
-                  <a href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
+                  <a
+                    href="./back-end/salvarCandidato/delete-processo.php?idAluno=<?= $cliente_id ?>&idVaga=<?= $resultado[0] ?>">
                     <i class="fa-solid fa-xmark"></i>
                   </a>
                 </span>
@@ -282,7 +285,7 @@ $resultado = $query->fetchAll();
     </div>
 
   </main>
-  <img class="imagem-4" src="./img/icon1.png" alt="">
+  <img class="imagem-4" src="./img/icon1-cortado.png" alt="">
   <img class="imagem-3" src="./img/icon3.png" alt="">
 
   <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>

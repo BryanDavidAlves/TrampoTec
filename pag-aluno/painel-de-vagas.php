@@ -488,7 +488,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
         font-size: 15px;
       }
 
-   
+
     }
   </style>
 </head>
@@ -577,23 +577,23 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
         <div>
           <form id="barra" method="get">
             <div class="row">
-              <div class="col-md-3">
-                <select name="periodo" class="form-control">
-                  <option value="qualquer">Período</option>
-                  <option value="matinal">Manhã</option>
-                  <option value="diurno">Tarde</option>
-                  <option value="noturno">Noite</option>
-                  <option value="integral">integral</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <select name="salario" class="form-control">
-                  <option value="qualquer">Salário</option>
-                  <option value="2000">Menos de R$ 2.000</option>
-                  <option value="4000">R$ 2.000 - R$ 4.000</option>
-                  <option value="6000">Mais de R$ 4.000</option>
-                </select>
-              </div>
+                <div class="col-md-3">
+                  <select name="periodo" class="form-control">
+                    <option value="qualquer">Período</option>
+                    <option value="matinal">Manhã</option>
+                    <option value="diurno">Tarde</option>
+                    <option value="noturno">Noite</option>
+                    <option value="integral">integral</option>
+                  </select>
+                </div>
+                <div class="col-md-3" id="left">
+                  <select name="salario" class="form-control">
+                    <option value="qualquer">Salário</option>
+                    <option value="2000">Menos de R$ 2.000</option>
+                    <option value="4000">R$ 2.000 - R$ 4.000</option>
+                    <option value="6000">Mais de R$ 4.000</option>
+                  </select>
+                </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
                   <option value="qualquer">Área</option>
