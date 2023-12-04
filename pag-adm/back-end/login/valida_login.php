@@ -10,6 +10,7 @@ $adms = $resultado->fetchAll();
 $n = count($adms);
 
 if ($n == 1) {
+    session_name('admin_session');
     session_start();
     $_SESSION['idAdmin'] = $adms[0]['idAdmin'];
     $_SESSION['email'] = $adms[0]['email'];

@@ -1,4 +1,5 @@
 <?php
+session_name('aluno_session');
 session_start();
 
 unset($_SESSION['email']);
