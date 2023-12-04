@@ -55,11 +55,9 @@ include '../dao/conexao.php';
 
                             <div class="form-group">
                                 <div class="align-input">
-                                    <i class="fa-solid fa-lock fa-lg" style="color: #75777a;"></i><input
-                                        class="form-control obrigatorio" id="password" type="password"
-                                        placeholder="Sua Senha" name="senha-aluno">
-                                    <i class="fa-solid fa-eye" id="icon" onclick="mostrarSenha()"
-                                        style="color: #1f3251;"></i>
+                                    <i class="fa-solid fa-lock fa-lg" style="color: #75777a;"></i>
+                                    <input class="form-control obrigatorio" id="password" type="password" placeholder="Sua Senha" name="senha-aluno">
+                                    <i class="fa-solid fa-eye" id="icon" onclick="mostrarSenha()" style="color: #1f3251; font-size: 22px;"></i>
                                 </div>
                             </div>
 

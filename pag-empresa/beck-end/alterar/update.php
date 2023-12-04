@@ -11,7 +11,6 @@ if ($_POST) {
     $nome = trim($_POST['nome']);
     $email = trim($_POST['email']);
     $telefone = trim($_POST['telefone']);
-
     $cep = trim($_POST['cep']);
     $logradouro = trim($_POST['logradouro']);
     $numero = trim($_POST['numero']);
