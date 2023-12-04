@@ -349,11 +349,18 @@ foreach ($result as $vaga) {
         <section class="sistema-busca">
             <div class="secao-busca">
 
-                <span an class="add-vaga"><a href="./cadastrar-vaga.php"><i class="fa-solid fa-circle-plus"></i></a>
-                    Cadastra Nova Vaga</span>
+                <span an class="add-vaga">
+                    <span>
+                    <a href="./cadastrar-vaga.php">
+                    <i class="fa-solid fa-plus"></i>
+                    </a>
+                    </span>
+                   
+                    Cadastra Nova Vaga
+                </span>
                 <div class="barra-pesquisa">
                     <input type="text" name="pesquisa" id="busca" placeholder="Buscar por vaga">
-                    <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+                    <i class="fa-solid fa-magnifying-glass fa-lg" ></i>
                 </div>
 
                 <div class="align-filtro">
@@ -394,13 +401,13 @@ foreach ($result as $vaga) {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>VAGA</th>
+                        <th> VAGA</th>
                         <th>CIDADE</th>
                         <th>BAIRRO</th>
                         <th>AREA</th>
                         <th>PERIODO</th>
                         <th>CANDIDATOS</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>

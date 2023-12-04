@@ -80,8 +80,7 @@ foreach ($result as $vaga) {
 foreach ($vagas as $vaga) {
     echo
     '<tr class="infos">
-         <td class="table-id">' . $vaga['idVaga'] . '</td>',
-    '<td class="table-nome-aluno">' . $vaga['nome'] . '</td>',
+    <td class="table-nome-aluno">' . $vaga['nome'] . '</td>',
     '<td class="table-email-aluno">' . $vaga['cidade'] . '</td>',
     '<td class="table-email-aluno">' . $vaga['bairro'] . '</td>',
     '<td class="table-email-aluno">' . $vaga['area'] . '</td>',
@@ -102,7 +101,7 @@ foreach ($vagas as $vaga) {
                     <i class="fa-solid fa-pen-to-square"></i>
                 </button>
             </form>
-            <button type="button" class="btn btn-primary preencher-vaga-btn" data-bs-toggle="modal" data-bs-target="#confirmarPreenchimentoModal' . $vaga['idVaga'] . '" value="' . $vaga['idVaga'] . '">
+            <button type="button" class="preencher-vaga" data-bs-toggle="modal" data-bs-target="#confirmarPreenchimentoModal' . $vaga['idVaga'] . '" value="' . $vaga['idVaga'] . '">
                 Preencher Vaga
             </button>';
     }

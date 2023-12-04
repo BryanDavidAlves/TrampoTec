@@ -47,7 +47,7 @@ $n_aluno = count($aluno);
 
         <section class="cards-alunos">
 
-            <div class="card">
+            <a href="./candidatos.php" style="text-decoration: none;" class="card">
                 <div class="card-corpo">
                     <div class="card-itens">
                         <p class="informacao"> Candidatos Totais</p>
@@ -58,9 +58,9 @@ $n_aluno = count($aluno);
                         <i class="fa-regular fa-user"></i>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
+            <a href="./vagas.php" style="text-decoration: none;" class="card">
                 <div class="card-corpo">
                     <div class="card-itens">
                         <p class="informacao"> Vagas Cadastradas</p>
@@ -71,7 +71,7 @@ $n_aluno = count($aluno);
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
                 </div>
-            </div>
+            </a>
 
 
 
@@ -81,7 +81,7 @@ $n_aluno = count($aluno);
 
 
         <section class="container-imagens">
-        <div id="piechart" style="width: 900px; height: 500px; "></div>
+            <div id="piechart" style="width: 900px; height: 500px; "></div>
         </section>
 
 
@@ -89,25 +89,27 @@ $n_aluno = count($aluno);
     </main>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+        function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Vagas',<?= $n_vagas ?>],
-          ['Candidatos',<?= $n_aluno ?>]
-        ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Vagas', <?= $n_vagas ?>],
+                ['Candidatos', <?= $n_aluno ?>]
+            ]);
 
-        var options = {
-          title: 'Grafico geral'
-        };
+            var options = {
+                title: 'Grafico geral'
+            };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
+            chart.draw(data, options);
+        }
     </script>
     <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
     <script src="./js/java-empresa.js"></script>
