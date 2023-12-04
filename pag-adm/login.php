@@ -45,12 +45,10 @@
                     <button class="botao"><a href="../pag-adm/index.php" style="color: white">Entrar</a></button><!--<input class="botao" type="submit" value="Entrar">-->
                     <div class="remember">
                         <div>
-                            <input id="check" type="checkbox">
+                            <input style="margin-left:70px;" id="check" type="checkbox">
                             <label for="check"> Lembre de mim</label>
                         </div>
-                        <a href="relembrar-senha.php">Esqueceu a Senha?</a>
                     </div>
-                    <a href="cadastro.php" style="margin-left:30%;">Criar uma conta</a>
                 </form>
             </div>
         </section>

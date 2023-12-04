@@ -113,13 +113,13 @@ include '../pag-adm/components/sidebar-adm.php';
                     <div class=" modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header bg-danger text-white">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Usuário</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Aluno</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body  ">
                         <form action="back-end/crudAluno/aluno-delete.php" method="post">
                             <input class="form-control" id="id_usuario" name="id_usuario" type="hidden">
-                            <p>Tem certeza que deseja excluir o item selcionado?
+                            <p>Tem certeza que deseja excluir esse aluno?
                             <div class=" text-end">
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
                             <button type="submit" class="btn btn-warning ms-3">Sim </button>

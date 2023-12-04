@@ -25,7 +25,9 @@ svg{
   transition: 200ms linear;
   text-decoration: none;
 }
-
+i{
+  cursor: pointer;
+}
 .fa-comment-dots {
   font-weight: 600;
   font-size: 2rem;

@@ -104,8 +104,8 @@ if ($_POST) {
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             margin-top: 50px;
             width: 90%;
-
-
+            transition: 0.3s all ease-in-out;
+            padding-left: 42%;
         }
 
         #modal .align-itens .btn:hover {
@@ -277,7 +277,7 @@ if ($_POST) {
             margin-top: 50px;
             width: 90%;
             transition: 0.3s all ease-in-out;
-
+            padding-left: 42%;
 
         }
 
@@ -382,7 +382,7 @@ if ($_POST) {
             margin-top: 50px;
             width: 90%;
             transition: 0.3s all ease-in-out;
-
+            padding-left: 42%;
 
         }
 
