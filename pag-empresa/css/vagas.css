@@ -48,11 +48,36 @@ main p {
   gap: 2%;
 }
 
-.add-vaga i {
-  font-size: 50px;
+.add-vaga span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.add-vaga a i {
+  color: white;
+  border-radius: 100%;
+  font-size: 35px;
+  padding: 10px;
+  background-color: rgb(218, 30, 30);
+  border:1px solid rgb(218, 30, 30);
+  transition: 0.2s ease-in-out;
+}
+
+.add-vaga a i:hover {
   color: rgb(218, 30, 30);
-  background-color: rgb(255, 255, 255);
-  border-radius: 200px;
+  border-radius: 100%;
+  font-size: 35px;
+  padding: 10px;
+  background-color: white;
+  border:1px solid rgb(218, 30, 30);
+}
+
+
+.add-vaga a {
+  padding: 0px;
+margin: 0px;
 }
 
 .secao-busca {
@@ -225,7 +250,7 @@ table {
 
 table td {
   z-index: 2;
-  text-align: center;
+  text-align: ceter;
   color: rgb(0, 0, 0);
   padding-top: 25px;
   padding-left: 20px;
@@ -258,16 +283,20 @@ button {
 }
 
 #ver-mais-vaga {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  border-radius: 25px;
-  padding: 10px;
-  transition: 0.3s ease-in-out;
+  background-color:#555cb3;
+  color: white;
+  border-radius:10px;
+  width: 100px;
+  height: 35px;
+  transition: 0.2s ease-in-out;
   cursor: pointer;
+
 }
 #ver-mais-vaga:hover {
-  background-color:#555cb3;;
-  color: white;
+  transform: scale(1.1);
+  border: 1px solid #555cb3 ;
+  color: #555cb3;
+  background-color:white;
 }
 .sistema-busca .barra-pesquisa input:focus {
   outline: none;
@@ -303,7 +332,7 @@ button {
   padding-left: 0px;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding-right: 10px;
 }
 
@@ -403,49 +432,45 @@ button {
   gap: 5px;
 }
 
-.editar-vaga {
-  background-color: transparent;
-}
 
-.delete-vaga {
-  background-color: transparent;
-}
-
-.editar-vaga a {
-  color: rgb(46, 46, 227);
+.editar-vaga .botao-editar {
+  color: WHITE;
   border-radius: 100px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   font-size: 20px;
-  width: 20px;
-  padding: 8px;
+  width: 40px;
+  padding: 10px;
   text-align: center;
   display: flex;
+  background-color: rgb(160, 160, 160);
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.editar-vaga .botao-editar:hover {
+  color:  rgb(160, 160, 160);
+  border: 1px solid rgb(160, 160, 160);
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.preencher-vaga {
+  color: WHITE;
+  border-radius: 100px;
+  transition: 0.2s ease-in-out;
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.editar-vaga a:hover {
-  background-color: rgb(46, 46, 227);
-  color: white;
-}
-
-.delete-vaga a {
   display: flex;
-  text-decoration: none;
+  background-color: red;
+  border: 1px solid red;
+}
+
+.preencher-vaga:hover {
   color: red;
-  border-radius: 100px;
-  transition: 0.3s ease-in-out;
-  font-size: 20px;
-  width: 20px;
-  padding: 8px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid red;
+  background-color: transparent;
+  transform: scale(1.1);
 }
 
-.delete-vaga a:hover {
-  background-color: rgb(255, 0, 0);
-  color: white;
-}
+
