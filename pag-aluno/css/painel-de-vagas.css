@@ -286,7 +286,7 @@ p {
   flex-direction: column;
   gap: 10px;
   height: 100vh;
-  max-height:42.5vh;
+  max-height:35vh;
   overflow-y: auto;
 }
 #requisitos-vaga::-webkit-scrollbar {
