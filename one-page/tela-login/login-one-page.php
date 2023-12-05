@@ -31,7 +31,7 @@
                                  <p class="titulo-agendar"> ENTRAR COMO </p>
 
                                   <div class="barra-agendar">
-                                    <a href="../../pag-aluno/login.php"> <button type="submit" placeholder="Aluno">Aluno</button></a>
+                                    <a href="../../pag-aluno/login.php" > <button type="submit" placeholder="Aluno">Aluno</button></a>
                                 </div>
 
 

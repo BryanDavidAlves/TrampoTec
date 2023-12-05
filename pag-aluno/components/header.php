@@ -153,7 +153,7 @@
                 <hr class="dropdown-divider">
               </li>
 
-              <li><a class="dropdown-item" href="curriculo.php">Currículo</a></li>
+              <li><a class="dropdown-item" href="curriculo.php">Editar Currículo</a></li>
 
               <li>
                 <hr class="dropdown-divider">

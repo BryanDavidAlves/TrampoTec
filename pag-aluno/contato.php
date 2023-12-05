@@ -81,11 +81,10 @@ $resultado = $resultado->fetchAll();
         </div>
 
 
-        <img class="icone" src="img/contato.png" alt="">
+       
     </main>
-    <?php
-    include('../pag-aluno/components/sidebar.php');
-    ?>
+    <img class="icone" src="img/contato.png" alt="">
+
     <script src="https://kit.fontawesome.com/57efc2ce52.js" crossorigin="anonymous"></script>
 </body>
 
