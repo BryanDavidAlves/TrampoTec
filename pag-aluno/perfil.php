@@ -77,12 +77,7 @@ include '../pag-aluno/components/header.php';
                                                 <!--fazer o js para possibilitar o edit-->
                                             </div>
 
-                                            <div class="one-bar">
-                                                <h3>TELEFONE: </h3>
-                                                <input id="inputTelefone" type="text" disabled value="(11)2552-3735"
-                                                    name="celular">
-                                                <!--fazer o js para possibilitar o edit-->
-                                            </div>
+
 
                                         </section>
                                     </div>
