@@ -9,7 +9,6 @@ header {
 }
 
 .container {
-    position: absolute;
     width: 100%;
 }
 
@@ -124,17 +123,10 @@ select {
 .icone {
     width: 89vh;
     position: absolute;
-    bottom: 0;
+    bottom: -150px;
     right: 0;
-    z-index: 1;
+    padding: 0;
+    margin: 0;
+    z-index: -3;
 }
 
-@media (max-width: 1240px) {
-    .icone {
-        width: 80vh;
-        margin-top: 90px;
-    }
-    #titu {
-        margin-top: 1000px;
-    }
-}

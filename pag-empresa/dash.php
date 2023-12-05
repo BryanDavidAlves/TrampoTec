@@ -38,9 +38,9 @@ $n_aluno = count($aluno);
 
 <body>
 
-    <?php include '../pag-empresa/componentes/sidebar.php'?>
-    <?php include '../pag-empresa/componentes/email.php'?>
-    <?php include '../pag-empresa/componentes/notificacao.php'?>
+    <?php include '../pag-empresa/componentes/sidebar.php' ?>
+    <?php include '../pag-empresa/componentes/email.php' ?>
+    <?php include '../pag-empresa/componentes/notificacao.php' ?>
 
 
     <img class="cima" src="./img/fundo2.png" alt="">
@@ -48,77 +48,77 @@ $n_aluno = count($aluno);
     <main>
 
 
-    <main class="main">
+        <main class="main">
 
-        <section class="cards-alunos">
+            <section class="cards-alunos">
 
-            <a href="./candidatos.php" style="text-decoration: none;" class="card">
-                <div class="card-corpo">
-                    <div class="card-itens">
-                        <p class="informacao"> Candidatos Totais</p>
-                        <p class="numero">
-                            <?=$n_aluno?>
-                        </p>
+                <a href="./candidatos.php" style="text-decoration: none;" class="card">
+                    <div class="card-corpo">
+                        <div class="card-itens">
+                            <p class="informacao"> Candidatos Totais</p>
+                            <p class="numero">
+                                <?= $n_aluno ?>
+                            </p>
 
+                        </div>
+                        <div class="icon-home">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
                     </div>
-                    <div class="icon-home">
-                        <i class="fa-regular fa-user"></i>
+                </a>
+
+                <a href="./vagas.php" style="text-decoration: none;" class="card">
+                    <div class="card-corpo">
+                        <div class="card-itens">
+                            <p class="informacao"> Vagas Cadastradas</p>
+                            <p class="numero">
+                                <?= $n_vagas ?>
+                            </p>
+
+                        </div>
+                        <div class="icon-home">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
                     </div>
-                </div>
-            </a>
-
-            <a href="./vagas.php" style="text-decoration: none;" class="card">
-                <div class="card-corpo">
-                    <div class="card-itens">
-                        <p class="informacao"> Vagas Cadastradas</p>
-                        <p class="numero">
-                            <?=$n_vagas?>
-                        </p>
-
-                    </div>
-                    <div class="icon-home">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </div>
-                </div>
-            </a>
-        </section>
+                </a>
+            </section>
 
 
-        <section class="container-imagens">
-            <div id="piechart" style="width: 900px; height: 500px; "></div>
-        </section>
+            <section class="container-imagens">
+                <div id="piechart" style="width: 900px; height: 500px; "></div>
+            </section>
 
 
 
 
-    </main>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
-        google.charts.setOnLoadCallback(drawChart);
+        </main>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
+            function drawChart() {
 
-            var data = google.visualization.arrayToDataTable([
-                ['Task', 'Hours per Day'],
-                ['Vagas', <?=$n_vagas?>],
-                ['Candidatos', <?=$n_aluno?>]
-            ]);
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['Vagas', <?= $n_vagas ?>],
+                    ['Candidatos', <?= $n_aluno ?>]
+                ]);
 
-            var options = {
-                title: 'Grafico geral'
-            };
+                var options = {
+                    title: 'Grafico geral'
+                };
 
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-            chart.draw(data, options);
-        }
-    </script>
+                chart.draw(data, options);
+            }
+        </script>
 
-    <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
-    <script src="./js/java-empresa.js"></script>
+        <script src="https://kit.fontawesome.com/1c065add65.js" crossorigin="anonymous"></script>
+        <script src="./js/java-empresa.js"></script>
 </body>
 
 </html>

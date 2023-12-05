@@ -237,40 +237,40 @@ $alunoSeis = $query6->fetchAll();
                                     </td>
 
                                     <div class="modal fade" id="exampleModalll<?= $aluno[19] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Carta de recusa</label>
-                                                            <label><?= $aluno[23] ?></label>
-                                                        </div>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="mb-3">
+                                                        <label for="recipient-name" class="col-form-label">Carta de recusa</label>
+                                                        <label><?= $aluno[23] ?></label>
                                                     </div>
-                                                    <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
-                                                        <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
-
-
-                                                        <div class="modal-body">
-                                                            <input type="hidden" name="_captcha" value="false">
-
-                                                            <input type="hidden" name="entre em contato" value=" <?= $email ?>">
-                                                            <div class="mb-3">
-                                                                <textarea class="form-control" name="message" rows="10" required style="resize: none;"></textarea>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                            <button type="submit" class="btn btn-primary">
-
-                                                                Enviar
-                                                            </button>
-                                                        </div>
-                                                    </form>
-
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
+                                                <form>
+                                                    <!-- action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST" -->
+                                                    <!--  <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>"> -->
+
+
+                                                    <div class="modal-body">
+
+                                                        <input type="hidden" name="entre em contato" value=" <?= $email ?>">
+                                                        <div class="mb-3">
+                                                            <textarea class="form-control" name="message" rows="10" required style="resize: none;"></textarea>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                                        <a href="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>" type="submit" class="btn btn-primary">
+
+                                                            Enviar
+                                                        </a>
+                                                    </div>
+                                                </form>
+
                                             </div>
                                         </div>
+                                    </div>
 
                                     <td>
                                         <button value="<?= $aluno[22] ?>" class="icon-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $aluno[22] ?>" data-bs-whatever="@fat">
@@ -351,8 +351,9 @@ $alunoSeis = $query6->fetchAll();
                                                         </div>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <form action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST">
-                                                        <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>">
+                                                    <form>
+                                                        <!-- action="https://formsubmit.co/<?= $aluno[23] ?>" method="POST" -->
+                                                        <!--  <input type="hidden" name="_next" value="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>"> -->
 
 
                                                         <div class="modal-body">
@@ -366,10 +367,10 @@ $alunoSeis = $query6->fetchAll();
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                                                            <button type="submit" class="btn btn-primary">
+                                                            <a href="http://localhost/TrampoTec/pag-empresa/beck-end/crudAluno/aluno-deletar.php?idAluno=<?= $aluno[22] ?>&idVaga=<?= $idvaga ?>" type="submit" class="btn btn-primary">
 
                                                                 Enviar
-                                                            </button>
+                                                            </a>
                                                         </div>
                                                     </form>
 

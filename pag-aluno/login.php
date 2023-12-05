@@ -33,7 +33,7 @@ include '../dao/conexao.php';
                         <h2 class="title title-primary">Bem Vindo de Volta!</h2>
 
                         <p class="description description-primary">Efetue seu login clicando no botão </p>
-                        <button id="signin" class="btn btn-primary">sign in</button>
+                        <button id="signin" class="btn btn-primary">Criar</button>
                     </div>
 
                     <div class="second-column">
@@ -90,7 +90,7 @@ include '../dao/conexao.php';
                         <h2 class="title title-primary">Bem Vindo de Volta!</h2>
                         <p class="description description-primary">Efetue seu login clicando no botão</p>
 
-                        <button id="signup" class="btn btn-primary">sign in</button>
+                        <button id="signup" class="btn btn-primary">Entrar</button>
                     </div>
 
                     <div class="second-column">

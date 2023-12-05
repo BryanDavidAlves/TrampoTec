@@ -41,14 +41,14 @@ $resultados = $query->fetchAll();
                 <li><a href="../pag-empresa/vagas.php"><i class="fa-solid fa-bag-shopping"></i> Vagas</a></li>
 
 
-                <li><a href="../pag-empresa/configuracoes.php"><i class="fa-solid fa-gear fa-lg"></i> Fale Conosco</a>
+                <li><a href="../pag-empresa/fale-conosco.php"><i class="fa-solid fa-gear fa-lg"></i> Fale Conosco</a>
                 </li>
 
 
 
 
 
-                <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i> Logout</a></li>
+                <li><a href="./beck-end/login/logout.php"><i class="fa-solid fa-door-open"></i> Sair</a></li>
             </div>
         </ul>
     </nav>

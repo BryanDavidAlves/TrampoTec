@@ -107,10 +107,19 @@ body {
   margin-right: auto;
   border: none;
   background-color: #181d49;
-  border-radius: 40px;
+  border-radius: 10px;
   height: 30px;
   width: 140px;
   color: white;
+  transition: 0.10s ease-in-out;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.botao-agendar:hover {
+  background-color: white;
+  color: #181d49;
+  border: 1px solid #181d49 ;
 }
 
 .botao-agendar a {
@@ -270,9 +279,7 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   width: 250px;
 }
-.corBotao {
-  color: white;
-}
+
 .text-danger {
   color: red;
 }

@@ -84,11 +84,17 @@ font-weight: bold;
 }
 
 .barra-agendar button{
-border-radius: 17px;
-background-color: white;
+border-radius: 12px;
+background-color: rgb(74, 74, 138);
 width: 100%;
 height: 40px;
-border: 1px solid rgb(3, 3, 70);  
+border: none;  
+color: white;
+cursor: pointer;
+transition: 0.10s ease-in-out;
+font-size: 15px;
+font-weight: 550;
+letter-spacing: 0.9px;
 }
 
 .botoes{
@@ -99,7 +105,9 @@ border: 1px solid rgb(3, 3, 70);
 }
   
 .barra-agendar button:hover{
-  background-color: rgb(233, 233, 233);
-  transition: 0.10ms;
+
+  background-color: white;
+border: 2px solid orangered;  
+color: orangered;
   }
 
