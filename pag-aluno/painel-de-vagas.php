@@ -438,25 +438,30 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
       margin-bottom: 10px;
       font-size: 1.5rem;
       font-weight: 600;
+      padding-top: 10px;
     }
 
     #texto-descs {
       word-break: break-word;
+      line-height: 25px;
     }
 
     #texto-vaga {
       color: #fff;
-      max-height: 30vh;
-      overflow-y: auto;
     }
 
-    #texto-vaga::-webkit-scrollbar {
+    .sobre-vaga {
+      max-height: 45vh;
+      overflow-y: auto;
+      padding-top: 20px;
+    }
+
+
+    .sobre-vaga::-webkit-scrollbar {
       width: 10px;
     }
 
-
-
-    #texto-vaga::-webkit-scrollbar-thumb {
+    .sobre-vaga::-webkit-scrollbar-thumb {
       background-color: #fff;
       border-radius: 30px;
       border: 3px solid #0382ac;
@@ -577,23 +582,23 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
         <div>
           <form id="barra" method="get">
             <div class="row">
-                <div class="col-md-3">
-                  <select name="periodo" class="form-control">
-                    <option value="qualquer">Período</option>
-                    <option value="matinal">Manhã</option>
-                    <option value="diurno">Tarde</option>
-                    <option value="noturno">Noite</option>
-                    <option value="integral">integral</option>
-                  </select>
-                </div>
-                <div class="col-md-3" id="left">
-                  <select name="salario" class="form-control">
-                    <option value="qualquer">Salário</option>
-                    <option value="2000">Menos de R$ 2.000</option>
-                    <option value="4000">R$ 2.000 - R$ 4.000</option>
-                    <option value="6000">Mais de R$ 4.000</option>
-                  </select>
-                </div>
+              <div class="col-md-3">
+                <select name="periodo" class="form-control">
+                  <option value="qualquer">Período</option>
+                  <option value="matinal">Manhã</option>
+                  <option value="diurno">Tarde</option>
+                  <option value="noturno">Noite</option>
+                  <option value="integral">integral</option>
+                </select>
+              </div>
+              <div class="col-md-3" id="left">
+                <select name="salario" class="form-control">
+                  <option value="qualquer">Salário</option>
+                  <option value="2000">Menos de R$ 2.000</option>
+                  <option value="4000">R$ 2.000 - R$ 4.000</option>
+                  <option value="6000">Mais de R$ 4.000</option>
+                </select>
+              </div>
               <div class="col-md-3">
                 <select name="area" class="form-control">
                   <option value="qualquer">Área</option>
@@ -709,9 +714,11 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
                       </div>
                       <div id="texto-vaga">
                         <h2>DESCRIÇÃO DA VAGA</h2>
-                        <p id="texto-descs">
-                          <?= $vaga['descricao'] ?>
-                        </p>
+                        <div class="sobre-vaga">
+                          <p id="texto-descs">
+                            <?= $vaga['descricao'] ?>
+                          </p>
+                        </div>
                       </div>
 
                     </div>
