@@ -451,6 +451,7 @@ $areas = $resultAreas->fetchAll(PDO::FETCH_ASSOC);
     }
 
     .sobre-vaga {
+      height: 100vh;
       max-height: 35vh;
       overflow-y: auto;
       padding-top: 20px;
