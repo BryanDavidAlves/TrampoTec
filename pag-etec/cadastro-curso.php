@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/componente.css">
     <link rel="stylesheet" href="css/cadastro-curso.css">
-    <title>Document</title>
+    <title>TrampoTec</title>
 </head>
 
 <body>    
